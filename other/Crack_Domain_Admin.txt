@@ -1,0 +1,12 @@
+https://zhuanlan.zhihu.com/p/74479830
+
+vnc远程登陆
+
+Windows系统管理员账号密码获取
+mimikatz_trunk
+
+https://github.com/auspbro/domain-admin-crack
+https://blog.51cto.com/seawind/1875702
+
+能插 U 盘吗？可以的话先在 U 盘里面装一个 PE，然后用 U 盘启动进 PE 系统，然后把 system32 下的 cmd.exe 改名成 sethc.exe ，（目录下有另外一个 sethc.exe ，可以先临时改成别的名字），然后重启，正常启动，在账户登录界面连续按五次 shift，调出粘滞键，不过因为 sethc.exe 被我们替换成了 cmd.exe ，所以这个时候会弹出命令行，而且是管理员权限的命令行，然后添加管理员用户或者更改管理员密码都可以，随便。然后用管理员权限账户登录电脑，然后想删什么删什么吧。
+

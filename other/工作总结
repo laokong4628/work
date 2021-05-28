@@ -1,0 +1,103 @@
+1.ICT pin card 短路，relay继电器维修，电流表找到对应的位置敲击。调试时出现如下画面：Run Testhead Diagnostics。
+2.各个电脑的账密：
+    A.
+    B.
+    C.
+
+3.各个ICT测试程序目录
+
+4.各个FVT机台测试程序
+
+各个调试指令的含义：
+op: open Expecting an open("op" flag)
+
+windows通过命令行查看进程杀死进程
+1.查看所有进程的端口使用信息
+Windows键 + R ,在弹出的运行窗口中输入cmd，在cmd窗口中输入netstat -ano显示协议统计信息和当前的端口监听连接。
+
+-a   显示所有连接和侦听端口。
+
+-n   以数字形式显示地址和端口号。
+
+-o   显示拥有的与每个连接关联的进程 ID。
+
+2.查看指定端口的连接信息
+使用netstat -ano | findstr “8080”，在“|”前面的命令执行结果作为后一个命令执行的输入。
+
+3.查看进程列表
+使用tasklist | findstr “java”,查找进程名包含“java”的所有进程，详细使用方式使用tasklist/?查看。
+
+4.通过查看占用端口号的进程，可以直接杀掉进程，
+
+命令行使用taskkill /PID 进程号 -F -T
+
+/PID processid    指定要终止的进程的 PID。
+
+/F                指定强制终止进程。
+
+/T              终止指定的进程和由它启用的子进程
+
+
+
+偶尔碰上Tskill无法结束的进程，大家还可以试试ntsd命令
+格式为: ntsd -c q -p {进程ID｝
+参数含义：
+-c是表示执行debug命令;
+q表示执行结束后退出;
+-p 表示后面紧跟着是你要结束的进程对应的PID;
+
+-pn 表示后面紧跟着是你要结束的进程名;
+
+例如：
+
+>ntsd -c q -p 5923
+
+>ntsd -c q -pn wot.exe
+
+tasklist /s 10.4.125.211 /u administrator /p *****
+这条命令可以使我们方便的查看到远程主机的进程运行情况，当然前提是保证RPC服务正常启动。
+
+wmic
+wmic:root\cli>
+这时，在命令行再输入process
+
+在WMIC命令行提示符上，命令以交互的方式执行。例如，执行下面的命令将关闭正在运行的IE浏览器：
+process where name='iexplore.exe' call terminate
+
+例如，执行cmd.exe打开一个命令行窗口，然后执行下面的命令，就可以输出连接到tongas1的打印机清单：
+wmic /node:tongas1 printer list status
+
+
+Win10电脑无法复制粘贴怎么办
+1、首先右键点击任务栏，然后打开任务管理器；
+2、在“Windows资源管理器”上单击右键，【重新启动】一般就可以；
+3、可是假如重启资本管理器仍是不能仿制张贴的话，翻开此电脑，顺次翻开C:\Windows\System32，在该文件夹查找是不是有“clip”文件夹，若没有则新建一个文件夹命名为：clip即可;
+4、当然，假如操作后仍是相同，重启也无法处理，确定下键盘是不是好的影响到了仿制张贴的快捷键。
+
+
+查数据账号与密码：757896，Jabil123456
+电脑相关账号与密码：GzhmTE26，J@bil2012Hua195
+电脑相关账号与密码：bay10，J@bil2012Hua079
+电脑相关账号与密码：bay11，J@bil2012Hua080
+
+FVT程式
+Model：DBA26800J1              程式：COP J1-FVT             
+Model：DBA26800AL1              程式：RS14              开关：1，SW4开其他关。2，SW4关其他开
+Model：DBA26800EE9              程式：APIO2              开关：ON
+Model：DBA26800EL             程式：APIO              fail时，重新安装AVTstudio 4
+Model：DBA26800G1/G2              程式：HIB              开关：ON
+Model：DBA26800BY             程式：SP3              开关：ON
+Model：AL227532              程式：AL227532              开关：TestJet拿掉
+
+ICT程式
+Model：HAA26800BW1              程式：HAA26800BW1           开关：SW1，SW2，SW3打到ON
+Model：KAA26800ACA6              程式：KAA26800ACA6           开关：SW2打到RUN，SW3打到下，SW5打到ON
+
+注意：
+EL1:10K ，EL2：825欧姆
+AR:RL3/4：open
+ICT程式跳过流程检查，注释if到goto scan 到下面一行的几行代码即可。 
+MUX card针对测试IC极性，fixture上面的电路板。
+
+
+
