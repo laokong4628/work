@@ -1,0 +1,19 @@
+!!!!    2    0    1 1264583285   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:06 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c188 1.50u"
+end on failure
+disconnect all
+connect s to "GATE_TO_TRIGGER"
+connect i to "OUTPUT_TP_555"
+capacitor 3.7u, 10.6, 10.5, fr128, re2, ar50.0m, ed, nocomp
+! "c187" test.
+! DUT: nominal 3.7u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 4.07u, low 3.33u
+! TEST: high limit 4.091u, low limit 3.311u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

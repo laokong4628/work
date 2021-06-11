@@ -1,0 +1,19 @@
+!!!!    2    0    1 1264583382  V51d7                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:43 2010
+! IPG: rev 05.21p  Mon Nov 02 10:04:33 2009
+! IPG: rev 05.20p  Wed Dec 24 16:58:57 2008
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;T
+   test "OCT_INV_GND_PW"
+end test
+
+subtest "OCT_INV_GND_PW"
+   global T
+   report analog 0.450,0.200,T/1000
+end subtest
+
+
+

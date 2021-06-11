@@ -1,0 +1,35 @@
+
+<Test name = "u54%read">
+<FileList>
+<File name = "u54%read">
+<FilePath>C:/Agilent_ICT/boards/other/OTIS/G2A26800MXx/digital/u54%read</FilePath>
+<LastModified>Wed May 26, 2010   8:29 pm</LastModified>
+</File>
+</FileList>
+<DeviceList>
+<Device name="u54%read">
+<TestablePinList>
+<Pin name="2">
+<Type>Input</Type>
+<DriveHigh value="true"/>
+</Pin>
+<Pin name="5">
+<Type>Bidir</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+<ReceiveLow value="true"/>
+<ReceiveHigh value="true"/>
+</Pin>
+<Pin name="6">
+<Type>Input</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+</Pin>
+<Pin name="7">
+<Type>Input</Type>
+<DriveLow value="true"/>
+</Pin>
+</TestablePinList>
+</Device>
+</DeviceList>
+</Test>

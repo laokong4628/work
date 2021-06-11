@@ -1,0 +1,22 @@
+!!!!    2    0    1 1264583269   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:50 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r2 7.32k"
+end on failure
+disconnect all
+connect s to "5V_HL2"; a to "5V_HL2"
+connect i to "UNNAMED_45_C_I143_B"
+connect g to "HL2"; l to "HL2"
+! capacitor 2.2n, 10.0, 10.0, fr1024, re3, wb, ar50.0m, sa, sl, en, comp
+warning "device under test appears open or excessive noise is present."
+! "c1" is a commented test.
+! DUT: nominal 2.2n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 2.42n, low 1.98n
+! TEST: high limit 0, low limit 0
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

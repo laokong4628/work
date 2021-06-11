@@ -1,0 +1,3804 @@
+------------------------------------------------------------------------------
+AGILENT 3070 IPG Summary Report Rev 05.21p  Wed Jan 27 17:07:46 2010      
+
+G2A26800MXx
+------------------------------------------------------------------------------
+
+Reading "testorder".
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is To Be Generated
+    Chek-Point Pins Test Is To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing shorts test.
+Writing Chek-Point pins test.
+Writing capacitor discharge test.
+Writing analog tests.
+Test "d1%pins1_2" may require a 'wait' option.
+Test "d4%pins1_2" may require a 'wait' option.
+Test "d2%pins1_3" may require a 'wait' option.
+Test "d13%diode" may require a 'wait' option.
+Test "d14%diode" may require a 'wait' option.
+Test "d23%diode" may require a 'wait' option.
+Test "d24%diode" may require a 'wait' option.
+Test "d37%diode" may require a 'wait' option.
+Test "d38%diode" may require a 'wait' option.
+Test "d40" may require a 'wait' option.
+Test "d41" may require a 'wait' option.
+Test "z12" may require a 'wait' option.
+Test "z1" may require a 'wait' option.
+Test "z6" may require a 'wait' option.
+Test "z11" may require a 'wait' option.
+Test "z77" may require a 'wait' option.
+Writing testjet test.
+
+Writing library-based and boundary scan tests.
+
+Device Test: bptest
+
+Device Test: cs1
+
+Device Test: cs2
+
+Device Test: cs3
+
+Device Test: led_sensor
+
+Device Test: q26%nfet
+
+Device Test: q28%npn
+
+Device Test: q29%npn
+
+Device Test: q30%nfet
+
+Device Test: q32%npn
+
+Device Test: q33%npn
+
+Device Test: q34%nfet
+
+Device Test: q36%npn
+
+Device Test: q37%npn
+
+Device Test: rel1
+
+Device Test: rel2
+
+Device Test: u1
+Loading info for u2.
+Loading info for u54%program.
+Loading info for u54%read.
+Loading info for u54%test.
+Loading info for u3.
+
+Device Test: u2
+  Power pin u2.1 (node VCC) is not connected to a fixed node.
+  Power pin u2.8 (node 5V_HL2) is not connected to a fixed node.
+This is a SETUP-ONLY Test.
+All Pin States Reached In Test
+
+Device Test: u3
+  Power pin u3.14 (node 5V_HL2) is not connected to a fixed node.
+This is a SETUP-ONLY Test.
+No Vectors In Test
+
+Device Test: u4
+
+Device Test: u5
+Loading info for u6.
+Loading info for u56.
+Loading info for u10.
+Loading info for u15.
+Loading info for u27.
+Loading info for u32.
+Loading info for u43.
+Loading info for u45.
+
+Device Test: u6
+  Power pin u6.14 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+Loading info for u7.
+Loading info for u11.
+Loading info for u28.
+Loading info for u44.
+
+Device Test: u7
+  Power pin u7.14 (node VCC) is not connected to a fixed node.
+64% of Pin States reached in test,  5 pins under-tested.
+Could Not Disable Bus
+Loading info for u8%program.
+Loading info for u8%read.
+Loading info for u8%test.
+
+Device Test: u8%program
+  Power pin u8%program.8 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+Could Not Disable Bus
+
+Device Test: u8%read
+  Power pin u8%read.8 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+Could Not Disable Bus
+
+Device Test: u8%test
+  Power pin u8%test.8 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+Could Not Disable Bus
+
+Device Test: u9
+
+Device Test: u10
+  Power pin u10.3 (node VCC) is not connected to a fixed node.
+Device Not Tested (No Pins Toggled)
+Could Not Disable Bus
+
+Device Test: u11
+  Power pin u11.14 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+
+Device Test: u12
+
+Device Test: u13
+
+Device Test: u14
+
+Device Test: u15
+  Power pin u15.3 (node VCC) is not connected to a fixed node.
+Device Not Tested (No Pins Toggled)
+Could Not Disable Bus
+
+Device Test: u16
+
+Device Test: u17
+
+Device Test: u18
+
+Device Test: u19
+
+Device Test: u20
+
+Device Test: u21
+
+Device Test: u22
+
+Device Test: u23
+
+Device Test: u24
+
+Device Test: u25
+
+Device Test: u26
+
+Device Test: u27
+  Power pin u27.3 (node VCC) is not connected to a fixed node.
+Device Not Tested (No Pins Toggled)
+Could Not Disable Bus
+
+Device Test: u28
+  Power pin u28.14 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+
+Device Test: u29
+
+Device Test: u30
+
+Device Test: u31
+
+Device Test: u32
+  Power pin u32.3 (node VCC) is not connected to a fixed node.
+Device Not Tested (No Pins Toggled)
+Could Not Disable Bus
+
+Device Test: u33
+
+Device Test: u34
+
+Device Test: u35
+
+Device Test: u36
+
+Device Test: u37
+
+Device Test: u38
+
+Device Test: u39
+
+Device Test: u40
+
+Device Test: u41
+
+Device Test: u42
+
+Device Test: u43
+  Power pin u43.3 (node VCC) is not connected to a fixed node.
+Device Not Tested (No Pins Toggled)
+Could Not Disable Bus
+
+Device Test: u44
+  Power pin u44.14 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+
+Device Test: u45
+  Power pin u45.3 (node VCC) is not connected to a fixed node.
+Device Not Tested (No Pins Toggled)
+Could Not Disable Bus
+
+Device Test: u46
+
+Device Test: u47
+
+Device Test: u48
+
+Device Test: u49
+
+Device Test: u50
+
+Device Test: u51
+
+Device Test: u52
+
+Device Test: u53
+
+Device Test: u54%program
+  Power pin u54%program.8 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+Could Not Disable Bus
+
+Device Test: u54%read
+  Power pin u54%read.8 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+Could Not Disable Bus
+
+Device Test: u54%test
+  Power pin u54%test.8 (node VCC) is not connected to a fixed node.
+All Pin States Reached In Test
+Could Not Disable Bus
+
+Device Test: u55
+
+Device Test: u56
+  Power pin u56.14 (node VCC) is not connected to a fixed node.
+79% of Pin States reached in test,  3 pins under-tested.
+Could Not Disable Bus
+
+Device Test: u57
+
+Device Test: +15v_sense
+
+Device Test: +27v_ru_n
+
+Device Test: +27v_ru_n_limit
+
+Device Test: +27v_ru_p
+
+Device Test: +27v_ru_p_limit
+
+Device Test: +27v_sv_n
+
+Device Test: +27v_sv_n_limit
+
+Device Test: +27v_sv_p
+
+Device Test: +27v_sv_p_limit
+
+Device Test: +27v_tw_n
+
+Device Test: +27v_tw_p_limit
+
+Device Test: 5v_hl2_hl2
+
+Device Test: 5v_ref_gnda
+
+Device Test: 24v_hl2_current
+
+Device Test: 24v_hl2_hl2
+
+Device Test: 24v_se
+
+Device Test: 24v_se_current
+
+Device Test: 24v_sense_24v_sense_rtn
+
+Device Test: 24v_sense_current
+
+Device Test: 24v_sw
+
+Device Test: 24v_sw_current
+
+Device Test: _15v_sense
+
+Device Test: cnv_oc_flt_1
+
+Device Test: cnv_oc_flt_2
+
+Device Test: cnv_oc_flt_3
+
+Device Test: cnv_oc_flt_4
+
+Device Test: cnv_oc_flt_5
+
+Device Test: cnv_oc_flt_6
+
+Device Test: cnv_oc_flt_pw_1
+
+Device Test: cnv_oc_flt_pw_2
+
+Device Test: cnv_oc_flt_pw_3
+
+Device Test: cnv_oc_flt_pw_4
+
+Device Test: cnv_oc_flt_pw_5
+
+Device Test: cnv_oc_flt_pw_6
+
+Device Test: dc_me_gnd_sense
+
+Device Test: duty_cycle_drain_ru
+
+Device Test: duty_cycle_drain_sv
+
+Device Test: duty_cycle_drain_tw
+
+Device Test: duty_cycle_gate_sense_ru
+
+Device Test: duty_cycle_gate_sense_sv
+
+Device Test: duty_cycle_gate_sense_tw
+
+Device Test: duty_cycle_smps_da1
+
+Device Test: duty_cycle_smps_da2
+
+Device Test: duty_cycle_smps_dain_gat
+
+Device Test: duty_cycle_smps_ga1
+
+Device Test: duty_cycle_smps_ga2
+
+Device Test: frequency_dcp_led
+
+Device Test: frequency_drain_ru
+
+Device Test: frequency_drain_sv
+
+Device Test: frequency_drain_tw
+
+Device Test: frequency_gate_sense_ru
+
+Device Test: frequency_gate_sense_sv
+
+Device Test: frequency_gate_sense_tw
+
+Device Test: frequency_smps_sense_da
+
+Device Test: frequency_smps_sense_ga
+
+Device Test: frequency_sw_temp_sensor
+
+Device Test: i_sense_pwm_controller
+
+Device Test: i_sense_ru
+
+Device Test: i_sense_sv
+
+Device Test: i_sense_tw
+
+Device Test: ntc1_gnd_sense
+
+Device Test: ntc1_ntc2
+
+Device Test: oct_inv_1
+
+Device Test: oct_inv_2
+
+Device Test: oct_inv_3
+
+Device Test: oct_inv_4
+
+Device Test: oct_inv_5
+
+Device Test: oct_inv_6
+
+Device Test: oct_inv_pw_1
+
+Device Test: oct_inv_pw_2
+
+Device Test: oct_inv_pw_3
+
+Device Test: oct_inv_pw_4
+
+Device Test: oct_inv_pw_5
+
+Device Test: oct_inv_pw_6
+
+Device Test: pf_igbt_inv_+27v_ru_n
+
+Device Test: pf_igbt_inv_+27v_ru_p
+
+Device Test: pf_igbt_inv_+27v_sv_n
+
+Device Test: pf_igbt_inv_+27v_sv_p
+
+Device Test: pf_igbt_inv_+27v_tw_n
+
+Device Test: pf_igbt_inv_+27v_tw_p
+
+Device Test: pfail_rs_conv_high
+
+Device Test: pfail_rs_conv_low
+
+Device Test: ptc_1_ptc_6_current
+
+Device Test: ptc_adc_load_1k
+
+Device Test: ptc_adc_open
+
+Device Test: ptc_adc_short
+
+Device Test: pwm_vcc_ru
+
+Device Test: pwm_vcc_sv
+
+Device Test: pwm_vcc_tw
+
+Device Test: r_res_ruo_close
+
+Device Test: r_res_ruo_open
+
+Device Test: ref_2v5_ru_n
+
+Device Test: ref_2v5_ru_p
+
+Device Test: ref_2v5_sv_n
+
+Device Test: ref_2v5_sv_p
+
+Device Test: ref_2v5_tw_n
+
+Device Test: ref_2v5_tw_p
+
+Device Test: ref_3v9_ru_n
+
+Device Test: ref_3v9_ru_p
+
+Device Test: ref_3v9_sv_n
+
+Device Test: ref_3v9_sv_p
+
+Device Test: ref_3v9_tw_n
+
+Device Test: ref_3v9_tw_p
+
+Device Test: ref_pri_n
+
+Device Test: ref_sec
+
+Device Test: run_g21_run_e21_high
+
+Device Test: run_g21_run_e21_low
+
+Device Test: rup_g11_rup_e11_high
+
+Device Test: rup_g11_rup_e11_low
+
+Device Test: s_res_svo_close
+
+Device Test: s_res_svo_open
+
+Device Test: sense_ir-2a
+
+Device Test: sense_ir_0a
+
+Device Test: sense_ir_2a
+
+Device Test: sense_is-2a
+
+Device Test: sense_is_0a
+
+Device Test: sense_is_2a
+
+Device Test: sense_iu-2a
+
+Device Test: sense_iu_0a
+
+Device Test: sense_iu_2a
+
+Device Test: sense_iv-2a
+
+Device Test: sense_iv_0a
+
+Device Test: sense_iv_2a
+
+Device Test: svn_g21_svn_e21_high
+
+Device Test: svn_g21_svn_e21_low
+
+Device Test: svp_g11_svp_e11_high
+
+Device Test: svp_g11_svp_e11_low
+
+Device Test: temp_igbt_gnda
+
+Device Test: temp_un_gnda
+
+Device Test: twn_g21_twn_e21_high
+
+Device Test: twn_g21_twn_e21_low
+
+Device Test: twp_g11_twp_e11_high
+
+Device Test: twp_g11_twp_e11_low
+
+Device Test: udcl_gnda
+
+Device Test: vcc_pwm_controller
+
+Device Test: vrs_dc_n_ac
+
+Device Test: vrs_dc_n_dc
+
+Device Test: vrs_n_ur
+
+Device Test: vrs_n_us
+
+Device Test: vrs_n_ut
+
+Device Test: vrs_n_vrs_out_n_falling
+
+Device Test: vrs_n_vrs_out_n_rising
+
+Device Test: vrs_out_dc_n_ac
+
+Device Test: vrs_out_dc_n_dc
+
+Device Test: vrs_out_n
+
+Device Test: vrs_out_n_ac
+
+Device Test: vrs_out_n_dc
+
+Device Test: vst_dc_n_ac
+
+Device Test: vst_dc_n_dc
+
+Device Test: vst_n_ur
+
+Device Test: vst_n_us
+
+Device Test: vst_n_ut
+
+Device Test: vst_n_vrs_out_n_falling
+
+Device Test: vst_n_vrs_out_n_rising
+
+Device Test: vst_out_dc_n_ac
+
+Device Test: vst_out_dc_n_dc
+
+Device Test: vst_out_n
+
+Device Test: vst_out_n_ac
+
+Device Test: vst_out_n_dc
+
+  *** Summary ***
+
+Shorts Test Summary
+  Number of shorts          =  115
+  Total number of nodes     =  763
+  Shorts threshold          =    8
+  Opens threshold           =   16
+  Inaccessible nodes        =   69
+
+Chek-Point Pins Test Summary
+  Number of nodes           =  763
+  Inaccessible nodes        =   69
+  Isolated nodes            =   88
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   81
+  Capacitors not discharged =    0
+  Maximum voltage           =   86
+
+Analog Subtests for Capacitors
+  Normal subtests           =   83
+  Parallel subtests         =  169
+  Limited subtests          =   19
+  Commented subtests        =   47
+  Null subtests             =    0
+  Nontestable subtests      =    2
+
+Analog Subtests for Diodes
+  Normal subtests           =   90
+  Parallel subtests         =   41
+  Limited subtests          =    0
+  Commented subtests        =   29
+  Null subtests             =    0
+  Nontestable subtests      =   19
+
+Analog Subtests for FETs
+  Normal subtests           =    3
+  Parallel subtests         =    0
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Inductors
+  Normal subtests           =    4
+  Parallel subtests         =    0
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Jumpers
+  Normal subtests           =   85
+  Parallel subtests         =    6
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Resistors
+  Normal subtests           =  294
+  Parallel subtests         =   41
+  Limited subtests          =  105
+  Commented subtests        =   28
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Switches
+  Normal subtests           =    1
+  Parallel subtests         =    0
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Transistors
+  Normal subtests           =   61
+  Parallel subtests         =    0
+  Limited subtests          =    0
+  Commented subtests        =   32
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Zeners
+  Normal subtests           =   60
+  Parallel subtests         =    0
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Digital Tests Summary
+  Devices fully tested      =   11
+  Devices partially tested  =    2
+  Devices not tested        =    6
+  Non digital devices       =    0
+  Setup libraries           =    1
+  Enabled bus problems      =   14
+  Null tests                =    0
+  Backtrace selected total  =    0
+  Backtrace files gen       =    0
+
+Analog Powered Tests Summary
+  Number tests generated               =  216
+  Number tests total                   =  216
+
+TestJet Test Summary
+  Devices tested            =   26
+  Devices not tested        =    0
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is To Be Generated
+    Chek-Point Pins Test Is To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing shorts test.
+Writing Chek-Point pins test.
+Writing capacitor discharge test.
+Writing analog tests.
+Writing testjet test.
+
+  *** Summary ***
+  *** Board Version G2A26800MX1 ***
+
+Shorts Test Summary
+  Number of shorts          =  102
+  Total number of nodes     =  763
+  Shorts threshold          =    8
+  Opens threshold           =   16
+  Inaccessible nodes        =   69
+
+Chek-Point Pins Test Summary
+  Number of nodes           =  763
+  Inaccessible nodes        =   69
+  Isolated nodes            =   95
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   82
+  Capacitors not discharged =    0
+  Maximum voltage           =   86
+
+Analog Subtests for Capacitors
+  Normal subtests           =    0
+  Parallel subtests         =    8
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Jumpers
+  Normal subtests           =   11
+  Parallel subtests         =    6
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+TestJet Test Summary
+  Devices tested            =   17
+  Devices not tested        =    0
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is To Be Generated
+    Chek-Point Pins Test Is To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing shorts test.
+Writing Chek-Point pins test.
+Writing capacitor discharge test.
+Writing analog tests.
+Writing testjet test.
+
+  *** Summary ***
+  *** Board Version G2A26800MX2 ***
+
+Shorts Test Summary
+  Number of shorts          =  100
+  Total number of nodes     =  763
+  Shorts threshold          =    8
+  Opens threshold           =   16
+  Inaccessible nodes        =   69
+
+Chek-Point Pins Test Summary
+  Number of nodes           =  763
+  Inaccessible nodes        =   69
+  Isolated nodes            =   97
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   83
+  Capacitors not discharged =    0
+  Maximum voltage           =   86
+
+Analog Subtests for Capacitors
+  Normal subtests           =    0
+  Parallel subtests         =    8
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Jumpers
+  Normal subtests           =   13
+  Parallel subtests         =    6
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+Analog Subtests for Resistors
+  Normal subtests           =    4
+  Parallel subtests         =    0
+  Limited subtests          =    0
+  Commented subtests        =    0
+  Null subtests             =    0
+  Nontestable subtests      =    0
+
+TestJet Test Summary
+  Devices tested            =   22
+  Devices not tested        =    0
+
+
+
+A power node does not have a defined state. Without a defined state,
+  IPG cannot properly edit any tests which have pins tied to this node. IPG
+  will be conservative in its editing, and may remove vectors that are
+  usable. Please enter a state for all fixed nodes tied to digital devices. (WARNING IPG503)
+
+
+
+A device has a pin tied to a fixed node for which no state was defined.
+  This test may have vectors commented that would be usable. Please enter the
+  states for all fixed nodes. (WARNING IPG504)
+
+
+
+  Nodes on this board are not accessible.  Check the ipg/summary file 
+  to identify the nodes, and verify that they should be inaccessible.
+
+
+
+  A capacitor discharge test was generated, and is in the analog 
+  directory.  Deletions of IPG-generated discharge statements in 
+  the discharge file may result in damage to the scanner relays.
+
+
+
+  Tests were generated for diodes and/or zeners that contain large-value
+  parallel capacitors. To work correctly, including failing when the
+  component is reversed, these tests may require a wait statement (wa) to
+  be added manually.
+
+Board Results
+
+     library and bscan tests : 236
+         total units         : 49
+         units retained      : 35 (71.4%)
+         total vectors       : 2444
+         vectors retained    : 2422 (99.1%)
+         total pin states    : 350
+         pin states used     : 170 (48.6%)
+         bus enabled tests   : 14
+         nondigital tests    : 0
+         complete tests      : 11
+         full tests          : 0
+         partial tests       : 2
+         empty tests         : 6
+         setup tests         : 1
+         analog null tests   : 0
+         skipped tests       : 0
+
+     analog devices       : 1202
+         limited analog   : 124
+         commented analog : 136
+         skipped analog   : 330
+
+     total shorts nodes : 763
+         nodes tested   : 694
+
+     total known shorts      : 115
+         known shorts tested : 115
+
+     total pins nodes      : 763
+         pins nodes tested : 606
+
+
+     The following digital tests had an enabled bus problem :
+          u7
+          u8%program
+          u8%read
+          u8%test
+          u10
+          u15
+          u27
+          u32
+          u43
+          u45
+          u54%program
+          u54%read
+          u54%test
+          u56
+
+     The following digital tests had no vectors removed :
+          u2
+          u6
+          u8%program
+          u8%read
+          u8%test
+          u11
+          u28
+          u44
+          u54%program
+          u54%read
+          u54%test
+
+     The following digital tests have some vectors removed :
+          u7
+          u56
+
+     The following digital tests have all vectors removed :
+          u10
+          u15
+          u27
+          u32
+          u43
+          u45
+
+     The following digital tests are setups only :
+          u3
+
+     The following analog tests are commented :
+          c1
+          c27
+          c31
+          c34
+          c42
+          c43
+          c44
+          c45
+          c46
+          c54
+          c60
+          c62
+          c67
+          c68
+          c69
+          c102
+          c104
+          c113
+          c114
+          c115
+          c116
+          c118
+          c133
+          c139
+          c141
+          c146
+          c147
+          c148
+          c172
+          c173
+          c182
+          c183
+          c184
+          c185
+          c186
+          c193
+          c199
+          c203
+          c208
+          c213
+          c214
+          c215
+          c235
+          c262
+          c281
+          c297
+          c312
+          d11
+          d12
+          d21
+          d22
+          d35
+          d36
+          d49
+          d50
+          d51
+          d53
+          d54
+          d55
+          d57
+          d58
+          d59
+          d61
+          d62
+          d63
+          d65
+          d66
+          d67
+          d70
+          d71
+          d72
+          q1
+          q2
+          q3
+          q4
+          q5
+          q6
+          q7
+          q8
+          q9
+          q10
+          q11
+          q12
+          q13
+          q14
+          q15
+          q16
+          q17
+          q18
+          q19
+          q20
+          q21
+          q22
+          q23
+          q23
+          q24
+          q25
+          q26%diode
+          q27%q1
+          q27%q2
+          q30%diode
+          q31%q1
+          q31%q2
+          q34%diode
+          q35%q1
+          q35%q2
+          r57
+          r58
+          r115
+          r116
+          r161
+          r162
+          r254
+          r255
+          r256
+          r260
+          r261
+          r262
+          r359
+          r360
+          r361
+          r365
+          r366
+          r367
+          r412
+          r413
+          r414
+          r421
+          r422
+          r426
+          r437
+          r438
+          r439
+          r440
+          z18
+          z19
+
+     The following analog tests are limited :
+          c21
+          c22
+          c24
+          c37
+          c38
+          c39
+          c108
+          c109
+          c110
+          c177
+          c178
+          c179
+          c200
+          c201
+          c256
+          c291
+          c294
+          c302
+          c316
+          r2
+          r6
+          r15
+          r21
+          r22
+          r23
+          r24
+          r31
+          r34
+          r35
+          r36
+          r37
+          r38
+          r39
+          r47
+          r62
+          r63
+          r64
+          r65
+          r66
+          r67
+          r69
+          r70
+          r71
+          r77
+          r78
+          r88
+          r90
+          r91
+          r94
+          r95
+          r102
+          r103
+          r104
+          r105
+          r122
+          r123
+          r124
+          r125
+          r126
+          r127
+          r129
+          r130
+          r131
+          r134
+          r135
+          r145
+          r146
+          r148
+          r149
+          r150
+          r151
+          r152
+          r153
+          r163
+          r164
+          r165
+          r166
+          r167
+          r168
+          r170
+          r171
+          r175
+          r176
+          r179
+          r181
+          r183
+          r187
+          r188
+          r197
+          r218
+          r219
+          r220
+          r228
+          r230
+          r269
+          r270
+          r271
+          r272
+          r273
+          r304
+          r305
+          r306
+          r329
+          r331
+          r373
+          r374
+          r375
+          r376
+          r377
+          r394
+          r395
+          r396
+          r401
+          r403
+          r431
+          r432
+          r433
+          r434
+          r435
+          r436
+          r448
+          r449
+          r454
+          r455
+
+     The following analog tests are marked skip :
+          c1
+          c2
+          c4
+          c5
+          c6
+          c8
+          c9
+          c11
+          c12
+          c13
+          c18
+          c19
+          c20
+          c22
+          c25
+          c27
+          c28
+          c30
+          c31
+          c34
+          c35
+          c36
+          c37
+          c39
+          c42
+          c43
+          c44
+          c45
+          c46
+          c52
+          c53
+          c54
+          c56
+          c57
+          c58
+          c59
+          c60
+          c62
+          c64
+          c65
+          c67
+          c68
+          c69
+          c73
+          c74
+          c75
+          c76
+          c77
+          c79
+          c80
+          c81
+          c82
+          c83
+          c84
+          c86
+          c87
+          c88
+          c89
+          c90
+          c91
+          c93
+          c96
+          c99
+          c100
+          c101
+          c102
+          c104
+          c106
+          c107
+          c108
+          c110
+          c113
+          c114
+          c115
+          c116
+          c118
+          c121
+          c122
+          c123
+          c124
+          c129
+          c133
+          c135
+          c136
+          c137
+          c138
+          c139
+          c141
+          c143
+          c144
+          c146
+          c147
+          c148
+          c149
+          c150
+          c154
+          c155
+          c156
+          c157
+          c158
+          c160
+          c161
+          c162
+          c163
+          c164
+          c166
+          c168
+          c170
+          c171
+          c172
+          c173
+          c174
+          c175
+          c176
+          c177
+          c179
+          c182
+          c183
+          c184
+          c185
+          c186
+          c188
+          c193
+          c195
+          c196
+          c197
+          c198
+          c199
+          c200
+          c201
+          c203
+          c205
+          c206
+          c208
+          c213
+          c214
+          c215
+          c217
+          c220
+          c221
+          c222
+          c223
+          c224
+          c226
+          c227
+          c228
+          c229
+          c230
+          c232
+          c233
+          c235
+          c237
+          c239
+          c240
+          c241
+          c242
+          c243
+          c245
+          c246
+          c247
+          c248
+          c252
+          c254
+          c255
+          c256
+          c262
+          c268
+          c269
+          c271
+          c272
+          c278
+          c279
+          c281
+          c282
+          c285
+          c286
+          c288
+          c289
+          c296
+          c297
+          c299
+          c300
+          c301
+          c302
+          c307
+          c308
+          c310
+          c311
+          c312
+          c313
+          c316
+          d2%pins1_2
+          d3%pins1_2
+          d5%cr2
+          d5%cr3
+          d5%cr4
+          d9%cr2
+          d9%cr4
+          d11
+          d12
+          d16%cr3
+          d17%cr3
+          d21
+          d22
+          d25%pins1_3
+          d27%pins1_3
+          d28%cr3
+          d29%cr3
+          d35
+          d36
+          d43%cr3
+          d44%cr3
+          d45%cr2
+          d45%cr3
+          d45%cr4
+          d46%cr2
+          d46%cr3
+          d46%cr4
+          d47%cr2
+          d47%cr3
+          d47%cr4
+          d49
+          d50
+          d51
+          d53
+          d54
+          d55
+          d57
+          d58
+          d59
+          d61
+          d62
+          d63
+          d65
+          d66
+          d67
+          d70
+          d71
+          d72
+          q26%diode
+          q27%jp7
+          q30%diode
+          q31%jp7
+          q34%diode
+          q35%jp7
+          r57
+          r58
+          r64
+          r65
+          r67
+          r97
+          r115
+          r116
+          r118
+          r124
+          r125
+          r127
+          r161
+          r162
+          r165
+          r166
+          r168
+          r188
+          r190%res1_8
+          r190%res2_7
+          r190%res3_6
+          r190%res4_5
+          r198
+          r219
+          r220
+          r238
+          r249
+          r252
+          r253
+          r254
+          r255
+          r256
+          r260
+          r261
+          r262
+          r263
+          r264
+          r268
+          r270
+          r271
+          r273
+          r292
+          r305
+          r306
+          r309
+          r332
+          r351
+          r353
+          r354
+          r359
+          r360
+          r361
+          r365
+          r366
+          r367
+          r368
+          r369
+          r374
+          r375
+          r377
+          r395
+          r396
+          r404
+          r408
+          r409
+          r412
+          r413
+          r414
+          r421
+          r422
+          r426
+          r427
+          r428
+          r430
+          r432
+          r433
+          r435
+          r437
+          r438
+          r439
+          r440
+          r451
+          z18
+          z19
+          z76
+
+Board Results for version "G2A26800MX1"
+
+     library and bscan tests : 236
+         total units         : 34
+         units retained      : 25 (73.5%)
+         total vectors       : 1239
+         vectors retained    : 1227 (99.0%)
+         total pin states    : 274
+         pin states used     : 118 (43.1%)
+         bus enabled tests   : 10
+         nondigital tests    : 0
+         complete tests      : 7
+         full tests          : 0
+         partial tests       : 1
+         empty tests         : 6
+         setup tests         : 1
+         analog null tests   : 0
+         skipped tests       : 20
+
+     analog devices       : 1181
+         limited analog   : 97
+         commented analog : 117
+         skipped analog   : 581
+
+     total shorts nodes : 763
+         nodes tested   : 694
+
+     total known shorts      : 102
+         known shorts tested : 102
+
+     total pins nodes      : 763
+         pins nodes tested : 599
+
+
+     The following digital tests had an enabled bus problem :
+          u10
+          u15
+          u27
+          u32
+          u43
+          u45
+          u54%program
+          u54%read
+          u54%test
+          u56
+
+     The following digital tests had no vectors removed :
+          u2
+          u11
+          u28
+          u44
+          u54%program
+          u54%read
+          u54%test
+
+     The following digital tests have some vectors removed :
+          u56
+
+     The following digital tests have all vectors removed :
+          u10
+          u15
+          u27
+          u32
+          u43
+          u45
+
+     The following digital tests are setups only :
+          u3
+
+     The following digital tests are marked skip :
+          cs3
+          rel1
+          rel2
+          u6
+          u7
+          u8%program
+          u8%read
+          u8%test
+          u24
+          u25
+          u29
+          u30
+          u31
+          u33
+          u34
+          u35
+          u40
+          u41
+          u53
+          u55
+
+     The following analog tests are commented :
+          c1
+          c27
+          c31
+          c34
+          c42
+          c43
+          c44
+          c45
+          c46
+          c54
+          c60
+          c62
+          c67
+          c68
+          c69
+          c102
+          c104
+          c113
+          c114
+          c115
+          c116
+          c118
+          c133
+          c139
+          c141
+          c146
+          c147
+          c148
+          c172
+          c173
+          c182
+          c183
+          c184
+          c185
+          c186
+          c193
+          c199
+          c203
+          c208
+          c213
+          c214
+          c215
+          c235
+          c262
+          c281
+          c297
+          c312
+          d49
+          d50
+          d51
+          d53
+          d54
+          d55
+          d57
+          d58
+          d59
+          d61
+          d62
+          d63
+          d65
+          d66
+          d67
+          d70
+          d71
+          d72
+          q3
+          q4
+          q5
+          q6
+          q7
+          q8
+          q9
+          q11
+          q13
+          q14
+          q15
+          q16
+          q18
+          q19
+          q20
+          q21
+          q22
+          q23
+          q23
+          q25
+          q26%diode
+          q30%diode
+          q34%diode
+          r57
+          r58
+          r115
+          r116
+          r161
+          r162
+          r254
+          r255
+          r256
+          r260
+          r261
+          r262
+          r359
+          r360
+          r361
+          r365
+          r366
+          r367
+          r412
+          r413
+          r414
+          r421
+          r422
+          r426
+          r437
+          r438
+          r439
+          r440
+          z18
+
+     The following analog tests are limited :
+          c24
+          c37
+          c38
+          c39
+          c108
+          c109
+          c110
+          c177
+          c178
+          c179
+          c200
+          c201
+          c302
+          r2
+          r6
+          r15
+          r21
+          r35
+          r36
+          r38
+          r47
+          r62
+          r63
+          r64
+          r65
+          r66
+          r67
+          r69
+          r71
+          r77
+          r88
+          r91
+          r95
+          r102
+          r104
+          r122
+          r123
+          r124
+          r125
+          r126
+          r127
+          r129
+          r131
+          r134
+          r145
+          r149
+          r150
+          r152
+          r163
+          r164
+          r165
+          r166
+          r167
+          r168
+          r170
+          r175
+          r176
+          r179
+          r183
+          r187
+          r188
+          r197
+          r218
+          r219
+          r220
+          r228
+          r230
+          r269
+          r270
+          r271
+          r272
+          r273
+          r304
+          r305
+          r306
+          r329
+          r331
+          r373
+          r374
+          r375
+          r376
+          r377
+          r394
+          r395
+          r396
+          r401
+          r403
+          r431
+          r432
+          r433
+          r434
+          r435
+          r436
+          r448
+          r449
+          r454
+          r455
+
+     The following analog tests are marked skip :
+          c1
+          c2
+          c4
+          c5
+          c6
+          c8
+          c9
+          c11
+          c12
+          c13
+          c17
+          c18
+          c19
+          c20
+          c21
+          c22
+          c23
+          c25
+          c27
+          c28
+          c30
+          c31
+          c32
+          c33
+          c34
+          c35
+          c36
+          c37
+          c39
+          c42
+          c43
+          c44
+          c45
+          c46
+          c51
+          c52
+          c53
+          c54
+          c56
+          c57
+          c58
+          c59
+          c60
+          c62
+          c64
+          c65
+          c67
+          c68
+          c69
+          c72
+          c73
+          c74
+          c75
+          c76
+          c77
+          c79
+          c80
+          c81
+          c82
+          c83
+          c84
+          c86
+          c87
+          c88
+          c89
+          c90
+          c91
+          c93
+          c96
+          c99
+          c100
+          c101
+          c102
+          c104
+          c105
+          c106
+          c107
+          c108
+          c110
+          c113
+          c114
+          c115
+          c116
+          c117
+          c118
+          c121
+          c122
+          c123
+          c124
+          c125
+          c126
+          c129
+          c130
+          c131
+          c132
+          c133
+          c135
+          c136
+          c137
+          c138
+          c139
+          c140
+          c141
+          c143
+          c144
+          c146
+          c147
+          c148
+          c149
+          c150
+          c151
+          c153
+          c154
+          c155
+          c156
+          c157
+          c158
+          c159
+          c160
+          c161
+          c162
+          c163
+          c164
+          c165
+          c166
+          c167
+          c168
+          c169
+          c170
+          c171
+          c172
+          c173
+          c174
+          c175
+          c176
+          c177
+          c179
+          c182
+          c183
+          c184
+          c185
+          c186
+          c187
+          c188
+          c193
+          c195
+          c196
+          c197
+          c198
+          c199
+          c200
+          c201
+          c203
+          c205
+          c206
+          c208
+          c211
+          c212
+          c213
+          c214
+          c215
+          c217
+          c219
+          c220
+          c221
+          c222
+          c223
+          c224
+          c225
+          c226
+          c227
+          c228
+          c229
+          c230
+          c232
+          c233
+          c235
+          c236
+          c237
+          c239
+          c240
+          c241
+          c242
+          c243
+          c245
+          c246
+          c247
+          c248
+          c252
+          c254
+          c255
+          c256
+          c259
+          c260
+          c262
+          c266
+          c268
+          c269
+          c271
+          c272
+          c278
+          c279
+          c280
+          c281
+          c282
+          c283
+          c285
+          c286
+          c288
+          c289
+          c290
+          c291
+          c294
+          c295
+          c296
+          c297
+          c299
+          c300
+          c301
+          c302
+          c304
+          c307
+          c308
+          c310
+          c311
+          c312
+          c313
+          c316
+          c317
+          c318
+          c319
+          d2%pins1_2
+          d3%pins1_2
+          d5%cr2
+          d5%cr3
+          d5%cr4
+          d9%cr2
+          d9%cr4
+          d11
+          d12
+          d16%cr3
+          d17%cr3
+          d21
+          d22
+          d25%pins1_2
+          d25%pins1_3
+          d25%pins3_2
+          d27%pins1_2
+          d27%pins1_3
+          d27%pins3_2
+          d28%cr3
+          d29%cr3
+          d30%diode
+          d31%diode
+          d35
+          d36
+          d43%cr3
+          d44%cr3
+          d45%cr1
+          d45%cr2
+          d45%cr3
+          d45%cr4
+          d46%cr1
+          d46%cr2
+          d46%cr3
+          d46%cr4
+          d47%cr1
+          d47%cr2
+          d47%cr3
+          d47%cr4
+          d49
+          d50
+          d51
+          d53
+          d54
+          d55
+          d57
+          d58
+          d59
+          d61
+          d62
+          d63
+          d65
+          d66
+          d67
+          d70
+          d71
+          d72
+          d78
+          jp9
+          jp11
+          jp13
+          jp15
+          q1
+          q2
+          q10
+          q12
+          q17
+          q24
+          q26%diode
+          q27%cr1
+          q27%cr2
+          q27%jp1
+          q27%jp2
+          q27%jp3
+          q27%jp4
+          q27%jp5
+          q27%jp6
+          q27%jp7
+          q27%jp8
+          q27%jp9
+          q27%jp10
+          q27%jp11
+          q27%jp12
+          q27%jp13
+          q27%q1
+          q27%q2
+          q27%r1
+          q30%diode
+          q31%cr1
+          q31%cr2
+          q31%jp1
+          q31%jp2
+          q31%jp3
+          q31%jp4
+          q31%jp5
+          q31%jp6
+          q31%jp7
+          q31%jp8
+          q31%jp9
+          q31%jp10
+          q31%jp11
+          q31%jp12
+          q31%jp13
+          q31%q1
+          q31%q2
+          q31%r1
+          q34%diode
+          q35%cr1
+          q35%cr2
+          q35%jp1
+          q35%jp2
+          q35%jp3
+          q35%jp4
+          q35%jp5
+          q35%jp6
+          q35%jp7
+          q35%jp8
+          q35%jp9
+          q35%jp10
+          q35%jp11
+          q35%jp12
+          q35%jp13
+          q35%q1
+          q35%q2
+          q35%r1
+          r7
+          r8
+          r10%res1_8
+          r10%res2_7
+          r10%res3_6
+          r10%res4_5
+          r11%res1_8
+          r11%res2_7
+          r11%res3_6
+          r11%res4_5
+          r12
+          r22
+          r23
+          r24
+          r25
+          r26
+          r27
+          r28
+          r29
+          r30
+          r31
+          r32
+          r34
+          r37
+          r39
+          r45
+          r57
+          r58
+          r64
+          r65
+          r67
+          r70
+          r78
+          r90
+          r92
+          r94
+          r96
+          r97
+          r98
+          r99
+          r100
+          r101
+          r103
+          r105
+          r108
+          r109
+          r110
+          r115
+          r116
+          r117
+          r118
+          r119
+          r120
+          r121
+          r124
+          r125
+          r127
+          r130
+          r135
+          r136
+          r137
+          r138
+          r139
+          r140
+          r143
+          r146
+          r148
+          r151
+          r153
+          r154
+          r161
+          r162
+          r165
+          r166
+          r168
+          r171
+          r181
+          r188
+          r189
+          r190%res1_8
+          r190%res2_7
+          r190%res3_6
+          r190%res4_5
+          r191
+          r192
+          r193
+          r198
+          r219
+          r220
+          r238
+          r249
+          r252
+          r253
+          r254
+          r255
+          r256
+          r260
+          r261
+          r262
+          r263
+          r264
+          r268
+          r270
+          r271
+          r273
+          r277
+          r278
+          r292
+          r296
+          r297
+          r298
+          r299
+          r300
+          r301
+          r302
+          r303
+          r305
+          r306
+          r307
+          r308
+          r309
+          r310
+          r311
+          r312
+          r313
+          r314
+          r315
+          r316
+          r317
+          r320
+          r321
+          r322
+          r323
+          r324
+          r325
+          r326
+          r327
+          r328
+          r332
+          r333
+          r334
+          r335
+          r336
+          r337
+          r338
+          r339
+          r340
+          r343
+          r344
+          r345
+          r346
+          r347
+          r348
+          r349
+          r350
+          r351
+          r353
+          r354
+          r355
+          r356
+          r357
+          r358
+          r359
+          r360
+          r361
+          r365
+          r366
+          r367
+          r368
+          r369
+          r370
+          r371
+          r372
+          r374
+          r375
+          r377
+          r378
+          r379
+          r380
+          r381
+          r382
+          r383
+          r384
+          r385
+          r386
+          r387
+          r392
+          r393
+          r395
+          r396
+          r398
+          r399
+          r404
+          r408
+          r409
+          r412
+          r413
+          r414
+          r419
+          r421
+          r422
+          r426
+          r427
+          r428
+          r430
+          r432
+          r433
+          r435
+          r437
+          r438
+          r439
+          r440
+          r450
+          r451
+          u24%d1_2
+          u24%d3_4
+          u24%d5_6
+          u33%d1_2
+          u33%d3_4
+          u33%d5_6
+          u41%d1
+          u53%d1
+          z18
+          z19
+          z76
+
+Board Results for version "G2A26800MX2"
+
+     library and bscan tests : 236
+         total units         : 39
+         units retained      : 28 (71.8%)
+         total vectors       : 1247
+         vectors retained    : 1231 (98.7%)
+         total pin states    : 256
+         pin states used     : 124 (48.4%)
+         bus enabled tests   : 10
+         nondigital tests    : 0
+         complete tests      : 7
+         full tests          : 0
+         partial tests       : 1
+         empty tests         : 6
+         setup tests         : 0
+         analog null tests   : 0
+         skipped tests       : 13
+
+     analog devices       : 1187
+         limited analog   : 94
+         commented analog : 119
+         skipped analog   : 526
+
+     total shorts nodes : 763
+         nodes tested   : 694
+
+     total known shorts      : 100
+         known shorts tested : 100
+
+     total pins nodes      : 763
+         pins nodes tested : 597
+
+
+     The following digital tests had an enabled bus problem :
+          u7
+          u8%program
+          u8%read
+          u8%test
+          u10
+          u15
+          u27
+          u32
+          u43
+          u45
+
+     The following digital tests had no vectors removed :
+          u6
+          u8%program
+          u8%read
+          u8%test
+          u11
+          u28
+          u44
+
+     The following digital tests have some vectors removed :
+          u7
+
+     The following digital tests have all vectors removed :
+          u10
+          u15
+          u27
+          u32
+          u43
+          u45
+
+     The following digital tests are marked skip :
+          cs3
+          u1
+          u2
+          u3
+          u4
+          u5
+          u12
+          u13
+          u14
+          u54%program
+          u54%read
+          u54%test
+          u56
+
+     The following analog tests are commented :
+          c31
+          c34
+          c42
+          c43
+          c44
+          c45
+          c46
+          c54
+          c60
+          c62
+          c67
+          c68
+          c69
+          c102
+          c104
+          c113
+          c114
+          c115
+          c116
+          c118
+          c133
+          c139
+          c141
+          c146
+          c147
+          c148
+          c172
+          c173
+          c182
+          c183
+          c184
+          c185
+          c186
+          c193
+          c199
+          c203
+          c208
+          c213
+          c214
+          c215
+          c235
+          c262
+          c281
+          c297
+          c312
+          d49
+          d50
+          d51
+          d53
+          d54
+          d55
+          d57
+          d58
+          d59
+          d61
+          d62
+          d63
+          d65
+          d66
+          d67
+          d70
+          d71
+          d72
+          q1
+          q2
+          q3
+          q5
+          q6
+          q7
+          q8
+          q9
+          q10
+          q11
+          q12
+          q13
+          q14
+          q15
+          q16
+          q17
+          q18
+          q19
+          q20
+          q21
+          q22
+          q23
+          q23
+          q24
+          q26%diode
+          q30%diode
+          q34%diode
+          r57
+          r58
+          r115
+          r116
+          r161
+          r162
+          r254
+          r255
+          r256
+          r260
+          r261
+          r262
+          r359
+          r360
+          r361
+          r365
+          r366
+          r367
+          r412
+          r413
+          r414
+          r421
+          r422
+          r426
+          r437
+          r438
+          r439
+          r440
+          z19
+
+     The following analog tests are limited :
+          c21
+          c22
+          c37
+          c38
+          c39
+          c108
+          c109
+          c110
+          c177
+          c178
+          c179
+          c200
+          c201
+          c256
+          c291
+          c294
+          c302
+          c316
+          r22
+          r23
+          r24
+          r31
+          r34
+          r36
+          r39
+          r62
+          r63
+          r64
+          r65
+          r66
+          r67
+          r69
+          r71
+          r77
+          r88
+          r90
+          r94
+          r102
+          r105
+          r122
+          r123
+          r124
+          r125
+          r126
+          r127
+          r129
+          r131
+          r134
+          r146
+          r148
+          r150
+          r153
+          r163
+          r164
+          r165
+          r166
+          r167
+          r168
+          r170
+          r175
+          r176
+          r179
+          r183
+          r218
+          r219
+          r220
+          r228
+          r230
+          r269
+          r270
+          r271
+          r272
+          r273
+          r304
+          r305
+          r306
+          r329
+          r331
+          r373
+          r374
+          r375
+          r376
+          r377
+          r394
+          r395
+          r396
+          r401
+          r403
+          r431
+          r432
+          r433
+          r434
+          r435
+          r436
+
+     The following analog tests are marked skip :
+          c1
+          c2
+          c3
+          c4
+          c5
+          c6
+          c7
+          c8
+          c9
+          c10
+          c11
+          c12
+          c13
+          c14
+          c15
+          c16
+          c18
+          c19
+          c20
+          c22
+          c24
+          c25
+          c26
+          c27
+          c28
+          c29
+          c30
+          c31
+          c34
+          c35
+          c36
+          c37
+          c39
+          c42
+          c43
+          c44
+          c45
+          c46
+          c51
+          c52
+          c53
+          c54
+          c56
+          c57
+          c58
+          c59
+          c60
+          c61
+          c62
+          c64
+          c65
+          c67
+          c68
+          c69
+          c72
+          c73
+          c74
+          c75
+          c76
+          c77
+          c79
+          c80
+          c81
+          c82
+          c83
+          c84
+          c86
+          c87
+          c88
+          c89
+          c90
+          c91
+          c93
+          c96
+          c99
+          c100
+          c101
+          c102
+          c103
+          c104
+          c106
+          c107
+          c108
+          c110
+          c113
+          c114
+          c115
+          c116
+          c118
+          c121
+          c122
+          c123
+          c124
+          c129
+          c133
+          c135
+          c136
+          c137
+          c138
+          c139
+          c141
+          c143
+          c144
+          c146
+          c147
+          c148
+          c149
+          c150
+          c153
+          c154
+          c155
+          c156
+          c157
+          c158
+          c159
+          c160
+          c161
+          c162
+          c163
+          c164
+          c166
+          c168
+          c169
+          c170
+          c171
+          c172
+          c173
+          c174
+          c175
+          c176
+          c177
+          c179
+          c182
+          c183
+          c184
+          c185
+          c186
+          c187
+          c188
+          c193
+          c195
+          c196
+          c197
+          c198
+          c199
+          c200
+          c201
+          c203
+          c205
+          c206
+          c208
+          c211
+          c212
+          c213
+          c214
+          c215
+          c217
+          c219
+          c220
+          c221
+          c222
+          c223
+          c224
+          c225
+          c226
+          c227
+          c228
+          c229
+          c230
+          c232
+          c233
+          c235
+          c236
+          c237
+          c238
+          c239
+          c240
+          c241
+          c242
+          c243
+          c244
+          c245
+          c246
+          c247
+          c248
+          c249
+          c252
+          c254
+          c255
+          c256
+          c257
+          c258
+          c259
+          c260
+          c261
+          c262
+          c263
+          c264
+          c265
+          c266
+          c268
+          c269
+          c271
+          c272
+          c278
+          c279
+          c281
+          c282
+          c285
+          c286
+          c288
+          c289
+          c296
+          c297
+          c299
+          c300
+          c301
+          c302
+          c304
+          c305
+          c307
+          c308
+          c310
+          c311
+          c312
+          c313
+          c316
+          d1%pins1_2
+          d1%pins1_3
+          d1%pins3_2
+          d2%pins1_2
+          d2%pins1_3
+          d2%pins3_2
+          d3%pins1_2
+          d3%pins1_3
+          d3%pins3_2
+          d4%pins1_2
+          d4%pins1_3
+          d4%pins3_2
+          d5%cr1
+          d5%cr2
+          d5%cr3
+          d5%cr4
+          d8%pins1_2
+          d8%pins1_3
+          d8%pins3_2
+          d9%cr1
+          d9%cr2
+          d9%cr3
+          d9%cr4
+          d11
+          d12
+          d16%cr3
+          d17%cr3
+          d21
+          d22
+          d25%pins1_3
+          d27%pins1_3
+          d28%cr3
+          d29%cr3
+          d35
+          d36
+          d43%cr3
+          d44%cr3
+          d45%cr2
+          d45%cr3
+          d45%cr4
+          d46%cr2
+          d46%cr3
+          d46%cr4
+          d47%cr2
+          d47%cr3
+          d47%cr4
+          d49
+          d50
+          d51
+          d53
+          d54
+          d55
+          d57
+          d58
+          d59
+          d61
+          d62
+          d63
+          d65
+          d66
+          d67
+          d70
+          d71
+          d72
+          d76
+          jp10
+          jp12
+          jp14
+          jp16
+          l1
+          q4
+          q25
+          q26%diode
+          q27%cr1
+          q27%cr2
+          q27%jp1
+          q27%jp2
+          q27%jp3
+          q27%jp4
+          q27%jp5
+          q27%jp6
+          q27%jp7
+          q27%jp8
+          q27%jp9
+          q27%jp10
+          q27%jp11
+          q27%jp12
+          q27%jp13
+          q27%q1
+          q27%q2
+          q27%r1
+          q30%diode
+          q31%cr1
+          q31%cr2
+          q31%jp1
+          q31%jp2
+          q31%jp3
+          q31%jp4
+          q31%jp5
+          q31%jp6
+          q31%jp7
+          q31%jp8
+          q31%jp9
+          q31%jp10
+          q31%jp11
+          q31%jp12
+          q31%jp13
+          q31%q1
+          q31%q2
+          q31%r1
+          q34%diode
+          q35%cr1
+          q35%cr2
+          q35%jp1
+          q35%jp2
+          q35%jp3
+          q35%jp4
+          q35%jp5
+          q35%jp6
+          q35%jp7
+          q35%jp8
+          q35%jp9
+          q35%jp10
+          q35%jp11
+          q35%jp12
+          q35%jp13
+          q35%q1
+          q35%q2
+          q35%r1
+          r1
+          r2
+          r4
+          r6
+          r9
+          r13
+          r14
+          r15
+          r16
+          r17
+          r18
+          r21
+          r35
+          r37
+          r38
+          r42
+          r43
+          r44
+          r45
+          r46
+          r47
+          r48
+          r49
+          r50
+          r53
+          r54
+          r57
+          r58
+          r59
+          r60
+          r61
+          r64
+          r65
+          r67
+          r70
+          r78
+          r91
+          r95
+          r97
+          r103
+          r104
+          r115
+          r116
+          r118
+          r124
+          r125
+          r127
+          r130
+          r135
+          r145
+          r149
+          r151
+          r152
+          r161
+          r162
+          r165
+          r166
+          r168
+          r171
+          r181
+          r187
+          r188
+          r189
+          r196
+          r197
+          r198
+          r205
+          r206
+          r207
+          r208
+          r209
+          r210
+          r211
+          r212
+          r213
+          r214
+          r215
+          r219
+          r220
+          r222
+          r223
+          r224
+          r225
+          r226
+          r231
+          r232
+          r233
+          r234
+          r235
+          r236
+          r238
+          r239
+          r240
+          r241
+          r242
+          r243
+          r244
+          r247
+          r248
+          r249
+          r250
+          r252
+          r253
+          r254
+          r255
+          r256
+          r260
+          r261
+          r262
+          r263
+          r264
+          r268
+          r270
+          r271
+          r273
+          r277
+          r278
+          r292
+          r305
+          r306
+          r309
+          r332
+          r351
+          r353
+          r354
+          r359
+          r360
+          r361
+          r365
+          r366
+          r367
+          r368
+          r369
+          r374
+          r375
+          r377
+          r392
+          r395
+          r396
+          r404
+          r408
+          r409
+          r412
+          r413
+          r414
+          r419
+          r421
+          r422
+          r426
+          r427
+          r428
+          r430
+          r432
+          r433
+          r435
+          r437
+          r438
+          r439
+          r440
+          r448
+          r449
+          r451
+          r454
+          r455
+          u14%d1_2
+          u14%d3_4
+          u14%d5_6
+          z18
+          z19
+          z76
+------------------------------------------------------------------------------
+AGILENT 3070 IPG Summary Report Rev 05.21p  Thu Jan 28 10:54:47 2010      
+
+G2A26800MXx
+------------------------------------------------------------------------------
+
+Reading "testorder".
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is NOT To Be Generated
+    Chek-Point Pins Test Is NOT To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing capacitor discharge test.
+
+  *** Summary ***
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   79
+  Capacitors not discharged =    0
+  Maximum voltage           =   76
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is NOT To Be Generated
+    Chek-Point Pins Test Is NOT To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing capacitor discharge test.
+
+  *** Summary ***
+  *** Board Version G2A26800MX1 ***
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   80
+  Capacitors not discharged =    0
+  Maximum voltage           =   76
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is NOT To Be Generated
+    Chek-Point Pins Test Is NOT To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing capacitor discharge test.
+
+  *** Summary ***
+  *** Board Version G2A26800MX2 ***
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   81
+  Capacitors not discharged =    0
+  Maximum voltage           =   76
+
+
+
+A power node does not have a defined state. Without a defined state,
+  IPG cannot properly edit any tests which have pins tied to this node. IPG
+  will be conservative in its editing, and may remove vectors that are
+  usable. Please enter a state for all fixed nodes tied to digital devices. (WARNING IPG503)
+
+
+
+A device has a pin tied to a fixed node for which no state was defined.
+  This test may have vectors commented that would be usable. Please enter the
+  states for all fixed nodes. (WARNING IPG504)
+
+
+
+  Nodes on this board are not accessible.  Check the ipg/summary file 
+  to identify the nodes, and verify that they should be inaccessible.
+
+
+
+  A capacitor discharge test was generated, and is in the analog 
+  directory.  Deletions of IPG-generated discharge statements in 
+  the discharge file may result in damage to the scanner relays.
+
+Board Results
+
+
+Board Results for version "G2A26800MX1"
+
+
+Board Results for version "G2A26800MX2"
+

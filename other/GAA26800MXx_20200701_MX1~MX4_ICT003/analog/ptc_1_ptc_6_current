@@ -1,0 +1,42 @@
+!!!!    2    0    1 1273768078   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:44 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;RX2
+   disconnect all
+   gpconnect 21852 to 21853      !@ power on the relay board
+   connect s to nodes "RELAY_10" !@ load 1k/1% resistor between PTC_1/PTC_6  
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   wait 300m
+   test "PTC_1_HL2"
+   test "PTC_6_HL2"
+   test "CURRENT"
+   gpdisconnect 21852 from 21853
+end test
+
+subtest "PTC_1_HL2"
+   global V1
+   connect i to nodes "PTC_1"
+   connect l to nodes "HL2"
+   detector dcv, expect 5
+   initiate detector
+   fetch V1
+   !@report analog  0.5, 0.0, V1
+end subtest
+
+subtest "PTC_6_HL2"
+   global V2
+   connect i to nodes "PTC_6"
+   connect l to nodes "HL2"
+   detector dcv, expect 5
+   initiate detector
+   fetch V2
+   !@report analog  0.5, 0.0, V2
+end subtest
+
+subtest "CURRENT"
+   global V1,V2,RX2
+   report analog 0.0056, 0.004, (V1-V2)/RX2   !@ I read from sps 3
+end subtest

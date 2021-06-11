@@ -1,0 +1,19 @@
+!!!!    2    0    1 1596706887   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:42 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c47 2.20n"
+end on failure
+disconnect all
+connect s to "UNNAMED_46_C_I260_B"
+connect i to "UNNAMED_46_C_I260_A"
+resistor 680k, 5.94, 5.82, re5, wb, ar100m, wa30m ,en
+! "r40" test.
+! DUT: nominal 680k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 686.8k, low 673.2k
+! TEST: high limit 693.165k, low limit 667.635k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

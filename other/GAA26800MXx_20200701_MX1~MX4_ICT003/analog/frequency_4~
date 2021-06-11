@@ -1,0 +1,25 @@
+!!!!    2    0    1 1274250097  Vdd2f                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:40 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;Freq
+   disconnect all
+   gpconnect 21852 to 21853     ! power on the RELAY board
+   gpconnect 21854 to 21855     ! power on the OPTO board
+   connect s to nodes "RELAY_7"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   wait 30m
+   test "Frequency"
+   gpdisconnect 21852 from 21853
+   gpdisconnect 21854 from 21855
+end test
+
+subtest  "Frequency"
+   global Freq
+   connect rcva to nodes "PWM_OUT7" !@nodes "SMPS_SENSE_GATE"
+   connect l to nodes "24V_SMPS_SENSE_RTN"
+   detector frequency, expect 160k, threshold 2.5, gate 0
+   arm detector
+   fetch Freq
+!@ report analog 180k, 140k, Freq
+!@ measure 180k, 140k
+end subtest

@@ -1,0 +1,95 @@
+!!!!    2    0    1 1263664070  V6cde                                         
+! Device        : IL300 Functional Test
+! Manufacturer  :
+! Description   : Positive Voltage Regulator  3.3 Volt
+! Package       : 8 pin
+! Test Platform : HP3070
+! Safeguard     :
+! Developed by  : Kicky Chen
+! revision      : A.01.00
+
+test powered analog
+   disconnect all
+   nonanalog pins 7,8
+   test "LED_Off"
+   test "K1_Off"
+   test "K2_Off"
+
+   test "LED_On"
+   test "K1_On"
+   test "K2_On"
+end test
+
+subtest "LED_Off"
+   connect s to pins 1            ! drive Collector via tester resistor
+   connect i to pins 2           ! measure at Collector
+   connect l to pins 2           ! measure at Emitter
+   connect g to pins 2           ! drive Cathode
+   source dcv, amplitude 0.0, terminated 5000, icompliance 1, on
+   detector dcv, expect 0.0
+   measure 0.8, -0.5
+end subtest
+
+subtest "K1_Off"
+   connect s to pins 1           ! drive Collector via tester resistor
+   connect a to pins 3           ! drive Anode via on-board resistor
+   connect i to pins 4           ! measure at Collector
+   connect l to pins 4           ! measure at Emitter
+   connect g to pins 4           ! drive Emitter
+   connect g to pins 2           ! drive Cathode
+   source dcv, amplitude 0.0, terminated 5000, icompliance 1, on
+   auxiliary dcv, amplitude 3, icompliance 1, on
+   detector dcv, expect 3.0
+   measure 0.5, -0.5
+end subtest
+
+subtest "K2_Off"
+   connect s to pins 1           ! drive Collector via tester resistor
+   connect a to pins 6           ! drive Anode via on-board resistor
+   connect i to pins 5           ! measure at Collector
+   connect l to pins 5           ! measure at Emitter
+   connect g to pins 5           ! drive Emitter
+   connect g to pins 2           ! drive Cathode
+   detector dcv, expect 5.0
+   source dcv, amplitude 0.0, terminated 5000, icompliance 1, on
+   auxiliary dcv, amplitude 3, icompliance 1, on
+   measure 0.5, -0.5
+end subtest
+
+subtest "LED_On"
+   connect s to pins 1            ! drive Collector via tester resistor
+   connect i to pins 2           ! measure at Collector
+   connect l to pins 2           ! measure at Emitter
+   connect g to pins 2           ! drive Cathode
+   source dcv, amplitude 3.0, terminated 5000, icompliance 1, on
+   detector dcv, expect 3.0
+   measure 4.0, 2.0
+end subtest
+
+subtest "K1_On"
+   connect s to pins 1           ! drive Collector via tester resistor
+   connect a to pins 3           ! drive Anode via on-board resistor
+   connect i to pins 4           ! measure at Collector
+   connect l to pins 4           ! measure at Emitter
+   connect g to pins 4           ! drive Emitter
+   connect g to pins 2           ! drive Cathode
+   source dcv, amplitude 3.0, terminated 5000, icompliance 1, on
+   auxiliary dcv, amplitude 3, icompliance 1, on
+   detector dcv, expect 3.0
+   measure 4.0, 2.0
+end subtest
+
+subtest "K2_On"
+   connect s to pins 1           ! drive Collector via tester resistor
+   connect a to pins 6           ! drive Anode via on-board resistor
+   connect i to pins 5           ! measure at Collector
+   connect l to pins 5           ! measure at Emitter
+   connect g to pins 5           ! drive Emitter
+   connect g to pins 2           ! drive Cathode
+   source dcv, amplitude 3.0, terminated 5000, icompliance 1, on
+   auxiliary dcv, amplitude 3, icompliance 1, on
+   detector dcv, expect 3.0
+   measure 4.0, 2.0
+end subtest
+
+! End of test

@@ -1,0 +1,23 @@
+!!!!    2    0    1 1264401852  Vfa20                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   connect s to nodes "RX8"
+   connect a to nodes "CHRG_N"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   auxiliary dcv, amplitude 0, icompliance 1, on
+   connect g to nodes "OUT_EN_INV"
+   connect g to nodes "OUT_EN_CONV"
+   connect g to nodes "RX8"
+   test "S_RES_SVO"
+end test
+
+subtest "S_RES_SVO"
+   connect i to nodes "S_RES"
+   connect l to nodes "SVO"
+   detector dcv, expect 0
+   measure 0.10, -0.10              ! Adjust at debug
+end subtest

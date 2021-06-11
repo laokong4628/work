@@ -1,0 +1,295 @@
+!!!!    6    0    1 1593152448   0000                                         
+! IPG: rev 07.20pd Tue Dec 14 01:43:23 2010
+test digital;VPD(*)
+
+
+sequential
+
+vector cycle   1000n
+receive delay  850n
+
+default device "u54"
+set terminators to on
+assign VCC to pins 8
+assign GND to pins 4
+assign SCL to pins 6
+assign SDA to pins 5
+
+assign ADDR to pins *,*,*
+assign WP   to pins 7 !*  default "0"
+assign U1_rst   to nodes"OUT_EN_CONV" default "1"
+
+family TTL
+
+power VCC, GND
+inputs SCL,U1_rst
+inputs ADDR,WP
+bidirectional SDA
+
+disable SDA with SCL to "1"
+
+set load on groups SDA to pull up
+set slew rate on groups SCL,SDA to 250
+
+capture SDA
+
+
+!==========================
+vector Init
+  drive SDA
+  set SDA to "1"
+  set SCL to "1"
+  set WP  to "0"
+end vector
+
+vector Keep
+  drive SDA
+  set SDA to "k"
+  set SCL to "k"
+  set WP  to "k"
+end vector
+
+vector Keep_Receive
+  receive SDA
+  set SDA to "x"
+  set SCL to "k"
+  set WP  to "k"
+end vector
+
+vector D0
+  initialize to Keep
+  drive SDA
+  set SDA to "0"
+end vector
+
+vector D1
+  initialize to Keep
+  drive SDA
+  set SDA to "1"
+end vector
+
+vector R0
+  initialize to Keep_Receive
+  receive SDA
+  set SDA to "0"
+end vector
+
+vector R1
+  initialize to Keep_Receive
+  receive SDA
+  set SDA to "1"
+  set SCL to "0"
+end vector
+
+vector Rx
+  initialize to Keep_Receive
+  receive SDA
+  set SDA to "x"
+  set SCL to "0"
+end vector
+
+vector SCL_0
+  initialize to Keep
+  set SCL to "0"
+end vector
+
+vector SCL_1
+  initialize to Keep
+  set SCL to "1"
+end vector
+
+vector SCL_0_Rx
+  initialize to Keep_Receive
+  receive SDA
+  set SDA to "x"
+  set SCL to "0"
+end vector
+
+vector SCL_1_Rx
+  initialize to Keep_Receive
+  receive SDA
+  set SDA to "x"
+  set SCL to "1"
+end vector
+
+vector SCL_0_D0
+  initialize to Keep
+  drive SDA
+  set SDA to "0"
+  set SCL to "0"
+end vector
+
+vector SCL_1_D0
+  initialize to Keep
+  drive SDA
+  set SDA to "0"
+  set SCL to "1"
+end vector
+
+vector SCL_1_D1
+  initialize to Keep
+  drive SDA
+  set SDA to "1"
+  set SCL to "1"
+end vector
+
+vector SCL_1_R0
+  initialize to Keep_Receive
+  receive SDA
+  set SDA to "1"
+  set SCL to "1"
+end vector
+!-----------------------------------------------
+!data VPD_DATA to groups SDA
+!   file "eeprom_vpd" 3592
+!end data
+
+!data VPD_ADDR to groups SDA
+!   file "addr" 7184
+!end data
+!-----------------------------------------------
+!-----------------------
+sub Start
+  execute SCL_1_D1
+  execute SCL_1_D0
+end sub
+
+sub Stop
+  execute SCL_1_D0
+  execute SCL_1_D1
+end sub
+
+sub ACK_From_Slave
+  execute SCL_0
+  execute SCL_1_R0
+  execute SCL_0_D0
+end sub
+
+sub ACK_From_Master
+  execute SCL_0_Rx
+  execute D0
+  execute SCL_1
+end sub
+
+sub NO_ACK_From_Master
+  execute SCL_0_Rx
+  execute D1
+  execute SCL_1
+end sub
+
+sub Write_Data_Byte(B7,B6,B5,B4,B3,B2,B1,B0)
+  execute SCL_0
+  execute B7
+  execute SCL_1
+
+  execute SCL_0
+  execute B6
+  execute SCL_1
+
+  execute SCL_0
+  execute B5
+  execute SCL_1
+
+  execute SCL_0
+  execute B4
+  execute SCL_1
+
+  execute SCL_0
+  execute B3
+  execute SCL_1
+
+  execute SCL_0
+  execute B2
+  execute SCL_1
+
+  execute SCL_0
+  execute B1
+  execute SCL_1
+
+  execute SCL_0
+  execute B0
+  execute SCL_1
+
+  call ACK_From_Slave
+end sub
+
+sub Read_Data_Byte(B7,B6,B5,B4,B3,B2,B1,B0,B_Ack)
+  execute SCL_0_Rx
+  execute B7
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B6
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B5
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B4
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B3
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B2
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B1
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B0
+  execute SCL_1_Rx
+
+  execute SCL_0_Rx
+  execute B_Ack
+  execute SCL_1
+end sub
+
+sub DisableSub
+  execute DisableVector
+end sub
+
+unit "DisableUnit"
+  call DisableSub
+end unit
+!-----------------------
+unit "Verify"
+      execute Init
+      call Start
+      call Write_Data_Byte(D1,D0,D1,D0, D0,D0,D0,D0) ! Device Select |1|0|1|0|A2|A1|A0|RW|
+
+      repeat 2 times
+        repeat 8 times
+         execute SCL_0
+         execute D0
+         execute SCL_1
+        end repeat
+        call ACK_From_Slave
+      end repeat
+
+      call Start
+      call Write_Data_Byte(D1,D0,D1,D0, D0,D0,D0,D1) ! Device Select |1|0|1|0|A2|A1|A0|RW|
+      repeat 512 times  
+        repeat 8 times
+         execute SCL_0_Rx
+         execute Rx capture
+         execute SCL_1_Rx
+        end repeat
+
+       execute SCL_0_Rx
+       execute D0
+       execute SCL_1
+      end repeat
+      
+      call Stop
+      fetch VPD(*)
+end unit
+!-----------------------
+! End Test
+!-----------------------

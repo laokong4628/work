@@ -1,0 +1,24 @@
+!!!!   21    1    1 1146558902  V86fe                                         
+
+! Revision control data:
+! use for testing "npn_bcec", safeguard "not_required"
+! 07.12.2001 Grouped pins 2,4 for SOT223   GG
+!-----------------------------------------------------------------
+! NPN SMC Transistor  SOT223
+!-----------------------------------------------------------------
+
+transistor "a", 300, 100, n, nr, "NPN TRANSISTOR SOT223"
+
+pin library "npn",pn"npn_bcec_func"
+
+external pins 1
+   device "npn" pins 1
+   device "a" pins "B"
+
+external pins 2, 4
+   device "npn" pins 2, 4
+   device "a" pins "C"
+
+external pins 3
+   device "npn" pins 3
+   device "a" pins "E"

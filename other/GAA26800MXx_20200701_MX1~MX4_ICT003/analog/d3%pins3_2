@@ -1,0 +1,15 @@
+!!!!    2    0    1 1268727398   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:10 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "5V_HL2"
+connect i to "UNNAMED_45_BAT54S_I245_A1"
+diode 405m, 201m, idc10m, co3.0, ar805m
+! "d3%pins3_2" test.
+! DUT: nominal 650m, plus tol 23.1 %, minus tol 23.1 %
+! DUT: high 800m, low 500m
+! TEST: high limit 804.968m, low limit 501.128m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

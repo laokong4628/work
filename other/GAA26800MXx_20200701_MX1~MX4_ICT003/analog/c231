@@ -1,0 +1,19 @@
+!!!!    2    0    1 1268722648   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c232 10.0u"
+end on failure
+disconnect all
+connect s to "24V_SMPS_SENSE_RTN"
+connect i to "VCC_PWM_CONTROLLER"
+capacitor 20u, 10, 20, fr128, re1, ar20.0m, ed, nocomp, sm
+! "c231" test.
+! DUT: nominal 20u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 22u, low 18u
+! TEST: high limit 22.025u, low limit 17.789u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

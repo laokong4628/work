@@ -1,0 +1,25 @@
+!!!!    2    0    1 1404178570   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:00 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c268 1.00n"
+   report "c269 1.00n"
+   report "r251 20.0k"
+   report "r252 20.0k"
+   report "r253 20.0k"
+end on failure
+disconnect all
+connect s to "RUP_E11"
+connect i to "RUP_G11"
+capacitor 4n, 29, 10, fr1024, re5, wb, ar20.0m, nocomp, ed ,en
+!@capacitor 3n, 14.2, 16.4, fr1024, re3, wb, ar20.0m, comp
+! "c267" test.
+! DUT: nominal 3n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 3.3n, low 2.7n
+! TEST: high limit 3.427n, low limit 2.509n
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

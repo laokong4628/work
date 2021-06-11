@@ -1,0 +1,36 @@
+!!!!    2    0    1 1156939594  Vbfd7                                         
+test powered analog
+   power pins 1, 2
+   ! ADD IN GP RELAY DISCONNECT STATEMENT FOR ALL RELAYS
+
+   test "RELAY_OPEN"
+
+   ! ADD IN GP RELAY STATEMENTS FOR INDIVIDUAL TESTS
+
+   test "RELAY_CLOSED"
+
+end test
+
+!------------------------------------------------------------------------------
+
+subtest "RELAY_OPEN"
+   connect s to pins 13
+   connect i to pins 14
+   connect l to pins 10
+   connect g to pins 11
+   connect g to ground
+   source dcv, amplitude 1, terminated 500, on
+   detector dcv, expect 1.5
+   measure 1.25, 0.75
+end subtest
+
+subtest "RELAY_CLOSED"
+   connect s to pins 13
+   connect i to pins 14
+   connect l to pins 10
+   connect g to pins 11
+   connect g to ground
+   source dcv, amplitude 1, terminated 500, on
+   detector dcv, expect 100m
+   measure 100m, -100m
+end subtest

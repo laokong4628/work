@@ -1,0 +1,17 @@
+!!!!    2    0    1 1505051756   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:05 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_39_BYG22D_I157_A"!; a to "UNNAMED_39_BYG22D_I157_A"
+connect i to "UNNAMED_39_C_I158_B"
+!connect g to "+15V_SENSE"; l to "+15V_SENSE"
+capacitor 220p, 30, 60, fr8192, re2, wb, ar100m, en, nocomp, ed
+! warning "excessive plus tolerance or high limit."
+! "c215" is a commented test.
+! DUT: nominal 220p, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 231p, low 209p
+! TEST: high limit 13.345n, low limit -5.508n
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

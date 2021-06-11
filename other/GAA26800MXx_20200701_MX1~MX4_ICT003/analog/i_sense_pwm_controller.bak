@@ -1,0 +1,21 @@
+!!!!    2    0    1 1434442646  Vaf38                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:40 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;Volt4(*)
+   disconnect all
+   test "I_SENSE_PWM_CONTROLLER_24V_SMPS_SENSE_RTN"
+end test
+
+subtest "I_SENSE_PWM_CONTROLLER_24V_SMPS_SENSE_RTN"
+   global Volt4(*)
+   connect i to nodes "I_SENSE_PWM_CONTROLLER"
+   connect l to nodes "24V_SMPS_SENSE_RTN"
+   detector digitizer, expect 3, interval 500u, samples 512
+   initiate detector
+   fetch Volt4(*)
+!@ report analog 0.90, 0.10, V       !@ ECN change 20150616
+!@   measure 0.80, 0.30              ! Adjust at debug
+end subtest

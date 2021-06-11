@@ -1,0 +1,23 @@
+!!!!    2    0    1 1274363553   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:47 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "REF_PRI_N_GND_SENSE"
+end test
+
+subtest "REF_PRI_N_GND_SENSE"
+   connect s to nodes "US"
+   connect i to nodes "REF_PRI_N"
+   connect l to nodes "GND_SENSE"
+   connect g to nodes "GND_SENSE"
+   connect g to nodes "GND"
+   source sine, amplitude 7, frequency 50, icompliance 1, offset 0, terminated 5, on
+   detector dcv, expect -1.800
+   initiate detector
+   fetch V
+   report analog -1650.60,-2017.40,V*1000
+end subtest

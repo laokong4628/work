@@ -1,0 +1,36 @@
+!!!!    2    0    1 1426819734  V9d31                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:38 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;A,Pulse
+   disconnect all
+   connect s to nodes "RELAY_6"
+   connect a to nodes "RELAY_19"  !@!connect 2K load
+   connect g to nodes "RELAY_VCC1"
+   connect g to nodes "RELAY_19"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   auxiliary dcv,amplitude 5,icompliance 1,on
+   wait 30m
+   !@test "Test_condition"
+   test "DUTY_CYClE"
+end test
+
+subtest "Test_condition"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 24
+   measure 25, 23                  ! Adjust at debug
+end subtest
+
+subtest "DUTY_CYClE"
+   global A,Pulse
+   connect rcva to nodes "GATE_SENSE_TW" !@nodes "PWM_OUT5"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector pulse, expect 5.56u, threshold A
+   arm detector
+   fetch Pulse
+!   detector frequency, expect 180k, threshold 3, gate 0
+!   arm detector
+!   fetch Freq
+!   report analog 0.3, 0.05, Pulse * Freq
+!   A = Pulse * Freq
+end subtest

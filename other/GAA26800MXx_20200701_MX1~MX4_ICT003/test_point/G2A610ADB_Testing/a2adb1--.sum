@@ -1,0 +1,47 @@
+Summary Drawing Report
+/usr/caepro/pbx_bidi/a2adb1--/worklib/pbx_bidi/physical/a2adb1--.brd
+Thu Dec 10 16:03:23 2009
+Drawing Statistics:
+    Drawing Extents  XL(-80.000)  YL(-80.000)  XU(420.000)  YU(420.000)
+    Dimensions in millimeters with 3 decimal places
+    Package Symbols:  Total(1117)  Mirrored(429)  Pins(2983)
+    Mechanical Symbols:  Total(30)  Mirrored(9)  Pins(5)
+    Format Symbols:  Total(0)
+    DRC: Errors(248)  UP TO DATE
+    Padstack Definitions: 67
+    Functions:   Assigned(1193)  Unassigned(0)  Total(1193)
+
+Layout Statistics:
+    Components:  Placed(1117)  Unplaced(0)  Total(1117)
+    Nets: W/Rats(628)  No/Rats(0)  Total(628)
+    Pins: W/Rats(2909)  No/Rats(0)  Unused(68)  Unplaced(0)  Total(2977)
+    Equivalent ICs (1 pin = 1/14 EIC):  212
+    RatTs:  0
+    Router Keepin (in):   (0.0236,0.0236) by (9.4252,12.5748)
+    Layout area (sq in):  118.0
+    Layout density (sq in/EIC):  0.557
+    Pin density (Pins/sq in):  25.229
+    Average ratlength (in):   0.5
+    Rat density (in/sq in):  9.740
+
+Connection Statistics:
+    Connections:  W/Rats(2281)  No/Rats(0)  Total(2281)
+    Already Connected:  W/Rats(2281)  No/Rats(0)  Total(2281)
+    Missing Connections: W/Rats(0)  No/Rats(0)  Total(0)
+    Dangling Connections (See logfile):  0
+    Connection Completion:  W/Rats(100.00%)  No/Rats(0.00%)  Total(100.00%)  
+    Manh Distance (inches):  1149.338
+    Etch Length (inches):  W/Rats(1370.06)  No/Rats(0.00)  Total(1370.06)
+    Number of Vias:  W/Rats(1778)  No/Rats(0)  Total(1778)
+    Vias per Connection:  W/Rats(0.78)  No/Rats(0.00)Total(0.78)
+    SMD pins with attached clines:  2575
+
+Etch Statistics:
+
+Layer,Clines/Carcs,Shapes(voids),Rectangles,Lines/Arcs,Text
+TOP,2309,123(12),0,0,1
+SIGNAL1,661,61(615),0,0,1
+SIGNAL2,487,67(492),1,0,1
+SIGNAL3,632,70(555),3,0,1
+SIGNAL4,597,58(570),4,0,1
+BOTTOM,1426,79(14),2,0,3

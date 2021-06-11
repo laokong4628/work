@@ -1,0 +1,22 @@
+!!!!    2    0    1 1273767968   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:44 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   gpconnect 21852 to 21853      !@ power on the relay board
+   connect s to nodes "RELAY_10" !@ load 1k/1% resistor between PTC_1/PTC_6
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   wait 300m
+   test "PTC_ADC_HL2"
+   gpdisconnect 21852 from 21853
+end test
+
+subtest "PTC_ADC_HL2"
+   connect i to nodes "PTC_ADC"
+   connect l to nodes "HL2"
+   detector dcv, expect 1.2
+   measure 1.80, 1.00              ! Adjust at debug
+end subtest

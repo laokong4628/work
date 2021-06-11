@@ -1,0 +1,18 @@
+!!!!    2    0    1 1435044366   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:52 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "VCC_PWM_CONTROLLER_24V_SMPS_SENSE_RTN"
+end test
+
+subtest "VCC_PWM_CONTROLLER_24V_SMPS_SENSE_RTN"
+   connect i to nodes "VCC_PWM_CONTROLLER"
+   connect l to nodes "24V_SMPS_SENSE_RTN"
+!   wait 100m
+   detector dcv, expect 12
+   measure 15.0, 10.0              ! Adjust at debug
+end subtest

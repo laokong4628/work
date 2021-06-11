@@ -1,0 +1,324 @@
+task "oct_inv_5.setup"
+  setup
+    mixed_init(1572868)
+    hsl_setup
+    drive_tclk_from_dutclk(640000.0,160000.0)
+    fclks_per_vector_pair 4
+  end setup
+  channel_section
+    driver_range 0.20  3.50 
+    receiver_range 0.80  2.00
+    slew_rate   100
+    driver d0 brc 20530 kx     fclks 1    3
+    source_all    fclks 1    3
+    source_trigger_all flip_flop
+    source_control_all static1
+    probe_receiver kx     fclks 2    4
+    detector_glitch_all    fclks 2    4
+    detector_trigger_all flip_flop
+    receiver r1 brc 221142 kx     fclks 2    4 pull_up clamp_off
+    driver d2 brc 21614 kx     fclks 1    3
+    driver d3 brc 22233 kx     fclks 1    3
+    driver d4 brc 21514 kx     fclks 1    3
+    driver d5 brc 222134 kx     fclks 1    3
+    driver d6 brc 21615 kx     fclks 1    3
+    driver d7 brc 22129 kx     fclks 1    3
+    driver d8 brc 216116 kx     fclks 1    3
+    driver d9 brc 22236 kx     fclks 1    3
+    driver d10 brc 215116 kx     fclks 1    3
+    driver d11 brc 221132 kx     fclks 1    3
+    driver d12 brc 216117 kx     fclks 1    3
+    driver d13 brc 222137 kx     fclks 1    3
+    driver d14 brc 20423 kx     fclks 1    3
+  end channel_section
+  vector_section
+    org 0
+    vector v0 2 256 256
+    end vector
+    vector v1 2 0 1
+    end vector
+    vector v2 160 0 144
+      d0 1
+      d2 0
+      d3 0
+      d4 0
+      d5 0
+      d6 0
+      d7 0
+      d8 0
+      d9 0
+      d10 0
+      d11 0
+      d12 0
+      d13 0
+      d14 1
+    end vector
+    vector v3 160 0 144
+      d0 k
+      r1 k
+      d2 k
+      d3 k
+      d4 k
+      d5 k
+      d6 k
+      d7 k
+      d8 k
+      d9 k
+      d10 k
+      d11 k
+      d12 k
+      d13 k
+      d14 k
+    end vector
+    vector v4 160 0 144
+    end vector
+  end vector_section
+  sequence_section
+    org 0
+    s0 v1
+    s1 v1
+    s2 v1
+    s3 v1
+    s4 v1
+    s5 v1
+    s6 v1
+    s7 v1
+    s8 v1
+    s9 v1
+    s10 v1
+    s11 v1
+    s12 v1
+    s13 v1
+    s14 v1
+    s15 v2
+    s16 v3
+    s17 v4 rcen
+    s18 v4 rcen
+    s19 v4 rcen
+    s20 v4 rcen
+    s21 v4 rcen
+    s22 v4 rcen
+    s23 v4 rcen
+    s24 v4 rcen
+    s25 v4 rcen
+    s26 v4 rcen
+    s27 v4 rcen
+    s28 v4 rcen
+    s29 v4 rcen
+    s30 v4 rcen
+    s31 v4 rcen
+    s32 v4 rcen
+    s33 v4 rcen
+    s34 v4 rcen
+    s35 v4 rcen
+    s36 v4 rcen
+    s37 v4 rcen
+    s38 v4 rcen
+    s39 v4 rcen
+    s40 v4 rcen
+    s41 v4 rcen
+    s42 v4 rcen
+    s43 v4 rcen
+    s44 v4 rcen
+    s45 v4 rcen
+    s46 v4 rcen
+    s47 v4 rcen
+    s48 v4 rcen
+    s49 v4 rcen
+    s50 v4 rcen
+    s51 v4 rcen
+    s52 v4 rcen
+    s53 v4 rcen
+    s54 v4 rcen
+    s55 v4 rcen
+    s56 v4 rcen
+    s57 v4 rcen
+    s58 v4 rcen
+    s59 v4 rcen
+    s60 v4 rcen
+    s61 v4 rcen
+    s62 v4 rcen
+    s63 v4 rcen
+    s64 v4 rcen
+    s65 v4 rcen
+    s66 v4 rcen
+    s67 v4 rcen
+    s68 v4 rcen
+    s69 v4 rcen
+    s70 v4 rcen
+    s71 v4 rcen
+    s72 v4 rcen
+    s73 v4 rcen
+    s74 v4 rcen
+    s75 v4 rcen
+    s76 v4 rcen
+    s77 v4 rcen
+    s78 v4 rcen
+    s79 v4 rcen
+    s80 v4 rcen
+  end sequence_section
+  program_section
+    org 0
+    p0 apply s1 with vceoff, nop
+    p1 apply s1 with vceoff, nop
+    p2 apply s1 with vceoff, nop
+    p3 apply s1 with vceoff, nop
+    p4 apply s15 with fe, vceon
+    p5 apply s16 with fe
+    analogCont00000 apply s1 with vceon, nop
+    p7 sls 12 apply s1 with nop
+    p8 apply s1 with nop, pause
+    p9 apply s1 with vceoff, nop
+    p10 apply s1 with vceoff, nop, neg_tsp, neg_halt
+    p11 apply s17 with fe, vceon
+    p12 sls 63 apply s18 with fe
+    p13 sls 63 apply s18 with fe
+    p14 sls 63 apply s18 with fe
+    p15 sls 63 apply s18 with fe
+    p16 sls 63 apply s18 with fe
+    p17 sls 63 apply s18 with fe
+    p18 sls 63 apply s18 with fe
+    p19 sls 58 apply s17 with fe
+    Halt apply s1 with vceon, nop
+    p21 sls 12 apply s1 with nop
+    p22 apply s1 with nop, halt
+    p23 sls 2 apply s1 with vceoff, nop
+  end program_section
+  setup_sequencer(0)
+taskend
+task "oct_inv_5.recycle_setup"
+  setup_sequencer(0)
+taskend
+task "oct_inv_5.sync"
+  hsl_sync
+taskend
+task "oct_inv_5.setup_rc"
+  tl_setup_rc(221142, 3, 4)
+taskend
+task "oct_inv_5.mec_p_cntr_setup_rcen"
+  mec_p_cntr_setup_rcen(3)
+taskend
+task "oct_inv_5.start"
+  check_safeguard(0,1,0.000000e+00,0.000000e+00)
+  start_seq
+taskend
+task "oct_inv_5.wait_for_halt"
+  wait_for_halt(1.507475e+00)
+  mra_in_mod(2)
+taskend
+task "oct_inv_5.wait_for_halt_on_vector_count"
+  wait_for_halt_on_vector_count(1.507475e+00)
+taskend
+task "oct_inv_5.wait_for_pause"
+  wait_for_pause(1.507475e+00)
+  mra_in_mod(2)
+taskend
+task "oct_inv_5.get_test_status"
+  check_for_digital_failure
+taskend
+task "oct_inv_5.continue"
+  digital_continue
+taskend
+task "oct_inv_5.continue_with_acv"
+  digital_continue_trigger_acv
+taskend
+task "oct_inv_5.serial.tl.1"
+  serial_fetch("oct_inv_5.serial.1", 221142, 0, 500)
+taskend
+basic
+call main
+end
+sub "oct_inv_5.check_status"
+  global wrong_status
+  sync
+  add_to_tl "oct_inv_5.get_test_status"
+  vt_send
+  ignore=vt_eof
+  wrong_status=vt_read
+  wrong_status=wrong_status mod 1
+  ignore=vt_eof
+subend
+sub initialize
+  global device$
+  call analog_initialize
+subend
+sub "oct_inv_5.results"
+  host_digital_result_analysis("oct_inv_5")
+subend
+sub "oct_inv_5.serial.1"
+  global dig.TIME(*)
+  host_serial_fetch(500, 1, dig.TIME(*))
+subend
+sub main
+  global indebug,section
+  indebug=0
+  section=1
+  setup_safeguard(0,1,0.000000e+00,0.000000e+00)
+  add_to_tl "oct_inv_5.setup"
+  add_to_tl "oct_inv_5.setup_rc"
+  test_edits
+  add_to_tl "oct_inv_5.mec_p_cntr_setup_rcen"
+  add_to_tl "oct_inv_5.start"
+  add_to_tl "oct_inv_5.wait_for_pause"
+  mod_digital_result_analysis(2,"oct_inv_5.results")
+  add_to_tl "oct_inv_5.sync"
+  call analog
+  add_to_tl "oct_inv_5.continue"
+  add_to_tl "oct_inv_5.wait_for_halt"
+  mod_digital_result_analysis(2,"oct_inv_5.results")
+  add_to_tl "oct_inv_5.sync"
+  add_to_tl "oct_inv_5.serial.tl.1"
+  add_to_tl "oct_inv_5.sync"
+subend
+sub debug
+  global wrong_status
+  global indebug,section
+  indebug=1
+  section=1
+  setup_safeguard(0,1,0.000000e+00,0.000000e+00)
+  add_to_tl "oct_inv_5.setup"
+  test_edits
+  add_to_tl "oct_inv_5.start"
+  add_to_tl "oct_inv_5.wait_for_pause"
+  call "oct_inv_5.check_status"
+  if wrong_status then
+    subexit
+  end if
+  call analog
+  add_to_tl "oct_inv_5.continue"
+  add_to_tl "oct_inv_5.wait_for_halt_on_vector_count"
+subend
+sub display_failures
+  global wrong_status
+  global indebug,section
+  indebug=1
+  section=1
+  setup_safeguard(0,1,0.000000e+00,0.000000e+00)
+  add_to_tl "oct_inv_5.setup"
+  test_edits
+  add_to_tl "oct_inv_5.start"
+  add_to_tl "oct_inv_5.wait_for_pause"
+  mod_digital_result_analysis(2,"oct_inv_5.results")
+  add_to_tl "oct_inv_5.sync"
+  call analog
+  add_to_tl "oct_inv_5.continue"
+  add_to_tl "oct_inv_5.wait_for_halt"
+subend
+sub recycle
+  global wrong_status
+  global indebug,section
+  indebug=1
+  section=1
+  setup_safeguard(0,1,0.000000e+00,0.000000e+00)
+  add_to_tl "oct_inv_5.recycle_setup"
+  test_edits
+  add_to_tl "oct_inv_5.start"
+  add_to_tl "oct_inv_5.wait_for_pause"
+  call "oct_inv_5.check_status"
+  if wrong_status then
+    subexit
+  end if
+  call analog
+  add_to_tl "oct_inv_5.continue"
+  add_to_tl "oct_inv_5.wait_for_halt_on_vector_count"
+subend

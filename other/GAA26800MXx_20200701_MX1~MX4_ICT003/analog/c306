@@ -1,0 +1,21 @@
+!!!!    2    0    1 1313269489   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:06 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c307 220p"
+end on failure
+disconnect all
+connect s to "UNNAMED_39_C_I238_A"
+connect i to "24V_SMPS_SENSE_RTN"
+connect g to "UNNAMED_39_C_I239_A"
+capacitor 440p+44p, 6.88, 5.50, fr8192, re3, ar50.0m, nocomp, ed
+! "c306" test.
+! DUT: nominal 440p, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 462p, low 418p
+! TEST: high limit 470.29p, low limit 420.215p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

@@ -1,0 +1,23 @@
+!!!!    2    0    1 1270634598   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:17 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c251 10.0u"
+   report "c252 10.0u"
+end on failure
+disconnect all
+connect i to "DCN_LED_6"
+connect s to "UNNAMED_9_555_I229_RESET"
+diode 950m, 550m, idc20m, co10, ar12.6
+!@zener 12, 5.05, 4.98, idc1.0m, co10, ar12.6
+warning "A 'wait' option may be required to correctly fail a reversed diode"
+! "z77" test.
+! DUT: nominal 12, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 12.6, low 11.4
+! TEST: high limit 12.606, low limit 11.403
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

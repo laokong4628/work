@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583286   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:07 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "DCP_U_ME_1"
+connect i to "DCN_U_ME_1"
+connect g to "GND_SENSE"
+capacitor 22n, 17.3, 15.6, fr1024, re3, wb, ar20.0m, nocomp
+! "c263" test.
+! DUT: nominal 22n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 24.2n, low 19.8n
+! TEST: high limit 25.801n, low limit 18.561n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

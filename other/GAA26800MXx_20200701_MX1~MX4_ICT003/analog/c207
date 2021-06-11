@@ -1,0 +1,15 @@
+!!!!    2    0    1 1433921702   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:03 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect i to "UNNAMED_48_C_I272_A"!; a to "UNNAMED_48_C_I272_A"
+connect s to "+27V_TW_P_RTN"
+!connect g to "UNNAMED_48_HCPL316J_I183_VOUT"
+capacitor 10n, 30, 15.3, fr8192, re4, wb, ar100m, ed, nocomp,en
+! "c207" test.
+! DUT: nominal 10n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 11n, low 9n
+! TEST: high limit 11.300n, low limit 8.465n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

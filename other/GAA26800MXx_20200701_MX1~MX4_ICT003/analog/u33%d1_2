@@ -1,0 +1,15 @@
+!!!!    2    0    1 1274693740   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:22 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_36_BC817_I58_C"
+connect i to "UNNAMED_36_IL300_I12_A"
+diode 1.1, 503m, idc1.0m, co3.1, ar906m
+! "u33%d1_2" test.
+! DUT: nominal 700m, plus tol 28.6 %, minus tol 28.6 %
+! DUT: high 900m, low 500m
+! TEST: high limit 905.63m, low limit 502.829m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

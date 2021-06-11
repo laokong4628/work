@@ -1,0 +1,14 @@
+!!!!    2    0    1 1528943217   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:35 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "24V_SMPS_SENSE_RTN"
+connect i to "UNNAMED_39_R_I242_A"
+resistor 10k, 1.46, 2.49, re5, wb, ar100m
+! "r172" test.
+! DUT: nominal 10k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 10.1k, low 9.9k
+! TEST: high limit 10.146k, low limit 9.871k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

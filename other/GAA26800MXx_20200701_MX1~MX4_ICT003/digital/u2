@@ -1,0 +1,63 @@
+!!!!    6    0    1 1271247623   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:20 2010
+!    Function:
+!    Revision:
+!    Author:
+
+sequential
+
+vector cycle 1u
+receive delay 0.9u
+default device "u2"
+
+assign  VDD1 to pins *
+assign  GND1 to pins *
+assign  GND2 to pins *
+assign  VDD2 to pins *
+
+assign  ALL_INPUTS to pins 2, 3
+assign  ALL_OUTPUTS to pins 6, 7
+assign  VIA to pins 7
+assign  VIB to pins 3
+assign  VOB to pins 6
+assign  VOA to pins 2
+
+family TTL
+
+
+power VDD1, GND1, GND2, VDD2
+
+inputs ALL_INPUTS, VIA, VIB
+
+outputs ALL_OUTPUTS, VOB, VOA
+
+vector  ALL_INPUTS_11
+   set   ALL_INPUTS   to "11"
+   set   ALL_OUTPUTS  to "11"
+end vector
+
+vector  ALL_INPUTS_00
+   set   ALL_INPUTS   to "00"
+   set   ALL_OUTPUTS  to "00"
+end vector
+
+vector  ALL_INPUTS_01
+   set   ALL_INPUTS   to "01"
+   set   ALL_OUTPUTS  to "10"
+end vector
+
+vector  ALL_INPUTS_10
+   set   ALL_INPUTS   to "10"
+   set   ALL_OUTPUTS  to "01"
+end vector
+
+unit  "Test Output"
+   execute  ALL_INPUTS_11
+   execute  ALL_INPUTS_00
+   execute  ALL_INPUTS_01
+   execute  ALL_INPUTS_10
+end unit
+
+!
+!    End of Test
+!

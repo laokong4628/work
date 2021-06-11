@@ -1,0 +1,138 @@
+!!!!    6    0    1 1124266585  Vf77d                                         
+
+!    7404
+!    Inverter, Hex
+!    revision A.01.00
+
+combinatorial
+
+assign   VCC       to pins 14
+assign   GND       to pins  7
+
+assign   E1_Input  to pins  1
+assign   E2_Input  to pins  3
+assign   E3_Input  to pins  5
+assign   E4_Input  to pins  9
+assign   E5_Input  to pins  11
+assign   E6_Input  to pins  13
+
+assign   E1_Output to pins  2
+assign   E2_Output to pins  4
+assign   E3_Output to pins  6
+assign   E4_Output to pins  8
+assign   E5_Output to pins  10
+assign   E6_Output to pins  12
+
+power    VCC, GND
+
+family   TTL
+
+inputs   E1_Input,E2_Input,E3_Input,E4_Input,E5_Input,E6_Input
+outputs  E1_Output,E2_Output,E3_Output,E4_Output,E5_Output,E6_Output
+
+trace E1_Output   to E1_Input
+trace E2_Output   to E2_Input
+trace E3_Output   to E3_Input
+trace E4_Output   to E4_Input
+trace E5_Output   to E5_Input
+trace E6_Output   to E6_Input
+
+!***************************************************************************
+!***************************************************************************
+
+vector  E1_Input_0
+   set   E1_Input    to "0"
+   set   E1_Output   to "1"
+end vector
+
+vector  E1_Input_1
+   set   E1_Input    to "1"
+   set   E1_Output   to "0"
+end vector
+
+vector  E2_Input_0
+   set   E2_Input    to "0"
+   set   E2_Output   to "1"
+end vector
+
+vector  E2_Input_1
+   set   E2_Input    to "1"
+   set   E2_Output   to "0"
+end vector
+
+vector  E3_Input_0
+   set   E3_Input    to "0"
+   set   E3_Output   to "1"
+end vector
+
+vector  E3_Input_1
+   set   E3_Input    to "1"
+   set   E3_Output   to "0"
+end vector
+
+vector  E4_Input_0
+   set   E4_Input    to "0"
+   set   E4_Output   to "1"
+end vector
+
+vector  E4_Input_1
+   set   E4_Input    to "1"
+   set   E4_Output   to "0"
+end vector
+
+vector  E5_Input_0
+   set   E5_Input    to "0"
+   set   E5_Output   to "1"
+end vector
+
+vector  E5_Input_1
+   set   E5_Input    to "1"
+   set   E5_Output   to "0"
+end vector
+
+vector  E6_Input_0
+   set   E6_Input    to "0"
+   set   E6_Output   to "1"
+end vector
+
+vector  E6_Input_1
+   set   E6_Input    to "1"
+   set   E6_Output   to "0"
+end vector
+
+!*****************************************************************************
+!*****************************************************************************
+
+!    Each element tested separately.
+
+unit  "Element number 1"
+   execute  E1_Input_0
+   execute  E1_Input_1
+end unit
+
+unit  "Element number 2"
+   execute  E2_Input_0
+   execute  E2_Input_1
+end unit
+
+unit  "Element number 3"
+   execute  E3_Input_0
+   execute  E3_Input_1
+end unit
+
+unit  "Element number 4"
+   execute  E4_Input_0
+   execute  E4_Input_1
+end unit
+
+unit  "Element number 5"
+   execute  E5_Input_0
+   execute  E5_Input_1
+end unit
+
+unit  "Element number 6"
+   execute  E6_Input_0
+   execute  E6_Input_1
+end unit
+
+!    End of Test

@@ -1,0 +1,19 @@
+!!!!    2    0    1 1264006757  V30df                                         
+
+test powered analog;V
+   disconnect all
+   test "5V_REF_GNDA"
+end test
+
+subtest "5V_REF_GNDA"
+   connect s to nodes "US"
+   connect i to nodes "5V_REF"
+   connect l to nodes "GNDA"
+   connect g to nodes "GNDA"
+   connect g to nodes "GND"
+   source sine, amplitude 7, frequency 50, icompliance 1, offset 0, terminated 50, on
+   detector dcv, expect -5.00
+   initiate detector
+   fetch V
+!@   report analog 5150.00,4850.00,V*1000
+end subtest

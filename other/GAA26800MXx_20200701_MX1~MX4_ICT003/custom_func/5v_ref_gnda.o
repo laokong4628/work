@@ -1,0 +1,30 @@
+  201    0    4 1264006757   0000                                         
+#MTDFiler i3 
+0 #ALLibrary @2 @3 @4 @0 @0 @0 i2 
+10 #ALOrdCltn @5 i10 i0 
+10 #ALOrdCltn @6 i10 i0 
+10 #ALOrdCltn @7 i10 i4 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @8 @9 @10 @11 @0 @0 @0 @0 @0 @0 
+3 #ALNode i2 i2 *2"US @12 @0 @0 i7 @0 @13 @0 
+7 #ALNode i6 i6 *6"5V_REF @14 @0 @0 i7 @0 @15 @0 
+5 #ALNode i4 i4 *4"GNDA @16 @0 @0 i7 @0 @17 @0 
+4 #ALNode i3 i3 *3"GND @18 @0 @0 i7 @0 @19 @0 
+3 #String i2 i2 *2"us 
+10 #ALOrdCltn @20 i10 i1 
+7 #String i6 i6 *6"5v_ref 
+10 #ALOrdCltn @21 i10 i1 
+5 #String i4 i4 *4"gnda 
+10 #ALOrdCltn @22 i10 i2 
+4 #String i3 i3 *3"gnd 
+10 #ALOrdCltn @23 i10 i1 
+10 #IdArray i10 $0 @24 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @25 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @26 @27 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @28 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+0 #ALSrcLoc i8 i23 i8 i26 
+0 #ALSrcLoc i9 i23 i9 i30 
+0 #ALSrcLoc i10 i23 i10 i28 
+0 #ALSrcLoc i11 i23 i11 i28 
+0 #ALSrcLoc i12 i23 i12 i27 

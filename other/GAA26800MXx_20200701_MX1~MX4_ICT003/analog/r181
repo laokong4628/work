@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583330   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:51 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_48_R_I371_A"; a to "UNNAMED_48_R_I371_A"
+connect i to "UNNAMED_48_R_I374_A"; b to "UNNAMED_48_R_I374_A"
+resistor 2, 59.9, 14.9, re1, ar500m, sa, sb, en
+! "r181" is a limited test.
+! DUT: nominal 2, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 2.02, low 1.98
+! TEST: high limit 3.198, low limit 1.702
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

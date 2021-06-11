@@ -1,0 +1,27 @@
+!!!!    2    0    1 1264392082  V6b27                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V
+   disconnect all
+   connect s to nodes "RELAY_3"
+   connect a to nodes "RELAY_14"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   auxiliary dcv, amplitude 5, icompliance 1, on
+   connect g to nodes "PWM_TN"
+   connect g to nodes "PWM_WN"
+   connect g to nodes "GND"
+   wait 10m
+   test "TWN_G21_TWN_E21"
+end test
+
+subtest "TWN_G21_TWN_E21"
+   connect i to nodes "TWN_G21"
+   connect l to nodes "TWN_E21"
+   !@connect g to nodes "TWN_C1"
+   !@connect g to nodes "TWN_E11"
+   !@connect g to nodes "TWN_E21"
+   detector dcv, expect 15.70
+   measure 17.00, 14.00
+end subtest

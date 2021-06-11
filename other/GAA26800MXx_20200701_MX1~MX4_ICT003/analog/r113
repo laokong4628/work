@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583326   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:47 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "24V_DRIVER_RTN"
+connect i to "UNNAMED_47_R_I30_A"
+resistor 33k, 1.31, 1.24, re5, wb, ar200m
+! "r113" test.
+! DUT: nominal 33k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 33.33k, low 32.67k
+! TEST: high limit 33.431k, low limit 32.592k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

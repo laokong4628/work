@@ -1,0 +1,23 @@
+!!!!    2    0    1 1395712207   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:54 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c93 10.0u"
+   report "c171 10.0u"
+   report "c88 100n"
+   report "c91 100n"
+   report "c122 100n"
+end on failure
+disconnect all
+connect s to "GNDA"
+connect i to "V-15V"
+capacitor 30.3u, 69, 25.0, fr1024, re1, ar20.0m, ed, nocomp, sm
+! "c92" test.
+! DUT: nominal 30.3u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 33.33u, low 27.27u
+! TEST: high limit 33.267u, low limit 26.671u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

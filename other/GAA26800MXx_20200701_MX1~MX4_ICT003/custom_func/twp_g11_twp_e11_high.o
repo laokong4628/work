@@ -1,0 +1,44 @@
+  201    0    4 1264391178   0000                                         
+#MTDFiler i3 
+0 #ALLibrary @2 @3 @4 @0 @0 @0 i2 
+10 #ALOrdCltn @5 i10 i0 
+10 #ALOrdCltn @6 i10 i0 
+10 #ALOrdCltn @7 i10 i7 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @8 @9 @10 @11 @12 @13 @14 @0 @0 @0 
+8 #ALNode i7 i7 *7"RELAY_3 @15 @0 @0 i7 @0 @16 @0 
+9 #ALNode i8 i8 *8"RELAY_13 @17 @0 @0 i7 @0 @18 @0 
+7 #ALNode i6 i6 *6"PWM_TP @19 @0 @0 i7 @0 @20 @0 
+7 #ALNode i6 i6 *6"PWM_WP @21 @0 @0 i7 @0 @22 @0 
+4 #ALNode i3 i3 *3"GND @23 @0 @0 i7 @0 @24 @0 
+8 #ALNode i7 i7 *7"TWP_G11 @25 @0 @0 i7 @0 @26 @0 
+8 #ALNode i7 i7 *7"TWP_E11 @27 @0 @0 i7 @0 @28 @0 
+8 #String i7 i7 *7"relay_3 
+10 #ALOrdCltn @29 i10 i1 
+9 #String i8 i8 *8"relay_13 
+10 #ALOrdCltn @30 i10 i1 
+7 #String i6 i6 *6"pwm_tp 
+10 #ALOrdCltn @31 i10 i1 
+7 #String i6 i6 *6"pwm_wp 
+10 #ALOrdCltn @32 i10 i1 
+4 #String i3 i3 *3"gnd 
+10 #ALOrdCltn @33 i10 i1 
+8 #String i7 i7 *7"twp_g11 
+10 #ALOrdCltn @34 i10 i1 
+8 #String i7 i7 *7"twp_e11 
+10 #ALOrdCltn @35 i10 i1 
+10 #IdArray i10 $0 @36 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @37 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @38 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @39 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @40 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @41 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @42 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+0 #ALSrcLoc i7 i23 i7 i31 
+0 #ALSrcLoc i8 i23 i8 i32 
+0 #ALSrcLoc i11 i23 i11 i30 
+0 #ALSrcLoc i12 i23 i12 i30 
+0 #ALSrcLoc i13 i23 i13 i27 
+0 #ALSrcLoc i19 i23 i19 i31 
+0 #ALSrcLoc i20 i23 i20 i31 

@@ -1,0 +1,30 @@
+!!!!    2    0    1 1264387942  Vd28f                                         
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog
+   disconnect all
+   connect s to nodes "RELAY_5"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   test "Test_condition"
+   test "DUTY_CYClE"
+end test
+
+subtest "Test_condition"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 26
+   measure 27, 25                  ! Adjust at debug
+end subtest
+
+subtest "DUTY_CYClE"
+   global A
+   connect rcva to nodes "PWM_OUT3"   !@nodes "GATE_SENSE_SV"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector pulse, expect 5.56u, threshold 5
+   arm detector
+   fetch Pulse
+   detector frequency, expect 180k, threshold 3, gate 0
+   arm detector
+   fetch Freq
+   report analog 0.3, 0.05, Pulse * Freq
+   A = Pulse * Freq
+end subtest

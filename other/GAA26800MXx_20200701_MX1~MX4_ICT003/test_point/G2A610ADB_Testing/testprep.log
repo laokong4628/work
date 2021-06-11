@@ -1,0 +1,928 @@
+(------------------------------------------------------------)
+(                                                            )
+(        Test Prep Log File                                  )
+(                                                            )
+(        Drawing          : a2adb1--.brd                     )
+(        Software Version : 15.2S46                          )
+(        Date/Time        : Fri Dec 11 12:00:30 2009         )
+(                                                            )
+(------------------------------------------------------------)
+
+
+ Probes accessing bottom of the board.
+ No restrictions on pad type.
+ Pin type restricted to 'ANY POINT'.
+ Minimum pad dimension is : 1.270
+ Test pad grid: X: 0.000 Y: 0.000
+ Minimum test point spacing is : 2.540
+ Test points allowed under components on BOTTOM side of the board.
+ Component representation is ASSEMBLY data.
+ Bare board switch off, no test points allowed on
+   component pins on tested side.
+ Tested one pin per net.
+ Tested unused pins.
+ Testing allowed directly on pin.
+ No direct trace testing allowed.
+ Automatic test point insertion disabled.
+ Test pad displacement: Min: 0.000, Max: 0.000
+ Via replacement allowed.
+ Cline bubbling  allowed.
+ Test SMT/blind pad: TESTPAD
+ Test thru via     : TESTVIA06
+ Executed in INCREMENTAL mode.
+ *** WARNING *** Leftover test points may not fit parameters.
+ Probe text angle: 0 degrees.
+ Probe text offset: X: 0.000 Y: 0.000
+
+  NOTE: '*' in col 1 indicates that net lacked a true probe hole.
+         One was randomly selected.
+
+  NET                           PIN                                      PROBE TEXT
+----------------------------------------------------------------
+* UNNAMED_48_R_I335_B           VIA             @(    94.615,    40.640) _N568        (bottom)(leftover)
+* UNNAMED_48_R_I311_B           VIA             @(   165.735,    45.720) _N567        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I417_A    VIA             @(   192.087,    69.215) _N545        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I415_A    VIA             @(   156.845,    70.485) _N544        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I413_A    VIA             @(   206.883,    89.027) _N543        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I411_A    VIA             @(   172.085,    87.630) _N542        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I409_A    VIA             @(   128.524,    63.881) _N541        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I407_A    VIA             @(   159.385,    86.360) _N540        (bottom)(leftover)
+* UNNAMED_48_10MQ040N_I405_A    VIA             @(   212.979,   115.443) _N516        (bottom)(leftover)
+* UNNAMED_47_R_I335_B           VIA             @(    94.615,   125.730) _N512        (bottom)(leftover)
+* UNNAMED_47_R_I311_B           VIA             @(   165.735,   130.810) _N511        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I418_A    VIA             @(   192.087,   154.305) _N489        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I416_A    VIA             @(   156.845,   155.575) _N488        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I414_A    VIA             @(   206.883,   174.117) _N487        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I412_A    VIA             @(   172.085,   172.720) _N486        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I410_A    VIA             @(   128.524,   148.971) _N485        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I408_A    VIA             @(   159.385,   171.450) _N484        (bottom)(leftover)
+* UNNAMED_47_10MQ040N_I406_A    VIA             @(   212.979,   200.533) _N460        (bottom)(leftover)
+* UNNAMED_46_R_I335_B           VIA             @(    94.615,   210.820) _N456        (bottom)(leftover)
+* UNNAMED_46_R_I311_B           VIA             @(   165.735,   215.900) _N455        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I418_A    VIA             @(   192.087,   239.395) _N433        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I416_A    VIA             @(   156.845,   240.665) _N432        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I414_A    VIA             @(   128.524,   234.061) _N431        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I412_A    VIA             @(   172.085,   257.810) _N430        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I410_A    VIA             @(   159.385,   256.540) _N429        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I408_A    VIA             @(   206.883,   259.207) _N428        (bottom)(leftover)
+* UNNAMED_46_10MQ040N_I407_A    VIA             @(   211.709,   285.623) _N404        (bottom)(leftover)
+* UNNAMED_44_R_I100_A           VIA             @(   154.051,   285.877) _N381        (bottom)(leftover)
+* UNNAMED_39_R_I345_B           VIA             @(    48.133,    71.120) _N364        (bottom)(leftover)
+* UNNAMED_38_R_I105_B           VIA             @(    29.845,   111.760) _N333        (bottom)(leftover)
+  PTC_6                         P6.6            @(   100.230,   310.515) _N151        (bottom)(leftover)
+  PTC_45                        P6.5            @(    97.730,   310.515) _N150-1      (bottom)(leftover)
+  PTC_45                        P6.4            @(    95.230,   310.515) _N150        (bottom)(leftover)
+  PTC_23                        P6.3            @(    92.730,   310.515) _N149        (bottom)(leftover)
+  PTC_23                        P6.2            @(    90.230,   310.515) _N149-1      (bottom)(leftover)
+  I_W                           I_W.1           @(    72.390,   125.095) _N126       
+  SENSE_IW                      P5.2            @(    93.980,    15.875) _N207        (bottom)(leftover)
+* UNNAMED_48_C_I260_B           VIA             @(   191.135,   104.775) _N552        (bottom)(leftover)
+* UNNAMED_47_C_I260_B           VIA             @(   191.135,   189.865) _N496        (bottom)(leftover)
+* UNNAMED_46_C_I260_B           VIA             @(   191.135,   274.955) _N440        (bottom)(leftover)
+* UNNAMED_48_C_I247_A           VIA             @(   157.480,   106.807) _N550        (bottom)(leftover)
+* UNNAMED_47_C_I247_A           VIA             @(   157.480,   191.897) _N494        (bottom)(leftover)
+* UNNAMED_46_C_I247_A           VIA             @(   157.480,   276.987) _N438        (bottom)(leftover)
+* UNNAMED_45_R_I241_B           VIA             @(    71.120,   297.180) _N403        (bottom)(leftover)
+* UNNAMED_45_C_I189_A           VIA             @(    68.580,   291.465) _N399        (bottom)(leftover)
+* UNNAMED_45_BAT54S_I245_A1     VIA             @(    65.405,   296.545) _N392        (bottom)(leftover)
+* UNNAMED_45_BAT54S_I231_A1     VIA             @(    73.025,   305.855) _N391        (bottom)(leftover)
+* UNNAMED_45_74HC14_I93_A       VIA             @(   125.730,    29.845) _N385        (bottom)(leftover)
+* REF_3V9_TW_P                  VIA             @(   104.394,    40.767) _N179        (bottom)(leftover)
+* REF_3V9_TW_N                  VIA             @(   155.956,    45.593) _N178        (bottom)(leftover)
+* REF_3V9_SV_P                  VIA             @(   104.394,   125.857) _N177        (bottom)(leftover)
+* REF_3V9_SV_N                  VIA             @(   155.956,   130.683) _N176        (bottom)(leftover)
+* REF_3V9_RU_P                  VIA             @(   104.394,   210.947) _N175        (bottom)(leftover)
+* REF_3V9_RU_N                  VIA             @(   155.956,   215.773) _N174        (bottom)(leftover)
+* UNNAMED_43_R_I133_B           R5.1            @(   235.405,   302.260) _N365        (bottom)(leftover)
+* UNNAMED_45_R_I186_B           VIA             @(    74.930,   296.545) _N401        (bottom)(leftover)
+* UNNAMED_45_R_I210_A           VIA             @(    77.470,   301.205) _N402        (bottom)(leftover)
+  PTC_ADC                       PTC_ADC.1       @(    71.120,   313.055) _N152        (bottom)(leftover)
+* DUMMY_TEMP_TRIM               VIA             @(    81.915,   298.450) _N103        (bottom)(leftover)
+* DUMMY_TEMP_TEMP               VIA             @(    77.470,   298.450) _N102        (bottom)(leftover)
+* UNNAMED_45_LM3103_I145_RON    VIA             @(    14.351,   313.182) _N400        (bottom)(leftover)
+* UNNAMED_45_C_I148_A           VIA             @(    12.065,   312.039) _N398        (bottom)(leftover)
+* UNNAMED_45_C_I146_A           VIA             @(    20.066,   302.133) _N397        (bottom)(leftover)
+* UNNAMED_45_C_I143_B           VIA             @(    21.590,   311.467) _N396        (bottom)(leftover)
+* UNNAMED_45_C_I139_B           VIA             @(    13.589,   299.593) _N395        (bottom)(leftover)
+* UNNAMED_45_C_I139_A           VIA             @(    17.470,   301.879) _N394        (bottom)(leftover)
+* 24V_ADC                       VIA             @(    61.087,   309.372) _N15         (bottom)(leftover)
+* UNNAMED_45_AD7417_I130_SDA    VIA             @(    48.895,   301.625) _N390        (bottom)(leftover)
+* UNNAMED_45_AD7417_I130_SCL    VIA             @(    48.895,   299.085) _N389        (bottom)(leftover)
+* UNNAMED_45_AD7417_I130_AIN4   VIA             @(    56.896,   296.545) _N388        (bottom)(leftover)
+* UNNAMED_45_AD7417_I130_AIN3   VIA             @(    60.325,   296.545) _N387        (bottom)(leftover)
+* UNNAMED_45_AD7417_I130_AIN2   VIA             @(    55.880,   303.530) _N386        (bottom)(leftover)
+* DCP_U_ME_1                    R42.2           @(    50.800,   277.495) _N46         (bottom)(leftover)
+* DCN_U_ME_1                    R53.1           @(    50.800,   266.700) _N42         (bottom)(leftover)
+* SW_TEMP_SENSOR                VIA             @(    16.129,   298.704) _N227        (bottom)(leftover)
+  PTC_1                         P6.1            @(    87.730,   310.515) _N148        (bottom)(leftover)
+
+Net DUMMY_SMPS_EN has NO_TEST property, not tested.
+
+* DUMMY_OTI                     VIA             @(    52.959,   300.482) _N94         (bottom)(leftover)
+  5V_HL2                        5V_HL2.1        @(    31.750,   314.325) _N27         (bottom)(leftover)
+* UNNAMED_10_TL084B_I84_NIN     VIA             @(    19.685,   275.590) _N282        (bottom)(leftover)
+* UNNAMED_10_TL084B_I82_NIN     VIA             @(    10.795,   275.590) _N281        (bottom)(leftover)
+* UNNAMED_10_R_I93_B            VIA             @(    31.152,   263.160) _N278        (bottom)(leftover)
+* UNNAMED_10_R_I92_B            VIA             @(    31.115,   267.970) _N277        (bottom)(leftover)
+* UNNAMED_10_R_I91_B            VIA             @(    28.829,   266.700) _N276        (bottom)(leftover)
+* UNNAMED_10_R_I90_B            VIA             @(    29.210,   271.780) _N275        (bottom)(leftover)
+* UNNAMED_10_R_I89_B            VIA             @(    31.115,   274.320) _N274        (bottom)(leftover)
+  NTC_DS                        NTC_DS.1        @(    29.210,   224.790) _N129        (bottom)(leftover)
+  TEMP_IGBT_INV                 P5.9            @(   104.140,    13.335) _N232        (bottom)(leftover)
+  TEMP_IGBT_CONV                P3.33           @(   129.540,   311.785) _N231        (bottom)(leftover)
+  TEMP_IGBT                     TEMP_IGBT.1     @(    21.590,   224.790) _N230        (bottom)(leftover)
+* UNNAMED_45_74HC14_I100_A      VIA             @(   141.605,    20.955) _N383        (bottom)(leftover)
+* UNNAMED_44_74HC14_I288_A      VIA             @(   127.635,   299.720) _N373        (bottom)(leftover)
+* UNNAMED_44_74HC14_I287_A      VIA             @(   136.525,   298.450) _N372        (bottom)(leftover)
+  PFAIL_RS_CONV                 P3.28           @(   137.160,   309.245) _N144        (bottom)(leftover)
+  OCT_INV                       P5.16           @(   111.760,    15.875) _N131        (bottom)(leftover)
+* DUMMY_CONV_B_INV_5            VIA             @(   148.590,   299.720) _N78         (bottom)(leftover)
+* DUMMY_CONV_B_INV_4            VIA             @(   139.700,   298.450) _N77         (bottom)(leftover)
+* DUMMY_CONV_B_INV_3            VIA             @(   139.700,   295.910) _N76         (bottom)(leftover)
+* DUMMY_CONV_B_INV_2            VIA             @(   139.700,   300.990) _N75         (bottom)(leftover)
+* DUMMY_CONV_B_INV_1            VIA             @(   148.590,   297.180) _N74         (bottom)(leftover)
+* UNNAMED_45_74HC14_I104_A      VIA             @(   125.730,    27.305) _N384        (bottom)(leftover)
+* UNNAMED_44_74HC14_I276_Y      VIA             @(   136.525,   294.640) _N371        (bottom)(leftover)
+* UNNAMED_44_74HC14_I263_Y      VIA             @(   136.525,   300.990) _N370        (bottom)(leftover)
+* UNNAMED_44_74HC14_I263_A      VIA             @(   127.635,   302.260) _N369        (bottom)(leftover)
+  PF_IGBT_INV                   P5.12           @(   106.680,    15.875) _N146        (bottom)(leftover)
+  OUT_EN_INV                    P5.29           @(   129.540,    13.335) _N137        (bottom)(leftover)
+* OUT_EN_CONV                   VIA             @(   156.591,   291.465) _N136-1      (bottom)(leftover)
+  OUT_EN_CONV                   P3.26           @(   139.700,   309.245) _N136        (bottom)(leftover)
+  I2C_SDA0_INV                  P5.23           @(   121.920,    13.335) _N118        (bottom)(leftover)
+  I2C_SDA0_CONV                 P3.24           @(   142.240,   309.245) _N117        (bottom)(leftover)
+  I2C_SCL0_INV                  P5.24           @(   121.920,    15.875) _N116        (bottom)(leftover)
+  I2C_SCL0_CONV                 P3.25           @(   139.700,   311.785) _N115        (bottom)(leftover)
+  HL2                           P5.44           @(   147.320,    15.875) _N114-1      (bottom)(leftover)
+  HL2                           P5.43           @(   147.320,    13.335) _N114        (bottom)(leftover)
+* ENABLE_RST                    VIA             @(   138.938,   200.025) _N106        (bottom)(leftover)
+* DUMMY_INV_A_INV_1             VIA             @(   134.620,    27.305) _N79         (bottom)(leftover)
+* DUMMY_INV_A_INV_2             VIA             @(   134.620,    24.765) _N80         (bottom)(leftover)
+* DUMMY_INV_A_INV_3             VIA             @(   134.620,    29.845) _N81         (bottom)(leftover)
+  24V_HL2                       P5.46           @(   149.860,    15.875) _N18-1       (bottom)(leftover)
+  24V_HL2                       P5.45           @(   149.860,    13.335) _N18         (bottom)(leftover)
+* GATE_SENSE_TW                 VIA             @(   187.706,   108.585) _N109        (bottom)(leftover)
+* UNNAMED_48_R_I396_B           D39.2           @(   145.796,    68.834) _N571        (bottom)(leftover)
+* UNNAMED_48_R_I374_A           VIA             @(   123.190,    63.500) _N570        (bottom)(leftover)
+* UNNAMED_48_R_I371_A           VIA             @(   120.015,    55.820) _N569        (bottom)(leftover)
+* UNNAMED_48_R_I30_A            VIA             @(   186.690,    97.790) _N566        (bottom)(leftover)
+* UNNAMED_48_R_I29_B            VIA             @(   194.705,    98.933) _N565        (bottom)(leftover)
+* UNNAMED_48_R_I279_B           VIA             @(   152.400,    73.660) _N564        (bottom)(leftover)
+* UNNAMED_48_R_I279_A           VIA             @(   170.815,    79.375) _N563        (bottom)(leftover)
+* UNNAMED_48_R_I276_B           D34.2           @(   174.625,    92.075) _N562        (bottom)(leftover)
+* UNNAMED_48_MJD44H11_I55_E     VIA             @(   182.245,    86.360) _N561        (bottom)(leftover)
+* UNNAMED_48_MJD44H11_I376_E    VIA             @(   120.650,    63.500) _N560        (bottom)(leftover)
+* UNNAMED_48_JUMPER_I342_A      VIA             @(   126.365,    46.355) _N559        (bottom)(leftover)
+* UNNAMED_48_5033001300_I403_D  VIA             @(   198.120,    99.695) _N517        (bottom)(leftover)
+* UNNAMED_48_HCPL316J_I202_VOUT VIA             @(   124.460,    81.280) _N558        (bottom)(leftover)
+* UNNAMED_48_HCPL316J_I183_VOUT VIA             @(   158.750,    97.155) _N557        (bottom)(leftover)
+* UNNAMED_48_C_I380_A           VIA             @(   128.905,    73.025) _N556        (bottom)(leftover)
+* UNNAMED_48_C_I272_A           VIA             @(   180.721,    79.502) _N555        (bottom)(leftover)
+* UNNAMED_48_C_I263_A           VIA             @(   193.040,   108.585) _N554        (bottom)(leftover)
+* UNNAMED_48_C_I261_A           VIA             @(   193.548,   111.125) _N553        (bottom)(leftover)
+* UNNAMED_48_C_I260_A           VIA             @(   193.548,   106.045) _N551        (bottom)(leftover)
+* UNNAMED_48_C_I179_B           VIA             @(   199.898,    65.405) _N549        (bottom)(leftover)
+* UNNAMED_48_C_I162_B           VIA             @(   210.185,    70.485) _N548        (bottom)(leftover)
+* UNNAMED_48_BZV55B9V1_I385_C   VIA             @(   128.270,    81.280) _N547        (bottom)(leftover)
+* UNNAMED_48_BZV55B9V1_I192_C   VIA             @(   162.560,    97.155) _N546        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I389_A    VIA             @(   130.810,    81.280) _N539        (bottom)(leftover)
+* UNNAMED_48_BZV55B18_I266_A    D39.1           @(   145.796,    57.404) _N538        (bottom)(leftover)
+* UNNAMED_48_BDP949_I327_B      VIA             @(   101.854,    41.275) _N537        (bottom)(leftover)
+* UNNAMED_48_BDP949_I310_B      VIA             @(   158.496,    45.085) _N536        (bottom)(leftover)
+* UNNAMED_48_BC847C_I250_C      VIA             @(   116.840,   105.410) _N535        (bottom)(leftover)
+* UNNAMED_48_BC847C_I250_B      VIA             @(   116.840,   100.203) _N534-1      (bottom)(leftover)
+* UNNAMED_48_BAV99_I328_A1      VIA             @(   113.030,    40.640) _N533        (bottom)(leftover)
+* UNNAMED_48_BAV99_I309_A1      VIA             @(   147.455,    45.720) _N532        (bottom)(leftover)
+* UNNAMED_48_BAS19_I43_A        VIA             @(   209.042,    79.375) _N531        (bottom)(leftover)
+* UNNAMED_48_BAS19_I21_C        VIA             @(   188.595,    99.695) _N530        (bottom)(leftover)
+* UNNAMED_48_BAS19_I21_A        VIA             @(   191.770,    99.695) _N529        (bottom)(leftover)
+* UNNAMED_48_BAS19_I178_A       VIA             @(   201.422,    79.375) _N528        (bottom)(leftover)
+* UNNAMED_48_74HC14_I235_Y      VIA             @(   160.020,   109.220) _N527        (bottom)(leftover)
+* UNNAMED_48_74HC14_I235_A      VIA             @(   123.825,   101.727) _N526        (bottom)(leftover)
+* UNNAMED_48_74HC14_I224_A      VIA             @(   123.190,   117.895) _N525        (bottom)(leftover)
+* UNNAMED_48_74HC14_I221_Y      VIA             @(   129.540,    93.345) _N524        (bottom)(leftover)
+* UNNAMED_48_74HC14_I221_A      VIA             @(   126.365,    98.425) _N523        (bottom)(leftover)
+* UNNAMED_48_74HC14_I210_A      VIA             @(   123.190,   113.284) _N522        (bottom)(leftover)
+* UNNAMED_48_74HC14_I209_Y      VIA             @(   163.830,   110.617) _N521        (bottom)(leftover)
+* UNNAMED_48_74HC14_I209_A      VIA             @(   128.905,    98.425) _N520        (bottom)(leftover)
+* UNNAMED_48_74HC14_I184_Y      VIA             @(   165.100,   107.950) _N519        (bottom)(leftover)
+* UNNAMED_48_74HC14_I184_A      VIA             @(   123.190,   108.966) _N518        (bottom)(leftover)
+* GATE_SENSE_SV                 VIA             @(   187.706,   193.675) _N108        (bottom)(leftover)
+* UNNAMED_47_R_I396_B           D26.2           @(   145.796,   153.924) _N515        (bottom)(leftover)
+* UNNAMED_47_R_I374_A           VIA             @(   123.190,   148.590) _N514        (bottom)(leftover)
+* UNNAMED_47_R_I371_A           VIA             @(   120.015,   140.910) _N513        (bottom)(leftover)
+* UNNAMED_47_R_I30_A            VIA             @(   186.690,   182.880) _N510        (bottom)(leftover)
+* UNNAMED_47_R_I29_B            VIA             @(   194.705,   184.023) _N509        (bottom)(leftover)
+* UNNAMED_47_R_I279_B           VIA             @(   152.400,   158.750) _N508        (bottom)(leftover)
+* UNNAMED_47_R_I279_A           VIA             @(   170.815,   164.465) _N507        (bottom)(leftover)
+* UNNAMED_47_R_I276_B           D20.2           @(   174.625,   177.165) _N506        (bottom)(leftover)
+* UNNAMED_47_MJD44H11_I55_E     VIA             @(   182.245,   171.450) _N505        (bottom)(leftover)
+* UNNAMED_47_MJD44H11_I376_E    VIA             @(   120.650,   148.590) _N504        (bottom)(leftover)
+* UNNAMED_47_JUMPER_I342_A      VIA             @(   126.365,   131.445) _N503        (bottom)(leftover)
+* UNNAMED_47_5033001300_I404_D  VIA             @(   198.120,   184.785) _N461        (bottom)(leftover)
+* UNNAMED_47_HCPL316J_I202_VOUT VIA             @(   124.460,   166.370) _N502        (bottom)(leftover)
+* UNNAMED_47_HCPL316J_I183_VOUT VIA             @(   158.750,   182.245) _N501        (bottom)(leftover)
+* UNNAMED_47_C_I380_A           VIA             @(   128.397,   158.115) _N500        (bottom)(leftover)
+* UNNAMED_47_C_I272_A           VIA             @(   180.721,   164.592) _N499        (bottom)(leftover)
+* UNNAMED_47_C_I263_A           VIA             @(   193.040,   193.675) _N498        (bottom)(leftover)
+* UNNAMED_47_C_I261_A           VIA             @(   193.675,   196.215) _N497        (bottom)(leftover)
+* UNNAMED_47_C_I260_A           VIA             @(   193.548,   191.135) _N495        (bottom)(leftover)
+* UNNAMED_47_C_I179_B           VIA             @(   199.898,   150.495) _N493        (bottom)(leftover)
+* UNNAMED_47_C_I162_B           VIA             @(   210.185,   155.575) _N492        (bottom)(leftover)
+* UNNAMED_47_BZV55B9V1_I385_C   VIA             @(   128.270,   166.370) _N491        (bottom)(leftover)
+* UNNAMED_47_BZV55B9V1_I192_C   VIA             @(   162.560,   182.245) _N490        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I389_A    VIA             @(   130.810,   166.370) _N483        (bottom)(leftover)
+* UNNAMED_47_BZV55B18_I266_A    D26.1           @(   145.796,   142.494) _N482        (bottom)(leftover)
+* UNNAMED_47_BDP949_I327_B      VIA             @(   101.854,   126.365) _N481        (bottom)(leftover)
+* UNNAMED_47_BDP949_I310_B      VIA             @(   158.496,   130.175) _N480        (bottom)(leftover)
+* UNNAMED_47_BC847C_I250_C      VIA             @(   116.840,   190.500) _N479        (bottom)(leftover)
+* UNNAMED_47_BC847C_I250_B      VIA             @(   116.840,   185.293) _N478-1      (bottom)(leftover)
+* UNNAMED_47_BAV99_I328_A1      VIA             @(   113.030,   125.730) _N477        (bottom)(leftover)
+* UNNAMED_47_BAV99_I309_A1      VIA             @(   147.661,   131.016) _N476        (bottom)(leftover)
+* UNNAMED_47_BAS19_I43_A        VIA             @(   209.042,   164.465) _N475        (bottom)(leftover)
+* UNNAMED_47_BAS19_I21_C        VIA             @(   188.595,   184.785) _N474        (bottom)(leftover)
+* UNNAMED_47_BAS19_I21_A        VIA             @(   191.770,   184.785) _N473        (bottom)(leftover)
+* UNNAMED_47_BAS19_I178_A       VIA             @(   201.422,   164.465) _N472        (bottom)(leftover)
+* UNNAMED_47_74HC14_I235_Y      VIA             @(   160.020,   194.310) _N471        (bottom)(leftover)
+* UNNAMED_47_74HC14_I235_A      VIA             @(   123.825,   186.817) _N470        (bottom)(leftover)
+* UNNAMED_47_74HC14_I224_A      VIA             @(   131.445,   203.581) _N469        (bottom)(leftover)
+* UNNAMED_47_74HC14_I221_Y      VIA             @(   129.540,   178.435) _N468        (bottom)(leftover)
+* UNNAMED_47_74HC14_I221_A      VIA             @(   126.365,   183.515) _N467        (bottom)(leftover)
+* UNNAMED_47_74HC14_I210_A      VIA             @(   126.365,   204.851) _N466        (bottom)(leftover)
+* UNNAMED_47_74HC14_I209_Y      VIA             @(   163.830,   195.707) _N465        (bottom)(leftover)
+* UNNAMED_47_74HC14_I209_A      VIA             @(   128.905,   183.515) _N464        (bottom)(leftover)
+* UNNAMED_47_74HC14_I184_Y      VIA             @(   165.100,   193.040) _N463        (bottom)(leftover)
+* UNNAMED_47_74HC14_I184_A      VIA             @(   131.953,   183.515) _N462        (bottom)(leftover)
+  I_SV                          ISV.1           @(    78.740,   218.440) _N125        (bottom)(leftover)
+  I_RU                          IRU.1           @(    69.850,   218.440) _N120        (bottom)(leftover)
+* UNNAMED_10_TL084B_I108_NIN    VIA             @(    40.005,   275.590) _N280        (bottom)(leftover)
+* UNNAMED_10_R_I115_B           R50.1           @(    59.690,   269.240) _N263        (bottom)(leftover)
+  SENSE_IV                      P5.6            @(    99.060,    15.875) _N206        (bottom)(leftover)
+  SENSE_IU                      P5.7            @(   101.600,    13.335) _N205        (bottom)(leftover)
+  SENSE_IS                      P3.37           @(   124.460,   311.785) _N204        (bottom)(leftover)
+  SENSE_IR                      P3.35           @(   127.000,   311.785) _N203        (bottom)(leftover)
+* REF_2V5_TW_P                  VIA             @(    91.440,    40.640) _N173        (bottom)(leftover)
+* REF_2V5_TW_N                  VIA             @(   168.910,    45.720) _N172        (bottom)(leftover)
+* REF_2V5_SV_P                  VIA             @(    91.440,   125.730) _N171        (bottom)(leftover)
+* REF_2V5_SV_N                  VIA             @(   168.910,   130.810) _N170        (bottom)(leftover)
+* PWM_VCC_TW                    VIA             @(   173.990,   111.065) _N163        (bottom)(leftover)
+* PWM_VCC_SV                    VIA             @(   173.990,   196.155) _N162        (bottom)(leftover)
+* I_SENSE_TW                    VIA             @(   196.088,   111.125) _N124        (bottom)(leftover)
+* I_SENSE_SV                    VIA             @(   196.215,   196.215) _N123        (bottom)(leftover)
+* DRAIN_TW                      VIA             @(   207.010,    98.425) _N58         (bottom)(leftover)
+* DRAIN_SV                      VIA             @(   207.010,   183.515) _N57         (bottom)(leftover)
+* +27V_TW_P_RTN                 VIA             @(   206.375,    79.375) _N13         (bottom)(leftover)
+* +27V_TW_P                     VIA             @(   149.860,    91.440) _N12         (bottom)(leftover)
+* +27V_TW_N_RTN                 VIA             @(   198.882,    79.502) _N11         (bottom)(leftover)
+* +27V_TW_N                     VIA             @(   156.210,    61.468) _N10         (bottom)(leftover)
+* +27V_SV_P_RTN                 VIA             @(   206.375,   164.465) _N9          (bottom)(leftover)
+* +27V_SV_P                     VIA             @(   149.860,   176.530) _N8          (bottom)(leftover)
+* +27V_SV_N_RTN                 VIA             @(   198.882,   164.592) _N7          (bottom)(leftover)
+* +27V_SV_N                     VIA             @(   156.210,   146.558) _N6          (bottom)(leftover)
+* UNNAMED_46_R_I30_A            VIA             @(   186.690,   267.970) _N454        (bottom)(leftover)
+* GATE_SENSE_RU                 VIA             @(   187.706,   278.765) _N107        (bottom)(leftover)
+* UNNAMED_46_R_I396_B           D15.2           @(   145.796,   239.014) _N459        (bottom)(leftover)
+* UNNAMED_46_R_I374_A           VIA             @(   123.190,   233.680) _N458        (bottom)(leftover)
+* UNNAMED_46_R_I371_A           VIA             @(   120.015,   226.000) _N457        (bottom)(leftover)
+* UNNAMED_46_R_I29_B            VIA             @(   194.705,   269.113) _N453        (bottom)(leftover)
+* UNNAMED_46_R_I279_B           VIA             @(   152.400,   243.840) _N452        (bottom)(leftover)
+* UNNAMED_46_R_I279_A           VIA             @(   170.815,   249.555) _N451        (bottom)(leftover)
+* UNNAMED_46_R_I276_B           D10.2           @(   174.625,   262.255) _N450        (bottom)(leftover)
+* UNNAMED_46_MJD44H11_I55_E     VIA             @(   182.245,   256.540) _N449        (bottom)(leftover)
+* UNNAMED_46_MJD44H11_I376_E    VIA             @(   120.650,   233.680) _N448        (bottom)(leftover)
+* UNNAMED_46_JUMPER_I342_A      VIA             @(   126.365,   216.535) _N447        (bottom)(leftover)
+* UNNAMED_46_5033001300_I404_D  VIA             @(   198.120,   269.875) _N405        (bottom)(leftover)
+* DRAIN_RU                      VIA             @(   207.010,   268.605) _N56         (bottom)(leftover)
+* UNNAMED_46_HCPL316J_I202_VOUT VIA             @(   124.460,   251.460) _N446        (bottom)(leftover)
+* UNNAMED_46_HCPL316J_I183_VOUT VIA             @(   158.750,   267.335) _N445        (bottom)(leftover)
+* UNNAMED_46_C_I380_A           VIA             @(   128.905,   243.205) _N444        (bottom)(leftover)
+* UNNAMED_46_C_I272_A           VIA             @(   180.721,   249.682) _N443        (bottom)(leftover)
+* UNNAMED_46_C_I263_A           VIA             @(   193.040,   278.765) _N442        (bottom)(leftover)
+* I_SENSE_RU                    VIA             @(   196.215,   281.305) _N122        (bottom)(leftover)
+* UNNAMED_46_C_I261_A           VIA             @(   193.675,   281.305) _N441        (bottom)(leftover)
+* UNNAMED_46_C_I260_A           VIA             @(   193.548,   276.225) _N439        (bottom)(leftover)
+* UNNAMED_46_C_I179_B           VIA             @(   199.898,   235.585) _N437        (bottom)(leftover)
+* UNNAMED_46_C_I162_B           VIA             @(   210.185,   240.665) _N436        (bottom)(leftover)
+* UNNAMED_46_BZV55B9V1_I385_C   VIA             @(   128.270,   251.460) _N435        (bottom)(leftover)
+* UNNAMED_46_BZV55B9V1_I192_C   VIA             @(   162.560,   267.335) _N434        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I389_A    VIA             @(   130.810,   251.460) _N427        (bottom)(leftover)
+* UNNAMED_46_BZV55B18_I266_A    D15.1           @(   145.796,   227.584) _N426        (bottom)(leftover)
+* PWM_VCC_RU                    VIA             @(   173.990,   281.245) _N161        (bottom)(leftover)
+* UNNAMED_46_BDP949_I327_B      VIA             @(   101.854,   211.455) _N425        (bottom)(leftover)
+* UNNAMED_46_BDP949_I310_B      VIA             @(   158.496,   215.265) _N424        (bottom)(leftover)
+* UNNAMED_46_BC847C_I250_C      VIA             @(   116.840,   275.590) _N423        (bottom)(leftover)
+* UNNAMED_46_BC847C_I250_B      VIA             @(   116.840,   270.383) _N422-1      (bottom)(leftover)
+* UNNAMED_46_BAV99_I328_A1      VIA             @(   113.030,   210.820) _N421        (bottom)(leftover)
+* UNNAMED_46_BAV99_I309_A1      VIA             @(   147.455,   215.900) _N420        (bottom)(leftover)
+* UNNAMED_46_BAS19_I43_A        VIA             @(   209.042,   249.555) _N419        (bottom)(leftover)
+* UNNAMED_46_BAS19_I21_C        VIA             @(   188.595,   269.875) _N418        (bottom)(leftover)
+* UNNAMED_46_BAS19_I21_A        VIA             @(   191.770,   269.875) _N417        (bottom)(leftover)
+* UNNAMED_46_BAS19_I178_A       VIA             @(   201.422,   249.555) _N416        (bottom)(leftover)
+* UNNAMED_46_74HC14_I235_Y      VIA             @(   160.020,   279.400) _N415        (bottom)(leftover)
+* UNNAMED_46_74HC14_I235_A      VIA             @(   123.825,   271.907) _N414        (bottom)(leftover)
+* UNNAMED_46_74HC14_I224_A      VIA             @(   123.190,   288.075) _N413        (bottom)(leftover)
+* UNNAMED_46_74HC14_I221_Y      VIA             @(   129.540,   263.525) _N412        (bottom)(leftover)
+* UNNAMED_46_74HC14_I221_A      VIA             @(   126.365,   268.605) _N411        (bottom)(leftover)
+* UNNAMED_46_74HC14_I210_A      VIA             @(   123.190,   283.464) _N410        (bottom)(leftover)
+* UNNAMED_46_74HC14_I209_Y      VIA             @(   163.830,   280.797) _N409        (bottom)(leftover)
+* UNNAMED_46_74HC14_I209_A      VIA             @(   128.905,   268.605) _N408        (bottom)(leftover)
+* UNNAMED_46_74HC14_I184_Y      VIA             @(   165.100,   278.130) _N407        (bottom)(leftover)
+* UNNAMED_46_74HC14_I184_A      VIA             @(   123.190,   279.146) _N406        (bottom)(leftover)
+* RUP_G13                       VIA             @(   150.495,   257.175) _N200        (bottom)(leftover)
+* RUP_G12                       VIA             @(   154.686,   248.412) _N199        (bottom)(leftover)
+* RUP_G11                       VIA             @(   201.422,   258.445) _N198        (bottom)(leftover)
+* RUP_E13                       VIA             @(   150.495,   252.095) _N197        (bottom)(leftover)
+* RUP_E12                       VIA             @(   170.815,   252.095) _N196        (bottom)(leftover)
+* RUP_E11                       VIA             @(   197.016,   253.785) _N195        (bottom)(leftover)
+* RUP_C1                        D10.1           @(   174.625,   273.685) _N194        (bottom)(leftover)
+* RUN_G23                       VIA             @(   131.445,   234.100) _N191        (bottom)(leftover)
+* RUN_G22                       VIA             @(   159.385,   233.045) _N190        (bottom)(leftover)
+* RUN_G21                       VIA             @(   167.005,   233.680) _N189        (bottom)(leftover)
+* RUN_E23                       VIA             @(   136.327,   241.738) _N188        (bottom)(leftover)
+* RUN_E22                       VIA             @(   156.337,   234.950) _N187        (bottom)(leftover)
+* RUN_E21                       VIA             @(   204.470,   243.840) _N186        (bottom)(leftover)
+* REF_2V5_RU_P                  VIA             @(    91.440,   210.820) _N169        (bottom)(leftover)
+* REF_2V5_RU_N                  VIA             @(   168.910,   215.900) _N168        (bottom)(leftover)
+  PWM_WP                        P5.35           @(   137.160,    13.335) _N167        (bottom)(leftover)
+  PWM_WN                        P5.34           @(   134.620,    15.875) _N166        (bottom)(leftover)
+  PWM_VP                        P5.37           @(   139.700,    13.335) _N165        (bottom)(leftover)
+  PWM_VN                        P5.36           @(   137.160,    15.875) _N164        (bottom)(leftover)
+  PWM_UP                        P5.39           @(   142.240,    13.335) _N160        (bottom)(leftover)
+  PWM_UN                        P5.38           @(   139.700,    15.875) _N159        (bottom)(leftover)
+  PWM_TP                        P3.19           @(   147.320,   311.785) _N158        (bottom)(leftover)
+  PWM_SP                        P3.17           @(   149.860,   311.785) _N156        (bottom)(leftover)
+  PWM_RP                        P3.15           @(   152.400,   311.785) _N154        (bottom)(leftover)
+* PF_IGBT_INV_OC                VIA             @(   140.335,   116.205) _N147        (bottom)(leftover)
+* PF_IGBT_CONV_OC               VIA             @(   134.620,    46.355) _N145        (bottom)(leftover)
+* OCT_INV_N                     VIA             @(   141.605,   201.295) _N132        (bottom)(leftover)
+* OCT_CONV_N                    VIA             @(   143.510,   283.210) _N130        (bottom)(leftover)
+* DUMMY_LED2_RU_P               VIA             @(   163.830,   271.155) _N89         (bottom)(leftover)
+* DUMMY_LED2_RU_N               VIA             @(   130.175,   255.280) _N88         (bottom)(leftover)
+* DUMMY_LED1_RU_P               VIA             @(   157.480,   280.797) _N83         (bottom)(leftover)
+* DUMMY_LED1_RU_N               VIA             @(   123.190,   264.922) _N82         (bottom)(leftover)
+* 24V_DRIVER_RTN                VIA             @(   186.690,   262.255) _N17         (bottom)(leftover)
+* 24V_DRIVER_RTN                VIA             @(   186.690,   177.165) _N17         (bottom)(leftover)
+* 24V_DRIVER_RTN                VIA             @(   186.690,    92.075) _N17         (bottom)(leftover)
+* 24V_DRIVER                    VIA             @(   210.820,   275.590) _N16         (bottom)(leftover)
+* 24V_DRIVER                    VIA             @(   210.820,   105.410) _N16         (bottom)(leftover)
+* 24V_DRIVER                    VIA             @(   210.820,   190.500) _N16         (bottom)(leftover)
+* +27V_RU_P_RTN                 VIA             @(   206.375,   249.555) _N5          (bottom)(leftover)
+* +27V_RU_P                     VIA             @(   149.860,   261.620) _N4          (bottom)(leftover)
+* +27V_RU_N_RTN                 VIA             @(   198.882,   249.682) _N3          (bottom)(leftover)
+* +27V_RU_N                     VIA             @(   156.210,   231.648) _N2          (bottom)(leftover)
+  VST_OUT_N                     VST_N.1         @(    21.590,   191.770) _N628-1      (bottom)(leftover)
+  VST_OUT_N                     P3.29           @(   134.620,   311.785) _N628        (bottom)(leftover)
+  VST_OUT_DC_N                  VST.1           @(     8.890,   191.770) _N627        (bottom)(leftover)
+  VST_N                         VST_NP.1        @(    60.325,   205.105) _N626        (bottom)(leftover)
+  VST_DC_N                      DC_VST.1        @(    64.135,   194.945) _N625        (bottom)(leftover)
+  VRS_OUT_N                     VRS_N.1         @(     8.890,   179.070) _N624-1      (bottom)(leftover)
+  VRS_OUT_N                     P3.31           @(   132.080,   311.785) _N624        (bottom)(leftover)
+  VRS_OUT_DC_N                  VRS.1           @(    21.590,   179.070) _N623        (bottom)(leftover)
+* VRS_N_RECTIFIED               VIA             @(    31.115,   142.240) _N622        (bottom)(leftover)
+  VRS_N                         VRS_NP.1        @(    60.325,   191.770) _N621        (bottom)(leftover)
+  VRS_DC_N                      DC_VRS.1        @(    64.135,   181.610) _N620        (bottom)(leftover)
+* VCC_PWM_CONTROLLER            VIA             @(    13.970,    60.960) _N619        (bottom)(leftover)
+  UT                            P2.5            @(    76.595,    14.136) _N614        (bottom)(leftover)
+  US                            P2.4            @(    69.095,    14.236) _N612        (bottom)(leftover)
+  UR                            P2.3            @(    61.595,    14.136) _N610        (bottom)(leftover)
+* UNNAMED_9_TL084B_I267_NIN     VIA             @(   101.600,    30.480) _N609        (bottom)(leftover)
+* US_LOW_IMP                    VIA             @(    92.710,    24.130) _N613        (bottom)(leftover)
+* UT_LOW_IMP                    VIA             @(   101.600,    24.130) _N615        (bottom)(leftover)
+* UR_LOW_IMP                    VIA             @(    92.710,    30.480) _N611        (bottom)(leftover)
+* UNNAMED_9_R_I239_A            VIA             @(    53.340,   202.295) _N608        (bottom)(leftover)
+* UNNAMED_9_R_I238_A            VIA             @(    53.340,   188.960) _N607        (bottom)(leftover)
+* UNNAMED_9_R_I237_A            VIA             @(    57.785,   201.295) _N606        (bottom)(leftover)
+* UNNAMED_9_R_I235_A            VIA             @(    57.785,   187.960) _N605        (bottom)(leftover)
+* DCN_LED_1                     R201.1          @(   236.220,    16.510) _N35         (bottom)(leftover)
+* DCN_LED_2                     R203.2          @(   226.060,     3.810) _N36         (bottom)(leftover)
+* DCN_LED_3                     R203.1          @(   226.060,    16.510) _N37         (bottom)(leftover)
+* DCN_LED_4                     R199.2          @(   220.980,    29.210) _N38         (bottom)(leftover)
+* DCN_LED_5                     R199.1          @(   220.980,    16.510) _N39         (bottom)(leftover)
+* UNNAMED_9_R_I212_B            VIA             @(   212.725,    23.495) _N604        (bottom)(leftover)
+* UNNAMED_9_LED_I214_A          VIA             @(   210.185,    30.480) _N603        (bottom)(leftover)
+* UNNAMED_9_555_I229_THRES      VIA             @(   208.788,    10.668) _N602        (bottom)(leftover)
+* UNNAMED_9_555_I229_RESET      VIA             @(   212.090,    10.668) _N601        (bottom)(leftover)
+* UNNAMED_9_555_I229_OUT        VIA             @(   210.185,    24.130) _N600        (bottom)(leftover)
+* DCN_LED_6                     R202.1          @(   218.440,     3.810) _N40         (bottom)(leftover)
+* UNNAMED_9_555_I229_DISCH      VIA             @(   210.439,    12.700) _N599        (bottom)(leftover)
+* UNNAMED_9_555_I229_CONT       VIA             @(   202.565,    10.033) _N598        (bottom)(leftover)
+* UNNAMED_10_R_I100_A           R44.2           @(    59.690,   274.955) _N262        (bottom)(leftover)
+* UNNAMED_10_R_I97_B            R44.1           @(    72.390,   274.955) _N279        (bottom)(leftover)
+* UNNAMED_10_R_I116_B           R50.2           @(    72.390,   269.240) _N264        (bottom)(leftover)
+* UNNAMED_45_BC817_I3_B         VIA             @(   143.129,    30.410) _N393        (bottom)(leftover)
+* UNNAMED_45_24C64_I2_WP        VIA             @(   143.129,    26.924) _N382        (bottom)(leftover)
+* UNNAMED_43_R_I73_B            R5.2            @(   212.905,   302.260) _N366        (bottom)(leftover)
+* UNNAMED_39_R_I312_B           VIA             @(   188.722,    27.305) _N363        (bottom)(leftover)
+* UNNAMED_39_R_I310_B           VIA             @(   180.467,    27.305) _N362        (bottom)(leftover)
+* UNNAMED_39_R_I286_B           VIA             @(    34.925,    78.740) _N361       
+* UNNAMED_39_R_I242_A           VIA             @(    13.970,    69.850) _N360        (bottom)(leftover)
+* UNNAMED_39_R_I124_B           VIA             @(    58.420,    71.120) _N359        (bottom)(leftover)
+* SMPS_SENSE_DRAIN              TR4.2           @(    35.680,    57.745) _N209        (bottom)(leftover)
+* UNNAMED_39_C_I248_A           VIA             @(    17.145,    72.390) _N358        (bottom)(leftover)
+* UNNAMED_39_C_I239_A           VIA             @(     7.620,    62.865) _N357        (bottom)(leftover)
+* UNNAMED_39_C_I238_A           VIA             @(     7.620,    70.485) _N356        (bottom)(leftover)
+* I_SENSE_PWM_CONTROLLER        VIA             @(    11.430,    58.420) _N121        (bottom)(leftover)
+* UNNAMED_39_C_I178_B           VIA             @(    59.309,    73.660) _N355        (bottom)(leftover)
+* UNNAMED_39_C_I178_A           VIA             @(    50.419,    69.850) _N354        (bottom)(leftover)
+* UNNAMED_39_C_I164_B           VIA             @(    62.230,    75.565) _N353        (bottom)(leftover)
+* UNNAMED_39_C_I161_B           VIA             @(    60.960,    48.260) _N352        (bottom)(leftover)
+* UNNAMED_39_C_I158_B           VIA             @(    60.960,    62.230) _N351        (bottom)(leftover)
+* UNNAMED_39_C_I156_B           VIA             @(    50.419,    74.930) _N350        (bottom)(leftover)
+* SMPS_SENSE_GATE               VIA             @(    20.955,    50.800) _N210        (bottom)(leftover)
+* UNNAMED_39_BYG22D_I285_C      VIA             @(    40.005,    60.325) _N349        (bottom)(leftover)
+* UNNAMED_39_BYG22D_I285_A      TR4.3           @(    35.680,    52.745) _N348        (bottom)(leftover)
+* UNNAMED_39_BYG22D_I283_A      VIA             @(    35.560,    68.340) _N347        (bottom)(leftover)
+* UNNAMED_39_BYG22D_I162_C      TR4.5           @(    50.680,    47.745) _N346        (bottom)(leftover)
+* UNNAMED_39_BYG22D_I157_A      TR4.8           @(    50.680,    62.745) _N345        (bottom)(leftover)
+* UNNAMED_39_BYG22D_I127_C      VIA             @(    67.945,    73.660) _N344        (bottom)(leftover)
+* UNNAMED_39_BYG22D_I127_A      VIA             @(    50.419,    72.390) _N343        (bottom)(leftover)
+* UNNAMED_39_10MQ040N_I309_A    C249.1          @(   201.168,    25.995) _N342        (bottom)(leftover)
+* UNNAMED_39_10MQ040N_I229_C    VIA             @(    23.495,    41.275) _N341        (bottom)(leftover)
+* UNNAMED_39_10MQ040N_I229_A    VIA             @(    20.955,    41.275) _N340        (bottom)(leftover)
+* UNNAMED_38_TL084B_I91_NIN     VIA             @(    40.005,   149.860) _N339        (bottom)(leftover)
+* UNNAMED_38_TL084B_I89_NIN     VIA             @(    40.005,   142.240) _N338        (bottom)(leftover)
+* UNNAMED_38_R_I69_B            VIA             @(    32.385,   106.680) _N337        (bottom)(leftover)
+* PFAIL_RS                      VIA             @(   119.380,   303.530) _N143        (bottom)(leftover)
+* UNNAMED_38_R_I19_B            VIA             @(    31.115,   144.780) _N336        (bottom)(leftover)
+* UNNAMED_38_R_I18_A            VIA             @(    35.560,   144.145) _N335        (bottom)(leftover)
+* UNNAMED_38_R_I17_B            VIA             @(    31.115,   147.320) _N334        (bottom)(leftover)
+* UNNAMED_38_LM339A_I73_PIN     VIA             @(    40.005,   135.255) _N332        (bottom)(leftover)
+* UNNAMED_38_LM339A_I73_NIN     VIA             @(    40.005,   132.715) _N331        (bottom)(leftover)
+* UNNAMED_38_LM339A_I72_PIN     VIA             @(    36.195,   130.175) _N330        (bottom)(leftover)
+* UNNAMED_38_LM339A_I72_NIN     VIA             @(    40.005,   130.175) _N329        (bottom)(leftover)
+* UNNAMED_38_C_I44_A            VIA             @(    35.560,   141.605) _N328        (bottom)(leftover)
+* UNNAMED_38_C_I41_B            VIA             @(    31.115,   149.860) _N327        (bottom)(leftover)
+* UNNAMED_38_C_I41_A            VIA             @(    25.400,   151.130) _N326        (bottom)(leftover)
+* UNNAMED_38_BAT54S_I35_A1      VIA             @(    25.400,   140.970) _N325        (bottom)(leftover)
+* UNNAMED_37_R_I64_B            VIA             @(    52.705,   193.675) _N324        (bottom)(leftover)
+* UNNAMED_37_R_I60_B            VIA             @(    39.624,   195.580) _N323        (bottom)(leftover)
+* UNNAMED_37_R_I28_B            VIA             @(    14.605,   193.675) _N322        (bottom)(leftover)
+* UNNAMED_37_R_I24_B            VIA             @(    16.510,   198.755) _N321        (bottom)(leftover)
+* UNNAMED_37_R_I23_B            VIA             @(    19.685,   195.215) _N320        (bottom)(leftover)
+* UNNAMED_37_R_I22_B            VIA             @(    21.590,   198.755) _N319        (bottom)(leftover)
+* UNNAMED_37_R_I18_A            VIA             @(     8.890,   185.420) _N318        (bottom)(leftover)
+* UNNAMED_37_R_I11_B            VIA             @(    10.795,   203.200) _N317        (bottom)(leftover)
+* UNNAMED_37_R_I11_A            VIA             @(     8.890,   198.755) _N316        (bottom)(leftover)
+* UNNAMED_37_IL300_I13_A2       VIA             @(    18.415,   204.470) _N315        (bottom)(leftover)
+* UNNAMED_37_IL300_I13_A        VIA             @(    32.512,   197.485) _N314        (bottom)(leftover)
+* UNNAMED_37_C_I7_A             VIA             @(    15.240,   202.565) _N313        (bottom)(leftover)
+* UNNAMED_37_C_I69_A            VIA             @(    57.785,   196.215) _N312        (bottom)(leftover)
+* UNNAMED_37_C_I59_B            VIA             @(    48.895,   202.565) _N311        (bottom)(leftover)
+* UNNAMED_37_C_I59_A            VIA             @(    32.512,   202.565) _N310        (bottom)(leftover)
+* UNNAMED_37_C_I29_A            VIA             @(    12.700,   198.755) _N309        (bottom)(leftover)
+* UNNAMED_37_C_I21_A            VIA             @(     6.969,   181.880) _N308        (bottom)(leftover)
+* UNNAMED_37_BC817_I56_E        VIA             @(    40.640,   201.295) _N307        (bottom)(leftover)
+* UNNAMED_37_BC817_I56_C        VIA             @(    32.512,   194.945) _N306        (bottom)(leftover)
+* UNNAMED_37_BC817_I56_B        VIA             @(    43.180,   201.295) _N305        (bottom)(leftover)
+* UNNAMED_36_R_I89_B            VIA             @(     8.890,   167.005) _N304        (bottom)(leftover)
+* UNNAMED_36_R_I86_B            VIA             @(     8.890,   172.085) _N303        (bottom)(leftover)
+* UNNAMED_36_R_I67_B            VIA             @(    19.685,   168.545) _N302        (bottom)(leftover)
+* UNNAMED_36_R_I64_B            VIA             @(    21.590,   172.085) _N301        (bottom)(leftover)
+* UNNAMED_36_R_I45_B            VIA             @(    23.495,   185.420) _N300        (bottom)(leftover)
+* UNNAMED_36_R_I44_A            VIA             @(    16.510,   172.085) _N299        (bottom)(leftover)
+* UNNAMED_36_R_I40_A            VIA             @(    39.624,   168.910) _N298        (bottom)(leftover)
+* UNNAMED_36_R_I21_B            VIA             @(    44.577,   178.435) _N297        (bottom)(leftover)
+* UNNAMED_49_R_I121_A           VIA             @(    21.590,   205.740) _N586        (bottom)(leftover)
+* UNNAMED_36_R_I13_A            VIA             @(    15.240,   169.545) _N296        (bottom)(leftover)
+* UNNAMED_49_R_I116_A           VIA             @(    15.240,   213.360) _N585        (bottom)(leftover)
+* UNNAMED_36_REF02_I76_VOUT     VIA             @(    48.895,   197.485) _N295        (bottom)(leftover)
+* UNNAMED_36_IL300_I12_A2       VIA             @(    18.415,   177.800) _N294        (bottom)(leftover)
+* UNNAMED_36_IL300_I12_A        VIA             @(    32.512,   170.815) _N293        (bottom)(leftover)
+* UNNAMED_36_C_I49_A            VIA             @(    20.955,   185.420) _N292        (bottom)(leftover)
+* UNNAMED_36_C_I47_A            VIA             @(    12.700,   172.085) _N291        (bottom)(leftover)
+* UNNAMED_36_C_I46_A            VIA             @(    57.785,   182.880) _N290        (bottom)(leftover)
+* UNNAMED_36_C_I38_A            VIA             @(    15.240,   167.005) _N289        (bottom)(leftover)
+* UNNAMED_36_C_I20_B            VIA             @(    48.895,   189.230) _N288        (bottom)(leftover)
+* UNNAMED_36_C_I20_A            VIA             @(    32.512,   175.895) _N287        (bottom)(leftover)
+* UNNAMED_36_C_I147_A           VIA             @(    48.260,   184.150) _N286        (bottom)(leftover)
+* UNNAMED_49_C_I119_A           VIA             @(    15.240,   217.805) _N575        (bottom)(leftover)
+* UNNAMED_36_BC817_I58_E        VIA             @(    40.640,   174.625) _N285        (bottom)(leftover)
+* UNNAMED_36_BC817_I58_C        VIA             @(    32.512,   168.275) _N284        (bottom)(leftover)
+* UNNAMED_36_BC817_I58_B        VIA             @(    43.180,   174.625) _N283        (bottom)(leftover)
+* UNNAMED_44_PS2561L_I234_C     VIA             @(    24.003,    33.655) _N380        (bottom)(leftover)
+* UNNAMED_44_PS2561L_I234_AN    VIA             @(   151.511,   285.877) _N379        (bottom)(leftover)
+* UNNAMED_44_BC817_I3_B         VIA             @(   168.275,   295.345) _N378        (bottom)(leftover)
+* UNNAMED_44_BC817_I121_C       REL1.2          @(    35.625,    36.135) _N377        (bottom)(leftover)
+* UNNAMED_44_BC817_I121_C       REL2.2          @(    14.035,    20.260) _N377-1      (bottom)(leftover)
+* UNNAMED_44_BC817_I121_B       VIA             @(    27.940,    31.115) _N376        (bottom)(leftover)
+* UNNAMED_44_BC817_I101_C       VIA             @(    10.160,    36.830) _N375        (bottom)(leftover)
+* UNNAMED_44_BC817_I101_B       VIA             @(   144.653,   291.465) _N374        (bottom)(leftover)
+* UNNAMED_44_74HC14_I223_A      VIA             @(   161.290,   291.211) _N368        (bottom)(leftover)
+* UNNAMED_44_24C64_I2_WP        VIA             @(   168.275,   298.450) _N367        (bottom)(leftover)
+* UNNAMED_49_TL084B_I93_NIN     VIA             @(    40.005,   222.250) _N597        (bottom)(leftover)
+* UNNAMED_49_TL084B_I92_NIN     VIA             @(    31.115,   220.980) _N596        (bottom)(leftover)
+* UNNAMED_49_TL084B_I91_NIN     VIA             @(    31.115,   214.630) _N595        (bottom)(leftover)
+* UNNAMED_49_TL084B_I106_NIN    VIA             @(    10.795,   214.630) _N594        (bottom)(leftover)
+* UNNAMED_49_R_I73_A            VIA             @(    17.780,   231.775) _N593        (bottom)(leftover)
+* UNNAMED_49_R_I71_B            VIA             @(    21.590,   231.775) _N592        (bottom)(leftover)
+* UNNAMED_49_R_I51_B            VIA             @(     8.890,   218.440) _N591        (bottom)(leftover)
+* UNNAMED_49_R_I50_A            VIA             @(    17.780,   225.552) _N590        (bottom)(leftover)
+* UNNAMED_49_R_I49_A            VIA             @(    21.590,   218.440) _N589        (bottom)(leftover)
+* UNNAMED_49_C_I56_A            VIA             @(    15.240,   220.345) _N580        (bottom)(leftover)
+* UNNAMED_49_R_I46_A            VIA             @(    39.624,   228.600) _N588        (bottom)(leftover)
+* UNNAMED_49_R_I45_B            VIA             @(    42.545,   223.520) _N587        (bottom)(leftover)
+* UNNAMED_49_IL300_I4_A2        VIA             @(    18.288,   235.585) _N584        (bottom)(leftover)
+* UNNAMED_49_IL300_I4_A         VIA             @(    32.512,   230.505) _N583        (bottom)(leftover)
+* UNNAMED_49_C_I6_B             VIA             @(    40.005,   214.630) _N582        (bottom)(leftover)
+* UNNAMED_49_C_I6_A             VIA             @(    32.512,   235.585) _N581        (bottom)(leftover)
+* UNNAMED_49_C_I55_A            VIA             @(    19.050,   218.440) _N579        (bottom)(leftover)
+* UNNAMED_49_C_I41_A            VIA             @(    13.462,   233.934) _N578        (bottom)(leftover)
+* UNNAMED_49_C_I30_A            VIA             @(    15.240,   210.820) _N577        (bottom)(leftover)
+* UNNAMED_49_C_I21_A            VIA             @(    40.005,   217.170) _N576        (bottom)(leftover)
+* UNNAMED_49_BC817_I64_E        VIA             @(    40.640,   234.315) _N574        (bottom)(leftover)
+* UNNAMED_49_BC817_I64_C        VIA             @(    32.512,   227.965) _N573        (bottom)(leftover)
+* UNNAMED_49_BC817_I64_B        VIA             @(    43.180,   234.315) _N572        (bottom)(leftover)
+* UNNAMED_10_R_I67_B            VIA             @(    19.685,   264.160) _N273        (bottom)(leftover)
+* UNNAMED_10_R_I64_B            VIA             @(    21.590,   261.366) _N272        (bottom)(leftover)
+* UNNAMED_10_R_I45_B            VIA             @(    15.176,   274.384) _N271        (bottom)(leftover)
+* UNNAMED_10_R_I44_A            VIA             @(    19.685,   266.700) _N270        (bottom)(leftover)
+* UNNAMED_10_R_I42_B            VIA             @(    15.240,   270.240) _N269        (bottom)(leftover)
+* UNNAMED_10_R_I42_A            VIA             @(    10.795,   267.970) _N268        (bottom)(leftover)
+* UNNAMED_10_R_I40_A            VIA             @(    39.624,   255.270) _N267        (bottom)(leftover)
+* UNNAMED_10_R_I21_B            VIA             @(    38.100,   271.780) _N266        (bottom)(leftover)
+* UNNAMED_10_R_I13_A            VIA             @(    21.590,   271.780) _N265        (bottom)(leftover)
+* UNNAMED_10_IL300_I12_A2       VIA             @(    18.288,   261.366) _N261        (bottom)(leftover)
+* UNNAMED_10_IL300_I12_A        VIA             @(    32.512,   257.175) _N260        (bottom)(leftover)
+* UNNAMED_10_C_I47_A            VIA             @(    19.685,   269.240) _N259        (bottom)(leftover)
+* UNNAMED_10_C_I38_A            VIA             @(    15.875,   255.270) _N258        (bottom)(leftover)
+* UNNAMED_10_C_I31_A            VIA             @(    10.795,   270.510) _N257        (bottom)(leftover)
+* UNNAMED_10_C_I20_B            VIA             @(    40.005,   267.970) _N256        (bottom)(leftover)
+* UNNAMED_10_C_I20_A            VIA             @(    42.545,   271.780) _N255        (bottom)(leftover)
+* UNNAMED_10_BC817_I58_E        VIA             @(    41.275,   261.366) _N254        (bottom)(leftover)
+* UNNAMED_10_BC817_I58_C        VIA             @(    32.512,   254.635) _N253        (bottom)(leftover)
+* UNNAMED_10_BC817_I58_B        VIA             @(    43.815,   261.366) _N252        (bottom)(leftover)
+  UDCL                          UDCL.1          @(    15.240,   278.130) _N251-1      (bottom)(leftover)
+  UDCL                          P5.8            @(   101.600,    15.875) _N251        (bottom)(leftover)
+* TWP                           C237.1          @(   196.615,    43.500) _N243       
+* TWO                           VIA             @(    99.060,    85.725) _N242        (bottom)(leftover)
+* TWN                           C237.2          @(   234.115,    43.500) _N235       
+* TRIGGER_555                   VIA             @(    31.115,   124.460) _N234        (bottom)(leftover)
+  TEMP_UN                       TEMP_UN.1       @(     8.890,   224.790) _N233        (bottom)(leftover)
+* S_RES                         REL2.14         @(    39.035,    20.260) _N229        (bottom)(leftover)
+  S_RES                         P2.1            @(    46.595,    14.136) _N229        (bottom)(leftover)
+  S_MAIN                        NP4.1           @(    91.440,   170.815) _N228       
+* SVP_G13                       VIA             @(   150.495,   172.085) _N226        (bottom)(leftover)
+* SVP_G12                       VIA             @(   154.686,   163.322) _N225        (bottom)(leftover)
+* SVP_G11                       VIA             @(   201.422,   173.355) _N224        (bottom)(leftover)
+* SVP_E13                       VIA             @(   150.495,   167.005) _N223        (bottom)(leftover)
+* SVP_E12                       VIA             @(   170.815,   167.005) _N222        (bottom)(leftover)
+* SVP_E11                       VIA             @(   197.016,   168.695) _N221        (bottom)(leftover)
+* SVP_C1                        D20.1           @(   174.625,   188.595) _N220        (bottom)(leftover)
+* SVP                           C168.1          @(   196.615,   128.500) _N219       
+* SVO                           VIA             @(    99.060,   170.815) _N218        (bottom)(leftover)
+* SVN_G23                       VIA             @(   131.445,   149.010) _N217        (bottom)(leftover)
+* SVN_G22                       VIA             @(   159.385,   147.955) _N216        (bottom)(leftover)
+* SVN_G21                       VIA             @(   167.005,   148.590) _N215        (bottom)(leftover)
+* SVN_E23                       VIA             @(   136.327,   156.648) _N214        (bottom)(leftover)
+* SVN_E22                       VIA             @(   156.337,   149.860) _N213        (bottom)(leftover)
+* SVN_E21                       VIA             @(   204.470,   158.750) _N212        (bottom)(leftover)
+* SVN                           C168.2          @(   234.115,   128.500) _N211       
+* SENSE_PWM_CONTROLLER_SUPPLY   VIA             @(    26.035,    85.725) _N208        (bottom)(leftover)
+  R_RES                         P2.2            @(    54.095,    14.236) _N202        (bottom)(leftover)
+* R_RES                         REL1.14         @(    60.625,    36.135) _N202        (bottom)(leftover)
+  R_MAIN                        NP3.1           @(    91.440,   255.905) _N201       
+* TWP_G13                       VIA             @(   150.495,    86.995) _N250        (bottom)(leftover)
+* TWP_G12                       VIA             @(   154.686,    78.232) _N249        (bottom)(leftover)
+* TWP_G11                       VIA             @(   201.422,    88.265) _N248        (bottom)(leftover)
+* TWP_E13                       VIA             @(   150.495,    81.915) _N247        (bottom)(leftover)
+* TWP_E12                       VIA             @(   170.815,    81.915) _N246        (bottom)(leftover)
+* TWP_E11                       VIA             @(   197.016,    83.605) _N245        (bottom)(leftover)
+* TWP_C1                        D34.1           @(   174.625,   103.505) _N244        (bottom)(leftover)
+* RUP                           C96.1           @(   196.615,   213.500) _N193       
+* RUO                           VIA             @(    99.060,   255.905) _N192        (bottom)(leftover)
+* TWN_G23                       VIA             @(   131.445,    63.920) _N241        (bottom)(leftover)
+* TWN_G22                       VIA             @(   159.385,    62.865) _N240        (bottom)(leftover)
+* TWN_G21                       VIA             @(   167.005,    63.500) _N239        (bottom)(leftover)
+* TWN_E23                       VIA             @(   136.327,    71.558) _N238        (bottom)(leftover)
+* TWN_E22                       VIA             @(   156.337,    64.770) _N237        (bottom)(leftover)
+* TWN_E21                       VIA             @(   204.470,    73.660) _N236        (bottom)(leftover)
+  RUN                           NP1.1           @(   235.585,   307.975) _N185       
+* REF_SEC                       VIA             @(     6.985,   194.310) _N184        (bottom)(leftover)
+* REF_PRI_N                     VIA             @(    48.895,   181.610) _N183        (bottom)(leftover)
+* REF_PRI                       VIA             @(    46.355,   190.754) _N182        (bottom)(leftover)
+* REF_P                         VIA             @(    31.115,   130.175) _N181        (bottom)(leftover)
+* REF_N                         VIA             @(    31.115,   133.985) _N180        (bottom)(leftover)
+  PWM_TN                        P3.20           @(   147.320,   309.245) _N157        (bottom)(leftover)
+  PWM_SN                        P3.18           @(   149.860,   309.245) _N155        (bottom)(leftover)
+  PWM_RN                        P3.16           @(   152.400,   309.245) _N153        (bottom)(leftover)
+* PFAIL_N_FILTERED              VIA             @(    35.577,   135.525) _N142        (bottom)(leftover)
+* PFAIL_COMP                    VIA             @(    31.115,   136.525) _N141        (bottom)(leftover)
+
+Net PE_RU has NO_TEST property, not tested.
+
+
+Net PE_SV has NO_TEST property, not tested.
+
+
+Net PE_TW has NO_TEST property, not tested.
+
+* OUTPUT_TP_555                 VIA             @(    38.100,   104.775) _N135        (bottom)(leftover)
+* OUTPUT_555                    VIA             @(    34.925,   111.760) _N134        (bottom)(leftover)
+  OLOAD_DUMMY                   P5.15           @(   111.760,    13.335) _N133        (bottom)(leftover)
+  NTC2                          NTC2.1          @(    33.020,   210.820) _N128        (bottom)(leftover)
+  NTC1                          NTC1.1          @(    38.100,   210.820) _N127        (bottom)(leftover)
+* ISENSE                        VIA             @(    26.035,    50.800) _N119        (bottom)(leftover)
+  GND_SENSE                     SGND.1          @(    76.835,    55.245) _N113        (bottom)(leftover)
+  GNDA                          P5.5            @(    99.060,    13.335) _N112-5      (bottom)(leftover)
+  GNDA                          P5.10           @(   104.140,    15.875) _N112-6      (bottom)(leftover)
+  GNDA                          P3.38           @(   124.460,   309.245) _N112        (bottom)(leftover)
+  GNDA                          P3.30           @(   134.620,   309.245) _N112-4      (bottom)(leftover)
+  GNDA                          P3.32           @(   132.080,   309.245) _N112-3      (bottom)(leftover)
+  GNDA                          P3.34           @(   129.540,   309.245) _N112-2      (bottom)(leftover)
+  GNDA                          P3.36           @(   127.000,   309.245) _N112-1      (bottom)(leftover)
+* GATE_TO_TRIGGER               VIA             @(    41.910,   113.665) _N110        (bottom)(leftover)
+* DUMMY_RU_NTC2                 VIA             @(   134.620,   278.130) _N100        (bottom)(leftover)
+* DUMMY_RU_NTC1                 VIA             @(   134.620,   275.590) _N99         (bottom)(leftover)
+* DUMMY_TW_NTC2                 VIA             @(   134.620,   107.950) _N105        (bottom)(leftover)
+* DUMMY_TW_NTC1                 VIA             @(   134.620,   105.410) _N104        (bottom)(leftover)
+* DUMMY_REF02_SEC_5             VIA             @(    15.875,   205.994) _N98         (bottom)(leftover)
+* DUMMY_REF02_SEC_3             VIA             @(    14.605,   208.280) _N97         (bottom)(leftover)
+* DUMMY_REF02_PRI_5             VIA             @(    39.370,   183.515) _N96         (bottom)(leftover)
+* DUMMY_REF02_PRI_3             VIA             @(    38.100,   186.055) _N95         (bottom)(leftover)
+* DUMMY_LED2_SV_N               VIA             @(   130.175,   170.190) _N90         (bottom)(leftover)
+* DUMMY_LED2_TW_N               VIA             @(   130.175,    85.100) _N92         (bottom)(leftover)
+* DUMMY_LED2_SV_P               VIA             @(   163.830,   186.065) _N91         (bottom)(leftover)
+* DUMMY_LED2_TW_P               VIA             @(   163.830,   100.975) _N93         (bottom)(leftover)
+* DUMMY_LED1_SV_N               VIA             @(   123.190,   179.832) _N84         (bottom)(leftover)
+* DUMMY_LED1_TW_N               VIA             @(   123.190,    94.742) _N86         (bottom)(leftover)
+* DUMMY_LED1_SV_P               VIA             @(   157.480,   195.707) _N85         (bottom)(leftover)
+* DUMMY_LED1_TW_P               VIA             @(   157.480,   110.617) _N87         (bottom)(leftover)
+* DUMMY_COMP_B                  VIA             @(    42.545,   136.525) _N73         (bottom)(leftover)
+* DUMMY_COMP_A                  VIA             @(    40.005,   137.795) _N72         (bottom)(leftover)
+  DUMMY_50POL_42                P5.42           @(   144.780,    15.875) _N71         (bottom)(leftover)
+  DUMMY_50POL_41                P5.41           @(   144.780,    13.335) _N70         (bottom)(leftover)
+  DUMMY_50POL_40                P5.40           @(   142.240,    15.875) _N69         (bottom)(leftover)
+  DUMMY_50POL_33                P5.33           @(   134.620,    13.335) _N68         (bottom)(leftover)
+  DUMMY_50POL_32                P5.32           @(   132.080,    15.875) _N67         (bottom)(leftover)
+  DUMMY_50POL_31                P5.31           @(   132.080,    13.335) _N66         (bottom)(leftover)
+  DUMMY_50POL_30                P5.30           @(   129.540,    15.875) _N65         (bottom)(leftover)
+  DUMMY_50POL_18                P5.18           @(   114.300,    15.875) _N64         (bottom)(leftover)
+  DUMMY_50POL_17                P5.17           @(   114.300,    13.335) _N63         (bottom)(leftover)
+  DUMMY_50POL_14                P5.14           @(   109.220,    15.875) _N62         (bottom)(leftover)
+  DUMMY_50POL_13                P5.13           @(   109.220,    13.335) _N61         (bottom)(leftover)
+  DUMMY_50POL_11                P5.11           @(   106.680,    13.335) _N60         (bottom)(leftover)
+  DUMMY_50POL_1                 P5.1            @(    93.980,    13.335) _N59         (bottom)(leftover)
+* DISCH_THRES_555               VIA             @(    43.815,   123.190) _N55         (bottom)(leftover)
+  DIO_8C-PWM_ZN                 P3.10           @(   160.020,   309.245) _N54         (bottom)(leftover)
+  DIO_7C-PWM_ZP                 P3.9            @(   160.020,   311.785) _N53         (bottom)(leftover)
+  DIO_6C-PWM_YN                 P3.8            @(   162.560,   309.245) _N52         (bottom)(leftover)
+  DIO_5C-PWM_YP                 P3.7            @(   162.560,   311.785) _N51         (bottom)(leftover)
+  DIO_4C-PWM_XN                 P3.6            @(   165.100,   309.245) _N50         (bottom)(leftover)
+  DIO_3C-PWM_XP                 P3.5            @(   165.100,   311.785) _N49         (bottom)(leftover)
+  DIO_2C-DEV_FLT                P3.3            @(   167.640,   311.785) _N48         (bottom)(leftover)
+  DC_ME                         DC_ME.1         @(    35.560,   278.130) _N47         (bottom)(leftover)
+* DCP_U_ME                      R43.1           @(    81.280,   277.495) _N45         (bottom)(leftover)
+* DCP_LED                       VIA             @(   214.630,    10.668) _N44         (bottom)(leftover)
+* DCP_DIS                       R19.1           @(   235.405,   292.735) _N43         (bottom)(leftover)
+* DCN_U_ME                      R54.2           @(    81.280,   266.700) _N41         (bottom)(leftover)
+* DCN_LED                       R201.2          @(   236.220,    29.210) _N34         (bottom)(leftover)
+* DCN_DIS                       R3.2            @(   235.405,   311.785) _N33         (bottom)(leftover)
+* CONTROL_555                   VIA             @(    40.005,   121.920) _N32         (bottom)(leftover)
+  CNV_OC_FLT                    P3.1            @(   170.180,   311.785) _N31         (bottom)(leftover)
+* CNV_FLT                       VIA             @(   127.635,   295.910) _N30         (bottom)(leftover)
+  CHRG_N                        P3.27           @(   137.160,   311.785) _N29         (bottom)(leftover)
+* 5V_REF                        VIA             @(    19.685,   207.645) _N28         (bottom)(leftover)
+  24V_SW_RTN                    P4.2            @(   189.297,    14.236) _N26         (bottom)(leftover)
+  24V_SW                        P4.1            @(   181.797,    14.136) _N25         (bottom)(leftover)
+* 24V_SMPS_SENSE_RTN            TR4.4           @(    35.680,    47.745) _N24         (bottom)(leftover)
+* 24V_SMPS_SENSE                TR4.1           @(    35.680,    62.745) _N23         (bottom)(leftover)
+  24V_SE_RTN                    P1.2            @(   198.160,   311.265) _N22         (bottom)(leftover)
+  24V_SENSE_RTN                 P5.48           @(   152.400,    15.875) _N21-1       (bottom)(leftover)
+  24V_SENSE_RTN                 P5.47           @(   152.400,    13.335) _N21         (bottom)(leftover)
+  24V_SENSE                     P5.50           @(   154.940,    15.875) _N20-1       (bottom)(leftover)
+  24V_SENSE                     P5.49           @(   154.940,    13.335) _N20         (bottom)(leftover)
+* 24V_SE                        REL2.1          @(    14.035,    12.760) _N19-1       (bottom)(leftover)
+  24V_SE                        P1.1            @(   203.160,   311.365) _N19         (bottom)(leftover)
+  GND                           P5.19           @(   116.840,    13.335) _N111-5      (bottom)(leftover)
+  GND                           P5.20           @(   116.840,    15.875) _N111-6      (bottom)(leftover)
+  GND                           P5.21           @(   119.380,    13.335) _N111-7      (bottom)(leftover)
+  GND                           P5.22           @(   119.380,    15.875) _N111-8      (bottom)(leftover)
+  GND                           P3.21           @(   144.780,   311.785) _N111        (bottom)(leftover)
+  GND                           P3.12           @(   157.480,   309.245) _N111-1      (bottom)(leftover)
+  GND                           P3.11           @(   157.480,   311.785) _N111-2      (bottom)(leftover)
+  GND                           P3.2            @(   170.180,   309.245) _N111-4      (bottom)(leftover)
+  GND                           P3.4            @(   167.640,   309.245) _N111-3      (bottom)(leftover)
+  VCC                           P5.25           @(   124.460,    13.335) _N618-4      (bottom)(leftover)
+  VCC                           P5.26           @(   124.460,    15.875) _N618-5      (bottom)(leftover)
+  VCC                           P5.27           @(   127.000,    13.335) _N618-6      (bottom)(leftover)
+  VCC                           P5.28           @(   127.000,    15.875) _N618-7      (bottom)(leftover)
+  VCC                           P3.13           @(   154.940,   311.785) _N618-3      (bottom)(leftover)
+  VCC                           P3.14           @(   154.940,   309.245) _N618-2      (bottom)(leftover)
+  VCC                           P3.22           @(   144.780,   309.245) _N618-1      (bottom)(leftover)
+  VCC                           P3.23           @(   142.240,   311.785) _N618        (bottom)(leftover)
+  -15V_SENSE                    S-15V.1         @(    76.835,    43.815) _N14         (bottom)(leftover)
+  +15V_SENSE                    S+15V.1         @(    76.835,    66.675) _N1          (bottom)(leftover)
+  V-15V                         P3.39           @(   121.920,   311.785) _N617        (bottom)(leftover)
+  V-15V                         P5.3            @(    96.520,    13.335) _N617-1      (bottom)(leftover)
+  V+15V                         P5.4            @(    96.520,    15.875) _N616-1      (bottom)(leftover)
+  V+15V                         P3.40           @(   121.920,   309.245) _N616        (bottom)(leftover)
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+* Unused Pin                    CS3.4           @(    59.950,    84.220) CS3.4        (bottom)(leftover)
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+* Unused Pin                    CS2.4           @(    52.450,   172.780) CS2.4        (bottom)(leftover)
+* Unused Pin                    CS1.4           @(    52.450,   257.780) CS1.4        (bottom)(leftover)
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+Net  has NO_TEST property, not tested.
+
+
+  Total nets processed: 696
+
+  Total nets failed: 0
+
+  Total nets ignored: 69
+
+  Total warnings: 0
+
+  Total test points on bottom : 668
+
+  Test Point Total: 668

@@ -1,0 +1,22 @@
+!!!!    2    0    1 1274702125   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:47 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r58 1.00"
+end on failure
+disconnect all
+connect s to "24V_DRIVER_RTN"; a to "24V_DRIVER_RTN"
+connect i to "UNNAMED_46_R_I29_B"; b to "UNNAMED_46_R_I29_B"
+!connect g to "24V_DRIVER"; l to "24V_DRIVER"
+connect g to "I_SENSE_RU"
+resistor 500m, 50, 50, re1, ar100m, sa, sb, en
+! warning "excessive plus tolerance or high limit."
+! "r57" is a commented test.
+! DUT: nominal 500m, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 505m, low 495m
+! TEST: high limit 2.227, low limit -24.544m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

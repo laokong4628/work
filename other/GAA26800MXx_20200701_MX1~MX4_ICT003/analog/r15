@@ -1,0 +1,16 @@
+!!!!    2    0    1 1293193266   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:39 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect i to "UNNAMED_45_AD7417_I130_AIN3"
+connect s to "5V_HL2"
+connect g to "HL2"
+jumper 10M, re6, ar100m, op
+!resistor 18k, 5.97, 5.99, re5, wb, ar200m, ed, en
+! "r15" is a limited test.
+! DUT: nominal 18k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 18.18k, low 17.82k
+! TEST: high limit 18.535k, low limit 17.462k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

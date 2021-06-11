@@ -1,0 +1,52 @@
+Pins
+P
+Preshorts
+r
+Shorts
+S
+
+Auto Analog Debug
+D
+Calculate Test Limits ...
+L
+
+Analog Incircuit
+g
+TestJet
+J
+Polarity Check
+k
+Connect Check
+c
+MagicTest
+M
+
+Power Supplies
+o
+Digital Incircuit
+I
+Analog Functional
+n
+Digital Functional
+F
+
+BScan Powered Shorts
+h
+BScan Interconnect
+t
+BScan Incircuit
+B
+BScan Silicon Nails
+N
+
+ScanWorks_Macros
+a
+
+Unpowered
+U
+Powered
+w
+
+Custom
+u
+

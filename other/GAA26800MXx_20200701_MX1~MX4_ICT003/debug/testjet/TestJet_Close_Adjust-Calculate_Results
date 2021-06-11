@@ -1,0 +1,8 @@
+prerun
+print "Generating report..."
+unlink "tj_close_adjust.rpt",Err
+execute "awk -f $AGILENT3070_ROOT/util/tj_close_adjust.awk testjet | tee tj_close_adjust.rpt";append
+print "Done."
+print "Report is in file 'tj_close_adjust.rpt'."
+unlink "debug/with",Err
+unlink "debug/without",Err

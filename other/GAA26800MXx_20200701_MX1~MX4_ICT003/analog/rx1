@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583341   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:02 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "NTC1"
+connect i to "RX1"
+resistor 5k, 1.44, 1.20, re4, wb, ar200m
+! "rx1" test.
+! DUT: nominal 5k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 5.05k, low 4.95k
+! TEST: high limit 5.072k, low limit 4.940k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,21 @@
+!!!!    2    0    1 1593150725   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:55 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c179 10.0u"
+   report "c178 10.0u"
+end on failure
+disconnect all
+connect s to "24V_DRIVER_RTN"; a to "24V_DRIVER_RTN"
+connect i to "PWM_VCC_TW"
+connect g to "24V_DRIVER"
+capacitor 20.1u, 26.2, 44.1, fr128, re1, ar20.0m, ed, sa, en, nocomp
+! "c177" is a limited test.
+! DUT: nominal 20.1u, plus tol 15.0 %, minus tol 15.0 %
+! DUT: high 23.11u, low 17.09u
+! TEST: high limit 25.365u, low limit 11.242u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

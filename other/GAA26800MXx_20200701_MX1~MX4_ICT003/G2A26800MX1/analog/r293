@@ -1,0 +1,16 @@
+!!!!    2    0    1 1293192806   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:36 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_49_R_I121_A"
+connect i to "UNNAMED_49_C_I119_A"
+connect g to "GNDA"
+resistor 24.3k, 2.53, 2.29, re4, wb, ar100m
+!@resistor 10k, 2.53, 2.29, re4, wb, ar100m
+! "r293" test.
+! DUT: nominal 10k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 10.1k, low 9.9k
+! TEST: high limit 10.153k, low limit 9.871k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,25 @@
+!!!!    2    0    1 1264583295   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:16 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "d71"
+   report "d72"
+   report "r422 499m"
+   report "r421 499m"
+   report "r426 499m"
+end on failure
+disconnect all
+connect s to "TWN_E21"
+connect i to "UNNAMED_48_BZV55B18_I389_A"
+! diode 0.00, 0.00, idc5.5, co3.1, ar0.00
+warning "idc value out of range."
+! "d70" is a commented test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 3m
+off failure

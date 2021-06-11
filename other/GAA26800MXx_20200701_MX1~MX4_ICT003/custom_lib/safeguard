@@ -1,0 +1,9 @@
+!!!!    8    0    1 1263567491   0000                                         
+include "standard_ttl"
+use parameters "standard_ttl" for "ad7417aruz"
+use parameters "standard_ttl" for "74hc14"
+use parameters "standard_ttl" for "24c64_program"
+use parameters "standard_ttl" for "24c64_read"
+use parameters "standard_ttl" for "24c64_test"
+use parameters "standard_ttl" for "hcpl316j"
+use parameters "standard_ttl" for "adum1251arz"

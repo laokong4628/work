@@ -1,0 +1,15 @@
+!!!!    2    0    1 1270634001   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:14 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_47_BZV55B18_I416_A"
+connect i to "SVN_G22"
+zener 18, 5.06, 4.97, idc1.0m, co10, ar18
+! "z51" test.
+! DUT: nominal 10, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 10.5, low 9.5
+! TEST: high limit 10.506, low limit 9.503
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

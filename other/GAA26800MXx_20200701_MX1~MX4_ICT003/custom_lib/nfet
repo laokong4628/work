@@ -1,0 +1,100 @@
+!!!!    2    0    1  973713403  Vdd1f                                         
+!
+! Revision control data:
+! use for testing "nfet_4_pin", safeguard "not_required"
+! use for testing "1cga20223aaj", safeguard "not_required"
+! use for testing "1cga20303aak", safeguard "not_required"
+! use for testing "1cga20286aag", safeguard "not_required"
+!
+! N-CHANNEL MOSFET SWITCH 
+!
+! Pin 1 - Gate
+! Pin 2 - Drain
+! Pin 3 - Source
+! Pin 4 - Drain
+!
+! 23 Oct 2000   Initial Issue.  djt
+! 08 Nov 2000   1cga20286aag added.   djt
+
+warning "Power must not be connected to the board whilst performing this test."
+
+
+test powered analog
+
+   nonanalog pins "NC" 
+
+   source none
+   auxiliary none
+
+   test "SD_diode"
+   test "on"
+   test "off"
+
+   disconnect all
+
+end test
+
+!###########################################################################
+
+
+subtest "SD_diode"
+
+   disconnect all
+
+   connect s to pins "D"     ! Apply voltage and load to drain
+   connect i to pins "D"     ! Monitor voltage on drain
+   connect l to pins "S"
+   connect a to pins "S"     ! Apply 0V to Source
+
+   source dcv,amplitude -4,terminated 50,icompliance 1,on
+   auxiliary dcv,amplitude 0,icompliance 1,on
+
+   wait 50m
+   detector dcv, expect 2
+   measure -0.3,-0.7           ! Check drop across diode.
+
+end subtest
+
+
+subtest "on"
+
+   disconnect all
+
+   connect s to pins "D"     ! Apply load to drain
+   connect i to pins "D"     ! Monitor voltage on drain
+   connect l to pins "S"
+   connect a to pins "G"     ! Apply voltage to gate
+   connect g to pins "S"     ! earth source
+   connect g to ground
+
+   source dcv,amplitude 5,terminated 50,icompliance 1,on
+   auxiliary dcv,amplitude 4.05,icompliance 1,on
+
+   wait 50m
+   detector dcv, expect 5
+   measure 0.5,-0.5            ! Check transistor is switched on
+end subtest
+
+
+subtest "off"
+
+   disconnect all
+
+   connect s to pins "D"     ! Apply load to drain
+   connect i to pins "D"     ! Monitor voltage on drain
+   connect l to pins "S"
+   connect a to pins "G"     ! Apply voltage to gate
+   connect g to pins "S"     ! earth source
+   connect g to ground
+
+   source dcv,amplitude 5,terminated 50,icompliance 1,on
+   auxiliary dcv,amplitude -1,icompliance 1,on
+
+   wait 50m
+   detector dcv, expect 5
+   measure 6,1               ! Check transistor is switched off
+end subtest
+
+
+! end of test
+

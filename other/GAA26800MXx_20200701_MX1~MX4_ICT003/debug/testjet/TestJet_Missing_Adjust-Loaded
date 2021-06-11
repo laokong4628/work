@@ -1,0 +1,13 @@
+prerun
+call Initialize_Board_Constants
+call Initialize_Constants
+report is *
+log level is none
+testjet print level is all
+unpowered
+faon
+printer is "debug/loaded"
+call TestJet
+faoff
+printer is *
+testjet print level is none

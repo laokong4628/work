@@ -1,0 +1,32 @@
+!!!!    2    0    1 1393390229   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:38 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;Freq
+   disconnect all
+   connect s to nodes "RELAY_6"
+   connect a to nodes "RELAY_19"    !@!ECN add 2K Load at +27V_TW_P / N
+   connect g to nodes "RELAY_19"
+   connect g to nodes "RELAY_VCC1"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   auxiliary dcv,amplitude 5,icompliance 1,on
+   wait 2
+   test "DUTY_CYClE"
+end test
+
+subtest "Relay_VCC"
+   connect i to nodes "RELAY_19"
+   connect l to ground
+   detector dcv,expect 5
+   measure 5.5,4.5
+end subtest
+
+subtest "DUTY_CYClE"
+   global Freq
+   connect rcva to nodes "GATE_SENSE_TW" !@nodes "PWM_OUT5"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector frequency, expect 180k, threshold 3, gate 0
+   arm detector
+   fetch Freq
+   report analog 180k, 138k, Freq
+!@ A = Pulse * Freq
+end subtest

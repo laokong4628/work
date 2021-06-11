@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583275   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:56 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "TEMP_IGBT"
+connect i to "UNNAMED_49_C_I56_A"
+connect g to "UNNAMED_49_R_I51_B"
+capacitor 100n, 10.4, 10.8, fr1024, re3, wb, ar100m, nocomp
+! "c273" test.
+! DUT: nominal 100n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110n, low 90n
+! TEST: high limit 110.437n, low limit 89.171n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

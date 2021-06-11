@@ -1,0 +1,10 @@
+!!!!   21    2    1 1196735202   0000                                         
+! This is Gate Sensor Closed Test.
+
+switch "Gate_SW", "1", off, nr, pn"gate_sw", "Gate not closed"
+
+external pins 1
+   device "Gate_SW" pins 1
+
+external pins 2
+   device "Gate_SW" pins 2

@@ -1,0 +1,21 @@
+!!!!    2    0    1 1293193725   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:35 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c15 100n"
+end on failure
+disconnect all
+connect s to "PTC_ADC"
+connect i to "UNNAMED_45_BAT54S_I231_A1"
+connect g to "HL2"
+jumper 10M, re6, ar100m, op
+!resistor 10k, 2.08, 1.85, re4, wb, ar100m, wa1.18m
+! "r205" test.
+! DUT: nominal 10k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 10.1k, low 9.9k
+! TEST: high limit 10.208k, low limit 9.815k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

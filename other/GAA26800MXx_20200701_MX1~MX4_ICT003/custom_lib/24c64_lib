@@ -1,0 +1,48 @@
+!!!!   21    1    1 1062779764  Vc319                                         
+!!!Part break down for a 24c64 Serial EEPROM
+
+pin library "test", nr, pn"24c64_test", "Check for proper operation"
+pin library "program", nr, pn"24c64_program", "Program the part"
+pin library "read", nr, pn"24c64_read", "Read the program in the part"
+
+external pins 1
+         device "test"      pins 1
+         device "program"   pins 1
+         device "read"      pins 1
+
+external pins 2
+         device "test"      pins 2
+         device "program"   pins 2
+         device "read"      pins 2
+
+external pins 3
+         device "test"      pins 3
+         device "program"   pins 3
+         device "read"      pins 3
+
+external pins 4
+         device "test"      pins 4
+         device "program"   pins 4
+         device "read"      pins 4
+
+external pins 5
+         device "test"      pins 5
+         device "program"   pins 5
+         device "read"      pins 5
+
+external pins 6
+         device "test"      pins 6
+         device "program"   pins 6
+         device "read"      pins 6
+
+external pins 7
+         device "test"      pins 7
+         device "program"   pins 7
+         device "read"      pins 7
+
+external pins 8
+         device "test"      pins 8
+         device "program"   pins 8
+         device "read"      pins 8
+
+

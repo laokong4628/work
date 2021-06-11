@@ -1,0 +1,19 @@
+!!!!    2    0    1 1274691504  V6a5a                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:37 2010
+! IPG: rev 05.21p  Mon Nov 02 10:04:33 2009
+! IPG: rev 05.20p  Wed Dec 24 16:58:57 2008
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;K3_TEMP
+   test "K3_TEMP"
+end test
+
+subtest "K3_TEMP"
+   global K3_TEMP
+   report analog 1.10,0.80, K3_TEMP !@ 1.00
+end subtest
+
+
+

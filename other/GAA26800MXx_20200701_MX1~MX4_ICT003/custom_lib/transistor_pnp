@@ -1,0 +1,24 @@
+!!!!   21    1    1 1146558902  V01e6                                         
+
+! Revision control data:
+! use for testing "pnp_bcec", safeguard "not_required"
+! 10.12.2001 Grouped pins 2,4 for SOT223 use. GG
+!-----------------------------------------------------------------
+! PNP SMC Transistor SOT223
+!-----------------------------------------------------------------
+
+transistor "a", 300, 100, p, nr, "PNP TRANSISTOR SOT223"
+
+pin library "pnp", pn"pnp_func"
+
+external pins 1
+   device "pnp" pins 1
+   device "a" pins "B"
+
+external pins 2, 4
+   device "pnp" pins 2, 4
+   device "a" pins "C"
+
+external pins 3
+   device "pnp" pins 3
+   device "a" pins "E"

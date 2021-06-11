@@ -1,0 +1,2366 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Probe Placement Report
++
++ Router Solutions Incorporated, Created by CAMCAD Professional
++ Version     : 4.5.1003.050613
++ Date & Time : Monday, January 25, 2010 at 16:54:13
++ PCB File    : PBX_BIDI. Cadence(R)
++ Units       : Inches
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+=====================================================================================
+= TEST PLAN SETTINGS
+=====================================================================================
+   Report Ignored Surface: Yes
+
+   Enable Soldermask : True
+   Use Outline : DFT Outline
+   Outline Priority : Real Part Outline
+   Accessible Surface : Top & Bottom
+   Tester Type : Fixture
+   Include MultiPin Nets : True
+   Include SinglePin Nets : True
+   Include NC Nets : False
+   Use Resistors : False
+   Resistor Value : 0.000
+   Use Capacitors : False
+   Capacitor Value : 0.000
+   Use Inductors : False
+   Power Injection Usage : No power injection
+   Power Injection Value : 0
+   Probe Start Number : 1
+   Allow Double Wiring: False
+
+Place Probes on all Access Markers:  
+   Probe Side : Top & Bottom
+   Probe Side Preference : Bottom
+
+
+=====================================================================================
+= BOARD STATISTICS
+=====================================================================================
+Board Size : -1.#IO x -1.#IO
+Probes Placed : 399
+Probes Unplaced : 229
+
+-----------------------------------------------------------
+|Probes               |    100    |    75     |    50     |
+|                     |-----------|-----------|-----------|
+|                     | TR  | PIJ | TR  | PIJ | TR  | PIJ |
+|---------------------|-----------|-----------|-----------|
+|Top Probes Placed    | 100 | 0   | 0   | 0   | 0   | 0   | 
+|Bottom Probes Placed | 299 | 0   | 0   | 0   | 0   | 0   | 
+-----------------------------------------------------------
+
+
+=====================================================================================
+= UNPLACED PROBES: Multiple Pin Nets
+=====================================================================================
+PROBE: 1
+NET: UNNAMED_49_TL084B_I106_NIN
+U17-6           T        0.490    8.500    Exposed metal (0.025) is smaller than feature size (0.040)
+U17-7           T        0.490    8.450    Exposed metal (0.025) is smaller than feature size (0.040)
+via_884         T        0.425    8.450    No exposed metal due to Soldermask Analysis
+via_884         B        0.425    8.450    No exposed metal due to Soldermask Analysis
+
+PROBE: 2
+NET: UNNAMED_9_TL084B_I267_NIN
+U55-6           T        3.935    1.175    Exposed metal (0.025) is smaller than feature size (0.040)
+U55-7           T        3.935    1.225    Exposed metal (0.025) is smaller than feature size (0.040)
+via_535         T        4.000    1.200    No exposed metal due to Soldermask Analysis
+via_535         B        4.000    1.200    No exposed metal due to Soldermask Analysis
+
+PROBE: 4
+NET: UNNAMED_37_R_I23_B
+R314-B<0>       B        0.850    7.686    Exposed metal (0.039) is smaller than feature size (0.040)
+R315-A<0>       B        0.700    7.686    Exposed metal (0.039) is smaller than feature size (0.040)
+via_817         B        0.775    7.686    No exposed metal due to Soldermask Analysis
+
+PROBE: 5
+NET: UNNAMED_36_R_I64_B
+R346-B<0>       B        0.850    6.836    Exposed metal (0.039) is smaller than feature size (0.040)
+R355-A<0>       B        0.850    6.714    Exposed metal (0.039) is smaller than feature size (0.040)
+via_839         B        0.850    6.775    No exposed metal due to Soldermask Analysis
+
+PROBE: 6
+NET: UNNAMED_36_R_I86_B
+R339-B<0>       B        0.500    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R348-B<0>       B        0.350    6.836    Exposed metal (0.039) is smaller than feature size (0.040)
+R358-A<0>       B        0.350    6.714    Exposed metal (0.039) is smaller than feature size (0.040)
+U29-6           T        0.490    7.200    Exposed metal (0.025) is smaller than feature size (0.040)
+via_836         T        0.575    7.200    No exposed metal due to Soldermask Analysis
+via_836         B        0.575    7.200    No exposed metal due to Soldermask Analysis
+via_837         B        0.350    6.775    No exposed metal due to Soldermask Analysis
+
+PROBE: 7
+NET: REF_PRI
+R324-A<0>       B        1.825    7.439    Exposed metal (0.039) is smaller than feature size (0.040)
+U25-6           T        1.990    7.725    Exposed metal (0.025) is smaller than feature size (0.040)
+U25-7           T        1.990    7.675    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1503        T        1.925    7.725    No exposed metal due to Soldermask Analysis
+via_1503        B        1.925    7.725    No exposed metal due to Soldermask Analysis
+via_1504        B        1.825    7.510    No exposed metal due to Soldermask Analysis
+
+PROBE: 11
+NET: UNNAMED_38_LM339A_I72_PIN
+R386-B<0>       B        1.500    5.136    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-9           T        1.510    5.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_804         T        1.575    5.175    No exposed metal due to Soldermask Analysis
+via_804         B        1.575    5.175    No exposed metal due to Soldermask Analysis
+via_805         B        1.425    5.125    No exposed metal due to Soldermask Analysis
+
+PROBE: 13
+NET: REF_P
+C291-A<0>       B        1.150    5.214    Exposed metal (0.039) is smaller than feature size (0.040)
+R138-B<0>       T        1.000    5.136    Exposed metal (0.039) is smaller than feature size (0.040)
+R139-A<0>       T        1.150    5.136    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-7           T        1.290    5.125    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1505        T        1.225    5.125    No exposed metal due to Soldermask Analysis
+via_1505        B        1.225    5.125    No exposed metal due to Soldermask Analysis
+
+PROBE: 15
+NET: UNNAMED_10_C_I20_B
+C264-B<0>       B        1.675    10.567   Exposed metal (0.039) is smaller than feature size (0.040)
+R239-A<0>       B        1.675    10.439   Exposed metal (0.039) is smaller than feature size (0.040)
+U13-8           T        1.510    10.550   Exposed metal (0.025) is smaller than feature size (0.040)
+via_924         T        1.575    10.550   No exposed metal due to Soldermask Analysis
+via_924         B        1.575    10.550   No exposed metal due to Soldermask Analysis
+
+PROBE: 18
+NET: UNNAMED_47_74HC14_I184_Y
+U27-VIN+        T        6.500    7.639    Exposed metal (0.025) is smaller than feature size (0.040)
+U32-VIN+        T        5.150    7.014    Exposed metal (0.025) is smaller than feature size (0.040)
+U28-2           T        5.075    7.510    Exposed metal (0.025) is smaller than feature size (0.040)
+via_313         T        5.150    7.080    No exposed metal due to Soldermask Analysis
+via_313         B        5.150    7.080    No exposed metal due to Soldermask Analysis
+via_314         T        6.500    7.705    No exposed metal due to Soldermask Analysis
+via_314         B        6.500    7.705    No exposed metal due to Soldermask Analysis
+via_315         B        6.500    7.600    No exposed metal due to Soldermask Analysis
+
+PROBE: 28
+NET: UNNAMED_48_BC847C_I250_B
+Q18-B           T        4.583    4.011    Exposed metal (0.039) is smaller than feature size (0.040)
+R157-A<0>       T        4.540    3.817    Exposed metal (0.039) is smaller than feature size (0.040)
+via_231         T        4.600    3.945    No exposed metal due to Soldermask Analysis
+via_231         B        4.600    3.945    No exposed metal due to Soldermask Analysis
+
+PROBE: 29
+NET: UNNAMED_46_BC847C_I250_B
+Q3-B            T        4.583    10.711   Exposed metal (0.039) is smaller than feature size (0.040)
+R51-A<0>        T        4.540    10.517   Exposed metal (0.039) is smaller than feature size (0.040)
+via_411         T        4.600    10.645   No exposed metal due to Soldermask Analysis
+via_411         B        4.600    10.645   No exposed metal due to Soldermask Analysis
+
+PROBE: 30
+NET: UNNAMED_47_74HC14_I224_A
+C102-A<0>       T        4.900    8.083    Exposed metal (0.039) is smaller than feature size (0.040)
+R89-B<0>        T        4.975    8.083    Exposed metal (0.039) is smaller than feature size (0.040)
+R90-B<0>        T        5.050    8.017    Exposed metal (0.039) is smaller than feature size (0.040)
+R91-B<0>        T        5.125    8.017    Exposed metal (0.039) is smaller than feature size (0.040)
+U28-5           T        4.925    7.510    Exposed metal (0.025) is smaller than feature size (0.040)
+via_304         T        5.175    8.015    No exposed metal due to Soldermask Analysis
+via_304         B        5.175    8.015    No exposed metal due to Soldermask Analysis
+
+PROBE: 31
+NET: UNNAMED_46_C_I263_A
+C40-A<0>        T        7.475    11.117   Exposed metal (0.039) is smaller than feature size (0.040)
+R221-A<0>       B        7.500    10.911   Exposed metal (0.039) is smaller than feature size (0.040)
+U9-8            T        7.465    10.875   Exposed metal (0.025) is smaller than feature size (0.040)
+via_392         T        7.600    10.975   No exposed metal due to Soldermask Analysis
+via_392         B        7.600    10.975   No exposed metal due to Soldermask Analysis
+
+PROBE: 32
+NET: UNNAMED_45_AD7417_I130_AIN2
+R208-B<0>       B        2.200    12.042   Exposed metal (0.039) is smaller than feature size (0.040)
+U3-AIN2         T        2.158    11.735   Exposed metal (0.012) is smaller than feature size (0.040)
+via_98          T        2.200    11.950   No exposed metal due to Soldermask Analysis
+via_98          B        2.200    11.950   No exposed metal due to Soldermask Analysis
+
+PROBE: 40
+NET: UNNAMED_36_R_I44_A
+R347-A<0>       B        0.700    6.836    Exposed metal (0.039) is smaller than feature size (0.040)
+R356-B<0>       B        0.700    6.714    Exposed metal (0.039) is smaller than feature size (0.040)
+via_841         B        0.650    6.775    No exposed metal due to Soldermask Analysis
+
+PROBE: 41
+NET: UNNAMED_37_R_I24_B
+R302-A<0>       B        0.700    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R315-B<0>       B        0.700    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+via_816         B        0.650    7.825    No exposed metal due to Soldermask Analysis
+
+PROBE: 42
+NET: UNNAMED_36_R_I21_B
+R335-A<0>       B        2.000    7.161    Exposed metal (0.039) is smaller than feature size (0.040)
+R345-B<0>       B        1.350    7.064    Exposed metal (0.039) is smaller than feature size (0.040)
+via_843         B        1.755    7.025    No exposed metal due to Soldermask Analysis
+
+PROBE: 43
+NET: UNNAMED_49_R_I49_A
+R80-B<0>        T        0.850    8.661    Exposed metal (0.039) is smaller than feature size (0.040)
+R83-A<0>        T        0.850    8.539    Exposed metal (0.039) is smaller than feature size (0.040)
+via_889         T        0.850    8.600    No exposed metal due to Soldermask Analysis
+via_889         B        0.850    8.600    No exposed metal due to Soldermask Analysis
+
+PROBE: 44
+NET: UNNAMED_38_R_I18_A
+R378-B<0>       B        1.500    5.611    Exposed metal (0.039) is smaller than feature size (0.040)
+R379-A<0>       B        1.300    5.689    Exposed metal (0.039) is smaller than feature size (0.040)
+via_799         B        1.400    5.675    No exposed metal due to Soldermask Analysis
+
+PROBE: 52
+NET: UNNAMED_38_LM339A_I73_PIN
+R137-B<0>       T        1.650    5.336    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-11          T        1.510    5.275    Exposed metal (0.025) is smaller than feature size (0.040)
+via_801         T        1.575    5.275    No exposed metal due to Soldermask Analysis
+via_801         B        1.575    5.275    No exposed metal due to Soldermask Analysis
+via_802         B        1.575    5.325    No exposed metal due to Soldermask Analysis
+
+PROBE: 56
+NET: UNNAMED_38_C_I44_A
+C165-A<0>       T        1.150    5.689    Exposed metal (0.039) is smaller than feature size (0.040)
+R379-B<0>       B        1.300    5.611    Exposed metal (0.039) is smaller than feature size (0.040)
+R380-A<0>       B        1.150    5.689    Exposed metal (0.039) is smaller than feature size (0.040)
+U34-6           T        1.290    5.650    Exposed metal (0.025) is smaller than feature size (0.040)
+via_807         T        1.225    5.650    No exposed metal due to Soldermask Analysis
+via_807         B        1.225    5.650    No exposed metal due to Soldermask Analysis
+via_808         B        1.400    5.575    No exposed metal due to Soldermask Analysis
+
+PROBE: 57
+NET: UNNAMED_45_74HC14_I104_A
+U56-8           T        5.015    1.225    Exposed metal (0.025) is smaller than feature size (0.040)
+U56-11          T        5.015    1.075    Exposed metal (0.025) is smaller than feature size (0.040)
+via_132         T        4.950    1.075    No exposed metal due to Soldermask Analysis
+via_132         B        4.950    1.075    No exposed metal due to Soldermask Analysis
+
+PROBE: 61
+NET: UNNAMED_46_BC847C_I250_C
+Q3-C            T        4.497    10.750   Exposed metal (0.039) is smaller than feature size (0.040)
+R227-A<0>       B        4.700    10.789   Exposed metal (0.039) is smaller than feature size (0.040)
+via_410         T        4.600    10.850   No exposed metal due to Soldermask Analysis
+via_410         B        4.600    10.850   No exposed metal due to Soldermask Analysis
+
+PROBE: 62
+NET: UNNAMED_48_BC847C_I250_C
+Q18-C           T        4.497    4.050    Exposed metal (0.039) is smaller than feature size (0.040)
+R400-A<0>       B        4.700    4.089    Exposed metal (0.039) is smaller than feature size (0.040)
+via_230         T        4.600    4.150    No exposed metal due to Soldermask Analysis
+via_230         B        4.600    4.150    No exposed metal due to Soldermask Analysis
+
+PROBE: 64
+NET: UNNAMED_46_74HC14_I184_A
+C46-A<0>        T        4.900    10.992   Exposed metal (0.039) is smaller than feature size (0.040)
+R37-B<0>        T        4.975    10.992   Exposed metal (0.039) is smaller than feature size (0.040)
+R38-B<0>        T        5.050    10.992   Exposed metal (0.039) is smaller than feature size (0.040)
+R39-B<0>        T        5.125    10.992   Exposed metal (0.039) is smaller than feature size (0.040)
+U11-1           T        5.125    10.860   Exposed metal (0.025) is smaller than feature size (0.040)
+via_435         T        4.850    10.990   No exposed metal due to Soldermask Analysis
+via_435         B        4.850    10.990   No exposed metal due to Soldermask Analysis
+
+PROBE: 65
+NET: UNNAMED_48_74HC14_I184_A
+C186-A<0>       T        4.900    4.292    Exposed metal (0.039) is smaller than feature size (0.040)
+R151-B<0>       T        4.975    4.292    Exposed metal (0.039) is smaller than feature size (0.040)
+R152-B<0>       T        5.050    4.292    Exposed metal (0.039) is smaller than feature size (0.040)
+R153-B<0>       T        5.125    4.292    Exposed metal (0.039) is smaller than feature size (0.040)
+U44-1           T        5.125    4.160    Exposed metal (0.025) is smaller than feature size (0.040)
+via_255         T        4.850    4.290    No exposed metal due to Soldermask Analysis
+via_255         B        4.850    4.290    No exposed metal due to Soldermask Analysis
+
+PROBE: 70
+NET: UNNAMED_45_C_I148_A
+C10-A<0>        T        0.525    12.283   Exposed metal (0.039) is smaller than feature size (0.040)
+U1-VCC          T        0.637    12.192   Exposed metal (0.012) is smaller than feature size (0.040)
+via_86          T        0.475    12.285   No exposed metal due to Soldermask Analysis
+via_86          B        0.475    12.285   No exposed metal due to Soldermask Analysis
+
+PROBE: 72
+NET: UNNAMED_45_AD7417_I130_AIN3
+C24-A<0>        T        2.275    11.608   Exposed metal (0.039) is smaller than feature size (0.040)
+R14-A<0>        T        2.375    11.614   Exposed metal (0.039) is smaller than feature size (0.040)
+R15-B<0>        T        2.475    11.614   Exposed metal (0.039) is smaller than feature size (0.040)
+U3-AIN3         T        2.392    11.735   Exposed metal (0.012) is smaller than feature size (0.040)
+via_97          T        2.375    11.675   No exposed metal due to Soldermask Analysis
+via_97          B        2.375    11.675   No exposed metal due to Soldermask Analysis
+
+PROBE: 82
+NET: UNNAMED_47_R_I335_B
+R390-B<0>       B        3.725    5.011    Exposed metal (0.039) is smaller than feature size (0.040)
+R391-B<0>       B        3.600    5.089    Exposed metal (0.039) is smaller than feature size (0.040)
+via_10          B        3.725    4.950    No exposed metal due to Soldermask Analysis
+
+PROBE: 85
+NET: UNNAMED_38_TL084B_I89_NIN
+U34-8           T        1.510    5.600    Exposed metal (0.025) is smaller than feature size (0.040)
+U34-9           T        1.510    5.650    Exposed metal (0.025) is smaller than feature size (0.040)
+via_792         T        1.575    5.600    No exposed metal due to Soldermask Analysis
+via_792         B        1.575    5.600    No exposed metal due to Soldermask Analysis
+
+PROBE: 99
+NET: UNNAMED_48_BAS19_I21_C
+C192-A<0>       T        7.350    4.058    Exposed metal (0.039) is smaller than feature size (0.040)
+D33-C           T        7.457    4.025    Exposed metal (0.039) is smaller than feature size (0.040)
+R402-A<0>       B        7.500    3.986    Exposed metal (0.039) is smaller than feature size (0.040)
+via_236         T        7.425    3.925    No exposed metal due to Soldermask Analysis
+via_236         B        7.425    3.925    No exposed metal due to Soldermask Analysis
+
+PROBE: 100
+NET: UNNAMED_49_C_I55_A
+C274-A<0>       B        0.850    8.533    Exposed metal (0.039) is smaller than feature size (0.040)
+R80-A<0>        T        0.850    8.739    Exposed metal (0.039) is smaller than feature size (0.040)
+R280-B<0>       B        0.850    8.661    Exposed metal (0.039) is smaller than feature size (0.040)
+U17-12          T        0.710    8.650    Exposed metal (0.025) is smaller than feature size (0.040)
+via_898         T        0.775    8.650    No exposed metal due to Soldermask Analysis
+via_898         B        0.775    8.650    No exposed metal due to Soldermask Analysis
+via_899         T        0.850    8.785    No exposed metal due to Soldermask Analysis
+via_899         B        0.850    8.785    No exposed metal due to Soldermask Analysis
+via_900         B        0.750    8.600    No exposed metal due to Soldermask Analysis
+
+PROBE: 102
+NET: UNNAMED_47_C_I260_A
+C119-A<0>       T        7.800    7.567    Exposed metal (0.039) is smaller than feature size (0.040)
+R106-A<0>       T        7.885    7.561    Exposed metal (0.039) is smaller than feature size (0.040)
+U26-1           T        7.685    7.525    Exposed metal (0.025) is smaller than feature size (0.040)
+via_275         T        7.620    7.525    No exposed metal due to Soldermask Analysis
+via_275         B        7.620    7.525    No exposed metal due to Soldermask Analysis
+
+PROBE: 103
+NET: UNNAMED_45_AD7417_I130_AIN4
+R13-A<0>        T        2.175    11.608   Exposed metal (0.039) is smaller than feature size (0.040)
+U3-AIN4         T        2.392    11.761   Exposed metal (0.012) is smaller than feature size (0.040)
+via_96          T        2.240    11.675   No exposed metal due to Soldermask Analysis
+via_96          B        2.240    11.675   No exposed metal due to Soldermask Analysis
+
+PROBE: 109
+NET: UNNAMED_36_R_I89_B
+R117-A<0>       T        0.325    6.736    Exposed metal (0.039) is smaller than feature size (0.040)
+R118-A<0>       T        0.425    6.736    Exposed metal (0.039) is smaller than feature size (0.040)
+R358-B<0>       B        0.350    6.636    Exposed metal (0.039) is smaller than feature size (0.040)
+via_835         T        0.350    6.575    No exposed metal due to Soldermask Analysis
+via_835         B        0.350    6.575    No exposed metal due to Soldermask Analysis
+
+PROBE: 110
+NET: UNNAMED_36_R_I45_B
+R108-B<0>       T        0.850    7.439    Exposed metal (0.039) is smaller than feature size (0.040)
+R337-A<0>       B        0.850    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+via_840         T        0.925    7.300    No exposed metal due to Soldermask Analysis
+via_840         B        0.925    7.300    No exposed metal due to Soldermask Analysis
+
+PROBE: 111
+NET: UNNAMED_36_R_I67_B
+R355-B<0>       B        0.850    6.636    Exposed metal (0.039) is smaller than feature size (0.040)
+R356-A<0>       B        0.700    6.636    Exposed metal (0.039) is smaller than feature size (0.040)
+via_838         B        0.775    6.636    No exposed metal due to Soldermask Analysis
+
+PROBE: 112
+NET: UNNAMED_36_R_I13_A
+R338-A<0>       B        0.700    7.161    Exposed metal (0.039) is smaller than feature size (0.040)
+R357-B<0>       B        0.500    6.636    Exposed metal (0.039) is smaller than feature size (0.040)
+via_845         B        0.600    6.675    No exposed metal due to Soldermask Analysis
+
+PROBE: 113
+NET: UNNAMED_38_R_I19_B
+R378-A<0>       B        1.500    5.689    Exposed metal (0.039) is smaller than feature size (0.040)
+R381-B<0>       B        1.000    5.689    Exposed metal (0.039) is smaller than feature size (0.040)
+U34-5           T        1.290    5.700    Exposed metal (0.025) is smaller than feature size (0.040)
+via_798         T        1.225    5.700    No exposed metal due to Soldermask Analysis
+via_798         B        1.225    5.700    No exposed metal due to Soldermask Analysis
+
+PROBE: 119
+NET: UNNAMED_37_C_I21_A
+C125-A<0>       T        0.350    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R110-B<0>       T        0.350    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R340-A<0>       B        0.350    7.161    Exposed metal (0.039) is smaller than feature size (0.040)
+U29-2           T        0.490    7.400    Exposed metal (0.025) is smaller than feature size (0.040)
+via_831         T        0.274    7.161    No exposed metal due to Soldermask Analysis
+via_831         B        0.274    7.161    No exposed metal due to Soldermask Analysis
+
+PROBE: 120
+NET: UNNAMED_49_C_I6_B
+C95-B<0>        T        1.675    8.467    Exposed metal (0.039) is smaller than feature size (0.040)
+R283-A<0>       B        1.675    8.461    Exposed metal (0.039) is smaller than feature size (0.040)
+U18-8           T        1.510    8.450    Exposed metal (0.025) is smaller than feature size (0.040)
+via_896         T        1.575    8.450    No exposed metal due to Soldermask Analysis
+via_896         B        1.575    8.450    No exposed metal due to Soldermask Analysis
+
+PROBE: 123
+NET: ENABLE_RST
+R39-A<0>        T        5.125    11.058   Exposed metal (0.039) is smaller than feature size (0.040)
+R105-A<0>       T        5.125    7.708    Exposed metal (0.039) is smaller than feature size (0.040)
+R153-A<0>       T        5.125    4.358    Exposed metal (0.039) is smaller than feature size (0.040)
+U7-8            T        5.785    11.600   Exposed metal (0.025) is smaller than feature size (0.040)
+via_184         T        5.490    4.620    No exposed metal due to Soldermask Analysis
+via_184         B        5.490    4.620    No exposed metal due to Soldermask Analysis
+via_185         T        5.470    7.875    No exposed metal due to Soldermask Analysis
+via_185         B        5.470    7.875    No exposed metal due to Soldermask Analysis
+via_186         T        5.625    11.200   No exposed metal due to Soldermask Analysis
+via_186         B        5.625    11.200   No exposed metal due to Soldermask Analysis
+via_187         T        5.850    11.600   No exposed metal due to Soldermask Analysis
+via_187         B        5.850    11.600   No exposed metal due to Soldermask Analysis
+
+PROBE: 127
+NET: UNNAMED_47_C_I261_A
+C112-A<0>       T        7.575    7.767    Exposed metal (0.039) is smaller than feature size (0.040)
+R318-B<0>       B        7.500    7.639    Exposed metal (0.039) is smaller than feature size (0.040)
+U26-4           T        7.685    7.675    Exposed metal (0.025) is smaller than feature size (0.040)
+via_274         T        7.625    7.725    No exposed metal due to Soldermask Analysis
+via_274         B        7.625    7.725    No exposed metal due to Soldermask Analysis
+
+PROBE: 128
+NET: UNNAMED_49_C_I56_A
+C273-A<0>       B        0.700    8.667    Exposed metal (0.039) is smaller than feature size (0.040)
+R281-B<0>       B        0.500    8.661    Exposed metal (0.039) is smaller than feature size (0.040)
+R282-A<0>       B        0.350    8.739    Exposed metal (0.039) is smaller than feature size (0.040)
+U17-13          T        0.710    8.700    Exposed metal (0.025) is smaller than feature size (0.040)
+via_890         T        0.775    8.700    No exposed metal due to Soldermask Analysis
+via_890         B        0.775    8.700    No exposed metal due to Soldermask Analysis
+via_891         B        0.600    8.675    No exposed metal due to Soldermask Analysis
+
+PROBE: 131
+NET: UNNAMED_45_C_I139_A
+C257-A<0>       B        0.614    11.875   Exposed metal (0.039) is smaller than feature size (0.040)
+U1-BST          T        0.688    11.958   Exposed metal (0.012) is smaller than feature size (0.040)
+via_90          T        0.688    11.885   No exposed metal due to Soldermask Analysis
+via_90          B        0.688    11.885   No exposed metal due to Soldermask Analysis
+
+PROBE: 132
+NET: UNNAMED_45_R_I210_A
+C258-A<0>       B        2.950    11.858   Exposed metal (0.039) is smaller than feature size (0.040)
+R209-A<0>       B        3.150    11.858   Exposed metal (0.039) is smaller than feature size (0.040)
+U5-6            T        3.160    11.800   Exposed metal (0.025) is smaller than feature size (0.040)
+via_79          T        3.225    11.800   No exposed metal due to Soldermask Analysis
+via_79          B        3.225    11.800   No exposed metal due to Soldermask Analysis
+via_80          B        3.050    11.858   No exposed metal due to Soldermask Analysis
+
+PROBE: 134
+NET: UNNAMED_47_C_I260_B
+C119-B<0>       T        7.800    7.633    Exposed metal (0.039) is smaller than feature size (0.040)
+C120-A<0>       T        8.070    7.633    Exposed metal (0.039) is smaller than feature size (0.040)
+R106-B<0>       T        7.885    7.639    Exposed metal (0.039) is smaller than feature size (0.040)
+R107-A<0>       T        7.985    7.639    Exposed metal (0.039) is smaller than feature size (0.040)
+R330-B<0>       B        7.500    7.414    Exposed metal (0.039) is smaller than feature size (0.040)
+U26-2           T        7.685    7.575    Exposed metal (0.025) is smaller than feature size (0.040)
+via_36          T        7.525    7.475    No exposed metal due to Soldermask Analysis
+via_36          B        7.525    7.475    No exposed metal due to Soldermask Analysis
+
+PROBE: 148
+NET: 5V_REF
+R88-A<0>        T        0.850    8.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R294-A<0>       B        0.700    8.161    Exposed metal (0.039) is smaller than feature size (0.040)
+U23-6           T        0.710    8.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1645        T        0.775    8.175    No exposed metal due to Soldermask Analysis
+via_1645        B        0.775    8.175    No exposed metal due to Soldermask Analysis
+
+PROBE: 156
+NET: UNNAMED_10_C_I47_A
+C261-A<0>       B        0.850    10.761   Exposed metal (0.039) is smaller than feature size (0.040)
+R48-A<0>        T        0.850    10.561   Exposed metal (0.039) is smaller than feature size (0.040)
+R235-B<0>       B        0.850    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+U12-10          T        0.710    10.650   Exposed metal (0.025) is smaller than feature size (0.040)
+via_920         T        0.775    10.650   No exposed metal due to Soldermask Analysis
+via_920         B        0.775    10.650   No exposed metal due to Soldermask Analysis
+via_921         B        0.775    10.600   No exposed metal due to Soldermask Analysis
+
+PROBE: 158
+NET: UNNAMED_39_C_I164_B
+C209-B<0>       T        2.170    2.761    Exposed metal (0.039) is smaller than feature size (0.040)
+R418-A<0>       B        2.225    2.939    Exposed metal (0.039) is smaller than feature size (0.040)
+R419-B<0>       B        2.075    2.861    Exposed metal (0.039) is smaller than feature size (0.040)
+R424-B<0>       B        2.075    2.739    Exposed metal (0.039) is smaller than feature size (0.040)
+U47-8           T        2.775    2.910    Exposed metal (0.025) is smaller than feature size (0.040)
+via_776         T        2.725    2.950    No exposed metal due to Soldermask Analysis
+via_776         B        2.725    2.950    No exposed metal due to Soldermask Analysis
+via_777         T        2.150    2.700    No exposed metal due to Soldermask Analysis
+via_777         B        2.150    2.700    No exposed metal due to Soldermask Analysis
+via_778         B        2.450    2.975    No exposed metal due to Soldermask Analysis
+
+PROBE: 160
+NET: UNNAMED_44_BC817_I101_B
+Q2-B            T        5.787    11.414   Exposed metal (0.039) is smaller than feature size (0.040)
+R26-B<0>        T        5.595    11.336   Exposed metal (0.039) is smaller than feature size (0.040)
+R27-A<0>        T        5.695    11.414   Exposed metal (0.039) is smaller than feature size (0.040)
+via_876         T        5.695    11.475   No exposed metal due to Soldermask Analysis
+via_876         B        5.695    11.475   No exposed metal due to Soldermask Analysis
+
+PROBE: 162
+NET: UNNAMED_44_74HC14_I263_A
+C32-A<0>        T        5.395    11.414   Exposed metal (0.039) is smaller than feature size (0.040)
+R24-B<0>        T        5.305    11.408   Exposed metal (0.039) is smaller than feature size (0.040)
+U6-1            T        5.090    11.900   Exposed metal (0.025) is smaller than feature size (0.040)
+via_136         T        5.025    11.900   No exposed metal due to Soldermask Analysis
+via_136         B        5.025    11.900   No exposed metal due to Soldermask Analysis
+
+PROBE: 163
+NET: CNV_FLT
+JP1-B<0>        T        4.900    11.811   Exposed metal (0.039) is smaller than feature size (0.040)
+JP2-B<0>        T        4.900    11.689   Exposed metal (0.039) is smaller than feature size (0.040)
+U6-6            T        5.090    11.650   Exposed metal (0.025) is smaller than feature size (0.040)
+via_1644        T        5.025    11.650   No exposed metal due to Soldermask Analysis
+via_1644        B        5.025    11.650   No exposed metal due to Soldermask Analysis
+
+PROBE: 164
+NET: UNNAMED_47_74HC14_I221_Y
+U32-VIN-        T        5.100    7.014    Exposed metal (0.025) is smaller than feature size (0.040)
+U28-10          T        4.925    7.290    Exposed metal (0.025) is smaller than feature size (0.040)
+via_305         T        5.100    7.080    No exposed metal due to Soldermask Analysis
+via_305         B        5.100    7.080    No exposed metal due to Soldermask Analysis
+via_306         B        5.100    7.025    No exposed metal due to Soldermask Analysis
+
+PROBE: 165
+NET: UNNAMED_45_24C64_I2_WP
+Q25-C           T        5.475    1.107    Exposed metal (0.039) is smaller than feature size (0.040)
+R190-5          T        5.785    1.103    Exposed metal (0.020) is smaller than feature size (0.040)
+U54-7           T        5.965    1.125    Exposed metal (0.025) is smaller than feature size (0.040)
+via_615         T        5.635    1.060    No exposed metal due to Soldermask Analysis
+via_615         B        5.635    1.060    No exposed metal due to Soldermask Analysis
+
+PROBE: 174
+NET: UNNAMED_10_R_I90_B
+R47-B<0>        T        1.150    10.761   Exposed metal (0.039) is smaller than feature size (0.040)
+R49-A<0>        T        1.150    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+via_115         T        1.150    10.700   No exposed metal due to Soldermask Analysis
+via_115         B        1.150    10.700   No exposed metal due to Soldermask Analysis
+
+PROBE: 176
+NET: UNNAMED_45_C_I139_B
+C257-B<0>       B        0.536    11.875   Exposed metal (0.039) is smaller than feature size (0.040)
+R6-B<0>         T        0.542    11.850   Exposed metal (0.039) is smaller than feature size (0.040)
+via_89          T        0.535    11.795   No exposed metal due to Soldermask Analysis
+via_89          B        0.535    11.795   No exposed metal due to Soldermask Analysis
+
+PROBE: 178
+NET: UNNAMED_48_R_I311_B
+R443-B<0>       B        6.650    1.661    Exposed metal (0.039) is smaller than feature size (0.040)
+R444-B<0>       B        6.525    1.739    Exposed metal (0.039) is smaller than feature size (0.040)
+via_2           B        6.525    1.800    No exposed metal due to Soldermask Analysis
+
+PROBE: 179
+NET: UNNAMED_37_R_I18_A
+R328-A<0>       B        0.350    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R340-B<0>       B        0.350    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+via_819         B        0.350    7.300    No exposed metal due to Soldermask Analysis
+
+PROBE: 180
+NET: UNNAMED_37_R_I28_B
+R316-B<0>       B        0.500    7.686    Exposed metal (0.039) is smaller than feature size (0.040)
+R326-A<0>       B        0.700    7.439    Exposed metal (0.039) is smaller than feature size (0.040)
+via_815         B        0.575    7.625    No exposed metal due to Soldermask Analysis
+
+PROBE: 181
+NET: UT_LOW_IMP
+R298-A<0>       B        2.200    7.964    Exposed metal (0.039) is smaller than feature size (0.040)
+U55-1           T        3.935    0.925    Exposed metal (0.025) is smaller than feature size (0.040)
+U55-2           T        3.935    0.975    Exposed metal (0.025) is smaller than feature size (0.040)
+via_538         T        2.600    8.000    No exposed metal due to Soldermask Analysis
+via_538         B        2.600    8.000    No exposed metal due to Soldermask Analysis
+via_539         T        4.000    0.950    No exposed metal due to Soldermask Analysis
+via_539         B        4.000    0.950    No exposed metal due to Soldermask Analysis
+
+PROBE: 182
+NET: UNNAMED_49_R_I121_A
+R88-B<0>        T        0.850    8.161    Exposed metal (0.039) is smaller than feature size (0.040)
+R293-A<0>       B        0.850    8.161    Exposed metal (0.039) is smaller than feature size (0.040)
+via_844         T        0.850    8.100    No exposed metal due to Soldermask Analysis
+via_844         B        0.850    8.100    No exposed metal due to Soldermask Analysis
+
+PROBE: 190
+NET: UNNAMED_49_BC817_I64_B
+Q9-B            T        1.714    9.168    Exposed metal (0.039) is smaller than feature size (0.040)
+R266-B<0>       B        1.675    9.164    Exposed metal (0.039) is smaller than feature size (0.040)
+R276-A<0>       B        1.675    8.964    Exposed metal (0.039) is smaller than feature size (0.040)
+R283-B<0>       B        1.675    8.539    Exposed metal (0.039) is smaller than feature size (0.040)
+via_908         T        1.700    9.225    No exposed metal due to Soldermask Analysis
+via_908         B        1.700    9.225    No exposed metal due to Soldermask Analysis
+
+PROBE: 192
+NET: UNNAMED_44_BC817_I3_B
+Q1-B            T        6.686    11.632   Exposed metal (0.039) is smaller than feature size (0.040)
+R10-1           T        6.535    11.628   Exposed metal (0.020) is smaller than feature size (0.040)
+via_870         T        6.625    11.628   No exposed metal due to Soldermask Analysis
+via_870         B        6.625    11.628   No exposed metal due to Soldermask Analysis
+
+PROBE: 193
+NET: UNNAMED_38_BAT54S_I35_A1
+D25-C           T        1.000    5.807    Exposed metal (0.039) is smaller than feature size (0.040)
+D27-C           T        1.000    5.607    Exposed metal (0.039) is smaller than feature size (0.040)
+D25-2           T        0.961    5.893    Exposed metal (0.039) is smaller than feature size (0.040)
+D27-2           T        0.961    5.693    Exposed metal (0.039) is smaller than feature size (0.040)
+R381-A<0>       B        1.000    5.611    Exposed metal (0.039) is smaller than feature size (0.040)
+via_812         T        1.000    5.550    No exposed metal due to Soldermask Analysis
+via_812         B        1.000    5.550    No exposed metal due to Soldermask Analysis
+
+PROBE: 195
+NET: UNNAMED_46_74HC14_I221_A
+U11-6           T        4.875    10.860   Exposed metal (0.025) is smaller than feature size (0.040)
+U11-11          T        4.975    10.640   Exposed metal (0.025) is smaller than feature size (0.040)
+via_427         T        4.975    10.575   No exposed metal due to Soldermask Analysis
+via_427         B        4.975    10.575   No exposed metal due to Soldermask Analysis
+
+PROBE: 196
+NET: UNNAMED_46_74HC14_I209_Y
+U10-VIN-        T        6.450    10.989   Exposed metal (0.025) is smaller than feature size (0.040)
+U11-12          T        5.025    10.640   Exposed metal (0.025) is smaller than feature size (0.040)
+via_429         T        6.450    11.055   No exposed metal due to Soldermask Analysis
+via_429         B        6.450    11.055   No exposed metal due to Soldermask Analysis
+via_430         T        5.025    10.575   No exposed metal due to Soldermask Analysis
+via_430         B        5.025    10.575   No exposed metal due to Soldermask Analysis
+
+PROBE: 197
+NET: UNNAMED_48_74HC14_I221_A
+U44-6           T        4.875    4.160    Exposed metal (0.025) is smaller than feature size (0.040)
+U44-11          T        4.975    3.940    Exposed metal (0.025) is smaller than feature size (0.040)
+via_247         T        4.975    3.875    No exposed metal due to Soldermask Analysis
+via_247         B        4.975    3.875    No exposed metal due to Soldermask Analysis
+
+PROBE: 198
+NET: UNNAMED_48_74HC14_I209_Y
+U43-VIN-        T        6.450    4.289    Exposed metal (0.025) is smaller than feature size (0.040)
+U44-12          T        5.025    3.940    Exposed metal (0.025) is smaller than feature size (0.040)
+via_249         T        5.025    3.875    No exposed metal due to Soldermask Analysis
+via_249         B        5.025    3.875    No exposed metal due to Soldermask Analysis
+via_250         T        6.450    4.355    No exposed metal due to Soldermask Analysis
+via_250         B        6.450    4.355    No exposed metal due to Soldermask Analysis
+
+PROBE: 205
+NET: UNNAMED_46_74HC14_I210_A
+C34-A<0>        T        4.900    11.167   Exposed metal (0.039) is smaller than feature size (0.040)
+R33-B<0>        T        4.975    11.167   Exposed metal (0.039) is smaller than feature size (0.040)
+R34-B<0>        T        5.050    11.167   Exposed metal (0.039) is smaller than feature size (0.040)
+R35-B<0>        T        5.125    11.167   Exposed metal (0.039) is smaller than feature size (0.040)
+U11-3           T        5.025    10.860   Exposed metal (0.025) is smaller than feature size (0.040)
+via_428         T        4.850    11.160   No exposed metal due to Soldermask Analysis
+via_428         B        4.850    11.160   No exposed metal due to Soldermask Analysis
+
+PROBE: 206
+NET: UNNAMED_48_74HC14_I210_A
+C173-A<0>       T        4.900    4.467    Exposed metal (0.039) is smaller than feature size (0.040)
+R147-B<0>       T        4.975    4.467    Exposed metal (0.039) is smaller than feature size (0.040)
+R148-B<0>       T        5.050    4.467    Exposed metal (0.039) is smaller than feature size (0.040)
+R149-B<0>       T        5.125    4.467    Exposed metal (0.039) is smaller than feature size (0.040)
+U44-3           T        5.025    4.160    Exposed metal (0.025) is smaller than feature size (0.040)
+via_248         T        4.850    4.460    No exposed metal due to Soldermask Analysis
+via_248         B        4.850    4.460    No exposed metal due to Soldermask Analysis
+
+PROBE: 207
+NET: UNNAMED_47_C_I263_A
+C111-A<0>       T        7.475    7.767    Exposed metal (0.039) is smaller than feature size (0.040)
+R318-A<0>       B        7.500    7.561    Exposed metal (0.039) is smaller than feature size (0.040)
+U26-8           T        7.465    7.525    Exposed metal (0.025) is smaller than feature size (0.040)
+via_273         T        7.600    7.625    No exposed metal due to Soldermask Analysis
+via_273         B        7.600    7.625    No exposed metal due to Soldermask Analysis
+
+PROBE: 208
+NET: CONTROL_555
+C295-A<0>       B        1.500    4.842    Exposed metal (0.039) is smaller than feature size (0.040)
+U40-5           T        1.510    4.800    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1642        T        1.575    4.800    No exposed metal due to Soldermask Analysis
+via_1642        B        1.575    4.800    No exposed metal due to Soldermask Analysis
+
+PROBE: 209
+NET: UNNAMED_10_R_I91_B
+R49-B<0>        T        1.150    10.561   Exposed metal (0.039) is smaller than feature size (0.040)
+R242-A<0>       B        1.150    10.439   Exposed metal (0.039) is smaller than feature size (0.040)
+via_114         T        1.135    10.500   No exposed metal due to Soldermask Analysis
+via_114         B        1.135    10.500   No exposed metal due to Soldermask Analysis
+
+PROBE: 234
+NET: UNNAMED_44_74HC14_I287_A
+U6-4            T        5.090    11.750   Exposed metal (0.025) is smaller than feature size (0.040)
+U6-11           T        5.310    11.750   Exposed metal (0.025) is smaller than feature size (0.040)
+via_125         T        5.375    11.750   No exposed metal due to Soldermask Analysis
+via_125         B        5.375    11.750   No exposed metal due to Soldermask Analysis
+via_126         T        5.025    11.750   No exposed metal due to Soldermask Analysis
+via_126         B        5.025    11.750   No exposed metal due to Soldermask Analysis
+
+PROBE: 239
+NET: UNNAMED_10_R_I92_B
+R224-B<0>       B        1.150    10.767   Exposed metal (0.039) is smaller than feature size (0.040)
+R234-A<0>       B        1.150    10.567   Exposed metal (0.039) is smaller than feature size (0.040)
+U13-7           T        1.290    10.550   Exposed metal (0.025) is smaller than feature size (0.040)
+via_113         T        1.225    10.550   No exposed metal due to Soldermask Analysis
+via_113         B        1.225    10.550   No exposed metal due to Soldermask Analysis
+
+PROBE: 240
+NET: DISCH_THRES_555
+C294-A<0>       B        1.650    4.842    Exposed metal (0.039) is smaller than feature size (0.040)
+D30-A           T        0.886    4.832    Exposed metal (0.039) is smaller than feature size (0.040)
+R143-B<0>       T        1.650    4.836    Exposed metal (0.039) is smaller than feature size (0.040)
+U40-6           T        1.510    4.850    Exposed metal (0.025) is smaller than feature size (0.040)
+U40-7           T        1.510    4.900    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1589        T        1.575    4.850    No exposed metal due to Soldermask Analysis
+via_1589        B        1.575    4.850    No exposed metal due to Soldermask Analysis
+via_1590        B        1.725    4.850    No exposed metal due to Soldermask Analysis
+
+PROBE: 243
+NET: UNNAMED_46_C_I247_A
+C262-A<0>       B        4.540    10.717   Exposed metal (0.039) is smaller than feature size (0.040)
+JP3-A<0>        T        6.175    11.142   Exposed metal (0.039) is smaller than feature size (0.040)
+JP4-A<0>        T        6.250    11.142   Exposed metal (0.039) is smaller than feature size (0.040)
+R51-B<0>        T        4.540    10.583   Exposed metal (0.039) is smaller than feature size (0.040)
+R238-B<0>       B        4.540    10.583   Exposed metal (0.039) is smaller than feature size (0.040)
+U10-FAULT*      T        6.250    10.989   Exposed metal (0.025) is smaller than feature size (0.040)
+U15-FAULT*      T        4.900    10.364   Exposed metal (0.025) is smaller than feature size (0.040)
+via_46          T        4.900    10.430   No exposed metal due to Soldermask Analysis
+via_46          B        4.900    10.430   No exposed metal due to Soldermask Analysis
+via_47          T        6.250    11.055   No exposed metal due to Soldermask Analysis
+via_47          B        6.250    11.055   No exposed metal due to Soldermask Analysis
+via_48          B        6.200    10.905   No exposed metal due to Soldermask Analysis
+via_49          T        4.540    10.645   No exposed metal due to Soldermask Analysis
+via_49          B        4.540    10.645   No exposed metal due to Soldermask Analysis
+
+PROBE: 246
+NET: UNNAMED_48_R_I335_B
+R445-B<0>       B        3.725    1.661    Exposed metal (0.039) is smaller than feature size (0.040)
+R446-B<0>       B        3.600    1.739    Exposed metal (0.039) is smaller than feature size (0.040)
+via_1           B        3.725    1.600    No exposed metal due to Soldermask Analysis
+
+PROBE: 259
+NET: UNNAMED_37_C_I69_A
+C117-A<0>       T        2.375    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+R297-B<0>       B        2.375    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R310-A<0>       B        2.375    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+R311-B<0>       B        2.200    7.686    Exposed metal (0.039) is smaller than feature size (0.040)
+U25-9           T        2.210    7.725    Exposed metal (0.025) is smaller than feature size (0.040)
+via_826         T        2.275    7.725    No exposed metal due to Soldermask Analysis
+via_826         B        2.275    7.725    No exposed metal due to Soldermask Analysis
+
+PROBE: 260
+NET: UNNAMED_39_C_I156_B
+C304-B<0>       B        1.900    2.939    Exposed metal (0.039) is smaller than feature size (0.040)
+R419-A<0>       B        2.075    2.939    Exposed metal (0.039) is smaller than feature size (0.040)
+via_781         B        1.985    2.950    No exposed metal due to Soldermask Analysis
+
+PROBE: 261
+NET: UNNAMED_39_C_I178_B
+C210-B<0>       T        2.400    2.839    Exposed metal (0.039) is smaller than feature size (0.040)
+R175-A<0>       T        2.285    2.839    Exposed metal (0.039) is smaller than feature size (0.040)
+via_774         T        2.335    2.900    No exposed metal due to Soldermask Analysis
+via_774         B        2.335    2.900    No exposed metal due to Soldermask Analysis
+
+PROBE: 262
+NET: UNNAMED_36_C_I20_B
+C126-B<0>       T        1.825    7.433    Exposed metal (0.039) is smaller than feature size (0.040)
+R343-A<0>       B        1.675    7.064    Exposed metal (0.039) is smaller than feature size (0.040)
+U31-1           T        1.990    7.450    Exposed metal (0.025) is smaller than feature size (0.040)
+via_856         T        1.925    7.450    No exposed metal due to Soldermask Analysis
+via_856         B        1.925    7.450    No exposed metal due to Soldermask Analysis
+via_857         T        1.750    7.425    No exposed metal due to Soldermask Analysis
+via_857         B        1.750    7.425    No exposed metal due to Soldermask Analysis
+
+PROBE: 266
+NET: UNNAMED_44_74HC14_I288_A
+C23-A<0>        T        4.700    11.689   Exposed metal (0.039) is smaller than feature size (0.040)
+R7-B<0>         T        4.700    11.811   Exposed metal (0.039) is smaller than feature size (0.040)
+U6-3            T        5.090    11.800   Exposed metal (0.025) is smaller than feature size (0.040)
+via_124         T        5.025    11.800   No exposed metal due to Soldermask Analysis
+via_124         B        5.025    11.800   No exposed metal due to Soldermask Analysis
+
+PROBE: 267
+NET: UNNAMED_47_74HC14_I235_Y
+U27-RESET*      T        6.300    7.639    Exposed metal (0.025) is smaller than feature size (0.040)
+U32-RESET*      T        4.950    7.014    Exposed metal (0.025) is smaller than feature size (0.040)
+U28-8           T        4.825    7.290    Exposed metal (0.025) is smaller than feature size (0.040)
+via_299         T        4.950    7.080    No exposed metal due to Soldermask Analysis
+via_299         B        4.950    7.080    No exposed metal due to Soldermask Analysis
+via_300         T        5.050    7.115    No exposed metal due to Soldermask Analysis
+via_300         B        5.050    7.115    No exposed metal due to Soldermask Analysis
+via_301         T        6.300    7.705    No exposed metal due to Soldermask Analysis
+via_301         B        6.300    7.705    No exposed metal due to Soldermask Analysis
+via_302         B        6.300    7.650    No exposed metal due to Soldermask Analysis
+
+PROBE: 268
+NET: UNNAMED_47_74HC14_I209_A
+U28-4           T        4.975    7.510    Exposed metal (0.025) is smaller than feature size (0.040)
+U28-13          T        5.075    7.290    Exposed metal (0.025) is smaller than feature size (0.040)
+via_312         T        5.075    7.225    No exposed metal due to Soldermask Analysis
+via_312         B        5.075    7.225    No exposed metal due to Soldermask Analysis
+
+PROBE: 272
+NET: UNNAMED_46_BAS19_I21_C
+C50-A<0>        T        7.350    10.758   Exposed metal (0.039) is smaller than feature size (0.040)
+D7-C            T        7.457    10.725   Exposed metal (0.039) is smaller than feature size (0.040)
+R229-A<0>       B        7.500    10.686   Exposed metal (0.039) is smaller than feature size (0.040)
+via_416         T        7.425    10.625   No exposed metal due to Soldermask Analysis
+via_416         B        7.425    10.625   No exposed metal due to Soldermask Analysis
+
+PROBE: 273
+NET: VRS_N_RECTIFIED
+C165-B<0>       T        1.150    5.611    Exposed metal (0.039) is smaller than feature size (0.040)
+C290-A<0>       B        1.500    5.408    Exposed metal (0.039) is smaller than feature size (0.040)
+R380-B<0>       B        1.150    5.611    Exposed metal (0.039) is smaller than feature size (0.040)
+U34-7           T        1.290    5.600    Exposed metal (0.025) is smaller than feature size (0.040)
+via_526         T        1.225    5.600    No exposed metal due to Soldermask Analysis
+via_526         B        1.225    5.600    No exposed metal due to Soldermask Analysis
+
+PROBE: 275
+NET: UNNAMED_10_R_I93_B
+R234-B<0>       B        1.150    10.633   Exposed metal (0.039) is smaller than feature size (0.040)
+R241-A<0>       B        1.300    10.367   Exposed metal (0.039) is smaller than feature size (0.040)
+R242-B<0>       B        1.150    10.361   Exposed metal (0.039) is smaller than feature size (0.040)
+U13-6           T        1.290    10.600   Exposed metal (0.025) is smaller than feature size (0.040)
+via_111         T        1.225    10.600   No exposed metal due to Soldermask Analysis
+via_111         B        1.225    10.600   No exposed metal due to Soldermask Analysis
+via_112         B        1.226    10.361   No exposed metal due to Soldermask Analysis
+
+PROBE: 276
+NET: UNNAMED_48_C_I260_A
+C189-A<0>       T        7.800    4.217    Exposed metal (0.039) is smaller than feature size (0.040)
+R155-A<0>       T        7.885    4.211    Exposed metal (0.039) is smaller than feature size (0.040)
+U42-1           T        7.685    4.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_216         T        7.620    4.175    No exposed metal due to Soldermask Analysis
+via_216         B        7.620    4.175    No exposed metal due to Soldermask Analysis
+
+PROBE: 289
+NET: UNNAMED_10_TL084B_I82_NIN
+U12-1           T        0.490    10.850   Exposed metal (0.025) is smaller than feature size (0.040)
+U12-2           T        0.490    10.800   Exposed metal (0.025) is smaller than feature size (0.040)
+via_110         T        0.425    10.850   No exposed metal due to Soldermask Analysis
+via_110         B        0.425    10.850   No exposed metal due to Soldermask Analysis
+
+PROBE: 290
+NET: UNNAMED_49_TL084B_I91_NIN
+U18-6           T        1.290    8.500    Exposed metal (0.025) is smaller than feature size (0.040)
+U18-7           T        1.290    8.450    Exposed metal (0.025) is smaller than feature size (0.040)
+via_883         T        1.225    8.450    No exposed metal due to Soldermask Analysis
+via_883         B        1.225    8.450    No exposed metal due to Soldermask Analysis
+
+PROBE: 294
+NET: UNNAMED_49_R_I50_A
+R275-B<0>       B        0.700    8.961    Exposed metal (0.039) is smaller than feature size (0.040)
+R280-A<0>       B        0.850    8.739    Exposed metal (0.039) is smaller than feature size (0.040)
+via_888         B        0.700    8.880    No exposed metal due to Soldermask Analysis
+
+PROBE: 295
+NET: UNNAMED_49_R_I71_B
+R265-B<0>       B        0.850    9.211    Exposed metal (0.039) is smaller than feature size (0.040)
+R274-A<0>       B        0.850    9.039    Exposed metal (0.039) is smaller than feature size (0.040)
+via_886         B        0.850    9.125    No exposed metal due to Soldermask Analysis
+
+PROBE: 296
+NET: US_LOW_IMP
+R296-A<0>       B        2.525    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R322-A<0>       B        2.200    7.439    Exposed metal (0.039) is smaller than feature size (0.040)
+U55-13          T        3.715    0.975    Exposed metal (0.025) is smaller than feature size (0.040)
+U55-14          T        3.715    0.925    Exposed metal (0.025) is smaller than feature size (0.040)
+via_536         T        2.600    7.875    No exposed metal due to Soldermask Analysis
+via_536         B        2.600    7.875    No exposed metal due to Soldermask Analysis
+via_537         T        3.650    0.950    No exposed metal due to Soldermask Analysis
+via_537         B        3.650    0.950    No exposed metal due to Soldermask Analysis
+
+PROBE: 297
+NET: UNNAMED_9_R_I235_A
+R109-A<0>       T        2.375    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R320-B<0>       B        2.525    7.439    Exposed metal (0.039) is smaller than feature size (0.040)
+U31-13          T        2.210    7.400    Exposed metal (0.025) is smaller than feature size (0.040)
+via_547         T        2.275    7.400    No exposed metal due to Soldermask Analysis
+via_547         B        2.275    7.400    No exposed metal due to Soldermask Analysis
+
+PROBE: 301
+NET: UNNAMED_49_C_I119_A
+C275-A<0>       B        0.700    8.539    Exposed metal (0.039) is smaller than feature size (0.040)
+R286-A<0>       B        0.500    8.539    Exposed metal (0.039) is smaller than feature size (0.040)
+R293-B<0>       B        0.850    8.239    Exposed metal (0.039) is smaller than feature size (0.040)
+U17-9           T        0.710    8.500    Exposed metal (0.025) is smaller than feature size (0.040)
+via_860         T        0.775    8.500    No exposed metal due to Soldermask Analysis
+via_860         B        0.775    8.500    No exposed metal due to Soldermask Analysis
+via_861         B        0.600    8.575    No exposed metal due to Soldermask Analysis
+
+PROBE: 302
+NET: REF_PRI_N
+C131-B<0>       T        1.825    7.161    Exposed metal (0.039) is smaller than feature size (0.040)
+R311-A<0>       B        2.200    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+R334-A<0>       B        2.200    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R336-B<0>       B        1.825    7.161    Exposed metal (0.039) is smaller than feature size (0.040)
+U31-7           T        1.990    7.150    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1502        T        1.925    7.150    No exposed metal due to Soldermask Analysis
+via_1502        B        1.925    7.150    No exposed metal due to Soldermask Analysis
+
+PROBE: 306
+NET: UNNAMED_10_BC817_I58_B
+Q4-B            T        1.714    10.218   Exposed metal (0.039) is smaller than feature size (0.040)
+R239-B<0>       B        1.675    10.361   Exposed metal (0.039) is smaller than feature size (0.040)
+R240-A<0>       B        1.500    10.361   Exposed metal (0.039) is smaller than feature size (0.040)
+R247-B<0>       B        1.675    10.214   Exposed metal (0.039) is smaller than feature size (0.040)
+via_929         T        1.725    10.290   No exposed metal due to Soldermask Analysis
+via_929         B        1.725    10.290   No exposed metal due to Soldermask Analysis
+
+PROBE: 308
+NET: PFAIL_COMP
+D30-C           T        0.925    4.918    Exposed metal (0.039) is smaller than feature size (0.040)
+R383-B<0>       B        1.150    5.336    Exposed metal (0.039) is smaller than feature size (0.040)
+R384-A<0>       B        1.000    5.414    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-1           T        1.290    5.425    Exposed metal (0.025) is smaller than feature size (0.040)
+U35-2           T        1.290    5.375    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1513        T        1.225    5.375    No exposed metal due to Soldermask Analysis
+via_1513        B        1.225    5.375    No exposed metal due to Soldermask Analysis
+via_1514        T        0.925    4.975    No exposed metal due to Soldermask Analysis
+via_1514        B        0.925    4.975    No exposed metal due to Soldermask Analysis
+
+PROBE: 310
+NET: UNNAMED_44_74HC14_I223_A
+C33-A<0>        T        6.265    11.414   Exposed metal (0.039) is smaller than feature size (0.040)
+R31-B<0>        T        6.350    11.408   Exposed metal (0.039) is smaller than feature size (0.040)
+U6-5            T        5.090    11.700   Exposed metal (0.025) is smaller than feature size (0.040)
+via_877         T        5.025    11.700   No exposed metal due to Soldermask Analysis
+via_877         B        5.025    11.700   No exposed metal due to Soldermask Analysis
+via_878         T        6.350    11.465   No exposed metal due to Soldermask Analysis
+via_878         B        6.350    11.465   No exposed metal due to Soldermask Analysis
+
+PROBE: 311
+NET: UNNAMED_46_74HC14_I184_Y
+U10-VIN+        T        6.500    10.989   Exposed metal (0.025) is smaller than feature size (0.040)
+U15-VIN+        T        5.150    10.364   Exposed metal (0.025) is smaller than feature size (0.040)
+U11-2           T        5.075    10.860   Exposed metal (0.025) is smaller than feature size (0.040)
+via_432         T        6.500    11.055   No exposed metal due to Soldermask Analysis
+via_432         B        6.500    11.055   No exposed metal due to Soldermask Analysis
+via_433         T        5.150    10.430   No exposed metal due to Soldermask Analysis
+via_433         B        5.150    10.430   No exposed metal due to Soldermask Analysis
+via_434         B        6.500    10.950   No exposed metal due to Soldermask Analysis
+
+PROBE: 312
+NET: UNNAMED_48_74HC14_I184_Y
+U43-VIN+        T        6.500    4.289    Exposed metal (0.025) is smaller than feature size (0.040)
+U45-VIN+        T        5.150    3.664    Exposed metal (0.025) is smaller than feature size (0.040)
+U44-2           T        5.075    4.160    Exposed metal (0.025) is smaller than feature size (0.040)
+via_252         T        5.150    3.730    No exposed metal due to Soldermask Analysis
+via_252         B        5.150    3.730    No exposed metal due to Soldermask Analysis
+via_253         T        6.500    4.355    No exposed metal due to Soldermask Analysis
+via_253         B        6.500    4.355    No exposed metal due to Soldermask Analysis
+via_254         B        6.500    4.250    No exposed metal due to Soldermask Analysis
+
+PROBE: 319
+NET: UNNAMED_46_74HC14_I224_A
+C31-A<0>        T        4.900    11.342   Exposed metal (0.039) is smaller than feature size (0.040)
+R20-B<0>        T        4.975    11.342   Exposed metal (0.039) is smaller than feature size (0.040)
+R21-B<0>        T        5.050    11.342   Exposed metal (0.039) is smaller than feature size (0.040)
+R22-B<0>        T        5.125    11.342   Exposed metal (0.039) is smaller than feature size (0.040)
+U11-5           T        4.925    10.860   Exposed metal (0.025) is smaller than feature size (0.040)
+via_424         T        4.850    11.342   No exposed metal due to Soldermask Analysis
+via_424         B        4.850    11.342   No exposed metal due to Soldermask Analysis
+
+PROBE: 320
+NET: UNNAMED_48_74HC14_I224_A
+C172-A<0>       T        4.900    4.642    Exposed metal (0.039) is smaller than feature size (0.040)
+R144-B<0>       T        4.975    4.642    Exposed metal (0.039) is smaller than feature size (0.040)
+R145-B<0>       T        5.050    4.642    Exposed metal (0.039) is smaller than feature size (0.040)
+R146-B<0>       T        5.125    4.642    Exposed metal (0.039) is smaller than feature size (0.040)
+U44-5           T        4.925    4.160    Exposed metal (0.025) is smaller than feature size (0.040)
+via_244         T        4.850    4.642    No exposed metal due to Soldermask Analysis
+via_244         B        4.850    4.642    No exposed metal due to Soldermask Analysis
+
+PROBE: 321
+NET: UNNAMED_48_C_I261_A
+C181-A<0>       T        7.575    4.417    Exposed metal (0.039) is smaller than feature size (0.040)
+R397-B<0>       B        7.500    4.289    Exposed metal (0.039) is smaller than feature size (0.040)
+U42-4           T        7.685    4.325    Exposed metal (0.025) is smaller than feature size (0.040)
+via_215         T        7.620    4.375    No exposed metal due to Soldermask Analysis
+via_215         B        7.620    4.375    No exposed metal due to Soldermask Analysis
+
+PROBE: 324
+NET: UNNAMED_48_C_I260_B
+C189-B<0>       T        7.800    4.283    Exposed metal (0.039) is smaller than feature size (0.040)
+C190-A<0>       T        8.070    4.283    Exposed metal (0.039) is smaller than feature size (0.040)
+R155-B<0>       T        7.885    4.289    Exposed metal (0.039) is smaller than feature size (0.040)
+R156-A<0>       T        7.985    4.289    Exposed metal (0.039) is smaller than feature size (0.040)
+R402-B<0>       B        7.500    4.064    Exposed metal (0.039) is smaller than feature size (0.040)
+U42-2           T        7.685    4.225    Exposed metal (0.025) is smaller than feature size (0.040)
+via_35          T        7.525    4.125    No exposed metal due to Soldermask Analysis
+via_35          B        7.525    4.125    No exposed metal due to Soldermask Analysis
+
+PROBE: 338
+NET: UNNAMED_10_TL084B_I108_NIN
+U13-13          T        1.510    10.800   Exposed metal (0.025) is smaller than feature size (0.040)
+U13-14          T        1.510    10.850   Exposed metal (0.025) is smaller than feature size (0.040)
+via_317         T        1.575    10.850   No exposed metal due to Soldermask Analysis
+via_317         B        1.575    10.850   No exposed metal due to Soldermask Analysis
+
+PROBE: 340
+NET: UNNAMED_49_R_I73_A
+R274-B<0>       B        0.850    8.961    Exposed metal (0.039) is smaller than feature size (0.040)
+R275-A<0>       B        0.700    9.039    Exposed metal (0.039) is smaller than feature size (0.040)
+via_885         B        0.700    9.125    No exposed metal due to Soldermask Analysis
+
+PROBE: 342
+NET: UNNAMED_36_REF02_I76_VOUT
+U25-5           T        1.990    7.775    Exposed metal (0.025) is smaller than feature size (0.040)
+U30-6           T        1.635    7.275    Exposed metal (0.025) is smaller than feature size (0.040)
+via_847         T        1.925    7.775    No exposed metal due to Soldermask Analysis
+via_847         B        1.925    7.775    No exposed metal due to Soldermask Analysis
+via_848         T        1.550    7.275    No exposed metal due to Soldermask Analysis
+via_848         B        1.550    7.275    No exposed metal due to Soldermask Analysis
+
+PROBE: 354
+NET: UNNAMED_37_C_I59_B
+C103-B<0>       T        1.825    7.958    Exposed metal (0.039) is smaller than feature size (0.040)
+R300-A<0>       B        1.825    7.964    Exposed metal (0.039) is smaller than feature size (0.040)
+U25-1           T        1.990    7.975    Exposed metal (0.025) is smaller than feature size (0.040)
+via_827         T        1.925    7.975    No exposed metal due to Soldermask Analysis
+via_827         B        1.925    7.975    No exposed metal due to Soldermask Analysis
+
+PROBE: 358
+NET: UNNAMED_36_BC817_I58_B
+Q12-B           T        1.714    6.818    Exposed metal (0.039) is smaller than feature size (0.040)
+R343-B<0>       B        1.675    6.986    Exposed metal (0.039) is smaller than feature size (0.040)
+R344-A<0>       B        1.500    6.986    Exposed metal (0.039) is smaller than feature size (0.040)
+R349-B<0>       B        1.675    6.814    Exposed metal (0.039) is smaller than feature size (0.040)
+via_864         T        1.700    6.875    No exposed metal due to Soldermask Analysis
+via_864         B        1.700    6.875    No exposed metal due to Soldermask Analysis
+
+PROBE: 362
+NET: OCT_INV_N
+JP3-B<0>        T        6.175    11.208   Exposed metal (0.039) is smaller than feature size (0.040)
+JP10-B<0>       T        6.250    7.858    Exposed metal (0.039) is smaller than feature size (0.040)
+JP14-B<0>       T        6.250    4.508    Exposed metal (0.039) is smaller than feature size (0.040)
+R197-A<0>       T        5.665    0.892    Exposed metal (0.039) is smaller than feature size (0.040)
+R198-B<0>       T        5.755    0.886    Exposed metal (0.039) is smaller than feature size (0.040)
+via_469         T        5.595    4.575    No exposed metal due to Soldermask Analysis
+via_469         B        5.595    4.575    No exposed metal due to Soldermask Analysis
+via_470         T        5.575    7.925    No exposed metal due to Soldermask Analysis
+via_470         B        5.575    7.925    No exposed metal due to Soldermask Analysis
+via_471         T        5.675    11.100   No exposed metal due to Soldermask Analysis
+via_471         B        5.675    11.100   No exposed metal due to Soldermask Analysis
+via_472         T        5.665    0.835    No exposed metal due to Soldermask Analysis
+via_472         B        5.665    0.835    No exposed metal due to Soldermask Analysis
+
+PROBE: 364
+NET: UNNAMED_47_BC847C_I250_B
+Q11-B           T        4.583    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R111-A<0>       T        4.540    7.167    Exposed metal (0.039) is smaller than feature size (0.040)
+via_290         T        4.600    7.295    No exposed metal due to Soldermask Analysis
+via_290         B        4.600    7.295    No exposed metal due to Soldermask Analysis
+
+PROBE: 365
+NET: UNNAMED_49_TL084B_I92_NIN
+R81-A<0>        T        1.150    8.667    Exposed metal (0.039) is smaller than feature size (0.040)
+R84-B<0>        T        1.150    8.533    Exposed metal (0.039) is smaller than feature size (0.040)
+U18-2           T        1.290    8.700    Exposed metal (0.025) is smaller than feature size (0.040)
+via_882         T        1.225    8.700    No exposed metal due to Soldermask Analysis
+via_882         B        1.225    8.700    No exposed metal due to Soldermask Analysis
+
+PROBE: 379
+NET: UNNAMED_10_TL084B_I84_NIN
+U12-13          T        0.710    10.800   Exposed metal (0.025) is smaller than feature size (0.040)
+U12-14          T        0.710    10.850   Exposed metal (0.025) is smaller than feature size (0.040)
+via_109         T        0.775    10.850   No exposed metal due to Soldermask Analysis
+via_109         B        0.775    10.850   No exposed metal due to Soldermask Analysis
+
+PROBE: 380
+NET: UNNAMED_49_TL084B_I93_NIN
+U18-3           T        1.290    8.650    Exposed metal (0.025) is smaller than feature size (0.040)
+U18-13          T        1.510    8.700    Exposed metal (0.025) is smaller than feature size (0.040)
+U18-14          T        1.510    8.750    Exposed metal (0.025) is smaller than feature size (0.040)
+via_880         T        1.575    8.750    No exposed metal due to Soldermask Analysis
+via_880         B        1.575    8.750    No exposed metal due to Soldermask Analysis
+via_881         T        1.225    8.650    No exposed metal due to Soldermask Analysis
+via_881         B        1.225    8.650    No exposed metal due to Soldermask Analysis
+
+PROBE: 381
+NET: UNNAMED_38_TL084B_I91_NIN
+U34-13          T        1.510    5.850    Exposed metal (0.025) is smaller than feature size (0.040)
+U34-14          T        1.510    5.900    Exposed metal (0.025) is smaller than feature size (0.040)
+via_791         T        1.575    5.900    No exposed metal due to Soldermask Analysis
+via_791         B        1.575    5.900    No exposed metal due to Soldermask Analysis
+
+PROBE: 384
+NET: UNNAMED_49_R_I51_B
+R79-A<0>        T        0.350    8.661    Exposed metal (0.039) is smaller than feature size (0.040)
+R282-B<0>       B        0.350    8.661    Exposed metal (0.039) is smaller than feature size (0.040)
+via_887         T        0.350    8.600    No exposed metal due to Soldermask Analysis
+via_887         B        0.350    8.600    No exposed metal due to Soldermask Analysis
+
+PROBE: 385
+NET: UNNAMED_10_R_I42_A
+R236-A<0>       B        0.500    10.561   Exposed metal (0.039) is smaller than feature size (0.040)
+U12-6           T        0.490    10.600   Exposed metal (0.025) is smaller than feature size (0.040)
+U12-7           T        0.490    10.550   Exposed metal (0.025) is smaller than feature size (0.040)
+via_914         T        0.425    10.550   No exposed metal due to Soldermask Analysis
+via_914         B        0.425    10.550   No exposed metal due to Soldermask Analysis
+
+PROBE: 386
+NET: UNNAMED_39_R_I242_A
+R172-A<0>       T        0.450    2.836    Exposed metal (0.039) is smaller than feature size (0.040)
+U48-2           T        0.550    2.685    Exposed metal (0.025) is smaller than feature size (0.040)
+via_646         T        0.550    2.750    No exposed metal due to Soldermask Analysis
+via_646         B        0.550    2.750    No exposed metal due to Soldermask Analysis
+
+PROBE: 387
+NET: UNNAMED_9_R_I237_A
+R92-A<0>        T        2.375    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R296-B<0>       B        2.525    7.964    Exposed metal (0.039) is smaller than feature size (0.040)
+U25-13          T        2.210    7.925    Exposed metal (0.025) is smaller than feature size (0.040)
+via_546         T        2.275    7.925    No exposed metal due to Soldermask Analysis
+via_546         B        2.275    7.925    No exposed metal due to Soldermask Analysis
+
+PROBE: 392
+NET: UNNAMED_36_C_I46_A
+C132-A<0>       T        2.375    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R321-B<0>       B        2.375    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R333-A<0>       B        2.375    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R334-B<0>       B        2.200    7.161    Exposed metal (0.039) is smaller than feature size (0.040)
+U31-9           T        2.210    7.200    Exposed metal (0.025) is smaller than feature size (0.040)
+via_854         T        2.275    7.200    No exposed metal due to Soldermask Analysis
+via_854         B        2.275    7.200    No exposed metal due to Soldermask Analysis
+
+PROBE: 393
+NET: UNNAMED_36_C_I147_A
+C131-A<0>       T        1.825    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R324-B<0>       B        1.825    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R336-A<0>       B        1.825    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+U31-6           T        1.990    7.200    Exposed metal (0.025) is smaller than feature size (0.040)
+via_859         T        1.900    7.250    No exposed metal due to Soldermask Analysis
+via_859         B        1.900    7.250    No exposed metal due to Soldermask Analysis
+
+PROBE: 397
+NET: UNNAMED_45_BC817_I3_B
+Q25-B           T        5.514    1.193    Exposed metal (0.039) is smaller than feature size (0.040)
+R190-1          T        5.715    1.197    Exposed metal (0.020) is smaller than feature size (0.040)
+via_614         T        5.635    1.197    No exposed metal due to Soldermask Analysis
+via_614         B        5.635    1.197    No exposed metal due to Soldermask Analysis
+
+PROBE: 399
+NET: UNNAMED_47_BC847C_I250_C
+Q11-C           T        4.497    7.400    Exposed metal (0.039) is smaller than feature size (0.040)
+R319-A<0>       B        4.700    7.439    Exposed metal (0.039) is smaller than feature size (0.040)
+via_289         T        4.600    7.500    No exposed metal due to Soldermask Analysis
+via_289         B        4.600    7.500    No exposed metal due to Soldermask Analysis
+
+PROBE: 402
+NET: UNNAMED_47_74HC14_I184_A
+C118-A<0>       T        4.900    7.642    Exposed metal (0.039) is smaller than feature size (0.040)
+R103-B<0>       T        4.975    7.642    Exposed metal (0.039) is smaller than feature size (0.040)
+R104-B<0>       T        5.050    7.642    Exposed metal (0.039) is smaller than feature size (0.040)
+R105-B<0>       T        5.125    7.642    Exposed metal (0.039) is smaller than feature size (0.040)
+U28-1           T        5.125    7.510    Exposed metal (0.025) is smaller than feature size (0.040)
+via_316         T        5.195    7.225    No exposed metal due to Soldermask Analysis
+via_316         B        5.195    7.225    No exposed metal due to Soldermask Analysis
+
+PROBE: 403
+NET: I_SENSE_RU
+C42-A<0>        T        7.675    11.117   Exposed metal (0.039) is smaller than feature size (0.040)
+R228-A<0>       B        7.675    10.764   Exposed metal (0.039) is smaller than feature size (0.040)
+U9-3            T        7.685    10.975   Exposed metal (0.025) is smaller than feature size (0.040)
+via_393         T        7.725    11.075   No exposed metal due to Soldermask Analysis
+via_393         B        7.725    11.075   No exposed metal due to Soldermask Analysis
+
+PROBE: 404
+NET: I_SENSE_TW
+C182-A<0>       T        7.675    4.417    Exposed metal (0.039) is smaller than feature size (0.040)
+R401-A<0>       B        7.675    4.064    Exposed metal (0.039) is smaller than feature size (0.040)
+U42-3           T        7.685    4.275    Exposed metal (0.025) is smaller than feature size (0.040)
+via_332         T        7.720    4.375    No exposed metal due to Soldermask Analysis
+via_332         B        7.720    4.375    No exposed metal due to Soldermask Analysis
+
+PROBE: 405
+NET: I_SENSE_SV
+C113-A<0>       T        7.675    7.767    Exposed metal (0.039) is smaller than feature size (0.040)
+R329-A<0>       B        7.675    7.414    Exposed metal (0.039) is smaller than feature size (0.040)
+U26-3           T        7.685    7.625    Exposed metal (0.025) is smaller than feature size (0.040)
+via_333         T        7.725    7.725    No exposed metal due to Soldermask Analysis
+via_333         B        7.725    7.725    No exposed metal due to Soldermask Analysis
+
+PROBE: 406
+NET: UNNAMED_48_C_I263_A
+C180-A<0>       T        7.475    4.417    Exposed metal (0.039) is smaller than feature size (0.040)
+R397-A<0>       B        7.500    4.211    Exposed metal (0.039) is smaller than feature size (0.040)
+U42-8           T        7.465    4.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_214         T        7.600    4.275    No exposed metal due to Soldermask Analysis
+via_214         B        7.600    4.275    No exposed metal due to Soldermask Analysis
+
+PROBE: 409
+NET: UNNAMED_45_AD7417_I130_SCL
+R210-B<0>       B        2.350    11.792   Exposed metal (0.039) is smaller than feature size (0.040)
+U3-SCL          T        2.158    11.863   Exposed metal (0.012) is smaller than feature size (0.040)
+U2-6            T        1.935    11.800   Exposed metal (0.025) is smaller than feature size (0.040)
+via_94          T        2.000    11.800   No exposed metal due to Soldermask Analysis
+via_94          B        2.000    11.800   No exposed metal due to Soldermask Analysis
+via_95          B        1.925    11.775   No exposed metal due to Soldermask Analysis
+
+PROBE: 410
+NET: UNNAMED_45_BAT54S_I245_A1
+D3-C            T        2.675    12.032   Exposed metal (0.039) is smaller than feature size (0.040)
+R16-B<0>        T        2.575    11.608   Exposed metal (0.039) is smaller than feature size (0.040)
+R215-A<0>       B        2.500    11.608   Exposed metal (0.039) is smaller than feature size (0.040)
+U4-I<2>         T        2.712    11.774   Exposed metal (0.024) is smaller than feature size (0.040)
+via_52          T        2.575    11.675   No exposed metal due to Soldermask Analysis
+via_52          B        2.575    11.675   No exposed metal due to Soldermask Analysis
+
+PROBE: 425
+NET: UNNAMED_49_R_I116_A
+R286-B<0>       B        0.500    8.461    Exposed metal (0.039) is smaller than feature size (0.040)
+R287-A<0>       B        0.350    8.461    Exposed metal (0.039) is smaller than feature size (0.040)
+via_846         B        0.600    8.400    No exposed metal due to Soldermask Analysis
+
+PROBE: 426
+NET: UNNAMED_10_R_I64_B
+R243-A<0>       B        0.850    10.361   Exposed metal (0.039) is smaller than feature size (0.040)
+R250-B<0>       B        0.850    10.214   Exposed metal (0.039) is smaller than feature size (0.040)
+via_910         B        0.850    10.290   No exposed metal due to Soldermask Analysis
+
+PROBE: 427
+NET: UNNAMED_9_R_I238_A
+R322-B<0>       B        2.200    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R323-A<0>       B        2.000    7.439    Exposed metal (0.039) is smaller than feature size (0.040)
+U31-12          T        2.210    7.350    Exposed metal (0.025) is smaller than feature size (0.040)
+via_544         T        2.275    7.350    No exposed metal due to Soldermask Analysis
+via_544         B        2.275    7.350    No exposed metal due to Soldermask Analysis
+via_545         B        2.100    7.439    No exposed metal due to Soldermask Analysis
+
+PROBE: 433
+NET: UNNAMED_36_C_I47_A
+C283-A<0>       B        0.500    6.836    Exposed metal (0.039) is smaller than feature size (0.040)
+R347-B<0>       B        0.700    6.914    Exposed metal (0.039) is smaller than feature size (0.040)
+R357-A<0>       B        0.500    6.714    Exposed metal (0.039) is smaller than feature size (0.040)
+U29-10          T        0.710    7.250    Exposed metal (0.025) is smaller than feature size (0.040)
+via_852         T        0.775    7.250    No exposed metal due to Soldermask Analysis
+via_852         B        0.775    7.250    No exposed metal due to Soldermask Analysis
+via_853         B        0.500    6.775    No exposed metal due to Soldermask Analysis
+
+PROBE: 434
+NET: UNNAMED_37_C_I29_A
+C280-A<0>       B        0.500    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R302-B<0>       B        0.700    7.964    Exposed metal (0.039) is smaller than feature size (0.040)
+R316-A<0>       B        0.500    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+U29-3           T        0.490    7.350    Exposed metal (0.025) is smaller than feature size (0.040)
+via_829         B        0.500    7.825    No exposed metal due to Soldermask Analysis
+via_830         T        0.425    7.350    No exposed metal due to Soldermask Analysis
+via_830         B        0.425    7.350    No exposed metal due to Soldermask Analysis
+
+PROBE: 435
+NET: UNNAMED_39_C_I238_A
+C306-A<0>       B        0.450    2.836    Exposed metal (0.039) is smaller than feature size (0.040)
+C307-A<0>       B        0.300    2.836    Exposed metal (0.039) is smaller than feature size (0.040)
+R428-B<0>       B        0.600    2.614    Exposed metal (0.039) is smaller than feature size (0.040)
+R429-B<0>       B        0.450    2.614    Exposed metal (0.039) is smaller than feature size (0.040)
+U48-4           T        0.450    2.685    Exposed metal (0.025) is smaller than feature size (0.040)
+via_770         T        0.450    2.750    No exposed metal due to Soldermask Analysis
+via_770         B        0.450    2.750    No exposed metal due to Soldermask Analysis
+via_771         B        0.300    2.775    No exposed metal due to Soldermask Analysis
+
+PROBE: 436
+NET: UNNAMED_10_R_I42_B
+C265-A<0>       B        0.700    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+R226-A<0>       B        0.500    10.761   Exposed metal (0.039) is smaller than feature size (0.040)
+R236-B<0>       B        0.500    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+U12-9           T        0.710    10.600   Exposed metal (0.025) is smaller than feature size (0.040)
+via_913         T        0.600    10.639   No exposed metal due to Soldermask Analysis
+via_913         B        0.600    10.639   No exposed metal due to Soldermask Analysis
+
+PROBE: 442
+NET: UNNAMED_44_74HC14_I263_Y
+U6-2            T        5.090    11.850   Exposed metal (0.025) is smaller than feature size (0.040)
+U6-13           T        5.310    11.850   Exposed metal (0.025) is smaller than feature size (0.040)
+via_134         T        5.375    11.850   No exposed metal due to Soldermask Analysis
+via_134         B        5.375    11.850   No exposed metal due to Soldermask Analysis
+via_135         T        5.025    11.850   No exposed metal due to Soldermask Analysis
+via_135         B        5.025    11.850   No exposed metal due to Soldermask Analysis
+
+PROBE: 446
+NET: PF_IGBT_INV_OC
+JP8-B<0>        T        5.125    8.242    Exposed metal (0.039) is smaller than feature size (0.040)
+JP12-B<0>       T        5.125    4.892    Exposed metal (0.039) is smaller than feature size (0.040)
+JP16-B<0>       T        5.125    1.542    Exposed metal (0.039) is smaller than feature size (0.040)
+R187-A<0>       T        5.125    1.408    Exposed metal (0.039) is smaller than feature size (0.040)
+R188-B<0>       T        5.225    1.414    Exposed metal (0.039) is smaller than feature size (0.040)
+via_462         T        5.505    7.925    No exposed metal due to Soldermask Analysis
+via_462         B        5.505    7.925    No exposed metal due to Soldermask Analysis
+via_463         T        5.525    4.575    No exposed metal due to Soldermask Analysis
+via_463         B        5.525    4.575    No exposed metal due to Soldermask Analysis
+via_464         T        5.560    1.280    No exposed metal due to Soldermask Analysis
+via_464         B        5.560    1.280    No exposed metal due to Soldermask Analysis
+
+PROBE: 447
+NET: PF_IGBT_CONV_OC
+JP7-B<0>        T        5.125    8.558    Exposed metal (0.039) is smaller than feature size (0.040)
+JP11-B<0>       T        5.125    5.208    Exposed metal (0.039) is smaller than feature size (0.040)
+JP15-B<0>       T        5.125    1.858    Exposed metal (0.039) is smaller than feature size (0.040)
+R23-B<0>        T        5.215    11.336   Exposed metal (0.039) is smaller than feature size (0.040)
+R24-A<0>        T        5.305    11.342   Exposed metal (0.039) is smaller than feature size (0.040)
+via_465         T        5.280    8.525    No exposed metal due to Soldermask Analysis
+via_465         B        5.280    8.525    No exposed metal due to Soldermask Analysis
+via_466         T        5.265    5.175    No exposed metal due to Soldermask Analysis
+via_466         B        5.265    5.175    No exposed metal due to Soldermask Analysis
+via_467         T        5.300    1.825    No exposed metal due to Soldermask Analysis
+via_467         B        5.300    1.825    No exposed metal due to Soldermask Analysis
+via_468         T        5.305    11.295   No exposed metal due to Soldermask Analysis
+via_468         B        5.305    11.295   No exposed metal due to Soldermask Analysis
+
+PROBE: 448
+NET: OCT_CONV_N
+JP4-B<0>        T        6.250    11.208   Exposed metal (0.039) is smaller than feature size (0.040)
+JP9-B<0>        T        6.175    7.858    Exposed metal (0.039) is smaller than feature size (0.040)
+JP13-B<0>       T        6.175    4.508    Exposed metal (0.039) is smaller than feature size (0.040)
+R31-A<0>        T        6.350    11.342   Exposed metal (0.039) is smaller than feature size (0.040)
+R32-B<0>        T        6.435    11.414   Exposed metal (0.039) is smaller than feature size (0.040)
+via_473         T        5.650    11.150   No exposed metal due to Soldermask Analysis
+via_473         B        5.650    11.150   No exposed metal due to Soldermask Analysis
+via_474         T        5.540    7.845    No exposed metal due to Soldermask Analysis
+via_474         B        5.540    7.845    No exposed metal due to Soldermask Analysis
+via_475         T        5.560    4.620    No exposed metal due to Soldermask Analysis
+via_475         B        5.560    4.620    No exposed metal due to Soldermask Analysis
+
+PROBE: 453
+NET: UNNAMED_47_C_I247_A
+C281-A<0>       B        4.540    7.367    Exposed metal (0.039) is smaller than feature size (0.040)
+JP9-A<0>        T        6.175    7.792    Exposed metal (0.039) is smaller than feature size (0.040)
+JP10-A<0>       T        6.250    7.792    Exposed metal (0.039) is smaller than feature size (0.040)
+R111-B<0>       T        4.540    7.233    Exposed metal (0.039) is smaller than feature size (0.040)
+R332-B<0>       B        4.540    7.233    Exposed metal (0.039) is smaller than feature size (0.040)
+U27-FAULT*      T        6.250    7.639    Exposed metal (0.025) is smaller than feature size (0.040)
+U32-FAULT*      T        4.900    7.014    Exposed metal (0.025) is smaller than feature size (0.040)
+via_42          T        4.900    7.080    No exposed metal due to Soldermask Analysis
+via_42          B        4.900    7.080    No exposed metal due to Soldermask Analysis
+via_43          T        6.250    7.705    No exposed metal due to Soldermask Analysis
+via_43          B        6.250    7.705    No exposed metal due to Soldermask Analysis
+via_44          B        6.200    7.555    No exposed metal due to Soldermask Analysis
+via_45          T        4.540    7.295    No exposed metal due to Soldermask Analysis
+via_45          B        4.540    7.295    No exposed metal due to Soldermask Analysis
+
+PROBE: 458
+NET: UNNAMED_46_R_I311_B
+R288-B<0>       B        6.650    8.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R289-B<0>       B        6.525    8.439    Exposed metal (0.039) is smaller than feature size (0.040)
+via_20          B        6.525    8.500    No exposed metal due to Soldermask Analysis
+
+PROBE: 465
+NET: UNNAMED_10_R_I44_A
+R235-A<0>       B        0.850    10.561   Exposed metal (0.039) is smaller than feature size (0.040)
+R244-B<0>       B        0.700    10.439   Exposed metal (0.039) is smaller than feature size (0.040)
+via_912         B        0.775    10.500   No exposed metal due to Soldermask Analysis
+
+PROBE: 466
+NET: UNNAMED_10_R_I21_B
+R223-A<0>       B        1.500    10.761   Exposed metal (0.039) is smaller than feature size (0.040)
+R233-B<0>       B        1.500    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+via_916         B        1.500    10.700   No exposed metal due to Soldermask Analysis
+
+PROBE: 467
+NET: UNNAMED_9_R_I239_A
+R298-B<0>       B        2.200    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R299-A<0>       B        2.000    7.964    Exposed metal (0.039) is smaller than feature size (0.040)
+U25-12          T        2.210    7.875    Exposed metal (0.025) is smaller than feature size (0.040)
+via_542         T        2.275    7.875    No exposed metal due to Soldermask Analysis
+via_542         B        2.275    7.875    No exposed metal due to Soldermask Analysis
+via_543         B        2.100    7.964    No exposed metal due to Soldermask Analysis
+
+PROBE: 468
+NET: UR_LOW_IMP
+R320-A<0>       B        2.525    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+U55-8           T        3.715    1.225    Exposed metal (0.025) is smaller than feature size (0.040)
+U55-9           T        3.715    1.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_540         T        2.600    7.350    No exposed metal due to Soldermask Analysis
+via_540         B        2.600    7.350    No exposed metal due to Soldermask Analysis
+via_541         T        3.650    1.200    No exposed metal due to Soldermask Analysis
+via_541         B        3.650    1.200    No exposed metal due to Soldermask Analysis
+
+PROBE: 476
+NET: UNNAMED_39_C_I239_A
+C309-A<0>       B        0.300    2.536    Exposed metal (0.039) is smaller than feature size (0.040)
+R428-A<0>       B        0.600    2.536    Exposed metal (0.039) is smaller than feature size (0.040)
+R429-A<0>       B        0.450    2.536    Exposed metal (0.039) is smaller than feature size (0.040)
+U48-8           T        0.600    2.465    Exposed metal (0.025) is smaller than feature size (0.040)
+via_768         T        0.640    2.465    No exposed metal due to Soldermask Analysis
+via_768         B        0.640    2.465    No exposed metal due to Soldermask Analysis
+via_769         B        0.300    2.475    No exposed metal due to Soldermask Analysis
+
+PROBE: 480
+NET: UNNAMED_46_74HC14_I221_Y
+U15-VIN-        T        5.100    10.364   Exposed metal (0.025) is smaller than feature size (0.040)
+U11-10          T        4.925    10.640   Exposed metal (0.025) is smaller than feature size (0.040)
+via_425         T        5.100    10.430   No exposed metal due to Soldermask Analysis
+via_425         B        5.100    10.430   No exposed metal due to Soldermask Analysis
+via_426         B        5.100    10.375   No exposed metal due to Soldermask Analysis
+
+PROBE: 481
+NET: UNNAMED_48_74HC14_I221_Y
+U45-VIN-        T        5.100    3.664    Exposed metal (0.025) is smaller than feature size (0.040)
+U44-10          T        4.925    3.940    Exposed metal (0.025) is smaller than feature size (0.040)
+via_245         T        5.100    3.730    No exposed metal due to Soldermask Analysis
+via_245         B        5.100    3.730    No exposed metal due to Soldermask Analysis
+via_246         B        5.100    3.675    No exposed metal due to Soldermask Analysis
+
+PROBE: 507
+NET: UNNAMED_36_C_I49_A
+C130-A<0>       T        0.850    7.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R108-A<0>       T        0.850    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R325-B<0>       B        0.850    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+U29-9           T        0.710    7.200    Exposed metal (0.025) is smaller than feature size (0.040)
+via_851         T        0.825    7.300    No exposed metal due to Soldermask Analysis
+via_851         B        0.825    7.300    No exposed metal due to Soldermask Analysis
+
+PROBE: 510
+NET: UNNAMED_37_BC817_I56_B
+Q10-B           T        1.714    7.868    Exposed metal (0.039) is smaller than feature size (0.040)
+R300-B<0>       B        1.825    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R307-B<0>       B        1.675    7.864    Exposed metal (0.039) is smaller than feature size (0.040)
+R313-A<0>       B        1.825    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+via_834         T        1.700    7.925    No exposed metal due to Soldermask Analysis
+via_834         B        1.700    7.925    No exposed metal due to Soldermask Analysis
+
+PROBE: 511
+NET: UNNAMED_44_74HC14_I276_Y
+R26-A<0>        T        5.595    11.414   Exposed metal (0.039) is smaller than feature size (0.040)
+U6-8            T        5.310    11.600   Exposed metal (0.025) is smaller than feature size (0.040)
+via_133         T        5.375    11.600   No exposed metal due to Soldermask Analysis
+via_133         B        5.375    11.600   No exposed metal due to Soldermask Analysis
+
+PROBE: 512
+NET: UNNAMED_9_555_I229_CONT
+C320-A<0>       B        7.975    0.314    Exposed metal (0.039) is smaller than feature size (0.040)
+U57-5           T        8.250    0.590    Exposed metal (0.025) is smaller than feature size (0.040)
+via_593         T        7.975    0.395    No exposed metal due to Soldermask Analysis
+via_593         B        7.975    0.395    No exposed metal due to Soldermask Analysis
+
+PROBE: 514
+NET: UNNAMED_47_BAS19_I21_C
+C128-A<0>       T        7.350    7.408    Exposed metal (0.039) is smaller than feature size (0.040)
+D19-C           T        7.457    7.375    Exposed metal (0.039) is smaller than feature size (0.040)
+R330-A<0>       B        7.500    7.336    Exposed metal (0.039) is smaller than feature size (0.040)
+via_296         T        7.425    7.275    No exposed metal due to Soldermask Analysis
+via_296         B        7.425    7.275    No exposed metal due to Soldermask Analysis
+
+PROBE: 516
+NET: UNNAMED_45_BAT54S_I231_A1
+C15-A<0>        T        2.800    12.042   Exposed metal (0.039) is smaller than feature size (0.040)
+D1-C            T        2.675    12.282   Exposed metal (0.039) is smaller than feature size (0.040)
+R9-B<0>         T        2.800    11.858   Exposed metal (0.039) is smaller than feature size (0.040)
+R205-A<0>       B        2.800    12.042   Exposed metal (0.039) is smaller than feature size (0.040)
+U4-I<3>         T        2.712    11.876   Exposed metal (0.024) is smaller than feature size (0.040)
+via_53          T        2.875    12.042   No exposed metal due to Soldermask Analysis
+via_53          B        2.875    12.042   No exposed metal due to Soldermask Analysis
+
+PROBE: 520
+NET: UNNAMED_46_R_I335_B
+R290-B<0>       B        3.725    8.361    Exposed metal (0.039) is smaller than feature size (0.040)
+R291-B<0>       B        3.600    8.439    Exposed metal (0.039) is smaller than feature size (0.040)
+via_19          B        3.725    8.300    No exposed metal due to Soldermask Analysis
+
+PROBE: 525
+NET: UNNAMED_37_R_I64_B
+R101-B<0>       T        1.825    7.686    Exposed metal (0.039) is smaller than feature size (0.040)
+R312-A<0>       B        2.000    7.686    Exposed metal (0.039) is smaller than feature size (0.040)
+via_813         T        2.075    7.625    No exposed metal due to Soldermask Analysis
+via_813         B        2.075    7.625    No exposed metal due to Soldermask Analysis
+
+PROBE: 526
+NET: UNNAMED_10_R_I45_B
+R225-A<0>       B        0.700    10.761   Exposed metal (0.039) is smaller than feature size (0.040)
+R226-B<0>       B        0.500    10.839   Exposed metal (0.039) is smaller than feature size (0.040)
+via_911         B        0.597    10.803   No exposed metal due to Soldermask Analysis
+
+PROBE: 527
+NET: UNNAMED_10_R_I67_B
+R243-B<0>       B        0.850    10.439   Exposed metal (0.039) is smaller than feature size (0.040)
+R244-A<0>       B        0.700    10.361   Exposed metal (0.039) is smaller than feature size (0.040)
+via_909         B        0.775    10.400   No exposed metal due to Soldermask Analysis
+
+PROBE: 528
+NET: UNNAMED_39_R_I124_B
+R418-B<0>       B        2.225    2.861    Exposed metal (0.039) is smaller than feature size (0.040)
+R423-A<0>       B        2.225    2.739    Exposed metal (0.039) is smaller than feature size (0.040)
+via_647         B        2.300    2.800    No exposed metal due to Soldermask Analysis
+
+PROBE: 529
+NET: UNNAMED_10_R_I13_A
+R46-A<0>        T        0.850    10.761   Exposed metal (0.039) is smaller than feature size (0.040)
+R48-B<0>        T        0.850    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+via_917         T        0.850    10.700   No exposed metal due to Soldermask Analysis
+via_917         B        0.850    10.700   No exposed metal due to Soldermask Analysis
+
+PROBE: 538
+NET: UNNAMED_45_74HC14_I93_A
+C238-A<0>       T        5.025    1.336    Exposed metal (0.039) is smaller than feature size (0.040)
+R187-B<0>       T        5.125    1.342    Exposed metal (0.039) is smaller than feature size (0.040)
+U56-9           T        5.015    1.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_54          T        4.950    1.175    No exposed metal due to Soldermask Analysis
+via_54          B        4.950    1.175    No exposed metal due to Soldermask Analysis
+
+PROBE: 539
+NET: UNNAMED_45_74HC14_I100_A
+C244-A<0>       T        5.575    0.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R197-B<0>       T        5.665    0.958    Exposed metal (0.039) is smaller than feature size (0.040)
+U56-13          T        5.015    0.975    Exposed metal (0.025) is smaller than feature size (0.040)
+via_123         T        5.575    0.825    No exposed metal due to Soldermask Analysis
+via_123         B        5.575    0.825    No exposed metal due to Soldermask Analysis
+
+PROBE: 540
+NET: UNNAMED_47_74HC14_I221_A
+U28-6           T        4.875    7.510    Exposed metal (0.025) is smaller than feature size (0.040)
+U28-11          T        4.975    7.290    Exposed metal (0.025) is smaller than feature size (0.040)
+via_307         T        4.975    7.225    No exposed metal due to Soldermask Analysis
+via_307         B        4.975    7.225    No exposed metal due to Soldermask Analysis
+
+PROBE: 541
+NET: UNNAMED_47_74HC14_I209_Y
+U27-VIN-        T        6.450    7.639    Exposed metal (0.025) is smaller than feature size (0.040)
+U28-12          T        5.025    7.290    Exposed metal (0.025) is smaller than feature size (0.040)
+via_310         T        5.025    7.225    No exposed metal due to Soldermask Analysis
+via_310         B        5.025    7.225    No exposed metal due to Soldermask Analysis
+via_311         T        6.450    7.705    No exposed metal due to Soldermask Analysis
+via_311         B        6.450    7.705    No exposed metal due to Soldermask Analysis
+
+PROBE: 549
+NET: UNNAMED_47_74HC14_I210_A
+C104-A<0>       T        4.900    7.842    Exposed metal (0.039) is smaller than feature size (0.040)
+R93-B<0>        T        4.975    7.842    Exposed metal (0.039) is smaller than feature size (0.040)
+R94-B<0>        T        5.050    7.842    Exposed metal (0.039) is smaller than feature size (0.040)
+R95-B<0>        T        5.125    7.842    Exposed metal (0.039) is smaller than feature size (0.040)
+U28-3           T        5.025    7.510    Exposed metal (0.025) is smaller than feature size (0.040)
+via_308         T        4.850    8.065    No exposed metal due to Soldermask Analysis
+via_308         B        4.850    8.065    No exposed metal due to Soldermask Analysis
+via_309         B        4.975    8.065    No exposed metal due to Soldermask Analysis
+
+PROBE: 550
+NET: PFAIL_N_FILTERED
+C290-B<0>       B        1.500    5.342    Exposed metal (0.039) is smaller than feature size (0.040)
+R382-B<0>       B        1.300    5.336    Exposed metal (0.039) is smaller than feature size (0.040)
+R387-A<0>       B        1.300    5.214    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-5           T        1.290    5.225    Exposed metal (0.025) is smaller than feature size (0.040)
+U35-6           T        1.290    5.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1511        T        1.225    5.225    No exposed metal due to Soldermask Analysis
+via_1511        B        1.225    5.225    No exposed metal due to Soldermask Analysis
+via_1512        B        1.401    5.336    No exposed metal due to Soldermask Analysis
+
+PROBE: 557
+NET: UNNAMED_10_R_I89_B
+R47-A<0>        T        1.150    10.839   Exposed metal (0.039) is smaller than feature size (0.040)
+R222-B<0>       B        1.300    10.892   Exposed metal (0.039) is smaller than feature size (0.040)
+R224-A<0>       B        1.150    10.833   Exposed metal (0.039) is smaller than feature size (0.040)
+U13-2           T        1.290    10.800   Exposed metal (0.025) is smaller than feature size (0.040)
+via_116         T        1.225    10.800   No exposed metal due to Soldermask Analysis
+via_116         B        1.225    10.800   No exposed metal due to Soldermask Analysis
+
+PROBE: 558
+NET: UNNAMED_46_C_I260_A
+C47-A<0>        T        7.800    10.917   Exposed metal (0.039) is smaller than feature size (0.040)
+R40-A<0>        T        7.885    10.911   Exposed metal (0.039) is smaller than feature size (0.040)
+U9-1            T        7.685    10.875   Exposed metal (0.025) is smaller than feature size (0.040)
+via_395         T        7.620    10.875   No exposed metal due to Soldermask Analysis
+via_395         B        7.620    10.875   No exposed metal due to Soldermask Analysis
+
+PROBE: 560
+NET: UNNAMED_45_C_I143_B
+C1-B<0>         T        0.750    12.317   Exposed metal (0.039) is smaller than feature size (0.040)
+R2-B<0>         T        0.850    12.311   Exposed metal (0.039) is smaller than feature size (0.040)
+R4-A<0>         T        0.850    12.214   Exposed metal (0.039) is smaller than feature size (0.040)
+U1-FB           T        0.713    12.192   Exposed metal (0.012) is smaller than feature size (0.040)
+via_88          T        0.850    12.262   No exposed metal due to Soldermask Analysis
+via_88          B        0.850    12.262   No exposed metal due to Soldermask Analysis
+
+PROBE: 564
+NET: UNNAMED_49_R_I45_B
+R82-B<0>        T        1.675    8.739    Exposed metal (0.039) is smaller than feature size (0.040)
+R279-A<0>       B        1.675    8.739    Exposed metal (0.039) is smaller than feature size (0.040)
+via_893         T        1.675    8.800    No exposed metal due to Soldermask Analysis
+via_893         B        1.675    8.800    No exposed metal due to Soldermask Analysis
+
+PROBE: 565
+NET: UNNAMED_37_R_I11_A
+R303-A<0>       B        0.350    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R317-B<0>       B        0.350    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+R327-B<0>       B        0.500    7.361    Exposed metal (0.039) is smaller than feature size (0.040)
+U29-13          T        0.710    7.400    Exposed metal (0.025) is smaller than feature size (0.040)
+via_821         T        0.775    7.400    No exposed metal due to Soldermask Analysis
+via_821         B        0.775    7.400    No exposed metal due to Soldermask Analysis
+via_822         B        0.350    7.825    No exposed metal due to Soldermask Analysis
+
+PROBE: 568
+NET: UNNAMED_38_LM339A_I72_NIN
+R140-A<0>       T        1.650    5.136    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-8           T        1.510    5.125    Exposed metal (0.025) is smaller than feature size (0.040)
+via_806         T        1.575    5.125    No exposed metal due to Soldermask Analysis
+via_806         B        1.575    5.125    No exposed metal due to Soldermask Analysis
+
+PROBE: 572
+NET: REF_N
+C167-A<0>       T        1.150    5.336    Exposed metal (0.039) is smaller than feature size (0.040)
+R136-A<0>       T        1.000    5.336    Exposed metal (0.039) is smaller than feature size (0.040)
+R139-B<0>       T        1.150    5.214    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-4           T        1.290    5.275    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1506        T        1.225    5.275    No exposed metal due to Soldermask Analysis
+via_1506        B        1.225    5.275    No exposed metal due to Soldermask Analysis
+
+PROBE: 573
+NET: UNNAMED_38_C_I41_A
+C151-A<0>       T        1.150    5.811    Exposed metal (0.039) is smaller than feature size (0.040)
+R371-A<0>       B        1.150    5.811    Exposed metal (0.039) is smaller than feature size (0.040)
+R372-B<0>       B        1.000    5.889    Exposed metal (0.039) is smaller than feature size (0.040)
+U34-2           T        1.290    5.850    Exposed metal (0.025) is smaller than feature size (0.040)
+via_810         T        1.225    5.850    No exposed metal due to Soldermask Analysis
+via_810         B        1.225    5.850    No exposed metal due to Soldermask Analysis
+via_811         B        1.000    5.950    No exposed metal due to Soldermask Analysis
+
+PROBE: 578
+NET: UNNAMED_46_74HC14_I235_Y
+U10-RESET*      T        6.300    10.989   Exposed metal (0.025) is smaller than feature size (0.040)
+U15-RESET*      T        4.950    10.364   Exposed metal (0.025) is smaller than feature size (0.040)
+U11-8           T        4.825    10.640   Exposed metal (0.025) is smaller than feature size (0.040)
+via_419         T        4.950    10.430   No exposed metal due to Soldermask Analysis
+via_419         B        4.950    10.430   No exposed metal due to Soldermask Analysis
+via_420         B        6.300    11.000   No exposed metal due to Soldermask Analysis
+via_421         T        6.300    11.055   No exposed metal due to Soldermask Analysis
+via_421         B        6.300    11.055   No exposed metal due to Soldermask Analysis
+via_422         T        5.050    10.465   No exposed metal due to Soldermask Analysis
+via_422         B        5.050    10.465   No exposed metal due to Soldermask Analysis
+
+PROBE: 579
+NET: UNNAMED_46_74HC14_I209_A
+U11-4           T        4.975    10.860   Exposed metal (0.025) is smaller than feature size (0.040)
+U11-13          T        5.075    10.640   Exposed metal (0.025) is smaller than feature size (0.040)
+via_431         T        5.075    10.575   No exposed metal due to Soldermask Analysis
+via_431         B        5.075    10.575   No exposed metal due to Soldermask Analysis
+
+PROBE: 580
+NET: UNNAMED_48_74HC14_I235_Y
+U43-RESET*      T        6.300    4.289    Exposed metal (0.025) is smaller than feature size (0.040)
+U45-RESET*      T        4.950    3.664    Exposed metal (0.025) is smaller than feature size (0.040)
+U44-8           T        4.825    3.940    Exposed metal (0.025) is smaller than feature size (0.040)
+via_239         T        5.050    3.765    No exposed metal due to Soldermask Analysis
+via_239         B        5.050    3.765    No exposed metal due to Soldermask Analysis
+via_240         T        4.950    3.730    No exposed metal due to Soldermask Analysis
+via_240         B        4.950    3.730    No exposed metal due to Soldermask Analysis
+via_241         T        6.300    4.355    No exposed metal due to Soldermask Analysis
+via_241         B        6.300    4.355    No exposed metal due to Soldermask Analysis
+via_242         B        6.300    4.300    No exposed metal due to Soldermask Analysis
+
+PROBE: 581
+NET: UNNAMED_48_74HC14_I209_A
+U44-4           T        4.975    4.160    Exposed metal (0.025) is smaller than feature size (0.040)
+U44-13          T        5.075    3.940    Exposed metal (0.025) is smaller than feature size (0.040)
+via_251         T        5.075    3.875    No exposed metal due to Soldermask Analysis
+via_251         B        5.075    3.875    No exposed metal due to Soldermask Analysis
+
+PROBE: 588
+NET: UNNAMED_46_C_I261_A
+C41-A<0>        T        7.575    11.117   Exposed metal (0.039) is smaller than feature size (0.040)
+R221-B<0>       B        7.500    10.989   Exposed metal (0.039) is smaller than feature size (0.040)
+U9-4            T        7.685    11.025   Exposed metal (0.025) is smaller than feature size (0.040)
+via_394         T        7.625    11.075   No exposed metal due to Soldermask Analysis
+via_394         B        7.625    11.075   No exposed metal due to Soldermask Analysis
+
+PROBE: 595
+NET: UNNAMED_45_AD7417_I130_SDA
+R211-B<0>       B        2.200    11.792   Exposed metal (0.039) is smaller than feature size (0.040)
+U3-SDA          T        2.158    11.889   Exposed metal (0.012) is smaller than feature size (0.040)
+U2-7            T        1.935    11.850   Exposed metal (0.025) is smaller than feature size (0.040)
+via_92          T        2.000    11.850   No exposed metal due to Soldermask Analysis
+via_92          B        2.000    11.850   No exposed metal due to Soldermask Analysis
+via_93          B        1.925    11.875   No exposed metal due to Soldermask Analysis
+
+PROBE: 597
+NET: UNNAMED_46_C_I260_B
+C47-B<0>        T        7.800    10.983   Exposed metal (0.039) is smaller than feature size (0.040)
+C48-A<0>        T        8.070    10.983   Exposed metal (0.039) is smaller than feature size (0.040)
+R40-B<0>        T        7.885    10.989   Exposed metal (0.039) is smaller than feature size (0.040)
+R41-A<0>        T        7.985    10.989   Exposed metal (0.039) is smaller than feature size (0.040)
+R229-B<0>       B        7.500    10.764   Exposed metal (0.039) is smaller than feature size (0.040)
+U9-2            T        7.685    10.925   Exposed metal (0.025) is smaller than feature size (0.040)
+via_37          T        7.525    10.825   No exposed metal due to Soldermask Analysis
+via_37          B        7.525    10.825   No exposed metal due to Soldermask Analysis
+
+PROBE: 601
+NET: UNNAMED_39_R_I345_B
+R174-B<0>       T        2.055    2.839    Exposed metal (0.039) is smaller than feature size (0.040)
+R425-A<0>       B        1.900    2.739    Exposed metal (0.039) is smaller than feature size (0.040)
+via_29          T        1.985    2.800    No exposed metal due to Soldermask Analysis
+via_29          B        1.985    2.800    No exposed metal due to Soldermask Analysis
+via_30          B        1.895    2.800    No exposed metal due to Soldermask Analysis
+
+PROBE: 602
+NET: UNNAMED_37_R_I11_B
+R96-A<0>        T        0.325    7.864    Exposed metal (0.039) is smaller than feature size (0.040)
+R97-A<0>        T        0.425    7.864    Exposed metal (0.039) is smaller than feature size (0.040)
+R303-B<0>       B        0.350    7.964    Exposed metal (0.039) is smaller than feature size (0.040)
+via_820         T        0.425    8.000    No exposed metal due to Soldermask Analysis
+via_820         B        0.425    8.000    No exposed metal due to Soldermask Analysis
+
+PROBE: 603
+NET: UNNAMED_37_R_I22_B
+R301-B<0>       B        0.850    7.886    Exposed metal (0.039) is smaller than feature size (0.040)
+R314-A<0>       B        0.850    7.764    Exposed metal (0.039) is smaller than feature size (0.040)
+via_818         B        0.850    7.825    No exposed metal due to Soldermask Analysis
+
+PROBE: 607
+NET: UNNAMED_38_LM339A_I73_NIN
+R385-A<0>       B        1.650    5.214    Exposed metal (0.039) is smaller than feature size (0.040)
+U35-10          T        1.510    5.225    Exposed metal (0.025) is smaller than feature size (0.040)
+via_803         T        1.575    5.225    No exposed metal due to Soldermask Analysis
+via_803         B        1.575    5.225    No exposed metal due to Soldermask Analysis
+
+PROBE: 611
+NET: UNNAMED_10_C_I31_A
+C51-A<0>        T        0.350    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+R45-B<0>        T        0.350    10.761   Exposed metal (0.039) is smaller than feature size (0.040)
+R237-A<0>       B        0.350    10.639   Exposed metal (0.039) is smaller than feature size (0.040)
+U12-5           T        0.490    10.650   Exposed metal (0.025) is smaller than feature size (0.040)
+via_923         T        0.425    10.650   No exposed metal due to Soldermask Analysis
+via_923         B        0.425    10.650   No exposed metal due to Soldermask Analysis
+
+PROBE: 615
+NET: UNNAMED_38_C_I41_B
+C151-B<0>       T        1.150    5.889    Exposed metal (0.039) is smaller than feature size (0.040)
+D25-A           T        1.039    5.893    Exposed metal (0.039) is smaller than feature size (0.040)
+R371-B<0>       B        1.150    5.889    Exposed metal (0.039) is smaller than feature size (0.040)
+U34-1           T        1.290    5.900    Exposed metal (0.025) is smaller than feature size (0.040)
+via_809         T        1.225    5.900    No exposed metal due to Soldermask Analysis
+via_809         B        1.225    5.900    No exposed metal due to Soldermask Analysis
+
+PROBE: 618
+NET: UNNAMED_44_24C64_I2_WP
+Q1-C            T        6.725    11.718   Exposed metal (0.039) is smaller than feature size (0.040)
+R10-5           T        6.465    11.722   Exposed metal (0.020) is smaller than feature size (0.040)
+U8-7            T        6.285    11.700   Exposed metal (0.025) is smaller than feature size (0.040)
+via_879         T        6.625    11.750   No exposed metal due to Soldermask Analysis
+via_879         B        6.625    11.750   No exposed metal due to Soldermask Analysis
+
+PROBE: 621
+NET: UNNAMED_49_C_I30_A
+C94-A<0>        T        0.350    8.533    Exposed metal (0.039) is smaller than feature size (0.040)
+R294-B<0>       B        0.700    8.239    Exposed metal (0.039) is smaller than feature size (0.040)
+R295-A<0>       B        0.500    8.239    Exposed metal (0.039) is smaller than feature size (0.040)
+U17-3           T        0.490    8.650    Exposed metal (0.025) is smaller than feature size (0.040)
+via_902         T        0.425    8.650    No exposed metal due to Soldermask Analysis
+via_902         B        0.425    8.650    No exposed metal due to Soldermask Analysis
+via_903         B        0.600    8.300    No exposed metal due to Soldermask Analysis
+
+PROBE: 623
+NET: UNNAMED_45_LM3103_I145_RON
+R1-B<0>         T        0.625    12.311   Exposed metal (0.039) is smaller than feature size (0.040)
+U1-RON          T        0.662    12.192   Exposed metal (0.012) is smaller than feature size (0.040)
+via_85          T        0.565    12.330   No exposed metal due to Soldermask Analysis
+via_85          B        0.565    12.330   No exposed metal due to Soldermask Analysis
+
+PROBE: 624
+NET: UNNAMED_45_C_I146_A
+C16-A<0>        T        0.850    11.861   Exposed metal (0.039) is smaller than feature size (0.040)
+U1-SS           T        0.739    11.958   Exposed metal (0.012) is smaller than feature size (0.040)
+via_87          T        0.790    11.895   No exposed metal due to Soldermask Analysis
+via_87          B        0.790    11.895   No exposed metal due to Soldermask Analysis
+
+PROBE: 625
+NET: UNNAMED_48_C_I247_A
+C297-A<0>       B        4.540    4.017    Exposed metal (0.039) is smaller than feature size (0.040)
+JP13-A<0>       T        6.175    4.442    Exposed metal (0.039) is smaller than feature size (0.040)
+JP14-A<0>       T        6.250    4.442    Exposed metal (0.039) is smaller than feature size (0.040)
+R157-B<0>       T        4.540    3.883    Exposed metal (0.039) is smaller than feature size (0.040)
+R404-B<0>       B        4.540    3.883    Exposed metal (0.039) is smaller than feature size (0.040)
+U43-FAULT*      T        6.250    4.289    Exposed metal (0.025) is smaller than feature size (0.040)
+U45-FAULT*      T        4.900    3.664    Exposed metal (0.025) is smaller than feature size (0.040)
+via_38          T        4.900    3.730    No exposed metal due to Soldermask Analysis
+via_38          B        4.900    3.730    No exposed metal due to Soldermask Analysis
+via_39          T        6.250    4.355    No exposed metal due to Soldermask Analysis
+via_39          B        6.250    4.355    No exposed metal due to Soldermask Analysis
+via_40          B        6.200    4.205    No exposed metal due to Soldermask Analysis
+via_41          T        4.540    3.945    No exposed metal due to Soldermask Analysis
+via_41          B        4.540    3.945    No exposed metal due to Soldermask Analysis
+
+PROBE: 628
+NET: UNNAMED_47_R_I311_B
+R388-B<0>       B        6.650    5.011    Exposed metal (0.039) is smaller than feature size (0.040)
+R389-B<0>       B        6.525    5.089    Exposed metal (0.039) is smaller than feature size (0.040)
+via_11          B        6.525    5.150    No exposed metal due to Soldermask Analysis
+
+
+
+=====================================================================================
+= UNPLACED PROBES: Single Pin Nets
+=====================================================================================
+PROBE: 19
+NET: DUMMY_CONV_B_INV_4
+U7-4            T        5.565    11.750   Exposed metal (0.025) is smaller than feature size (0.040)
+via_128         T        5.500    11.750   No exposed metal due to Soldermask Analysis
+via_128         B        5.500    11.750   No exposed metal due to Soldermask Analysis
+
+PROBE: 46
+NET: DUMMY_REF02_PRI_3
+U30-3           T        1.415    7.275    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1577        T        1.500    7.325    No exposed metal due to Soldermask Analysis
+via_1577        B        1.500    7.325    No exposed metal due to Soldermask Analysis
+
+PROBE: 58
+NET: DUMMY_CONV_B_INV_5
+U7-12           T        5.785    11.800   Exposed metal (0.025) is smaller than feature size (0.040)
+via_127         T        5.850    11.800   No exposed metal due to Soldermask Analysis
+via_127         B        5.850    11.800   No exposed metal due to Soldermask Analysis
+
+PROBE: 69
+NET: DUMMY_SMPS_EN
+U1-EN           T        0.688    12.192   Exposed metal (0.012) is smaller than feature size (0.040)
+
+PROBE: 114
+NET: DUMMY_REF02_PRI_5
+U30-5           T        1.635    7.225    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1576        T        1.550    7.225    No exposed metal due to Soldermask Analysis
+via_1576        B        1.550    7.225    No exposed metal due to Soldermask Analysis
+
+PROBE: 161
+NET: DUMMY_INV_A_INV_1
+U56-4           T        5.235    1.075    Exposed metal (0.025) is smaller than feature size (0.040)
+via_188         T        5.300    1.075    No exposed metal due to Soldermask Analysis
+via_188         B        5.300    1.075    No exposed metal due to Soldermask Analysis
+
+PROBE: 194
+NET: DUMMY_INV_A_INV_2
+U56-2           T        5.235    0.975    Exposed metal (0.025) is smaller than feature size (0.040)
+via_189         T        5.300    0.975    No exposed metal due to Soldermask Analysis
+via_189         B        5.300    0.975    No exposed metal due to Soldermask Analysis
+
+PROBE: 233
+NET: DUMMY_INV_A_INV_3
+U56-6           T        5.235    1.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_190         T        5.300    1.175    No exposed metal due to Soldermask Analysis
+via_190         B        5.300    1.175    No exposed metal due to Soldermask Analysis
+
+PROBE: 258
+NET: DUMMY_COMP_A
+U35-14          T        1.510    5.425    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1588        T        1.575    5.425    No exposed metal due to Soldermask Analysis
+via_1588        B        1.575    5.425    No exposed metal due to Soldermask Analysis
+
+PROBE: 300
+NET: DUMMY_COMP_B
+U35-13          T        1.510    5.375    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1586        T        1.575    5.375    No exposed metal due to Soldermask Analysis
+via_1586        B        1.575    5.375    No exposed metal due to Soldermask Analysis
+via_1587        B        1.675    5.375    No exposed metal due to Soldermask Analysis
+
+PROBE: 343
+NET: DUMMY_TEMP_TRIM
+U5-5            T        3.160    11.750   Exposed metal (0.025) is smaller than feature size (0.040)
+via_83          T        3.225    11.750   No exposed metal due to Soldermask Analysis
+via_83          B        3.225    11.750   No exposed metal due to Soldermask Analysis
+
+PROBE: 428
+NET: DUMMY_REF02_SEC_3
+U23-3           T        0.490    8.175    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1575        T        0.575    8.200    No exposed metal due to Soldermask Analysis
+via_1575        B        0.575    8.200    No exposed metal due to Soldermask Analysis
+
+PROBE: 430
+NET: DUMMY_LED2_TW_N
+U45-VLED2+      T        5.100    3.286    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1579        T        5.125    3.350    No exposed metal due to Soldermask Analysis
+via_1579        B        5.125    3.350    No exposed metal due to Soldermask Analysis
+
+PROBE: 431
+NET: DUMMY_LED2_SV_N
+U32-VLED2+      T        5.100    6.636    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1578        T        5.125    6.700    No exposed metal due to Soldermask Analysis
+via_1578        B        5.125    6.700    No exposed metal due to Soldermask Analysis
+
+PROBE: 432
+NET: DUMMY_LED2_RU_N
+U15-VLED2+      T        5.100    9.986    Exposed metal (0.025) is smaller than feature size (0.040)
+via_477         T        5.125    10.050   No exposed metal due to Soldermask Analysis
+via_477         B        5.125    10.050   No exposed metal due to Soldermask Analysis
+
+PROBE: 469
+NET: DUMMY_TEMP_TEMP
+U5-3            T        2.940    11.800   Exposed metal (0.025) is smaller than feature size (0.040)
+via_84          T        3.050    11.750   No exposed metal due to Soldermask Analysis
+via_84          B        3.050    11.750   No exposed metal due to Soldermask Analysis
+
+PROBE: 472
+NET: DUMMY_LED1_TW_N
+U45-VLED1+      T        4.850    3.664    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1583        T        4.850    3.730    No exposed metal due to Soldermask Analysis
+via_1583        B        4.850    3.730    No exposed metal due to Soldermask Analysis
+
+PROBE: 473
+NET: DUMMY_LED1_SV_N
+U32-VLED1+      T        4.850    7.014    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1582        T        4.850    7.080    No exposed metal due to Soldermask Analysis
+via_1582        B        4.850    7.080    No exposed metal due to Soldermask Analysis
+
+PROBE: 474
+NET: DUMMY_LED1_RU_N
+U15-VLED1+      T        4.850    10.364   Exposed metal (0.025) is smaller than feature size (0.040)
+via_479         T        4.850    10.430   No exposed metal due to Soldermask Analysis
+via_479         B        4.850    10.430   No exposed metal due to Soldermask Analysis
+
+PROBE: 500
+NET: DUMMY_REF02_SEC_5
+U23-5           T        0.710    8.125    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1574        T        0.625    8.110    No exposed metal due to Soldermask Analysis
+via_1574        B        0.625    8.110    No exposed metal due to Soldermask Analysis
+
+PROBE: 502
+NET: DUMMY_LED2_TW_P
+U43-VLED2+      T        6.450    3.911    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1581        T        6.450    3.975    No exposed metal due to Soldermask Analysis
+via_1581        B        6.450    3.975    No exposed metal due to Soldermask Analysis
+
+PROBE: 503
+NET: DUMMY_LED2_SV_P
+U27-VLED2+      T        6.450    7.261    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1580        T        6.450    7.325    No exposed metal due to Soldermask Analysis
+via_1580        B        6.450    7.325    No exposed metal due to Soldermask Analysis
+
+PROBE: 504
+NET: DUMMY_LED2_RU_P
+U10-VLED2+      T        6.450    10.611   Exposed metal (0.025) is smaller than feature size (0.040)
+via_476         T        6.450    10.675   No exposed metal due to Soldermask Analysis
+via_476         B        6.450    10.675   No exposed metal due to Soldermask Analysis
+
+PROBE: 532
+NET: DUMMY_LED1_TW_P
+U43-VLED1+      T        6.200    4.289    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1585        T        6.200    4.355    No exposed metal due to Soldermask Analysis
+via_1585        B        6.200    4.355    No exposed metal due to Soldermask Analysis
+
+PROBE: 533
+NET: DUMMY_LED1_SV_P
+U27-VLED1+      T        6.200    7.639    Exposed metal (0.025) is smaller than feature size (0.040)
+via_1584        T        6.200    7.705    No exposed metal due to Soldermask Analysis
+via_1584        B        6.200    7.705    No exposed metal due to Soldermask Analysis
+
+PROBE: 534
+NET: DUMMY_LED1_RU_P
+U10-VLED1+      T        6.200    10.989   Exposed metal (0.025) is smaller than feature size (0.040)
+via_478         T        6.200    11.055   No exposed metal due to Soldermask Analysis
+via_478         B        6.200    11.055   No exposed metal due to Soldermask Analysis
+
+PROBE: 542
+NET: DUMMY_CONV_B_INV_1
+U7-10           T        5.785    11.700   Exposed metal (0.025) is smaller than feature size (0.040)
+via_131         T        5.850    11.700   No exposed metal due to Soldermask Analysis
+via_131         B        5.850    11.700   No exposed metal due to Soldermask Analysis
+
+PROBE: 559
+NET: DUMMY_OTI
+U3-OTI          T        2.158    11.838   Exposed metal (0.012) is smaller than feature size (0.040)
+via_103         T        2.085    11.830   No exposed metal due to Soldermask Analysis
+via_103         B        2.085    11.830   No exposed metal due to Soldermask Analysis
+
+PROBE: 582
+NET: DUMMY_CONV_B_INV_2
+U7-2            T        5.565    11.850   Exposed metal (0.025) is smaller than feature size (0.040)
+via_130         T        5.500    11.850   No exposed metal due to Soldermask Analysis
+via_130         B        5.500    11.850   No exposed metal due to Soldermask Analysis
+
+PROBE: 617
+NET: DUMMY_CONV_B_INV_3
+U7-6            T        5.565    11.650   Exposed metal (0.025) is smaller than feature size (0.040)
+via_129         T        5.500    11.650   No exposed metal due to Soldermask Analysis
+via_129         B        5.500    11.650   No exposed metal due to Soldermask Analysis
+
+
+
+=====================================================================================
+= UNPLACED PROBES: Unconnected Nets
+=====================================================================================
+
+
+=====================================================================================
+= PLACED PROBES: Multiple Pin Nets
+=====================================================================================
+3        100      2.350    10.600   R50-A<0> UNNAMED_10_R_I115_B Bottom  
+8        100      5.400    0.625    P5-P<35> PWM_VN          Bottom  
+10       100      6.500    12.275   P3-P<4>  DIO_3C-PWM_XP   Bottom  
+12       100      1.150    10.112   R249-B<0> UNNAMED_10_IL300_I12_A Bottom  
+14       100      0.350    7.550    VST-P<0> VST_OUT_DC_N    Bottom  
+16       100      5.060    9.314    Z32-A    UNNAMED_46_BZV55B18_I414_A Bottom  
+17       100      4.275    4.922    Q33-C1   UNNAMED_47_BAV99_I328_A1 Bottom  
+20       100      4.700    7.341    C127-A<0> UNNAMED_47_74HC14_I235_A Top     
+21       100      2.575    2.891    D69-C    UNNAMED_39_BYG22D_I127_C Bottom  
+22       100      7.640    3.966    L4-A<0>  UNNAMED_48_BAS19_I21_A Top     
+23       100      7.484    7.153    Q30-G    UNNAMED_47_R_I30_A Bottom  
+24       100      2.850    9.300    IU-P<0>  SENSE_IU        Bottom  
+25       100      4.100    0.525    P5-P<8>  TEMP_IGBT_INV   Bottom  
+26       100      5.825    6.323    R123-A<0> UNNAMED_47_R_I279_B Top     
+27       100      4.830    2.584    D36-A    UNNAMED_48_R_I374_A Top     
+33       100      8.300    3.260    TR3-F    UNNAMED_48_BAS19_I43_A Top     
+34       100      3.454    12.225   P6-P<0>  PTC_1           Bottom  
+35       100      6.875    4.075    D34-C    TWP_C1          Bottom  
+36       100      6.875    7.425    D20-C    SVP_C1          Bottom  
+37       100      6.875    10.775   D10-C    RUP_C1          Bottom  
+38       100      2.850    10.600   R50-B<0> UNNAMED_10_R_I116_B Bottom  
+39       100      1.300    5.812    R370-B<0> UNNAMED_38_R_I17_B Bottom  
+45       100      5.740    2.710    D39-A    UNNAMED_48_R_I396_B Bottom  
+47       100      5.500    0.625    P5-P<37> PWM_UN          Bottom  
+48       100      5.400    0.525    P5-P<34> PWM_WP          Bottom  
+51       100      9.275    11.400   NP2-P<0> DCP_U_ME        Bottom  
+53       100      1.405    2.273    TR4-A    SMPS_SENSE_DRAIN Bottom  
+54       100      2.400    1.962    R182-A<0> UNNAMED_39_C_I161_B Top     
+55       100      0.850    7.050    VRS-P<0> VRS_OUT_DC_N    Bottom  
+59       100      1.025    2.266    Z73-A    VCC_PWM_CONTROLLER Bottom  
+60       100      7.840    7.859    C114-A<0> UNNAMED_47_10MQ040N_I406_A Top     
+63       100      3.100    9.300    IV-P<0>  SENSE_IV        Bottom  
+66       100      5.740    2.260    D39-C    UNNAMED_48_BZV55B18_I266_A Bottom  
+67       100      5.025    6.329    D60-C    UNNAMED_47_BZV55B9V1_I385_C Bottom  
+68       100      1.675    8.359    C98-A<0> UNNAMED_49_C_I21_A Top     
+71       100      6.100    12.275   P3-P<12> VCC             Bottom  
+73       100      1.250    12.375   5V_HL2-P<0> 5V_HL2          Bottom  
+74       100      7.625    11.323   R217-B<0> 24V_DRIVER      Bottom  
+75       100      7.525    3.187    R163-A<0> UNNAMED_48_HCPL316J_I183_VOUT Top     
+76       100      5.230    6.073    Q15-B    UNNAMED_47_C_I380_A Top     
+77       100      6.975    2.389    C225-P   +27V_TW_N       Bottom  
+78       100      6.975    5.739    C159-P   +27V_SV_N       Bottom  
+79       100      6.975    9.089    C78-P    +27V_RU_N       Bottom  
+80       100      6.975    2.251    C225-N   +27V_TW_N_RTN   Bottom  
+81       100      5.881    1.572    Q36-E    REF_2V5_TW_N    Bottom  
+83       100      5.881    4.922    Q32-E    REF_2V5_SV_N    Bottom  
+84       100      5.881    8.272    Q28-E    REF_2V5_RU_N    Bottom  
+86       100      6.875    3.625    D34-A    UNNAMED_48_R_I276_B Bottom  
+87       100      0.808    4.200    U41-C    PFAIL_RS        Top     
+88       100      5.500    0.525    P5-P<36> PWM_VP          Bottom  
+89       100      6.300    12.275   P3-P<8>  DIO_7C-PWM_ZP   Bottom  
+90       100      5.800    12.175   P3-P<19> PWM_TN          Bottom  
+91       100      2.375    8.075    VST_NP-P<0> VST_N           Bottom  
+92       100      8.400    1.138    R452-B<0> UNNAMED_9_LED_I214_A Bottom  
+93       100      1.150    6.712    R351-B<0> UNNAMED_36_IL300_I12_A Bottom  
+94       100      1.193    9.275    U16-A1   UNNAMED_49_C_I6_A Top     
+95       100      6.370    9.421    Z34-A    UNNAMED_46_BZV55B18_I416_A Bottom  
+96       100      0.842    1.225    U53-E    UNNAMED_44_BC817_I121_B Top     
+97       100      2.375    7.550    VRS_NP-P<0> VRS_N           Bottom  
+98       100      2.750    4.925    IW-P<0>  SENSE_IW        Bottom  
+101      100      8.125    0.338    R459-B<0> UNNAMED_9_555_I229_THRES Bottom  
+104      100      3.175    11.634   C29-A<0> UNNAMED_45_R_I186_B Top     
+105      100      2.800    11.634   C26-B<0> UNNAMED_45_R_I241_B Top     
+106      100      4.181    5.178    Q33-B    UNNAMED_47_BDP949_I327_B Bottom  
+107      100      4.950    2.612    R176-A<0> UNNAMED_48_HCPL316J_I202_VOUT Top     
+108      100      2.850    2.498    C218-P   +15V_SENSE      Bottom  
+115      100      5.600    0.525    P5-P<38> PWM_UP          Bottom  
+117      100      5.900    12.175   P3-P<17> PWM_SN          Bottom  
+118      100      3.200    10.500   R54-B<0> DCN_U_ME        Bottom  
+121      100      6.865    3.379    Z57-A    UNNAMED_48_BZV55B18_I411_A Bottom  
+122      100      1.403    1.423    REL1-B<0> UNNAMED_44_BC817_I121_C Bottom  
+124      100      0.675    1.709    D42-A    UNNAMED_39_10MQ040N_I229_A Top     
+125      100      7.484    10.503   Q26-G    UNNAMED_46_R_I30_A Bottom  
+126      100      1.400    10.950   DC_ME-P<0> DC_ME           Bottom  
+129      100      5.025    3.121    D68-A    UNNAMED_48_BZV55B18_I389_A Bottom  
+130      100      1.110    11.808   L1-A<0>  SW_TEMP_SENSOR  Top     
+133      100      6.450    1.100    24V_HL2-P<0> 24V_HL2         Bottom  
+135      100      7.640    4.084    L4-B<0>  UNNAMED_48_5033001300_I403_D Top     
+136      100      7.015    6.658    Q13-B    UNNAMED_47_C_I272_A Top     
+137      100      5.975    1.763    R186-B<0> REF_3V9_TW_N    Top     
+138      100      8.040    2.439    C219-P   +27V_TW_P       Bottom  
+139      100      5.975    5.113    R142-B<0> REF_3V9_SV_N    Top     
+140      100      8.040    5.789    C153-P   +27V_SV_P       Bottom  
+141      100      5.975    8.463    R86-B<0> REF_3V9_RU_N    Top     
+142      100      8.040    9.139    C72-P    +27V_RU_P       Bottom  
+143      100      5.500    12.175   P3-P<25> OUT_EN_CONV     Bottom  
+144      100      8.040    2.301    C219-N   +27V_TW_P_RTN   Bottom  
+145      100      4.369    1.828    Q37-E    REF_2V5_TW_P    Bottom  
+146      100      4.369    5.178    Q33-E    REF_2V5_SV_P    Bottom  
+147      100      4.369    8.528    Q29-E    REF_2V5_RU_P    Bottom  
+149      100      4.400    0.525    P5-P<14> OLOAD_DUMMY     Bottom  
+151      100      6.400    12.175   P3-P<7>  DIO_6C-PWM_YN   Bottom  
+152      100      5.800    12.275   P3-P<18> PWM_TP          Bottom  
+153      100      6.000    12.175   P3-P<15> PWM_RN          Bottom  
+154      100      9.300    1.150    R201-B<0> DCN_LED         Bottom  
+155      100      5.200    12.275   P3-P<30> VRS_OUT_N       Bottom  
+157      100      8.340    6.088    R133-A<0> UNNAMED_47_C_I162_B Top     
+159      100      7.650    9.354    Z31-A    UNNAMED_46_BZV55B18_I418_A Bottom  
+166      100      6.575    8.898    R269-A<0> UNNAMED_46_R_I371_A Bottom  
+167      100      6.700    3.209    D35-A    UNNAMED_48_R_I279_A Top     
+168      100      5.025    2.402    R434-A<0> UNNAMED_48_MJD44H11_I376_E Bottom  
+169      100      4.550    11.925   -15V-P<0> V-15V           Bottom  
+170      100      0.350    8.050    A_GND-P<0> GNDA            Bottom  
+171      100      5.025    2.979    D68-C    UNNAMED_48_BZV55B9V1_I385_C Bottom  
+172      100      2.850    2.302    C218-N   GND_SENSE       Bottom  
+173      100      1.750    10.950   DCP_ME_1-P<0> DCP_U_ME_1      Bottom  
+175      100      2.275    12.134   C14-A<0> 24V_ADC         Top     
+177      100      6.975    8.951    C78-N    +27V_RU_N_RTN   Bottom  
+183      100      5.900    12.275   P3-P<16> PWM_SP          Bottom  
+184      100      1.225    1.902    R437-A<0> ISENSE          Bottom  
+185      100      0.807    10.325   U14-A2   UNNAMED_10_IL300_I12_A2 Top     
+186      100      3.600    6.725    NP4-P<0> S_MAIN          Bottom  
+187      100      7.895    9.438    R72-A<0> UNNAMED_46_C_I179_B Top     
+188      100      8.145    3.431    Z58-A    UNNAMED_48_BZV55B18_I413_A Bottom  
+189      100      8.145    10.131   Z24-A    UNNAMED_46_BZV55B18_I408_A Bottom  
+191      100      0.458    1.225    U53-CAT  UNNAMED_44_BC817_I101_C Top     
+199      100      0.675    1.891    D42-C    UNNAMED_39_10MQ040N_I229_C Top     
+200      100      7.350    10.788   R230-A<0> GATE_SENSE_RU   Bottom  
+201      100      7.350    4.088    R403-A<0> GATE_SENSE_TW   Bottom  
+202      100      7.350    7.438    R331-A<0> GATE_SENSE_SV   Bottom  
+203      100      7.640    10.666   L2-A<0>  UNNAMED_46_BAS19_I21_A Top     
+204      100      5.825    2.973    R164-A<0> UNNAMED_48_R_I279_B Top     
+210      100      6.069    1.572    Q36-B    UNNAMED_48_BDP949_I310_B Bottom  
+211      100      6.069    8.272    Q28-B    UNNAMED_46_BDP949_I310_B Bottom  
+212      100      7.575    3.803    Q34-D    DRAIN_TW        Bottom  
+213      100      7.640    7.434    L3-B<0>  UNNAMED_47_5033001300_I404_D Top     
+214      100      7.575    7.153    Q30-D    DRAIN_SV        Bottom  
+215      100      8.300    9.960    TR1-F    UNNAMED_46_BAS19_I43_A Top     
+216      100      7.640    10.784   L2-B<0>  UNNAMED_46_5033001300_I404_D Top     
+217      100      7.575    10.503   Q26-D    DRAIN_RU        Bottom  
+218      100      8.400    0.783    D77-C    UNNAMED_9_555_I229_RESET Bottom  
+219      100      4.275    1.637    R185-B<0> REF_3V9_TW_P    Top     
+220      100      4.275    4.987    R141-B<0> REF_3V9_SV_P    Top     
+221      100      4.275    8.337    R85-B<0> REF_3V9_RU_P    Top     
+222      100      3.946    12.225   P6-P<5>  PTC_6           Bottom  
+223      100      7.300    2.791    D70-C    TWN_E21         Bottom  
+224      100      1.500    8.300    NTC1-P<0> NTC1            Bottom  
+225      100      6.000    12.275   P3-P<14> PWM_RP          Bottom  
+226      100      3.600    10.075   NP3-P<0> R_MAIN          Bottom  
+227      100      0.625    10.112   R59-B<0> UNNAMED_10_C_I38_A Top     
+228      100      1.193    6.925    U33-A1   UNNAMED_36_C_I20_A Top     
+229      100      1.575    2.691    D73-A    UNNAMED_39_BYG22D_I283_A Bottom  
+230      100      1.193    8.975    U16-K    UNNAMED_49_BC817_I64_C Top     
+231      100      5.975    8.528    Q28-C1   UNNAMED_46_BAV99_I309_A1 Bottom  
+232      100      5.975    1.828    Q36-C1   UNNAMED_48_BAV99_I309_A1 Bottom  
+235      100      8.375    1.325    NP5-P<0> DCP_LED         Bottom  
+236      100      1.225    2.084    D75-C    SENSE_PWM_CONTROLLER_SUPPLY Bottom  
+237      100      7.920    1.023    C249-P   UNNAMED_39_10MQ040N_I309_A Bottom  
+238      100      4.992    5.100    U37-C    UNNAMED_47_JUMPER_I342_A Top     
+241      100      4.550    11.825   +15V-P<0> V+15V           Bottom  
+242      100      5.740    5.610    D26-C    UNNAMED_47_BZV55B18_I266_A Bottom  
+244      100      5.230    2.723    Q21-B    UNNAMED_48_C_I380_A Top     
+245      100      8.040    9.001    C72-N    +27V_RU_P_RTN   Bottom  
+247      100      1.892    2.750    U46-AN   UNNAMED_39_C_I178_A Top     
+248      100      7.125    2.791    D71-C    TWN_E22         Bottom  
+249      100      1.300    8.300    NTC2-P<0> NTC2            Bottom  
+250      100      7.300    6.141    D61-C    SVN_E21         Bottom  
+251      100      7.300    9.491    D53-C    RUN_E21         Bottom  
+252      100      9.300    0.650    R201-A<0> DCN_LED_1       Bottom  
+253      100      0.842    1.325    U53-C    UNNAMED_44_PS2561L_I234_C Top     
+256      100      9.268    12.275   R3-B<0>  DCN_DIS         Bottom  
+257      100      0.350    8.850    TEMP_UN-P<0> TEMP_UN         Bottom  
+263      100      6.370    2.721    Z68-A    UNNAMED_48_BZV55B18_I415_A Bottom  
+264      100      5.060    5.964    Z49-A    UNNAMED_47_BZV55B18_I410_A Bottom  
+265      100      4.400    0.625    P5-P<15> OCT_INV         Bottom  
+269      100      7.666    3.803    Q34-S    UNNAMED_48_R_I29_B Bottom  
+270      100      6.700    10.091   D11-C    UNNAMED_46_MJD44H11_I55_E Top     
+271      100      4.830    9.284    D12-A    UNNAMED_46_R_I374_A Top     
+274      100      6.450    0.850    24V_SENSE_RTN-P<0> 24V_SENSE_RTN   Bottom  
+277      100      4.800    0.525    P5-P<22> I2C_SDA0_INV    Bottom  
+278      100      7.525    6.537    R122-A<0> UNNAMED_47_HCPL316J_I183_VOUT Top     
+280      100      9.217    1.713    C236-B<0> TWN             Bottom  
+281      100      7.831    2.738    Q35-G21  TWN_G21         Bottom  
+282      100      4.685    2.776    D72-C    TWN_E23         Bottom  
+284      100      9.217    5.059    C168-B<0> SVN             Bottom  
+285      100      7.125    6.141    D62-C    SVN_E22         Bottom  
+287      100      9.217    8.406    C96-B<0> RUN             Bottom  
+288      100      7.125    9.491    D54-C    RUN_E22         Bottom  
+291      100      8.900    0.150    R203-B<0> DCN_LED_2       Bottom  
+292      100      1.500    10.112   R248-A<0> UNNAMED_10_R_I40_A Bottom  
+293      100      8.400    1.012    R452-A<0> UNNAMED_9_R_I212_B Bottom  
+298      100      5.740    9.410    D15-A    UNNAMED_46_R_I396_B Bottom  
+303      100      1.193    7.975    U24-A1   UNNAMED_37_C_I59_A Top     
+304      100      1.405    2.077    TR4-C    UNNAMED_39_BYG22D_I285_A Bottom  
+305      100      1.995    1.880    TR4-H    UNNAMED_39_BYG22D_I162_C Bottom  
+307      100      1.525    9.188    R76-A<0> UNNAMED_49_BC817_I64_E Top     
+309      100      4.200    0.625    P5-P<11> PF_IGBT_INV     Bottom  
+313      100      8.275    1.020    LED1-C   UNNAMED_9_555_I229_OUT Top     
+314      100      4.700    10.691   C49-A<0> UNNAMED_46_74HC14_I235_A Top     
+315      100      4.700    3.991    C191-A<0> UNNAMED_48_74HC14_I235_A Top     
+316      100      7.840    11.209   C43-A<0> UNNAMED_46_10MQ040N_I407_A Top     
+317      100      2.065    6.102    CS2-M    I_SV            Bottom  
+318      100      2.065    9.449    CS1-M    I_RU            Bottom  
+322      100      5.025    6.471    D60-A    UNNAMED_47_BZV55B18_I389_A Bottom  
+323      100      2.800    12.325   PTC_ADC-P<0> PTC_ADC         Bottom  
+325      100      7.015    3.308    Q19-B    UNNAMED_48_C_I272_A Top     
+326      100      4.950    5.962    R131-A<0> UNNAMED_47_HCPL316J_I202_VOUT Top     
+328      100      3.950    3.121    via_1016 TWO             Bottom  
+329      100      6.532    2.738    Q35-G22  TWN_G22         Bottom  
+330      100      7.500    3.241    D65-C    TWP_E11         Bottom  
+331      100      3.950    6.468    via_1205 SVO             Bottom  
+332      100      7.831    6.085    Q31-G21  SVN_G21         Bottom  
+333      100      4.685    6.126    D63-C    SVN_E23         Bottom  
+335      100      3.950    9.814    via_1397 RUO             Bottom  
+336      100      7.831    9.431    Q27-G21  RUN_G21         Bottom  
+337      100      4.685    9.476    D55-C    RUN_E23         Bottom  
+339      100      9.000    0.650    R200-B<0> DCN_LED_3       Bottom  
+341      100      6.875    10.325   D10-A    UNNAMED_46_R_I276_B Bottom  
+344      100      5.100    0.525    P5-P<28> OUT_EN_INV      Bottom  
+345      100      9.268    11.525   R19-A<0> DCP_DIS         Bottom  
+346      100      0.807    9.275    U16-A2   UNNAMED_49_IL300_I4_A2 Top     
+347      100      1.150    9.062    R268-B<0> UNNAMED_49_IL300_I4_A Bottom  
+348      100      0.807    6.925    U33-A2   UNNAMED_36_IL300_I12_A2 Top     
+349      100      0.807    7.975    U24-A2   UNNAMED_37_IL300_I13_A2 Top     
+350      100      1.150    7.762    R309-B<0> UNNAMED_37_IL300_I13_A Bottom  
+351      100      2.400    2.388    R180-A<0> UNNAMED_39_C_I158_B Top     
+352      100      8.340    2.738    R178-A<0> UNNAMED_48_C_I162_B Top     
+353      100      4.000    0.625    P5-P<7>  UDCL            Bottom  
+355      100      7.650    2.654    Z65-A    UNNAMED_48_BZV55B18_I417_A Bottom  
+356      100      6.865    6.729    Z40-A    UNNAMED_47_BZV55B18_I412_A Bottom  
+357      100      1.193    10.025   U14-K    UNNAMED_10_BC817_I58_C Top     
+359      100      4.275    8.272    Q29-C1   UNNAMED_46_BAV99_I328_A1 Bottom  
+360      100      4.275    1.572    Q37-C1   UNNAMED_48_BAV99_I328_A1 Bottom  
+361      100      1.196    4.575    Q17-C    TRIGGER_555     Top     
+363      100      6.575    5.548    R373-A<0> UNNAMED_47_R_I371_A Bottom  
+366      100      6.350    10.304   D48-C    UNNAMED_46_BZV55B9V1_I192_C Bottom  
+367      100      1.750    10.525   DCN_ME_1-P<0> DCN_U_ME_1      Bottom  
+369      100      7.741    1.713    C236-A<0> TWP             Bottom  
+370      100      5.233    2.738    Q35-G23  TWN_G23         Bottom  
+371      100      7.350    3.241    D66-C    TWP_E12         Bottom  
+372      100      7.741    5.059    C168-A<0> SVP             Bottom  
+373      100      6.532    6.085    Q31-G22  SVN_G22         Bottom  
+374      100      7.500    6.591    D57-C    SVP_E11         Bottom  
+376      100      7.741    8.406    C96-A<0> RUP             Bottom  
+377      100      6.532    9.431    Q27-G22  RUN_G22         Bottom  
+378      100      7.500    9.941    D49-C    RUP_E11         Bottom  
+382      100      8.700    1.150    R199-B<0> DCN_LED_4       Bottom  
+383      100      1.500    7.762    R308-A<0> UNNAMED_37_R_I60_B Bottom  
+388      100      6.400    12.275   P3-P<6>  DIO_5C-PWM_YP   Bottom  
+389      100      1.508    2.750    U46-C    UNNAMED_39_C_I248_A Top     
+390      100      7.895    6.088    R132-A<0> UNNAMED_47_C_I179_B Top     
+391      100      0.850    8.350    REF_S-P<0> REF_SEC         Bottom  
+394      100      0.825    2.125    Q23-G    SMPS_SENSE_GATE Top     
+395      100      6.160    3.396    Z60-A    UNNAMED_48_BZV55B18_I407_A Bottom  
+396      100      1.575    2.266    D74-C    UNNAMED_39_BYG22D_I285_C Bottom  
+398      100      1.193    6.625    U33-K    UNNAMED_36_BC817_I58_C Top     
+400      100      5.100    12.275   P3-P<32> TEMP_IGBT_CONV  Bottom  
+401      100      5.025    5.752    R376-A<0> UNNAMED_47_MJD44H11_I376_E Bottom  
+407      100      0.850    8.850    TEMP_IGBT-P<0> TEMP_IGBT       Bottom  
+408      100      1.500    4.191    C187-B<0> OUTPUT_TP_555   Top     
+411      100      4.550    11.525   DGND-P<0> GND             Bottom  
+412      100      7.950    6.610    TR2-H    UNNAMED_47_BAS19_I178_A Top     
+413      100      7.950    9.960    TR1-H    UNNAMED_46_BAS19_I178_A Top     
+414      100      5.965    11.312   R28-B<0> UNNAMED_44_PS2561L_I234_AN Top     
+415      100      8.337    3.427    Q35-G11  TWP_G11         Bottom  
+416      100      6.300    3.191    D67-C    TWP_E13         Bottom  
+417      100      5.233    6.085    Q31-G23  SVN_G23         Bottom  
+418      100      7.350    6.591    D58-C    SVP_E12         Bottom  
+419      100      5.233    9.431    Q27-G23  RUN_G23         Bottom  
+420      100      7.350    9.941    D50-C    RUP_E12         Bottom  
+421      100      9.268    11.900   R5-A<0>  UNNAMED_43_R_I133_B Bottom  
+422      100      2.700    10.925   R43-B<0> UNNAMED_10_R_I97_B Bottom  
+423      100      8.700    0.650    R199-A<0> DCN_LED_5       Bottom  
+424      100      1.375    3.187    R410-B<0> UNNAMED_39_R_I286_B Bottom  
+429      100      5.300    12.275   P3-P<28> VST_OUT_N       Bottom  
+437      100      0.625    7.888    R98-B<0> UNNAMED_37_C_I7_A Top     
+438      100      8.145    6.781    Z41-A    UNNAMED_47_BZV55B18_I414_A Bottom  
+439      100      1.525    10.238   R61-A<0> UNNAMED_10_BC817_I58_E Top     
+440      100      5.400    12.275   P3-P<26> CHRG_N          Bottom  
+441      100      5.400    12.175   P3-P<27> PFAIL_RS_CONV   Bottom  
+443      100      8.125    0.212    R459-A<0> UNNAMED_9_555_I229_DISCH Bottom  
+444      100      7.640    7.316    L3-A<0>  UNNAMED_47_BAS19_I21_A Top     
+445      100      7.666    7.153    Q30-S    UNNAMED_47_R_I29_B Bottom  
+449      100      6.700    9.909    D11-A    UNNAMED_46_R_I279_A Top     
+450      100      6.700    6.741    D21-C    UNNAMED_47_MJD44H11_I55_E Top     
+451      100      4.181    1.828    Q37-B    UNNAMED_48_BDP949_I327_B Bottom  
+452      100      4.181    8.528    Q29-B    UNNAMED_46_BDP949_I327_B Bottom  
+454      100      7.950    3.260    TR3-H    UNNAMED_48_BAS19_I178_A Top     
+455      100      8.300    6.610    TR2-F    UNNAMED_47_BAS19_I43_A Top     
+456      100      1.375    4.313    R398-A<0> OUTPUT_555      Bottom  
+457      100      6.975    5.601    C159-N   +27V_SV_N_RTN   Bottom  
+459      100      7.038    3.427    Q35-G12  TWP_G12         Bottom  
+460      100      8.337    6.774    Q31-G11  SVP_G11         Bottom  
+461      100      6.300    6.541    D59-C    SVP_E13         Bottom  
+462      100      8.337    10.120   Q27-G11  RUP_G11         Bottom  
+463      100      6.300    9.891    D51-C    RUP_E13         Bottom  
+464      100      2.500    10.925   R42-A<0> UNNAMED_10_R_I100_A Bottom  
+471      100      6.700    12.275   P3-P<0>  CNV_OC_FLT      Bottom  
+475      100      2.525    7.675    DC_VST-P<0> VST_DC_N        Bottom  
+477      100      5.060    2.614    Z66-A    UNNAMED_48_BZV55B18_I409_A Bottom  
+478      100      1.995    2.470    TR4-E    UNNAMED_39_BYG22D_I157_A Bottom  
+479      100      1.525    6.838    R121-A<0> UNNAMED_36_BC817_I58_E Top     
+482      100      5.600    12.175   P3-P<23> I2C_SDA0_CONV   Bottom  
+483      100      7.840    4.509    C183-A<0> UNNAMED_48_10MQ040N_I405_A Top     
+484      100      5.825    9.673    R63-A<0> UNNAMED_46_R_I279_B Top     
+485      100      4.830    5.934    D22-A    UNNAMED_47_R_I374_A Top     
+486      100      2.850    1.852    C234-N   -15V_SENSE      Bottom  
+487      100      5.740    8.960    D15-C    UNNAMED_46_BZV55B18_I266_A Bottom  
+488      100      6.350    6.954    D56-C    UNNAMED_47_BZV55B9V1_I192_C Bottom  
+489      100      4.800    0.625    P5-P<23> I2C_SCL0_INV    Bottom  
+490      100      6.450    1.225    HL2-P<0> HL2             Bottom  
+491      100      7.950    11.323   R216-B<0> 24V_DRIVER_RTN  Bottom  
+492      100      7.525    9.887    R62-A<0> UNNAMED_46_HCPL316J_I183_VOUT Top     
+493      100      8.600    0.150    R202-A<0> DCN_LED_6       Bottom  
+494      100      1.375    4.187    R398-B<0> UNNAMED_38_R_I105_B Bottom  
+495      100      5.739    3.427    Q35-G13  TWP_G13         Bottom  
+496      100      7.038    6.774    Q31-G12  SVP_G12         Bottom  
+497      100      7.038    10.120   Q27-G12  RUP_G12         Bottom  
+498      100      7.105    1.173    R449-A<0> UNNAMED_39_R_I310_B Bottom  
+499      100      5.740    6.060    D26-A    UNNAMED_47_R_I396_B Bottom  
+501      100      6.300    12.175   P3-P<9>  DIO_8C-PWM_ZN   Bottom  
+505      100      0.625    6.712    R119-B<0> UNNAMED_36_C_I38_A Top     
+506      100      2.525    7.150    DC_VRS-P<0> VRS_DC_N        Bottom  
+508      100      6.370    6.071    Z51-A    UNNAMED_47_BZV55B18_I416_A Bottom  
+509      100      6.160    10.096   Z26-A    UNNAMED_46_BZV55B18_I410_A Bottom  
+513      100      7.484    3.803    Q34-G    UNNAMED_48_R_I30_A Bottom  
+515      100      7.400    11.627   C21-N    24V_SE_RTN      Bottom  
+517      100      6.069    4.922    Q32-B    UNNAMED_47_BDP949_I310_B Bottom  
+518      100      5.230    9.423    Q7-B     UNNAMED_46_C_I380_A Top     
+519      100      8.040    5.651    C153-N   +27V_SV_P_RTN   Bottom  
+521      100      5.739    6.774    Q31-G13  SVP_G13         Bottom  
+522      100      5.739    10.120   Q27-G13  RUP_G13         Bottom  
+523      100      8.382    12.275   R3-A<0>  UNNAMED_43_R_I73_B Bottom  
+524      100      1.500    6.712    R350-A<0> UNNAMED_36_R_I40_A Bottom  
+530      100      6.875    6.975    D20-A    UNNAMED_47_R_I276_B Bottom  
+535      100      2.425    0.557    P2-P<2>  UR              Bottom  
+536      100      1.193    7.675    U24-K    UNNAMED_37_BC817_I56_C Top     
+537      100      5.975    5.178    Q32-C1   UNNAMED_47_BAV99_I309_A1 Bottom  
+543      100      5.500    12.275   P3-P<24> I2C_SCL0_CONV   Bottom  
+544      100      7.666    10.503   Q26-S    UNNAMED_46_R_I29_B Bottom  
+545      100      4.992    1.750    U50-C    UNNAMED_48_JUMPER_I342_A Top     
+546      100      2.750    9.300    IR-P<0>  SENSE_IR        Bottom  
+547      100      2.360    4.016    CS3-M    I_W             Bottom  
+548      100      6.575    2.198    R431-A<0> UNNAMED_48_R_I371_A Bottom  
+551      100      5.025    9.821    D52-A    UNNAMED_46_BZV55B18_I389_A Bottom  
+552      100      0.775    3.319    C201-P   24V_SMPS_SENSE  Bottom  
+553      100      7.920    0.827    C249-N   24V_SW_RTN      Bottom  
+554      100      7.400    11.823   C21-P    24V_SE          Bottom  
+555      100      0.775    3.181    C201-N   24V_SMPS_SENSE_RTN Bottom  
+556      100      1.500    4.309    C187-A<0> GATE_TO_TRIGGER Top     
+561      100      4.950    9.312    R71-A<0> UNNAMED_46_HCPL316J_I202_VOUT Top     
+562      100      1.500    9.062    R267-A<0> UNNAMED_49_R_I46_A Bottom  
+563      100      7.430    1.173    R448-A<0> UNNAMED_39_R_I312_B Bottom  
+569      100      2.130    0.560    P2-P<1>  R_RES           Bottom  
+570      100      2.720    0.560    P2-P<3>  US              Bottom  
+571      100      7.895    2.738    R177-A<0> UNNAMED_48_C_I179_B Top     
+574      100      0.625    2.246    Z74-C    I_SENSE_PWM_CONTROLLER Bottom  
+575      100      7.650    6.004    Z48-A    UNNAMED_47_BZV55B18_I418_A Bottom  
+576      100      6.865    10.079   Z23-A    UNNAMED_46_BZV55B18_I412_A Bottom  
+577      100      2.575    2.709    D69-A    UNNAMED_39_BYG22D_I127_A Bottom  
+583      100      4.992    8.450    U20-C    UNNAMED_46_JUMPER_I342_A Top     
+584      100      3.000    9.300    IS-P<0>  SENSE_IS        Bottom  
+585      100      5.025    9.102    R272-A<0> UNNAMED_46_MJD44H11_I376_E Bottom  
+586      100      6.700    3.391    D35-C    UNNAMED_48_MJD44H11_I55_E Top     
+587      100      1.150    8.850    NTC_DS-P<0> NTC_DS          Bottom  
+589      100      5.025    9.679    D52-C    UNNAMED_46_BZV55B9V1_I385_C Bottom  
+590      100      6.350    3.604    D64-C    UNNAMED_48_BZV55B9V1_I192_C Bottom  
+591      100      7.350    11.073   R218-B<0> PWM_VCC_RU      Bottom  
+592      100      7.350    4.373    R394-B<0> PWM_VCC_TW      Bottom  
+593      100      7.350    7.723    R304-B<0> PWM_VCC_SV      Bottom  
+594      100      7.157    0.557    P4-P<0>  24V_SW          Bottom  
+596      100      2.800    11.516   C26-A<0> UNNAMED_45_C_I189_A Top     
+598      100      7.015    10.008   Q5-B     UNNAMED_46_C_I272_A Top     
+599      100      1.175    4.187    R399-B<0> UNNAMED_38_R_I69_B Bottom  
+600      100      5.965    11.438   R28-A<0> UNNAMED_44_R_I100_A Top     
+605      100      5.300    0.625    P5-P<33> PWM_WN          Bottom  
+608      100      1.834    0.557    P2-P<0>  S_RES           Bottom  
+609      100      3.016    0.557    P2-P<4>  UT              Bottom  
+610      100      8.340    9.438    R73-A<0> UNNAMED_46_C_I162_B Top     
+612      100      1.193    10.325   U14-A1   UNNAMED_10_C_I20_A Top     
+613      100      6.160    6.746    Z43-A    UNNAMED_47_BZV55B18_I408_A Bottom  
+614      100      1.525    7.888    R100-A<0> UNNAMED_37_BC817_I56_E Top     
+616      100      6.600    12.275   P3-P<2>  DIO_2C-DEV_FLT  Bottom  
+619      100      6.700    6.559    D21-A    UNNAMED_47_R_I279_A Top     
+620      100      0.625    9.188    R74-B<0> UNNAMED_49_C_I41_A Top     
+622      100      6.450    0.975    24V_SENSE-P<0> 24V_SENSE       Bottom  
+626      100      3.749    12.225   P6-P<3>  PTC_45          Bottom  
+627      100      3.552    12.225   P6-P<1>  PTC_23          Bottom  
+
+
+=====================================================================================
+= PLACED PROBES: Single Pin Nets
+=====================================================================================
+9        100      5.200    0.625    P5-P<31> DUMMY_50POL_32  Bottom  
+49       100      5.300    0.525    P5-P<32> DUMMY_50POL_33  Bottom  
+50       100      4.200    0.525    P5-P<10> DUMMY_50POL_11  Bottom  
+116      100      4.300    0.525    P5-P<12> DUMMY_50POL_13  Bottom  
+150      100      4.300    0.625    P5-P<13> DUMMY_50POL_14  Bottom  
+254      100      4.500    0.525    P5-P<16> DUMMY_50POL_17  Bottom  
+255      100      3.700    0.525    P5-P<0>  DUMMY_50POL_1   Bottom  
+279      100      7.975    4.193    Q35-PE   PE_TW           Bottom  
+283      100      7.975    7.539    Q31-PE   PE_SV           Bottom  
+286      100      7.975    10.886   Q27-PE   PE_RU           Bottom  
+299      100      4.500    0.625    P5-P<17> DUMMY_50POL_18  Bottom  
+327      100      5.160    4.215    Q35-T1   DUMMY_TW_NTC1   Bottom  
+334      100      5.160    10.907   Q27-T1   DUMMY_RU_NTC1   Bottom  
+368      100      5.444    4.215    Q35-T2   DUMMY_TW_NTC2   Bottom  
+375      100      5.444    10.907   Q27-T2   DUMMY_RU_NTC2   Bottom  
+470      100      6.500    12.175   P3-P<5>  DIO_4C-PWM_XN   Bottom  
+531      100      5.600    0.625    P5-P<39> DUMMY_50POL_40  Bottom  
+566      100      5.700    0.525    P5-P<40> DUMMY_50POL_41  Bottom  
+567      100      5.100    0.625    P5-P<29> DUMMY_50POL_30  Bottom  
+604      100      5.700    0.625    P5-P<41> DUMMY_50POL_42  Bottom  
+606      100      5.200    0.525    P5-P<30> DUMMY_50POL_31  Bottom  
+
+
+=====================================================================================
+= PLACED PROBES: Unconnected Nets
+=====================================================================================
+
+

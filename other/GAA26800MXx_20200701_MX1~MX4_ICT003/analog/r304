@@ -1,0 +1,21 @@
+!!!!    2    0    1 1264583311   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:32 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r305 2.20k"
+   report "r306 2.20k"
+end on failure
+disconnect all
+connect s to "24V_DRIVER"; a to "24V_DRIVER"
+connect i to "PWM_VCC_SV"
+connect g to "24V_DRIVER_RTN"
+resistor 733.33, 33.1, 14.2, re3, wb, ar100m, wa74.8m, sa, en
+! "r304" is a limited test.
+! DUT: nominal 733.33, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 740.67, low 726
+! TEST: high limit 975.89, low limit 629.17
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

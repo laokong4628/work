@@ -1,0 +1,25 @@
+!!!!   21    1    1 1263660017  Ve859                                         
+! This is 4pins N-channel mosfet test library
+
+diode "diode", 900m, 400m, nr, pn"zxmn10a11g", "N-Channel enh mos failed"
+
+fet "qf",   2, 100m, n, nr, pn"zxmn10a11g", "N-Channel enh mos failed"
+
+pin library "nfet", pn"nfet", "N-Channel enh mos failed"
+
+external pins 1
+   device "nfet" pins "G"
+   device "qf" pins "G"
+
+external pins 2
+   device "nfet" pins "NC"
+
+external pins 3
+   device "diode" pins "A"
+   device "nfet" pins "S"
+   device "qf" pins "S"
+
+external pins 4
+   device "diode" pins "C"
+   device "nfet" pins "D"
+   device "qf" pins "D"

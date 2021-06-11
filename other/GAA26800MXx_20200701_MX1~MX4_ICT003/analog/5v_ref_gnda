@@ -1,0 +1,20 @@
+!!!!    2    0    1 1274255602   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:34 2010
+
+test powered analog
+   disconnect all
+   test "5V_REF_GNDA"
+end test
+
+subtest "5V_REF_GNDA"
+   connect s to nodes "US"
+   connect i to nodes "5V_REF"
+   connect l to nodes "GNDA"
+   connect g to nodes "GNDA"
+   connect g to nodes "GND"
+   source sine, amplitude 7, frequency 50, icompliance 1, offset 0, terminated 5, on
+   detector dcv, expect 5.00
+   initiate detector
+   fetch V
+   report analog 5150.00,4850.00,V*1000
+end subtest

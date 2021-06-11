@@ -1,0 +1,33 @@
+!!!!    8    0    1 1264583258   0000                                         
+
+parameters "standard_ttl"
+   backdrive current of 100m for "0", 275m for "1"
+   bond wire 2540 by 25.4
+   heat source 50 by 10, 2 per output
+   operating temperature 40
+   overdrive power 970m, 600m dissipated by heat source
+   package ceramic
+   thermal resistance 60
+end parameters
+
+use parameters "standard_ttl" for "u2"
+use parameters "standard_ttl" for "u3"
+use parameters "standard_ttl" for "u6"
+use parameters "standard_ttl" for "u7"
+use parameters "standard_ttl" for "u8%program"
+use parameters "standard_ttl" for "u8%read"
+use parameters "standard_ttl" for "u8%test"
+use parameters "standard_ttl" for "u10"
+use parameters "standard_ttl" for "u11"
+use parameters "standard_ttl" for "u15"
+use parameters "standard_ttl" for "u27"
+use parameters "standard_ttl" for "u28"
+use parameters "standard_ttl" for "u32"
+use parameters "standard_ttl" for "u43"
+use parameters "standard_ttl" for "u44"
+use parameters "standard_ttl" for "u45"
+use parameters "standard_ttl" for "u54%program"
+use parameters "standard_ttl" for "u54%read"
+use parameters "standard_ttl" for "u54%test"
+use parameters "standard_ttl" for "u56"
+

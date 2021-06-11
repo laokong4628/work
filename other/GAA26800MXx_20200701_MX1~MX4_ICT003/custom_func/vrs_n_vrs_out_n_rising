@@ -1,0 +1,23 @@
+!!!!    2    0    1 1147902304   0000                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;Time(*)
+   disconnect all
+   test "VRS_N_VRS_OUT_N"
+end test
+
+subtest "VRS_N_VRS_OUT_N"
+   global Time(*)
+   connect s to nodes "US"
+   connect i to nodes "VRS_N"
+   connect l to nodes "VRS_OUT_N"
+   connect g to nodes "VRS_OUT_N"
+   connect g to nodes "GND"
+   source sine, amplitude 7, frequency 50, icompliance 1, offset 0, terminated 50, on
+   detector digitizer, expect 4.5, interval 1m, samples 1024
+   initiate detector
+   fetch Time(*)
+!@   report analog 0.300,0.010,Time/1000
+end subtest

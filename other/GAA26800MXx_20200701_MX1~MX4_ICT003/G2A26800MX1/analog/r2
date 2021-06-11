@@ -1,0 +1,21 @@
+!!!!    2    0    1 1293185308  Vde8d                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:27 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c1 2.20n"
+end on failure
+disconnect all
+connect i to "UNNAMED_45_C_I143_B"
+connect s to "5V_HL2"
+connect g to "HL2"
+jumper 1M,re5,ar100m,op,ed!@!ECN no load
+!@!resistor 7.32k, 5, 5, re4, wb, ar100m, ed
+! "r2" is a limited test.
+! DUT: nominal 7.32k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 7.393k, low 7.247k
+! TEST: high limit 7.537k, low limit 7.140k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

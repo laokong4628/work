@@ -1,0 +1,5023 @@
+!!!!    4    0    1 1378446361   0000                                         
+Doing_Test_Coverage = 1  ! For custom branching ! COVERAGE
+on error recover Coverage_Error_Trap ! COVERAGE
+on break recover Coverage_Error_Trap ! COVERAGE
+goto Coverage_Start ! COVERAGE
+
+Coverage_Error_Trap: ! COVERAGE
+report "Coverage_Testplan_Exited_Early!" ! COVERAGE
+off error ! COVERAGE
+off break ! COVERAGE
+print errmlong$ ! COVERAGE
+report is "testcoverage_fail.dat"; append ! COVERAGE
+beep ! COVERAGE
+stop ! COVERAGE
+
+Coverage_Start: ! COVERAGE
+report is "testcoverage_fail.dat" ! COVERAGE
+
+! Testplan for G2A26800MXx  Thu Jan 28 10:55:01 2010
+!@ ECN update 20101229 to GAA26800MXx  MX1 skip PTC Temperature test Max Ma
+!@ ECN update 20110110 add 2K load at +27V_RU_P / N or SV or WT
+!@ Update of add EEPROM reading raw data saving for future verification  Kicky Nov.2.2012
+!@ Increase EEPROM Data Threshold of all calculate data Kicky Nov.27.2012
+
+!##############################################################################
+
+! G2A26800MXx
+
+!   AGILENT 3070 STANDARD TESTMAIN       Revision: "3070 05.20pa 0502(full)"
+!   STANDARD VERSION
+!##############################################################################
+!   This "main" program sequences execution of testplan subroutines and
+!   assumes that the current working directory is already set to the
+!   appropriate board directory.
+!   This testmain has included the code to support the following optional
+!   features:
+!        Data Logging for PushButton QSTATS, QSTATS-II and ART
+!        Chek-Point (pin tests)
+!        Boundary Scan:  Interconnect Plus & ScanWorks
+!   Once the testplan is working, you may selectively enable
+!   any combination of the features by changing the 'flag' variables
+!   in the subroutine "Set_Custom_Options".  Use the following command:
+!         find  "!   Other"&" parameters"  ! takes you to option settings
+!
+!   Turn learn on and run the testplan on a known good board.  After the
+!   learning run is successfully completed, the testplan is ready for
+!   customization, debug and production testing.
+!   Analog limits are logged by standard testmain if and only if the
+!   learn flag is on.  Limits must be logged once each time they change
+!   in order for PushButton Q-STATS or Q-STATS II to produce histograms.
+!
+!   If flash is to be programmed on this board, the testplan needs to have the
+!   locations marked !flash! modified or reviewed.  Please review the flash
+!   manual for full explanation. Key elements include:
+!
+!   full disabling of buses and upstream control lines is required for safety
+!   use ID check for digital test subroutine to ensure proper part placement
+!   Cycle power if required to three-state upstream devices
+
+!
+!Update capacitor and resistors for improve 108error issue.
+!Update date: Aug.15.2012 MX1&2
+!Changes:  C31 & C34 & C102 & C104 &C172 & C173  from 100p to 202N
+!Changes2: R20 & R33 & R89 & R93 & R144 & R147   from 10k to 750ohm
+!Program changed by Xingguang wu and verified by Lawrence
+!
+
+
+
+
+! Jabil string variable size declarations:
+dim Customer$[18]   ! customer name
+dim BStyle$[18]     ! board style
+dim Site$[2]        ! site variable:
+dim Line$[2]        ! build location/line #
+dim Assy$[18]       ! TARS Assembly
+dim Assy_Rev$[15]    ! TARS Assembly Rev
+dim Fab$[18]        !
+dim Fab_Rev$[4]     !
+dim Read_Data(0:4095)
+
+! Miscellaneous string variable size declarations:
+dim InvOn$[5], InvOff$[4]
+dim Testmain_Revision$[70]
+dim Batch$[12], Oper$[25], Testplan$[14], Testrev$[4]
+dim Board$[14], Board_Rev$[14], Known_Good$[1]
+dim Proc_Step$[5], Log_Path$[80]
+! The following is used in the power-supply setup routine for parallel
+! power supplies.  It holds masks for comparison.
+dim Psgroup(1:16)
+option bit 32     ! Prevents range error when comparing Psgroup with MSB set
+
+!       INITIALIZE BREAK AND ERROR TRAPPING
+
+on break recover Break_Trap
+on error recover Error_Trap
+
+!       INITIALIZE VARIABLES
+
+call Initializations
+call Jabil_Inits      !setup TARS variables
+! COVERAGE call Get_Version_Label
+
+!       SET UP FAILURE ACKNOWLEDGMENT
+acknowledge all failures
+
+!       MAIN LOOP FOR REPEATEDLY TESTING A BOARD
+!          (executed only once if "learning")
+
+Wait_For_Start:
+
+Pass_Fail_Reported = False
+Logging_Started = False
+Tests_On_This_Board = 0
+!@print | print Place_Board_Prompt$
+!@wait for start
+if Serializing then
+  call Scan_Assy_Barcode
+  Scan:
+  Serial$ = fn Get_Serial_Num$(Serial_Prompt$)
+ !@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!@@@@@@@@@@@@@@@@@@@@TIS Checking   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+   !@ add mes system
+  if "pass"<>fn TISexe_Test$(Serial$) then
+   print "Process Check FALL,Rescan next UUT on Board #:"  & Serial$
+   goto Scan
+  end if
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  print using "@"
+  print | print Place_Board_Prompt$
+! COVERAGE   wait for start
+  Known_Good$ = "n"
+  if Serial$ = Known_Good_Board$ then Known_Good$ = "y"
+  if Using_AwareTest = True then
+    ! remove special characters
+    Serial_New$ = fn Remove_Special_Characters$(Serial$)
+    Path$ = Serial_Number_Directory$ & Serial_New$ & Serial_Suffix$
+    enter Path$,, Err
+
+    !! Added the following code to check for all uppercase or all lowercase
+    !! serial numbers.
+    if Err then
+       Path$ = Serial_Number_Directory$ & upc$(Serial_New$) & Serial_Suffix$
+       enter Path$,, Err
+       if Err then
+          Path$ = Serial_Number_Directory$ & lwc$(Serial_New$) & Serial_Suffix$
+          enter Path$,, Err
+       end if
+    end if
+
+    if Err then
+      ! serial number file was not found -- board was not tested on AXI
+      if AXI_Tested_Override = False then
+        print Not_AXI_Tested$
+stop ! goto Wait_For_Start ! COVERAGE
+      else
+        ! Add custom code here if serial number is missing and
+        ! you do not want to completely skip the PC board test
+      end if
+    end if
+  end if
+end if
+if Using_Multiple_Versions and Version_Prompting = Per_Board then
+!@  call Get_Version_Label
+  if nrun = 1 or Version_Inits_Needed then
+    call Do_Version_Inits
+  end if
+end if
+
+Start = msec
+
+call Check_Gate_Closed
+call Check_Board_Presence
+
+!       RE-TEST AFTER PIN-TEST FAILURE
+
+ChekPoint_Retry:
+
+print using "@,/"
+if Serializing then print But$; Serial$
+Tests_On_This_Board = Tests_On_This_Board + 1
+if Tests_On_This_Board > 1 then print Rep_Test$
+
+!       START LOGGING FOR THIS BOARD
+
+report is window;append
+
+if Logging then call Start_Logging
+Logging_Started = True   ! Also used as reporting flag
+
+!       ACTIVATE VACUUM IN PREPARATION FOR TEST
+
+if Tests_On_This_Board = 1 then faoff 1. ! COVERAGE
+! Warning: Reducing the value for 'faon' from the default value of 1.5
+! can potentially cause testhead damage.
+
+
+!       CHECK FIXTURE CONTACT, THEN
+!       LEARN OR TEST (OR RE-TEST) BOARD
+
+unpowered
+if (not learning) and Chek_Point_Mode = Pretest then
+  if not fn Chek_Point_OK then goto Cleanup
+end if
+call Test_Sections
+
+!       IF ANY BOARD FAILED TEST, TRY TO FIX IT BY RUNNING PIN TEST
+
+Cleanup:
+
+if boardfailed and Status <> Failed_In_Preshorts then
+  if Tests_On_This_Board = 1 and Chek_Point_Mode = Failures then
+    unpowered
+    if fn Chek_Point_OK then goto ChekPoint_Retry
+  end if
+end if
+
+!       REMOVE BOARD FROM TESTHEAD AND GENERATE PASS/FAIL MESSAGE
+!       THEN TERMINATE LOGGING (IF ENABLED) AND REPORTING
+
+faoff
+Pass_Fail_Reported = True
+
+Eject_Ticket: image 13/
+
+if boardfailed then
+  print "     **  ";Fail_Msg$;"  **"
+  copy Fail_File$ over "/dev/tty"
+  if Status = Failed_Pin_Test then
+    print " ** ";Pin_Msg$;" **"
+  end if
+  if learning then Status = Failed_In_Learn
+  if Serializing then report Serial_Nr$ & Serial$
+  report using Eject_Ticket
+  if Using_Buffered_Reporting then report out
+else
+  print "     **  ";Pass_Msg$;"  **"
+  copy Pass_File$ over "/dev/tty"
+  report"Board Passed"
+  report Serial_Nr$ & Serial$
+  if Using_AwareTest = True then
+    enter Path$,, Err  ! check to see if serial number file exists
+                       ! Err = 100009 (File Not Found)
+    if not Err then    ! Do not create new serial number files
+      enter "date +%Y%m%d%H%M |"; Passed_Datetime$
+      assign @SNF,Err to Path$; write, append
+      if Err then      ! problems writing to serial number file
+        print SNF_Error_Msg$  |   print "    ";errm$
+        beep
+        ! print | print Stop_Msg$
+        ! stop
+      else
+        output @SNF; "passed3070 = " & Passed_Datetime$
+        assign @SNF to *
+      end if
+    end if
+  end if
+end if
+!@report is *
+
+Log_path$="C:\QM2tars\"   !"C:\tars\"       !@tars
+if boardfailed then Log_path$="C:\tar\"     !@tars
+if Logging then
+  log board end Status
+!@  log out Log_Path$ & datetime$ & System$ & th$
+! COVERAGE   if Oper$ <> "debug" then log out Log_Path$ & datetime$ & val$(I)
+  log clear
+end if
+report clear
+clear failures
+Logging_Started = False
+
+!       END PROGRAM IF LEARNING. OTHERWISE RETURN TO MAIN LOOP
+
+if learning then
+   learn off
+   print | print Learning_Off_Msg$ | print Stop_Msg$
+   beep
+   stop
+end if
+
+Stop = msec     !Record stop time for in-circuit test
+Time = (Stop-Start) /1000
+print chr$(27)&"&v7sBBTest Time is ";Time;" seconds."
+
+stop ! goto Wait_For_Start ! COVERAGE
+
+!       END OF MAIN LOOP
+!       INTERRUPT HANDLING
+! This is the normal entry for Break/Stop detection
+
+Break_Trap:
+report is "testcoverage_fail.dat"; append ! COVERAGE
+report "Coverage_Testplan_Exited_Early!" ! COVERAGE
+
+off break
+off error
+print "     ";Break_Msg$
+unpowered,Err
+if Err then print errmlong$
+if Logging and Logging_Started then
+  log board end Break_Code
+!@  log out Log_Path$ & datetime$ & System$ & th$
+! COVERAGE   if Oper$ <> "debug" then log out Log_Path$ & datetime$ & val$(I)
+  log clear
+end if
+faoff, Err
+if Err then print errmlong$
+goto Abort
+
+! This is the normal entry for errors occurring in Basic statements
+
+Error_Trap:
+report is "testcoverage_fail.dat"; append ! COVERAGE
+report "Coverage_Testplan_Exited_Early!" ! COVERAGE
+off error
+print errmlong$
+beep
+SaveErrn = errn
+unpowered,Err
+if Err then print errmlong$
+
+!       IF A BOARD IS PRESENT, FAIL IT
+!       THEN TERMINATE LOGGING (IF ENABLED) AND REPORTING
+
+if Logging_Started and not Pass_Fail_Reported then
+  fail device
+  report Board_Not_Tested$
+  print "     **  ";Fail_Msg$;"  **"
+  copy Fail_File$ over "/dev/tty"
+  if Status = Failed_Pin_Test then
+    print " ** ";Pin_Msg$;" **"
+  end if
+  if Serializing then report Serial_Nr$ & Serial$
+  report using Eject_Ticket
+  if Using_Buffered_Reporting then report out, Err
+  report is *, Err
+  report clear
+end if
+if Logging_Started and Logging then
+  log using """{@RPT~80|"",80a,""}""" ; errm$(SaveErrn)
+  log board end Error_Code, SaveErrn
+!@  log out Log_Path$ & datetime$ & System$ & th$
+! COVERAGE   if Oper$ <> "debug" then log out Log_Path$ & datetime$ & val$(I)
+  log clear
+end if
+
+!       REMOVE THE BOARD FROM THE TESTHEAD
+
+faoff, Err
+if Err then print errmlong$
+if learning or Err then goto Abort
+on error recover Error_Trap
+stop ! goto Wait_For_Start ! COVERAGE
+
+!       ABORT PROGRAM: UNRECOVERABLE ERROR, LEARN ERROR OR STOP KEY
+
+Abort:
+
+off break
+off error
+!@report is *, Err
+log is *, Err
+beep
+if (nrun=1) and not Did_First_Run_Inits then
+  print No_Init_Warning$
+  clear nrun
+else
+  if Version_Inits_Needed then
+    print No_Version_Init_Warning$
+    clear nrun
+  end if
+end if
+print "     ";Stop_Msg$
+beep
+stop
+end
+
+!       END OF ERROR TRAPS
+
+!       Test/Learn Sections
+!    [ Assumes unpowered mode. ]
+! Note concerning LEARN MODE:  some sections are not truly "learned" but are
+! run in learn mode for other reasons.  For example, analog tests may be run
+! in learn mode in order to log limits information used by Pushbutton QSTATS,
+! and preshorts/shorts are run "just in case" -- to avoid bad learns & damage.
+! To keep a section from being run in learn mode, place 'if not learning then'
+! just before that section and place 'end if' just after it.
+!##############################################################################
+sub Test_Sections
+global PreshortsMsg$, ShortsMsg$, PowerMsg$, DigitalMsg$, AnalogMsg$
+global DigitalFuncMsg$, AnalogPoweredMsg$, BScanIncktMsg$, BScanIntconMsg$
+global Status, Failed_In_Preshorts, Failed_In_Shorts, Failed_In_Functional
+global Failed_In_Digital, Failed_In_Power_Supplies, Failed_In_Analog
+global Logging, True, False, Passed
+global Mode$, Failed_In_BScan
+global TestJetMsg$, Failed_In_TestJet
+global PolarityMsg$, Failed_In_Polarity_Check
+global BScanPShortsMsg$
+global ConnectCheckMsg$, Failed_In_ConnectCheck
+global Failed_In_Flash, FlashProgMsg$, Programming
+global AnalogClusterMsg$, Failed_In_Analog_Cluster
+global BScanSiNailsMsg$, Failed_In_BScan_SiNails
+global SW_ScanPathVerifyMsg$, Failed_In_SW_Testing
+global SW_DrVerifyMsg$, SW_IrVerifyMsg$
+global SW_InterconnectMsg$, SW_MemInterconnectMsg$
+global SW_ClusterMsg$, SW_MemBistMsg$
+global SW_ProgrammingMsg$, Failed_In_SW_Programming
+global SW_FlashMsg$, Failed_In_SW_Flash
+global Failed_In_PHASE_R, IGDPRMsg$
+global Failed_In_PHASE_S, IGDPSMsg$
+global Failed_In_PHASE_T, IGDPTMsg$
+global Failed_In_SENSING, PSSMsg$
+global Failed_In_PTC, PTCTMMsg$
+global Failed_In_LINK_LED, DCLLMsg$
+global Failed_In_Driver_Voltage, IGDVMsg$
+global Failed_In_PULSE_WIDTH, DLLPWMsg$
+global Failed_In_LINE_VOLTAGE, LVSMsg$
+global Failed_In_Voltage_Gain, VVVGMsg$
+global Failed_In_Delay_Time, VVRDTMsg$
+global Failed_In_IGBTTM, IGBTTMMsg$
+global Failed_In_DC_LINK, DCLVMMsg$
+global Failed_In_POWER_FAIL, PFMMsg$
+global Failed_In_Current_Sensor, HECSMsg$
+global Failed_In_CHG_RELAY, CRCMsg$
+global Failed_In_EEPROM, EPTMsg$
+
+!Log level is all
+call Pre_Shorts (Failed_In_Preshorts, Mode$ & PreshortsMsg$)
+! COVERAGE if boardfailed then subexit
+
+call Shorts (Failed_In_Shorts, Mode$ & ShortsMsg$)
+! COVERAGE if boardfailed then subexit
+
+if Logging or not learning then
+  call Analog_Tests (Failed_In_Analog, Mode$ & AnalogMsg$)
+! COVERAGE   if boardfailed then subexit
+end if
+
+!call TestJet (Failed_In_TestJet, Mode$ & TestJetMsg$)
+! COVERAGE if boardfailed then subexit
+
+call Polarity_Check (Failed_In_Polarity_Check, Mode$ & PolarityMsg$)
+! COVERAGE if boardfailed then subexit
+
+call Connect_Check (Failed_In_ConnectCheck, Mode$ & ConnectCheckMsg$)
+! COVERAGE if boardfailed then subexit
+
+call Analog_Cluster_Tests (Failed_In_Analog_Cluster, Mode$ & AnalogClusterMsg$)
+! COVERAGE if boardfailed then subexit
+
+powered
+
+! COVERAGE call Setup_Power_Supplies (Failed_In_Power_Supplies, PowerMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call ScanWorks_Scan_Path_Verify_Tests (Failed_In_SW_Testing, Mode$ & SW_ScanPathVerifyMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call ScanWorks_Pretest
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call BScan_Powered_Shorts_Tests (Failed_In_Shorts, Mode$ & BScanPShortsMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call BScan_Interconnect_Tests (Failed_In_BScan, Mode$ & BScanIntconMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call ScanWorks_Interconnect_Tests (Failed_In_SW_Testing, Mode$ & SW_InterconnectMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call BScan_Incircuit_Tests (Failed_In_BScan, Mode$ & BScanIncktMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call BScan_Silicon_Nails_Tests (Failed_In_BScan_SiNails, Mode$ & BScanSiNailsMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+! If you are using Boundary-Scan and you want to cycle power,
+! then uncomment the following call.
+! call Reset_Board
+
+call Digital_Tests (Failed_In_Digital, Mode$ & DigitalMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call ScanWorks_Mem_Interconnect_Tests (Failed_In_SW_Testing, Mode$ & SW_MemInterconnectMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call ScanWorks_Cluster_Tests (Failed_In_SW_Testing, Mode$ & SW_ClusterMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call ScanWorks_Mem_BIST (Failed_In_SW_Testing, Mode$ & SW_MemBistMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+! If you are using Boundary-Scan and you want to cycle power,
+! then uncomment the following call.
+! call Reset_Board
+
+call Functional_Tests (Failed_In_Functional, Mode$ & DigitalFuncMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call Analog_Functional_Tests (Failed_In_Functional, Mode$ & AnalogPoweredMsg$)
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call IGBT_Gate_Driver_PHASE_R_Tests (Failed_In_PHASE_R, Mode$ & IGDPRMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call IGBT_Gate_Driver_PHASE_S_Tests (Failed_In_PHASE_S, Mode$ & IGDPSMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call IGBT_Gate_Driver_PHASE_T_Tests (Failed_In_PHASE_T, Mode$ & IGDPTMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call Power_Supply_SENSING_Tests (Failed_In_SENSING, Mode$ & PSSMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call PTC_Temperature_Tests (Failed_In_PTC, Mode$ & PTCTMMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call DC_Link_LED_Tests (Failed_In_LINK_LED, Mode$ & DCLLMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call IGBT_Gate_Driver_voltages_Tests (Failed_In_Driver_Voltage, Mode$ & IGDVMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call DRIVER_RESET_N_Pulse_Width_Tests (Failed_In_PULSE_WIDTH, Mode$ & DLLPWMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+!@ new version test spec delete
+!@call LINE_VOLTAGE_SENSING_Tests (Failed_In_LINE_VOLTAGE, Mode$ & LVSMsg$)
+!@if boardfailed then pause
+!@if boardfailed then
+!@  call Disconnect_Power_On_Board
+!@  subexit
+!@end if
+!@ change 20111130, confirm Kicky and Lawrence
+
+call VRS_VST_Voltage_Gain_Tests (Failed_In_Voltage_Gain, Mode$ & VVVGMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+!call VRS_VST_Delay_Time_Tests (Failed_In_Delay_Time, Mode$ & VVRDTMsg$)
+! if boardfailed then pause
+!if boardfailed then
+!  call Disconnect_Power_On_Board
+!  subexit
+!end if
+
+call IGBT_TEMPERATURE_Tests (Failed_In_IGBTTM, Mode$ & IGBTTMMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call DC_LINK_VOLTAGE_Tests (Failed_In_DC_LINK, Mode$ & DCLVMMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call POWER_FAIL_MONITORING_Tests (Failed_In_POWER_FAIL, Mode$ & PFMMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call Hall_Effect_Current_Sensor_Tests (Failed_In_Current_Sensor, Mode$ & HECSMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call CHG_RELAY_Contact_Tests (Failed_In_CHG_RELAY, Mode$ & CRCMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+call Eeprom_Programming_Tests (Failed_In_EEPROM, Mode$ & EPTMsg$)
+!@if boardfailed then pause
+! COVERAGE if boardfailed then
+! COVERAGE   call Disconnect_Power_On_Board
+! COVERAGE   subexit
+! COVERAGE end if
+
+
+if Programming then
+  if learning then subexit
+
+  !----------------------------------------------------------------------------
+  ! Only add the following powersupply setup if it is necessary to cycle power.
+  ! Perhaps to get FPGAs or other ASICs to a three-state condition.
+  !
+  !    !flash! unpowered  ! Only if volatile logic exists upstream
+  !
+  !    !flash!  put any required gprelays here
+  !
+  !    !flash!  powered    ! if unpowered above, also use the following only if
+  !                        ! digital devices aren't interferring
+  !    ! call Setup_Power_Supplies (Failed_In_Power_Supplies, PowerMsg$)
+  !    ! if boardfailed then
+  !    !    call Disconnect_Power_On_Board
+  !    !    subexit
+  !    ! end if
+  !----------------------------------------------------------------------------
+  ! Add the device name to be tested in the call to the Program_Flash
+  ! subroutine. If multiple devices are installed, duplicate the call line for
+  ! each device.  Pass an empty string as the Message$ parameter to supress
+  ! printing messages for devices 2 through N.
+  !----------------------------------------------------------------------------
+
+  ! call Program_Flash ("", Failed_In_Flash, FlashProgMsg$)
+  if boardfailed then
+    call Disconnect_Power_On_Board
+    subexit
+  end if
+
+  call ScanWorks_Device_Programming (Failed_In_SW_Programming, SW_ProgrammingMsg$)
+  if boardfailed then
+    call Disconnect_Power_On_Board
+    subexit
+  end if
+
+  call ScanWorks_Flash_Programming (Failed_In_SW_Flash, SW_FlashMsg$)
+  if boardfailed then
+    call Disconnect_Power_On_Board
+    subexit
+  end if
+end if
+
+Status = Passed
+subend
+
+!       Pin Test Subroutines
+
+!##############################################################################
+def fn Chek_Point_OK
+! This is the subroutine for forcing the testing of pin contacts.
+! If this routine is called before Test_sections (Chek_Point_Mode = Pretest),
+! then the internal status will be set to Passed or Failed_Pin_Test.
+! If this routine is called after test (Chek_Point_Mode = Failures), then the
+! internal status is modified only if failures occur.
+!
+! The meaning of the function is slightly different when it is called before
+! test versus after test.  If called before test, the function returns True
+! if, no matter how many times it was cycled, pin test did finally pass.
+! If called after test, the function returns True if pin test failed but
+! passed after retry.
+!
+! Note: fn Pinsfailed is external to testmain.
+!
+global Pin_Msg$, Passed, Chek_Point_Msg$
+global Retry_PinTest$, Recycle_Vacuum$, Status, True, False
+global Cycle_Vacuum$, Failed_Pin_Test, Max_Times_To_Fix_Contact
+global Logging, Serial$, Known_Good$, Chek_Point_Mode, Pretest, Failures
+
+if learning then return (False)
+Attempts = 0
+loop
+  Contact_Passed = not fn Pinsfailed (Chek_Point_Msg$)
+  if not Contact_Passed then
+    Status = Failed_Pin_Test
+  else
+    if Chek_Point_Mode = Pretest then Status = Passed
+  end if
+  Attempts = Attempts + 1
+  exit if Contact_Passed or (Attempts > Max_Times_To_Fix_Contact)
+  print Pin_Msg$
+  question Retry_PinTest$, Retry
+  exit if not Retry
+  if Logging and Chek_Point_Mode = Pretest then
+    if Status = Failed_Pin_Test then log board end Failed_Pin_Test
+  end if
+  question Cycle_Vacuum$, Cycle
+  if Cycle then
+    faoff
+    question Recycle_Vacuum$
+faoff 1. ! COVERAGE
+! Warning: Reducing the value for 'faon' from the default value of 1.5
+! can potentially cause testhead damage.
+    unpowered
+  end if
+  if Chek_Point_Mode = Pretest then
+    clear failures
+    if Logging then log board start Serial$, Known_Good$
+  end if
+end loop
+if Chek_Point_Mode = Failures then
+  if Contact_Passed and Attempts > 4 then
+    if Logging then
+      log clear for retest
+      log board end Failed_Pin_Test
+    end if
+    clear failures
+    report clear
+  end if
+  return (Contact_Passed and Attempts > 4)
+else
+  return (Contact_Passed)
+end if
+fnend
+
+!       Reset_Board Subroutine
+
+!##############################################################################
+sub Reset_Board
+   !---------------------------------------------------------------------------
+   ! This 'pause' section is placed here to remind the test programmer
+   ! that some powered tests may depend upon the TCK/TMS signals of
+   ! boundary scan chains/devices being held in a stable state.
+   ! When the testplan is run, the tests are properly sequenced
+   ! to assure that the disabled state is set; however, board level
+   ! circuitry may interfere with the persistence of the disabled state.
+   ! You may need to take additional measures; for example, you may
+   ! place your own pullup/down resistor in the fixture to assure a
+   ! stable TMS and/or TCK, or utilize a GP relay to disable some TCK
+   ! oscillator, etc.
+   ! For further explanation, see the Boundary-Scan Manual for the
+   ! section titled 'Maintaining Persistence of Boundary-Scan Disables'.
+   !
+   !---------------------------------------------------------------------------
+   ! When Boundary-Scan tests are complete, you may need to produce
+   ! a hard reset on the board-under-test to bring the ICs back into
+   ! operational mode.  One way of doing this is to cycle power to the
+   ! board using the following call:
+
+   call Cycle_Power_On_Board ! Cycle Power to reset digital state of board
+   ! call ScanWorks_Pretest    ! Configure volatile devices, if needed
+
+   ! Power cycling is time consuming and may not be necessary.  Some boards
+   ! may not need any resetting.  Others may have a digital reset node
+   ! you can toggle with a digital test to reset the board.
+   !
+   ! When you have evaluated the needs of this board and modified this
+   ! section, remove the pause and these comments.  You should take care
+   ! to document the action you have taken for future reference.
+   !---------------------------------------------------------------------------
+subend
+
+!       Backtrace Subroutine
+
+!##############################################################################
+sub Backtrace (Test$)
+global Confirming$, Confirm_Failed$
+
+find start node Test$     ! get first node to probe
+loop
+  exit if btdone
+  if (external test (btnode$)) then ! perform external test
+    call External_Test (BT_Pass, BT_Results)
+  else
+    test node btnode$   ! perform digital functional test
+    BT_Pass = nodepass
+    BT_Results = noderesults
+    call Print_Results (BT_Pass, BT_Results)
+  end if
+  find next node btnode$, BT_Pass, BT_Results  ! next node to probe
+  if btconfirm then      ! confirm the diagnosis
+    find next node btnode$, BT_Pass, BT_Results, confirm
+    print Confirming$
+  end if
+  if btreset then        ! restart from new failing node
+    find next node btnode$, BT_Pass, BT_Results, reset
+    print Confirm_Failed$ & btnode$ & """"
+  end if
+end loop
+make diagnosis  ! report failed node information
+subend
+
+!       Sample External Test Subroutine for Backtracing
+
+!##############################################################################
+sub External_Test (BT_Pass, BT_Results)
+! Sample external test
+! Perform test as needed based on value of BT_Key$
+! Set Pass=1 for pass or Pass=0 for fail
+! Results must be -150000 for an external test
+BT_Key$ = exttest$
+BT_Pass = 1
+BT_Results = -150000
+subend
+
+!       Decode and print backtrace node test results
+
+!##############################################################################
+sub Print_Results (BT_Pass, BT_Results)
+global BT_Passed$, BT_SR_Fail$, BT_CRC_Fail$, BT_Notest$, BT_Indeter$
+global BT_Interm$, BT_Incons$, BT_Open$, BT_NResults$
+
+BT_Node$ = "node """ & btnode$ & """"
+if BT_Pass then  ! node passed
+  print BT_Node$; tab(23); BT_Passed$
+else
+  if BT_Results > 0 then  ! node failed SR test
+    print BT_Node$; tab(23); BT_SR_Fail$; BT_Results
+  else
+    if BT_Results <= 0 and BT_Results >= -65535 then ! node failed CRC test
+      call Decode_crc ( -BT_Results, BT_Crc$ )
+      print BT_Node$; tab(23); BT_CRC_Fail$; BT_Crc$; """"
+    else
+      if BT_Results = -100000 then  ! node not tested
+        print BT_Node$; tab(23); BT_Notest$
+      else
+        if BT_Results = -160000 then  ! node was indeterminate
+          print BT_Node$; tab(23); BT_Indeter$
+        else
+          if BT_Results = -200005 then  ! node was intermittent
+            print BT_Node$; tab(23); BT_Interm$
+          else
+            if BT_Results = -200006 then  ! node was inconsistent
+              print BT_Node$; tab(23); BT_Incons$
+            else
+              if BT_Results = -200010 then  ! node has an open trace
+                print BT_Node$; tab(23); BT_Open$
+              else
+                print BT_Node$; tab(23); BT_NResults$; BT_Results
+              end if ! BT_Results = -200010
+            end if ! BT_Results = -200006
+          end if ! BT_Results = -200005
+        end if ! BT_Results = -160000
+      end if ! BT_Results = -100000
+    end if ! BT_Results < 1 and BT_Results > -100000
+  end if ! BT_Results > 0
+end if ! BT_Pass
+subend
+
+!       Format a 16 bit crc value to an ASCII CRC
+
+!##############################################################################
+sub Decode_crc (BT_Value, BT_Crc$)
+option bit 32
+BT_Crc$ = "0000"
+BT_Temp = binand (BT_Value, hti("0000000F"))
+BT_Crc$[4;1] = chr$(fn HexChar(BT_Temp))
+BT_Temp = binand (BT_Value, hti("000000F0")) / 16
+BT_Crc$[3;1] = chr$(fn HexChar(BT_Temp))
+BT_Temp = binand (BT_Value, hti("00000F00")) / 256
+BT_Crc$[2;1] = chr$(fn HexChar(BT_Temp))
+BT_Temp = binand (BT_Value, hti("0000F000")) / 4096
+BT_Crc$[1;1] = chr$(fn HexChar(BT_Temp))
+subend
+
+!       Build a hex character
+
+!##############################################################################
+def fn HexChar (A)
+if A >= 0 and A < 10 then
+  return (A + 48)
+else
+  if A >= 10 and A < 16 then
+    return  (A + 87)
+  else
+    return 63
+  end if
+end if
+fnend
+
+!       Data Logging Subroutines
+
+!##############################################################################
+sub Start_Logging
+global Analog_Sample_Rate, QSTATS_Mode, Histo, Board$, Tests_On_This_Board
+global Sampling, True, False
+global Proc_Step$, Batch$, Oper$, Board_Rev$, Testplan$
+global Testrev$, Known_Good$, Serial$, Version_Label$
+global Customer$, BStyle$, Site$, Line$, Assy$, Assy_Rev$, Fix$
+
+Sampling = False
+if learning then
+! COVERAGE   log level is all
+else
+  if rnd < Analog_Sample_Rate * (QSTATS_Mode = Histo) then
+! COVERAGE     log level is analog without nhls, pins
+    Sampling = True
+  else
+! COVERAGE     log level is indictments without nhls
+  end if
+end if
+print "Log level: ";lli$;";  Report level: ";rli$;";  Board type: ";Board$
+PS$ = Proc_Step$
+if Tests_On_This_Board = 1 then
+!@  log board Board$, PS$, Batch$, Oper$, Board_Rev$, Testplan$, Testrev$, "", "", Version_Label$
+   log board Assy$, PS$, Fix$, Oper$&"#"&Fix$ , Assy_Rev$, Testplan$, Testrev$
+end if
+!@log board start Serial$, Known_Good$
+ log board start Serial$[1;14], Known_Good$
+ log "{@CUST|"&Customer$&"}"  !TARS
+ log "{@BSTYLE|"&BStyle$&"}"  !TARS
+ log "{@SITE|"&Site$&"}"      !TARS
+ log "{@LINE|"&Line$&"}"      !TARS
+print
+subend
+
+!##############################################################################
+def fn Get_Serial_Num$(Prompt$)
+global Serial_Length, Bad_Serial_Image$, Default_Serial_Number$
+
+loop
+  print using """"&Prompt$&""",#"
+  Ident$=""
+  input "",Ident$
+  if Ident$ = "" then Ident$ = Default_Serial_Number$
+  exit if Ident$ = Default_Serial_Number$
+  exit if (len(Ident$) = Serial_Length) or not Serial_Length
+  print using Bad_Serial_Image$; len(Ident$), Serial_Length
+end loop
+return (Ident$)
+! return (lwc$(Ident$))
+fnend
+
+!##############################################################################
+!  If the Board name contains any invalid characters, stop processing.
+sub Verify_Board_Names
+global Stop_Msg$, Bad_Board_Name$, Board$
+
+Found_Bad = 0
+if fn IllegalChars_In_Board_Name(Board$) then
+  Found_Bad = 1
+  print Bad_Board_Name$  |   print "    ";Board$
+end if
+if Found_Bad then
+  print | print Stop_Msg$
+  beep
+  stop
+end if
+subend
+
+!##############################################################################
+! Check to see if the Board name contains any invalid characters, now only
+! check spaces.  Return 1 if yes, and 0 if no.
+def fn IllegalChars_In_Board_Name (Board$)
+global True, False
+
+if len (Board$) > 0 and pos (Board$, " ") > 0  then
+  return True
+else
+  return False
+end if
+fnend
+
+!##############################################################################
+sub Create_Log_Queue
+global Log_Path$, Directory_Exists, Queue_Error_Msg$, Stop_Msg$
+
+create dir Log_Path$, Err
+Err = Err and (Err <> Directory_Exists)
+if Err then
+  print Queue_Error_Msg$  |   print "    ";errm$
+  print | print Stop_Msg$
+  beep
+  stop
+end if
+subend
+
+!##############################################################################
+sub Setup_Logging
+global Serial$, Default_Serial_Number$, Testplan$, Batch$
+global Known_Good_Board$, Using_ART, Proc_Step$, Oper_Id_Prompt$
+global Board$, Oper$, Known_Good_Prompt$
+global Serializing
+
+randomize
+Proc_Step$             = "ICT"
+Batch$                 = datetime$ ! Set to a unique identifier so that Q-STATS II can
+                                   ! calculate interboard handling and system idle times
+Testplan$              = Board$
+Default_Serial_Number$ = "default_SN" & th$
+Serial$                = Default_Serial_Number$
+Known_Good_Board$      = ""
+Oper$                  = ""
+if Using_ART then
+  print using """"&Oper_Id_Prompt$&""",#"
+  input "",Oper$
+end if
+!@if Serializing then Known_Good_Board$ = fn Get_Serial_Num$(Known_Good_Prompt$)
+subend
+
+!       Initialization Subroutines
+
+!##############################################################################
+sub Initializations
+global Logging, Using_Buffered_Reporting, Report_Printer$, Using_ART
+global Serializing, Logging_Started, First_Run$, Testmain_Revision$
+global Did_First_Run_Inits, QSTATS_Mode
+global True, False, Off, No_Histo, Histo, Pretest, Failures
+global Version_Inits_Needed, Using_Multiple_Versions
+global Per_Run, Per_Board, Version_Prompting
+global Using_AwareTest
+
+Testmain_Revision$="3070 05.20pa 0502(full)"
+True = 1
+False = 0
+Off = 0
+No_Histo = 1
+Histo = 2
+Pretest = 1
+Failures = 2
+Per_Run = 1
+Per_Board = 2
+Version_Inits_Needed = False
+call Set_Custom_Options
+
+Using_Buffered_Reporting = False ! COVERAGE
+Using_ART                = False ! COVERAGE
+Using_IYET               = False ! COVERAGE
+Using_WPR                = False ! COVERAGE
+Using_BScan              = False ! COVERAGE
+Chek_Point_Mode          = Off ! COVERAGE
+QSTATS_Mode              = Off ! COVERAGE
+Report_Printer$          = "testcoverage_fail.dat" ! COVERAGE
+
+call Initialize_Board_Constants ! external to testmain
+call Initialize_Constants
+call Verify_Board_Names
+Logging_Started = False
+Logging = (QSTATS_Mode <> Off) or Using_ART
+if Using_ART then Serializing = True
+if Using_AwareTest then Serializing = True
+
+! call Get_Board_Revision        ! to interactively set Board_Rev$
+
+call Print_Startup_Message       ! prints out many variables' values
+acknowledge all failures
+learn capacitance off
+if Using_Buffered_Reporting then
+  buffered reporting on
+else
+  buffered reporting off
+end if
+report is "testcoverage_fail.dat"; append ! COVERAGE
+printer is *
+if Logging then
+  call Setup_Logging
+  call Create_Log_Queue
+else
+! COVERAGE   log level is none
+end if
+if Using_ART then
+  report level is all
+else
+  report level is report
+end if
+if nrun = 1 then
+  print First_Run$
+  load board
+board version is "G2A26800MX1" ! COVERAGE
+
+
+!'object checking on/off' statement goes here. Default is 'on'
+  object checking on
+end if
+if Using_Multiple_Versions and Version_Prompting = Per_Run then
+! COVERAGE   call Get_Version_Label
+end if
+if nrun = 1 or Version_Inits_Needed then
+  call Do_Version_Inits
+  Did_First_Run_Inits=True
+end if
+subend
+
+!##############################################################################
+sub Print_Startup_Message
+global Board$, Board_Rev$, Using_ART, QSTATS_Mode, Histo
+global Analog_Sample_Rate, Chek_Point_Mode, Failures
+global Report_Printer$, Using_Buffered_Reporting, Testmain_Revision$
+global Serializing, Serial_Length
+
+print using "@,2/"
+print tab(3);"BOARD TYPE"
+print "  Name:     ";Board$
+print "  Revision: ";Board_Rev$
+print tab(3); "Customer : OTIS"
+print tab(3); "Developed by GOS TD Huangpu Jabil"
+print "  Report Printer: ";Report_Printer$
+print "  Revision:       ";Testmain_Revision$
+!   Build list of options to be printed
+!     O1$ is first line, O2$ is second line
+O1$ =  "  Options: "
+if Using_ART then O1$=O1$&" PR+"
+if QSTATS_Mode then O1$=O1$&" QSTATS"
+if Chek_Point_Mode then
+  O1$=O1$&" Chek-Point"
+  if Chek_Point_Mode = Failures then
+    O1$=O1$&"-Failures"
+  else
+    O1$=O1$&"-Pretest"
+  end if
+end if
+if (O1$="  Options: ") then
+  O2$=O1$
+else
+  print O1$
+  O2$= "           "
+end if
+if Serializing then O2$=O2$&" Serializing("&val$(Serial_Length)&")"
+if learning then O2$=O2$&" LEARNING"
+if Using_Buffered_Reporting then O2$=O2$&" Buffered-Reporting"
+if QSTATS_Mode = Histo then
+  O2$=O2$&" Histograms("&val$(Analog_Sample_Rate)&")"
+end if
+if not (O2$ = "           ") then print O2$
+print using "3/"
+subend
+
+!##############################################################################
+sub Get_Board_Revision
+global Board_Rev$, Board_Rev_Prompt$
+
+if Board_Rev$ = "" then
+  print using """" & Board_Rev_Prompt$ & """,#"
+  input "",Board_Rev$
+end if
+subend
+
+!##############################################################################
+sub Do_Version_Inits
+global Version_Inits_Needed, Chek_Point_Mode, True, False, Off, Logging
+
+unpowered
+faoff
+call Characterize
+if Chek_Point_Mode <> Off then   ! preload pins into testhead memory
+  Log_Level_Reset = False
+  if lli$ = "all" then
+! COVERAGE     log level is none            ! turn off digital datalogging
+    Log_Level_Reset = True       ! for 'ignore all failures'
+  end if
+  ignore all failures
+!@  Err = fn Pinsfailed ("")       ! external to testmain
+  acknowledge all failures
+! COVERAGE   if Log_Level_Reset = True then log level is all  ! reset datalogging
+end if
+Version_Inits_Needed = False
+subend
+
+!##############################################################################
+sub Get_Version_Label
+global Version_Label$, Version_Prompt$, True, False
+global Version_Inits_Needed, Sbtt$
+
+Old_Version$ = bvi$
+Version_Inits_Needed = True
+loop
+  SBT:
+  softkey 1, "r", "G2A26800MX1", "G2A26800MX1"
+  softkey 2, "r", "G2A26800MX2", "G2A26800MX2"
+  softkey 3, "r", "", ""
+  softkey 4, "r", "", ""
+  softkey 5, "r", "", ""
+  softkey 6, "r", "", ""
+  softkey 7, "r", "", ""
+  softkey 8, "r", "softkeys clear", "softkeys clear"
+  print ""
+  print "  PLEASE SELECT TYPE YOU WISH VERSION."
+  print ""
+  input "", Sbtt$
+  softkeys clear
+  if Sbtt$ <>"G2A26800MX1" and Sbtt$ <>"G2A26800MX2" then goto SBT
+  Version_Label$ = Sbtt$
+  if Version_Label$ = "" or Version_Label$ = "*" then
+! COVERAGE     board version is *, Err
+  else
+! COVERAGE     board version is Version_Label$, Err
+  end if
+  exit if not Err
+  print errmlong$
+end loop
+if bvi$ = Old_Version$ then
+  Version_Inits_Needed = False
+end if
+subend
+
+!##############################################################################
+def fn Replace_Character$(Char$)
+  Val = num(Char$)
+  if Val < 9 then
+    String$ = "%00" & val$(Val)
+  else
+    if Val < 99 then
+      String$ = "%0" & val$(Val)
+    else
+      String$ = "%" & val$(Val)
+    end if
+  end if
+  return(String$)
+fnend
+
+def fn Replace_All_Chars$(String$, Char$)
+To_Return$ = ""
+
+String_Loop:
+
+String_Loc = pos(String$, Char$)
+if String_Loc = 0 then
+  To_Return_New$ = To_Return$ & String$
+else
+  To_Return_New$ = To_Return$ & String$[1;String_Loc - 1] & fn Replace_Character$(Char$)
+  String$ = String$[String_Loc + 1]
+end if
+To_Return$ = To_Return_New$
+if String_Loc <> 0 then goto String_Loop
+return(To_Return$)
+fnend
+
+def fn Remove_Special_Characters$(String$)
+! used only with AwareTest.  Replaces all characters that cannot be
+! used in an NT filename with their ASCII equivalent.
+
+  To_Replace$ = fn Replace_All_Chars$(String$, "%")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, "|")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, "\")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, "/")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, "<")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, ">")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, "*")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, "?")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, ":")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, " ")
+  To_Replace$ = fn Replace_All_Chars$(To_Replace$, """")
+  return(To_Replace$)
+fnend
+
+!##############################################################################
+sub Initialize_Constants
+global PreshortsMsg$, ShortsMsg$, PowerMsg$, DigitalMsg$, AnalogMsg$
+global DigitalFuncMsg$, AnalogPoweredMsg$
+global Break_Detected, Mode$, Board_Not_Tested$
+global True, False, InvOn$, InvOff$, First_Run$, Board_Rev_Prompt$
+global Pass_Msg$, Fail_Msg$, Pass_File$, Fail_File$, Stop_Msg$, Break_Msg$
+global No_Init_Warning$, Rep_Test$, Place_Board_Prompt$, Learning_Off_Msg$
+global BT_Passed$, BT_SR_Fail$, BT_CRC_Fail$, BT_Notest$, BT_Indeter$
+global BT_Interm$, BT_Incons$, BT_Open$, BT_NResults$
+global Confirming$, Confirm_Failed$
+global Failed_In_Learn, Failed_Pin_Test, Failed_In_Preshorts, Failed_In_Shorts
+global Failed_In_Analog, Failed_In_Power_Supplies, Failed_In_Digital
+global Failed_In_Functional, Failed_In_BScan, Passed, Failed
+global Directory_Exists, Log_Path$, System$, Queue_Error_Msg$, Board$
+global Break_Code, Error_Code
+global But$, Serial_Prompt$, Bad_Serial_Image$, Oper_Id_Prompt$
+global Known_Good_Prompt$, Serial_Nr$
+global Retry_PinTest$, Cycle_Vacuum$, Recycle_Vacuum$
+global Pin_Msg$, Max_Times_To_Fix_Contact
+global BScanIntconMsg$, BScanIncktMsg$, Chek_Point_Msg$
+global TestJetMsg$, Failed_In_TestJet
+global PolarityMsg$, Failed_In_Polarity_Check
+global BScanPShortsMsg$, No_Version_Init_Warning$
+global Version_Label$, Version_Prompt$
+global ConnectCheckMsg$, Failed_In_ConnectCheck
+global Failed_In_Flash, FlashProgMsg$
+global Serial_Number_Directory$, Not_AXI_Tested$, Serial_Suffix$
+global AnalogClusterMsg$, Failed_In_Analog_Cluster
+global BScanSiNailsMsg$, Failed_In_BScan_SiNails
+global SW_ScanPathVerifyMsg$, Failed_In_SW_Testing
+global SW_DrVerifyMsg$, SW_IrVerifyMsg$
+global SW_InterconnectMsg$, SW_MemInterconnectMsg$
+global SW_ClusterMsg$, SW_MemBistMsg$
+global SW_ProgrammingMsg$, Failed_In_SW_Programming
+global SW_FlashMsg$, Failed_In_SW_Flash
+global Bad_Board_Name$
+global Failed_In_PHASE_R, IGDPRMsg$
+global Failed_In_PHASE_S, IGDPSMsg$
+global Failed_In_PHASE_T, IGDPTMsg$
+global Failed_In_SENSING, PSSMsg$
+global Failed_In_PTC, PTCTMMsg$
+global Failed_In_LINK_LED, DCLLMsg$
+global Failed_In_Driver_Voltage, IGDVMsg$
+global Failed_In_PULSE_WIDTH, DLLPWMsg$
+global Failed_In_LINE_VOLTAGE, LVSMsg$
+global Failed_In_Voltage_Gain, VVVGMsg$
+global Failed_In_Delay_Time, VVRDTMsg$
+global Failed_In_IGBTTM, IGBTTMMsg$
+global Failed_In_DC_LINK, DCLVMMsg$
+global Failed_In_POWER_FAIL, PFMMsg$
+global Failed_In_Current_Sensor, HECSMsg$
+global Failed_In_CHG_RELAY, CRCMsg$
+global Failed_In_EEPROM, EPTMsg$
+
+Break_Detected           = False
+InvOn$                   = chr$(27)&"&dB"&chr$(7)  ! chr$(7) rings bell
+InvOff$                  = chr$(27)&"&d@"
+Passed                   = 0
+Failed                   = 1
+Failed_Pin_Test          = 2
+Failed_In_Learn          = 3
+Failed_In_Shorts         = 4
+Failed_In_Analog         = 6
+Failed_In_Power_Supplies = 7
+Failed_In_Digital        = 8
+Failed_In_Functional     = 9
+Failed_In_PHASE_R        = 9
+Failed_In_PHASE_S        = 9
+Failed_In_PHASE_T        = 9
+Failed_In_SENSING        = 9
+Failed_In_PTC            = 9
+Failed_In_LINK_LED       = 9
+Failed_In_Driver_Voltage = 9
+Failed_In_PULSE_WIDTH    = 9
+Failed_In_LINE_VOLTAGE   = 9
+Failed_In_Voltage_Gain   = 9
+Failed_In_Delay_Time     = 9
+Failed_In_IGBTTM         = 9
+Failed_In_DC_LINK        = 9
+Failed_In_POWER_FAIL     = 9
+Failed_In_Current_Sensor = 9
+Failed_In_CHG_RELAY      = 9
+Failed_In_Preshorts      = 10
+! Status codes 11, 12 reserved for use by EFS
+Failed_In_BScan          = 8      ! Equate to Failed_In_Digital
+Failed_In_TestJet        = 14
+Failed_In_Polarity_Check = 15
+Failed_In_ConnectCheck   = 16
+Failed_In_Analog_Cluster = 17
+Failed_In_Flash          = 18
+Failed_In_EEPROM         = 18
+Failed_In_BScan_SiNails  = 19
+Failed_In_SW_Testing     = 8      ! Equate to Failed_In_Digital
+Failed_In_SW_Programming = 20
+Failed_In_SW_Flash       = 21
+Error_Code               = 80
+Break_Code               = 82
+Directory_Exists         = 100312
+!@Log_Path$                = btgetenv$("AGILENT3070_ROOT")&"/qm/logdata/testerq/"&Board$&"/"
+Log_Path$                = "C:/tars/" !TARS
+enter "uname -n |";System$              ! gets hostname (without domain)
+Max_Times_To_Fix_Contact = 4            ! MUST BE >= 1
+Pin_Msg$                 = "FIXTURE CONTACT PROBLEM"
+O$                       = InvOn$&"Press YES"&InvOff$
+O$                       = O$&" to retry Pins Test, "&InvOn$&"NO"&InvOff$
+Retry_PinTest$           = O$&" to test a new board."
+O$                       = InvOn$&"Press YES"&InvOff$&" to cycle vacuum, "
+Cycle_Vacuum$            = O$&InvOn$&"NO"&InvOff$&" Otherwise."
+O$                       = InvOn$&"Press YES"&InvOff$
+Recycle_Vacuum$          = O$&" to turn vacuum on and continue testing."
+Queue_Error_Msg$         = "Cannot create directory to queue up log data.  Error is:"
+But$                     = "Board Under Test: "
+Serial_Prompt$           = InvOn$&"Enter"&InvOff$&" Board Identifier: "
+O$                       = "/,""Identifier has wrong length ("",dd,""), must be "
+Bad_Serial_Image$        = O$&""",dd,""."",/"
+Oper_Id_Prompt$          = InvOn$&"Enter"&InvOff$&" Operator Identifier: "
+Known_Good_Prompt$       = InvOn$&"Enter"&InvOff$&" Verification Board Identifier: "
+Rep_Test$                = "Repeating test of this board!"
+First_Run$               = "Please stand by -- doing first-run initializations"
+No_Init_Warning$         = "** WARNING: FIRST RUN INITIALIZATIONS NOT COMPLETED --"
+No_Init_Warning$         = No_Init_Warning$ & " CLEARING NRUN **"
+O$                       = "** WARNING: VERSION CHANGE INITIALIZATIONS NOT"
+No_Version_Init_Warning$ = O$ & " COMPLETED -- CLEARING NRUN **"
+Pass_File$               = btgetenv$("AGILENT3070_ROOT")&"/util/pass"
+Fail_File$               = btgetenv$("AGILENT3070_ROOT")&"/util/fail"
+Board_Not_Tested$        = "Board not tested."
+Pass_Msg$                = "P A S S E D"
+Fail_Msg$                = "F A I L E D"
+Stop_Msg$                = "P R O G R A M   S T O P P E D"
+Break_Msg$               = "Break/Stop detected."
+Place_Board_Prompt$      = "Place board on fixture and "&InvOn$&"press START"
+Board_Rev_Prompt$        = InvOn$&"Enter"&InvOff$&" Board Revision: "
+Confirming$              = "Confirming diagnosis..."
+Confirm_Failed$          = "Confirm failed; restarting at node """
+Learning_Off_Msg$        = "Learning turned off"
+if learning then
+  Mode$                  = "Learning "
+else
+  Mode$                  = "Testing "
+end if
+PreshortsMsg$            = "Preshorts"
+ShortsMsg$               = "Shorts"
+PowerMsg$                = "Setting Up Power Supplies"
+DigitalMsg$              = "Digital Incircuit"
+AnalogMsg$               = "Analog Unpowered"
+AnalogClusterMsg$        = "Analog Cluster"
+TestJetMsg$              = "TestJet"
+PolarityMsg$             = "Polarity Check"
+ConnectCheckMsg$         = "Connect Check"
+DigitalFuncMsg$          = "Digital Functional"
+IGDPRMsg$                = "Power Supply: IGBT Gate Driver PHASE R(U)"
+IGDPSMsg$                = "Power Supply: IGBT Gate Driver PHASE S(V)"
+IGDPTMsg$                = "Power Supply: IGBT Gate Driver PHASE T(W)"
+PSSMsg$                  = "Power Supply: SENSING"
+PTCTMMsg$                = "Power Supply: PTC Temperature Measurement"
+DCLLMsg$                 = "DC-Link-LED"
+IGDVMsg$                 = "IGBT Gate Driver voltages"
+DLLPWMsg$                = "DRIVER_RESET_N logic low pulse width"
+LVSMsg$                  = "LINE VOLTAGE SENSING"
+VVVGMsg$                 = "VRS, VST voltage gain"
+VVRDTMsg$                = "VRS, VST response delay time"
+IGBTTMMsg$               = "IGBT TEMPERATURE MEASUREMENT"
+DCLVMMsg$                = "DC-LINK VOLTAGE MEASUREMENT"
+PFMMsg$                  = "POWER FAIL MONITORING thresholds"
+HECSMsg$                 = "Hall Effect Current Sensor"
+CRCMsg$                  = "CHG-RELAY contact"
+AnalogPoweredMsg$        = "Analog Powered and Mixed"
+BScanIntconMsg$          = "Boundary Scan Interconnect"
+BScanIncktMsg$           = "Boundary Scan Incircuit"
+BScanPShortsMsg$         = "Boundary Scan Powered Shorts"
+BScanSiNailsMsg$         = "Boundary Scan Silicon Nails"
+FlashProgMsg$            = "Programming Flash"
+EPTMsg$                  = "EEPROM Programming for the test result"
+SW_ScanPathVerifyMsg$    = "Scan Path Verify with ScanWorks"
+SW_DrVerifyMsg$          = "DR Verify with ScanWorks"
+SW_IrVerifyMsg$          = "IR Verify with ScanWorks"
+SW_InterconnectMsg$      = "Interconnect with ScanWorks"
+SW_MemInterconnectMsg$   = "Memory Interconnect with ScanWorks"
+SW_ClusterMsg$           = "Cluster with ScanWorks"
+SW_MemBistMsg$           = "Memory BIST with ScanWorks"
+SW_ProgrammingMsg$       = "Programming Devices with ScanWorks"
+SW_FlashMsg$             = "Programming Flash with ScanWorks"
+Serial_Nr$               = "Serial #: "
+BT_Passed$               = "passed"
+BT_SR_Fail$              = "failed vector "
+BT_CRC_Fail$             = "failed CRC is """
+BT_Notest$               = "was not tested"
+BT_Indeter$              = "was indeterminate"
+BT_Interm$               = "was intermittent"
+BT_Incons$               = "was inconsistent"
+BT_Open$                 = "has an open trace"
+BT_NResults$             = "noderesults= "
+Chek_Point_Msg$          = "Testing Pin Contact"
+Version_Label$           = ""
+Version_Prompt$          = InvOn$&"Enter"&InvOff$&" Version Label: "
+Serial_Number_Directory$ = "AXI_passed_boards/"
+Serial_Suffix$           = ".SNF"
+Not_AXI_Tested$          = "Board did not pass AXI; cannot test on Agilent 3070."
+SNF_Error_Msg$           = "Error accessing serial number file. Error is: "
+Bad_Board_Name$          = "Board name contains space, cannot proceed:"
+subend
+
+!##############################################################################
+sub Set_Custom_Options
+!  All variables likely to need to be changed are initialized here.
+!  The Usage flag(s) can be set True or False to selectively enable or
+!  disable the code needed for each indicated subsystem or feature.
+global Using_ART, QSTATS_Mode, Testrev$
+global Analog_Sample_Rate
+global Serializing, Serial_Length
+global Chek_Point_Mode
+global Report_Printer$, True, False, Using_Buffered_Reporting
+global Off, Pretest, Failures, No_Histo, Histo
+global Per_Run, Per_Board, Version_Prompting
+global Programming, AXI_Tested_Override
+
+!   Usage flag(s)
+
+QSTATS_Mode               = Off         ! Choose {Off, No_Histo, Histo}
+Chek_Point_Mode           = Pretest     ! Choose {Off, Pretest, Failures}
+Using_ART                 = True       ! Agilent Repair Tool.
+Serializing               = True       ! Will get set True if Using_ART.
+Using_Buffered_Reporting  = True        ! Report failures during board handling
+Programming               = False       ! Execute Flash and device programming.
+
+!   Other parameters
+
+Report_Printer$           = btgetenv$("RPR"&th$) ! Final report destination
+!Report_Printer$           = "/dev/tty"  ! Send reports to the screen
+Testrev$                  = "RevA"      ! Update this faithfully
+Analog_Sample_Rate        = .10         ! Meaningful if QSTATS_Mode = Histo
+Serial_Length             = 12          ! Board Id Length (0 = no checking)
+Version_Prompting         = Per_Board   ! Choose {Per_Board, Per_Run}
+                                        ! Used only on multiple version board
+AXI_Tested_Override       = False       ! Choose {True, False}
+                                        ! Used only on AwareTest board
+subend
+
+!##############################################################################
+sub Cleanup_Flash
+global Logging, Report_level$
+
+if Report_level$ = "all" then report level is all
+if Report_level$ = "none" then report level is none
+if Report_level$ = "log" then report level is log
+if Report_level$ = "report" then report level is report
+if Logging then
+  call Set_Log_Level
+end if
+subend
+
+!       Data Logging Subroutines
+
+!##############################################################################
+sub Set_Log_Level
+global Sampling
+
+if learning then
+! COVERAGE   log level is all
+else
+  if Sampling then
+! COVERAGE     log level is analog without nhls, pins
+  else
+! COVERAGE     log level is indictments without nhls
+  end if
+end if
+subend
+
+!                          END OF TESTMAIN
+!##############################################################################
+
+sub Initialize_Board_Constants
+global Board$,Board_Rev$
+global Using_Multiple_Versions, True, False
+global Using_AwareTest
+
+   Board$ = "G2A26800MXx"
+   Board_Rev$ = ""
+
+! 'vacuum well' statement goes here (if required)
+   vacuum well a is 2,3
+   Using_Multiple_Versions = True
+   Using_AwareTest = False
+subend
+
+sub Characterize
+global Status, Failed_In_Learn
+
+   Status = Failed_In_Learn
+   learn capacitance on
+   test "c1"
+!@ test "c47"
+!@ test "c119"
+!@ test "c167"
+!@ test "c189"
+!@ test "c291"
+!@ test "c23"
+!@ test "c41"
+!@ test "c42"  ! test commented in testorder
+!@ test "c105"
+!@ test "c112"
+!@ test "c113"  ! test commented in testorder
+!@ test "c117"
+!@ test "c125"
+!@ test "c130"
+!@ test "c131"
+!@ test "c132"
+!@ test "c140"
+!@ test "c151"
+!@ test "c165"
+!@ test "c181"
+!@ test "c182"  ! test commented in testorder
+   test "c259"
+!@ test "c265"
+!@ test "c267"
+!@ test "c270"
+!@ test "c275"
+!@ test "c284"
+!@ test "c287"
+!@ test "c298"
+!@ test "c303"
+!@ test "c31"  ! test commented in testorder
+!@ test "c34"  ! test commented in testorder
+!@ test "c46"  ! test commented in testorder
+!@ test "c95"
+!@ test "c102"  ! test commented in testorder
+   test "c103"
+!@ test "c104"  ! test commented in testorder
+!@ test "c118"  ! test commented in testorder
+!@ test "c126"
+!@ test "c172"  ! test commented in testorder
+!@ test "c173"  ! test commented in testorder
+!@ test "c186"  ! test commented in testorder
+!@ test "c264"
+!@ test "c312"  ! test commented in testorder
+!@ test "c60"  ! test commented in testorder
+!@ test "c67"  ! test commented in testorder
+!@ test "c139"  ! test commented in testorder
+!@ test "c146"  ! test commented in testorder
+!@ test "c199"  ! test commented in testorder
+!@ test "c208"  ! test commented in testorder
+!@ test "c68"  ! test commented in testorder
+!@ test "c69"  ! test commented in testorder
+!@ test "c147"  ! test commented in testorder
+!@ test "c148"  ! test commented in testorder
+!@ test "c213"  ! test commented in testorder
+!@ test "c214"  ! test commented in testorder
+!@ test "c215"  ! test commented in testorder
+!@ test "c235"  ! test commented in testorder
+!@ test "c306"
+!@ test "c262"  ! test commented in testorder
+!@ test "c305"
+   learn capacitance off
+subend
+
+sub Pre_Shorts (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "jp1"
+   test "jp2"
+   test "jp3"
+   test "jp4"
+   test "jp5"
+   test "jp6"
+   test "jp7"
+   test "jp8"
+   test "jp9"
+   test "jp10"
+   test "jp11"
+   test "jp12"
+   test "jp13"
+   test "jp14"
+   test "jp15"
+   test "jp16"
+   test "jp17"
+   test "jp18"
+   test "jp19"
+   test "jp20"
+   test "jp21"
+   test "p1_sw"
+   test "p2_sw"
+   test "p4_sw"
+   test "p6_sw"
+   test "q27%jp1"
+   test "q27%jp2"
+   test "q27%jp3"
+   test "q27%jp4"
+   test "q27%jp5"
+   test "q27%jp6"
+   test "q27%jp8"
+   test "q27%jp9"
+   test "q27%jp10"
+   test "q27%jp11"
+   test "q27%jp12"
+   test "q31%jp1"
+   test "q31%jp2"
+   test "q31%jp3"
+   test "q31%jp4"
+   test "q31%jp5"
+   test "q31%jp6"
+   test "q31%jp8"
+   test "q31%jp9"
+   test "q31%jp10"
+   test "q31%jp11"
+   test "q31%jp12"
+   test "q35%jp1"
+   test "q35%jp2"
+   test "q35%jp3"
+   test "q35%jp4"
+   test "q35%jp5"
+   test "q35%jp6"
+   test "q35%jp8"
+   test "q35%jp9"
+   test "q35%jp10"
+   test "q35%jp11"
+   test "q35%jp12"
+   test "r195"
+   test "r216"
+   test "r217"
+   test "r237"
+   test "r295"
+   test "r441"
+   test "r442"
+   test "r447"
+   test "r453"
+   test "r456"
+   test "r458"
+   test "tr1%jp1"
+   test "tr1%jp2"
+   test "tr1%jp3"
+   test "tr1%jp4"
+   test "tr2%jp1"
+   test "tr2%jp2"
+   test "tr2%jp3"
+   test "tr2%jp4"
+   test "tr3%jp1"
+   test "tr3%jp2"
+   test "tr3%jp3"
+   test "tr3%jp4"
+   test "tr4%jp1"
+   test "tr4%jp2"
+   test "tr4%jp3"
+   test "tr4%jp4"
+   test "q27%jp13"
+   test "q31%jp13"
+   test "q35%jp13"
+!@ test "gate_sw%gate_sw"
+subend
+
+sub Shorts (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+! COVERAGE    test "shorts"
+subend
+
+sub Analog_Tests (Status_Code, Message$)
+global Status
+global RX2,RX3,RX4,RX5,RX6
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "c1"
+   test "c47"
+   test "c119"
+   test "c167"
+   test "c189"
+   test "c291"
+   test "c3"
+   test "c7"
+   test "c15"
+   test "c17"
+   test "c24"
+   test "c26"
+   test "c27"
+   test "c38"
+   test "c48"
+   test "c50"
+   test "c218"
+   test "c234"
+   test "c54"  ! test commented in testorder
+   test "c55"
+   test "c61"
+   test "c62"  ! test commented in testorder
+   test "c63"
+   test "c70"
+   test "c78"
+   test "c72"
+   test "c85"
+   test "c92"
+   test "c109"
+   test "c120"
+   test "c128"
+   test "c133"  ! test commented in testorder
+   test "c134"
+   test "c141"  ! test commented in testorder
+   test "c142"
+   test "c159"
+   test "c153"
+   test "c178"
+   test "c190"
+   test "c192"
+   test "c193"  ! test commented in testorder
+   test "c194"
+   test "c203"  ! test commented in testorder
+   test "c204"
+   test "c210"
+   test "c225"
+   test "c219"
+   test "c249"
+   test "c21"
+   test "c258"
+   test "c273"
+   test "c274"
+   test "c276"
+   test "c277"
+   test "c98"
+   test "c290"
+   test "c292"
+   test "c293"
+   test "c294"
+   test "c295"
+   test "c202"
+   test "c304"
+   test "c314"
+   test "c315"
+   test "c320"
+   test "c14"
+   test "c29"
+   test "c43"  ! test commented in testorder
+   test "c114"  ! test commented in testorder
+   test "c183"  ! test commented in testorder
+   test "c211"
+   test "c231"
+   test "c251"
+   test "c253"
+   test "c10"
+   test "c16"
+   test "c23"
+   test "c41"
+   test "c42"  ! test commented in testorder
+   test "c105"
+   test "c112"
+   test "c113"  ! test commented in testorder
+   test "c117"
+   test "c125"
+   test "c130"
+   test "c131"
+   test "c132"
+   test "c140"
+   test "c151"
+   test "c165"
+   test "c181"
+   test "c182"  ! test commented in testorder
+   test "c259"
+   test "c265"
+   test "c267"
+   test "c270"
+   test "c275"
+   test "c284"
+   test "c287"
+   test "c298"
+   test "c303"
+   test "c31"  ! test commented in testorder
+   test "c34"  ! test commented in testorder
+   test "c46"  ! test commented in testorder
+   test "c95"
+   test "c102"  ! test commented in testorder
+   test "c103"
+   test "c104"  ! test commented in testorder
+   test "c118"  ! test commented in testorder
+   test "c126"
+   test "c172"  ! test commented in testorder
+   test "c173"  ! test commented in testorder
+   test "c186"  ! test commented in testorder
+   test "c264"
+   test "c312"  ! test commented in testorder
+   test "c32"
+   test "c33"
+   test "c40"
+   test "c66"
+   test "c71"
+   test "c111"
+   test "c145"
+   test "c152"
+   test "c180"
+   test "c207"
+   test "c209"
+   test "c216"
+   test "c238"
+   test "c244"
+   test "c309"
+   test "c49"
+   test "c127"
+   test "c191"
+   test "c60"  ! test commented in testorder
+   test "c67"  ! test commented in testorder
+   test "c139"  ! test commented in testorder
+   test "c146"  ! test commented in testorder
+   test "c199"  ! test commented in testorder
+   test "c208"  ! test commented in testorder
+   test "c68"  ! test commented in testorder
+   test "c69"  ! test commented in testorder
+   test "c147"  ! test commented in testorder
+   test "c148"  ! test commented in testorder
+   test "c213"  ! test commented in testorder
+   test "c214"  ! test commented in testorder
+   test "c215"  ! test commented in testorder
+   test "c235"  ! test commented in testorder
+   test "c306"
+   test "c97"
+   test "c169"
+   test "c236"
+   test "c187"
+   test "c250"
+   test "c212"
+   test "c257"
+   test "c260"
+   test "c266"
+   test "c261"
+   test "c280"
+   test "c283"
+   test "c262"  ! test commented in testorder
+   test "c263"
+   test "c317"
+   test "c318"
+   test "c319"
+   test "c305"
+   test "d1%pins1_2"
+   test "d4%pins1_2"
+   test "d8%pins1_2"
+   test "d16%cr2"
+   test "d17%cr2"
+   test "d25%pins1_2"
+   test "d27%pins1_2"
+   test "d28%cr2"
+   test "d29%cr2"
+   test "d43%cr2"
+   test "d44%cr2"
+   test "d1%pins1_3"
+   test "d1%pins3_2"
+   test "d2%pins1_3"
+   test "d2%pins3_2"
+   test "d3%pins1_3"
+   test "d3%pins3_2"
+   test "d4%pins1_3"
+   test "d4%pins3_2"
+   test "d7%diode"
+   test "d8%pins1_3"
+   test "d8%pins3_2"
+   test "d13%diode"
+   test "d14%diode"
+   test "d19%diode"
+   test "d23%diode"
+   test "d24%diode"
+   test "d30%diode"
+   test "d31%diode"
+   test "d33%diode"
+   test "d37%diode"
+   test "d38%diode"
+   test "d5%cr1"
+   test "d9%cr1"
+   test "d9%cr3"
+   test "d45%cr1"
+   test "d46%cr1"
+   test "d47%cr1"
+   test "q27%cr1"
+   test "q27%cr2"
+   test "q31%cr1"
+   test "q31%cr2"
+   test "q35%cr1"
+   test "q35%cr2"
+   test "d6"
+   test "d10"
+   test "d11"
+   test "d12"
+   test "d15"
+   test "d18"
+   test "d20"
+   test "d21"
+   test "d22"
+   test "d26"
+   test "d32"
+   test "d34"
+   test "d35"
+   test "d36"
+   test "d39"
+   test "d40"
+   test "d41"
+   test "d42"
+   test "d48"
+!   test "d49"  ! test commented in testorder
+   test "d52"
+!   test "d53"  ! test commented in testorder
+   test "d56"
+!   test "d57"  ! test commented in testorder
+   test "d60"
+!   test "d61"  ! test commented in testorder
+   test "d64"
+!   test "d65"  ! test commented in testorder
+   test "d68"
+   test "d69"
+!   test "d70"  ! test commented in testorder
+   test "d73"
+   test "d74"
+   test "d75"
+   test "d76"
+   test "d77"
+   test "d78"
+   test "led1"
+!   test "q26%diode"  ! test commented in testorder
+   test "q28%b_c"
+   test "q28%b_e"
+   test "q29%b_c"
+   test "q29%b_e"
+!   test "q30%diode"  ! test commented in testorder
+   test "q32%b_c"
+   test "q32%b_e"
+   test "q33%b_c"
+   test "q33%b_e"
+!   test "q34%diode"  ! test commented in testorder
+   test "q36%b_c"
+   test "q36%b_e"
+   test "q37%b_c"
+   test "q37%b_e"
+   test "z12"
+   test "z18"
+   test "z70"
+   test "z73"
+   test "u14%d1_2"
+   test "u14%d3_4"
+   test "u14%d5_6"
+   test "u16%d1_2"
+   test "u16%d3_4"
+   test "u16%d5_6"
+   test "u24%d1_2"
+   test "u24%d3_4"
+   test "u24%d5_6"
+   test "u33%d1_2"
+   test "u33%d3_4"
+   test "u33%d5_6"
+   test "u20%d1"
+   test "u21%d1"
+   test "u37%d1"
+   test "u38%d1"
+   test "u41%d1"
+   test "u46%d1"
+   test "u50%d1"
+   test "u51%d1"
+   test "u53%d1"
+   test "q26%qf"
+   test "q30%qf"
+   test "q34%qf"
+   test "l1"
+   test "l2"
+   test "l3"
+   test "l4"
+   test "q27%r1"
+   test "q31%r1"
+   test "q35%r1"
+   test "r1"
+   test "r2"
+   test "r3"
+   test "r5"
+   test "r19"
+   test "r4"
+   test "r72"
+   test "r73"
+   test "r79"
+   test "r132"
+   test "r133"
+   test "r177"
+   test "r178"
+   test "r180"
+   test "r182"
+   test "r225"
+   test "r229"
+   test "r243"
+   test "r250"
+   test "r265"
+   test "r274"
+   test "r301"
+   test "r314"
+   test "r328"
+   test "r330"
+   test "r337"
+   test "r346"
+   test "r355"
+   test "r402"
+   test "r418"
+   test "r423"
+   test "rx2";RX2
+   test "rx3";RX3
+   test "rx4";RX4
+   test "rx5";RX5
+   test "rx6";RX6
+   test "r6"
+   test "r21"
+   test "r22"
+   test "r24"
+   test "r31"
+   test "r34"
+   test "r35"
+   test "r38"
+   test "r39"
+   test "r90"
+   test "r91"
+   test "r94"
+   test "r95"
+   test "r104"
+   test "r105"
+   test "r145"
+   test "r146"
+   test "r148"
+   test "r149"
+   test "r152"
+   test "r153"
+   test "r187"
+   test "r197"
+   test "r7"
+   test "r8"
+   test "r56"
+   test "r68"
+   test "r114"
+   test "r128"
+   test "r160"
+   test "r169"
+   test "r218"
+   test "r304"
+   test "r394"
+   test "r9"
+   test "r12"
+   test "r13"
+   test "r16"
+   test "r20"
+   test "r23"
+   test "r25"
+   test "r27"
+   test "r30"
+   test "r33"
+   test "r37"
+   test "r81"
+   test "r84"
+   test "r89"
+   test "r92"
+   test "r93"
+   test "r103"
+   test "r109"
+   test "r137"
+   test "r140"
+   test "r144"
+   test "r147"
+   test "r151"
+   test "r172"
+   test "r189"
+   test "r196"
+   test "r205"
+   test "r210"
+   test "r211"
+   test "r215"
+   test "r222"
+   test "r224"
+   test "r234"
+   test "r32"
+   test "r241"
+   test "r293"
+   test "r296"
+   test "r298"
+   test "r299"
+   test "r310"
+   test "r311"
+   test "r317"
+   test "r320"
+   test "r322"
+   test "r323"
+   test "r324"
+   test "r327"
+   test "r333"
+   test "r334"
+   test "r336"
+   test "r339"
+   test "r348"
+   test "r371"
+   test "r372"
+   test "r378"
+   test "r380"
+   test "r383"
+   test "r384"
+   test "r385"
+   test "r386"
+   test "r393"
+   test "r419"
+   test "r420"
+   test "r424"
+   test "r429"
+   test "r10%res1_8"
+   test "r10%res2_7"
+   test "r10%res3_6"
+   test "r10%res4_5"
+   test "r11%res1_8"
+   test "r11%res2_7"
+   test "r11%res3_6"
+   test "r11%res4_5"
+   test "r14"
+   test "r207"
+   test "r15"
+   test "r206"
+   test "r246"
+   test "r258"
+   test "r342"
+   test "r363"
+   test "r406"
+   test "r416"
+   test "r17"
+   test "r18"
+   test "r59"
+   test "r74"
+   test "r98"
+   test "r119"
+   test "r208"
+   test "r227"
+   test "r228"
+   test "r319"
+   test "r329"
+   test "r400"
+   test "r401"
+   test "rx9"
+   test "rx10"
+   test "rx11"
+   test "rx12"
+   test "r26"
+   test "r221"
+   test "r318"
+   test "r397"
+   test "r28"
+   test "r29"
+   test "r154"
+   test "r450"
+   test "r459"
+   test "r36"
+   test "r102"
+   test "r150"
+   test "r448"
+   test "r449"
+   test "r454"
+   test "r455"
+   test "r40"
+   test "r106"
+   test "r155"
+   test "r41"
+   test "r107"
+   test "r156"
+   test "r42"
+   test "r53"
+   test "r201"
+   test "r204"
+   test "r43"
+   test "r44"
+   test "r50"
+   test "r54"
+   test "r199"
+   test "r200"
+   test "r202"
+   test "r203"
+   test "r45"
+   test "r46"
+   test "r48"
+   test "r80"
+   test "r83"
+   test "r110"
+   test "r236"
+   test "r281"
+   test "r316"
+   test "r325"
+   test "r326"
+   test "r338"
+   test "r357"
+   test "r382"
+   test "r387"
+   test "r47"
+   test "r49"
+   test "r51"
+   test "r111"
+   test "r143"
+   test "r157"
+   test "r251"
+   test "r259"
+   test "r297"
+   test "r321"
+   test "r352"
+   test "r364"
+   test "r407"
+   test "r417"
+   test "r52"
+   test "r112"
+   test "r158"
+   test "r55"
+   test "r113"
+   test "r159"
+   test "r57"  ! test commented in testorder
+   test "r115"  ! test commented in testorder
+   test "r161"  ! test commented in testorder
+   test "r60"
+   test "r75"
+   test "r99"
+   test "r120"
+   test "r410"
+   test "r411"
+   test "r61"
+   test "r76"
+   test "r100"
+   test "r121"
+   test "r194"
+   test "r248"
+   test "r267"
+   test "r308"
+   test "r350"
+   test "r452"
+   test "r62"
+   test "r71"
+   test "r88"
+   test "r122"
+   test "r131"
+   test "r163"
+   test "r175"
+   test "r176"
+   test "r63"
+   test "r64"
+   test "r65"
+   test "r123"
+   test "r124"
+   test "r125"
+   test "r164"
+   test "r165"
+   test "r166"
+   test "r269"
+   test "r270"
+   test "r271"
+   test "r373"
+   test "r374"
+   test "r375"
+   test "r431"
+   test "r432"
+   test "r433"
+   test "r66"
+   test "r70"
+   test "r78"
+   test "r126"
+   test "r130"
+   test "r135"
+   test "r167"
+   test "r171"
+   test "r181"
+   test "r272"
+   test "r376"
+   test "r434"
+   test "r69"
+   test "r77"
+   test "r129"
+   test "r134"
+   test "r170"
+   test "r179"
+   test "r82"
+   test "r101"
+   test "r136"
+   test "r138"
+   test "r223"
+   test "r233"
+   test "r279"
+   test "r312"
+   test "r335"
+   test "r345"
+   test "r85"
+   test "r86"
+   test "r141"
+   test "r142"
+   test "r185"
+   test "r186"
+   test "r87"
+   test "r284"
+   test "r436"
+   test "r96"
+   test "r117"
+   test "r108"
+   test "r226"
+   test "r235"
+   test "r239"
+   test "r240"
+   test "r244"
+   test "r275"
+   test "r276"
+   test "r280"
+   test "r282"
+   test "r283"
+   test "r294"
+   test "r300"
+   test "r302"
+   test "r313"
+   test "r315"
+   test "r340"
+   test "r343"
+   test "r344"
+   test "r347"
+   test "r356"
+   test "r139"
+   test "r173"
+   test "r174"
+   test "r183"
+   test "r184"
+   test "r191"
+   test "r192"
+   test "r193"
+   test "r370"
+   test "r209"
+   test "r212"
+   test "r214"
+   test "r213"
+   test "r230"
+   test "r331"
+   test "r403"
+   test "r231"
+   test "r232"
+   test "r242"
+   test "r245"
+   test "r257"
+   test "r341"
+   test "r362"
+   test "r405"
+   test "r415"
+   test "r247"
+   test "r266"
+   test "r307"
+   test "r349"
+   test "r254"  ! test commented in testorder
+   test "r255"  ! test commented in testorder
+   test "r256"  ! test commented in testorder
+   test "r260"  ! test commented in testorder
+   test "r261"  ! test commented in testorder
+   test "r262"  ! test commented in testorder
+   test "r359"  ! test commented in testorder
+   test "r360"  ! test commented in testorder
+   test "r361"  ! test commented in testorder
+   test "r365"  ! test commented in testorder
+   test "r366"  ! test commented in testorder
+   test "r367"  ! test commented in testorder
+   test "r412"  ! test commented in testorder
+   test "r413"  ! test commented in testorder
+   test "r414"  ! test commented in testorder
+   test "r421"  ! test commented in testorder
+   test "r422"  ! test commented in testorder
+   test "r426"  ! test commented in testorder
+   test "r277"
+   test "r278"
+   test "r392"
+   test "r285"
+   test "r286"
+   test "r287"
+   test "r379"
+   test "r381"
+   test "r288"
+   test "r289"
+   test "r290"
+   test "r291"
+   test "r388"
+   test "r389"
+   test "r390"
+   test "r391"
+   test "r443"
+   test "r444"
+   test "r445"
+   test "r446"
+   test "r303"
+   test "r358"
+   test "r398"
+   test "r399"
+   test "r425"
+   test "r437"  ! test commented in testorder
+   test "r457"
+   test "rx1"
+   test "rx3";RX3
+   test "rx4";RX4
+   test "rx5";RX5
+   test "rx6";RX6
+   test "q1"
+   test "q2"
+   test "q3"
+   test "q4"
+   test "q6"
+   test "q8"
+   test "q9"
+   test "q10"
+   test "q11"
+   test "q12"
+   test "q14"
+   test "q16"
+   test "q17"
+   test "q18"
+   test "q20"
+   test "q22"
+   test "q23"  ! test commented in testorder
+   test "q24"
+   test "q25"
+   test "q27%q1"
+   test "q27%q2"
+   test "q31%q1"
+   test "q31%q2"
+   test "q35%q1"
+   test "q35%q2"
+   test "q5"
+   test "q7"
+   test "q13"
+   test "q15"
+   test "q19"
+   test "q21"
+   test "z1"
+   test "z6"
+   test "z11"
+   test "z21"
+   test "z22"
+   test "z23"
+   test "z24"
+   test "z25"
+   test "z26"
+   test "z27"
+   test "z28"
+   test "z29"
+   test "z30"
+   test "z31"
+   test "z32"
+   test "z33"
+   test "z34"
+   test "z35"
+   test "z36"
+   test "z38"
+   test "z39"
+   test "z40"
+   test "z41"
+   test "z42"
+   test "z43"
+   test "z44"
+   test "z45"
+   test "z46"
+   test "z47"
+   test "z48"
+   test "z49"
+   test "z50"
+   test "z51"
+   test "z52"
+   test "z53"
+   test "z55"
+   test "z56"
+   test "z57"
+   test "z58"
+   test "z59"
+   test "z60"
+   test "z61"
+   test "z62"
+   test "z63"
+   test "z64"
+   test "z65"
+   test "z66"
+   test "z67"
+   test "z68"
+   test "z69"
+   test "z71"
+   test "z74"
+   test "z4%zener"
+   test "z5%zener"
+   test "z9%zener"
+   test "z10%zener"
+   test "z15%zener"
+   test "z16%zener"
+   test "z17%zener"
+   test "z77"
+   test "r190%res1_8"
+   test "r190%res2_7"
+   test "r190%res3_6"
+   test "r190%res4_5"
+   powered
+   test "q26%nfet"
+   test "q28%npn"
+   test "q29%npn"
+   test "q30%nfet"
+   test "q32%npn"
+   test "q33%npn"
+   test "q34%nfet"
+   test "q36%npn"
+   test "q37%npn"
+   test "u20"  ! ps2561l Pass
+   test "u21"  ! ps2561l Pass
+   test "u37"  ! ps2651l Pass
+   test "u38"  ! ps2651l Pass
+   test "u46"  ! ps2651l Pass
+   test "u50"  ! ps2651l Pass
+   test "u51"  ! ps2651l Pass
+   test "u53"  ! ps2651l wait debug
+   test "u41"  ! ps2651l wait debug
+   cps | sps 5, 1.0, 2.5  ! supply 1.0V to current sensor
+   test "cs1"          ! LA200_P Pass
+   test "cs2"          ! LA200_P Pass
+   test "cs3"          ! LA200_P not load
+   sps 5, 0.0, 0.0     ! remove the power supply
+   unpowered
+subend
+
+sub TestJet (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "testjet"
+subend
+
+sub Polarity_Check (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub Connect_Check (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub Analog_Cluster_Tests (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub Setup_Power_Supplies (Status_Code, Message$)
+global Status, Sbtt$
+global Pslimit
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   cps
+   sps 1,15.00,0.80;optimize  !@ supply 15v to V+15V     to AGND
+   sps 2,15.00,0.80;optimize  !@ supply -15v to V+15V    to AGND
+   sps 3,24.00,0.80;optimize  !@ supply 24v to 24V_HL2   to HL2
+   sps 4,24.00,0.80;optimize  !@ supply 24v to 24V_SE    to 24V_SE_RTN
+   sps 6,5.00,0.500;optimize  !@ supply 5v  to VCC       to GND
+   sps 7,24.00,0.80;optimize  !@ supply 24v to 24V_SW    to 24V_SW_RTN
+   sps 8,24.00,0.80;optimize  !@ supply 24v to 24V_SENSE to 24V_SENSE_RTN
+!@ sps 5,1.00,2.20;optimize   !@ current sensor supply
+   Pslimit = pslimit
+   pass device
+   if Pslimit then
+      dps
+      fail device
+      I = 1
+      for Pscount = 1 to 8
+         if binand (Pslimit,I) then
+            report "Power Supply Number "
+            report Pscount
+            report "In Current Limit"
+         end if
+         I = 2*I
+      next Pscount
+      report "________________________________________"
+      report "Check for backwards"
+      report "IC's or Capacitors."
+      report "________________________________________"
+   end if
+   test "power_check"
+subend
+
+sub Cycle_Power_On_Board
+   sps 3,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 7,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 8,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 6,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 1,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 2,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 4,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 5,-0.00,0.00;optimize ! Setting supply output to zero
+   sps 1,15.00,0.80;optimize  !@ supply 15v to V+15V     to AGND
+   sps 2,15.00,0.80;optimize  !@ supply -15v to V+15V    to AGND
+   sps 3,24.00,0.80;optimize  !@ supply 24v to 24V_HL2   to HL2
+   sps 4,24.00,0.80;optimize  !@ supply 24v to 24V_SE    to 24V_SE_RTN
+   sps 6,5.00,0.500;optimize  !@ supply 24v to VCC       to GND
+   sps 7,24.00,0.80;optimize  !@ supply 24v to 24V_SW    to 24V_SW_RTN
+   sps 8,24.00,0.80;optimize  !@ supply 24v to 24V_SENSE to 24V_SENSE_RTN
+   sps 5,1.00,2.20;optimize   !@ current sensor supply
+subend
+
+sub Disconnect_Power_On_Board
+   dps
+subend
+
+sub BScan_Powered_Shorts_Tests (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub BScan_Interconnect_Tests (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub BScan_Incircuit_Tests (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub BScan_Silicon_Nails_Tests (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub Digital_Tests (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   safeguard none
+   sps 7,0.00,0.00;optimize
+   sps 4,0.00,0.00;optimize
+   test "u10"   ! hcpl316j Pass
+   test "u15"   ! hcpl316j Pass
+   test "u27"   ! hcpl316j Pass
+   test "u32"   ! hcpl316j Pass
+   wait20m
+looptest10 "u43"   ! hcpl316j Pass
+   test "u45"   ! hcpl316j Pass
+   sps 7,24.00,0.80;optimize
+   sps 4,24.00,0.80;optimize
+   test "u2"    ! adum1251 Pass
+   test "u3"    ! ad7417   testjet only
+   test "u6"    ! 74hc14   Pass
+   test "u7"    ! 74hc14   Pass
+   test "u11"   ! 74hc04   Pass
+   test "u28"   ! 74hc04   Pass
+   test "u44"   ! 74hc04   Pass
+   test "u56"   ! 74hc04   Pass
+   test "u8%erase"    ! 24c64 Pass
+   test "u54%erase"   ! 24c64 Pass
+subend
+
+sub Functional_Tests (Status_Code, Message$)
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+subend
+
+sub Analog_Functional_Tests (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "led_sensor"    ! Pass
+   test "rel1" ! FINDER_1M Pass
+   test "rel2" ! FINDER_1M Pass
+   test "u19"  ! tl431a   Pass
+   test "u22"  ! tl431a   Pass
+   test "u36"  ! tl431a   Pass
+   test "u39"  ! tl431a   Pass
+   test "u47"  ! tl431a   Pass
+   test "u49"  ! tl431a   Pass
+   test "u52"  ! tl431a   Pass
+   test "u12"  ! tl084b   Pass
+   test "u13"  ! tl084b   Pass
+   test "u17"  ! tl084b   Pass
+   test "u18"  ! tl084b   Pass
+   test "u25"  ! tl084b   Pass
+   test "u29"  ! tl084b   Pass
+   test "u31"  ! tl084b   Pass
+   test "u34"  ! tl084b   Pass
+   test "u35"  ! lm339a   Pass
+   test "u55"  ! tl084b   Pass
+   test "u9"   ! uc3845b  Pass
+   test "u26"  ! uc3845b  Pass
+   test "u42"  ! uc3845b  Pass
+   test "u48"  ! uc3845b  Pass
+   test "u5"   ! ref02    Pass
+   test "u23"  ! ref02    Pass
+   test "u30"  ! ref02    Pass
+   test "u40"  ! 555cmos  Pass
+   test "u57"  ! 555cmos  Pass
+   test "u1"   ! LM3103MH Pass
+   test "u4"   ! LMC7101  Pass
+!  test "u35"  ! lm339a   Pass
+subend
+
+sub IGBT_Gate_Driver_PHASE_R_Tests (Status_Code, Message$)
+global Status
+global Sbtt$
+dim Volt1(512)
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   rps 7, V, I                                 ! Read the sps 7 current
+   test "24v_sw"                               ! Pass
+   test "24v_sw_current";I                     ! Pass
+   rps 4, V, I                                 ! Read the sps 4 current
+   test "24v_se"                               ! Pass
+   test "24v_se_current";I                     ! Pass
+   test "pwm_vcc_ru"                           ! Pass
+   I = 0
+   I_SENSE_RU_Fail:
+   I = I + 1
+   A = 0
+   test "i_sense_ru";Volt1(*)                  ! Pass
+   I_SENSE_RU_Fail1:
+   A = A + 1
+   if Volt1(A) < 0.3 or Volt1(A) > 0.8 then
+      !print tab(1); A
+      if I > 10 then goto I_SENSE_RU_Pass
+      if A > 510 then goto I_SENSE_RU_Fail
+      goto I_SENSE_RU_Fail1
+   else
+      I_SENSE_RU_Pass:
+      test "i_sense_ru_1";Volt1(A)             ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 200m                                   ! need wait time
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   test "frequency_1";Freq                     ! Pass
+   I = 0
+   Duty_cycle_gate_sense_ru_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_gate_sense_ru_Fail1:
+   A = A +0.05
+   test "duty_cycle_gate_sense_ru";A,Pulse1    ! Pass ! Relay 4 unuse
+   !@print ;"A";A;"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Gate_Sense_Ru"; Freq*Pulse1 ! debug only
+   if Freq*Pulse1 < 0.05 or Freq*Pulse1 > 0.3 then
+     if A > 4.95 then goto Duty_cycle_gate_sense_ru_Pass1
+     goto Duty_cycle_gate_sense_ru_Fail1
+   end if
+   Duty_cycle_gate_sense_ru_Pass1:
+   if Freq*Pulse1 < 0.05 or Freq*Pulse1 > 0.3 then
+      if I > 2 then goto Duty_cycle_gate_sense_ru_Pass
+      goto Duty_cycle_gate_sense_ru_Fail
+   else
+      Duty_cycle_gate_sense_ru_Pass:
+    !@print tab(5);"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Gate_Sense_Ru"; Freq*Pulse1
+      test "duty_cycle_gate_sense_ru_1";Freq,Pulse1
+   end if
+  !*******************************Remove*****************************************************
+  ! I = 0
+  ! Duty_cycle_drain_ru_Fail:
+  ! I = I + 1
+  ! A = 1.00
+  ! Duty_cycle_drain_ru_Fail1:
+  ! A = A +0.01
+  ! test "duty_cycle_drain_ru";A,Pulse2         ! Pass ! Relay 4 use
+  ! !@print ;"A";A;"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_Drain_Ru"; Freq*Pulse2 ! debug only
+  ! if Freq*Pulse2 < 0.05 or Freq*Pulse2 > 0.3 then
+  !   if A > 4.95 then goto Duty_cycle_drain_ru_Pass1
+  !   goto Duty_cycle_drain_ru_Fail1
+  ! !end if
+  ! Duty_cycle_drain_ru_Pass1:
+  ! if Freq*Pulse2 < 0.05 or Freq*Pulse2 > 0.3 then
+  !    if I > 2 then goto Duty_cycle_drain_ru_Pass
+  !    goto Duty_cycle_drain_ru_Fail
+  ! else
+  !    Duty_cycle_drain_ru_Pass:
+  !  !@print tab(5);"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_Drain_Ru"; Freq*Pulse2
+  !    test "duty_cycle_drain_ru_1";Freq,Pulse2
+  ! end if
+  !*********************************Kicky chen 20130122***************************************
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 200m                                   ! need wait time
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      !
+   I = 0
+   Frequency_gate_sense_ru_Fail:
+   I = I + 1
+   test "frequency_gate_sense_ru";F            ! Pass ! Relay 4 unuse
+   !@print ;"Frequency_gate_sense_ru"; F         ! debug only
+   if F < 140k or F > 180k then
+      if I > 5 then goto Frequency_gate_sense_ru_Pass
+      goto Frequency_gate_sense_ru_Fail
+   else
+      Frequency_gate_sense_ru_Pass:
+    !@print tab(5);"Frequency_gate_sense_ru"; F
+      test "frequency_gate_sense_ru_1";F       ! Pass
+   end if
+   test "frequency_drain_ru"                   ! Pass ! Relay 4 use
+   test "+27v_ru_p"                            ! Pass
+   test "+27v_ru_n"                            ! Pass
+   test "ref_3v9_ru_p"                         ! Pass
+   I = 0
+   REF_2V5_RU_P:
+   I = I + 1
+   A = 0
+   test "ref_2v5_ru_p";Volt1(*)                ! Pass
+   REF_2V5_RU_P_1:
+   A = A + 1
+   if Volt1(A) < 2.45 or Volt1(A) > 2.6 then
+      !@print tab(1);A
+      if I > 3 then goto REF_2V5_RU_P_Pass
+      if A > 510 then goto REF_2V5_RU_P
+      goto REF_2V5_RU_P_1
+   else
+      REF_2V5_RU_P_Pass:
+      test "ref_2v5_ru_p_1";Volt1(A)           ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   if Sbtt$ = "G2A26800MX1" then
+      V1 = 2.0
+      Pfail_igbt_inv_27v_ru_p:
+      V1 = V1 + 0.1
+      test "pf_igbt_inv_+27v_ru_p";V1,V2       ! Pass
+      if V2 > 0.5 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_inv_27v_ru_p_Pass
+         goto Pfail_igbt_inv_27v_ru_p
+      else
+         Pfail_igbt_inv_27v_ru_p_Pass:
+         test "+27v_ru_p_limit";V1             ! Pass
+      end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      V1 = 2.0
+      Pfail_igbt_conv_27v_ru_p:
+      V1 = V1+0.1
+      test "pf_igbt_conv_+27v_ru_p";V1,V2      ! Pass
+      if V2 > 0.5 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_conv_27v_ru_p_Pass
+         goto Pfail_igbt_conv_27v_ru_p
+      else
+         Pfail_igbt_conv_27v_ru_p_Pass:
+         test "+27v_ru_p_limit";V1             ! Pass
+      end if
+   end if
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   test "ref_3v9_ru_n"                         ! Pass
+   I = 0
+   REF_2V5_RU_N:
+   I = I + 1
+   A = 0
+   test "ref_2v5_ru_n";Volt1(*)                ! Pass
+   REF_2V5_RU_N_1:
+   A = A + 1
+   if Volt1(A) < 2.40 or Volt1(A) > 2.6 then
+      !@print tab(1);A
+      if I > 3 then goto REF_2V5_RU_N_Pass
+      if A > 510 then goto REF_2V5_RU_N
+      goto REF_2V5_RU_N_1
+   else
+      REF_2V5_RU_N_Pass:
+      test "ref_2v5_ru_n_1";Volt1(A)           ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   if Sbtt$ = "G2A26800MX1" then
+      V1 = 2.0
+      Pfail_igbt_inv_27v_ru_n:
+      V1 = V1 + 0.1
+      test "pf_igbt_inv_+27v_ru_n";V1,V2       ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_inv_27v_ru_n_Pass
+         goto Pfail_igbt_inv_27v_ru_n
+      else
+         Pfail_igbt_inv_27v_ru_n_Pass:
+         test "+27v_ru_n_limit";V1             ! Pass
+      end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      V1 = 2.0
+      Pfail_igbt_conv_27v_ru_n:
+      V1 = V1 + 0.1
+      test "pf_igbt_conv_+27v_ru_n";V1,V2      ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_conv_27v_ru_n_Pass
+         goto Pfail_igbt_conv_27v_ru_n
+      else
+         Pfail_igbt_conv_27v_ru_n_Pass:
+         test "+27v_ru_n_limit";V1             ! Pass
+      end if
+   end if
+subend
+
+sub IGBT_Gate_Driver_PHASE_S_Tests (Status_Code, Message$)
+global Status
+global Sbtt$
+dim Volt2(511)
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply in steady state
+   test "pwm_vcc_sv"                           ! Pass
+   I = 0
+   I_SENSE_SV_Fail:
+   I = I + 1
+   A = 0
+   test "i_sense_sv";Volt2(*)                  ! Pass
+   I_SENSE_SV_Fail1:
+   A = A + 1
+   if Volt2(A) < 0.3 or Volt2(A) > 0.8 then
+      !print tab(1); A
+      if I > 5 then goto I_SENSE_SV_Pass
+      if A > 510 then goto I_SENSE_SV_Fail
+      goto I_SENSE_SV_Fail1
+   else
+      I_SENSE_SV_Pass:
+      test "i_sense_sv_1";Volt2(A)             ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 200m                                   ! need wait time
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      !
+   test "frequency_2";Freq
+   I = 0
+   Duty_cycle_gate_sense_sv_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_gate_sense_sv_Fail1:
+   A = A +0.05
+   test "duty_cycle_gate_sense_sv";A,Pulse1    ! Pass ! Relay 5 unuse
+   !@print ;"A";A;"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Gate_Sense_Sv"; Freq*Pulse1   ! debug only
+   if Freq*Pulse1 < 0.05 or Freq*Pulse1 > 0.3 then
+     if A > 4.95 then goto Duty_cycle_gate_sense_sv_Pass1
+     goto Duty_cycle_gate_sense_sv_Fail1
+   end if
+   Duty_cycle_gate_sense_sv_Pass1:
+   if Freq*Pulse1 < 0.05 or Freq*Pulse1 > 0.3 then
+      if I > 2 then goto Duty_cycle_gate_sense_sv_Pass
+      goto Duty_cycle_gate_sense_sv_Fail
+   else
+      Duty_cycle_gate_sense_sv_Pass:
+    !@print tab(5);"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Gate_Sense_Sv"; Freq*Pulse1
+      test "duty_cycle_gate_sense_sv_1";Freq,Pulse1
+   end if
+   I = 0
+   Duty_cycle_drain_sv_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_drain_sv_Fail1:
+   A = A +0.05
+   test "duty_cycle_drain_sv";A,Pulse2         ! Pass ! Relay 5 use
+   !@print ;"A";A;"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_drain_Sv"; Freq*Pulse2 !debug only
+   if Freq*Pulse2 < 0.05 or Freq*Pulse2 > 0.3 then
+     if A > 4.95 then goto Duty_cycle_drain_sv_Pass1
+     goto Duty_cycle_drain_sv_Fail1
+   end if
+   Duty_cycle_drain_sv_Pass1:
+   if Freq*Pulse2 < 0.05 or Freq*Pulse2 > 0.3 then
+      if I > 2 then goto Duty_cycle_drain_sv_Pass
+      goto Duty_cycle_drain_sv_Fail
+   else
+      Duty_cycle_drain_sv_Pass:
+    !@print tab(5);"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_drain_Sv"; Freq*Pulse2
+      test "duty_cycle_drain_sv_1";Freq,Pulse2
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 200m                                   ! need wait time
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   I = 0
+   Frequency_gate_sense_sv_Fail:
+   I = I + 1
+   test "frequency_gate_sense_sv";Freq         ! Pass ! Relay 5 unuse
+   !@print ; "Frequency_Gate_Sense_Sv";Freq      ! debug only
+   if Freq < 140k or Freq > 180k then
+      if I > 10 then goto Frequency_gate_sense_sv_Pass
+      goto Frequency_gate_sense_sv_Fail
+   else
+      Frequency_gate_sense_sv_Pass:
+    !@print tab(5); "Frequency_Gate_Sense_Sv";Freq
+      test "frequency_gate_sense_sv_1";Freq
+   end if
+   I = 0
+   Frequency_drain_sv_Fail:
+   I = I + 1
+   A = 4.5
+   Frequency_drain_sv_Fail1:
+   A = A -0.01
+   test "frequency_drain_sv";A,Freq            ! Pass ! Relay 5 use
+   !@print ; "Frequency_Drain_Sv";Freq
+   if Freq < 140k or Freq > 180k then
+     if A > 3.5 then goto Frequency_drain_sv_Pass1
+     goto Frequency_drain_sv_Fail1
+   end if
+   Frequency_drain_sv_Pass1:
+   if Freq < 140k or Freq > 180k then
+      if I > 10 then goto Frequency_drain_sv_Pass
+      goto Frequency_drain_sv_Fail
+   else
+      Frequency_drain_sv_Pass:
+    !@print tab(5); "Frequency_Drain_Sv";Freq
+      test "frequency_drain_sv_1";Freq         ! Pass ! Relay 5 use
+   end if
+   test "+27v_sv_p"                            ! Pass
+   test "+27v_sv_n"                            ! Pass
+   test "ref_3v9_sv_p"                         ! Pass
+   I = 0
+   REF_2V5_SV_P:
+   I = I + 1
+   A = 0
+   test "ref_2v5_sv_p";Volt2(*)                ! Pass
+   REF_2V5_SV_P_1:
+   A = A + 1
+   if Volt2(A) < 2.45 or Volt2(A) > 2.6 then
+      !@print tab(1);A
+      if I > 3 then goto REF_2V5_SV_P_Pass
+      if A > 510 then goto REF_2V5_SV_P
+      goto REF_2V5_SV_P_1
+   else
+      REF_2V5_SV_P_Pass:
+      test "ref_2v5_ru_p_1";Volt2(A)           ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply in steady state
+   if Sbtt$ = "G2A26800MX1" then
+      V1 = 2.0
+      Pfail_igbt_inv_27v_sv_p:
+      V1 = V1+0.1
+      test "pf_igbt_inv_+27v_sv_p";V1,V2       ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_inv_27v_sv_p_Pass
+         goto Pfail_igbt_inv_27v_sv_p
+      else
+         Pfail_igbt_inv_27v_sv_p_Pass:
+         test "+27v_sv_p_limit";V1             ! Pass
+      end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      V1 = 2.0
+      Pfail_igbt_conv_27v_sv_p:
+      V1 = V1+0.1
+      test "pf_igbt_conv_+27v_sv_p";V1,V2      ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_conv_27v_sv_p_Pass
+         goto Pfail_igbt_conv_27v_sv_p
+      else
+         Pfail_igbt_conv_27v_sv_p_Pass:
+         test "+27v_sv_p_limit";V1             ! Pass
+      end if
+   end if
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   test "ref_3v9_sv_n"                         ! Pass
+   I = 0
+   REF_2V5_SV_N:
+   I = I + 1
+   A = 0
+   test "ref_2v5_sv_n";Volt2(*)                ! Pass
+   REF_2V5_SV_N_1:
+   A = A + 1
+   if Volt2(A) < 2.40 or Volt2(A) > 2.6 then
+      !@print tab(1);A
+      if I > 3 then goto REF_2V5_SV_N_Pass
+      if A > 510 then goto REF_2V5_SV_N
+      goto REF_2V5_SV_N_1
+   else
+      REF_2V5_SV_N_Pass:
+      test "ref_2v5_sv_n_1";Volt2(A)           ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   if Sbtt$ = "G2A26800MX1" then
+      V1 = 2.0
+      Pfail_igbt_inv_27v_sv_n:
+      V1 = V1 + 0.1
+      test "pf_igbt_inv_+27v_sv_n";V1,V2       ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_inv_27v_sv_n_Pass
+         goto Pfail_igbt_inv_27v_sv_n
+      else
+         Pfail_igbt_inv_27v_sv_n_Pass:
+         test "+27v_sv_n_limit";V1             ! Pass
+      end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      V1 = 2.0
+      Pfail_igbt_conv_27v_sv_n:
+      V1 = V1 + 0.1
+      test "pf_igbt_conv_+27v_sv_n";V1,V2      ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_conv_27v_sv_n_Pass
+         goto Pfail_igbt_conv_27v_sv_n
+      else
+         Pfail_igbt_conv_27v_sv_n_Pass:
+         test "+27v_sv_n_limit";V1             ! Pass
+      end if
+   end if
+subend
+
+sub IGBT_Gate_Driver_PHASE_T_Tests (Status_Code, Message$)
+global Status
+global Sbtt$
+dim Volt3(511)
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply in steady state
+   test "pwm_vcc_tw"                           ! Pass
+   I = 0
+   I_SENSE_TW_Fail:
+   I = I + 1
+   A = 0
+   test "i_sense_tw";Volt3(*)                  ! Pass
+   I_SENSE_TW_Fail1:
+   A = A + 1
+   if Volt3(A) < 0.3 or Volt3(A) > 0.8 then
+      !print tab(1); A
+      if I > 3 then goto I_SENSE_TW_Pass
+      if A > 510 then goto I_SENSE_TW_Fail
+      goto I_SENSE_TW_Fail1
+   else
+      I_SENSE_TW_Pass:
+      test "i_sense_tw_1";Volt3(A)             ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 200m                                   ! need wait time
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      !
+   test "frequency_3";Freq                     ! Pass
+   I = 0
+   Duty_cycle_gate_sense_tw_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_gate_sense_tw_Fail1:
+   A = A +0.05
+   test "duty_cycle_gate_sense_tw";A,Pulse1    ! Pass ! Relay 6 use
+   !@print ;"A";A;"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Gate_Sense_Tw"; Freq*Pulse2   ! debug only
+   if Freq*Pulse1 < 0.05 or Freq*Pulse1 > 0.3 then
+     if A > 4.95 then goto Duty_cycle_gate_sense_tw_Pass1
+     goto Duty_cycle_gate_sense_tw_Fail1
+   end if
+   Duty_cycle_gate_sense_tw_Pass1:
+   if Freq*Pulse1 < 0.05 or Freq*Pulse1 > 0.30 then
+      if I > 2 then goto Duty_cycle_gate_sense_tw_Pass
+      goto Duty_cycle_gate_sense_tw_Fail
+   else
+      Duty_cycle_gate_sense_tw_Pass:
+    !@print tab(5);"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Gate_Sense_Tw"; Freq*Pulse1
+      test "duty_cycle_gate_sense_tw_1";Freq,Pulse1
+   end if
+   I = 0
+   Duty_cycle_drain_tw_Fail:
+   I = I + 1
+   A = 4.90
+   Duty_cycle_drain_tw_Fail1:
+   A = A -0.01
+   test "duty_cycle_drain_tw";A,Pulse2         ! Pass ! Relay 6 use
+   !@print ;"A";A;"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_Drain_Tw"; Freq*Pulse2   ! debug only
+   if Freq*Pulse2 < 0.05 or Freq*Pulse2 > 0.3 then
+     if A < 1.0 then goto Duty_cycle_drain_tw_Pass1
+     goto Duty_cycle_drain_tw_Fail1
+   end if
+   Duty_cycle_drain_tw_Pass1:
+   if Freq*Pulse2 < 0.05 or Freq*Pulse2 > 0.30 then
+      !@if Freq*Pulse2 < 0.05 or Freq*Pulse2 > 0.30 then goto Duty_cycle1
+      if I > 2 then goto Duty_cycle_drain_tw_Pass
+      goto Duty_cycle_drain_tw_Fail
+   else
+      Duty_cycle_drain_tw_Pass:
+      !@print ;"A";A;"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_Drain_Tw"; Freq*Pulse2
+      test "duty_cycle_drain_tw_1";Freq,Pulse2 ! Pass
+   end if
+   !@Duty_cycle1:
+   !@test "duty_cycle_drain_tw_2";Freq,Pulse2    ! Pass
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 200m                                   ! need wait time
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      !
+   I = 0
+   Frequency_gate_sense_tw_Fail:
+   I = I + 1
+   test "frequency_gate_sense_tw";Freq         ! Pass ! Relay 6 unuse
+   !@print ; "Frequency_gate_sense_tw";Freq      ! debug only
+   if Freq < 140k or Freq > 180k then
+      if I > 10 then goto Frequency_gate_sense_tw_Pass
+      goto Frequency_gate_sense_tw_Fail
+   else
+      Frequency_gate_sense_tw_Pass:
+    !@print ; "Frequency_gate_sense_tw";Freq
+      test "frequency_gate_sense_tw_1";Freq
+   end if
+   test "frequency_drain_tw"                   ! Pass ! Relay 6 use
+   test "+27v_tw_p"                            ! Pass
+   test "+27v_tw_n"                            ! Pass
+   test "ref_3v9_tw_p"                         ! Pass
+   I = 0
+   REF_2V5_TW_P:
+   I = I + 1
+   A = 0
+   test "ref_2v5_tw_p";Volt3(*)                ! Pass
+   REF_2V5_TW_P_1:
+   A = A + 1
+   if Volt3(A) < 2.45 or Volt3(A) > 2.6 then
+      !@print tab(1);A
+      if I > 3 then goto REF_2V5_TW_P_Pass
+      if A > 510 then goto REF_2V5_TW_P
+      goto REF_2V5_TW_P_1
+   else
+      REF_2V5_TW_P_Pass:
+      test "ref_2v5_tw_p_1";Volt3(A)           ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   if Sbtt$ = "G2A26800MX1" then
+      V1 = 2.0
+      Pfail_igbt_inv_27v_tw_p:
+      V1 = V1+0.1
+      test "pf_igbt_inv_+27v_tw_p";V1,V2       ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_inv_27v_tw_p_Pass
+         goto Pfail_igbt_inv_27v_tw_p
+      else
+         Pfail_igbt_inv_27v_tw_p_Pass:
+         test "+27v_tw_p_limit";V1             ! Pass
+      end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      V1 = 2.0
+      Pfail_igbt_conv_27v_tw_p:
+      V1 = V1+0.1
+      test "pf_igbt_conv_+27v_tw_p";V1,V2      ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_conv_27v_tw_p_Pass
+         goto Pfail_igbt_conv_27v_tw_p
+      else
+         Pfail_igbt_conv_27v_tw_p_Pass:
+         test "+27v_tw_p_limit";V1             ! Pass
+      end if
+   end if
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   test "ref_3v9_tw_n"                         ! Pass
+   I = 0
+   REF_2V5_TW_N:
+   I = I + 1
+   A = 0
+   test "ref_2v5_tw_n";Volt3(*)                ! Pass
+   REF_2V5_TW_N_1:
+   A = A + 1
+   if Volt3(A) < 2.40 or Volt3(A) > 2.6 then
+      !@print tab(1);A
+      if I > 3 then goto REF_2V5_TW_N_Pass
+      if A > 510 then goto REF_2V5_TW_N
+      goto REF_2V5_TW_N_1
+   else
+      REF_2V5_TW_N_Pass:
+      test "ref_2v5_tw_n_1";Volt3(A)           ! Pass
+   end if
+   sps 7, 0.00, 0.00                           ! disconnect 24v_SW
+   sps 4, 0.00, 0.00                           ! disconnect 24V_SE
+   wait 1                                      ! Power supply steady state
+   if Sbtt$ = "G2A26800MX1" then
+      V1 = 2.0
+      Pfail_igbt_inv_27v_tw_n:
+      V1 = V1 + 0.1
+      test "pf_igbt_inv_+27v_tw_n";V1,V2       ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_inv_27v_tw_n_Pass
+         goto Pfail_igbt_inv_27v_tw_n
+      else
+         Pfail_igbt_inv_27v_tw_n_Pass:
+         test "+27v_tw_n_limit";V1             ! Pass
+      end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      V1 = 2.0
+      Pfail_igbt_conv_27v_tw_n:
+      V1 = V1 + 0.1
+      test "pf_igbt_conv_+27v_tw_n";V1,V2      ! Pass
+      if V2 > 1.0 then
+         !@print tab(5); V1, V2
+         if V1 > 3.0 then goto Pfail_igbt_conv_27v_tw_n_Pass
+         goto Pfail_igbt_conv_27v_tw_n
+      else
+         Pfail_igbt_conv_27v_tw_n_Pass:
+         test "+27v_tw_n_limit";V1             ! Pass
+      end if
+   end if
+   sps 7, 24.0, 0.50                           ! disconnect 24v_SW
+   sps 4, 24.0, 0.50                           ! disconnect 24V_SE
+subend
+
+sub Power_Supply_SENSING_Tests (Status_Code, Message$)
+global Status, Sbtt$
+global InvTempUref, CnvTempUref
+dim Volt4(511)
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   rps 8, V, I
+   test "24v_sense_24v_sense_rtn"              ! Pass
+   test "24v_sense_current";I                  ! Pass
+   test "vcc_pwm_controller"                   ! Pass
+   I = 0
+   I_SSENSE_PWM_CONTROLLER_Fail:
+   I = I + 1
+   A = 0
+   test "i_sense_pwm_controller";Volt4(*)      ! Pass
+   I_SSENSE_PWM_CONTROLLER_Fail1:
+   A = A + 1
+   if Volt4(A) < 0.20 or Volt4(A) > 0.8 then
+      !print tab(1); A
+      if I > 20 then goto I_SSENSE_PWM_CONTROLLER_Pass
+      if A > 510 then goto I_SSENSE_PWM_CONTROLLER_Fail
+      goto I_SSENSE_PWM_CONTROLLER_Fail1
+   else
+      I_SSENSE_PWM_CONTROLLER_Pass:
+      test "i_sense_pwm_controller_1";Volt4(A) ! Pass
+   end if
+   sps 8, 0.00, 0.00                           ! disconnect 24v_SENSE
+   wait 200m
+   sps 8, 24.0, 0.50                           ! disconnect 24v_SENSE
+   wait 1                                      !
+   test "frequency_4";Freq                     ! Pass
+   I = 0
+   Duty_cycle_smps_ga1_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_smps_ga1_Fail1:
+   A = A +0.05
+   test "duty_cycle_smps_ga1";A,Pulse1         ! Pass ! Relay 7 use
+   !@print ;"A";A;"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Smps_Ga1"; Freq*Pulse1  ! debug only
+   if (1-Freq*Pulse1) < 0.22 or (1-Freq*Pulse1) > 0.32 then
+     if A > 4.95 then goto Duty_cycle_smps_ga1_Pass1
+     goto Duty_cycle_smps_ga1_Fail1
+   end if
+   Duty_cycle_smps_ga1_Pass1:
+   if (1-Freq*Pulse1) < 0.22 or (1-Freq*Pulse1) > 0.32 then
+      if I > 2 then goto Duty_cycle_smps_ga1_Pass
+      goto Duty_cycle_smps_ga1_Fail
+   else
+      Duty_cycle_smps_ga1_Pass:
+    !@print tab(5);"Freq";Freq;"Pulse1";Pulse1;"Duty_Cycle_Smps_Ga1"; Freq*Pulse1
+      test "duty_cycle_smps_ga1_1";Freq,Pulse1
+   end if
+   I = 0
+   Duty_cycle_smps_da1_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_smps_da1_Fail1:
+   A = A +0.05
+   test "duty_cycle_smps_da1";A,Pulse2         ! Pass ! Relay 7 use
+!@   print ;"A";A;"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_Smps_Da1"; Freq*Pulse2  ! debug only
+   if Freq*Pulse2 < 0.22 or Freq*Pulse2 > 0.32 then
+     if A > 4.95 then goto Duty_cycle_smps_da1_Pass1
+     goto Duty_cycle_smps_da1_Fail1
+   end if
+   Duty_cycle_smps_da1_Pass1:
+   if Freq*Pulse2 < 0.22 or Freq*Pulse2 > 0.32 then
+      if I > 2 then goto Duty_cycle_smps_da1_Pass
+      goto Duty_cycle_smps_da1_Fail
+   else
+      Duty_cycle_smps_da1_Pass:
+!@      print ;"A";A;"Freq";Freq;"Pulse2";Pulse2;"Duty_Cycle_Smps_Da1"; Freq*Pulse2
+      test "duty_cycle_smps_da1_1";Freq,Pulse2
+   end if
+   I = 0
+   Duty_cycle_smps_ga2_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_smps_ga2_Fail1:
+   A = A +0.05
+   test "duty_cycle_smps_ga2";A,Pulse3         ! Pass ! Relay 7 use
+!@   print ;"A";A;"Freq";Freq;"Pulse3";Pulse3;"Duty_Cycle_Smps_Ga2"; Freq*Pulse3  ! debug only
+   if Freq*Pulse3 < 0.22 or Freq*Pulse3 > 0.44 then
+     if A > 4.95 then goto Duty_cycle_smps_ga2_Pass1
+     goto Duty_cycle_smps_ga2_Fail1
+   end if
+   Duty_cycle_smps_ga2_Pass1:
+   if Freq*Pulse3 < 0.22 or Freq*Pluse3 > 0.44 then
+      if I > 2 then goto Duty_cycle_smps_ga2_Pass
+      goto Duty_cycle_smps_ga2_Fail
+   else
+      Duty_cycle_smps_ga2_Pass:
+    !@print ;"A";A;"Freq";Freq;"Pulse3";Pulse3;"Duty_Cycle_Smps_Ga2"; Freq*Pulse3
+      test "duty_cycle_smps_ga2_1";Freq,Pulse3 ! Pass
+   end if
+   I = 0
+   Duty_cycle_smps_da2_Fail:
+   I = I + 1
+   A = 1.00
+   Duty_cycle_smps_da2_Fail1:
+   A = A +0.02
+   test "duty_cycle_smps_da2";A,Pulse4           ! Pass
+   !@print ;"A";A;"Freq";Freq;"Pulse4";Pulse4;"Duty_Cycle_Smps_Da2"; Freq*Pulse4  ! debug only
+   if Freq*Pulse4 < 0.22 or Freq*Pluse4 > 0.44 then
+     if A > 4.95 then goto Duty_cycle_smps_da2_Pass1
+     goto Duty_cycle_smps_da2_Fail1
+   end if
+   Duty_cycle_smps_da2_Pass1:
+   if Freq*Pulse4 < 0.22 or Freq*Pluse4 > 0.44 then
+      !@print Freq*Pulse4
+      if I > 2 then goto Duty_cycle_smps_da2_Pass
+      goto Duty_cycle_smps_da2_Fail
+   else
+      Duty_cycle_smps_da2_Pass:
+      !@print tab(5);"Freq";Freq;"Pulse4";Pulse4;"Duty_Cycle_Smps_Da2"; Freq*Pulse4
+      test "duty_cycle_smps_da2_1";Freq,Pulse4 ! Pass
+   end if
+   test "frequency_smps_sense_ga"              ! Pass ! Relay 7 use
+   test "frequency_smps_sense_da"              ! Pass ! Relay 7 use
+   test "+15v_sense";V                         ! Pass
+   if Sbtt$ = "G2A26800MX1" then
+      InvTempUref = V*1000
+      test "invtempuref";InvTempUref
+      print tab(5);chr$(27)&"&v7sBBInvTempUref is :";InvTempUref
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      CnvTempUref = V*1000
+      test "cnvtempuref";CnvTempUref
+      print tab(5);chr$(27)&"&v7sBBCnvTempUref is :";CnvTempUref
+   end if
+   test "_15v_sense"                           ! Pass
+subend
+
+sub PTC_Temperature_Tests (Status_Code, Message$)
+global Status
+global RX2,Sbtt$
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   if Sbtt$ = "G2A26800MX1" then
+      print tab(5);"GAA26800MX1 device no load for this function skip test"
+      goto SKIP_PTC_Temperature_Tests
+   end if
+
+   !@RX2 = 1000                                ! debug only
+   sps 3, 0.00, 0.00
+   wait 100m
+   sps 3, 24.0, 0.8
+   rps 3, V,I                                  ! Read the sps 3 current
+   test "24v_hl2_hl2"                          ! Pass
+   test "24v_hl2_current";I                    ! Pass
+   I = 0
+   Frequency_sw_temp_sensor_Fail:
+   I = I + 1
+   V = 0.40
+   Frequency_sw_temp_sensor_Fail1:
+   V = V + 0.002
+   test "frequency_sw_temp_sensor";V, Freq     ! Pass
+   if Freq < 185000 or Freq > 215000 then
+      !@print tab(1); V,Freq
+      if I > 5 then goto Frequency_sw_temp_sensor_Pass
+      if V > 0.6 then goto Frequency_sw_temp_sensor_Fail
+      goto Frequency_sw_temp_sensor_Fail1
+   else
+      Frequency_sw_temp_sensor_Pass:
+      test "frequency_sw_temp_sensor_1";Freq   ! Pass
+   end if
+   test "5v_hl2_hl2"                           ! Pass
+   test "ptc_adc_open"                         ! Pass
+   test "ptc_adc_load_1k"                      ! Pass
+   test "ptc_adc_short"                        ! Pass
+   test "ptc_1_ptc_6_current";RX2              ! Pass
+
+SKIP_PTC_Temperature_Tests:
+
+subend
+
+sub DC_Link_LED_Tests (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "frequency_dcp_led"                    ! Pass
+subend
+
+sub IGBT_Gate_Driver_voltages_Tests (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "rup_g11_rup_e11_high"                 ! Pass
+   test "run_g21_run_e21_high"                 ! Pass
+   test "svp_g11_svp_e11_high"                 ! Pass
+   test "svn_g21_svn_e21_high"                 ! Pass
+   test "twp_g11_twp_e11_high"                 ! Pass
+   test "twn_g21_twn_e21_high"                 ! Pass
+   test "rup_g11_rup_e11_low"                  ! Pass
+   test "run_g21_run_e21_low"                  ! Pass
+   test "svp_g11_svp_e11_low"                  ! Pass
+   test "svn_g21_svn_e21_low"                  ! Pass
+   test "twp_g11_twp_e11_low"                  ! Pass
+   test "twn_g21_twn_e21_low"                  ! Pass
+subend
+
+sub DRIVER_RESET_N_Pulse_Width_Tests (Status_Code, Message$)
+global Status, Sbtt$
+
+dim Time(499)
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   safeguard none
+   gpconnect 20648 to 20649      !@ RUP_E11 short to RUP_C1
+   gpconnect 20650 to 20651      !@ RUP_E11 short to RUN_E21
+   gpconnect 20652 to 20653      !@ SVP_E11 short to SVP_C1
+   gpconnect 20654 to 20655      !@ SVP_E11 short to SVNP_E21
+   gpconnect 20656 to 20657      !@ TWP_E11 short to TWP_C1
+   gpconnect 20658 to 20659      !@ TWP_E11 short to TWN_E21
+   wait 1                        !  Power supply must be in steady state
+   gpconnect 21852 to 21853      !@ Power On Relay board
+   gpconnect 21862 to 21863      !@ PWM_xx inputs switch to GND
+   gpconnect 21858 to 21859      !@ OUT_EN_CONV to High
+   gpdisconnect 20648 from 20649
+   if Sbtt$ = "G2A26800MX1" then
+   T = 0
+   Oct_inv_1_Fail:
+   T = T + 1
+   I = 0
+   test "oct_inv_1";Time(*)                    ! Pass
+   Oct_inv_1_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Oct_inv_1_Pass
+      if I > 499 then goto Oct_inv_1_Fail
+      goto Oct_inv_1_Fail1
+   else
+      if I < 200  then goto Oct_inv_1_Fail
+      Oct_inv_1_Pass:
+      test "oct_inv_pw_1";I                    ! Pass
+   end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+   T = 0
+   Cnv_oc_flt_1_Fail:
+   T = T + 1
+   I = 0
+   test "cnv_oc_flt_1";Time(*)                 ! Pass
+   Cnv_oc_flt_1_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Cnv_oc_flt_1_Pass
+      if I > 499 then goto Cnv_oc_flt_1_Fail
+      goto Cnv_oc_flt_1_Fail1
+   else
+      if I < 200  then goto Cnv_oc_flt_1_Fail
+      Cnv_oc_flt_1_Pass:
+      test "cnv_oc_flt_pw_1";I                 ! Pass
+   end if
+   end if
+   gpconnect 20648 to 20649
+   gpdisconnect 20650 from 20651
+   if Sbtt$ = "G2A26800MX1" then
+   T = 0
+   Oct_inv_2_Fail:
+   T = T + 1
+   I = 0
+   test "oct_inv_2";Time(*)                    ! Pass
+   Oct_inv_2_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Oct_inv_2_Pass
+      if I > 499 then goto Oct_inv_2_Fail
+      goto Oct_inv_2_Fail1
+   else
+      if I < 200 then goto Oct_inv_2_Fail
+      Oct_inv_2_Pass:
+      test "oct_inv_pw_2";I                    ! Pass
+   end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+   T = 0
+   Cnv_oc_flt_2_Fail:
+   T = T + 1
+   I = 0
+   test "cnv_oc_flt_2";Time(*)                 ! Pass
+   Cnv_oc_flt_2_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Cnv_oc_flt_2_Pass
+      if I > 499 then goto Cnv_oc_flt_2_Fail
+      goto Cnv_oc_flt_2_Fail1
+   else
+      if I < 200 then goto Cnv_oc_flt_2_Fail
+      Cnv_oc_flt_2_Pass:
+      test "cnv_oc_flt_pw_2";I                 ! Pass
+   end if
+   end if
+   gpconnect 20650 to 20651
+   gpdisconnect 20652 from 20653
+   if Sbtt$ = "G2A26800MX1" then
+   T = 0
+   Oct_inv_3_Fail:
+   T = T + 1
+   I = 0
+   test "oct_inv_3";Time(*)                    ! Pass
+   Oct_inv_3_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Oct_inv_3_Pass
+      if I > 499 then goto Oct_inv_3_Fail
+      goto Oct_inv_3_Fail1
+   else
+      if I < 200 then goto Oct_inv_3_Fail
+      Oct_inv_3_Pass:
+      test "oct_inv_pw_3";I                    ! Pass
+   end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+   T = 0
+   Cnv_oc_flt_3_Fail:
+   T = T + 1
+   I = 0
+   test "cnv_oc_flt_3";Time(*)                 ! Pass
+   Cnv_oc_flt_3_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Cnv_oc_flt_3_Pass
+      if I > 499 then goto Cnv_oc_flt_3_Fail
+      goto Cnv_oc_flt_3_Fail1
+   else
+      if I < 200 then goto Cnv_oc_flt_3_Fail
+      Cnv_oc_flt_3_Pass:
+      test "cnv_oc_flt_pw_3";I                 ! Pass
+   end if
+   end if
+   gpconnect 20652 to 20653
+   gpdisconnect 20654 from 20655
+   if Sbtt$ = "G2A26800MX1" then
+   T = 0
+   Oct_inv_4_Fail:
+   T = T + 1
+   I = 0
+   test "oct_inv_4";Time(*)                    ! Pass
+   Oct_inv_4_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Oct_inv_4_Pass
+      if I > 499 then goto Oct_inv_4_Fail
+      goto Oct_inv_4_Fail1
+   else
+      if I < 200 then goto Oct_inv_4_Fail
+      Oct_inv_4_Pass:
+      test "oct_inv_pw_4";I                    ! Pass
+   end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+   T = 0
+   Cnv_oc_flt_4_Fail:
+   T = T + 1
+   I = 0
+   test "cnv_oc_flt_4";Time(*)                 ! Pass
+   Cnv_oc_flt_4_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Cnv_oc_flt_4_Pass
+      if I > 499 then goto Cnv_oc_flt_4_Fail
+      goto Cnv_oc_flt_4_Fail1
+   else
+      if I < 200 then goto Cnv_oc_flt_4_Fail
+      Cnv_oc_flt_4_Pass:
+      test "cnv_oc_flt_pw_4";I                 ! Pass
+   end if
+   end if
+   gpconnect 20654 to 20655
+   gpdisconnect 20656 from 20657
+   if Sbtt$ = "G2A26800MX1" then
+   T = 0
+   Oct_inv_5_Fail:
+   T = T + 1
+   I = 0
+   test "oct_inv_5";Time(*)                    ! Pass
+   Oct_inv_5_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Oct_inv_5_Pass
+      if I > 499 then goto Oct_inv_5_Fail
+      goto Oct_inv_5_Fail1
+   else
+      if I < 200 then goto Oct_inv_5_Fail
+      Oct_inv_5_Pass:
+      test "oct_inv_pw_5";I                    ! Pass
+   end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+   T = 0
+   Cnv_oc_flt_5_Fail:
+   T = T + 1
+   I = 0
+   test "cnv_oc_flt_5";Time(*)                 ! Pass
+   Cnv_oc_flt_5_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Cnv_oc_flt_5_Pass
+      if I > 499 then goto Cnv_oc_flt_5_Fail
+      goto Cnv_oc_flt_5_Fail1
+   else
+      if I < 200 then goto Cnv_oc_flt_5_Fail
+      Cnv_oc_flt_5_Pass:
+      test "cnv_oc_flt_pw_5";I                 ! Pass
+   end if
+   end if
+   gpconnect 20656 to 20657
+   gpdisconnect 20658 from 20659
+   if Sbtt$ = "G2A26800MX1" then
+   T = 0
+   Oct_inv_6_Fail:
+   T = T + 1
+   I = 0
+   test "oct_inv_6";Time(*)                    ! Pass
+   Oct_inv_6_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Oct_inv_6_Pass
+      if I > 499 then goto Oct_inv_6_Fail
+      goto Oct_inv_6_Fail1
+   else
+      if I < 200 then goto Oct_inv_6_Fail
+      Oct_inv_6_Pass:
+      test "oct_inv_pw_6";I                    ! Pass
+   end if
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+   T = 0
+   Cnv_oc_flt_6_Fail:
+   T = T + 1
+   I = 0
+   test "cnv_oc_flt_6";Time(*)                 ! Pass
+   Cnv_oc_flt_6_Fail1:
+   I = I + 1
+   if Time(I) > 0 then
+      if T > 5 then goto Cnv_oc_flt_6_Pass
+      if I > 499 then goto Cnv_oc_flt_6_Fail
+      goto Cnv_oc_flt_6_Fail1
+   else
+      if I < 200 then goto Cnv_oc_flt_6_Fail
+      Cnv_oc_flt_6_Pass:
+      test "cnv_oc_flt_pw_6";I                 ! Pass
+   end if
+   end if
+   gpdisconnect all
+subend
+
+sub LINE_VOLTAGE_SENSING_Tests (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "vrs_n_ur"                             ! Pass
+   test "vst_n_ur"                             ! Pass
+   test "vrs_n_us"                             ! Pass
+   test "vst_n_us"                             ! Pass
+   test "vrs_n_ut"                             ! Pass
+   test "vst_n_ut"                             ! Pass
+subend
+
+sub VRS_VST_Voltage_Gain_Tests (Status_Code, Message$)
+global Status, Sbtt$
+global Cnv_Vrs_Uin_DC, CnvVstUinDC
+global CnvVrsUoutDC, CnvVstUoutDC
+global CnvVrsUout, CnvVstUout
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "ref_sec"                              ! Pass
+   test "vrs_dc_n_dc";V                        ! Pass
+   if Sbtt$ = "G2A26800MX2" then
+      Cnv_Vrs_Uin_DC = V*1000*2.43             ! Pass
+      test "cnvvrsuindc";Cnv_Vrs_Uin_DC
+      print tab(5);chr$(27)&"&v7sBBCnv_Vrs_Uin_DC is :";Cnv_Vrs_Uin_DC
+   end if
+   test "vrs_out_dc_n_dc";V                    ! Pass
+   if Sbtt$ = "G2A26800MX2" then
+      CnvVrsUoutDC = V*1000*2.43               ! Pass
+      test "cnvvrsuoutdc";CnvVrsUoutDC
+      print tab(5);chr$(27)&"&v7sBBCnvVrsUoutDC is :";CnvVrsUoutDC
+   end if
+   test "vrs_out_n";V                          ! Pass
+   if Sbtt$ = "G2A26800MX2" then
+      CnvVrsUout = V*1000
+      test "cnvvrsuout";CnvVrsUout
+      print tab(5);chr$(27)&"&v7sBBCnvVrsUout is :";CnvVrsUout
+   end if
+   if V*1000 < 0 then CnvVrsUout = 65536 - abs(V*1000)
+   if V*1000 > 0 then CnvVrsUout = V*1000      !
+   if Sbtt$ = "G2A26800MX2" then
+      K3_VRS = CnvVrsUoutDC /(0.89111*Cnv_Vrs_Uin_DC)
+      print tab(5);chr$(27)&"&v7sBBK3_VRS is :";K3_VRS
+   end if
+   test "k3_vrs";K3_VRS                        ! Pass
+   test "vst_dc_n_dc";V                        ! Pass
+   if Sbtt$ = "G2A26800MX2" then
+      CnvVstUinDC = V*1000*2.43                ! Pass
+      test "cnvvstuindc";CnvVstUinDC
+      print tab(5);chr$(27)&"&v7sBBCnvVstUinDC is :";CnvVstUinDC
+   end if
+   test "vst_out_dc_n_dc";V                    ! Pass
+   if Sbtt$ = "G2A26800MX2" then
+      CnvVstUoutDC = V*1000*2.43               ! Pass
+      test "cnvvstuoutdc";CnvVstUoutDC
+      print tab(5);chr$(27)&"&v7sBBCnvVstUoutDC is :";CnvVstUoutDC
+   end if
+   test "vst_out_n";V                          ! Pass
+   if Sbtt$ = "G2A26800MX2" then
+      CnvVstUout = V*1000
+      test "cnvvstuout";CnvVstUout
+      print tab(5);chr$(27)&"&v7sBBCnvVstUout is :";CnvVstUout
+   end if
+   if V*1000 < 0 then CnvVstUout = 65536 - abs(V*1000)
+   if V*1000 > 0 then CnvVstUout = V*1000      !
+   if Sbtt$ = "G2A26800MX2" then
+      K3_VST = CnvVstUoutDC / (0.89111* CnvVstUinDC)
+      print tab(5);chr$(27)&"&v7sBBK3_VST is :";K3_VST
+   end if
+   test "k3_vst";K3_VST                        ! Pass
+subend
+
+sub VRS_VST_Delay_Time_Tests (Status_Code, Message$)
+global Status
+dim Time2(7)
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "vrs_n_vrs_out_n_rising";Time2(*)      ! Don't Test
+   test "vrs_n_vrs_out_n_falling";Time2(*)     ! Don't Test
+   test "vst_n_vrs_out_n_rising";Time2(*)      ! Don't Test
+   test "vst_n_vrs_out_n_falling";Time2(*)     ! Don't Test
+subend
+
+sub IGBT_TEMPERATURE_Tests (Status_Code, Message$)
+global Status, Sbtt$
+global InvTempUn, CnvTempUn
+global InvTempUout, CnvTempUout
+global InvTempUin, CnvTempUin,Temp_IGBT
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "ntc1_ntc2"                            ! Pass
+   test "temp_igbt_gnda";V1                    ! Pass
+   Temp_IGBT = V1*1000
+   test "temp_un_gnda";V2                      ! Pass
+   if Sbtt$ = "G2A26800MX1" then
+      InvTempUn = V2*1000
+      test "invtempun";InvTempUn
+      print tab(5);chr$(27)&"&v7sBBInvTempUn is :";InvTempUn
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      CnvTempUn = V2*1000
+      test "cnvtempun";CnvTempUn
+      print tab(5);chr$(27)&"&v7sBBCnvTempUn is :";CnvTempUn
+   end if
+   if Sbtt$ = "G2A26800MX1" then
+      InvTempUout = TEMP_IGBT + (9060/15000)* InvTempUn
+      test "invtempuout";InvTempUout
+      print tab(5);chr$(27)&"&v7sBBInvTempUout is :";InvTempUout
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      CnvTempUout = TEMP_IGBT + (9060/15000)* CnvTempUn
+      test "cnvtempuout";CnvTempUout
+      print tab(5);chr$(27)&"&v7sBBCnvTempUout is :";CnvTempUout
+   end if
+   test "ntc1_gnd_sense";V3                    ! Pass
+   if Sbtt$ = "G2A26800MX1" then
+      InvTempUin = V3*1000
+      test "invtempuin";InvTempUin
+      print tab(5);chr$(27)&"&v7sBBInvTempUin is :";InvTempUin
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+      CnvTempUin = V3*1000
+      test "cnvtempuin";CnvTempUin
+      print tab(5);chr$(27)&"&v7sBBCnvTempUin is :";CnvTempUin
+   end if
+   K3_TEMP = (V1 + (V2*0.604))/(V3*0.891111)
+   print tab(5);chr$(27)&"&v7sBBK3_TEMP is :";K3_TEMP
+   test "k3_temp";K3_TEMP                      ! Pass
+subend
+
+sub DC_LINK_VOLTAGE_Tests (Status_Code, Message$)
+global Status, Sbtt$
+global InvUdclUin, InvUdclUout
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "dc_me_gnd_sense";V1                   ! Pass
+   if Sbtt$ = "G2A26800MX1" then
+      InvUdclUin = V1*1000                     ! Pass
+      test "invudcluin";InvUdclUin
+      print tab(5);chr$(27)&"&v7sBBInvUdclUin is :";InvUdclUin
+   end if
+   test "udcl_gnda";V2                         ! Pass
+   if Sbtt$ = "G2A26800MX1" then
+      InvUdclUout = V2*1000                    ! Pass
+      test "invudcluout";InvUdclUout
+      print tab(5);chr$(27)&"&v7sBBInvUdclUout is :";InvUdclUout
+   end if
+   if Sbtt$ = "G2A26800MX1" then
+      K3_UDC = InvUdclUout / (0.891111*InvUdclUin)
+      print tab(5);chr$(27)&"&v7sBBK3_UDC is :";K3_UDC
+   end if
+   test "k3_udc";K3_UDC                        ! Pass
+subend
+
+sub POWER_FAIL_MONITORING_Tests (Status_Code, Message$)
+global Status, Sbtt$
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   Pfail_rs_conv_low_a_Fail:
+   for V = 6 to 1 step - 0.1
+! COVERAGE       log level is none
+      report level is none
+      test "pfail_rs_conv_low_a";V,Freq        ! Pass
+      if dutfailed = 0 then goto Pfail_toggle
+      pass device
+   next V
+   Pfail_toggle:
+! COVERAGE    log level is all
+   report level is all
+  looptest5 "pfail_rs_conv_low";V,Freq             ! Pass
+   if Sbtt$ = "G2A26800MX2" then
+      print tab(5);"Toggle frequency is :";Freq
+   end if
+   Pfail_rs_conv_high_Fail:
+   V = V -0.1
+   test "pfail_rs_conv_high";V,Volt            ! Pass
+   if Volt < 4.5 and V >= 1.0 then
+      if Volt > 4.5 and V > 0.3 then goto Pfail_rs_conv_high_Pass
+      goto Pfail_rs_conv_high_Fail
+   else
+      Pfail_rs_conv_high_Pass:
+      !@print tab(5);"High Voltage is :";V
+      test "pfail_rs_conv_high_1";V            ! Pass
+   end if
+subend
+
+sub Hall_Effect_Current_Sensor_Tests (Status_Code, Message$)
+global Status
+global RX3,RX4,RX5,RX6
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   !@RX3 = 60 | RX4 = 60 | RX5 = 60 | RX6 = 60 ! debug only
+   test "sense_ir_0a";RX3                      ! Pass
+   test "sense_iu_0a";RX4                      ! Pass
+   test "sense_is_0a";RX5                      ! Pass
+   test "sense_iv_0a";RX6                      ! Pass
+   sps 5,1.00,2.10;optimize   !@ current sensor supply
+   rps 5, V,I|print tab(5); "Output current is :";I;"A"
+   gpconnect 21852 to 21853   !@ power on the relay board
+!  test "sense_ir_2a";RX3                      ! Pass
+!  test "sense_iu_2a";RX4                      ! Pass
+!  test "sense_is_2a";RX5                      ! Pass
+!  test "sense_iv_2a";RX6                      ! Pass
+   looptest5 "sense_ir-2a";RX3                      ! Pass
+!  test "sense_iu-2a";RX4                      ! Pass
+!  test "sense_is-2a";RX5                      ! Pass
+!  test "sense_iv-2a";RX6                      ! Pass
+   sps 5, 0.00, 0.00;optimize
+   gpdisconnect 21852 from 21853!@ power off the relay board
+subend
+
+sub CHG_RELAY_Contact_Tests (Status_Code, Message$)
+global Status
+
+   if Message$ <> "" then  print tab(5);Message$
+   Status = Status_Code
+   test "r_res_ruo_open"                       ! Pass
+   test "r_res_ruo_close"                      ! Pass
+   test "s_res_svo_open"                       ! Pass
+   test "s_res_svo_close"                      ! Pass
+subend
+
+sub Eeprom_Programming_Tests (Status_Code, Message$)
+global Status, Sbtt$, Serial$
+global InvTempUref, CnvTempUref
+global InvTempUn, CnvTempUn
+global InvTempUin, CnvTempUin
+global InvTempUout, CnvTempUout
+global Cnv_Vrs_Uin_DC, CnvVstUinDC
+global CnvVrsUoutDC, CnvVstUoutDC
+global InvUdclUin, InvUdclUout
+global CnvVrsUout, CnvVstUout
+global Package_Code$, Voltage_Code$
+global Power_Code$, Diver_version_Number$
+global Manufacturing_Test_Ident$, Read_Data(*)
+
+dim EEprom_Data_1(63), EEprom_Data_2(127),EEprom_Data_3(47)
+dim EEprom_Data_4(127),EEprom_Data_5(127)
+
+    if Message$ <> "" then  print tab(5);Message$
+    Status = Status_Code
+
+    Package_Code$ = "0014"                                 ! Hex
+    Voltage_Code$ = "0004"                                 ! Hex
+    Power_Code$   = "0078"                                 ! Hex
+    Diver_version_Number$ = "0002"                         ! Hex
+    Manufacturing_Test_Ident$ = "DEC0"                     ! Hex
+    InvTempUref_HEX$    = ith$(int(InvTempUref))           ! 0      !1
+    CnvTempUref_HEX$    = ith$(int(CnvTempUref))           ! 3A25   !2
+    InvTempUn_HEX$      = ith$(int(InvTempUn))             ! 0      !3
+    CnvTempUn_HEX$      = ith$(int(CnvTempUn))             ! 4A8    !4
+    InvTempUin_HEX$     = ith$(int(InvTempUin))            ! 0      !5
+    CnvTempUin_HEX$     = ith$(int(CnvTempUin))            ! BFF    !6
+    InvTempUout_HEX$    = ith$(int(InvTempUout))           ! 2      !7
+    CnvTempUout_HEX$    = ith$(int(CnvTempUout))           ! 2D2    !8
+    Cnv_Vrs_Uin_DC_HEX$ = ith$(int(Cnv_Vrs_Uin_DC))        ! 7F0    !9
+    CnvVstUinDC_HEX$    = ith$(int(CnvVstUinDC))           ! 808    !10
+    CnvVrsUoutDC_HEX$   = ith$(int(CnvVrsUoutDC))          ! 765    !11
+
+    CnvVstUoutDC_HEX$   = ith$(int(CnvVstUoutDC))          ! 76B    !12
+    InvUdclUin_HEX$     = ith$(int(InvUdclUin))            ! 0      !13
+    InvUdclUout_HEX$    = ith$(int(InvUdclUout))           ! 0      !14
+    CnvVrsUout_HEX$     = ith$(int(CnvVrsUout))            ! FF7C   !15
+    CnvVstUout_HEX$     = ith$(int(CnvVstUout))            ! FF73   !16
+    call ICT_TestResult_Record   !@ 2011-11-25
+
+loop
+   exit if len(InvTempUref_HEX$) = 4
+   InvTempUref_HEX$ = "0"&InvTempUref_HEX$                 !1
+end loop
+
+loop
+   exit if len(CnvTempUref_HEX$) = 4
+   CnvTempUref_HEX$ = "0"&CnvTempUref_HEX$                 !2
+end loop
+
+loop
+   exit if len(InvTempUn_HEX$) = 4
+   InvTempUn_HEX$ = "0"&InvTempUn_HEX$                     !3
+end loop
+
+loop
+   exit if len(CnvTempUn_HEX$) = 4
+   CnvTempUn_HEX$ = "0"&CnvTempUn_HEX$                     !4
+end loop
+
+loop
+   exit if len(InvTempUin_HEX$) = 4
+   InvTempUin_HEX$ = "0"&InvTempUin_HEX$                   !5
+end loop
+
+loop
+   exit if len(CnvTempUin_HEX$) = 4
+   CnvTempUin_HEX$ = "0"&CnvTempUin_HEX$                   !6
+end loop
+
+loop
+   exit if len(InvTempUout_HEX$) = 4
+   InvTempUout_HEX$ = "0"&InvTempUout_HEX$                 !7
+end loop
+
+loop
+   exit if len(CnvTempUout_HEX$) = 4
+   CnvTempUout_HEX$ = "0"&CnvTempUout_HEX$                 !8
+end loop
+
+loop
+   exit if len(Cnv_Vrs_Uin_DC_HEX$) = 4
+   Cnv_Vrs_Uin_DC_HEX$ = "0"&Cnv_Vrs_Uin_DC_HEX$           !9
+end loop
+
+loop
+   exit if len(CnvVstUinDC_HEX$) = 4
+   CnvVstUinDC_HEX$ = "0"&CnvVstUinDC_HEX$                 !10
+end loop
+
+loop
+   exit if len(CnvVrsUoutDC_HEX$) = 4
+   CnvVrsUoutDC_HEX$ = "0"&CnvVrsUoutDC_HEX$               !11
+end loop
+
+loop
+   exit if len(CnvVstUoutDC_HEX$) = 4
+   CnvVstUoutDC_HEX$ = "0"&CnvVstUoutDC_HEX$               !12
+end loop
+
+loop
+   exit if len(InvUdclUin_HEX$) = 4                        !13
+   InvUdclUin_HEX$ = "0"&InvUdclUin_HEX$
+end loop
+
+loop
+   exit if len(InvUdclUout_HEX$) = 4
+   InvUdclUout_HEX$ = "0"&InvUdclUout_HEX$                 !14
+end loop
+
+loop
+   exit if len(CnvVrsUout_HEX$) = 4
+   CnvVrsUout_HEX$ = "0"&CnvVrsUout_HEX$                   !15
+end loop
+
+loop
+   exit if len(CnvVstUout_HEX$) = 4                        !16
+   CnvVstUout_HEX$ = "0"&CnvVstUout_HEX$
+end loop
+
+Data_Hex_1$ =  Package_Code$[3;2] & Package_Code$[1;2] & Voltage_Code$[3;2] & Voltage_Code$[1;2] & Power_Code$[3;2] & Power_Code$[1;2] & Diver_version_Number$[3;2] & Diver_version_Number$[1;2]
+!@ 14 00 04 00 78 00 02 00
+
+loop
+   exit if len(Data_Hex_1$) = 16                           !17
+   Data_Hex_1$ = Data_Hex_1$&"F"
+end loop
+
+if Sbtt$ = "G2A26800MX1" then
+Data_Hex_2$ = InvTempUref_HEX$[3;2] & InvTempUref_HEX$[1;2] & InvTempUn_HEX$[3;2] & InvTempUn_HEX$[1;2] & InvTempUin_HEX$[3;2] & InvTempUin_HEX$[1;2] & InvTempUout_HEX$[3;2] & InvTempUout_HEX$[1;2] & InvUdclUin_HEX$[3;2] & InvUdclUin_HEX$[1;2] & InvUdclUout_HEX$[3;2] & InvUdclUout_HEX$[1;2] & Manufacturing_Test_Ident$[3;2] & Manufacturing_Test_Ident$[1;2]
+
+loop
+   exit if len(Data_Hex_2$) = 32                           !18
+   Data_Hex_2$ = Data_Hex_2$&"F"
+end loop
+
+end if
+!@ 00 00 00 00 00 00 02 00 00 00 C0 DE
+
+if Sbtt$ = "G2A26800MX2" then
+Data_Hex_2$ = CnvTempUref_HEX$[3;2] & CnvTempUref_HEX$[1;2] & CnvTempUn_HEX$[3;2] & CnvTempUn_HEX$[1;2] & CnvTempUin_HEX$[3;2] & CnvTempUin_HEX$[1;2] & CnvTempUout_HEX$[3;2] & CnvTempUout_HEX$[1;2] & Cnv_Vrs_Uin_DC_HEX$[3;2] & Cnv_Vrs_Uin_DC_HEX$[1;2] & CnvVrsUoutDC_HEX$[3;2] & CnvVrsUoutDC_HEX$[1;2] & CnvVrsUout_HEX$[3;2] & CnvVrsUout_HEX$[1;2] & CnvVstUinDC_HEX$[3;2] & CnvVstUinDC_HEX$[1;2]
+
+!@ 25 3A A8 04 FF 0B D2 02 EA 07 64 07 79 FF 0D 08
+
+Data_Hex_3$ = CnvVstUoutDC_HEX$[3;2] & CnvVstUoutDC_HEX$[1;2]  & CnvVstUout_HEX$[3;2] & CnvVstUout_HEX$[1;2] & Manufacturing_Test_Ident$[3;2] & Manufacturing_Test_Ident$[1;2]
+
+!@ 6A 07 77 FF C0 DE
+end if
+
+! Data Array 4 (Ser No. in ASCII format) - Different byte order than the rest
+
+Data_ASCII1$ = Serial$
+
+loop
+   exit if len(Data_ASCII1$) = 16
+   Data_ASCII1$ = Data_ASCII1$&" "
+end loop
+
+  Data_Hex_4$ = ""
+  for I = 1 to len(Data_ASCII1$)
+      Data_Hex_Temp$ = ith$(num(Data_ASCII1$[I;1]))
+        loop
+           exit if len(Data_Hex_Temp$) = 2
+           Data_Hex_Temp$ = "0"&Data_Hex_Temp$
+        end loop
+ !   print Data_Hex_4$
+     Data_Hex_4$ = Data_Hex_4$&Data_Hex_Temp$
+  next I
+!@20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20
+
+! Data Array 5 (Ser No. in ASCII format) - Different byte order than the rest
+
+if Sbtt$ = "G2A26800MX1" then PN$ = "G2A26800MX1A-LF"
+if Sbtt$ = "G2A26800MX2" then PN$ = "G2A26800MX2A-LF"
+
+
+Data_ASCII2$ = PN$
+
+loop
+   exit if len(Data_ASCII2$) = 16
+   Data_ASCII2$ = Data_ASCII2$&" "
+end loop
+
+  Data_Hex_5$ = ""
+  for I = 1 to len(Data_ASCII2$)
+      Data_Hex_Temp$ = ith$(num(Data_ASCII2$[I;1]))
+        loop
+           exit if len(Data_Hex_Temp$) = 2
+           Data_Hex_Temp$ = "0"&Data_Hex_Temp$
+        end loop
+ !   print Data_Hex_5$
+     Data_Hex_5$ = Data_Hex_5$&Data_Hex_Temp$
+  next I
+!@47 32 41 32 36 38 30 30 4D 58 32 41 2D 4C 46 20
+
+!*************************************************************
+! ** Convert Hex string to Binary and fill Array - Data 1
+!*************************************************************
+  for I = 1 to len(Data_Hex_1$)
+      Data_Binary$ = itb$(hti(Data_Hex_1$[I;1]))
+        loop
+           exit if len(Data_Binary$) = 4
+             Data_Binary$ = "0"&Data_Binary$
+        end loop
+      Z = 0
+      for Z = 0 to 3
+          EEprom_Data_1(((I-1)*4)+Z) =  val(Data_Binary$[(Z+1);1])
+      next Z
+  next I
+!*************************************************************
+! ** Convert Hex string to Binary and fill Array - Data 2
+!*************************************************************
+
+  for I = 1 to len(Data_Hex_2$)
+      Data_Binary$ = itb$(hti(Data_Hex_2$[I;1]))
+        loop
+           exit if len(Data_Binary$) = 4
+             Data_Binary$ = "0"&Data_Binary$
+        end loop
+      Z = 0
+      for Z = 0 to 3
+          EEprom_Data_2(((I-1)*4)+Z) =  val(Data_Binary$[(Z+1);1])
+      next Z
+  next I
+!*************************************************************
+! ** Convert Hex string to Binary and fill Array - Data 3
+!*************************************************************
+
+  for I = 1 to len(Data_Hex_3$)
+      Data_Binary$ = itb$(hti(Data_Hex_3$[I;1]))
+        loop
+           exit if len(Data_Binary$) = 4
+             Data_Binary$ = "0"&Data_Binary$
+        end loop
+
+! Fill Data Array
+
+      Z = 0
+      for Z = 0 to 3
+          EEprom_Data_3(((I-1)*4)+Z) =  val(Data_Binary$[(Z+1);1])
+      next Z
+  next I
+
+!*************************************************************
+! ** Convert Hex string to Binary and fill Array - Data 4
+!*************************************************************
+
+  for I = 1 to len(Data_Hex_4$)
+      Data_Binary$ = itb$(hti(Data_Hex_4$[I;1]))
+        loop
+           exit if len(Data_Binary$) = 4
+             Data_Binary$ = "0"&Data_Binary$
+        end loop
+
+! Fill Data Array
+
+      Z = 0
+      for Z = 0 to 3
+          EEprom_Data_4(((I-1)*4)+Z) =  val(Data_Binary$[(Z+1);1])
+      next Z
+  next I
+
+!*************************************************************
+! ** Convert Hex string to Binary and fill Array - Data 5
+!*************************************************************
+
+  for I = 1 to len(Data_Hex_4$)
+      Data_Binary$ = itb$(hti(Data_Hex_5$[I;1]))
+        loop
+           exit if len(Data_Binary$) = 4
+             Data_Binary$ = "0"&Data_Binary$
+        end loop
+
+! Fill Data Array
+
+      Z = 0
+      for Z = 0 to 3
+          EEprom_Data_5(((I-1)*4)+Z) =  val(Data_Binary$[(Z+1);1])
+      next Z
+  next I
+
+   safeguard none
+   test "u8%program_2";EEProm_Data_2(*)   ! 24c64 Pass
+   test "u8%program_3";EEProm_Data_3(*)   ! 24c64 Pass
+   test "u8%program_4";EEProm_Data_4(*)   ! 24c64 Pass
+   test "u8%program_5";EEProm_Data_5(*)   ! 24c64 Pass
+   test "u54%program_1";EEProm_Data_1(*)  ! 24c64 Pass
+   test "u54%program_2";EEProm_Data_2(*)  ! 24c64 Pass
+   test "u54%program_3";EEProm_Data_4(*)  ! 24c64 Pass
+   test "u54%program_4";EEProm_Data_5(*)  ! 24c64 Pass
+   Write$ = "..\GOS_Test_Data\" & Serial$ & "_" & Sbtt$[9;3]&"_" & datetime$ & "_Write_Data.txt"
+   assign @File1 to Write$; write,over,exclusive
+   output @File1; EEprom_Data_1(*),EEprom_Data_2(*),EEprom_Data_3(*),EEprom_Data_4(*),EEprom_Data_5(*)
+   assign @File1 to *  !@JN FOR DEBUG
+
+   test "u8%read_2";EEProm_Data_2(*)      ! 24c64 Pass
+   test "u8%read_3";EEProm_Data_3(*)      ! 24c64 Pass
+   test "u8%read_4";EEProm_Data_4(*)      ! 24c64 Pass
+   test "u8%read_5";EEProm_Data_5(*)      ! 24c64 Pass
+   test "u54%read_1";EEProm_Data_1(*)     ! 24c64 Pass
+   test "u54%read_2";EEProm_Data_2(*)     ! 24c64 Pass
+   test "u54%read_3";EEProm_Data_4(*)     ! 24c64 Pass
+   test "u54%read_4";EEProm_Data_5(*)     ! 24c64 Pass
+
+   if Sbtt$ = "G2A26800MX1" then
+   test "u54%fetch";Read_Data(*)
+   call Hex_data_Gen
+   end if
+   if Sbtt$ = "G2A26800MX2" then
+   test "u8%fetch";Read_Data(*)
+   call Hex_data_Gen
+   end if
+
+   Read$ = "..\GOS_Test_Data\" & Serial$ & "_" & Sbtt$[9;3]&"_" & datetime$ & "_Read_Data.txt"
+   assign @File2 to Read$; write,over,exclusive
+   output @File2; EEprom_Data_1(*),EEprom_Data_2(*),EEprom_Data_3(*),EEprom_Data_4(*)
+   assign @File2 to *  !@JN FOR DEBUG
+
+subend
+
+sub Program_Flash (Device$, Status_Code, Message$)
+global Status
+global Report_level$, Logging
+
+  if Device$ = "" then  subexit
+  if Message$ <> "" then  print tab(5);Message$
+  Status = Status_Code
+
+  ! Verify Manufacturer ID and device ID codes.
+  ! The ID test should be executed in digital for ICT purposes.
+  test Device$ & "%id"
+  if dutfailed then
+    print tab(15); Device$; " : Device ID failed"
+    subexit ! if the wrong device is installed, exit the program subroutine
+  end if
+
+  !remove reporting and logging while verifying device status
+  Report_level$ = rli$
+  report level is none
+  if Logging then
+! COVERAGE     log level is none
+  end if
+  print tab(8); "Verifying Status"
+  safeguard none  !flash! This board meets design for On-Board Programming
+                  !       criteria for safeguard none to be safe
+                  !       Programming runs very slowly with safeguard on
+
+  !flash! Comment the appropriate crc test(s) in Digital_Tests subroutine
+  test Device$ & "%crc"
+  if not dutfailed then
+    print tab(15); Device$; " : Device pre-programmed"
+    call Cleanup_Flash
+    subexit  ! the device is already properly programmed, exit subroutine
+  else
+    pass device  ! clears dutfailed, boardfailed if only failure
+    print tab(15); Device$; " : Contains incorrect data"
+  end if
+
+  ! Verify device is blank.
+  !flash! Comment the appropriate blank test(s) in Digital_Tests subroutine
+  test Device$ & "%blank"
+  if dutfailed then
+    pass device  ! clears dutfailed, boardfailed if only failure
+    print tab(15); Device$; " : Not blank"
+    print tab(8); "Erasing"
+    !flash! call Setup_Power_Supplies_Program  ! add any necessary programming
+                                               ! voltages to a new subroutine
+    !flash! Comment the appropriate erase test(s) in Digital_Tests subroutine
+    test Device$ & "%erase"
+    if not dutfailed then
+      print tab(8); "Erase complete"
+    end if
+  end if
+  ! Some older devices may need two erase sequences. If erase fails
+  ! twice on only one board, continue to program all. The final CRC
+  ! check will determine the viability of the erase program sequence
+
+  if dutfailed then
+    pass device  ! clears dutfailed, boardfailed if only failure
+    print tab(15); Device$; " : Needed to be erased twice"
+    test Device$ & "%erase"
+    if dutfailed then
+      call Cleanup_Flash   !flash! move above erase test if full report
+                           !       of failing erase tests is desired
+      print tab(15); Device$; " : Erase Failed"
+      subexit  ! if the device cannot be erased
+    end if          !if dutfailed second erase
+    print tab(8); "Erase complete"
+  end if            !if dutfailed first erase
+  print tab(8); "Programming"
+  A=msec
+  !flash! Comment the appropriate program test(s) in Digital_Tests subroutine
+  test Device$ & "%program"
+  B = (msec-A)/1000
+  if not dutfailed then
+    print tab(15); "Programming complete in"; B;" seconds"
+  else
+    print tab(15); "Programming Failed"
+    pass device
+  end if
+  !flash! call Setup_Power_Supplies (Failed_In_Power_Supplies, PowerMsg$)
+  !flash! if dutfailed then
+  !flash!   print "Power supplies limited"
+  !flash!   call Cleanup_Flash
+  !flash!   subexit
+  !flash! end if
+  call Cleanup_Flash  !flash! move above program test for full reporting
+  print tab(8); "Verifying Data"
+  !flash! Comment the appropriate crc test(s) in Digital_Tests subroutine
+  test Device$ & "%crc"
+  if dutfailed then
+    print tab(15); Device$; " : Contains incorrect data"
+  else
+    print tab(15); Device$; " : Contains correct data"
+  end if
+subend
+
+def fnPinsfailed (Message$)
+
+   if Message$ <> "" then  print tab(5);Message$
+   Pins_failed_flag = 0
+! COVERAGE    test "pins"
+   if dutfailed then Pins_failed_flag = 1
+   return Pins_failed_flag
+fnend
+
+sub ScanWorks_Setup
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+   testhead cleanup
+subend
+
+sub ScanWorks_Pretest
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status, Failed_In_SW_Testing
+
+!   Status = Failed_In_SW_Testing
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub ScanWorks_Cleanup
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+   scanworks reset
+subend
+
+sub ScanWorks_Scan_Path_Verify_Tests (Status_Code, Message$)
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub ScanWorks_Interconnect_Tests (Status_Code, Message$)
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub ScanWorks_Mem_Interconnect_Tests (Status_Code, Message$)
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub ScanWorks_Cluster_Tests (Status_Code, Message$)
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub ScanWorks_Mem_BIST (Status_Code, Message$)
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub ScanWorks_Device_Programming (Status_Code, Message$)
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub ScanWorks_Flash_Programming (Status_Code, Message$)
+! CAUTION:  Within this subroutine, do NOT use testhead statements
+! CAUTION:  with the exception of the following statements:
+! CAUTION:  testhead cleanup, test scanworks, scanworks reset.
+! CAUTION:  Failure to follow this guideline can result in damage
+! CAUTION:  to the BSI card.
+global Status
+
+!   if Message$ <> "" then  print tab(5);Message$
+!   Status = Status_Code
+!   call ScanWorks_Setup
+!   call ScanWorks_Cleanup
+subend
+
+sub Loop(Times,Device$)   !jm 3-24-97
+  report level is none
+! COVERAGE   log level is none
+  for Count = 1 to (Times - 1)
+    test Device$
+    if not dutfailed then goto Pass
+    if Count < (Times - 1) then pass device
+  next Count
+  Pass:
+  report level is all
+! COVERAGE   log level is failures
+  if dutfailed then
+     pass device
+     test Device$
+  end if
+subend
+
+sub Scan_Assy_Barcode
+global BStyle$, Assy$, Assy_Rev$, Fab$, Fab_Rev$, Sbtt$, Board_Rev$
+
+loop
+!@print "Please Scan the board Assembly Barcode"
+!@input "",Asnmtmp$
+
+!@if Asnmtmp$ = "xxxxxxx" then
+    BStyle$    = "G2A26800MXx"
+    if Sbtt$ = "G2A26800MX1" then Assy$ = "GAA26800MX1"
+    if Sbtt$ = "G2A26800MX2" then Assy$ = "GAA26800MX2"
+    if Sbtt$ = "G2A26800MX1" then Assy_Rev$ = "1"
+    if Sbtt$ = "G2A26800MX2" then Assy_Rev$ = "2"
+    Fab$       = "GAA610ADB1"
+    if Sbtt$ = "G2A26800MX1" then Fab_rev$ = "1"
+    if Sbtt$ = "G2A26800MX2" then Fab_rev$ = "2"
+    goto ASSY_OK
+!@end if
+
+print "*******************************************************************"
+print "*     CHECK FOR THE CORRECT FIXTURE & CORRECT BARCODE LABEL       *"
+print "*  IF YOU STILL HAVE PROBLEMS  PLEASE CONTACT ICT TECH SUPPORT    *"
+print "*******************************************************************"
+
+end loop
+
+ASSY_OK:
+subend
+
+
+sub Check_Board_Presence
+
+  powered
+! COVERAGE   log level is none
+  report level is none
+  loop
+ !  test"analog/bptest"
+    exit if not dutfailed
+    pass device
+    print "Board Presence Detection has failed!"
+    print "Please check to be sure the board is seated correctly"
+    print "on the fixture and the gate is closed."
+    question"Press YES to retry or NO to exit program. ", Bdpres_Status
+    if not Bdpres_Status then
+      print "Cannot continue.  Call your Process Technician."
+      stop
+    end if
+  end loop
+  report level is all
+! COVERAGE   log level is failures
+
+subend
+
+sub Check_Gate_Closed
+
+  unpowered
+! COVERAGE   log level is none
+  report level is none
+  loop
+!   test"analog/gate_sw%gate_sw"
+    exit if not dutfailed
+    pass device
+    print "Gate Closed Sensor has failed!"
+    print "Please ensure the gate is closed correctly."
+    question"Press YES to retry or NO to exit program. ", Gate_Status
+    if not Gate_Status then
+      print "Cannot continue.  Call your Process Technician."
+      stop
+    end if
+  end loop
+  report level is all
+! COVERAGE   log level is failures
+
+subend
+
+sub Jabil_Inits
+global Customer$, Site$, Line$, Testplan$
+
+   enter "uname -n |";System$  ! HP3070 System name
+   Testplan$ = "G2A26800MXx"
+   Customer$ = "OTIS"       ! Customer name
+   Site$     = "11"             ! Production Facility
+                               !  Site Map:
+                               !  1 - South            St. Petersburg, FL
+                               !  2 - Boxbuild         St. Petersburg, FL
+                               !  3 - North            Auburn Hills, MI
+                               !  4 - Scotland         Livingston, Scotland
+                               !  5 - Guadalajara      Guadalajara, Mexico
+                               !  6 - Penang           Penang, Malaysia
+                               !  7 - West             San Jose, CA
+                               !  9 - NorthEast        Boston, MA
+
+
+!@ Line_Path$ =  btgetenv$("AGILENT3070_ROOT") & "/line_number"
+!@ assign @Line_Num,Err to Line_Path$;read
+!@ enter @Line_Num,,Err;Line$
+!@ LineOK:
+  ! Line number entry by the test operator:
+   loop
+     print "Please enter the bay number that these boards were built on"
+     print
+     print "Valid options are:"
+     print
+     print "   1 - Bay  1"
+     print "   2 - Bay  2"
+     print "   3 - Bay  3"
+     input "",Ans$
+     if (val(Ans$) >  0) and (val(Ans$) <  999) then
+        Line$ = Ans$           ! Bay number that built the boards
+     !  Line$ ="9_10"
+        goto LineOK
+     else
+        print using "@"  !clear screen
+        print "You must enter a valid line number.  Try Again"
+        print
+     end if
+   end loop
+   LineOK:
+
+
+subend
+
+sub Re_Scan
+global Serial$, Serial_Prompt$
+global Invon$, Invoff$
+global Start, Status, Failed
+
+  Stop1 = msec
+  print
+  print chr$(27)&" Total Test Time BEFORE Re-Scan = ";dround((Stop1-Start)*1m,4)
+  !forces operator to re-scan serial # at end of test   !
+  print
+  print Invon$&"Please re-scan serial number for board"&Invoff$
+  Serial2$ = fn Get_Serial_Num$(Serial_Prompt$)
+  if Serial$ <> Serial2$ then
+    fail device
+    Status = Failed
+    report "Serial number ";Serial2$;" doesn't match"
+    log"{@BLOCK|serial_number_verify|01{@A-RES|1|"&Serial2$&"|}}"
+  end if
+subend
+
+
+
+sub ICT_TestResult_Record      !@!20110331
+global Serial$
+global InvTempUref, CnvTempUref
+global InvTempUn, CnvTempUn
+global InvTempUin, CnvTempUin
+global InvTempUout, CnvTempUout
+global Cnv_Vrs_Uin_DC, CnvVstUinDC
+global CnvVrsUoutDC, CnvVstUoutDC
+global InvUdclUin, InvUdclUout,Temp_IGBT
+global CnvVrsUout, CnvVstUout
+global Package_Code$,Voltage_Code$
+global Power_Code$,Diver_version_Number$
+global Manufacturing_Test_Ident$,Sbtt$
+
+  AAA$ = "..\GOS_Test_Data\" & Serial$ & "_" & Sbtt$[9;3]&"_" & datetime$ & "_voltage_data.txt"
+
+  assign @Gos_Data_File ,ERRFILE to AAA$;write,over
+  if ERRFILE then
+  print tab(5);chr$(27)&"&v1S";"ICT Data Record Failed,Please check file:..\GOS_Test_Data\voltage_data.txt is ready.... "
+  fail device
+  stop
+  end if
+
+  output @Gos_Data_File;"==============UUT Data Record Start:========="
+  output @Gos_Data_File;"Serial No. is : " & Serial$ & " Test date: " &datetime$
+  output @Gos_Data_File;"InvTempUref(Unit mV) is : " ; InvTempUref      !@!1
+  output @Gos_Data_File;"CnvTempUref(Unit mV) is : " ; CnvTempUref      !@!2
+  output @Gos_Data_File;"InvTempUn(Unit mV) is : " ; InvTempUn          !@!3
+  output @Gos_Data_File;"CnvTempUn(Unit mV) is : " ; CnvTempUn          !@!4
+  output @Gos_Data_File;"InvTempUin(Unit mV) is : " ; InvTempUin        !@!5
+  output @Gos_Data_File;"CnvTempUin(Unit mV) is : " ; CnvTempUin        !@!6
+  output @Gos_Data_File;"Temp_IGBT(Unit mV) is : " ; Temp_IGBT          !@!7-1
+  output @Gos_Data_File;"InvTempUout(Unit mV) is : " ; InvTempUout      !@!7-2
+  output @Gos_Data_File;"CnvTempUout(Unit mV) is : " ; CnvTempUout      !@!8
+  output @Gos_Data_File;"Cnv_Vrs_Uin_DC(Unit mV) is : " ; Cnv_Vrs_Uin_DC!@!9
+  output @Gos_Data_File;"CnvVstUinDC(Unit mV) is : " ; CnvVstUinDC      !@!10
+  output @Gos_Data_File;"CnvVrsUoutDC(Unit mV) is : " ; CnvVrsUoutDC    !@!11
+  output @Gos_Data_File;"CnvVstUoutDC(Unit mV) is : " ; CnvVstUoutDC    !@!12
+  output @Gos_Data_File;"InvUdclUin(Unit mV) is : " ; InvUdclUin        !@!13
+  output @Gos_Data_File;"InvUdclUout(Unit mV) is : " ; InvUdclUout      !@!14
+  output @Gos_Data_File;"CnvVrsUout(Unit mV) is : " ; CnvVrsUout        !@!15
+  output @Gos_Data_File;"CnvVstUout(Unit mV) is : " ; CnvVstUout        !@!16
+  output @Gos_Data_File;"Package_Code(Unit mV) is : " & Package_Code$   !@!17
+  output @Gos_Data_File;"Voltage_Code(Unit mV) is : " & Voltage_Code$   !@!18
+  output @Gos_Data_File;"Power_Code(Unit mV) is : " & Power_Code$       !@!19
+  output @Gos_Data_File;"Diver_version_Number(Unit mV) is : " & Diver_version_Number$ !@!20
+  output @Gos_Data_File;"Manufacturing_Test_Ident(Unit mV) is : " & Manufacturing_Test_Ident$   !@!21
+  output @Gos_Data_File;"Serial Number is : " & Serial$                 !@!19
+  output @Gos_Data_File;"PCB Part Number is : " & Sbtt$[9;3]            !@!20
+
+  output @Gos_Data_File;"==============UUT Data Record end============"
+  output @Gos_Data_File;""
+  output @Gos_Data_File;""
+
+
+  assign @Gos_Data_File to *
+
+
+subend
+
+sub Hex_data_Gen
+global Serial$, Read_Data(*), Sbtt$
+dim Input_Data_Conv(0:4095)
+
+
+ for I = 0 to 4095
+     Input_Data_Conv(I) = Read_Data(I)
+     !Input_Data_Conv(I*2 +0) = 1
+     !Input_Data_Conv(I*2 +1) = 1
+ next I
+
+ AAA$ = "..\GOS_Test_Data\" & Serial$ & "_" & Sbtt$[9;3]&"_" & datetime$ & "_Hex_Data.txt"
+ assign @File3 to AAA$; write,over
+
+ for M = 0 to 15
+ Output_Hex_String$ = ""
+ for N = 0 to 255 step 4
+ Output_Bit$ = ""
+ Output_Hex$ = ""
+!print "N is : " ,N
+!print "M is : " ,M
+
+!print "(M*256)+N+0 is ",(M*256)+N+0
+!print "(M*256)+N+1 is ",(M*256)+N+1
+!print "(M*256)+N+2 is ",(M*256)+N+2
+!print "(M*256)+N+3 is ",(M*256)+N+3
+
+ Output_Bit$ = val$(Input_Data_Conv((M*256)+N+0))&val$(Input_Data_Conv((M*256)+N+1))&val$(Input_Data_Conv((M*256)+N+2)) & val$(Input_Data_Conv((M*256)+N+3))
+ Output_Hex$ = ith$(bti(Output_Bit$))
+ Output_Hex_String$ = Output_Hex_String$ & Output_Hex$
+! print "Outputbit is :",Output_Bit$
+
+ next N
+
+ Address$ = ith$((M*32))
+ if len(Address$) = 1 then  Address_Out$ = "000"& Address$
+ if len(Address$) = 2 then  Address_Out$ = "00"& Address$
+ if len(Address$) = 3 then  Address_Out$ = "0"& Address$
+ if len(Address$) = 4 then  Address_Out$ = ""& Address$
+
+ output @File3; Address_Out$ & " : "&Output_Hex_String$
+!print tab(5), Address_Out$ & " : "&Output_Hex_String$
+ next M
+ assign @File3 to *  !@JN FOR DEBUG
+subend
+
+
+
+
+! End of Testplan Writer Generated Testplan.
+
+ !@ add mes system
+
+def fn TISexe$(TISSEN$)
+
+global  Panel_Serial$, System$  ,Proc_Step$
+
+TISBAT$="result.bat"
+TISRES$="result.txt"
+
+unlink TISRES$,Err
+unlink TISBAT$,Err
+unlink "result",Err
+TISTNA$="huautcict01"               !tester name
+TISSPA$=" "                                 !space
+TISCUS$="OTIS"                            !customer
+TISDIV$="OTIS"                            !division
+TISASS$="GAA26800MXx"                    !assembly number
+TISPRO$= Proc_Step$                          !process
+TISRAS$="1"                                 !randomseq
+
+create ascii TISBAT$ ,, Err
+if Err then
+print Err
+end if
+assign @TIS to TISBAT$
+output @TIS ;"TISExe.exe" & TISSPA$ & TISCUS$ & TISSPA$ & TISDIV$ & TISSPA$ & TISSEN$ & TISSPA$ & TISASS$ & TISSPA$ & TISTNA$ & TISSPA$ & TISPRO$ & TISSPA$ &TISRAS$
+assign @TIS to *
+execute (TISBAT$),Error;append
+if Error then print "MES issue occured,continue next step"
+wait 180m
+
+ TTTT: image 40a
+
+assign @TIS, Err to "result.txt";read
+enter @TIS ,,Err using TTTT;Res$
+assign @TIS ,Err to *
+
+print tab(10); "TIS feedback :", Res$
+
+unlink TISBAT$,Err
+unlink TISRES$,Err
+unlink "result",Err
+
+wait 20m
+
+if Res$[1;1]="0" then Res1$="pass"
+if Res$[1;1]="1" then Res1$="fail"
+if Res$[1;1]="2" then Res1$="nnoo"
+return (Res1$)
+
+fnend
+
+
+def fn TISexe_Test$(Serial_Temp$)
+          Test_Result$ =fn TISexe$(Serial_Temp$)
+      if "pass"<>Test_Result$ then
+          if "fail"= Test_Result$ then
+          print "******************************"
+          print "Process Check FALL Board #:"   & Serial_Temp$
+          print tab(5);chr$(27)&"&v1SProcess Check FALL Board #:"& Serial_Temp$
+          print "******************************"
+          print
+          else
+          print "******************************"
+          print "Please Check The Network Connection "
+          print "Ensure the network connection and MES system is OK."
+          print "******************************"
+          print
+          end if
+      else
+!@        print "Process Check PASS Board #:"   &  Serial_Temp$
+          print tab(5);chr$(27)&"&v2SProcess Check PASS Board #:" &Serial_Temp$
+      end if
+
+return (Test_Result$)
+
+fnend
+
+
+
+

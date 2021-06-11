@@ -1,0 +1,50 @@
+!!!!    2    0    1 1393382385   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:39 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog
+   disconnect all
+   gpconnect 21852 to 21853      ! power on the RELAY board
+   gpconnect 21854 to 21855      ! power on the OPTO board
+   connect a to nodes "RELAY_19"    !@!ECN add 2K Load at +27V_TW_P / N
+   connect g to nodes "RELAY_19"
+   connect g to nodes "RELAY_VCC1"
+   auxiliary dcv,amplitude 5,icompliance 1,on
+
+   connect s to nodes "RELAY_6"
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   wait 30m
+   !@test "Test_condition1"
+   !@test "Test_condition2"
+   !@test "Test_condition3"
+   test "Frequency"
+   gpdisconnect 21852 from 21853
+   gpdisconnect 21854 from 21855
+end test
+
+subtest "Test_condition1"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 24
+   measure 25, 23                  ! Adjust at debug
+end subtest
+
+subtest "Test_condition2"
+   connect i to nodes "OPTO_VCC"
+   connect l to nodes "GND"
+   detector dcv, expect 5
+   measure 5.5, 4.5                ! Adjust at debug
+end subtest
+
+subtest "Test_condition3"
+   connect i to nodes "RELAY_VCC"
+   connect l to nodes "GND"
+   detector dcv, expect 5
+   measure 5.5, 4.5                ! Adjust at debug
+end subtest
+
+subtest  "Frequency"
+   connect rcva to nodes "PWM_OUT6"   !@nodes "DRAIN_TW"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector frequency, expect 160k, threshold 2.5, gate 0
+   measure 180k, 135k
+end subtest

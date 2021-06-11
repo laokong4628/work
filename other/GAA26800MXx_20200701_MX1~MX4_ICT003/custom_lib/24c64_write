@@ -1,0 +1,748 @@
+!!!!    6    0    1 1124199751  V577b                                         
+!
+! Revision control data:
+! use for testing "write_24c02", safeguard "high_out_cmos"
+!
+
+! 256x8 Serial EEPROM
+
+! 12.04.2001 Initial issue, debugged on 1hat10765  jrm
+! 24.04.2001 Testplan sample debugged on /issued3/t60959abp.02f01  jrm
+! 21.06.2001 Testplan sample debugged on /issued3/t60881aat.01f03  jrm
+! 18.07.2001 Testplan sample changed to accomodate new read test.  RG
+! 09.10.2001 Testplan sample changed to fix Board_Rev$ error.      RG
+
+sequential
+
+test digital; Address(*), Data(*)
+
+vector cycle  5u ! chip requires 4.7 uS minimum
+receive delay 4.5u
+
+assign GND    to pins 4
+assign VCC    to pins 8
+
+assign Address to pins 3,2,1 ! A2 A1 A0
+
+assign SDA    to pins 5
+assign SCL    to pins 6
+
+assign WP     to pins 7
+
+inputs  Address , WP,SCL
+bidirectional SDA
+power GND, VCC
+
+family TTL
+
+variable Address(*) to groups SDA
+variable Data(*) to groups SDA
+
+set ref on groups Address to dh 5, dl 0    ! Nominal supply voltages.
+set load on groups SDA to pull up
+
+
+!
+!--------- vectors ---------------------------------------
+!
+
+vector  Initialize_Inputs
+   drive SDA
+   set   WP          to "0"  ! Normal (not protected) operation. !tied low
+   set   SDA         to "1"
+   set   SCL         to "1"
+   set   Address     to "000"
+end vector
+
+vector  Keep
+   receive SDA
+   set   WP          to "0"
+   set   SDA         to "x"
+   set   SCL         to "k"
+   set   Address     to "kkk"
+end vector
+
+vector  Keep_DR
+   drive SDA
+   set   WP          to "0"
+   set   SDA         to "k"
+   set   SCL         to "k"
+   set   Address     to "kkk"
+end vector
+
+vector  Address_in
+   initialize        to Keep_DR
+   set   Address     to "kkk"
+end vector
+
+vector  Data_In
+   initialize        to Keep_DR
+   set   SDA         to "k"
+end vector
+
+vector  Data_In_Read
+   initialize        to Keep
+   set   SDA         to "k"
+end vector
+
+vector  Ack_lo
+   initialize        to Keep
+   set   SDA         to "0"
+end vector
+
+vector  Ack_hi
+   initialize        to Keep
+   set   SDA         to "1"
+end vector
+
+vector  Clock
+   initialize        to Keep_DR
+   set   SCL         to "t"
+end vector
+
+vector  Clock_read
+   initialize        to Keep
+   set   SCL         to "t"
+end vector
+
+vector  Clock_hi
+   initialize        to Keep_DR
+   set   SCL         to "1"
+end vector
+
+vector  Clock_lo
+   initialize        to Keep_DR
+   set   SCL         to "0"
+end vector
+
+vector  WP_hi
+   initialize        to Keep_DR
+   set   WP          to "1"
+end vector
+
+vector  WP_lo
+   initialize        to Keep_DR
+   set   WP          to "0"
+end vector
+
+vector  SDA_hi
+   initialize        to Keep_DR
+   set   SDA         to "1"
+end vector
+
+vector  SDA_lo
+   initialize        to Keep_DR
+   set   SDA         to "0"
+end vector
+
+!
+!-----------------------------------------------------------------------
+!
+
+sub  Set_Data       != variable Data(*)
+
+   execute  Data_in     drive Data(7)    ! D7
+   execute  Clock
+   execute  Clock
+   execute  Data_in     drive Data(6)    ! D6
+   execute  Clock
+   execute  Clock
+   execute  Data_in     drive Data(5)    ! D5
+   execute  Clock
+   execute  Clock
+   execute  Data_in     drive Data(4)    ! D4
+   execute  Clock
+   execute  Clock
+   execute  Data_in     drive Data(3)    ! D3
+   execute  Clock
+   execute  Clock
+   execute  Data_in     drive Data(2)    ! D2
+   execute  Clock
+   execute  Clock
+   execute  Data_in     drive Data(1)    ! D1
+   execute  Clock
+   execute  Clock
+   execute  Data_in     drive Data(0)    ! D0
+   execute  Clock
+   execute  Clock
+
+end sub
+
+
+sub  Set_Data_Read  != variable Data(*)
+
+   execute  Data_in     receive Data(7)    ! D7
+   execute  Clock_read
+   execute  Clock_read
+   execute  Data_in     receive Data(6)    ! D6
+   execute  Clock_read
+   execute  Clock_read
+   execute  Data_in     receive Data(5)    ! D5
+   execute  Clock_read
+   execute  Clock_read
+   execute  Data_in     receive Data(4)    ! D4
+   execute  Clock_read
+   execute  Clock_read
+   execute  Data_in     receive Data(3)    ! D3
+   execute  Clock_read
+   execute  Clock_read
+   execute  Data_in     receive Data(2)    ! D2
+   execute  Clock_read
+   execute  Clock_read
+   execute  Data_in     receive Data(1)    ! D1
+   execute  Clock_read
+   execute  Clock_read
+   execute  Data_in     receive Data(0)    ! D0
+   execute  Clock_read
+   execute  Clock_read
+
+end sub
+
+
+!------------------------------------------------------------------------------
+
+
+sub  Set_Address       != variable Address(*)
+
+   execute  Address_in     drive Address(7)    ! A7   MSB first
+   execute  Clock
+   execute  Clock
+   execute  Address_in     drive Address(6)    ! A6
+   execute  Clock
+   execute  Clock
+   execute  Address_in     drive Address(5)    ! A5
+   execute  Clock
+   execute  Clock
+   execute  Address_in     drive Address(4)    ! A4
+   execute  Clock
+   execute  Clock
+   execute  Address_in     drive Address(3)    ! A3
+   execute  Clock
+   execute  Clock
+   execute  Address_in     drive Address(2)    ! A2
+   execute  Clock
+   execute  Clock
+   execute  Address_in     drive Address(1)    ! A1
+   execute  Clock
+   execute  Clock
+   execute  Address_in     drive Address(0)    ! A0
+   execute  Clock
+   execute  Clock
+
+end sub
+
+
+sub  Device_Address  ! Sends the address that was set up in  Initialize_inputs
+
+   execute  SDA_hi      ! "1"     !
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo      ! "0"     !
+   execute  Clock                 ! Device type identifier is always "1010"
+   execute  Clock                 !
+   execute  SDA_hi      ! "1"     !
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo      ! "0"     !
+   execute  Clock
+   execute  Clock
+   execute  SDA_lo      ! A2      ! << customise device address if necessary
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo      ! A1      ! << customise device address if necessary
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo      ! A0      ! << customise device address if necessary
+   execute  Clock
+   execute  Clock
+
+end sub
+
+
+!------------------------------------------------------------------------------
+
+
+sub  Start
+   execute SDA_hi
+   execute Clock_hi
+   execute SDA_lo
+   execute Clock_lo
+end sub
+
+sub  Stop
+   execute SDA_lo
+   execute Clock_hi
+   execute SDA_hi
+end sub
+
+sub  Ack
+   execute Clock_read
+   execute Ack_lo
+   execute Clock_read
+end sub
+
+sub  No_Ack
+   execute Clock_read
+   execute Ack_hi
+   execute Clock_read
+end sub
+
+sub  Write
+   execute  SDA_lo
+   execute  Clock
+   execute  Clock
+end sub
+
+sub  Read
+   execute  SDA_hi
+   execute  Clock
+   execute  Clock
+end sub
+
+
+!------------------------------------------------------------------------------
+
+
+unit "Test: Write DATA to ADDRESS"
+
+   execute Initialize_inputs
+
+   call Start
+
+   call Device_Address ! This address must match the address that
+                       ! was set up during Initialize_inputs
+   call Write
+   call Ack
+   call Set_Address    ! Set up the variable ADDRESS
+   call Ack
+   call Set_Data       ! Set up the variable DATA
+   call Ack
+
+   call Stop
+
+   wait 10m            ! wait for write cycle to complete
+
+end unit
+
+
+unit "Test: Read back data from current address and verify"
+
+   execute Initialize_inputs
+
+   !-----------------------------------------------------------
+   ! Perform a dummy write in order to set up the read address.
+
+   call Start
+
+   call Device_Address ! This address must match the address that
+                       ! was set up during Initialize_inputs
+   call Write
+   call Ack
+   call Set_Address    ! Set up the variable ADDRESS
+   call Ack
+
+   !-----------------------------------------------------------
+   ! Now that the read address has been set up, start the read.
+
+   call Start          ! Start after end of dummy write
+
+   call Device_Address ! This address must match the address that
+                       ! was set up during Initialize_inputs
+   call Read
+   call Ack
+
+   call Set_Data_Read  ! Verify the programmed data matches the variable DATA
+   call No_Ack         ! Require a no-ack condition here.
+
+   call Stop
+
+end unit
+
+
+!
+!  End of test
+!
+
+! --------- SAMPLE TESTPLAN ROUTINES TO BE USED WITH THIS TEST: ----------
+!
+! TEMPLATES FOR MODIFICATIONS TO THE TESTPLAN
+! ===========================================
+!
+! The following changes / additions are required in the testplan.
+! Find  <<<<< for instructions
+!
+! ------------------------------------------------------------------------------
+!
+!   <<<<< Modify sub Get_Product_Build as shown in the example below to
+!         add a global Type_unit declaration and to set up Type_unit$ as
+!         required. >>>>>
+!   sub Get_Product_Build  !!MAY_BE_EDITED
+! ! ---------------------
+!    global Type_unit$ ............
+!             "
+!             "
+!     if Board$ = "1HAT60637ABK" then
+!       Build$(1) = "020000"
+!       Build$(2) = "020001"
+!       Type_unit$= "C-MUX 2 SUBS+TEST ACC+SPM"
+!     end if
+!
+!     if Board$ = "1HAT60637BBG" then
+!            "
+!            "
+!     end if
+!            "
+!            "
+!   subend
+!
+! ------------------------------------------------------------------------------
+!
+!   <<<<< Modify sub Test_Sections as per the example below to ensure that
+!         the listed globals are included and to set up the inv prom variables
+!         and to call the Blow_Inv_Prom routine.
+!
+!   sub Test_Sections !!MAY_BE_EDITED
+! ! -----------------
+!   global ......
+!   global Board$, Board_Rev$, Serial$, Type_unit$, Ic_num$, Dev_addr
+!           "
+!           "
+! ! Blow inventory prom according to type of card
+!  print tab(5);Mode$; "Programming Inventory IC??"
+!  Status = Failed_In_Digital
+!  call Blow_Inv_Prom
+!  if boardfailed then subexit
+!           "
+!
+! ------------------------------------------------------------------------------
+!
+!   <<<<< Include the following subroutines in the testplan. From here to
+!         end of file. Customise at XXXXX. Don't forget to uncomment the
+!         ! at the start of each line >>>>>
+!
+!  sub Blow_Inv_Prom
+!! ----------------------
+!  global Board$, Board_Rev$, Serial$, Type_unit$, Ic_num$, Dev_addr, Date$
+!  global Serial_R$, Manuf_R$, Place_R$, Business_R$, Date_R$, Type_unit_R$
+!  global Board_n_R$, Build_n_R$, Firm_R$, Hard_R$, EOT_R$
+!
+!   safeguard none
+!   report level is none  ! suspends reporting until near end.
+!
+!   dim Word$[2], Manuf$[10], Place$[10], Business$[10], Firm$[10], Hard$[10]
+!
+!!--------------------- jrm DEBUG only: ------------------------------!
+!!                                                                    !
+!! The load order is:                                                 !
+!! ------------------                                                 !
+!!! Serial$     = "N12345"            ! serial number                 !
+!   Manuf$      = "MAR"               ! manufacturers name            !
+!   Place$      = "JLIMCN"            ! place of manufacture          !
+!   Business$   = "OND"               ! manufacturers business        !
+!!! Date$       = "-01-08"            ! date of manufacture           !
+!!! Type_unit$  = "UPLx OSU-C"        ! unit type                     !
+!!! Board$      = "1HAT60924AAQ"      ! unit code                     !
+!!! Board_Rev$  = "020000"            ! board build state (ENU)       !
+!   Firm$       = "------"            ! firmware build state          !
+!   Hard$       = "---"               ! hardware issue                !
+!                                                                     !
+!   Word$       = "00"                ! inventory prom load address   !
+!                                                                     !
+!   Ic_num$     = "icXX"              ! Used for display only         !
+!!--------------------------------------------------------------------!
+!! buffered reporting off | report is '/dev/tty'
+!
+!!-----------------------------------------------------------------------------
+!! Strip "ENU_" from the board enu and adds spaces to the board code
+!!-----------------------------------------------------------------------------
+!  if Board_Rev$[1;4] = "ENU_" then
+!    Build_n$ = Board_Rev$[5;len(Board_Rev$)]
+!  else
+!    Build_n$ = Board_Rev$
+!  end if
+!
+!  Board_n$ = Board$[1;4] & " " &Board$[5;5] & " " & Board$[10;len(Board$)]
+!!-----------------------------------------------------------------------------
+!
+!  if len(Serial$) <3 then  ! debug mode - only do if serial exists
+!    print using "@" | print
+!    print tab(5); "Programming Inventory Prom"
+!    print | print
+!    print tab(5); "Please enter serial number or Return for exit"
+!    input Serial$
+!  end if
+!  if len(Serial$) <3 then  goto Exit_Inv
+!
+!  Date$ = datetime$
+!  Date$ =  "-" & Date$[1;2] & "-" & Date$[3;2]
+!
+!  print using "@" | print
+!  print tab(5); "Programming Inventory Prom"
+!  print tab(5); "--------------------------"
+!  print | print
+!  print tab(10); "Programming Data to Inventory Prom....."
+!
+!!------------------------------------------------------------------------------
+!! Comment this section to just READ the Inventory contents. DEBUG USE ONLY.
+!!------------------------------------------------------------------------------
+!    call Write_PROM (Serial$, Word$ )
+!    call Write_PROM (Manuf$, Word$ )
+!    call Write_PROM (Place$, Word$ )
+!    call Write_PROM (Business$, Word$ )
+!    call Write_PROM (Date$, Word$ )
+!    call Write_PROM (Type_unit$, Word$ )
+!    call Write_PROM (Board_n$, Word$ )
+!    call Write_PROM (Build_n$, Word$ )
+!    call Write_PROM (Firm$, Word$ )
+!    call Write_PROM (Hard$, Word$ )
+!!------------------------------------------------------------------------------
+!
+!  call Read_Inv_Prom     ! Runs the Read Prom routine.
+!
+!  report level is report      ! Resume reporting if failures have occured.
+!
+!  Error_flag = 0
+!  if Serial_R$ <> Serial$ or Serial_R$ = "" then Error_flag = 1
+!  if Manuf_R$ <> Manuf$ or Manuf_R$ = "" then Error_flag = 1
+!  if Place_R$ <> Place$ or Place_R$ = "" then Error_flag = 1
+!  if Business_R$ <> Business$ or Business_R$ = "" then Error_flag = 1
+!  if Date_R$ <> Date$ or Date_R$ = "" then Error_flag = 1
+!  if Type_unit_R$ <> Type_unit$ or Type_unit_R$ = "" then Error_flag = 1
+!  if Board_n_R$ <> Board_n$ or Board_n_R$ = "" then Error_flag = 1
+!  if Build_n_R$ <> Build_n$ or Build_n_R$= "" then Error_flag = 1
+!  if Firm_R$ <> Firm$ or Firm_R$ = "" then Error_flag = 1
+!  if Hard_R$ <> Hard$ or Hard_R$ = "" then Error_flag = 1
+!
+!! If any failures then report all lines returneds
+!   if Error_flag <> 0 then
+!   fail device
+!   report "READ INVENTORY PROM FAILED"
+!   report "Device (24c02):    ";Ic_num$
+!   report "Code  %   1CMB20151ADB"
+!   report "Errors Detected When Reading"
+!   report "Back Programmed Data"
+!   report "Serial No % ",Serial_R$
+!   report "Name Man. : ",Manuf_R$
+!   report "Manuf.    : ",Place_R$
+!   report "Business  % ",Business_R$
+!   report "Date man. : ",Date_R$
+!   report "Type unit % ",Type_unit_R$
+!   report "Unit Code % ",Board_n_R$
+!   report "ENU       % ",Build_n_R$
+!   report "Firmware  % ",Firm_R$
+!   report "Hardware  % ",Hard_R$
+!   report "---------------------------------------"
+! end if
+!
+!Exit_Inv:
+!subend
+!
+!
+!sub Write_PROM (Character_string$, Word_address$)
+!
+!   dim Address(0:7), Data(0:7)       ! Dimensions Arrarys to be passed to test
+!   dim Data_string$[50]
+!
+!   Data_string$ = Character_string$  ! Do not modify the contents of
+!                                     ! Character_string$
+!
+!   Add = hti(Word_address$) - 1      ! Increment Address Counter for Next Word.
+!
+!   Data_string$ = Data_string$ &chr$(13)&chr$(10)&chr$(4) ! + CR, LF, EOT
+!!! Data_string$ = "G"  ! <<< Debug: load one character only.
+!
+!   for Character = 1 to len(Data_string$)
+!
+!     Add = Add + 1                 ! Automatically increment the address
+!     for AddCount = 7 to 0 step -1 ! Set up the address array for character
+!         D = bit(Add,AddCount)
+!         Address(AddCount) =  D
+!     next AddCount
+!
+!     Char = num(Data_string$[Character;1]) ! Set up the character array
+!     for Count = 7 to 0 step -1
+!         D = bit(Char,Count)
+!         Data(Count) =  D
+!     next Count
+!
+!!!print Data_string$[Character;1];Char;" 0x"&ith$(Char)&"    ";Data(7);Data(6);Data(5);Data(4);Data(3);Data(2);Data(1);Data(0);"    ";Address(7);Address(6);Address(5);Address(4);Address(3);Address(2);Address(1);Address(0);"    0x"&ith$(Add)
+!
+!! Program Data one word ( character ) at a time.
+!! -----------------------------------------------
+!  test "digital/write_icXX"; digital Address(*), Data(*)
+!
+!! pause  ! <<< Debug: un-comment this to debug the programming test
+!
+!  next Character
+!
+!!------------------------------------------------------------------------------
+!! The following statement is important if you want to sequentially load data
+!! to the inventory PROM without working out all the new locations:
+!
+!  Word_address$ = ith$(Add+0)  ! (Add+0) to over right the extra EOT's.
+!
+!! print "Next data can be written to address 0x"&Word_address$
+!!------------------------------------------------------------------------------
+!
+!subend
+!
+!  sub Read_Inv_Prom
+!! --------------------
+!  global Board$, Board_Rev$, Serial$, Type_unit$, Ic_num$, Dev_addr, Date$
+!  global Serial_R$, Manuf_R$, Place_R$, Business_R$, Date_R$, Type_unit_R$
+!  global Board_n_R$, Build_n_R$, Firm_R$, Hard_R$, EOT_R$
+!
+!  dim Manuf_R$[20], Place_R$[20], Business_R$[20], Firm_R$[20], Hard_R$[20]
+!  dim Serial_R$[20], Date_R$[20], Type_unit_R$[50]
+!
+!  Manuf_R$ = ""
+!  Type_unit_R$ = ""
+!
+!  safeguard none
+!
+!  Word$       = "00"               ! inventory prom load address reset.
+!
+!  print using "@" | print
+!  print tab(5); "Reading Inventory Prom"
+!  print tab(5); "-------------------------"
+!  print | print
+!  print tab(10); "Reading Data From Inventory Prom....."
+!
+!  call Read_PROM (Serial_R$, Word$ )
+!  call Read_PROM (Manuf_R$, Word$ )
+!  call Read_PROM (Place_R$, Word$ )
+!  call Read_PROM (Business_R$, Word$ )
+!  call Read_PROM (Date_R$, Word$ )
+!  call Read_PROM (Type_unit_R$, Word$ )
+!  call Read_PROM (Board_n_R$, Word$ )
+!  call Read_PROM (Build_n_R$, Word$ )
+!  call Read_PROM (Firm_R$, Word$ )
+!  call Read_PROM (Hard_R$, Word$ )
+!  call Read_PROM (EOT_R$, Word$)
+!
+!!------------------------------------------------------------------------------
+!! Comment this Display section when Verified in Production - DEBUG USE ONLY.
+!!------------------------------------------------------------------------------
+!  print using "@" | print
+!  print tab(5); "Display Inventory Prom Contents"
+!  print tab(5); "-------------------------------"
+!  print
+!  print tab(10); "Inventory Prom for "; Ic_num$
+!  print
+!  print tab(15); "Serial Number           : ";  Serial_R$
+!  print tab(15); "Manufacturer            : ";  Manuf_R$
+!  print tab(15); "Place of Manufacture    : ";  Place_R$
+!  print tab(15); "Business                : ";  Business_R$
+!  print tab(15); "Date of Manufacture     : ";  Date_R$
+!  print tab(15); "Unit Description        : ";  Type_unit_R$
+!  print tab(15); "Unit Code               : ";  Board_n_R$
+!  print tab(15); "Board Build (ENU)       : ";  Build_n_R$
+!  print tab(15); "Firmware Build          : ";  Firm_R$
+!  print tab(15); "Hardware Build          : ";  Hard_R$
+!  print tab(15); "EOT                     : ";  EOT_R$
+!  print
+!  call Clear_Yes
+!  question "                 - Press YES To Continue -", Answer
+!  print using "@" | print
+!!------------------------------------------------------------------------------
+!
+!subend
+!
+!
+!  sub Read_PROM (Read_Character$, Word_Address$)
+!! ----------------------------------------------
+!
+!  dim Address(0:7), Data(0:7)
+!
+!  Read_Character$ = ""           ! Clears Read_Character String.
+!
+!  Add = hti(Word_address$) - 1   ! Sets the hex address to an integer.
+!
+!  String_Error  = 0    ! Used to exit loop in error.
+!  String_Length = 0    ! Reset string length used to exit loop in error.
+!
+!  loop                 ! Loops until decimal 10 / LF is found or error occurs.
+!
+!    Real_value = 0     ! Resets Integer Character Value.
+!
+!    for ClearData = 7 to 0 step -1  ! Clears the Binary Data store Data(*).
+!       Data(ClearData) = 0
+!    next ClearData
+!
+!    Add = Add + 1                 ! Automatically increment the address
+!    for AddCount = 7 to 0 step -1 ! Set up the address array for the character
+!       D = bit(Add,AddCount)
+!       Address(AddCount) =  D
+!    next AddCount
+!
+!    test "digital/read_icXX";Address(*),Data(*)   ! Get Binary for Character.
+!
+!! Converts Binary data from inventory to ascii character value.
+!! -------------------------------------------------------------
+!    Bit_switch = 0       ! Used to switch LSB-MSB as fetched data is backwards.
+!    for Count = 7 to 0 step -1
+!       if Data(Bit_switch) = 1 then
+!         Real_value = Real_value + 2^Count
+!       end if
+!       Bit_switch = Bit_switch + 1
+!    next Count
+!
+!
+!! Convert value back to single character string.
+!! ----------------------------------------------
+!    Read_data_string$ = chr$(Real_value)
+!
+!
+!! Build up Data string ready for display.
+!!----------------------------------------
+!    if Real_value <> 13 and Real_Value <> 10 and Real_value <> 4 then
+!      Read_Character$ = Read_Character$ & Read_data_string$
+!!     Display_char$ = Read_data_string$   ! DEBUG USE ONLY
+!    end if
+!
+!!------------------------------------------------------------------------------
+!! Debug Tool to see if CR, LF are actually on the end. DEBUG USE ONLY.
+!!------------------------------------------------------------------------------
+!!   if Real_value = 13 then
+!!     Read_Character$ = Read_Character$ & " CR"
+!!     Display_char$ = "CR"
+!!   end if
+!!
+!!   if Real_value = 10 then
+!!     Read_Character$ = Read_Character$ & " LF"
+!!     Display_char$ = "LF"
+!!   end if
+!!
+!! NOTE : If CR and LF are displaied then the check test will fail as they
+!!        are NOT normally tested for. (Therefore only use during debug).
+!!------------------------------------------------------------------------------
+!
+!   if Real_value = 4 then
+!     Read_Character$ = Read_Character$ & "EOT"
+!!    Display_char$ = "EOT"    ! DEBUG USE ONLY
+!   end if
+!
+!   String_Length = String_Length + 1   ! Counts length of string max 50
+!   if String_Length = 50 then String_Error = 1   ! Sets Error flag
+!
+!! Uncomment this line to see all the data read out - DEBUG USE ONLY
+!! -----------------------------------------------------------------
+!!   print "Address = ";Add;" Binary Data ";Data(0);Data(1);Data(2);Data(3);Data(4);Data(5);Data(6);Data(7);" ASCII value ";Real_value;" Char = ";Display_char$
+!
+!
+!! Exits loop if ascii 10 / LF is found or if String Length reaches 50 chars
+!! or EOT is detected.
+!! --------------------------------------------------------------------------
+!    exit if Real_value = 10 or String_Error = 1 or Real_value = 4
+!  end loop
+!
+!  Word_address$ = ith$(Add+1)  ! Increment Address Counter for Next Word.
+!
+! subend
+!
+
+
+
+
+
+

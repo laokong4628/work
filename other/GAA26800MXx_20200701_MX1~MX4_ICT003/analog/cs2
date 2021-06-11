@@ -1,0 +1,28 @@
+!!!!    2    0    1 1271646031   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:17 2010
+!IPG : Node NC__691 is not accessible.
+! Device        : LA200 Functional Test
+! Manufacturer  :
+! Description   : Positive Voltage Regulator  3.3 Volt
+! Package       : 4 pin
+! Test Platform : HP3070
+! Safeguard     :
+! Developed by  : Kicky Chen
+! revision      : A.01.00
+
+test powered analog
+   disconnect all
+   nonanalog pins 4
+   test "I_SENSOR"
+end test
+
+subtest "I_SENSOR"
+   connect s to pins 1           ! 
+   connect a to pins 3           !  
+   connect i to pins 2           ! 
+   connect l to ground           ! 
+   source dcv, amplitude 1.0, terminated 50, icompliance 1, on
+   auxiliary dcv, amplitude -1.0, icompliance 1, on
+   detector dcv, expect 0.0
+   measure -0.7, -1.1
+end subtest

@@ -1,0 +1,24 @@
+  201    0    4 1264400709   0000                                         
+#MTDFiler i3 
+0 #ALLibrary @2 @3 @4 @0 @0 @0 i2 
+10 #ALOrdCltn @5 i10 i0 
+10 #ALOrdCltn @6 i10 i0 
+10 #ALOrdCltn @7 i10 i3 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @8 @9 @10 @0 @0 @0 @0 @0 @0 @0 
+9 #ALNode i8 i8 *8"RELAY_16 @11 @0 @0 i7 @0 @12 @0 
+9 #ALNode i8 i8 *8"SENSE_IV @13 @0 @0 i7 @0 @14 @0 
+5 #ALNode i4 i4 *4"GNDA @15 @0 @0 i7 @0 @16 @0 
+9 #String i8 i8 *8"relay_16 
+10 #ALOrdCltn @17 i10 i1 
+9 #String i8 i8 *8"sense_iv 
+10 #ALOrdCltn @18 i10 i1 
+5 #String i4 i4 *4"gnda 
+10 #ALOrdCltn @19 i10 i1 
+10 #IdArray i10 $0 @20 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @21 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @22 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+0 #ALSrcLoc i7 i23 i7 i32 
+0 #ALSrcLoc i17 i23 i17 i32 
+0 #ALSrcLoc i18 i23 i18 i28 

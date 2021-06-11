@@ -1,0 +1,17 @@
+!!!!    2    0    1 1589383604   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:00 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "24V_DRIVER_RTN"!; a to "24V_DRIVER_RTN"
+connect i to "I_SENSE_TW"
+!connect g to "UNNAMED_48_R_I29_B"; l to "UNNAMED_48_R_I29_B"
+capacitor 1n, 45.0, 50, fr8192, re1, wb, ar100m,  nocomp,en, wa20m 
+! warning "device under test appears open or excessive noise is present."
+! "c182" is a commented test.
+! DUT: nominal 1n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 1.1n, low 900p
+! TEST: high limit 0, low limit 0
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

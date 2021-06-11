@@ -1,0 +1,33 @@
+!!!!    2    0    1 1293194216   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:17 2010
+!
+! Device        : Detect LED Color Sensor
+! Manufacturer  :
+! Description   : Positive Voltage Regulator  3.3 Volt
+! Package       : 4 pin, LED 2pins + Sensor 2pins
+! Test Platform : 3070
+! Safeguard     : standard_lsttl
+! Developed by  : Kicky Chen
+! revision      : A.01.00
+!
+test powered analog
+   disconnect all
+   gpconnect 21852 to 21853
+   connect s to "DCP_LED"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   wait 30m
+   test "LED_ON"
+   gpdisconnect 21852 from 21853
+end test
+
+subtest "LED_ON"
+   connect rcva to pins 5        ! Sensor
+   connect l to pins 3           ! Sensor Cathode
+   connect g to pins 3
+   connect g to pins 1           ! LED Cathode
+   wait 100m
+   detector frequency, expect 10k, threshold 1.5, gate 1
+   measure 15k, 2.5k
+end subtest
+
+

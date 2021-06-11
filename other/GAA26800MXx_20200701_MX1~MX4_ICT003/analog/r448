@@ -1,0 +1,15 @@
+!!!!    2    0    1 1426841852   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:42 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_39_R_I312_B"; a to "UNNAMED_39_R_I312_B"
+connect i to "UNNAMED_39_10MQ040N_I309_A"; b to "UNNAMED_39_10MQ040N_I309_A"
+connect g to "24V_DRIVER"; l to "24V_DRIVER"
+resistor 20, 8.85, 6.72, re2, ar50.0m, wa5.96m, sa, sb, sl, en
+! "r448" is a limited test.
+! DUT: nominal 20, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 20.2, low 19.8
+! TEST: high limit 21.770, low limit 18.655
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

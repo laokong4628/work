@@ -1,0 +1,445 @@
+!!!!    6    0    1 1322141970  V7487                                         
+! IPG: rev 05.21p  Sat Nov 21 22:54:37 2009
+
+!-----------------------------------------------------------------------
+!
+! Device        : 24c02   2kbit SEEPROM (1024x2)
+! Manufacturer  :
+! Description   : EPROM READ TEST
+! Package       :
+! Safeguard     :
+! Modified      : 03/14/2006
+!
+!-----------------------------------------------------------------------
+
+test digital  ;DataOut(*)
+
+vector cycle 3.6u
+receive delay 3.24u
+
+set terminators to on
+
+default device "u54"
+set terminators to on
+assign   VCC to pins   *    !8
+assign   GND to pins   *    !4
+
+assign   A0  to pins  *  !@ default "0"
+assign   A1  to pins  *  !@ default "0"
+assign   A2  to pins  *  !@ default "0"
+
+assign   WP  to pins 7
+assign   SDA to pins  5
+assign WP_1   to nodes"OUT_EN_CONV" default "1"
+
+assign   SCL to pins  6
+assign   SDA_In to pins  5
+
+family TTL
+
+power VCC,GND
+
+inputs        A0, A1, A2, SCL, WP,WP_1
+bidirectional SDA, SDA_In
+
+disable SDA with SCL to "1"
+
+capture SDA
+
+set load on groups SDA to pull up
+set ref on groups SCL,SDA,SDA_IN,WP to dh 5.0, dl 0
+set ref on groups SDA to rh2.4, rl1.0
+
+
+!
+!!******************************************************************************
+!  VECTORS
+!
+!!******************************************************************************
+!
+vector  Init
+   drive SDA
+   set   WP_1        to "1"
+   set   WP                   to "0"
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+   set   A0                   to "0"
+   set   A1                   to "1"
+   set   A2                   to "0"
+end vector
+
+vector  Keep
+   drive SDA
+   set   WP                   to "0"
+   set   SCL                  to "k"
+   set   SDA                  to "k"
+   set   A0                   to "k"
+   set   A1                   to "k"
+   set   A2                   to "k"
+end vector
+
+vector  Keep_read
+   set   WP                   to "1"
+   set   SCL                  to "k"
+   set   A0                   to "k"
+   set   A1                   to "k"
+   set   A2                   to "k"
+end vector
+
+!Use vector that corresponds to external pin connections on A2-A0
+!(these pins not used on 24c16)
+vector  Address_000
+   initialize                 to Keep
+   set   A0                   to "0"
+   set   A1                   to "1"
+   set   A2                   to "0"
+end vector
+
+vector  Address_001
+   initialize                 to Keep
+   set   A0                   to "0"
+   set   A1                   to "0"
+   set   A2                   to "1"
+end vector
+
+vector  Address_010
+   initialize                 to Keep
+   set   A0                   to "0"
+   set   A1                   to "1"
+   set   A2                   to "0"
+end vector
+
+vector  Address_011
+   initialize                 to Keep
+   set   A0                   to "0"
+   set   A1                   to "1"
+   set   A2                   to "1"
+end vector
+
+vector  Address_100
+   initialize                 to Keep
+   set   A0                   to "1"
+   set   A1                   to "0"
+   set   A2                   to "0"
+end vector
+
+vector  Address_101
+   initialize                 to Keep
+   set   A0                   to "1"
+   set   A1                   to "0"
+   set   A2                   to "1"
+end vector
+
+vector  Address_110
+   initialize                 to Keep
+   set   A0                   to "1"
+   set   A1                   to "1"
+   set   A2                   to "0"
+end vector
+
+vector  Address_111
+   initialize                 to Keep
+   set   A0                   to "1"
+   set   A1                   to "1"
+   set   A2                   to "1"
+end vector
+
+vector  Begin
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+end vector
+
+vector  Start
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  Stop
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+end vector
+
+vector  Stop_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  Stop_2
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "0"
+   set   SDA                  to "k"
+end vector
+
+vector  SCL_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "k"
+end vector
+
+vector  Dd_In
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dd_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dd_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_0_D_X
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "0"
+   set   SDA                  to "x"
+end vector
+
+vector  SCL_1_D_X
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "x"
+end vector
+
+vector  ACK_S0
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  SCL_R_0
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "0"
+   set   SDA                  to "x"
+end vector
+
+vector  SCL_R_1
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "x"
+end vector
+
+vector  Dr_In
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dr_0
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dr_1
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  Dr_x
+   initialize                 to Keep_read
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "x"
+end vector
+
+vector  ACK_M0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  ACK_M1
+   initialize                 to Keep_read
+   drive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  RW_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  RW_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_1_D_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  SCL_0_D_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "0"
+   set   SDA                  to "0"
+end vector
+!
+!!******************************************************************************
+!  SUBS
+!
+!!******************************************************************************
+!
+sub  IC_Address (A2,A1,A0,RW)
+   execute  SCL_0
+   execute  Dd_1    !!     1    !bit sequence for 24c08 : 1010AAAR
+   execute  SCL_1               !                             210W
+   execute  SCL_0               !
+   execute  Dd_0    !!     0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_1    !!     1
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0    !!     0
+   execute  SCL_1
+   execute  SCL_0
+   execute  A2          !~A2 external address pin
+   execute  SCL_1
+   execute  SCL_0
+   execute  A1          !~A1 external address pin
+   execute  SCL_1
+   execute  SCL_0
+   execute  A0          !~A0 external address pin
+   execute  SCL_1
+   execute  SCL_0
+   execute  RW
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  Ack_S0         !ACK von Slave
+   execute  SCL_0_D_X
+end sub
+
+sub  Word_Address (D7,D6,D5,D4,D3,D2,D1,D0)
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0            !Ack von Slave
+   execute  SCL_0_D_X
+end sub
+!
+!!******************************************************************************
+!  UNITS
+!
+!!******************************************************************************
+!
+!IPG: Unit removed due to conflict in vector ADDRESS_100
+!IPG: Pin 1 tied low.
+
+unit "Read Back Programmed Data"
+!!!!   000 - 1FFh
+   execute  Init
+   wait 20m
+   repeat 5 times
+     execute Address_000
+     execute Begin   ! c=1 d=1
+     execute Start   ! c=1 d=0
+     execute Stop    !@@@@@fb
+     execute Start   !@@@@@fb
+   end repeat
+   call IC_Address (Dd_0,Dd_1,Dd_0,RW_0)
+   call Word_Address  (Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0)
+   call Word_Address  (Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0)
+   execute Begin
+   execute Start
+   call IC_Address (Dd_0,Dd_1,Dd_0,RW_1)
+   repeat 511 times
+     repeat 7 times
+       execute  SCL_R_1
+       execute  Dr_x  capture
+       execute  SCL_R_0
+       execute  SCL_R_1
+     end repeat
+     execute  Dr_x  capture
+     execute  SCL_0_D_X
+     execute  ACK_M0
+     execute  SCL_1_D_0
+     execute  SCL_0_D_X
+   end repeat
+   repeat 7 times
+     execute  SCL_R_1
+     execute  Dr_x  capture
+     execute  SCL_R_0
+     execute  SCL_R_1
+   end repeat
+   execute  Dr_x  capture
+   execute  SCL_0_D_X
+   execute  ACK_M1
+   execute  SCL_0
+   execute  SCL_1
+   execute  Stop_1
+   execute  Stop_2
+   fetch DataOut(*)
+end unit
+
+!
+!End Of Test
+!
+

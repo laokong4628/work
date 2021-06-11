@@ -1,0 +1,96 @@
+!!!!    2    0    1 1146139460  V49da                                         
+!
+! Revision control data:
+! use for testing "irfr9024", safeguard "not_required"
+! use for testing "pfet_4_pin", safeguard "not_required"
+! use for testing "1cga20214aav", safeguard "not_required"
+!
+! P-CHANNEL MOSFET SWITCH
+! Pin 1       - Gate
+! Pin 2       -
+! Pin 3       - Source
+! Pin 4       - Drain
+!
+! 23 Oct 2000   Initial Issue.  djt
+
+warning "Power must not be connected to the board whilst performing this test."
+
+test powered analog
+
+   nonanalog pins 2
+
+   source none
+   auxiliary none
+
+   test "SD_diode"
+   test "on"
+   test "off"
+
+   disconnect all
+
+end test
+
+!###########################################################################
+
+
+subtest "SD_diode"
+
+   disconnect all
+
+   connect s to pins 4     ! Apply voltage and load to Drain.
+   connect i to pins 4     ! Monitor voltage on Drain.
+   connect l to pins 3
+   connect a to pins 3     ! Apply 0V to Source.
+
+   source dcv,amplitude 2.5,terminated 50,icompliance 1,on
+   auxiliary dcv,amplitude 0,icompliance 1,on
+
+   wait 50m
+   detector dcv, expect 2
+   measure 0.7,0.3           ! Check drop across diode.
+
+end subtest
+
+
+subtest "off"
+
+   disconnect all
+
+   connect s to pins 3     ! Apply load to Source.
+   connect i to pins 3     ! Monitor voltage on Source.
+   connect a to pins 1     ! Apply voltage to gate
+   connect l to pins 4
+   connect g to pins 4     ! earth Drain
+!  connect g to ground
+
+   source dcv,amplitude 3.3,terminated 50,icompliance 1,on
+   auxiliary dcv,amplitude 3.05,icompliance 1,on
+
+   wait 50m
+   detector dcv, expect 3.3
+   measure 3.5, 2.75            ! Check transistor is switched off
+end subtest
+
+
+subtest "on"
+
+   disconnect all
+
+   connect s to pins 3     ! Apply load to Source.
+   connect i to pins 3     ! Monitor voltage on Source.
+   connect a to pins 1     ! Apply voltage to gate
+   connect l to pins 4
+   connect g to pins 4     ! earth Drain
+!  connect g to ground
+
+   source dcv,amplitude 5,terminated 50,icompliance 1,on
+   auxiliary dcv,amplitude 0.0,icompliance 1,on
+
+   wait 50m
+   detector dcv, expect 1
+   measure 0.5, -0.5       ! Check transistor is switched on
+end subtest
+
+
+! end of test
+

@@ -1,0 +1,109 @@
+!!!!   21    2    1 1263656582  Vd993                                         
+! This is IGBT test library
+
+diode "cr1", 800m, 200m, nr, pn"semix453gb12e4s", "IGBT Failed"
+diode "cr2", 800m, 200m, nr, pn"semix453gb12e4s", "IGBT Failed"
+
+jumper "jp1", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp2", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp3", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp4", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp5", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp6", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp7", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp8", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp9", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp10", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp11", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp12", closed, nr, pn"semix453gb12e4s", "IGBT Failed"
+jumper "jp13", open, nr, pn"semix453gb12e4s", "IGBT Failed"
+
+resistor "r1",    5k,   5,   5, f, nr, pn"semix453gb12e4s", "IGBT Failed"
+
+transistor "q1", 200,  50, n, nr, pn"semix453gb12e4s", "IGBT Failed"
+transistor "q2", 200,  50, n, nr, pn"semix453gb12e4s", "IGBT Failed"
+
+external pins 1
+   device "cr1" pins "C"
+   device "jp1" pins 1
+   device "jp13" pins 1
+   device "q1" pins "C"
+
+external pins 2
+   device "jp2" pins 1
+   device "jp3" pins 1
+   device "q1" pins "B"
+
+external pins 3
+   device "jp2" pins 2
+
+external pins 4
+   device "jp3" pins 2
+
+external pins 5
+   device "cr1" pins "A"
+   device "cr2" pins "C"
+   device "jp4" pins 1
+   device "jp5" pins 1
+   device "jp6" pins 1
+   device "jp7" pins 1
+   device "q1" pins "E"
+   device "q2" pins "C"
+
+external pins 6
+   device "jp4" pins 2
+
+external pins 7
+   device "jp5" pins 2
+
+external pins 8
+   device "jp8" pins 1
+   device "jp9" pins 1
+   device "q2" pins "B"
+
+external pins 9
+   device "jp8" pins 2
+
+external pins 10
+   device "jp9" pins 2
+
+external pins 11
+   device "cr2" pins "A"
+   device "jp10" pins 1
+   device "jp11" pins 1
+   device "jp12" pins 1
+   device "q2" pins "E"
+
+external pins 12
+   device "jp10" pins 2
+
+external pins 13
+   device "jp11" pins 2
+
+external pins 14
+   device "r1" pins 1
+
+external pins 15
+   device "r1" pins 2
+
+external pins 16
+   device "jp13" pins 2
+
+external pins 17
+   device "jp1" pins 2
+
+external pins 18
+   device "jp12" pins 2
+
+external pins 19
+   device "jp6" pins 2
+
+external pins 20
+   device "jp7" pins 2
+
+external pins 21;noconnect
+
+external pins 22;noconnect
+
+external pins 23;noconnect
+

@@ -1,0 +1,26 @@
+!!!!    2    0    1 1433915135   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:10 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c72 100u"
+   report "c79 100n"
+   report "c80 10.0u"
+   report "c81 10.0u"
+   report "c82 10.0u"
+   report "c83 10.0u"
+end on failure
+disconnect all
+connect s to "+27V_RU_P"
+connect i to "UNNAMED_46_BAS19_I43_A"
+diode 1.1, 0.7, idc50m, co3.0, ar806m,wa50m
+warning "A 'wait' option may be required to correctly fail a reversed diode"
+! "d14%diode" test.
+! DUT: nominal 650m, plus tol 23.1 %, minus tol 23.1 %
+! DUT: high 800m, low 500m
+! TEST: high limit 805.634m, low limit 502.826m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

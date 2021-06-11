@@ -1,0 +1,17 @@
+!!!!    2    0    1 1498914438   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:59 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GNDA"
+connect i to "UNNAMED_36_C_I38_A"
+!connect g to "REF_SEC"
+connect g to "VRS_OUT_N"
+capacitor 3n, 50.2, 50.2, fr8192, re3, wb, ar100m, nocomp, ed
+! "c140" test.
+! DUT: nominal 1n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 1.1n, low 900p
+! TEST: high limit 1.102n, low limit 897.623p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

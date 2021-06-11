@@ -1,0 +1,15 @@
+!!!!    2    0    1 1541059699  V914c                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:52 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_47_HCPL316J_I183_VOUT"; a to "UNNAMED_47_HCPL316J_I183_VOUT"
+connect i to "UNNAMED_47_BZV55B18_I266_A"
+connect g to "UNNAMED_47_C_I272_A"
+resistor 47.5k, 9.46, 4.28, re5, wb, ar200m, wa0.244m, sa, en
+! "r129" is a limited test.
+! DUT: nominal 47.5k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 47.975k, low 47.025k
+! TEST: high limit 51.516k, low limit 45.467k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

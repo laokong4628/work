@@ -1,0 +1,24 @@
+!!!!    2    0    1 1272548919  Vca86                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:44 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V1, V2
+   disconnect all
+   test "PF_IGBT_INV_GND"
+end test
+
+subtest "PF_IGBT_INV_GND"
+   global V1, V2
+   connect s to nodes "+27V_TW_P"
+   connect i to nodes "DIO_2C-DEV_FLT"
+   connect l to nodes "GND"
+   connect g to nodes "+27V_TW_P_RTN"
+   connect g to nodes "GND"
+   source dcv, amplitude V1, icompliance 1, terminated 5, on
+   detector dcv, expect 0
+   initiate detector
+   fetch V2
+!@   report analog  0.5, 0.0, V2
+end subtest

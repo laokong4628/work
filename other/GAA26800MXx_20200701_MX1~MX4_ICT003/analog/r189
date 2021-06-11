@@ -1,0 +1,19 @@
+!!!!    2    0    1 1264583314   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:35 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r451 10.0k"
+end on failure
+disconnect all
+connect s to "24V_SE"
+connect i to "UNNAMED_44_PS2561L_I234_C"
+resistor 5k, 1.44, 1.20, re4, wb, ar200m
+! "r189" test.
+! DUT: nominal 5k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 5.05k, low 4.95k
+! TEST: high limit 5.072k, low limit 4.940k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

@@ -1,0 +1,16 @@
+
+
+-------------------------------------------------------------------------------
+AGILENT VECTORLESS TEST EP AUTODEBUG	Thu Mar 18, 2010 15:18:59 PM
+
+G2A26800MX2/testjet
+-------------------------------------------------------------------------------
+
+Autodebugging the entire test.
+
+	Devices:                        22
+	Pins:                           205
+	Pins iVTEP:                     0
+	Power, ground, and fixed pins:  0
+	Pins commented:  23
+

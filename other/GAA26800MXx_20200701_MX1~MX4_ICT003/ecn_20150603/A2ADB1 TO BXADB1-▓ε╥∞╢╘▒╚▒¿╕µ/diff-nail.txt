@@ -1,0 +1,46 @@
+*Nail exist only in C:\Documents and Settings\HL\桌面\LIYAN\小软件\苏州-COMPARE\A2ADB1\nails.asc   ( old version )
+
+Nail		X	Y	Grid	T/B	Net Name
+
+$840		6.850	4.475	F4	(B)	24V_DRIVER_RTN
+$841		6.850	7.825	F7	(B)	24V_DRIVER_RTN
+
+
+
+*Nail exist only in C:\Documents and Settings\HL\桌面\LIYAN\小软件\苏州-COMPARE\BXADB1\nails.asc   ( new version )
+
+Nail		X	Y	Grid	T/B	Net Name
+
+$0		7.600	4.020	G4	(B)	UNNAMED_48_C_I423_A  ok
+$0		7.600	7.370	G6	(B)	UNNAMED_47_C_I426_A  ok
+$0		7.600	10.720	G9	(B)	UNNAMED_46_C_I425_A  ok
+$0		1.705	2.055	B2	(B)	UNNAMED_39_C_I348_A
+$0		7.225	3.715	F3	(B)	UNNAMED_48_10MQ040N_I422_A
+$0		7.225	7.065	F6	(B)	UNNAMED_47_10MQ040N_I424_A
+$0		7.225	10.415	F9	(B)	UNNAMED_46_10MQ040N_I423_A
+$0		2.360	3.316	B3	(B)	UNCONNECTED_39
+$0		2.065	6.802	B6	(B)	UNCONNECTED_40
+$0		2.065	10.149	B9	(B)	UNCONNECTED_41
+
+
+
+*Nail exist both in ( new version ) and ( old version )
+
+            	Nail		X	Y	Grid	T/B	Net Name
+
+(old version)	$200		6.850	11.073	F9	(B)	PWM_VCC_RU
+(new version)	$200		6.850	11.098	F9	(B)	PWM_VCC_RU
+
+(old version)	$201		6.850	7.723	F7	(B)	PWM_VCC_SV
+(new version)	$201		6.850	7.748	F7	(B)	PWM_VCC_SV
+
+(old version)	$202		6.850	4.373	F4	(B)	PWM_VCC_TW
+(new version)	$202		6.850	4.398	F4	(B)	PWM_VCC_TW
+
+Warning... --> Net changed!
+(old version)	$396		1.400	5.675	B5	(B)	*UNNAMED_38_R_I18_A
+(new version)	$396		1.400	5.675	B5	(B)	*GND_SENSE
+
+(old version)	$404		7.920	1.023	G1	(B)	UNNAMED_39_10MQ040N_I309_A
+(new version)	$404		7.895	1.023	G1	(B)	UNNAMED_39_10MQ040N_I309_A
+

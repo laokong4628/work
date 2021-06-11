@@ -1,0 +1,34 @@
+!!!!    2    0    1 1591809718   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:15 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c52 100n"
+   report "c89 100n"
+   report "c100 100n"
+   report "c123 100n"
+   report "c129 10.0u"
+   report "c149 100n"
+   report "c166 100n"
+   report "c170 10.0u"
+   report "c217 10.0u"
+   report "c218 470u"
+   report "c240 100n"
+   report "c282 100n"
+   report "c296 100n"
+   report "c311 100n"
+end on failure
+disconnect all
+connect s to "+15V_SENSE"
+connect i to "UNNAMED_39_BYG22D_I157_A"
+diode 104m, 30m, idc2m, co3.1, ar904m
+!@warning "A 'wait' option may be required to correctly fail a reversed diode"
+! "d40" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 903.919m, low limit 399.858m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

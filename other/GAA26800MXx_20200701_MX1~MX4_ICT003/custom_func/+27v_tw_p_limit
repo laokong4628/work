@@ -1,0 +1,14 @@
+!!!!    2    0    1 1147902304   0000                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "+27V_TW_P_Threshold_Voltage"
+end test
+
+subtest "+27V_TW_P_Threshold_Voltage"
+   global Volt
+   report analog  2.80, 2.00, Volt 
+end subtest

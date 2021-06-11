@@ -1,0 +1,29 @@
+!!!!    2    0    1 1273768195   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:48 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   gpconnect 21852 to 21853      !@ Power On Relay board  
+   gpconnect 21858 to 21859      !@ OUT_EN_CONV to High      
+   gpconnect 20648 to 20649      !@ RUP_E11 short to RUP_C1
+   connect s to nodes "RELAY_1"  !@ connect 100nf capacitor
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   connect g to nodes "PWM_RP"
+   connect g to nodes "PWM_UP"
+   connect g to nodes "RELAY_1"
+   wait 10m
+   test "RUP_G11_RUP_E11"
+   gpdisconnect 21852 from 21853  !@ Power On Relay board 
+   gpdisconnect 21858 from 21859  !@ OUT_EN_CONV to High      
+   gpdisconnect 20648 from 20649  !@ RUP_E11 short to RUP_C1
+end test
+
+subtest "RUP_G11_RUP_E11"
+   connect i to nodes "RUP_G11"
+   connect l to nodes "RUP_E11"
+   detector dcv, expect -9.50
+   measure -5.00, -16.00
+end subtest

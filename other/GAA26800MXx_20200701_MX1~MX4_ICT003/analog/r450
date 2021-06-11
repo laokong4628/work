@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583320   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:41 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "24V_SE_RTN"
+connect i to "UNNAMED_44_BC817_I121_B"
+resistor 1.5k, 1.64, 1.02, re4, wb, ar1.00
+! "r450" test.
+! DUT: nominal 1.5k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 1.515k, low 1.485k
+! TEST: high limit 1.525k, low limit 1.485k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

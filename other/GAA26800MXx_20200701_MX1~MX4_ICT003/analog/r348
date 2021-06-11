@@ -1,0 +1,15 @@
+!!!!    2    0    1 1384914894   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:37 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "REF_SEC"
+connect i to "UNNAMED_36_R_I86_B"
+connect g to "GNDA"
+resistor 10k, 29.52, 1.30, re4, wb, ar100m
+! "r348" test.
+! DUT: nominal 10k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 10.1k, low 9.9k
+! TEST: high limit 10.152k, low limit 9.870k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

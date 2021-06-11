@@ -1,0 +1,35 @@
+!!!!    2    0    1 1293187267  V8401                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:56 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c201 100u"
+   report "c22 10.0u"
+   report "c200 10.0u"
+   report "c256 100n"
+   report "c302 100n"
+   report "c316 100n"
+end on failure
+disconnect all
+connect s to "24V_SE_RTN"; a to "24V_SE_RTN"
+connect i to "24V_SE"; b to "24V_SE"
+!connect g to "UNNAMED_46_R_I29_B"; l to "UNNAMED_46_R_I29_B"
+!connect g to "PWM_VCC_RU"
+!connect g to "PWM_VCC_SV"
+!connect g to "PWM_VCC_TW"
+!connect g to "UNNAMED_39_10MQ040N_I309_A"
+!connect g to "UNNAMED_39_R_I286_B"
+!connect g to "UNNAMED_46_10MQ040N_I407_A"
+!connect g to "UNNAMED_47_10MQ040N_I406_A"
+!connect g to "UNNAMED_47_R_I29_B"
+!connect g to "UNNAMED_48_10MQ040N_I405_A"
+!connect g to "UNNAMED_48_R_I29_B"
+capacitor 590.3u, 15, 10, fr128, re1, ar100m, ed, sa, sb, en, nocomp
+! "c21" is a limited test.
+! DUT: nominal 590.3u, plus tol 19.7 %, minus tol 19.7 %
+! DUT: high 706.33u, low 474.27u
+! TEST: high limit 773.287u, low limit 129.25u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

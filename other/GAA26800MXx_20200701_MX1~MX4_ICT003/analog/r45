@@ -1,0 +1,26 @@
+!!!!    2    0    1 1264583323   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:44 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c84 100n"
+   report "c85 10.0u"
+   report "c86 10.0u"
+   report "c87 100n"
+   report "c99 10.0u"
+   report "c121 100n"
+   report "c176 10.0u"
+   report "c279 100n"
+end on failure
+disconnect all
+connect s to "V+15V"
+connect i to "UNNAMED_10_C_I31_A"
+resistor 15k, 2.34, 2.25, re5, wb, ar1.00, ed, wa127m
+! "r45" test.
+! DUT: nominal 15k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 15.15k, low 14.85k
+! TEST: high limit 15.351k, low limit 14.663k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

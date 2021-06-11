@@ -1,0 +1,17 @@
+!!!!    2    0    1 1541620085   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:59 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "VST_OUT_DC_N"
+connect i to "UNNAMED_37_C_I21_A"
+connect g to "UNNAMED_37_R_I18_A"
+connect g to "GNDA"
+capacitor 1n, 20.66, 10.7, fr1024, re4, wb, ar100m, nocomp,ed
+! "c125" test.
+! DUT: nominal 1n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 1.1n, low 900p
+! TEST: high limit 1.097n, low limit 892.762p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,19 @@
+  201    0    4 1264008036   0000                                         
+#MTDFiler i3 
+0 #ALLibrary @2 @3 @4 @0 @0 @0 i2 
+10 #ALOrdCltn @5 i10 i0 
+10 #ALOrdCltn @6 i10 i0 
+10 #ALOrdCltn @7 i10 i2 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @8 @9 @0 @0 @0 @0 @0 @0 @0 @0 
+23 #ALNode i22 i22 *22"I_SENSE_PWM_CONTROLLER @10 @0 @0 i7 @0 @11 @0 
+19 #ALNode i18 i18 *18"24V_SMPS_SENSE_RTN @12 @0 @0 i7 @0 @13 @0 
+23 #String i22 i22 *22"i_sense_pwm_controller 
+10 #ALOrdCltn @14 i10 i1 
+19 #String i18 i18 *18"24v_smps_sense_rtn 
+10 #ALOrdCltn @15 i10 i1 
+10 #IdArray i10 $0 @16 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @17 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+0 #ALSrcLoc i11 i23 i11 i46 
+0 #ALSrcLoc i12 i23 i12 i42 

@@ -1,0 +1,12 @@
+!!!!    2    0    1 1435147106   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:39 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;Freq
+   test "Frequency"
+end test
+
+subtest  "Frequency"
+   global Freq
+wait200m
+   report analog 360k, 85k, Freq  !@ customer change to limit 20150615
+end subtest

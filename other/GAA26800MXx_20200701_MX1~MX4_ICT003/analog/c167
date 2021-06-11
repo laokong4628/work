@@ -1,0 +1,21 @@
+!!!!    2    0    1 1268896854   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:51 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r136 27.0k"
+end on failure
+disconnect all
+connect s to "REF_N"
+connect i to "GND_SENSE"
+connect g to "REF_P"
+capacitor 2.2n, 11.2, 12.5, fr1024, re4, wb, ar50.0m, nocomp, ed
+! "c167" test.
+! DUT: nominal 2.2n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 2.42n, low 1.98n
+! TEST: high limit 2.447n, low limit 1.924n
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

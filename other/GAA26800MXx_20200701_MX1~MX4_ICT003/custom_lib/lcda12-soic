@@ -1,0 +1,30 @@
+!!!!   21    2    1 1120048411   0000                                         
+
+diode "cr1", 800m, 200m, nr
+diode "cr2", 800m, 200m, nr
+diode "cr3", 800m, 200m, nr
+diode "cr4", 800m, 200m, nr
+
+external pins 1
+   device "cr1" pins "A"
+
+external pins 2
+   device "cr2" pins "A"
+
+external pins 3
+   device "cr3" pins "A"
+
+external pins 4
+   device "cr4" pins "A"
+
+external pins 5
+   device "cr4" pins "C"
+
+external pins 6
+   device "cr3" pins "C"
+
+external pins 7
+   device "cr2" pins "C"
+
+external pins 8
+   device "cr1" pins "C"

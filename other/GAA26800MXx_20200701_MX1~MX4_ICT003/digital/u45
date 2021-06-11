@@ -1,0 +1,82 @@
+!!!!    6    0    1 1274195786   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:26 2010
+! Device        : HCPL316J
+! Manufacturer  :
+! Description   : Positive Voltage Regulator  5 Volt
+! Package       : 16 pin
+! Test Platform : HP3070
+! Safeguard     : standard_lsttl
+! Developed by  : Kicky Chen
+! revision      : A.01.00
+
+sequential
+
+default device "u45"
+set terminators to on
+assign  VCC1 to pins *
+assign  GND1 to pins *
+assign  VEE to pins *, *
+assign  VCC2 to pins *
+
+assign  ALL_INPUTS to pins 1, 2, 5, *, 14
+assign  ALL_OUTPUTS to pins 6, 7, *, 11, 15, 16
+assign  VIN_PLUS to pins 1
+assign  VIN_MINUS to pins 2
+assign  RESET_BAR to pins 5
+assign  FAULT_BAR to pins 6
+assign  VLED1_PLUS to pins 7
+assign  VLED1_MINUS to pins *
+assign  VOUT to pins 11
+assign  VC to pins *
+assign  DESAT to pins 14
+assign  VLED2_PLUS to pins 15
+assign  VE to pins 16
+
+family CMOS
+
+
+power VCC1, GND1, VEE, VCC2
+
+inputs ALL_INPUTS, VIN_PLUS, VIN_MINUS, RESET_BAR, VC, DESAT
+
+outputs ALL_OUTPUTS, FAULT_BAR, VLED1_PLUS, VLED1_MINUS, VOUT, VLED2_PLUS, VE
+
+disable ALL_OUTPUTS  with ALL_INPUTS to "00000"
+
+vector  Input_01011
+   set   VIN_PLUS    to "0"
+   set   VIN_MINUS   to "1"
+   set   RESET_BAR   to "0"
+   set   VC          to "1"
+   set   DESAT       to "1"
+   set   ALL_OUTPUTS to "1x0xxx"
+end vector
+
+vector  Input_10111
+   set   VIN_PLUS    to "1"
+   set   VIN_MINUS   to "0"
+   set   RESET_BAR   to "1"
+   set   VC          to "1"
+   set   DESAT       to "1"
+   set   ALL_OUTPUTS to "1x0xxx"
+end vector
+
+vector  Input_10110
+   set   VIN_PLUS    to "1"
+   set   VIN_MINUS   to "0"
+   set   RESET_BAR   to "1"
+   set   VC          to "1"
+   set   DESAT       to "0"
+   set   ALL_OUTPUTS to "1x0xxx"
+end vector
+
+
+unit  "Element number 1"
+   execute  Input_01011
+   execute  Input_10111
+   execute  Input_10110
+end unit
+
+!
+!    End of Test
+!

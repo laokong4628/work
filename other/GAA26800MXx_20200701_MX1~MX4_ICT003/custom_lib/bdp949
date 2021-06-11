@@ -1,0 +1,22 @@
+!!!!   21    1    1 1263660728  Vb938                                         
+! This is 4pins N-channel mosfet test library
+
+diode "b_e", 900m, 400m, nr, pn"bdp949", "NPN-Silicon AF Power Transistor"
+diode "b_c", 900m, 400m, nr, pn"bdp949", "NPN-Silicon AF Power Transistor"
+
+pin library "npn", pn"npn_func", "NPN-Silicon AF Power Transistor"
+
+external pins 1
+   device "npn" pins "B"
+   device "b_e" pins "A"
+   device "b_c" pins "A"
+
+external pins 2
+   device "b_c" pins "C"
+
+external pins 3
+   device "npn" pins "E"
+   device "b_e" pins "C"
+
+external pins 4
+   device "npn" pins "C"

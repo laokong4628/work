@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583316   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:37 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "+15V_SENSE"
+connect i to "PFAIL_COMP"
+resistor 10k, 1.46, 1.29, re4, wb, ar100m
+! "r383" test.
+! DUT: nominal 10k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 10.1k, low 9.9k
+! TEST: high limit 10.146k, low limit 9.871k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

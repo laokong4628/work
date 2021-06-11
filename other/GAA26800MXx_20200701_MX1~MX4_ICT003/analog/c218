@@ -1,0 +1,43 @@
+!!!!    2    0    1 1264583272   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:52 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c129 10.0u"
+   report "c170 10.0u"
+   report "c217 10.0u"
+   report "c52 100n"
+   report "c89 100n"
+   report "c100 100n"
+   report "c123 100n"
+   report "c149 100n"
+   report "c166 100n"
+   report "c240 100n"
+   report "c282 100n"
+   report "c296 100n"
+   report "c311 100n"
+end on failure
+disconnect all
+connect s to "GND_SENSE"; a to "GND_SENSE"
+connect i to "+15V_SENSE"; b to "+15V_SENSE"
+connect g to "-15V_SENSE"
+connect g to "DISCH_THRES_555"
+connect g to "NTC1"
+connect g to "PFAIL_N_FILTERED"
+connect g to "REF_P"
+connect g to "UNNAMED_10_C_I20_A"
+connect g to "UNNAMED_36_C_I20_A"
+connect g to "UNNAMED_37_C_I59_A"
+connect g to "UNNAMED_39_BYG22D_I127_C"
+connect g to "UNNAMED_39_C_I158_B"
+connect g to "UNNAMED_39_C_I164_B"
+connect g to "UNNAMED_49_C_I6_A"
+capacitor 501u, 25.5, 33.3, fr128, re1, ar400m, ed, sm, sa, sb, en, nocomp
+! "c218" test.
+! DUT: nominal 501u, plus tol 19.4 %, minus tol 19.4 %
+! DUT: high 598.1u, low 403.9u
+! TEST: high limit 628.643u, low limit 334.066u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

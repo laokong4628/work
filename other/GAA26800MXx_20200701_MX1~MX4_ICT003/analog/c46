@@ -1,0 +1,19 @@
+!!!!    2    0    1 1274685996   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:01 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GND"!; a to "GND"
+connect i to "UNNAMED_46_74HC14_I184_A"!; b to "UNNAMED_46_74HC14_I184_A"
+!connect g to "UNNAMED_47_74HC14_I184_A"; l to "UNNAMED_47_74HC14_I184_A"
+!connect g to "UNNAMED_48_74HC14_I184_A"
+!connect g to "VCC"
+capacitor 100p+336p, 30.4, 30.4, fr8192, re5, wb, ar20.0m, en, nocomp, ed
+! warning "excessive plus tolerance or high limit."
+! "c46" is a commented test.
+! DUT: nominal 100p, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110p, low 90p
+! TEST: high limit 6.543n, low limit 1.183n
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

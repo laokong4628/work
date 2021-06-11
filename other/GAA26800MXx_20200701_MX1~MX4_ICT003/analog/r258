@@ -1,0 +1,15 @@
+!!!!    2    0    1 1315143267   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:39 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "+27V_RU_N"
+connect i to "UNNAMED_46_BZV55B9V1_I385_C"
+connect g to "UNNAMED_46_BZV55B18_I389_A"
+resistor 18k, 3.71, 1.63, re5, wb, ar500m, wa2.03m
+! "r258" test.
+! DUT: nominal 18k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 18.18k, low 17.82k
+! TEST: high limit 18.308k, low limit 17.706k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,16 @@
+!!!!    2    0    1 1529514590   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:23 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_46_BAS19_I21_A"; a to "UNNAMED_46_BAS19_I21_A"
+connect i to "UNNAMED_46_5033001300_I404_D"; b to "UNNAMED_46_5033001300_I404_D"
+resistor 0.5, 54, 50, re2, ar100m, sa, sb, en,ed
+!@inductor 4.7u, 10.2, 10.2, fr8192, re2, ar100m, ed, sa, sb, en
+! "l2" test.
+! DUT: nominal 4.7u, plus tol 20.0 %, minus tol 20.0 %
+! DUT Series Resistance: 10.0
+! DUT: high 5.64u, low 3.76u
+! TEST: high limit 6.920u, low limit 2.293u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

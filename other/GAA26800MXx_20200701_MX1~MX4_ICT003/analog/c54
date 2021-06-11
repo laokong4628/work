@@ -1,0 +1,17 @@
+!!!!    2    0    1 1595373532   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:53 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "+27V_RU_P"; a to "+27V_RU_P"
+connect i to "UNNAMED_46_BZV55B18_I266_A"; b to "UNNAMED_46_BZV55B18_I266_A"
+connect g to "+27V_RU_P_RTN"; l to "+27V_RU_P_RTN"
+!connect g to "UNNAMED_46_BZV55B9V1_I192_C"
+capacitor 100n+50n, 30, 25, fr8192, re2, wb, ar100.0m,en , ed,nocomp,sl
+! warning "device under test appears open or excessive noise is present."
+! "c54" is a commented test.
+! DUT: nominal 100n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110n, low 90n
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

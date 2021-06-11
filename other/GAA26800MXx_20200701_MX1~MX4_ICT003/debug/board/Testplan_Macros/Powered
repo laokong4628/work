@@ -1,0 +1,8 @@
+prerun
+call Initialize_Board_Constants
+call Initialize_Constants
+faon
+dim Psgroup(1:16)
+option bit 32
+powered
+call Setup_Power_Supplies (Failed_In_Power_Supplies, PowerMsg$)

@@ -1,0 +1,25 @@
+!!!!    2    0    1 1264583294   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:15 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "d50"
+   report "d51"
+   report "r254 499m"
+   report "r255 499m"
+   report "r256 499m"
+end on failure
+disconnect all
+connect s to "RUP_E11"
+connect i to "UNNAMED_46_BZV55B18_I266_A"
+! diode 0.00, 0.00, idc5.5, co3.1, ar0.00
+warning "idc value out of range."
+! "d49" is a commented test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 3m
+off failure

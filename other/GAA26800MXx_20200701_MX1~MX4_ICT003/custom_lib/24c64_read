@@ -1,0 +1,1388 @@
+!!!!    6    0    1 1047652886  V3710                                         
+!-----------------------------------------------------------------------
+! Device:        24c32/64
+! Manufacturer:  Atmel
+! Description:   4k/8k * 8 bit EEPROM I^2 C Compatible
+! Package:       8 pin SOIC
+! Test Platform: 3065,3070
+! Safeguard:     standard_cmos
+! Written By    : mikef
+! Date Written  : 4/5/02
+! Verified      : /es
+!
+!This program will use two data blocks to program the 24c64
+!One data block for addressing and one for data
+!
+!-----------------------------------------------------------------------
+!
+! Additional Comments:
+!
+!-----------------------------------------------------------------------
+flash
+
+
+vector cycle 10u
+receive delay 9u
+
+
+
+set terminators to on
+
+set terminators to on
+assign   VCC to pins   8
+assign   GND to pins   4
+
+assign   A0  to pins  1
+assign   A1  to pins  2
+assign   A2  to pins  3
+
+assign   WP  to pins 7   default "0"
+
+assign   SCL to pins  6
+assign   SDA to pins  5
+
+family TTL
+
+power VCC,GND
+
+inputs A0, A1, A2, WP
+inputs        SCL
+bidirectional SDA
+
+disable SDA with SCL to "1"
+
+
+
+data Serial_data to groups SDA
+!@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+!This is where you place the static data you want to problem
+!This can either be inserted into the test or as an include statement
+!The data is in a datablock format.
+!
+ values  0,0,0,0,0,0,0,0 !!Place holder only so the library will compile
+                         !!Comment out the above line in porduciton.
+
+end data
+
+data Serial_address to groups SDA
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0000
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0020
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0040
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0060
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0080
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x00A0
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x00C0
+
+   values  0,0,0,0,0,0,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x00E0
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0100
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0120
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0140
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0160
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0180
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x01A0
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x01C0
+
+   values  0,0,0,0,0,0,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x01E0
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0200
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0220
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0240
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0260
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0280
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x02A0
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x02C0
+
+   values  0,0,0,0,0,0,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x02E0
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0300
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0320
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0340
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0360
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0380
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x03A0
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x03C0
+
+   values  0,0,0,0,0,0,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x03E0
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0400
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0420
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0440
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0460
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0480
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x04A0
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x04C0
+
+   values  0,0,0,0,0,1,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x04E0
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0500
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0520
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0540
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0560
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0580
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x05A0
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x05C0
+
+   values  0,0,0,0,0,1,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x05E0
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0600
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0620
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0640
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0660
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0680
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x06A0
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x06C0
+
+   values  0,0,0,0,0,1,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x06E0
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0700
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0720
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0740
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0760
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0780
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x07A0
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x07C0
+
+   values  0,0,0,0,0,1,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x07E0
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0800
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0820
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0840
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0860
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0880
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x08A0
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x08C0
+
+   values  0,0,0,0,1,0,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x08E0
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0900
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0920
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0940
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0960
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0980
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x09A0
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x09C0
+
+   values  0,0,0,0,1,0,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x09E0
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0A00
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0A20
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0A40
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0A60
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0A80
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x0AA0
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x0AC0
+
+   values  0,0,0,0,1,0,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x0AE0
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0B00
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0B20
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0B40
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0B60
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0B80
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x0BA0
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x0BC0
+
+   values  0,0,0,0,1,0,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x0BE0
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0C00
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0C20
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0C40
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0C60
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0C80
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x0CA0
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x0CC0
+
+   values  0,0,0,0,1,1,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x0CE0
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0D00
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0D20
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0D40
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0D60
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0D80
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x0DA0
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x0DC0
+
+   values  0,0,0,0,1,1,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x0DE0
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0E00
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0E20
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0E40
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0E60
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0E80
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x0EA0
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x0EC0
+
+   values  0,0,0,0,1,1,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x0EE0
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x0F00
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x0F20
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x0F40
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x0F60
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x0F80
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x0FA0
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x0FC0
+
+   values  0,0,0,0,1,1,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x0FE0
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1020
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1040
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1060
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1080
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x10A0
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x10C0
+
+   values  0,0,0,1,0,0,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x10E0
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1100
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1120
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1140
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1160
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1180
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x11A0
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x11C0
+
+   values  0,0,0,1,0,0,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x11E0
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1200
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1220
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1240
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1260
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1280
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x12A0
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x12C0
+
+   values  0,0,0,1,0,0,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x12E0
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1300
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1320
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1340
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1360
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1380
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x13A0
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x13C0
+
+   values  0,0,0,1,0,0,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x13E0
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1400
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1420
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1440
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1460
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1480
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x14A0
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x14C0
+
+   values  0,0,0,1,0,1,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x14E0
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1500
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1520
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1540
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1560
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1580
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x15A0
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,0,1,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,0,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,0,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,0   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  0,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  0,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  0,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  0,1,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  1,0,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  1,0,1,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  1,1,0,0,0,0,0,0   !LSB   !0x1000
+
+   values  0,0,0,1,1,1,1,1   !MSB
+   values  1,1,1,0,0,0,0,0   !LSB   !0x1FE0
+end data
+
+
+! ******************************************************************************
+!  VECTORS
+! ******************************************************************************
+
+vector  Init
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+   set   A0                   to "0"
+   set   A1                   to "0"
+   set   A2                   to "0"
+end vector
+
+vector  KEEP
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "k"
+   set   A0                   to "k"
+   set   A1                   to "k"
+   set   A2                   to "k"
+end vector
+
+vector  Address_000
+   initialize                 to Keep
+   set   A0                   to "0"
+   set   A1                   to "0"
+   set   A2                   to "0"
+end vector
+
+vector  Address_111
+   initialize                 to Keep
+   set   A0                   to "1"
+   set   A1                   to "1"
+   set   A2                   to "1"
+end vector
+
+vector  Begin
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+end vector
+
+vector  Start
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  Stop
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "0"
+   set   SDA                  to "k"
+end vector
+
+vector  SCL_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "k"
+end vector
+
+vector  Dd_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dd_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_0_D_X
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "0"
+   set   SDA                  to "x"
+end vector
+
+vector  SCL_1_D_X
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "x"
+end vector
+
+vector  ACK_S0
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  SCL_R_0
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "0"
+   set   SDA                  to "x"
+end vector
+
+vector  SCL_R_1
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "x"
+end vector
+
+vector  Dr_0
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dr_1
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  ACK_M0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  ACK_M1
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  RW_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  RW_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_1_D_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  Rd_data
+   initialize                 to Keep
+!! receive  SDA
+   set   SCL                  to "k"
+!! set   SDA                  to "0"
+end vector
+
+vector Wr_data
+   initialize                 to Keep
+!  drive SDA
+   set   SCL                  to "k"
+!  set   SDA                  to "1"
+end vector
+
+! ******************************************************************************
+!  SUBS
+! ******************************************************************************
+
+sub  IC_Address_000 (RW)
+   execute  SCL_0
+   execute  Dd_1     !1
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_1     !1
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  RW       !Read = 1  Write = 0
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  Ack_S0         !ACK von Slave
+   execute  SCL_0_D_X
+end sub
+
+
+sub  Word_Address_1 (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0            !Ack von Slave
+   execute  SCL_0_D_X
+end sub
+
+sub  Word_Address_2 (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0            !Ack von Slave
+   execute  SCL_0_D_X
+end sub
+
+
+sub  Write_Data (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  SCL_0_D_X     !1/3/00(mikef)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0
+   execute  SCL_0_D_X
+   execute  Dd_0
+   execute  SCL_0
+   execute  SCL_1
+end sub
+
+sub  Read_Data (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  SCL_R_1
+   execute  D0        !D0
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D1        !D1
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D2        !D2
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D3        !D3
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D4        !D4
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D5        !D5
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D6        !D6
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D7        !D7
+   execute  SCL_0_D_X
+   execute  ACK_M0            !Ack von Master
+   execute  SCL_1_D_0
+   execute  SCL_0_D_X
+end sub
+
+
+sub  Write_Data_No_Stop (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  SCL_0_D_X     !1/3/00(mikef)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0
+   execute  SCL_0_D_X
+!  execute  Dd_0
+!  execute  SCL_0
+!  execute  SCL_1
+end sub
+
+sub Reset
+   repeat 10 times
+     execute SCL_0
+     execute SCL_1
+     execute SCL_0
+   end repeat
+end sub
+
+
+! ******************************************************************************
+!  UNITS
+! ******************************************************************************
+
+
+unit  "Read Address 0000"
+   rewind Serial_data
+   rewind Serial_address
+   execute  Init
+   execute  Address_000
+   execute  Begin   ! c=1 d=1
+   call Reset
+   execute  Start   ! c=1 d=0
+   execute  Stop    ! c=1 d=1
+
+
+   segment 16
+   repeat 256 times
+   execute  Begin   ! c=1 d=1
+   call Reset
+   execute  Start   ! c=1 d=0
+   execute  Stop    ! c=1 d=1
+   execute  Start   ! c=1 d=0
+   call  IC_Address_000 (RW_0)
+!! call  Word_Address_1
+   execute  Wr_data drive  data Serial_address  !First MSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                          !Second MSB
+   execute  Wr_data drive  data Serial_address  !Second MSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !Third MSB
+   execute  Wr_data drive  data Serial_address !Third MSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                          !4th MSB
+   execute  Wr_data drive  data Serial_address  !4th MSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                          !5th MSB
+   execute  Wr_data drive  data Serial_address  !5th MSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                          !6th MSB
+   execute  Wr_data drive  data Serial_address  !6th MSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                          !7th MSB
+   execute  Wr_data drive  data Serial_address  !7th MSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                          !8th MSB
+   execute  Wr_data drive  data Serial_address  !8th MSB
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0            !Ack von Slave
+   execute  SCL_0_D_X
+
+   !call  Word_Address_2
+   next Serial_address                         !1st LSB
+   execute SCL_0_D_X
+   execute  Wr_data drive  data Serial_address !1st LSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !2nd LSB
+   execute  Wr_data drive  data Serial_address !2nd LSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !3rd LSB
+   execute  Wr_data drive  data Serial_address !3rd LSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !4th LSB
+   execute  Wr_data drive  data Serial_address !4th LSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !5th LSB
+   execute  Wr_data drive  data Serial_address !5th LSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !6th LSB
+   execute  Wr_data drive  data Serial_address !6th LSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !7th LSB
+   execute  Wr_data drive  data Serial_address !7th LSB
+   execute  SCL_1
+   execute  SCL_0
+   next Serial_address                         !8th LSB
+   execute  Wr_data drive  data Serial_address !8th LSB
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0            !Ack von Slave
+   execute  SCL_0_D_X
+   next Serial_address                         !1st MSB for next sequence
+   execute  SCL_0_D_X
+
+   execute  Begin   ! c=1 d=1
+   execute  Start   ! c=1 d=0
+
+   call  IC_Address_000 (RW_1)
+     repeat  32 times
+     !call Read_Data (Dr_0,Dr_0,Dr_0,Dr_0,Dr_0,Dr_0,Dr_0,Dr_0)
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_R_0
+     next Serial_data
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_R_0
+     next Serial_data
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_R_0
+     next Serial_data
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_R_0
+     next Serial_data
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_R_0
+     next Serial_data
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_R_0
+     next Serial_data
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_R_0
+     next Serial_data
+     execute  SCL_R_1
+     execute  Rd_data receive data Serial_data
+     execute  SCL_0_D_X
+     execute  ACK_M0            !Ack von Master
+     next Serial_data
+     execute  SCL_1_D_0
+     execute  SCL_0_D_X
+     end repeat
+     execute Stop
+   end repeat
+   end segment
+   execute  Stop
+end unit
+
+
+
+
+
+
+
+!
+!  End of test
+!
+
+
+
+
+

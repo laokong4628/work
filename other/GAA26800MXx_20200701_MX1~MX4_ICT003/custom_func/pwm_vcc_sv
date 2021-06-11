@@ -1,0 +1,24 @@
+!!!!    2    0    1 1147902304   0000                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "Test_condition"
+   test "PWM_VCC_SV_24V_Driver_RTN"
+end test
+
+subtest "Test_condition"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 24
+   measure 25, 23                  ! Adjust at debug
+end subtest
+
+subtest "PWM_VCC_SV_24V_Driver_RTN"
+   connect i to nodes "PWM_VCC_SV"
+   connect l to nodes "24V_Driver_RTN"
+   detector dcv, expect 11
+   measure 13.00, 10.0              ! Adjust at debug
+end subtest

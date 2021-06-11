@@ -1,0 +1,22 @@
+!!!!    2    0    1 1293193120   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c258 100n"
+end on failure
+disconnect all
+connect s to "UNNAMED_45_R_I186_B"
+connect i to "UNNAMED_45_R_I210_A"
+!connect g to "PTC_1"
+!connect g to "UNNAMED_45_C_I189_A"
+jumper 10M, re6, ar100m, op
+!resistor 1.2k, 2.11, 5, re4, wb, ar100m, ed
+! "r209" test.
+! DUT: nominal 1.2k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 1.212k, low 1.188k
+! TEST: high limit 1.225k, low limit 1.184k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

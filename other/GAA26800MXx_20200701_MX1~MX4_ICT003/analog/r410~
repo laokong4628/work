@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583327   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:48 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "24V_SMPS_SENSE"
+connect i to "UNNAMED_39_R_I286_B"
+connect g to "SENSE_PWM_CONTROLLER_SUPPLY"
+resistor 442, 3.65, 0.530, re3, wb, ar200m, wa0.569m
+! "r410" test.
+! DUT: nominal 442, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 446.42, low 437.58
+! TEST: high limit 458.12, low limit 439.66
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

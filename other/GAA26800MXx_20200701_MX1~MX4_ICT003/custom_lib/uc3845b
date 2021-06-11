@@ -1,0 +1,149 @@
+!!!!    2    0    1 1124201796  V495d                                         
+! Revision control data:
+! use for testing "ucc1800", safeguard "not_required"
+! use for testing "ucc1801", safeguard "not_required"
+! use for testing "ucc1802", safeguard "not_required"
+! use for testing "ucc1803", safeguard "not_required"
+! use for testing "ucc1804", safeguard "not_required"
+! use for testing "ucc1805", safeguard "not_required"
+! use for testing "ucc2800", safeguard "not_required"
+! use for testing "ucc2801", safeguard "not_required"
+! use for testing "ucc2802", safeguard "not_required"
+! use for testing "ucc2803", safeguard "not_required"
+! use for testing "ucc2804", safeguard "not_required"
+! use for testing "ucc2805", safeguard "not_required"
+! use for testing "ucc3800", safeguard "not_required"
+! use for testing "ucc3801", safeguard "not_required"
+! use for testing "ucc3802", safeguard "not_required"
+! use for testing "ucc3803", safeguard "not_required"
+! use for testing "ucc3804", safeguard "not_required"
+! use for testing "ucc3805", safeguard "not_required"
+! use for testing "69903-48-018", safeguard "not_required"
+!
+! Test for UCC2801
+!          Low-Power BiCMOS Current-Mode PWM
+!          UNITRODE
+!
+! 31.3.99    Initial Issue 130-3830-01    djt.
+! 10.11.2000 Code 69903-48-026 changed to 69903-48-018.  djt
+
+!----------------------------------------------------------------------
+
+
+test powered analog
+   power pins 5, 7
+   nonanalog pins 3,4
+
+
+   test "REF__pin_8"
+   test "FB__pin_1"
+   test "OUT_voltage"
+   test "OUT_freq"
+
+
+end test
+
+
+!----------------------------------------------------------------------
+
+
+subtest "REF__pin_8"
+
+   disconnect all
+   connect i to pins 8
+   connect l to pins 5
+   connect g to pins 5
+   connect g to ground
+
+   detector dcv, expect 4
+   measure 4.1, 3.9
+
+end subtest
+
+subtest "FB__pin_1"
+
+   disconnect all
+   connect i to pins 1       !Measure at the COMP pin.
+   connect l to pins 5
+
+   connect s to pins 2
+
+   connect g to pins 5
+   connect g to ground
+
+   detector dcv, expect 2.8
+   measure 2.9, 2.7
+
+end subtest
+
+
+!--------------------------------
+
+
+subtest "OUT_voltage"
+
+   disconnect all
+   connect s to pins 2
+   connect i to pins 6       !Measure at the COMP pin.
+   connect l to pins 5
+
+   source dcv, amplitude 1.8, terminated 5k, icompliance 1, on
+
+   detector dcv, expect 2.8
+   measure 2.9, 2.7
+
+end subtest
+
+subtest "OUT_freq"
+
+   disconnect all
+   clear connect rcva to pins 6
+   connect s to pins 2
+   connect l to pins 5
+
+   source dcv, amplitude 1.8, terminated 5k, icompliance 1, on
+
+   detector frequency, expect 4.0M
+   measure 4.0M * 1.0005, 4.0M * 0.9995
+
+end subtest
+
+!--------------------------------
+
+
+subtest "COMP_pin_1_low"
+
+   disconnect all
+   connect s to pins 2
+   connect i to pins 1       !Measure at the COMP pin.
+   connect l to pins 5
+   connect g to pins 5
+   connect g to ground
+
+   source dcv, amplitude 2.7, terminated 5k, icompliance 1, on
+   detector dcv, expect 1.1
+   measure 1.3, 0.9
+
+end subtest
+
+subtest "OUT_high_freq__pin_6"
+
+   disconnect all
+   clear connect rcva to pins 6
+   connect s to pins 2
+   connect l to pins 5
+   connect g to pins 5
+   connect g to ground
+
+   source dcv, amplitude 2.7, terminated 5k, icompliance 1, on
+
+   detector frequency, expect 4.0M
+   measure 4.0M * 1.0005, 4.0M * 0.9995
+
+end subtest
+
+!--------------------------------
+
+
+! end of subtests
+

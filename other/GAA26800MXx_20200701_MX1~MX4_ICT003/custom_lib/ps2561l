@@ -1,0 +1,18 @@
+!!!!   21    1    1 1124275245  Vbf68                                         
+! OPTO Presence
+
+diode "d1", 800m, 450m, nr
+
+pin library *,pn"ps2561l_func"
+
+external pins 1
+   device "d1" pins "A"
+   device "*" pins 1
+external pins 2
+   device "d1" pins "C"
+   device "*" pins 2
+external pins 3
+   device "*" pins 3
+external pins 4
+   device "*" pins 4
+

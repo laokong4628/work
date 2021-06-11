@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583277   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GND_SENSE"; a to "GND_SENSE"
+connect i to "UNNAMED_39_BYG22D_I127_C"
+connect g to "+15V_SENSE"
+capacitor 10u, 16.8, 25.4, fr128, re2, ar100m, ed, sa, en, nocomp
+! "c211" test.
+! DUT: nominal 10u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 11u, low 9u
+! TEST: high limit 11.676u, low limit 7.459u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

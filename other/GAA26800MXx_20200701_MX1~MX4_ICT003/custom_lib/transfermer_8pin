@@ -1,0 +1,31 @@
+!!!!   21    2    1 1263545689   0000                                         
+! This is transfermer test library
+
+jumper "jp1", closed, nr, pn"transfermer_8pin"
+jumper "jp2", closed, nr, pn"transfermer_8pin"
+jumper "jp3", closed, nr, pn"transfermer_8pin"
+jumper "jp4", closed, nr, pn"transfermer_8pin"
+
+external pins 1
+   device "jp1" pins 1
+
+external pins 2
+   device "jp1" pins 2
+
+external pins 3
+   device "jp2" pins 1
+
+external pins 4
+   device "jp2" pins 2
+
+external pins 5
+   device "jp3" pins 1
+
+external pins 6
+   device "jp3" pins 2
+
+external pins 7
+   device "jp4" pins 1
+
+external pins 8
+   device "jp4" pins 2

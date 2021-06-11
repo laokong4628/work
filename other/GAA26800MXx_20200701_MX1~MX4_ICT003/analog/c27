@@ -1,0 +1,16 @@
+!!!!    2    0    1 1264583271   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:52 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_45_R_I186_B"; a to "UNNAMED_45_R_I186_B"
+connect i to "24V_HL2"; b to "24V_HL2"
+connect g to "HL2"; l to "HL2"
+! capacitor 100n, 10.0, 10.0, fr1024, re1, ar50.0m, sa, sb, sl, en, nocomp
+warning "device under test appears open or excessive noise is present."
+! "c27" is a commented test.
+! DUT: nominal 100n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110n, low 90n
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

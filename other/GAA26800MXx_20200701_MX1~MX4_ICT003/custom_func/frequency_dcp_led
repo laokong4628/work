@@ -1,0 +1,16 @@
+!!!!    2    0    1 1264007872  Vc1ab                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V
+   disconnect all
+   test "DCP_LED_DCN_LED_6"
+end test
+
+subtest "DCP_LED_DCN_LED_6"
+   connect rcva to nodes "DCP_LED"
+   connect l to nodes "DCN_LED_6"
+   detector frequency, expect 7, threshold 3.0, timeout 500m, gate 0
+   measure 15, 5
+end subtest

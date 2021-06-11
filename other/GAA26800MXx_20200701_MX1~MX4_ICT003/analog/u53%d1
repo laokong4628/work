@@ -1,0 +1,15 @@
+!!!!    2    0    1 1274192789   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:23 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_44_BC817_I101_C"
+connect i to "UNNAMED_44_PS2561L_I234_AN"
+diode 1.2, 0.8, idc1.0m, co3.0, ar806m
+! "u53%d1" test.
+! DUT: nominal 625m, plus tol 28.0 %, minus tol 28.0 %
+! DUT: high 800m, low 450m
+! TEST: high limit 805.647m, low limit 452.808m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

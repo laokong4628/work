@@ -1,0 +1,56 @@
+!!!!    2    0    1 1426820303  Vda71                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:38 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;A,Pulse
+   disconnect all
+   gpconnect 21852 to 21853
+   gpconnect 21854 to 21855
+   connect s to nodes "RELAY_7"
+   connect a to 203101  !@!connect 2K load at +15V_SENSE
+   connect g to 203101
+   connect g to nodes "RELAY_VCC1"
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   auxiliary dcv,amplitude 5,icompliance 1,on
+   wait 30m
+   !@test "Test_condition1"
+   !@test "Test_condition2"
+   !@test "Test_condition3"
+   test "DUTY_CYClE"
+   gpdisconnect 21852 from 21853
+   gpdisconnect 21854 from 21855
+end test
+
+subtest "Test_condition1"
+   connect i to nodes "24V_SENSE"
+   connect l to nodes "24V_SENSE_RTN"
+   detector dcv, expect 26
+   measure 27, 25                  ! Adjust at debug
+end subtest
+
+subtest "Test_condition2"
+   connect i to nodes "OPTO_VCC"
+   connect l to nodes "GND"
+   detector dcv, expect 5
+   measure 5.5, 4.5                  ! Adjust at debug
+end subtest
+
+subtest "Test_condition3"
+   connect i to nodes "RELAY_VCC"
+   connect l to nodes "GND"
+   detector dcv, expect 5
+   measure 5.5, 4.5                  ! Adjust at debug
+end subtest
+
+subtest "DUTY_CYClE"
+   global A,Pulse
+   connect rcva to nodes "PWM_OUT8" !@nodes "SMPS_SENSE_DRAIN"
+   connect l to nodes "24V_SMPS_SENSE_RTN"
+   detector pulse, expect 5.56u, threshold A
+   arm detector
+   fetch Pulse
+!   detector frequency, expect 180k, threshold 3, gate 0
+!   arm detector
+!   fetch Freq
+!   report analog 0.32, 0.22, Pulse * Freq
+!   A = Pulse * Freq
+end subtest

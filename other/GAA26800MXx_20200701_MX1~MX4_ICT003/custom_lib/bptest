@@ -1,0 +1,63 @@
+!!!!    2    0    1 1011118346  Vaa14                                         
+!----------------------------------------------------------------------------!
+!      /\                                                                    !
+!     /  \/\                                                                 !
+!  /\/    \ \                                                                !
+! /__\_____\_\__ APG Test Consultants, Inc.                                  !
+!----------------------------------------------------------------------------!
+! 741 South Bowen Street, Longmont, CO 80501                                 !
+! Phone: (303) 702-0007  Fax: (303) 702-0004                                 !
+!----------------------------------------------------------------------------!
+! Device           : BPTEST                                                  !
+! Description      : Board Presence Test                                     !
+! Package          : Fixture Electronics                                     !
+! Developed by     : APG Test Consultants, Inc.     PRW                      !
+! Revision         : 03/16/2001                                              !
+! Status           : Verified                                                !
+!----------------------------------------------------------------------------!
+! Notes: Test is Powerd Analog & must be executed before "faon" statement.   !
+!----------------------------------------------------------------------------!
+
+test powered analog
+  disconnect all
+
+  test "Diode"
+  test "Presence"
+end test
+
+
+subtest "Diode"
+connect s to pins 2 !nodes "BPANODE"       !~Opto Diode Anode
+connect i to pins 2 !nodes "BPANODE"       !~Opto Diode Anode
+connect g to pins 1 !nodes "BPCATHODE"     !~Opto Diode Cathode
+connect g to ground                !~Tie Grounds to System Ground
+connect l to ground                !~Reference measurement to Ground
+
+source dcv, amplitude 5, on , icompliance 1, terminated  5k
+detector dcv,  expect 1
+wait 50m
+measure 1.2, 0.8
+end subtest
+
+!~When wiring, add a current limiting resistor between the ASRU aux source
+!~and the probe for BPANODE
+subtest "Presence"
+connect s to pins 3 !nodes "BPSOURCE"      !~Opto Transistor Reciever Collector
+connect a to pins 2 !nodes "BPANODE"       !~Opto Diode Anode (need resistor)
+
+connect g to pins 1 !nodes "BPCATHODE"     !~Opto Diode Cathode
+connect g to pins 4 !nodes "BPSENSE"       !~Opto Transistor Reciever Emitter
+connect g to ground                !~Tie Grounds to System Ground
+
+connect l to ground                !~Reference measuremet from Ground
+connect i to pins 3 !nodes "BPSOURCE"      !~Take measuremet at Terminatred Collector
+
+detector dcv,  expect 5
+source dcv, amplitude 5, on , icompliance 1, terminated  500
+auxiliary dcv, amplitude 6, on, icompliance 1
+wait 50m
+measure 5.1,4
+end subtest
+
+!!end test
+

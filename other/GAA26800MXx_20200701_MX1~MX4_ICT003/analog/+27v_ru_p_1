@@ -1,0 +1,16 @@
+!!!!    2    0    1 1273547185   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:32 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V
+   disconnect all
+   test "+27V_RU_P_+27V_RU_P_RTN"
+end test
+
+subtest "+27V_RU_P_+27V_RU_P_RTN"
+   global V
+   report analog 28.0, 26.0, V
+!@ measure 28.0, 26.0              ! Adjust at debug
+end subtest

@@ -1,0 +1,43 @@
+!!!!    2    0    1 1268729586   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:06 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_47_C_I380_A"
+connect i to "+27V_SV_N"
+diode "B-C", 806m, 503m, idc1.0m, co3.0, ar806m
+! "q16 B-C" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.508m, low limit 602.823m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+disconnect all
+connect s to "UNNAMED_47_MJD44H11_I376_E"
+connect i to "UNNAMED_47_C_I380_A"
+diode "B-E", 806m, 503m, idc1.0m, co3.0, ar806m
+! "q16 B-E" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.508m, low limit 602.823m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+! The preceding simplified transistor test was generated to minimize 
+! debug while maintaining good manufacturing fault coverage.
+! The following beta test may be used for transistors requiring such
+! tests, though it may require tuning.
+disconnect all
+connect s to "UNNAMED_47_C_I380_A"
+connect i to "+27V_SV_N"
+connect g to "UNNAMED_47_MJD44H11_I376_E"
+! npn "BETA", 1.00k, 40.1, idc1.0m, idelta10, co10
+npn "BETA"
+! "q16 BETA" is a commented test.
+! DUT: nominal 125, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 200, low 50
+! TEST: high limit 1k, low limit 40.113
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

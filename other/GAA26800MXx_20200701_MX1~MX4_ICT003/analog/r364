@@ -1,0 +1,23 @@
+!!!!    2    0    1 1264583325   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:46 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r368 20.0k"
+   report "r369 20.0k"
+   report "c287 1.00n"
+   report "c288 1.00n"
+   report "c289 1.00n"
+end on failure
+disconnect all
+connect s to "SVN_E21"
+connect i to "SVN_G21"
+resistor 6.667k, 1.44, 1.23, re4, wb, ar100m
+! "r364" test.
+! DUT: nominal 6.667k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 6.733k, low 6.6k
+! TEST: high limit 6.762k, low limit 6.585k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

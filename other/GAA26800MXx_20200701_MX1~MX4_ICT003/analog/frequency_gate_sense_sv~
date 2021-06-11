@@ -1,0 +1,33 @@
+!!!!    2    0    1 1434423490  V13c5                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:39 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;Freq
+   disconnect all
+   !@connect s to nodes "RELAY_5"
+   !@source dcv, amplitude 5, icompliance 1, terminated 50, on
+   !@test "Test_condition"
+   connect a to nodes "RELAY_18"    !@!ECN add 2K Load at +27V_SV_P / N
+   connect g to nodes "RELAY_18"
+   connect g to nodes "RELAY_VCC1"
+   auxiliary dcv,amplitude 5,icompliance 1,on
+   wait 5
+   test "Frequency"
+end test
+
+subtest "Test_condition"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 24
+   measure 25, 23                  ! Adjust at debug
+end subtest
+
+subtest  "Frequency"
+   global Freq
+   connect rcva to nodes "GATE_SENSE_SV"!@nodes "PWM_OUT3"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector frequency, expect 230k, threshold 3.0, gate 0
+   arm detector
+   fetch Freq
+!@ report analog 260k, 80k, Freq   !@ customer change to limit 20150615
+!@   measure 180k, 140k
+end subtest

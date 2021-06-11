@@ -1,0 +1,13 @@
+!!!!    2    0    1 1406376352   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:37 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;Freq,Pulse
+   disconnect all
+   test "DUTY_CYClE"
+end test
+
+subtest "DUTY_CYClE"
+   global Freq,Pulse
+wait50m
+   report analog 0.3, 0.05, Pulse*Freq
+end subtest

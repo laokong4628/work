@@ -1,0 +1,43 @@
+!!!!    2    0    1 1268902542   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:06 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect i to "GATE_TO_TRIGGER"
+connect s to "TRIGGER_555"
+diode "B-E", 1.4, 1.0, idc1.0m, co3.0, ar805m
+! "q17 B-E" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.467m, low limit 601.789m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+disconnect all
+connect s to "+15V_SENSE"
+connect i to "GATE_TO_TRIGGER"
+diode "B-C", 805m, 602m, idc5m, co3.0, ar805m
+! "q17 B-C" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.259m, low limit 601.541m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+! The preceding simplified transistor test was generated to minimize 
+! debug while maintaining good manufacturing fault coverage.
+! The following beta test may be used for transistors requiring such
+! tests, though it may require tuning.
+disconnect all
+connect s to "GATE_TO_TRIGGER"
+connect i to "TRIGGER_555"
+connect g to "+15V_SENSE"
+! npn "BETA", 1.00k, 40.0, idc1.1m, idelta10, co10
+npn "BETA"
+! "q17 BETA" is a commented test.
+! DUT: nominal 125, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 200, low 50
+! TEST: high limit 1k, low limit 40.021
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

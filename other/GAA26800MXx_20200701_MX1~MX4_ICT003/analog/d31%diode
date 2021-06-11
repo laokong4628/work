@@ -1,0 +1,21 @@
+!!!!    2    0    1 1264583290   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:11 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r393 10.0k"
+   report "q17"
+end on failure
+disconnect all
+connect s to "+15V_SENSE"
+connect i to "GATE_TO_TRIGGER"
+diode 805m, 501m, idc1.1m, co3.0, ar805m
+! "d31%diode" test.
+! DUT: nominal 650m, plus tol 23.1 %, minus tol 23.1 %
+! DUT: high 800m, low 500m
+! TEST: high limit 804.748m, low limit 500.91m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

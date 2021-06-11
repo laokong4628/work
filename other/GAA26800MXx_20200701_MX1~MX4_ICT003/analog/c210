@@ -1,0 +1,15 @@
+!!!!    2    0    1 1295176458   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:56 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_39_C_I178_A"
+connect i to "UNNAMED_39_C_I178_B"
+connect g to "UNNAMED_39_R_I345_B"
+capacitor 100n+20n, 20.7, 20.9, fr8192, re4, wb, ar100m, nocomp, ed
+! "c210" test.
+! DUT: nominal 100n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110n, low 90n
+! TEST: high limit 111.723n, low limit 86.066n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

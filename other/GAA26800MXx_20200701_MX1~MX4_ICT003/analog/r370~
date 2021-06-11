@@ -1,0 +1,15 @@
+!!!!    2    0    1 1593591059   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GND_SENSE"
+connect i to "UNNAMED_38_R_I17_B"
+connect g to ground
+resistor 4.99k, 3, 3.20, re2, wb, ar200m,ed,wa150m
+! "r370" test.
+! DUT: nominal 4.99k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 5.040k, low 4.940k
+! TEST: high limit 5.062k, low limit 4.930k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

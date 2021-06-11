@@ -1,0 +1,23 @@
+!!!!    2    0    1 1373472062   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:35 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r198 1.50k not load"
+   report "r238 10.0k"
+   report "r332 10.0k"
+   report "r404 10.0k"
+end on failure
+disconnect all
+connect s to "VCC"
+connect i to "UNNAMED_46_C_I247_A"
+connect g to "GND"
+resistor 1.03k, 12.63, 2.680, re3, wb, ar100m, ed
+! "r32" test.
+! DUT: nominal 612.24, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 618.37, low 606.12
+! TEST: high limit 628.33, low limit 606.25
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

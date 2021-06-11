@@ -1,0 +1,21 @@
+!!!!    2    0    1 1273551011   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:46 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;Volt3(*)
+   disconnect all
+   test "REF_2V5_TW_P_+27V_TW_P_RTN"
+end test
+
+subtest "REF_2V5_TW_P_+27V_TW_P_RTN"
+   global Volt3(*)
+   connect i to nodes "REF_2V5_TW_P"
+   connect l to nodes "+27V_TW_P_RTN"
+   detector digitizer, expect 3, interval 1m, samples 512
+   initiate detector
+   fetch Volt3(*)
+!@ report analog 2.63, 2.38, V
+!@   measure 2.63, 2.38              ! Adjust at debug
+end subtest

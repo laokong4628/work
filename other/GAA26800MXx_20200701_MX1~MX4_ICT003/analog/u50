@@ -1,0 +1,52 @@
+!!!!    2    0    1 1322635683   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:30 2010
+! Analog powered test for PHOTOCOUPLER, SMD, VDE0884 SATISFIED
+!
+!
+! A Edmondson
+
+ warning "Module not tested"
+
+!                                            --------
+!                       ----------        1 |        | 4
+!               -------| resistor |---------|a      c|-----
+!                       ----------          |        |
+!                                           | OPTO   |
+!                                         2 |        | 3
+!               ----------------------------|k      e|-----
+!                                           |        |
+!                                            --------
+
+test powered analog
+   test "Diode_On"
+   test "Diode_Off"
+   disconnect all
+end test
+
+subtest "Diode_On"
+   connect s to pins 4           ! drive Collector via tester resistor
+   connect a to pins 1           ! drive Anode via on-board resistor
+   connect i to pins 4           ! measure at Collector
+   connect l to pins 3           ! measure at Emitter
+   connect g to pins 3           ! drive Emitter
+   connect g to pins 2           ! drive Cathode
+   source dcv, amplitude 5.0, terminated 500, icompliance 1, on
+   auxiliary dcv, amplitude 2, icompliance 1, on
+   detector dcv, expect 5.0
+   measure 0.8, -0.5
+end subtest
+
+subtest "Diode_Off"
+   connect s to pins 4           ! drive Collector via tester resistor
+   connect a to pins 1           ! drive Anode via on-board resistor
+   connect i to pins 4           ! measure at Collector
+   connect l to pins 3           ! measure at Emitter
+   connect g to pins 3           ! drive Emitter
+   connect g to pins 2           ! drive Cathode
+   source dcv, amplitude 5.0, terminated 50, icompliance 1, on
+   auxiliary dcv, amplitude 0, icompliance 1, on
+   detector dcv, expect 5.0
+   measure 5.2, 2.0
+end subtest
+
+! End of test

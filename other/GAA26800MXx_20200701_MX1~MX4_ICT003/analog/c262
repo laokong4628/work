@@ -1,0 +1,25 @@
+!!!!    2    0    1 1274685181   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:07 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c281 220p"
+   report "c297 220p"
+end on failure
+disconnect all
+connect s to "GND"!; a to "GND"
+connect i to "UNNAMED_46_C_I247_A"!; b to "UNNAMED_46_C_I247_A"
+!connect g to "VCC"!; l to "VCC"
+!connect g to "UNNAMED_44_74HC14_I223_A"
+connect g to "UNNAMED_45_74HC14_I100_A"
+capacitor 660p-160p, 30, 30, fr8192, re2, wb, ar100m, nocomp, en, ed
+! warning "excessive plus tolerance or high limit."
+! "c262" is a commented test.
+! DUT: nominal 660p, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 726p, low 594p
+! TEST: high limit 6.210u, low limit -32.195u
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

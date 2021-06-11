@@ -1,0 +1,15 @@
+!!!!    2    0    1 1293185453  Vb35c                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:30 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "SW_TEMP_SENSOR"; a to "SW_TEMP_SENSOR"
+connect i to "UNNAMED_45_C_I139_B"; b to "UNNAMED_45_C_I139_B"
+jumper 1M,re5,ar100m,op,ed!@!ECN no load
+!@!resistor 15, 8.85, 2.84, re2, ar500m, sa, sb, en
+! "r6" is a limited test.
+! DUT: nominal 15, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 15.15, low 14.85
+! TEST: high limit 16.327, low limit 14.575
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

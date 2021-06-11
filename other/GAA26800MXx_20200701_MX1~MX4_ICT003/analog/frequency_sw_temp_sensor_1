@@ -1,0 +1,16 @@
+!!!!    2    0    1 1273583044  V628a                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:40 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog; Freq
+   disconnect all
+   test "SW_TEMP_SENSOR_HL2"
+end test
+
+subtest "SW_TEMP_SENSOR_HL2"
+   global Freq
+   report analog 220k, 180k, Freq
+!@   measure 220k, 180k
+end subtest

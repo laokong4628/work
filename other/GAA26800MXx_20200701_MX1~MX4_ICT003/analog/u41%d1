@@ -1,0 +1,15 @@
+!!!!    2    0    1 1274192626   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:22 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GND_SENSE"
+connect i to "UNNAMED_38_R_I69_B"
+diode 1.2, 0.8, idc1.0m, co3.0, ar806m
+! "u41%d1" test.
+! DUT: nominal 625m, plus tol 28.0 %, minus tol 28.0 %
+! DUT: high 800m, low 450m
+! TEST: high limit 805.647m, low limit 452.808m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

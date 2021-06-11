@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583276   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GND_SENSE"; a to "GND_SENSE"
+connect i to "DISCH_THRES_555"
+connect g to "+15V_SENSE"
+capacitor 100n, 26.0, 45.7, fr1024, re3, wb, ar100m, sa, en, nocomp
+! "c294" is a limited test.
+! DUT: nominal 100n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110n, low 90n
+! TEST: high limit 126.04n, low limit 54.256n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

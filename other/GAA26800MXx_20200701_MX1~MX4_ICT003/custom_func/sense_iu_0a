@@ -1,0 +1,22 @@
+!!!!    2    0    1 1264398826  Vcd54                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V,RX4
+   disconnect all
+   !@ gpconnect "RX4" to "GNDA"   !@connected resistor 60ohm
+   wait 10m
+   test "SENSE_IU_GNDA"
+   !@ gpdisconnect "RX4" from "GNDA"  !@remove resistor 60ohm
+end test
+
+subtest "SENSE_IU_GNDA"
+   global V,RX4
+   connect i to nodes "SENSE_IU"
+   connect l to nodes "GNDA"
+   detector dcv, expect 0.00
+   initiate detector
+   fetch V
+   report analog  0.100, -0.10, V/RX4
+end subtest

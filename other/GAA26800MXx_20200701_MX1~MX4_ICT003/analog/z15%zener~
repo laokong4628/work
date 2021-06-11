@@ -1,0 +1,15 @@
+!!!!    2    0    1 1531756571   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:16 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "24V_SMPS_SENSE_RTN"
+connect i to "SMPS_SENSE_GATE"
+zener 4.7, 10.89, 10.97, idc55m, co6.3, ar18
+! "z15%zener" test.
+! DUT: nominal 3.9, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 4.095, low 3.705
+! TEST: high limit 4.102, low limit 3.706
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

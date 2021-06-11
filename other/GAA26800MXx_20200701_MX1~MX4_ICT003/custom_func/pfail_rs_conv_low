@@ -1,0 +1,21 @@
+!!!!    2    0    1 1264003232  V5fd8                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V
+   disconnect all
+   test "PFAIL_RS_CONV_GND"
+end test
+
+subtest "PFAIL_RS_CONV_GND"
+   global V
+   connect s to nodes "US"
+   connect rcva to nodes "PFAIL_RS_CONV"
+   connect l to nodes "GND"
+   source sine, amplitude V, frequency 50, icompliance 1, offset 0, terminated 50, on
+   detector frequency, expect 33.3
+   arm detector
+   fetch V
+!@   report analog 50.00,20.00,V
+end subtest

@@ -1,0 +1,17 @@
+!!!!    2    0    1 1293507436   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:51 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GND_SENSE"; a to "GND_SENSE"
+connect i to "REF_P"; b to "REF_P"
+!@connect g to "REF_N"; l to "REF_N"
+connect g to "+15V_SENSE"
+capacitor 2.2n, 20.2, 22.6, fr8192, re5, wb, ar50.0m, ed, nocomp, en
+! "c291" is a limited test.
+! DUT: nominal 2.2n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 2.42n, low 1.98n
+! TEST: high limit 4.207n, low limit 756.144p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

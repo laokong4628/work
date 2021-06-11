@@ -1,0 +1,22 @@
+!!!!    2    0    1 1395517805   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:33 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   connect a to nodes "RELAY_18"    !@!ECN add 2K Load at +27V_SV_P / N
+   connect g to nodes "RELAY_18"
+   connect g to nodes "RELAY_VCC1"
+   auxiliary dcv,amplitude 5,icompliance 1,on
+   wait 3
+   test "+27V_SV_N_+27V_SV_N_RTN"
+end test
+
+subtest "+27V_SV_N_+27V_SV_N_RTN"
+   connect i to nodes "+27V_SV_N"
+   connect l to nodes "+27V_SV_N_RTN"
+   detector dcv, expect 27
+   measure 29.8, 26.0              ! Adjust at debug add 0.5 on measure
+end subtest

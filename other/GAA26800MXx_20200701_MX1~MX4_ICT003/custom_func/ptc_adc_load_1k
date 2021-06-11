@@ -1,0 +1,18 @@
+!!!!    2    0    1 1147902304   0000                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   !@ gpconnect "PTC_1" to "RX2"      !@ load 1k/1% resistor between PTC_1/PTC_6
+   test "PTC_ADC_HL2"
+   !@ gpdisconnect "PTC_1" from "RX2" !@ load 1k/1% resistor between PTC_1/PTC_6
+end test
+
+subtest "PTC_ADC_HL2"
+   connect i to nodes "PTC_ADC"
+   connect l to nodes "HL2"
+   detector dcv, expect 1.2
+   measure 1.80, 1.00              ! Adjust at debug
+end subtest

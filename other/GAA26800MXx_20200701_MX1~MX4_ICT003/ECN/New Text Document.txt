@@ -1,0 +1,12 @@
+mx1:unmount on board:
+c21,c22
+
+
+
+
+
+
+
+
+mx1:mount on board
+r218 r219,r220,z1,r230,r304,r305,r306,z3,r331,r394,r395,r396,.z11,r403,r441,r442

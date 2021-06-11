@@ -1,0 +1,20 @@
+!!!!    2    0    1 1293506210  Vd660                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:53 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c167 2.20n"
+end on failure
+disconnect all
+connect s to "REF_N"
+connect i to "GND_SENSE"
+connect g to "REF_P"
+resistor 27k, 3.86, 2.67, re5, wb, ar500m, wa0.621m
+! "r136" test.
+! DUT: nominal 27k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 27.27k, low 26.73k
+! TEST: high limit 27.502k, low limit 26.550k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

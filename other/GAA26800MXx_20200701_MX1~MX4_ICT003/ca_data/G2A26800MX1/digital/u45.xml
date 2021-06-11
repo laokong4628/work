@@ -1,0 +1,55 @@
+
+<Test name = "u45" version = "G2A26800MX1">
+<FileList>
+<File name = "u45">
+<FilePath>C:/Agilent_ICT/boards/other/OTIS/G2A26800MXx/digital/u45</FilePath>
+<LastModified>Wed Apr 14, 2010   5:29 pm</LastModified>
+</File>
+</FileList>
+<DeviceList>
+<Device name="u45">
+<TestablePinList>
+<Pin name="1">
+<Type>Input</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+</Pin>
+<Pin name="2">
+<Type>Input</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+</Pin>
+<Pin name="5">
+<Type>Input</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+</Pin>
+<Pin name="6">
+<Type>Output</Type>
+<ReceiveHigh value="true"/>
+</Pin>
+<Pin name="7">
+<Type>Output</Type>
+</Pin>
+<Pin name="11">
+<Type>Output</Type>
+<ReceiveHigh value="true"/>
+</Pin>
+<Pin name="14">
+<Type>Input</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+</Pin>
+<Pin name="15">
+<Type>Output</Type>
+<ReceiveHigh value="true"/>
+</Pin>
+<Pin name="16">
+<Type>Output</Type>
+<ReceiveLow value="true"/>
+<ReceiveHigh value="true"/>
+</Pin>
+</TestablePinList>
+</Device>
+</DeviceList>
+</Test>

@@ -1,0 +1,17 @@
+!!!!    2    0    1 1264583310   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:31 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_47_74HC14_I184_A"; a to "UNNAMED_47_74HC14_I184_A"
+connect i to "ENABLE_RST"; b to "ENABLE_RST"
+connect g to "GND"; l to "GND"
+connect g to "PF_IGBT_INV"
+connect g to "VCC"
+resistor 15, 8.60, 10.1, re1, ar50.0m, sa, sb, sl, en
+! "r105" is a limited test.
+! DUT: nominal 15, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 15.15, low 14.85
+! TEST: high limit 16.290, low limit 13.492
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,16 @@
+!!!!    2    0    1 1508520101   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_46_C_I261_A"
+connect i to "24V_DRIVER_RTN"
+connect g to "UNNAMED_46_C_I263_A"
+capacitor 1n, 22.6, 9.66, fr1024, re5, wb, ar100m, nocomp, ed
+! "c41" test.
+! DUT: nominal 1n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 1.1n, low 900p
+! TEST: high limit 1.116n, low limit 903.39p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

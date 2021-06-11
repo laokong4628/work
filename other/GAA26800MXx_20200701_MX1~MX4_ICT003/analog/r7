@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583310   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:31 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "PFAIL_RS"
+connect i to "UNNAMED_44_74HC14_I288_A"
+connect g to "GND"
+resistor 470, 2.77, 0.839, re3, wb, ar200m, wa0.947m
+! "r7" test.
+! DUT: nominal 470, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 474.7, low 465.3
+! TEST: high limit 483.01, low limit 466.06
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

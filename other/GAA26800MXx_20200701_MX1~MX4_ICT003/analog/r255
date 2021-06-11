@@ -1,0 +1,18 @@
+!!!!    2    0    1 1274672644   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:59 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_46_BZV55B18_I266_A"; a to "UNNAMED_46_BZV55B18_I266_A"
+connect i to "RUP_E12"; b to "RUP_E12"
+connect g to "RUP_E11"; l to "RUP_E11"
+connect g to "RUP_E13"
+resistor 499m, 100, 100, re1, ar100m, sa, sb, sl, en
+! warning "excessive plus tolerance or high limit."
+! "r255" is a commented test.
+! DUT: nominal 166.333m, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 167.997m, low 164.67m
+! TEST: high limit 1.479, low limit 20.321m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+

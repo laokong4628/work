@@ -1,0 +1,1398 @@
+F
+========================= Starting test generation at  ========================
+========================= Thu Jan 28, 2010 10:54:31 AM ========================
+----------------------------------------------------------------------------
+AGILENT 3070 PHYSICAL DESCRIPTION COMPILER      Thu Jan 28, 2010 10:54:34 AM
+
+board_xy
+----------------------------------------------------------------------------
+There is only 1 accessible location on power node "OPTO_VCC". (WARNING PDF110)
+
+There is only 1 accessible location on power node "RELAY_VCC". (WARNING PDF110)
+
+There is only 1 accessible location on power node "VCC2A+". (WARNING PDF110)
+
+Node "DUMMY_SMPS_EN" will be inaccessible because there are no accessible locations on it. (WARNING PDF17)
+
+
+-------
+SUMMARY
+-------
+
+There is only 1 accessible location on a power node. 
+  For best testing, add more accessible locations to this power node 
+  in the board_xy file. (WARNING PDF110)
+
+A warning is issued for nodes that are inaccessible which have no 
+  accessible locations assigned to it, and the node is not marked    
+  NO_PROBE or NO_ACCESS.  Node locations can be made inaccessible due
+  to one or more of the following:                              
+  1) A location is marked either NO_PROBE, NO_ACCESS, or EXTRA; 
+  2) "**" was used to specify the xy location.                  
+  3) A location was marked TOP and the "Top Probes Allowed Flag"
+     was set to "OFF" in the "board" file;                      
+  This will possibly result in incomplete testing of this board. (WARNING PDF17)
+
+
+7235 LINES, 0 ERRORS, 4 WARNINGS, OBJECT PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 BOARD PLACEMENT                Thu Jan 28 10:54:36 2010      
+
+/C=/Agilent3070/boards/OTIS/G2A26800MXx/fixture/summary
+------------------------------------------------------------------------------
+
+Using the placement already stored in the fixture object
+   by a previous run of board placement.
+
+The selected board placement will not be compatible
+   with the automatic board handler.
+ (WARNING BPL44)
+
+The board "G2A26800MXx" was placed at X =  30117, Y = -63803
+  with a rotation of  0.000 degrees.
+
+ 0 Errors    1 Warnings
+------------------------------------------------------------------------------
+AGILENT 3070 PROBE SELECTION                Thu Jan 28 10:54:38 2010      
+
+/C=/Agilent3070/boards/OTIS/G2A26800MXx/fixture/summary
+------------------------------------------------------------------------------
+
+
+Selecting probes for board "G2A26800MXx"
+
+
+Node "DUMMY_SMPS_EN" is inaccessible because it has no accessible
+   probing locations.  Please see the Nodes Needing More Probes
+   report in the details file for further information.
+ (WARNING PBS124)
+
+Probe Select was not able to put enough probes on node "VCC2A+".
+   Please see the Nodes Needing More Probes report in the details file
+   for further information.
+ (WARNING PBS77)
+
+Probe Select was not able to put enough probes on node "GND".
+   Please see the Nodes Needing More Probes report in the details file
+   for further information.
+ (WARNING PBS77)
+
+Probe Select was not able to put enough probes on node "OPTO_VCC".
+   Please see the Nodes Needing More Probes report in the details file
+   for further information.
+ (WARNING PBS77)
+
+Probe Select was not able to put enough probes on node "RELAY_VCC".
+   Please see the Nodes Needing More Probes report in the details file
+   for further information.
+ (WARNING PBS77)
+
+   BOARD G2A26800MXx PROBE REPORT FOR ALL NODES 
+
+
+   Incremental Summary Report 
+
+   Nodes that are inaccessible or need more probes           =    5
+   Number of new probe holes you need to drill               =    0
+   Probes you need to insert into existing alternate holes   =    0
+   Maximum probe force density (oz./sq. in.)                 =  124
+   Number of probes exceeding density threshold              =    0
+   Number of light spring force probes used                  =    0
+   Number of 50MIL probes used                               =    0
+   Nodes marked for dual stage probes that could
+      not be assigned dual stage probes                      =    0
+   Number of probes close to the edge of the board
+      for a vacuum fixture                                   =    0
+   Number of probes close to the edge of the board
+      for a mechanical fixture                               =    0
+   Nodes added to the fixture                                =   68
+   Nodes no longer used in the fixture                       =    0
+   Nodes subject to  modifications                           =    5
+   Nodes marked NO_PROBE or NO_ACCESS in board_xy            =   68
+   Nodes no longer used in the fixture because they now
+      are marked NO_PROBE or NO_ACCESS in board_xy           =    0
+   Number of devices that are testjet probe inaccessible     =    0
+   Number of installed testjet probes to be drilled          =    0
+   Number of future testjet probes to be drilled             =    0
+   Number of future testjet probes to be installed           =    0
+   Alternate probing locations discarded                     =    0
+
+   Pins blocked during this run of Probe Select              =    0
+      Blocked pins actually in the configuration             =    0
+      Blocked pins not in the configuration                  =    0
+------------------------------------------------------------------------------
+AGILENT 3070 IPG Summary Report Rev 05.21p  Thu Jan 28 10:54:47 2010      
+
+G2A26800MXx
+------------------------------------------------------------------------------
+
+Reading "testorder".
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is NOT To Be Generated
+    Chek-Point Pins Test Is NOT To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing capacitor discharge test.
+
+  *** Summary ***
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   79
+  Capacitors not discharged =    0
+  Maximum voltage           =   76
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is NOT To Be Generated
+    Chek-Point Pins Test Is NOT To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing capacitor discharge test.
+
+  *** Summary ***
+  *** Board Version G2A26800MX1 ***
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   80
+  Capacitors not discharged =    0
+  Maximum voltage           =   76
+Power node "OUT_EN_CONV" does not have a defined state. (WARNING IPG503)
+Device "u7" may not be edited correctly as result. (WARNING IPG504)
+Power node "VCC" does not have a defined state. (WARNING IPG503)
+Device "u8%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u8%test" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%program" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%read" may not be edited correctly as result. (WARNING IPG504)
+Device "u54%test" may not be edited correctly as result. (WARNING IPG504)
+
+
+
+Test Program Generation Options:
+    Incremental Generation
+    Shorts Test Is NOT To Be Generated
+    Chek-Point Pins Test Is NOT To Be Generated
+    Capacitor Discharge Test Is To Be Generated
+
+
+  Node DUMMY_SMPS_EN is inaccessible.
+  Node NC__629 is inaccessible.
+  Node NC__630 is inaccessible.
+  Node NC__631 is inaccessible.
+  Node NC__632 is inaccessible.
+  Node NC__633 is inaccessible.
+  Node NC__634 is inaccessible.
+  Node NC__635 is inaccessible.
+  Node NC__636 is inaccessible.
+  Node NC__637 is inaccessible.
+  Node NC__638 is inaccessible.
+  Node NC__639 is inaccessible.
+  Node NC__640 is inaccessible.
+  Node NC__641 is inaccessible.
+  Node NC__642 is inaccessible.
+  Node NC__643 is inaccessible.
+  Node NC__644 is inaccessible.
+  Node NC__645 is inaccessible.
+  Node NC__646 is inaccessible.
+  Node NC__647 is inaccessible.
+  Node NC__648 is inaccessible.
+  Node NC__649 is inaccessible.
+  Node NC__650 is inaccessible.
+  Node NC__651 is inaccessible.
+  Node NC__652 is inaccessible.
+  Node NC__653 is inaccessible.
+  Node NC__654 is inaccessible.
+  Node NC__655 is inaccessible.
+  Node NC__656 is inaccessible.
+  Node NC__657 is inaccessible.
+  Node NC__658 is inaccessible.
+  Node NC__659 is inaccessible.
+  Node NC__660 is inaccessible.
+  Node NC__661 is inaccessible.
+  Node NC__662 is inaccessible.
+  Node NC__663 is inaccessible.
+  Node NC__664 is inaccessible.
+  Node NC__665 is inaccessible.
+  Node NC__666 is inaccessible.
+  Node NC__667 is inaccessible.
+  Node NC__668 is inaccessible.
+  Node NC__669 is inaccessible.
+  Node NC__670 is inaccessible.
+  Node NC__671 is inaccessible.
+  Node NC__672 is inaccessible.
+  Node NC__673 is inaccessible.
+  Node NC__674 is inaccessible.
+  Node NC__675 is inaccessible.
+  Node NC__676 is inaccessible.
+  Node NC__677 is inaccessible.
+  Node NC__678 is inaccessible.
+  Node NC__679 is inaccessible.
+  Node NC__680 is inaccessible.
+  Node NC__681 is inaccessible.
+  Node NC__682 is inaccessible.
+  Node NC__683 is inaccessible.
+  Node NC__684 is inaccessible.
+  Node NC__685 is inaccessible.
+  Node NC__686 is inaccessible.
+  Node NC__687 is inaccessible.
+  Node NC__688 is inaccessible.
+  Node NC__689 is inaccessible.
+  Node NC__690 is inaccessible.
+  Node NC__691 is inaccessible.
+  Node NC__692 is inaccessible.
+  Node NC__693 is inaccessible.
+  Node NC__694 is inaccessible.
+  Node NC__695 is inaccessible.
+  Node NC__696 is inaccessible.
+Writing capacitor discharge test.
+
+  *** Summary ***
+  *** Board Version G2A26800MX2 ***
+
+Capacitor Discharge Test Summary
+  Discharge statements      =   81
+  Capacitors not discharged =    0
+  Maximum voltage           =   76
+
+
+
+A power node does not have a defined state. Without a defined state,
+  IPG cannot properly edit any tests which have pins tied to this node. IPG
+  will be conservative in its editing, and may remove vectors that are
+  usable. Please enter a state for all fixed nodes tied to digital devices. (WARNING IPG503)
+
+
+
+A device has a pin tied to a fixed node for which no state was defined.
+  This test may have vectors commented that would be usable. Please enter the
+  states for all fixed nodes. (WARNING IPG504)
+
+
+
+  Nodes on this board are not accessible.  Check the ipg/summary file 
+  to identify the nodes, and verify that they should be inaccessible.
+
+
+
+  A capacitor discharge test was generated, and is in the analog 
+  directory.  Deletions of IPG-generated discharge statements in 
+  the discharge file may result in damage to the scanner relays.
+
+Board Results
+
+
+Board Results for version "G2A26800MX1"
+
+
+Board Results for version "G2A26800MX2"
+
+------------------------------------------------------------------------------
+AGILENT 3070 TESTPLAN WRITER                Thu Jan 28 10:55:01 2010      
+
+/C=/Agilent3070/boards/OTIS/G2A26800MXx
+------------------------------------------------------------------------------
+
+Status : Loading topology ...
+ipg/testmain not found.
+Searching for "testmain" in "$AGILENT3070_ROOT/standard" directory.
+
+"testplan.diff" file produced.
+
+-------
+SUMMARY
+-------
+
+2038 LINES, 0 ERRORS, 0 WARNINGS, TESTPLAN PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 ANALOG COMPILER                Thu Jan 28 10:55:21 2010      
+
+analog/.discharge
+------------------------------------------------------------------------------
+
+The following connection set was not found in the wirelist. (WARNING ATL153)
+    - connect l to "TEMP_IGBT" for ".discharge"
+    - connect g to "UNNAMED_49_C_I56_A" for ".discharge"
+    - connect l to "GNDA" for ".discharge"
+    - connect g to "UNNAMED_49_C_I55_A" for ".discharge"
+    - connect l to "+27V_RU_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_46_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_RU_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_46_BDP949_I327_B" for ".discharge"
+    - connect l to "PFAIL_N_FILTERED" for ".discharge"
+    - connect g to "VRS_N_RECTIFIED" for ".discharge"
+    - connect l to "+27V_SV_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_47_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_SV_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_47_BDP949_I327_B" for ".discharge"
+    - connect l to "GND_SENSE" for ".discharge"
+    - connect g to "DISCH_THRES_555" for ".discharge"
+    - connect l to "GND_SENSE" for ".discharge"
+    - connect g to "CONTROL_555" for ".discharge"
+    - connect l to "UNNAMED_39_C_I156_B" for ".discharge"
+    - connect g to "UNNAMED_39_BYG22D_I127_A" for ".discharge"
+    - connect l to "+27V_TW_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_48_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_TW_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_48_BDP949_I327_B" for ".discharge"
+    - connect l to "DCN_LED_6" for ".discharge"
+    - connect g to "UNNAMED_9_555_I229_CONT" for ".discharge"
+
+-------
+SUMMARY
+-------
+
+0 LINES, 0 ERRORS, 0 WARNINGS, NO OBJECT PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 ANALOG COMPILER                Thu Jan 28 10:55:21 2010      
+
+analog/.discharge
+------------------------------------------------------------------------------
+
+
+-------
+SUMMARY
+-------
+
+735 LINES, 0 ERRORS, 0 WARNINGS, OBJECT PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 ANALOG COMPILER                Thu Jan 28 10:55:22 2010      
+
+G2A26800MX1/analog/.discharge
+------------------------------------------------------------------------------
+
+The following connection set was not found in the wirelist. (WARNING ATL153)
+    - connect l to "TEMP_IGBT_INV" for ".discharge"
+    - connect g to "UNNAMED_49_C_I56_A" for ".discharge"
+    - connect l to "GNDA" for ".discharge"
+    - connect g to "UNNAMED_49_C_I55_A" for ".discharge"
+    - connect l to "+27V_RU_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_46_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_RU_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_46_BDP949_I327_B" for ".discharge"
+    - connect l to "PFAIL_N_FILTERED" for ".discharge"
+    - connect g to "VRS_N_RECTIFIED" for ".discharge"
+    - connect l to "+27V_SV_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_47_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_SV_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_47_BDP949_I327_B" for ".discharge"
+    - connect l to "GND_SENSE" for ".discharge"
+    - connect g to "DISCH_THRES_555" for ".discharge"
+    - connect l to "GND_SENSE" for ".discharge"
+    - connect g to "CONTROL_555" for ".discharge"
+    - connect l to "UNNAMED_39_C_I156_B" for ".discharge"
+    - connect g to "UNNAMED_39_BYG22D_I127_A" for ".discharge"
+    - connect l to "+27V_TW_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_48_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_TW_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_48_BDP949_I327_B" for ".discharge"
+    - connect l to "DCN_LED_6" for ".discharge"
+    - connect g to "UNNAMED_9_555_I229_CONT" for ".discharge"
+
+-------
+SUMMARY
+-------
+
+0 LINES, 0 ERRORS, 0 WARNINGS, NO OBJECT PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 ANALOG COMPILER                Thu Jan 28 10:55:23 2010      
+
+G2A26800MX1/analog/.discharge
+------------------------------------------------------------------------------
+
+
+-------
+SUMMARY
+-------
+
+742 LINES, 0 ERRORS, 0 WARNINGS, OBJECT PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 ANALOG COMPILER                Thu Jan 28 10:55:23 2010      
+
+G2A26800MX2/analog/.discharge
+------------------------------------------------------------------------------
+
+The following connection set was not found in the wirelist. (WARNING ATL153)
+    - connect l to "TEMP_IGBT_CONV" for ".discharge"
+    - connect g to "UNNAMED_49_C_I56_A" for ".discharge"
+    - connect l to "GNDA" for ".discharge"
+    - connect g to "UNNAMED_49_C_I55_A" for ".discharge"
+    - connect l to "+27V_RU_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_46_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_RU_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_46_BDP949_I327_B" for ".discharge"
+    - connect l to "PFAIL_N_FILTERED" for ".discharge"
+    - connect g to "VRS_N_RECTIFIED" for ".discharge"
+    - connect l to "+27V_SV_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_47_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_SV_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_47_BDP949_I327_B" for ".discharge"
+    - connect l to "GND_SENSE" for ".discharge"
+    - connect g to "DISCH_THRES_555" for ".discharge"
+    - connect l to "GND_SENSE" for ".discharge"
+    - connect g to "CONTROL_555" for ".discharge"
+    - connect l to "UNNAMED_39_C_I156_B" for ".discharge"
+    - connect g to "UNNAMED_39_BYG22D_I127_A" for ".discharge"
+    - connect l to "+27V_TW_N_RTN" for ".discharge"
+    - connect g to "UNNAMED_48_BDP949_I310_B" for ".discharge"
+    - connect l to "+27V_TW_P_RTN" for ".discharge"
+    - connect g to "UNNAMED_48_BDP949_I327_B" for ".discharge"
+    - connect l to "DCN_LED_6" for ".discharge"
+    - connect g to "UNNAMED_9_555_I229_CONT" for ".discharge"
+
+-------
+SUMMARY
+-------
+
+0 LINES, 0 ERRORS, 0 WARNINGS, NO OBJECT PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 ANALOG COMPILER                Thu Jan 28 10:55:24 2010      
+
+G2A26800MX2/analog/.discharge
+------------------------------------------------------------------------------
+
+
+-------
+SUMMARY
+-------
+
+749 LINES, 0 ERRORS, 0 WARNINGS, OBJECT PRODUCED
+
+------------------------------------------------------------------------------
+AGILENT 3070 MODULE PIN ASSIGNMENT          Thu Jan 28 10:55:30 2010      
+
+/C=/Agilent3070/boards/OTIS/G2A26800MXx/fixture/summary
+------------------------------------------------------------------------------
+
+     Module Pin Assignment was run at the standard experience level.
+ 
+Node DUMMY_SMPS_EN on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__629 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__630 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__631 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__632 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__633 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__634 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__635 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__636 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__637 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__638 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__639 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__640 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__641 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__642 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__643 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__644 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__645 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__646 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__647 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__648 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__649 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__650 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__651 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__652 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__653 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__654 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__655 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__656 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__657 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__658 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__659 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__660 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__661 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__662 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__663 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__664 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__665 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__666 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__667 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__668 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__669 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__670 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__671 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__672 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__673 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__674 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__675 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__676 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__677 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__678 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__679 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__680 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__681 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__682 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__683 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__684 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__685 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__686 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__687 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__688 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__689 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__690 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__691 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__692 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__693 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__694 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+                      ASSIGNMENT REPORT FOR ALL BOARDS
+ 
+     SUMMARY STATISTICS
+ 
+        For precision nodes:
+ 
+            The average BRC to probe distance is 0.951.
+            The standard deviation is 1.517.
+ 
+            * precision nodes include critical nodes, digital 
+              nodes, and analog nodes using external 
+              instrumentation or the time interval counter
+ 
+        For all nodes:
+ 
+            The assignment used 1013 interface pins for 694 nodes.
+            The efficiency is 0.685.
+Node NC__695 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+Node NC__696 on board G2A26800MXx is in the fixture file 
+fixture/fixture.o.  However, it is not in any requirements file, and it 
+is not in the old wirelist.  No wires are being generated for this node. 
+Check the fixture file, the old wirelist, and the test sources to make sure 
+that the node names are correct.  Make sure that the appropriate .r files 
+exist. (WARNING MPA404)
+
+------------------------------------------------------------------------------
+AGILENT 3070 FIXTURE TOOLING                Thu Jan 28 10:55:33 2010      
+
+/C=/Agilent3070/boards/OTIS/G2A26800MXx/fixture/summary
+------------------------------------------------------------------------------
+
+Reading in fixture.o node data and probe assignments.
+Targeting a Agilent 3070 Series II system.
+Processing incrementally using existing wires from the fixture.o file.
+Reading in wirelist.o node to pin assignments.
+Removing wire(s) that short TestJet pins together (WARNING FXT85)
+Calculating board G2A26800MXx wiring.
+Fixture Tooling attempted to connect one probe per amp 
+ of current on node "VCC2A+" and failed.  1 more probe(s) would be 
+ required.  If no other warnings are observed, fixture tooling 
+ was able to adequately connect the supply using the available 
+ probes, however, changing probe contact resistance could cause 
+ overdriving digital tests to fail intermittently. (WARNING FXT64)
+Fixture Tooling attempted to connect one probe per amp 
+ of current on node "GND" and failed.  1 more probe(s) would be 
+ required.  If no other warnings are observed, fixture tooling 
+ was able to adequately connect the supply using the available 
+ probes, however, changing probe contact resistance could cause 
+ overdriving digital tests to fail intermittently. (WARNING FXT64)
+Processing power and ground wiring ..
+The node 'DUMMY_SMPS_EN' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__629' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__630' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__631' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__632' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__633' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__634' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__635' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__636' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__637' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__638' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__639' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__640' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__641' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__642' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__643' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__644' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__645' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__646' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__647' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__648' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__649' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__650' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__651' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__652' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__653' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__654' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__655' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__656' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__657' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__658' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__659' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__660' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__661' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__662' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__663' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__664' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__665' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__666' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__667' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__668' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__669' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__670' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__671' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__672' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__673' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__674' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__675' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__676' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__677' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__678' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__679' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__680' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__681' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__682' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__683' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__684' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__685' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__686' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__687' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__688' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__689' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__690' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__691' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__692' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__693' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__694' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__695' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+The node 'NC__696' is being removed from the fixture 
+ since it is inaccessible, has no test resources assigned to it or both.
+ (WARNING FXT40)
+Writing out fixture reports.
+Incremental wiring differences have been noted.
+ See the fixture/details report for specific wires to add and/or delete.
+ (WARNING FXT45)
+Test consultant is currently listing the fixture object.
+The fixture has been modified.  Fixture tooling has added or
+removed wires from the fixture.  Check the "fixture/summary" and
+"fixture/details" files for information about which wires were added
+or removed.  The "fixture/details" file contains an incremental
+change report.  The new wires are included in the fixture report
+files.  The "fixture/details" file is an appended file.  Search to
+the end of the file for the most recent change information.Here is a list of the actions performed by IPG Test Consultant:
+compile "board_xy"
+board placement
+probe selection
+ipg from "ipgtc.tests"  !! Comprehensive regeneration
+testplan generation
+compile "analog/.discharge"
+compile "G2A26800MX1/analog/.discharge"
+compile "G2A26800MX2/analog/.discharge"
+module pin assignment
+fixture tooling   *FIXTURE WAS MODIFIED*
+
+list object "fixture/fixture.o" over "fixture/fixture"
+recalculate dependencies
+=========================  Ending test generation at   ========================
+========================= Thu Jan 28, 2010 10:55:48 AM ========================
+

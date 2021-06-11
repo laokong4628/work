@@ -1,0 +1,776 @@
+!!!!   16    0    1 1434422890   0000                                         
+!IPG: rev 05.21p  Wed Jan 27 17:09:58 2010
+nodes "UNNAMED_48_C_I423_A"
+nodes "UNNAMED_47_C_I426_A"
+nodes "UNNAMED_46_C_I425_A"
+nodes "UNNAMED_39_C_I348_A"
+nodes "UNNAMED_48_10MQ040N_I422_A"
+nodes "UNNAMED_47_10MQ040N_I424_A"
+nodes "UNNAMED_46_10MQ040N_I423_A"
+!nodes "UNCONNECTED_39"
+!nodes "UNCONNECTED_40"
+!nodes "UNCONNECTED_41"
+nodes "+15V_SENSE"
+nodes "GND_SENSE"
+nodes "-15V_SENSE"
+nodes "UNNAMED_39_C_I161_B"
+nodes "UNNAMED_39_BYG22D_I162_C"
+!@nodes "UNNAMED_10_BC817_I58_B"   !@ Q4,R239,R240,R247 not load
+!@nodes "UNNAMED_10_C_I20_B"       !@ C264,R239,U13 not load
+!@nodes "UNNAMED_10_C_I20_A"       !@ C264,R233,U13,U14 not load
+!@nodes "UNNAMED_10_R_I21_B"       !@ R223,R233 not load
+nodes "UNNAMED_49_BC817_I64_B"
+nodes "UNNAMED_49_C_I6_B"
+nodes "UNNAMED_49_C_I6_A"
+nodes "UNNAMED_49_R_I45_B"
+nodes "UNNAMED_37_BC817_I56_B"
+nodes "UNNAMED_37_C_I59_B"
+nodes "UNNAMED_37_C_I59_A"
+nodes "UNNAMED_37_R_I64_B"
+nodes "UNNAMED_36_BC817_I58_B"
+nodes "UNNAMED_36_C_I20_B"
+nodes "UNNAMED_36_C_I20_A"
+nodes "UNNAMED_36_R_I21_B"
+nodes "RX11"
+nodes "UNNAMED_49_C_I21_A"
+nodes "NTC1"
+nodes "NTC2"
+nodes "RX1"
+nodes "REF_N"
+nodes "REF_P"
+nodes "UNNAMED_39_BYG22D_I127_C"
+nodes "UNNAMED_39_BYG22D_I127_A"
+nodes "UNNAMED_39_C_I164_B"
+nodes "UNNAMED_39_R_I124_B"
+!@nodes "UNNAMED_39_C_I156_B"     !@ C304,R419 not load
+!@nodes "DCP_U_ME_1"              !@ C260,C263,D8,D9 not load
+!@nodes "DCN_U_ME_1"              !@ C263,C266,D8,D9 not load
+!@nodes "UNNAMED_10_R_I115_B"     !@ R50,R53 not load
+!@nodes "UNNAMED_10_R_I116_B"     !@ R50,R54 not load
+!nodes "DCN_U_ME"
+!@nodes "UNNAMED_10_R_I100_A"     !@ R42,R44 not load
+!@nodes "UNNAMED_10_R_I97_B"      !@ R43,R44 not load
+nodes "DCP_U_ME"
+nodes "DISCH_THRES_555"
+nodes "CONTROL_555"   ! Non-digital library pin.
+nodes "UT"
+nodes "US"
+nodes "UR"
+nodes "UNNAMED_49_TL084B_I92_NIN"
+nodes "NTC_DS"
+nodes "UNNAMED_38_LM339A_I72_NIN"
+!@nodes "UNNAMED_10_R_I93_B"        !@ R234,R241,R242,U13 not load
+!@nodes "UNNAMED_10_R_I92_B"        !@ R224,R234,U13 not load
+!@nodes "UNNAMED_10_R_I89_B"        !@ R47,R222,R224,U13 not load
+!@nodes "UNNAMED_10_R_I90_B"        !@ R47,R49 not load
+!@nodes "UNNAMED_10_R_I91_B"        !@ R49,R242 not load
+!@nodes "DC_ME"                     !@ R222,U13 not load
+!@nodes "UNNAMED_10_R_I40_A"        !@ R61,R248 not load
+!@nodes "UNNAMED_10_BC817_I58_E"    !@ Q4,R61 not load
+nodes "UNNAMED_49_R_I46_A"
+nodes "UNNAMED_49_BC817_I64_E"
+nodes "UNNAMED_9_R_I239_A"
+nodes "UT_LOW_IMP"
+nodes "UNNAMED_37_R_I60_B"
+nodes "UNNAMED_37_BC817_I56_E"
+nodes "UNNAMED_9_R_I238_A"
+nodes "US_LOW_IMP"
+nodes "UNNAMED_9_R_I237_A"
+nodes "VST_N"
+nodes "UNNAMED_37_C_I69_A"
+nodes "VST_DC_N"
+nodes "REF_PRI_N"
+nodes "UNNAMED_36_C_I147_A"
+nodes "REF_PRI"
+nodes "UNNAMED_36_C_I46_A"
+nodes "VRS_DC_N"
+nodes "VRS_N"
+nodes "UNNAMED_9_R_I235_A"
+nodes "UR_LOW_IMP"
+nodes "UNNAMED_38_C_I41_A"
+nodes "UNNAMED_38_C_I41_B"
+nodes "UNNAMED_36_R_I40_A"
+nodes "UNNAMED_36_BC817_I58_E"
+nodes "UNNAMED_38_R_I17_B"
+nodes "UNNAMED_38_LM339A_I73_NIN"
+nodes "PFAIL_N_FILTERED"
+nodes "VRS_N_RECTIFIED"
+nodes "UNNAMED_38_C_I44_A"
+!@!nodes "UNNAMED_38_R_I18_A"  !@!probe change to "GND_SENSE" node 20101223
+nodes "UNNAMED_38_R_I19_B"
+nodes "UNNAMED_38_BAT54S_I35_A1"
+nodes "UNNAMED_39_BYG22D_I157_A"
+nodes "UNNAMED_39_C_I158_B"
+!@nodes "UNNAMED_10_IL300_I12_A"   !@ R60,R249,U14 not load
+nodes "UNNAMED_49_IL300_I4_A"
+nodes "UNNAMED_37_IL300_I13_A"
+nodes "UNNAMED_36_IL300_I12_A"
+nodes "UNNAMED_38_LM339A_I73_PIN"
+nodes "UNNAMED_39_C_I178_B"
+nodes "UNNAMED_39_C_I178_A"
+nodes "UNNAMED_39_R_I345_B"
+nodes "PFAIL_COMP"
+nodes "TRIGGER_555"
+nodes "UNNAMED_38_LM339A_I72_PIN"
+nodes "GATE_TO_TRIGGER"
+nodes "OUTPUT_TP_555"
+nodes "OUTPUT_555"
+nodes "UNNAMED_38_R_I105_B"
+nodes "UNNAMED_38_R_I69_B"
+nodes "RX10"
+nodes "+27V_RU_N"
+nodes "UNNAMED_46_BZV55B18_I389_A"
+nodes "+27V_RU_N_RTN"
+nodes "UNNAMED_46_C_I380_A"
+nodes "UNNAMED_46_HCPL316J_I202_VOUT"
+nodes "UNNAMED_46_BDP949_I310_B"
+nodes "UNNAMED_46_R_I311_B"
+nodes "REF_2V5_RU_N"
+nodes "UNNAMED_46_BAS19_I178_A"
+nodes "UNNAMED_46_C_I179_B"
+nodes "UNNAMED_46_BZV55B9V1_I385_C"
+nodes "UNNAMED_46_R_I396_B"
+nodes "RUN_E22"
+nodes "RUN_G22"
+nodes "RUN_G21"
+nodes "RUN_E21"
+nodes "RUN_E23"
+nodes "RUN_G23"
+nodes "UNNAMED_46_R_I371_A"
+!@nodes "UNNAMED_46_R_I374_A"       !@ D12,R78 not load
+nodes "UNNAMED_46_MJD44H11_I376_E"
+nodes "RUN"
+nodes "RUP"
+!nodes "RUP_C1"
+nodes "REF_3V9_RU_N"
+nodes "+27V_RU_P"
+nodes "UNNAMED_46_BZV55B18_I266_A"
+nodes "+27V_RU_P_RTN"
+nodes "UNNAMED_46_C_I272_A"
+nodes "UNNAMED_46_HCPL316J_I183_VOUT"
+nodes "UNNAMED_46_BDP949_I327_B"
+nodes "UNNAMED_46_R_I335_B"
+nodes "REF_2V5_RU_P"
+nodes "UNNAMED_46_BAS19_I43_A"
+nodes "UNNAMED_46_C_I162_B"
+nodes "UNNAMED_46_BZV55B9V1_I192_C"
+nodes "UNNAMED_46_R_I276_B"
+nodes "RUP_E11"
+nodes "RUP_G11"
+nodes "RUP_G12"
+nodes "RUP_E12"
+nodes "UNNAMED_46_R_I279_B"
+nodes "RUP_G13"
+nodes "RUP_E13"
+nodes "UNNAMED_46_MJD44H11_I55_E"
+!@nodes "UNNAMED_46_R_I279_A"       !@ D11,R70 not load
+!@nodes "RUO"                       !@ Q27 not load
+nodes "REF_3V9_RU_P"
+nodes "+27V_SV_N"
+nodes "UNNAMED_47_BZV55B18_I389_A"
+nodes "+27V_SV_N_RTN"
+nodes "UNNAMED_47_C_I380_A"
+nodes "UNNAMED_47_HCPL316J_I202_VOUT"
+nodes "UNNAMED_47_BDP949_I310_B"
+nodes "UNNAMED_47_R_I311_B"
+nodes "REF_2V5_SV_N"
+nodes "UNNAMED_47_BAS19_I178_A"
+nodes "UNNAMED_47_C_I179_B"
+nodes "UNNAMED_47_BZV55B9V1_I385_C"
+nodes "UNNAMED_47_R_I396_B"
+nodes "SVN_E22"
+nodes "SVN_G22"
+nodes "SVN_G21"
+nodes "SVN_E21"
+nodes "SVN_E23"
+nodes "SVN_G23"
+nodes "UNNAMED_47_R_I371_A"
+!@nodes "UNNAMED_47_R_I374_A"     !@ D22,R135 not load
+nodes "UNNAMED_47_MJD44H11_I376_E"
+nodes "SVN"
+nodes "SVP"
+nodes "SVP_C1"
+nodes "REF_3V9_SV_N"
+nodes "+27V_SV_P"
+nodes "UNNAMED_47_BZV55B18_I266_A"
+nodes "+27V_SV_P_RTN"
+nodes "UNNAMED_47_C_I272_A"
+nodes "UNNAMED_47_HCPL316J_I183_VOUT"
+nodes "UNNAMED_47_BDP949_I327_B"
+nodes "UNNAMED_47_R_I335_B"
+nodes "REF_2V5_SV_P"
+nodes "UNNAMED_47_BAS19_I43_A"
+nodes "UNNAMED_47_C_I162_B"
+nodes "UNNAMED_47_BZV55B9V1_I192_C"
+nodes "UNNAMED_47_R_I276_B"
+nodes "SVP_E11"
+nodes "SVP_G11"
+nodes "SVP_G12"
+nodes "SVP_E12"
+nodes "UNNAMED_47_R_I279_B"
+nodes "SVP_G13"
+nodes "SVP_E13"
+nodes "UNNAMED_47_MJD44H11_I55_E"
+!@nodes "UNNAMED_47_R_I279_A"     !@ D21,R130 not load
+!@nodes "SVO"                     !@ Q31 not load
+nodes "REF_3V9_SV_P"
+nodes "+27V_TW_N"
+nodes "UNNAMED_48_BZV55B18_I389_A"
+nodes "+27V_TW_N_RTN"
+nodes "UNNAMED_48_C_I380_A"
+nodes "UNNAMED_48_HCPL316J_I202_VOUT"
+nodes "UNNAMED_48_BDP949_I310_B"
+nodes "UNNAMED_48_R_I311_B"
+nodes "REF_2V5_TW_N"
+nodes "UNNAMED_48_BAS19_I178_A"
+nodes "UNNAMED_48_C_I179_B"
+nodes "UNNAMED_48_BZV55B9V1_I385_C"
+nodes "UNNAMED_48_R_I396_B"
+nodes "TWN_E22"
+nodes "TWN_G22"
+nodes "TWN_G21"
+nodes "TWN_E21"
+nodes "TWN_E23"
+nodes "TWN_G23"
+nodes "UNNAMED_48_R_I371_A"
+!@nodes "UNNAMED_48_R_I374_A"      !@ D36,R181 not load
+nodes "UNNAMED_48_MJD44H11_I376_E"
+nodes "TWN"
+nodes "TWP"
+nodes "TWP_C1"
+nodes "REF_3V9_TW_N"
+nodes "+27V_TW_P"
+nodes "UNNAMED_48_BZV55B18_I266_A"
+nodes "+27V_TW_P_RTN"
+nodes "UNNAMED_48_C_I272_A"
+nodes "UNNAMED_48_HCPL316J_I183_VOUT"
+nodes "UNNAMED_48_BDP949_I327_B"
+nodes "UNNAMED_48_R_I335_B"
+nodes "REF_2V5_TW_P"
+nodes "UNNAMED_48_BAS19_I43_A"
+nodes "UNNAMED_48_C_I162_B"
+nodes "UNNAMED_48_BZV55B9V1_I192_C"
+nodes "UNNAMED_48_R_I276_B"
+nodes "TWP_E11"
+nodes "TWP_G11"
+nodes "TWP_G12"
+nodes "TWP_E12"
+nodes "UNNAMED_48_R_I279_B"
+nodes "TWP_G13"
+nodes "TWP_E13"
+nodes "UNNAMED_48_MJD44H11_I55_E"
+!@nodes "UNNAMED_48_R_I279_A"         !@ D35,R171 not load
+!@nodes "TWO"                         !@ Q35 not load
+nodes "REF_3V9_TW_P"
+!@nodes "5V_HL2"                      !@ C1,C2,C3,C4,C5,C6,C255,D1 not load
+!@nodes "UNNAMED_45_C_I143_B"         !@ C1,R2,R4,U1 not load
+!@nodes "HL2"                         !@ C2,C3,C4,C5,C6,C7,C8,C9 not load
+!@nodes "24V_HL2"                     !@ C7,C8,C9,C11,C12,C13,C27,C254 not load
+!@nodes "UNNAMED_45_R_I186_B"         !@ C27,C28,C29,C30,C258,R17,R209,R212,U5 not load
+!@nodes "UNNAMED_45_R_I210_A"         !@ C258,R209,U5 not load
+nodes "PTC_1"
+nodes "RX2"
+!@nodes "UNNAMED_45_C_I189_A"         !@ C25,C26,R16,R212,R213 not load
+!@nodes "UNNAMED_45_R_I241_B"         !@ C25,C26,R9,R213,R214 not load
+!@nodes "UNNAMED_45_BAT54S_I231_A1"   !@ C15,D1,R9,R205,U4 not load
+!@nodes "PTC_ADC"                     !@ C15,C259,R205,U3,U4 not load
+!@nodes "UNNAMED_45_BAT54S_I245_A1"   !@ D3,R16,R215,U4 not load
+!@nodes "UNNAMED_45_LM3103_I145_RON"  !@ R1,U1 not load
+!@nodes "24V_ADC"                     !@ C14,D2,R206,R207,R208 not load
+!@nodes "UNNAMED_45_AD7417_I130_AIN2" !@ R208,U3 not load
+!@nodes "UNNAMED_45_C_I148_A"         !@ C10,U1 not load
+!@nodes "UNNAMED_45_C_I146_A"         !@ C16,U1 not load
+!@nodes "UNNAMED_45_AD7417_I130_AIN3" !@ C24,R14,R15,U3 not load
+!@nodes "UNNAMED_45_AD7417_I130_AIN4" !@ R13,U3 not load
+!@nodes "PTC_6"                       !@ D5,P6 not load
+!@nodes "SW_TEMP_SENSOR"              !@ L1,R6,U1 not load
+!@nodes "UNNAMED_45_C_I139_B"         !@ C257,R6 not load
+!nodes "UNNAMED_45_C_I139_A"   ! Non-digital library pin.
+!@nodes "UNNAMED_45_AD7417_I130_SCL"  !@ R210,U2,U3 not load
+!@nodes "UNNAMED_45_AD7417_I130_SDA"  !@ R211,U2,U3 not load
+nodes "5V_REF"
+nodes "UNNAMED_49_R_I121_A"
+nodes "UNNAMED_49_C_I119_A"
+nodes "REF_SEC"
+nodes "UNNAMED_49_R_I116_A"
+nodes "UNNAMED_37_R_I11_A"
+nodes "UNNAMED_37_R_I11_B"
+nodes "VST_OUT_N"
+nodes "UNNAMED_37_C_I7_A"
+nodes "GNDA"
+!@nodes "UNNAMED_10_C_I31_A"      !@ C51,R45,R237,U12 not load
+nodes "V+15V"
+!@nodes "UNNAMED_10_C_I38_A"      !@ C61,R59 not load
+!@nodes "UDCL"                    !@ C265,P5,R59,R225,U12 not load
+!@nodes "UNNAMED_10_R_I42_B"      !@ C265,R226,R236,U12 not load
+!@nodes "UNNAMED_10_R_I45_B"      !@ R225,R226 not load
+!@nodes "UNNAMED_10_R_I42_A"      !@ R236,U12 not load
+nodes "UNNAMED_49_C_I41_A"
+nodes "TEMP_IGBT"
+nodes "UNNAMED_49_C_I56_A"
+nodes "TEMP_UN"
+nodes "UNNAMED_49_R_I51_B"
+nodes "TEMP_IGBT_CONV"
+nodes "V-15V"
+nodes "UNNAMED_49_C_I30_A"
+nodes "UNNAMED_36_C_I38_A"
+nodes "VRS_OUT_N"
+nodes "UNNAMED_36_R_I89_B"
+nodes "UNNAMED_36_R_I86_B"
+nodes "VRS_OUT_DC_N"
+nodes "UNNAMED_36_C_I49_A"
+nodes "UNNAMED_36_R_I45_B"
+!@nodes "UNNAMED_10_C_I47_A"        !@ C261,R48,R235,U12 not load
+!@nodes "UNNAMED_10_R_I13_A"        !@ R46,R48 not load
+!@nodes "UNNAMED_10_R_I44_A"        !@ R235,R244 not load
+!@nodes "UNNAMED_10_R_I67_B"        !@ R243,R244 not load
+!@nodes "UNNAMED_10_R_I64_B"        !@ R243,R250 not load
+!@nodes "UNNAMED_10_IL300_I12_A2"   !@ R250,U14 not load
+nodes "UNNAMED_49_C_I55_A"
+nodes "UNNAMED_49_R_I49_A"
+nodes "UNNAMED_49_R_I50_A"
+nodes "UNNAMED_49_R_I73_A"
+nodes "UNNAMED_49_R_I71_B"
+nodes "UNNAMED_49_IL300_I4_A2"
+nodes "UNNAMED_37_C_I29_A"
+nodes "UNNAMED_37_R_I24_B"
+nodes "UNNAMED_37_R_I23_B"
+nodes "UNNAMED_37_R_I22_B"
+nodes "UNNAMED_37_IL300_I13_A2"
+nodes "UNNAMED_37_R_I28_B"
+nodes "UNNAMED_36_C_I47_A"
+nodes "UNNAMED_36_R_I44_A"
+nodes "UNNAMED_36_R_I67_B"
+nodes "UNNAMED_36_R_I64_B"
+nodes "UNNAMED_36_IL300_I12_A2"
+nodes "UNNAMED_36_R_I13_A"
+nodes "UNNAMED_37_C_I21_A"
+nodes "VST_OUT_DC_N"
+nodes "UNNAMED_37_R_I18_A"
+nodes "I_SV"
+nodes "SENSE_IS"
+nodes "RX5"
+nodes "I_RU"
+nodes "SENSE_IR"
+nodes "RX3"
+!@nodes "I_W"                     !@ CS3,JP21,R392 not load
+nodes "24V_DRIVER"
+nodes "UNNAMED_46_10MQ040N_I407_A"
+nodes "24V_DRIVER_RTN"
+nodes "PWM_VCC_RU"
+nodes "UNNAMED_46_C_I263_A"
+nodes "UNNAMED_46_C_I261_A"
+nodes "I_SENSE_RU"
+nodes "UNNAMED_46_R_I29_B"
+nodes "DRAIN_RU"
+nodes "UNNAMED_46_C_I260_B"
+nodes "UNNAMED_46_C_I260_A"
+nodes "UNNAMED_46_BAS19_I21_C"
+nodes "PWM_VCC_SV"
+nodes "UNNAMED_47_C_I263_A"
+nodes "UNNAMED_47_C_I261_A"
+nodes "I_SENSE_SV"
+nodes "UNNAMED_47_R_I29_B"
+nodes "DRAIN_SV"
+nodes "UNNAMED_47_10MQ040N_I406_A"
+nodes "UNNAMED_47_C_I260_B"
+nodes "UNNAMED_47_C_I260_A"
+nodes "UNNAMED_47_BAS19_I21_C"
+nodes "PWM_VCC_TW"
+nodes "UNNAMED_48_C_I263_A"
+nodes "UNNAMED_48_C_I261_A"
+nodes "I_SENSE_TW"
+nodes "UNNAMED_48_R_I29_B"
+nodes "DRAIN_TW"
+nodes "UNNAMED_48_10MQ040N_I405_A"
+nodes "UNNAMED_48_C_I260_B"
+nodes "UNNAMED_48_C_I260_A"
+nodes "UNNAMED_48_BAS19_I21_C"
+nodes "UNNAMED_46_R_I30_A"
+nodes "GATE_SENSE_RU"
+nodes "UNNAMED_47_R_I30_A"
+nodes "GATE_SENSE_SV"
+nodes "UNNAMED_48_R_I30_A"
+nodes "GATE_SENSE_TW"
+nodes "24V_SE_RTN"
+nodes "24V_SE"
+nodes "UNNAMED_44_PS2561L_I234_C"
+nodes "RX9"
+nodes "24V_SMPS_SENSE_RTN"
+nodes "24V_SMPS_SENSE"
+nodes "UNNAMED_39_R_I286_B"
+nodes "SENSE_PWM_CONTROLLER_SUPPLY"
+nodes "SMPS_SENSE_DRAIN"
+nodes "VCC_PWM_CONTROLLER"
+nodes "UNNAMED_39_C_I248_A"
+nodes "UNNAMED_39_C_I238_A"
+nodes "UNNAMED_39_C_I239_A"
+nodes "I_SENSE_PWM_CONTROLLER"
+nodes "ISENSE"
+nodes "UNNAMED_39_R_I242_A"
+!@nodes "24V_SENSE_RTN"          !@ R453,P5 not load
+nodes "UNNAMED_39_BYG22D_I285_A"
+nodes "UNNAMED_44_BC817_I121_B"
+nodes "UNNAMED_46_5033001300_I404_D"
+nodes "UNNAMED_46_BAS19_I21_A"
+nodes "UNNAMED_47_5033001300_I404_D"
+nodes "UNNAMED_47_BAS19_I21_A"
+nodes "UNNAMED_48_5033001300_I403_D"
+nodes "UNNAMED_48_BAS19_I21_A"
+!nodes "24V_SENSE"   ! Non-digital library pin.
+!@nodes "24V_SW"                !@ D76,P4,R441,R454,R455,Z18 not load
+!@nodes "UNNAMED_39_R_I312_B"   !@ R448,R454 not load
+nodes "UNNAMED_39_10MQ040N_I309_A"
+!@nodes "24V_SW_RTN"            !@ C214,C242,C243,P4,R442,Z18 not load
+!@nodes "UNNAMED_39_R_I310_B"   !@ R449,R455 not load
+nodes "RX12"
+!nodes "BPANODE"   ! Non-digital library pin.
+!nodes "BPCATHODE"   ! Non-digital library pin.
+!nodes "BPSENSE"   ! Non-digital library pin.
+!nodes "BPSOURCE"   ! Non-digital library pin.
+nodes "CHRG_N"
+nodes "VCC"
+nodes "GND"
+nodes "UNNAMED_44_74HC14_I288_A"
+nodes "PFAIL_RS"
+nodes "UNNAMED_46_74HC14_I224_A"
+!@nodes "PWM_UN"                   !@ R21 not load
+nodes "PWM_RN"
+nodes "UNNAMED_44_74HC14_I263_A"
+nodes "PF_IGBT_CONV_OC"
+nodes "UNNAMED_46_JUMPER_I342_A"
+nodes "UNNAMED_47_JUMPER_I342_A"
+nodes "UNNAMED_48_JUMPER_I342_A"
+nodes "UNNAMED_44_74HC14_I223_A"
+nodes "OCT_CONV_N"
+nodes "UNNAMED_46_C_I247_A"
+nodes "UNNAMED_46_BC847C_I250_B"
+nodes "UNNAMED_47_C_I247_A"
+nodes "UNNAMED_47_BC847C_I250_B"
+nodes "UNNAMED_48_C_I247_A"
+nodes "UNNAMED_48_BC847C_I250_B"
+nodes "UNNAMED_46_74HC14_I210_A"
+nodes "PWM_RP"
+!@nodes "PWM_UP"                    !@ R35 not load
+nodes "UNNAMED_46_74HC14_I184_A"
+!@nodes "PF_IGBT_INV"               !@ P5,R38,R104,R152 not load
+nodes "UNNAMED_47_74HC14_I184_A"
+nodes "ENABLE_RST"
+nodes "UNNAMED_48_74HC14_I184_A"
+nodes "UNNAMED_46_74HC14_I235_A"
+nodes "UNNAMED_46_BC847C_I250_C"
+nodes "UNNAMED_47_74HC14_I224_A"
+nodes "PWM_SN"
+!@nodes "PWM_VN"                    !@ R91 not load
+nodes "UNNAMED_47_74HC14_I210_A"
+nodes "PWM_SP"
+!@nodes "PWM_VP"                    !@ R95 not load
+nodes "UNNAMED_47_74HC14_I235_A"
+nodes "UNNAMED_47_BC847C_I250_C"
+nodes "UNNAMED_48_74HC14_I224_A"
+!@nodes "PWM_WN"                    !@ R145 not load
+nodes "PWM_TN"
+nodes "UNNAMED_48_74HC14_I210_A"
+nodes "PWM_TP"
+!@nodes "PWM_WP"                    !@ R149 not load
+nodes "UNNAMED_48_74HC14_I235_A"
+nodes "UNNAMED_48_BC847C_I250_C"
+!@nodes "UNNAMED_45_74HC14_I93_A"   !@ C238,R187,U56 not load
+!@nodes "PF_IGBT_INV_OC"            !@ JP8,JP12,JP16,R187,R188 not load
+!@nodes "UNNAMED_45_74HC14_I100_A"  !@ C244,R197,U56 not load
+!@nodes "OCT_INV_N"                 !@ JP3,JP10,JP14,R197,R198 not load
+nodes "DIO_5C-PWM_YP"
+nodes "DIO_6C-PWM_YN"
+nodes "DIO_7C-PWM_ZP"
+nodes "DIO_8C-PWM_ZN"
+nodes "CNV_OC_FLT"
+nodes "CNV_FLT"
+nodes "UNNAMED_44_BC817_I101_B"
+nodes "UNNAMED_44_74HC14_I276_Y"
+nodes "OUT_EN_CONV"
+nodes "UNNAMED_44_BC817_I3_B"
+nodes "UNNAMED_44_R_I100_A"
+nodes "UNNAMED_44_PS2561L_I234_AN"
+!@nodes "OUT_EN_INV"                !@ P5,R190 not load
+!@nodes "UNNAMED_45_BC817_I3_B"     !@ Q25,R190 not load
+nodes "I2C_SDA0_CONV"
+nodes "I2C_SCL0_CONV"
+nodes "UNNAMED_44_24C64_I2_WP"
+!@nodes "I2C_SDA0_INV"              !@ R190,U2,U54 not load
+!@nodes "I2C_SCL0_INV"              !@ R190,U2,U54 not load
+!@nodes "UNNAMED_45_24C64_I2_WP"    !@ Q25,R190,U54 not load
+nodes "DCN_DIS"
+nodes "UNNAMED_43_R_I73_B"
+nodes "UNNAMED_43_R_I133_B"
+nodes "DCP_DIS"
+nodes "DCN_LED"
+!nodes "DCN_LED_1"
+!nodes "DCN_LED_2"
+!nodes "DCN_LED_3"
+!nodes "DCN_LED_4"
+!nodes "DCN_LED_5"
+!nodes "DCN_LED_6"
+!nodes "UNNAMED_9_555_I229_THRES"
+!nodes "UNNAMED_9_555_I229_DISCH"
+!nodes "UNNAMED_9_555_I229_RESET"
+nodes "DCP_LED"
+!nodes "UNNAMED_9_R_I212_B"
+!nodes "UNNAMED_9_LED_I214_A"
+!nodes "UNNAMED_9_555_I229_CONT"   ! Non-digital library pin.
+nodes "DIO_2C-DEV_FLT"
+!nodes "DIO_3C-PWM_XP"   ! Node is isolated
+!nodes "DIO_4C-PWM_XN"   ! Node is isolated
+!nodes "DUMMY_1"   ! Node is isolated
+!nodes "DUMMY_2"   ! Node is isolated
+!nodes "DUMMY_3"   ! Node is isolated
+!nodes "DUMMY_4"   ! Node is isolated
+!nodes "DUMMY_5"   ! Node is isolated
+!nodes "DUMMY_6"   ! Node is isolated
+!nodes "DUMMY_7"   ! Node is isolated
+!nodes "DUMMY_8"   ! Node is isolated
+!nodes "DUMMY_9"   ! Node is isolated
+!nodes "DUMMY_10"   ! Node is isolated
+!nodes "DUMMY_50POL_1"   ! Node is isolated
+!nodes "DUMMY_50POL_11"   ! Node is isolated
+!nodes "DUMMY_50POL_13"   ! Node is isolated
+!nodes "DUMMY_50POL_14"   ! Node is isolated
+!nodes "DUMMY_50POL_17"   ! Node is isolated
+!nodes "DUMMY_50POL_18"   ! Node is isolated
+!nodes "DUMMY_50POL_30"   ! Node is isolated
+!nodes "DUMMY_50POL_31"   ! Node is isolated
+!nodes "DUMMY_50POL_32"   ! Node is isolated
+!nodes "DUMMY_50POL_33"   ! Node is isolated
+!nodes "DUMMY_50POL_40"   ! Node is isolated
+!nodes "DUMMY_50POL_41"   ! Node is isolated
+!nodes "DUMMY_50POL_42"   ! Node is isolated
+nodes "DUMMY_COMP_A"   ! Non-digital library pin.
+nodes "DUMMY_COMP_B"   ! Non-digital library pin.
+nodes "DUMMY_CONV_B_INV_1"
+nodes "DUMMY_CONV_B_INV_2"
+nodes "DUMMY_CONV_B_INV_3"
+nodes "DUMMY_CONV_B_INV_4"
+nodes "DUMMY_CONV_B_INV_5"
+!@nodes "DUMMY_INV_A_INV_1"     !@ U56 not load
+!@nodes "DUMMY_INV_A_INV_2"     !@ U56 not load
+!@nodes "DUMMY_INV_A_INV_3"     !@ U56 not load
+nodes "DUMMY_LED1_RU_N"
+nodes "DUMMY_LED1_RU_P"
+nodes "DUMMY_LED1_SV_N"
+nodes "DUMMY_LED1_SV_P"
+nodes "DUMMY_LED1_TW_N"
+nodes "DUMMY_LED1_TW_P"
+nodes "DUMMY_LED2_RU_N"
+nodes "DUMMY_LED2_RU_P"
+nodes "DUMMY_LED2_SV_N"
+nodes "DUMMY_LED2_SV_P"
+nodes "DUMMY_LED2_TW_N"
+nodes "DUMMY_LED2_TW_P"
+!@nodes "DUMMY_OTI"          !@ U3 not load
+nodes "DUMMY_REF02_PRI_3"   ! Non-digital library pin.
+nodes "DUMMY_REF02_PRI_5"   ! Non-digital library pin.
+nodes "DUMMY_REF02_SEC_3"   ! Non-digital library pin.
+nodes "DUMMY_REF02_SEC_5"   ! Non-digital library pin.
+!@nodes "DUMMY_RU_NTC1"    !@ Q27 not load
+!@nodes "DUMMY_RU_NTC2"    !@ Q27 not load
+!nodes "DUMMY_SMPS_EN"   ! Not accessible
+!nodes "DUMMY_TEMP_TEMP"   ! Non-digital library pin.
+!nodes "DUMMY_TEMP_TRIM"   ! Non-digital library pin.
+!@nodes "DUMMY_TW_NTC1"    !@ Q35 not load
+!@nodes "DUMMY_TW_NTC2"    !@ Q35 not load
+!nodes "GATE_SW_1"
+!nodes "GATE_SW_2"   ! Non-digital library pin.
+!nodes "NC__629"   ! Not accessible
+!nodes "NC__630"   ! Not accessible
+!nodes "NC__631"   ! Not accessible
+!nodes "NC__632"   ! Not accessible
+!nodes "NC__633"   ! Not accessible
+!nodes "NC__634"   ! Not accessible
+!nodes "NC__635"   ! Not accessible
+!nodes "NC__636"   ! Not accessible
+!nodes "NC__637"   ! Not accessible
+!nodes "NC__638"   ! Not accessible
+!nodes "NC__639"   ! Not accessible
+!nodes "NC__640"   ! Not accessible
+!nodes "NC__641"   ! Not accessible
+!nodes "NC__642"   ! Not accessible
+!nodes "NC__643"   ! Not accessible
+!nodes "NC__644"   ! Not accessible
+!nodes "NC__645"   ! Not accessible
+!nodes "NC__646"   ! Not accessible
+!nodes "NC__647"   ! Not accessible
+!nodes "NC__648"   ! Not accessible
+!nodes "NC__649"   ! Not accessible
+!nodes "NC__650"   ! Not accessible
+!nodes "NC__651"   ! Not accessible
+!nodes "NC__652"   ! Not accessible
+!nodes "NC__653"   ! Not accessible
+!nodes "NC__654"   ! Not accessible
+!nodes "NC__655"   ! Not accessible
+!nodes "NC__656"   ! Not accessible
+!nodes "NC__657"   ! Not accessible
+!nodes "NC__658"   ! Not accessible
+!nodes "NC__659"   ! Not accessible
+!nodes "NC__660"   ! Not accessible
+!nodes "NC__661"   ! Not accessible
+!nodes "NC__662"   ! Not accessible
+!nodes "NC__663"   ! Not accessible
+!nodes "NC__664"   ! Not accessible
+!nodes "NC__665"   ! Not accessible
+!nodes "NC__666"   ! Not accessible
+!nodes "NC__667"   ! Not accessible
+!nodes "NC__668"   ! Not accessible
+!nodes "NC__669"   ! Not accessible
+!nodes "NC__670"   ! Not accessible
+!nodes "NC__671"   ! Not accessible
+!nodes "NC__672"   ! Not accessible
+!nodes "NC__673"   ! Not accessible
+!nodes "NC__674"   ! Not accessible
+!nodes "NC__675"   ! Not accessible
+!nodes "NC__676"   ! Not accessible
+!nodes "NC__677"   ! Not accessible
+!nodes "NC__678"   ! Not accessible
+!nodes "NC__679"   ! Not accessible
+!nodes "NC__680"   ! Not accessible
+!nodes "NC__681"   ! Not accessible
+!nodes "NC__682"   ! Not accessible
+!nodes "NC__683"   ! Not accessible
+!nodes "NC__684"   ! Not accessible
+!nodes "NC__685"   ! Not accessible
+!nodes "NC__686"   ! Not accessible
+!nodes "NC__687"   ! Not accessible
+!nodes "NC__688"   ! Not accessible
+!nodes "NC__689"   ! Not accessible
+!nodes "NC__690"   ! Not accessible
+!nodes "NC__691"   ! Not accessible
+!nodes "NC__692"   ! Not accessible
+!nodes "NC__693"   ! Not accessible
+!nodes "NC__694"   ! Not accessible
+!nodes "NC__695"   ! Not accessible
+!nodes "NC__696"   ! Not accessible
+!@nodes "OCT_INV"      !@ U56 not load
+!nodes "OLOAD_DUMMY"   ! Node is isolated
+!nodes "OPTO_VCC"   ! Node is isolated
+nodes "P1_SW_1"
+nodes "P1_SW_2"
+!nodes "P2_SW_1"
+!nodes "P2_SW_2"
+!nodes "P4_SW_1"   ! Node is isolated
+!nodes "P4_SW_2"   ! Node is isolated
+!nodes "P6_SW_1"   ! Node is isolated
+!nodes "P6_SW_2"   ! Node is isolated
+!nodes "PE_RU"   ! Non-digital library pin.
+!nodes "PE_SV"   ! Non-digital library pin.
+!nodes "PE_TW"   ! Non-digital library pin.
+nodes "PFAIL_RS_CONV"
+!nodes "PTC_23"   ! Node is isolated
+!nodes "PTC_45"   ! Node is isolated
+nodes "PWM_OUT1"   ! Non-digital library pin.
+nodes "PWM_OUT2"   ! Non-digital library pin.
+nodes "PWM_OUT3"   ! Non-digital library pin.
+nodes "PWM_OUT4"   ! Non-digital library pin.
+nodes "PWM_OUT5"   ! Non-digital library pin.
+nodes "PWM_OUT6"   ! Non-digital library pin.
+nodes "PWM_OUT7"   ! Non-digital library pin.
+nodes "PWM_OUT8"   ! Non-digital library pin.
+!nodes "R_MAIN"   ! Non-digital library pin.
+!@nodes "R_RES"   !@ RX7 not load
+!@nodes "RX7"     !@ RX7 not load
+nodes "RELAY_1"   ! Non-digital library pin.
+nodes "RELAY_2"   ! Non-digital library pin.
+nodes "RELAY_3"   ! Non-digital library pin.
+nodes "RELAY_4"   ! Non-digital library pin.
+nodes "RELAY_5"   ! Non-digital library pin.
+nodes "RELAY_6"   ! Non-digital library pin.
+nodes "RELAY_7"   ! Non-digital library pin.
+nodes "RELAY_8"   ! Node is isolated
+nodes "RELAY_9"   ! Non-digital library pin.
+nodes "RELAY_10"   ! Non-digital library pin.
+nodes "RELAY_11"   ! Non-digital library pin.
+nodes "RELAY_12"   ! Non-digital library pin.
+nodes "RELAY_13"   ! Non-digital library pin.
+nodes "RELAY_14"   ! Non-digital library pin.
+nodes "RELAY_15"   ! Non-digital library pin.
+nodes "RELAY_16"   ! Non-digital library pin.
+nodes "RELAY_VCC"   ! Node is isolated
+nodes "RX4"
+nodes "SENSE_IU"
+nodes "RX6"
+nodes "SENSE_IV"
+!@nodes "RX8"     !@ RX8 not load
+!@nodes "S_RES"   !@ RX8 not load
+!nodes "S_MAIN"   ! Non-digital library pin.
+!nodes "SENSE_IW"   ! Node is isolated
+nodes "SENSOR"   ! Non-digital library pin.
+!nodes "SENSOR_ANODE"   ! Non-digital library pin.
+nodes "SENSOR_CATHODE"   ! Non-digital library pin.
+nodes "SMPS_SENSE_GATE"
+nodes "UNNAMED_39_10MQ040N_I229_A"
+nodes "UNNAMED_39_10MQ040N_I229_C"
+!nodes "TEMP_IGBT_INV"   ! Node is isolated
+!@nodes "UNNAMED_9_555_I229_OUT"  !@ ECN change 20150616
+nodes "UNNAMED_9_TL084B_I267_NIN"   ! Non-digital library pin.
+!@nodes "UNNAMED_10_BC817_I58_C"     !@ Q4,U14 not load
+!nodes "UNNAMED_10_TL084B_I82_NIN"   ! Non-digital library pin.
+!nodes "UNNAMED_10_TL084B_I84_NIN"   ! Non-digital library pin.
+!nodes "UNNAMED_10_TL084B_I108_NIN"   ! Non-digital library pin.
+nodes "UNNAMED_36_BC817_I58_C"
+nodes "UNNAMED_36_REF02_I76_VOUT"   ! Non-digital library pin.
+nodes "UNNAMED_37_BC817_I56_C"
+nodes "UNNAMED_38_TL084B_I89_NIN"   ! Non-digital library pin.
+nodes "UNNAMED_38_TL084B_I91_NIN"   ! Non-digital library pin.
+nodes "UNNAMED_39_BYG22D_I283_A"
+nodes "UNNAMED_39_BYG22D_I285_C"
+nodes "UNNAMED_44_74HC14_I263_Y"
+nodes "UNNAMED_44_74HC14_I287_A"
+nodes "UNNAMED_44_BC817_I101_C"
+nodes "UNNAMED_44_BC817_I121_C"
+!@nodes "UNNAMED_45_74HC14_I104_A"   !@ U56 not load
+nodes "UNNAMED_46_74HC14_I184_Y"
+nodes "UNNAMED_46_74HC14_I209_A"
+nodes "UNNAMED_46_74HC14_I209_Y"
+nodes "UNNAMED_46_74HC14_I221_A"
+nodes "UNNAMED_46_74HC14_I221_Y"
+nodes "UNNAMED_46_74HC14_I235_Y"
+nodes "UNNAMED_46_BAV99_I309_A1"
+nodes "UNNAMED_46_BAV99_I328_A1"
+nodes "UNNAMED_46_BZV55B18_I408_A"
+nodes "UNNAMED_46_BZV55B18_I410_A"
+nodes "UNNAMED_46_BZV55B18_I412_A"
+nodes "UNNAMED_46_BZV55B18_I414_A"
+nodes "UNNAMED_46_BZV55B18_I416_A"
+nodes "UNNAMED_46_BZV55B18_I418_A"
+nodes "UNNAMED_47_74HC14_I184_Y"
+nodes "UNNAMED_47_74HC14_I209_A"
+nodes "UNNAMED_47_74HC14_I209_Y"
+nodes "UNNAMED_47_74HC14_I221_A"
+nodes "UNNAMED_47_74HC14_I221_Y"
+nodes "UNNAMED_47_74HC14_I235_Y"
+nodes "UNNAMED_47_BAV99_I309_A1"
+nodes "UNNAMED_47_BAV99_I328_A1"
+nodes "UNNAMED_47_BZV55B18_I408_A"
+nodes "UNNAMED_47_BZV55B18_I410_A"
+nodes "UNNAMED_47_BZV55B18_I412_A"
+nodes "UNNAMED_47_BZV55B18_I414_A"
+nodes "UNNAMED_47_BZV55B18_I416_A"
+nodes "UNNAMED_47_BZV55B18_I418_A"
+nodes "UNNAMED_48_74HC14_I184_Y"
+nodes "UNNAMED_48_74HC14_I209_A"
+nodes "UNNAMED_48_74HC14_I209_Y"
+nodes "UNNAMED_48_74HC14_I221_A"
+nodes "UNNAMED_48_74HC14_I221_Y"
+nodes "UNNAMED_48_74HC14_I235_Y"
+nodes "UNNAMED_48_BAV99_I309_A1"
+nodes "UNNAMED_48_BAV99_I328_A1"
+nodes "UNNAMED_48_BZV55B18_I407_A"
+nodes "UNNAMED_48_BZV55B18_I409_A"
+nodes "UNNAMED_48_BZV55B18_I411_A"
+nodes "UNNAMED_48_BZV55B18_I413_A"
+nodes "UNNAMED_48_BZV55B18_I415_A"
+nodes "UNNAMED_48_BZV55B18_I417_A"
+nodes "UNNAMED_49_BC817_I64_C"
+nodes "UNNAMED_49_TL084B_I91_NIN"   ! Non-digital library pin.
+nodes "UNNAMED_49_TL084B_I93_NIN"   ! Non-digital library pin.
+nodes "UNNAMED_49_TL084B_I106_NIN"   ! Non-digital library pin.
+nodes "VCC2A+"   ! Node is isolated
+nodes "VCC2A-"   ! Node is isolated
+

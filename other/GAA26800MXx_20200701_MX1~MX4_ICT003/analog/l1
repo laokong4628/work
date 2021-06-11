@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583302   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:23 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "5V_HL2"
+connect i to "SW_TEMP_SENSOR"; b to "SW_TEMP_SENSOR"
+inductor 68u + 27.272u, 25.9, 25.9, fr8192, re1, ar100m, sb
+! "l1" test.
+! DUT: nominal 68u, plus tol 20.0 %, minus tol 20.0 %
+! DUT Series Resistance: 10.0
+! DUT: high 81.6u, low 54.4u
+! TEST: high limit 119.984u, low limit 70.559u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

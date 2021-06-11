@@ -1,0 +1,30 @@
+!!!!   21    2    1 1109750975  Vc87e                                         
+!resistor 8pin 10K
+resistor "res1_8", 10k, 5,   5, f, nr
+resistor "res2_7", 10k, 5,   5, f, nr
+resistor "res3_6", 10k, 5,   5, f, nr
+resistor "res4_5", 10k, 5,   5, f, nr
+
+external pins 1
+   device "res1_8" pins 1
+
+external pins 8
+   device "res1_8" pins 2
+
+external pins 2
+   device "res2_7" pins 1
+
+external pins 7
+   device "res2_7" pins 2
+
+external pins 3
+   device "res3_6" pins 1
+
+external pins 6
+   device "res3_6" pins 2
+
+external pins 4
+   device "res4_5" pins 1
+
+external pins 5
+   device "res4_5" pins 2

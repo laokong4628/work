@@ -1,0 +1,52 @@
+!!!!    2    0    1 1373472294   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:51 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c20 22.0u"
+   report "c36 22.0u"
+   report "c59 22.0u"
+   report "c107 22.0u"
+   report "c138 22.0u"
+   report "c175 22.0u"
+   report "c198 22.0u"
+   report "c245 22.0u not load"
+   report "c248 22.0u not load"
+   report "c18 100n"
+   report "c19 100n"
+   report "c35 100n"
+   report "c58 100n"
+   report "c106 100n"
+   report "c137 100n"
+   report "c174 100n"
+   report "c197 100n"
+   report "c246 100n not load"
+   report "c247 100n not load"
+end on failure
+disconnect all
+connect s to "GND"; a to "GND"
+connect i to "VCC"; b to "VCC"
+!connect g to "OCT_CONV_N"
+!connect g to "PF_IGBT_CONV_OC"
+!connect g to "UNNAMED_44_74HC14_I288_A"
+!connect g to "UNNAMED_46_74HC14_I184_A"
+!connect g to "UNNAMED_46_74HC14_I210_A"
+!connect g to "UNNAMED_46_74HC14_I224_A"
+!connect g to "UNNAMED_46_74HC14_I235_A"
+!connect g to "UNNAMED_47_74HC14_I184_A"
+!connect g to "UNNAMED_47_74HC14_I210_A"
+!connect g to "UNNAMED_47_74HC14_I224_A"
+!connect g to "UNNAMED_47_74HC14_I235_A"
+!connect g to "UNNAMED_48_74HC14_I184_A"
+!connect g to "UNNAMED_48_74HC14_I210_A"
+!connect g to "UNNAMED_48_74HC14_I224_A"
+!connect g to "UNNAMED_48_74HC14_I235_A"
+capacitor 177u, 221.2, 30.0, fr1024, re2, ar200m, ed, nocomp, sm, en
+! "c17" test.
+! DUT: nominal 221u, plus tol 20.0 %, minus tol 20.0 %
+! DUT: high 265.1u, low 176.9u
+! TEST: high limit 267.933u, low limit 170.192u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

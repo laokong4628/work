@@ -1,0 +1,20 @@
+!!!!    2    0    1 1274940663  Veb1e                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:51 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r106 680k"
+end on failure
+disconnect all
+connect s to "UNNAMED_47_C_I260_B"
+connect i to "UNNAMED_47_C_I260_A"
+capacitor 2.2n, 30.6, 30.7, fr8192, re5, wb, ar20.0m, nocomp, ed
+! "c119" test.
+! DUT: nominal 2.2n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 2.42n, low 1.98n
+! TEST: high limit 2.433n, low limit 1.965n
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

@@ -1,0 +1,14 @@
+!!!!    2    0    1 1274944850  V73a0                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "HL2"
+connect i to "UNNAMED_45_C_I148_A"
+capacitor 1u, 20.6, 20.5, fr128, re3, wb, ar100m, ed, nocomp
+! "c10" test.
+! DUT: nominal 1u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 1.1u, low 900n
+! TEST: high limit 1.106u, low limit 894.714n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

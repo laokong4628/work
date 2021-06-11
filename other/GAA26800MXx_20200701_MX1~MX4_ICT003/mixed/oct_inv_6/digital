@@ -1,0 +1,67 @@
+!!!!    6    0    1 1274346983   0000                                         
+test digital;Time(*)
+
+sequential
+
+vector cycle 1m
+receive delay 0.9m
+
+assign Input_high to nodes "OUT_EN_CONV"
+assign Pulse_Time to nodes "OCT_INV"
+assign Input_low  to nodes "PWM_RP"
+assign Input_low  to nodes "PWM_UP"
+assign Input_low  to nodes "PWM_RN"
+assign Input_low  to nodes "PWM_UN"
+assign Input_low  to nodes "PWM_SP"
+assign Input_low  to nodes "PWM_VP"
+assign Input_low  to nodes "PWM_SN"
+assign Input_low  to nodes "PWM_VN"
+assign Input_low  to nodes "PWM_TP"
+assign Input_low  to nodes "PWM_WP"
+assign Input_low  to nodes "PWM_TN"
+assign Input_low  to nodes "PWM_WN"
+assign Relay_1_on to nodes "RELAY_1"
+
+family TTL
+
+inputs  Input_high, Input_low, Relay_1_on
+outputs Pulse_Time
+
+capture Pulse_Time
+
+vector Init
+  set Input_high  to "1"
+  set RELAY_1_on  to "1"
+  set Input_low   to "000000000000"
+end vector
+
+vector Keep
+  set Input_high  to "k"
+  set RELAY_1_on  to "k"
+  set Input_low   to "kkkkkkkkkkkk"
+  set Pulse_Time  to "k"
+end vector
+
+vector RECEIVER_High
+  set Pulse_Time to "1"
+end vector
+
+vector RECEIVER_Low
+set Pulse_Time to "0"
+end vector
+
+vector RECEIVER_X
+set Pulse_Time to "X"
+end vector
+
+
+unit "Test"
+  execute Init
+  execute Keep
+  continue analog
+  repeat 500 times              !@!1m*500 = 500m
+  execute RECEIVER_X capture
+  end repeat
+  fetch Time(*)
+end unit
+

@@ -1,0 +1,3394 @@
+!!!!   14    0    1 1588918719   0000                                         
+! IPG: Fri May 08 14:18:40 2020
+test shorts "shorts"
+test shorts "shorts" version "G2A26800MX1"
+test shorts "shorts" version "G2A26800MX2"
+test pins "pins"
+test pins "pins" version "G2A26800MX1"
+test pins "pins" version "G2A26800MX2"
+test capacitor ".discharge"
+test capacitor ".discharge" version "G2A26800MX1"
+test capacitor ".discharge" version "G2A26800MX2"
+skip capacitor "c1"; characterize, comment
+skip capacitor "c1" version "G2A26800MX1"; nulltest !@ECN remove
+skip capacitor "c1" version "G2A26800MX2"; nulltest
+test capacitor "c47"; characterize
+test capacitor "c119"; characterize
+test capacitor "c167"; characterize
+skip capacitor "c167" version "G2A26800MX1"; nulltest
+test capacitor "c189"; characterize
+test capacitor "c291"; characterize
+skip capacitor "c291" version "G2A26800MX1"; nulltest
+test capacitor "c3"
+skip capacitor "c3" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c3" version "G2A26800MX2"; nulltest
+skip capacitor "c4"; nulltest !tested in parallel with c3
+skip capacitor "c4" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c4" version "G2A26800MX2"; nulltest
+skip capacitor "c5"; nulltest !tested in parallel with c3
+skip capacitor "c5" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c5" version "G2A26800MX2"; nulltest
+skip capacitor "c2"; nulltest !tested in parallel with c3
+skip capacitor "c2" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c2" version "G2A26800MX2"; nulltest
+skip capacitor "c6"; nulltest !tested in parallel with c3
+skip capacitor "c6" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c6" version "G2A26800MX2"; nulltest
+skip capacitor "c255"; nulltest !tested in parallel with c3
+skip capacitor "c255" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c255" version "G2A26800MX2"; nulltest
+test capacitor "c7"
+skip capacitor "c7" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c7" version "G2A26800MX2"; nulltest
+skip capacitor "c8"; nulltest !tested in parallel with c7
+skip capacitor "c8" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c8" version "G2A26800MX2"; nulltest
+skip capacitor "c11"; nulltest !tested in parallel with c7
+skip capacitor "c11" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c11" version "G2A26800MX2"; nulltest
+skip capacitor "c12"; nulltest !tested in parallel with c7
+skip capacitor "c12" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c12" version "G2A26800MX2"; nulltest
+skip capacitor "c9"; nulltest !tested in parallel with c7
+skip capacitor "c9" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c9" version "G2A26800MX2"; nulltest
+skip capacitor "c13"; nulltest !tested in parallel with c7
+skip capacitor "c13" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c13" version "G2A26800MX2"; nulltest
+skip capacitor "c254"; nulltest !tested in parallel with c7
+skip capacitor "c254" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c254" version "G2A26800MX2"; nulltest
+test capacitor "c15"
+skip capacitor "c15" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c15" version "G2A26800MX2"; nulltest
+test capacitor "c17"
+skip capacitor "c17" version "G2A26800MX1"; nulltest
+skip capacitor "c20"; nulltest !tested in parallel with c17
+skip capacitor "c20" version "G2A26800MX1"; nulltest
+skip capacitor "c36"; nulltest !tested in parallel with c17
+skip capacitor "c59"; nulltest !tested in parallel with c17
+skip capacitor "c107"; nulltest !tested in parallel with c17
+skip capacitor "c138"; nulltest !tested in parallel with c17
+skip capacitor "c175"; nulltest !tested in parallel with c17
+skip capacitor "c198"; nulltest !tested in parallel with c17
+skip capacitor "c245"; nulltest !tested in parallel with c17
+skip capacitor "c245" version "G2A26800MX2"; nulltest
+skip capacitor "c248"; nulltest !tested in parallel with c17
+skip capacitor "c248" version "G2A26800MX2"; nulltest
+skip capacitor "c18"; nulltest !tested in parallel with c17
+skip capacitor "c18" version "G2A26800MX1"; nulltest
+skip capacitor "c19"; nulltest !tested in parallel with c17
+skip capacitor "c19" version "G2A26800MX1"; nulltest
+skip capacitor "c35"; nulltest !tested in parallel with c17
+skip capacitor "c58"; nulltest !tested in parallel with c17
+skip capacitor "c106"; nulltest !tested in parallel with c17
+skip capacitor "c137"; nulltest !tested in parallel with c17
+skip capacitor "c174"; nulltest !tested in parallel with c17
+skip capacitor "c197"; nulltest !tested in parallel with c17
+skip capacitor "c246"; nulltest !tested in parallel with c17
+skip capacitor "c246" version "G2A26800MX2"; nulltest
+skip capacitor "c247"; nulltest !tested in parallel with c17
+skip capacitor "c247" version "G2A26800MX2"; nulltest
+test capacitor "c24"
+skip capacitor "c24" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c24" version "G2A26800MX2"; nulltest
+test capacitor "c26"
+skip capacitor "c26" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c26" version "G2A26800MX2"; nulltest
+skip capacitor "c25"; nulltest !tested in parallel with c26
+skip capacitor "c25" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c25" version "G2A26800MX2"; nulltest
+skip capacitor "c27"; comment
+skip capacitor "c27" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c27" version "G2A26800MX2"; nulltest
+test capacitor "c38"
+skip capacitor "c39"; nulltest !tested in parallel with c38
+skip capacitor "c37"; nulltest !tested in parallel with c38
+test capacitor "c48"
+test capacitor "c50"
+skip capacitor "c51"; nulltest
+skip capacitor "c51" version "G2A26800MX1"; nulltest
+skip capacitor "c51" version "G2A26800MX2"; nulltest
+test capacitor "c218"
+skip capacitor "c129"; nulltest !tested in parallel with c218
+skip capacitor "c129" version "G2A26800MX1"; nulltest
+skip capacitor "c170"; nulltest !tested in parallel with c218
+skip capacitor "c170" version "G2A26800MX1"; nulltest
+skip capacitor "c217"; nulltest !tested in parallel with c218
+skip capacitor "c52"; nulltest !tested in parallel with c218
+skip capacitor "c52" version "G2A26800MX2"; nulltest
+skip capacitor "c89"; nulltest !tested in parallel with c218
+skip capacitor "c100"; nulltest !tested in parallel with c218
+skip capacitor "c100" version "G2A26800MX1"; nulltest
+skip capacitor "c123"; nulltest !tested in parallel with c218
+skip capacitor "c123" version "G2A26800MX1"; nulltest
+skip capacitor "c149"; nulltest !tested in parallel with c218
+skip capacitor "c149" version "G2A26800MX1"; nulltest
+skip capacitor "c166"; nulltest !tested in parallel with c218
+skip capacitor "c166" version "G2A26800MX1"; nulltest
+skip capacitor "c240"; nulltest !tested in parallel with c218
+skip capacitor "c240" version "G2A26800MX1"; nulltest
+skip capacitor "c282"; nulltest !tested in parallel with c218
+skip capacitor "c282" version "G2A26800MX1"; nulltest
+skip capacitor "c296"; nulltest !tested in parallel with c218
+skip capacitor "c296" version "G2A26800MX1"; nulltest
+skip capacitor "c311"; nulltest !tested in parallel with c218
+test capacitor "c234"
+skip capacitor "c233"; nulltest !tested in parallel with c234
+skip capacitor "c53"; nulltest !tested in parallel with c234
+skip capacitor "c53" version "G2A26800MX2"; nulltest
+skip capacitor "c90"; nulltest !tested in parallel with c234
+skip capacitor "c101"; nulltest !tested in parallel with c234
+skip capacitor "c101" version "G2A26800MX1"; nulltest
+skip capacitor "c124"; nulltest !tested in parallel with c234
+skip capacitor "c124" version "G2A26800MX1"; nulltest
+skip capacitor "c150"; nulltest !tested in parallel with c234
+skip capacitor "c150" version "G2A26800MX1"; nulltest
+skip capacitor "c239"; nulltest !tested in parallel with c234
+skip capacitor "c239" version "G2A26800MX1"; nulltest
+skip capacitor "c313"; nulltest !tested in parallel with c234
+test capacitor "c54"; permanent, comment
+test capacitor "c55"
+skip capacitor "c56"; nulltest !tested in parallel with c55
+skip capacitor "c57"; nulltest !tested in parallel with c55
+test capacitor "c61"
+skip capacitor "c61" version "G2A26800MX2"; nulltest
+test capacitor "c62"; comment
+test capacitor "c63"
+skip capacitor "c64"; nulltest !tested in parallel with c63
+skip capacitor "c65"; nulltest !tested in parallel with c63
+test capacitor "c70"
+test capacitor "c78"
+skip capacitor "c78" version "G2A26800MX1"
+skip capacitor "c78" version "G2A26800MX2"
+test capacitor "c74"; nulltest !tested in parallel with c78
+skip capacitor "c74" version "G2A26800MX1" !tested in parallel with c78
+test capacitor "c74" version "G2A26800MX2" !tested in parallel with c78
+skip capacitor "c75"; nulltest !tested in parallel with c78
+skip capacitor "c75" version "G2A26800MX1"; nulltest !tested in parallel with c78
+skip capacitor "c75" version "G2A26800MX2"; nulltest !tested in parallel with c78
+skip capacitor "c76"; nulltest !tested in parallel with c78
+skip capacitor "c76" version "G2A26800MX1"; nulltest !tested in parallel with c78
+skip capacitor "c76" version "G2A26800MX2"; nulltest !tested in parallel with c78
+skip capacitor "c77"; nulltest !tested in parallel with c78
+skip capacitor "c77" version "G2A26800MX1"; nulltest !tested in parallel with c78
+skip capacitor "c77" version "G2A26800MX2"; nulltest !tested in parallel with c78
+skip capacitor "c73"; nulltest !tested in parallel with c78
+skip capacitor "c73" version "G2A26800MX1"; nulltest !tested in parallel with c78
+skip capacitor "c73" version "G2A26800MX2"; nulltest !tested in parallel with c78
+test capacitor "c72"
+skip capacitor "c72" version "G2A26800MX1"; nulltest
+skip capacitor "c72" version "G2A26800MX2"; nulltest
+skip capacitor "c80"; nulltest !tested in parallel with c72
+skip capacitor "c81"; nulltest !tested in parallel with c72
+skip capacitor "c82"; nulltest !tested in parallel with c72
+skip capacitor "c83"; nulltest !tested in parallel with c72
+skip capacitor "c79"; nulltest !tested in parallel with c72
+test capacitor "c85"
+skip capacitor "c86"; nulltest !tested in parallel with c85
+skip capacitor "c99"; nulltest !tested in parallel with c85
+skip capacitor "c176"; nulltest !tested in parallel with c85
+skip capacitor "c84"; nulltest !tested in parallel with c85
+skip capacitor "c87"; nulltest !tested in parallel with c85
+skip capacitor "c121"; nulltest !tested in parallel with c85
+skip capacitor "c121" version "G2A26800MX1"; nulltest
+skip capacitor "c279"; nulltest !tested in parallel with c85
+test capacitor "c92"
+skip capacitor "c93"; nulltest !tested in parallel with c92
+skip capacitor "c171"; nulltest !tested in parallel with c92
+skip capacitor "c88"; nulltest !tested in parallel with c92
+skip capacitor "c91"; nulltest !tested in parallel with c92
+skip capacitor "c122"; nulltest !tested in parallel with c92
+skip capacitor "c122" version "G2A26800MX1"; nulltest
+skip capacitor "c94"; nulltest
+test capacitor "c109"
+skip capacitor "c110"; nulltest !tested in parallel with c109
+skip capacitor "c108"; nulltest !tested in parallel with c109
+test capacitor "c120"
+test capacitor "c128"
+test capacitor "c133"; comment
+test capacitor "c134"
+skip capacitor "c135"; nulltest !tested in parallel with c134
+skip capacitor "c136"; nulltest !tested in parallel with c134
+test capacitor "c141"; comment
+test capacitor "c142"
+skip capacitor "c143"; nulltest !tested in parallel with c142
+skip capacitor "c144"; nulltest !tested in parallel with c142
+test capacitor "c159"
+skip capacitor "c159" version "G2A26800MX1"; nulltest
+skip capacitor "c159" version "G2A26800MX2"; nulltest
+skip capacitor "c155"; nulltest !tested in parallel with c159
+skip capacitor "c156"; nulltest !tested in parallel with c159
+skip capacitor "c157"; nulltest !tested in parallel with c159
+skip capacitor "c158"; nulltest !tested in parallel with c159
+skip capacitor "c154"; nulltest !tested in parallel with c159
+test capacitor "c153"
+skip capacitor "c153" version "G2A26800MX1"; nulltest
+skip capacitor "c153" version "G2A26800MX2"; nulltest
+skip capacitor "c161"; nulltest !tested in parallel with c153
+skip capacitor "c162"; nulltest !tested in parallel with c153
+skip capacitor "c163"; nulltest !tested in parallel with c153
+skip capacitor "c164"; nulltest !tested in parallel with c153
+skip capacitor "c160"; nulltest !tested in parallel with c153
+test capacitor "c178"
+skip capacitor "c179"; nulltest !tested in parallel with c178
+skip capacitor "c177"; nulltest !tested in parallel with c178
+test capacitor "c190"
+test capacitor "c192"
+test capacitor "c193"; comment
+test capacitor "c194"
+skip capacitor "c195"; nulltest !tested in parallel with c194
+skip capacitor "c196"; nulltest !tested in parallel with c194
+test capacitor "c203"; comment
+test capacitor "c204"
+skip capacitor "c205"; nulltest !tested in parallel with c204
+skip capacitor "c206"; nulltest !tested in parallel with c204
+test capacitor "c210"
+test capacitor "c225"
+skip capacitor "c225" version "G2A26800MX1"; nulltest
+skip capacitor "c225" version "G2A26800MX2"; nulltest
+skip capacitor "c221"; nulltest !tested in parallel with c225
+skip capacitor "c222"; nulltest !tested in parallel with c225
+skip capacitor "c223"; nulltest !tested in parallel with c225
+skip capacitor "c224"; nulltest !tested in parallel with c225
+skip capacitor "c220"; nulltest !tested in parallel with c225
+test capacitor "c219"
+skip capacitor "c219" version "G2A26800MX1"; nulltest
+skip capacitor "c219" version "G2A26800MX2"; nulltest
+skip capacitor "c227"; nulltest !tested in parallel with c219
+skip capacitor "c228"; nulltest !tested in parallel with c219
+skip capacitor "c229"; nulltest !tested in parallel with c219
+skip capacitor "c230"; nulltest !tested in parallel with c219
+skip capacitor "c226"; nulltest !tested in parallel with c219
+test capacitor "c249"
+skip capacitor "c249" version "G2A26800MX2"; nulltest
+skip capacitor "c241"; nulltest !tested in parallel with c249
+skip capacitor "c241" version "G2A26800MX2"; nulltest
+skip capacitor "c242"; nulltest !tested in parallel with c249
+skip capacitor "c242" version "G2A26800MX2"; nulltest
+skip capacitor "c243"; nulltest !tested in parallel with c249
+skip capacitor "c243" version "G2A26800MX2"; nulltest
+test capacitor "c21"
+skip capacitor "c21" version "G2A26800MX1"; nulltest
+skip capacitor "c201"; nulltest !tested in parallel with c21
+skip capacitor "c22"; nulltest !tested in parallel with c21
+skip capacitor "c22" version "G2A26800MX1"; nulltest
+skip capacitor "c200"; nulltest !tested in parallel with c21
+skip capacitor "c256"; nulltest !tested in parallel with c21
+skip capacitor "c256" version "G2A26800MX1"; nulltest
+skip capacitor "c302"; nulltest !tested in parallel with c21
+skip capacitor "c316"; nulltest !tested in parallel with c21
+skip capacitor "c316" version "G2A26800MX1"; nulltest
+test capacitor "c258"
+skip capacitor "c258" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c258" version "G2A26800MX2"; nulltest
+test capacitor "c273"
+test capacitor "c274"
+test capacitor "c276"
+test capacitor "c277"
+test capacitor "c98"
+skip capacitor "c278"; nulltest !tested in parallel with c98
+test capacitor "c290"
+skip capacitor "c290" version "G2A26800MX1"; nulltest
+test capacitor "c292"
+test capacitor "c293"
+test capacitor "c294"
+skip capacitor "c294" version "G2A26800MX1"; nulltest
+test capacitor "c295"
+skip capacitor "c295" version "G2A26800MX1"; nulltest
+test capacitor "c202"
+skip capacitor "c301"; nulltest !tested in parallel with c202
+test capacitor "c304"
+skip capacitor "c304" version "G2A26800MX1"; nulltest
+skip capacitor "c304" version "G2A26800MX2"; nulltest
+test capacitor "c314"
+test capacitor "c315"
+test capacitor "c320"
+skip capacitor "c320" version "G2A26800MX1" !not in bom
+skip capacitor "c320" version "G2A26800MX2" !not in bom
+test capacitor "c14"
+skip capacitor "c14" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c14" version "G2A26800MX2"; nulltest
+test capacitor "c29"
+skip capacitor "c29" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c29" version "G2A26800MX2"; nulltest
+skip capacitor "c30"; nulltest !tested in parallel with c29
+skip capacitor "c30" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c30" version "G2A26800MX2"; nulltest
+skip capacitor "c28"; nulltest !tested in parallel with c29
+skip capacitor "c28" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip capacitor "c28" version "G2A26800MX2"; nulltest
+test capacitor "c43"; comment
+skip capacitor "c44"; nulltest !commented: see test c43
+skip capacitor "c45"; nulltest !commented: see test c43
+test capacitor "c114"; comment
+skip capacitor "c115"; nulltest !commented: see test c114
+skip capacitor "c116"; nulltest !commented: see test c114
+test capacitor "c183"; comment
+skip capacitor "c184"; nulltest !commented: see test c183
+skip capacitor "c185"; nulltest !commented: see test c183
+test capacitor "c211"
+skip capacitor "c211" version "G2A26800MX1"; nulltest
+skip capacitor "c211" version "G2A26800MX2"; nulltest
+test capacitor "c231"
+skip capacitor "c232"; nulltest !tested in parallel with c231
+test capacitor "c251"
+skip capacitor "c251" version "G2A26800MX1" !not in bom
+skip capacitor "c251" version "G2A26800MX2" !not in bom
+skip capacitor "c252"; nulltest !tested in parallel with c251
+test capacitor "c253"
+skip capacitor "c253" version "G2A26800MX1" !not in bom
+skip capacitor "c253" version "G2A26800MX2" !not in bom
+skip capacitor "c10" !@ecn
+skip capacitor "c16" !@ecn
+test capacitor "c23"; characterize
+skip capacitor "c23" version "G2A26800MX1"; nulltest
+test capacitor "c41"; characterize
+test capacitor "c42"; characterize, comment
+test capacitor "c105"; characterize
+skip capacitor "c105" version "G2A26800MX1"; nulltest
+test capacitor "c112"; characterize
+test capacitor "c113"; characterize, comment
+test capacitor "c117"; characterize
+skip capacitor "c117" version "G2A26800MX1"; nulltest
+test capacitor "c125"; characterize
+skip capacitor "c125" version "G2A26800MX1"; nulltest
+test capacitor "c130"; characterize
+skip capacitor "c130" version "G2A26800MX1"; nulltest
+test capacitor "c131"; characterize
+skip capacitor "c131" version "G2A26800MX1"; nulltest
+test capacitor "c132"; characterize
+skip capacitor "c132" version "G2A26800MX1"; nulltest
+test capacitor "c140"; characterize
+skip capacitor "c140" version "G2A26800MX1"; nulltest
+test capacitor "c151"; characterize
+skip capacitor "c151" version "G2A26800MX1"; nulltest
+test capacitor "c165"; characterize
+skip capacitor "c165" version "G2A26800MX1"; nulltest
+test capacitor "c181"; characterize
+test capacitor "c182"; characterize, comment
+test capacitor "c259"; characterize
+skip capacitor "c259" version "G2A26800MX1"; nulltest
+skip capacitor "c259" version "G2A26800MX2"; nulltest
+test capacitor "c265"; characterize
+skip capacitor "c265" version "G2A26800MX2"; nulltest
+test capacitor "c267"; characterize
+skip capacitor "c268"; nulltest !tested in parallel with c267
+skip capacitor "c269"; nulltest !tested in parallel with c267
+test capacitor "c270"; characterize
+skip capacitor "c271"; nulltest !tested in parallel with c270
+skip capacitor "c272"; nulltest !tested in parallel with c270
+test capacitor "c275"; characterize
+test capacitor "c284"; characterize
+skip capacitor "c285"; nulltest !tested in parallel with c284
+skip capacitor "c286"; nulltest !tested in parallel with c284
+test capacitor "c287"; characterize
+skip capacitor "c288"; nulltest !tested in parallel with c287
+skip capacitor "c289"; nulltest !tested in parallel with c287
+test capacitor "c298"; characterize
+skip capacitor "c299"; nulltest !tested in parallel with c298
+skip capacitor "c300"; nulltest !tested in parallel with c298
+test capacitor "c303"; characterize
+skip capacitor "c308"; nulltest !tested in parallel with c303
+skip capacitor "c310"; nulltest !tested in parallel with c303
+test capacitor "c31"; characterize, comment
+test capacitor "c34"; characterize, comment
+test capacitor "c46"; characterize, comment
+test capacitor "c95"; characterize
+test capacitor "c102"; characterize, comment
+test capacitor "c103"; characterize
+skip capacitor "c103" version "G2A26800MX1"; nulltest
+skip capacitor "c103" version "G2A26800MX2"; nulltest
+test capacitor "c104"; characterize, comment
+test capacitor "c118"; characterize, comment
+test capacitor "c126"; characterize
+skip capacitor "c126" version "G2A26800MX1"; nulltest
+test capacitor "c172"; characterize, comment
+test capacitor "c173"; characterize, comment
+test capacitor "c186"; characterize, comment
+test capacitor "c264"; characterize
+skip capacitor "c264" version "G2A26800MX2"; nulltest
+test capacitor "c312"; characterize, comment
+test capacitor "c32"
+skip capacitor "c32" version "G2A26800MX1"; nulltest
+test capacitor "c33"
+skip capacitor "c33" version "G2A26800MX1"; nulltest
+test capacitor "c40"
+test capacitor "c66"
+test capacitor "c71"
+test capacitor "c111"
+test capacitor "c145"
+test capacitor "c152"
+test capacitor "c180"
+test capacitor "c207"
+test capacitor "c209"
+test capacitor "c216"
+test capacitor "c238"
+skip capacitor "c238" version "G2A26800MX2"; nulltest
+test capacitor "c244"
+skip capacitor "c244" version "G2A26800MX2"; nulltest
+test capacitor "c309"
+test capacitor "c49"
+test capacitor "c127"
+test capacitor "c191"
+test capacitor "c60"; characterize, comment
+test capacitor "c67"; characterize, comment
+test capacitor "c139"; characterize, comment
+test capacitor "c146"; characterize, comment
+test capacitor "c199"; characterize, comment
+test capacitor "c208"; characterize, comment
+test capacitor "c68"; characterize, comment
+test capacitor "c69"; characterize, comment
+test capacitor "c147"; characterize, comment
+test capacitor "c148"; characterize, permanent, comment
+test capacitor "c213"; characterize, comment
+test capacitor "c214"; characterize, comment
+test capacitor "c215"; characterize, comment
+test capacitor "c235"; characterize, comment
+test capacitor "c306"; characterize
+skip capacitor "c307"; nulltest !tested in parallel with c306
+test capacitor "c97"
+skip capacitor "c97" version "G2A26800MX1"
+skip capacitor "c97" version "G2A26800MX2"
+test capacitor "c96"; nulltest !tested in parallel with c97
+test capacitor "c96" version "G2A26800MX1" !tested in parallel with c97
+test capacitor "c96" version "G2A26800MX2" !tested in parallel with c97
+test capacitor "c169"
+skip capacitor "c169" version "G2A26800MX1"; nulltest
+skip capacitor "c169" version "G2A26800MX2"; nulltest
+skip capacitor "c168"; nulltest !tested in parallel with c169
+test capacitor "c236"
+skip capacitor "c236" version "G2A26800MX1"; nulltest
+skip capacitor "c236" version "G2A26800MX2"; nulltest
+skip capacitor "c237"; nulltest !tested in parallel with c236
+test capacitor "c187"
+skip capacitor "c187" version "G2A26800MX1"; nulltest
+skip capacitor "c187" version "G2A26800MX2"; nulltest
+skip capacitor "c188"; nulltest !tested in parallel with c187
+skip capacitor "c188" version "G2A26800MX1"; nulltest
+test capacitor "c250"
+skip capacitor "c250" version "G2A26800MX1" !not in bom
+skip capacitor "c250" version "G2A26800MX2" !not in bom
+test capacitor "c212"
+skip capacitor "c212" version "G2A26800MX1"; nulltest
+skip capacitor "c212" version "G2A26800MX2"; nulltest
+skip capacitor "c257" !@ecn
+test capacitor "c260"
+skip capacitor "c260" version "G2A26800MX1"; nulltest
+skip capacitor "c260" version "G2A26800MX2"; nulltest
+test capacitor "c266"
+skip capacitor "c266" version "G2A26800MX1"; nulltest
+skip capacitor "c266" version "G2A26800MX2"; nulltest
+test capacitor "c261"
+skip capacitor "c261" version "G2A26800MX2"; nulltest
+test capacitor "c280"
+skip capacitor "c280" version "G2A26800MX1"; nulltest
+test capacitor "c283"
+skip capacitor "c283" version "G2A26800MX1"; nulltest
+skip capacitor "c262"; characterize, comment
+skip capacitor "c281"; nulltest !commented: see test c262
+skip capacitor "c297"; nulltest !commented: see test c262
+test capacitor "c263"
+skip capacitor "c263" version "G2A26800MX2"; nulltest
+test capacitor "c317"
+skip capacitor "c317" version "G2A26800MX1"; nulltest
+test capacitor "c318"
+skip capacitor "c318" version "G2A26800MX1"; nulltest
+test capacitor "c319"
+skip capacitor "c319" version "G2A26800MX1"; nulltest
+test capacitor "c305"; characterize
+skip capacitor "c305" version "G2A26800MX2"; nulltest
+skip diode "d1%pins1_2"
+skip diode "d1%pins1_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D1
+skip diode "d1%pins1_2" version "G2A26800MX2"; nulltest
+skip diode "d2%pins1_2" !tested in parallel with d1%pins1_2
+skip diode "d2%pins1_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D2
+skip diode "d2%pins1_2" version "G2A26800MX2"; nulltest
+skip diode "d3%pins1_2" !tested in parallel with d1%pins1_2
+skip diode "d3%pins1_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D3
+skip diode "d3%pins1_2" version "G2A26800MX2"; nulltest
+skip diode "d4%pins1_2"
+skip diode "d4%pins1_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D4
+skip diode "d4%pins1_2" version "G2A26800MX2"; nulltest
+skip diode "z76"; nulltest !tested in parallel with d4%pins1_2
+skip diode "z76" version "G2A26800MX2"; nulltest
+skip diode "d8%pins1_2"
+skip diode "d8%pins1_2" version "G2A26800MX2"; nulltest
+test diode "d16%cr2"
+skip diode "d16%cr3"; nulltest !tested in parallel with d16%cr2
+test diode "d17%cr2"
+skip diode "d17%cr3"; nulltest !tested in parallel with d17%cr2
+skip diode "d25%pins1_2"
+skip diode "d25%pins1_2" version "G2A26800MX1"; nulltest
+test diode "d25%pins1_3" !tested in parallel with d25%pins1_2
+skip diode "d25%pins1_3" version "G2A26800MX1"; nulltest
+skip diode "d27%pins1_2"
+skip diode "d27%pins1_2" version "G2A26800MX1"; nulltest
+test diode "d27%pins1_3" !tested in parallel with d27%pins1_2
+skip diode "d27%pins1_3" version "G2A26800MX1"; nulltest
+test diode "d28%cr2"
+skip diode "d28%cr3"; nulltest !tested in parallel with d28%cr2
+test diode "d29%cr2"
+skip diode "d29%cr3"; nulltest !tested in parallel with d29%cr2
+test diode "d43%cr2"
+skip diode "d43%cr3"; nulltest !tested in parallel with d43%cr2
+test diode "d44%cr2"
+skip diode "d44%cr3"; nulltest !tested in parallel with d44%cr2
+test diode "d1%pins1_3"
+skip diode "d1%pins1_3" version "G2A26800MX1"; nulltest !@ECN REMOVE D1
+skip diode "d1%pins1_3" version "G2A26800MX2"; nulltest
+test diode "d1%pins3_2"
+skip diode "d1%pins3_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D1
+skip diode "d1%pins3_2" version "G2A26800MX2"; nulltest
+test diode "d2%pins1_3"
+skip diode "d2%pins1_3" version "G2A26800MX1"; nulltest !@ECN REMOVE D2
+skip diode "d2%pins1_3" version "G2A26800MX2"; nulltest
+test diode "d2%pins3_2"
+skip diode "d2%pins3_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D2
+skip diode "d2%pins3_2" version "G2A26800MX2"; nulltest
+test diode "d3%pins1_3"
+skip diode "d3%pins1_3" version "G2A26800MX1"; nulltest !@ECN REMOVE D3
+skip diode "d3%pins1_3" version "G2A26800MX2"; nulltest
+test diode "d3%pins3_2"
+skip diode "d3%pins3_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D3
+skip diode "d3%pins3_2" version "G2A26800MX2"; nulltest
+test diode "d4%pins1_3"
+skip diode "d4%pins1_3" version "G2A26800MX1"; nulltest !@ECN REMOVE D4
+skip diode "d4%pins1_3" version "G2A26800MX2"; nulltest
+test diode "d4%pins3_2"
+skip diode "d4%pins3_2" version "G2A26800MX1"; nulltest !@ECN REMOVE D4
+skip diode "d4%pins3_2" version "G2A26800MX2"; nulltest
+test diode "d7%diode"
+test diode "d8%pins1_3"
+skip diode "d8%pins1_3" version "G2A26800MX2"; nulltest
+test diode "d8%pins3_2"
+skip diode "d8%pins3_2" version "G2A26800MX2"; nulltest
+test diode "d13%diode"
+test diode "d14%diode"
+skip diode "d16%cr1"; nulltest
+skip diode "d17%cr1"; nulltest
+test diode "d19%diode"
+test diode "d23%diode"
+test diode "d24%diode"
+skip diode "d25%pins3_2"; nulltest
+skip diode "d25%pins3_2" version "G2A26800MX1"; nulltest
+skip diode "d27%pins3_2"; nulltest
+skip diode "d27%pins3_2" version "G2A26800MX1"; nulltest
+skip diode "d28%cr1"; nulltest
+skip diode "d29%cr1"; nulltest
+test diode "d30%diode"
+skip diode "d30%diode" version "G2A26800MX1"; nulltest
+test diode "d31%diode"
+skip diode "d31%diode" version "G2A26800MX1"; nulltest
+test diode "d33%diode"
+test diode "d37%diode"
+test diode "d38%diode"
+skip diode "d43%cr1"; nulltest
+skip diode "d44%cr1"; nulltest
+test diode "d5%cr1"
+skip diode "d5%cr1" version "G2A26800MX1"; nulltest !@ECN REMOVE D5
+skip diode "d5%cr1" version "G2A26800MX2"; nulltest
+skip diode "d5%cr2"; nulltest !tested in parallel with d5%cr1
+skip diode "d5%cr2" version "G2A26800MX1"; nulltest !@ECN REMOVE D5
+skip diode "d5%cr2" version "G2A26800MX2"; nulltest
+skip diode "d5%cr3"; nulltest !tested in parallel with d5%cr1
+skip diode "d5%cr3" version "G2A26800MX1"; nulltest !@ECN REMOVE D5
+skip diode "d5%cr3" version "G2A26800MX2"; nulltest
+skip diode "d5%cr4"; nulltest !tested in parallel with d5%cr1
+skip diode "d5%cr4" version "G2A26800MX1"; nulltest !@ECN REMOVE D5
+skip diode "d5%cr4" version "G2A26800MX2"; nulltest
+test diode "d9%cr1"
+skip diode "d9%cr1" version "G2A26800MX2"; nulltest
+skip diode "d9%cr2"; nulltest !tested in parallel with d9%cr1
+skip diode "d9%cr2" version "G2A26800MX2"; nulltest
+test diode "d9%cr3"
+skip diode "d9%cr3" version "G2A26800MX2"; nulltest
+skip diode "d9%cr4"; nulltest !tested in parallel with d9%cr3
+skip diode "d9%cr4" version "G2A26800MX2"; nulltest
+test diode "d45%cr1"
+skip diode "d45%cr1" version "G2A26800MX1"; nulltest
+skip diode "d45%cr2"; nulltest !tested in parallel with d45%cr1
+skip diode "d45%cr2" version "G2A26800MX1"; nulltest
+skip diode "d45%cr3"; nulltest !tested in parallel with d45%cr1
+skip diode "d45%cr3" version "G2A26800MX1"; nulltest
+skip diode "d45%cr4"; nulltest !tested in parallel with d45%cr1
+skip diode "d45%cr4" version "G2A26800MX1"; nulltest
+test diode "d46%cr1"
+skip diode "d46%cr1" version "G2A26800MX1"; nulltest
+skip diode "d46%cr2"; nulltest !tested in parallel with d46%cr1
+skip diode "d46%cr2" version "G2A26800MX1"; nulltest
+skip diode "d46%cr3"; nulltest !tested in parallel with d46%cr1
+skip diode "d46%cr3" version "G2A26800MX1"; nulltest
+skip diode "d46%cr4"; nulltest !tested in parallel with d46%cr1
+skip diode "d46%cr4" version "G2A26800MX1"; nulltest
+test diode "d47%cr1"
+skip diode "d47%cr1" version "G2A26800MX1"; nulltest
+skip diode "d47%cr2"; nulltest !tested in parallel with d47%cr1
+skip diode "d47%cr2" version "G2A26800MX1"; nulltest
+skip diode "d47%cr3"; nulltest !tested in parallel with d47%cr1
+skip diode "d47%cr3" version "G2A26800MX1"; nulltest
+skip diode "d47%cr4"; nulltest !tested in parallel with d47%cr1
+skip diode "d47%cr4" version "G2A26800MX1"; nulltest
+test diode "q27%cr1"
+skip diode "q27%cr1" version "G2A26800MX1"; nulltest
+skip diode "q27%cr1" version "G2A26800MX2"; nulltest
+test diode "q27%cr2"
+skip diode "q27%cr2" version "G2A26800MX1"; nulltest
+skip diode "q27%cr2" version "G2A26800MX2"; nulltest
+test diode "q31%cr1"
+skip diode "q31%cr1" version "G2A26800MX1"; nulltest
+skip diode "q31%cr1" version "G2A26800MX2"; nulltest
+test diode "q31%cr2"
+skip diode "q31%cr2" version "G2A26800MX1"; nulltest
+skip diode "q31%cr2" version "G2A26800MX2"; nulltest
+test diode "q35%cr1"
+skip diode "q35%cr1" version "G2A26800MX1"; nulltest
+skip diode "q35%cr1" version "G2A26800MX2"; nulltest
+test diode "q35%cr2"
+skip diode "q35%cr2" version "G2A26800MX1"; nulltest
+skip diode "q35%cr2" version "G2A26800MX2"; nulltest
+test diode "d6"
+test diode "d10"
+skip diode "d11"; comment
+skip diode "d11" version "G2A26800MX1"; nulltest
+skip diode "d11" version "G2A26800MX2"; nulltest
+skip diode "d12"; comment
+skip diode "d12" version "G2A26800MX1"; nulltest
+skip diode "d12" version "G2A26800MX2"; nulltest
+test diode "d15"
+test diode "d18"
+test diode "d20"
+skip diode "d21"; comment
+skip diode "d21" version "G2A26800MX1"; nulltest
+skip diode "d21" version "G2A26800MX2"; nulltest
+skip diode "d22"; comment
+skip diode "d22" version "G2A26800MX1"; nulltest
+skip diode "d22" version "G2A26800MX2"; nulltest
+test diode "d26"
+test diode "d32"
+test diode "d34"
+skip diode "d35"; comment
+skip diode "d35" version "G2A26800MX1"; nulltest
+skip diode "d35" version "G2A26800MX2"; nulltest
+skip diode "d36"; comment
+skip diode "d36" version "G2A26800MX1"; nulltest
+skip diode "d36" version "G2A26800MX2"; nulltest
+test diode "d39"
+test diode "d40"
+test diode "d41"
+test diode "d42"
+test diode "d48"
+skip diode "d49"; comment
+skip diode "d50"; nulltest !commented: see test d49
+skip diode "d51"; nulltest !commented: see test d49
+test diode "d52"
+skip diode "d53"; comment
+skip diode "d54"; nulltest !commented: see test d53
+skip diode "d55"; nulltest !commented: see test d53
+test diode "d56"
+skip diode "d57"; comment
+skip diode "d58"; nulltest !commented: see test d57
+skip diode "d59"; nulltest !commented: see test d57
+test diode "d60"
+skip diode "d61"; comment
+skip diode "d62"; nulltest !commented: see test d61
+skip diode "d63"; nulltest !commented: see test d61
+test diode "d64"
+skip diode "d65"; comment
+skip diode "d66"; nulltest !commented: see test d65
+skip diode "d67"; nulltest !commented: see test d65
+test diode "d68"
+test diode "d69"
+skip diode "d70"; comment
+skip diode "d71"; nulltest !commented: see test d70
+skip diode "d72"; nulltest !commented: see test d70
+test diode "d73"
+test diode "d74"
+test diode "d75"
+test diode "d76"
+skip diode "d76" version "G2A26800MX2"; nulltest
+test diode "d77"
+skip diode "d77" version "G2A26800MX1" !not in bom
+skip diode "d77" version "G2A26800MX2" !not in bom
+test diode "d78"
+skip diode "d78" version "G2A26800MX1"; nulltest
+test diode "led1"
+skip diode "led1" version "G2A26800MX1" !not in bom
+skip diode "led1" version "G2A26800MX2" !not in bom
+skip diode "q26%diode"; comment
+test diode "q28%b_c"
+test diode "q28%b_e"
+test diode "q29%b_c"
+test diode "q29%b_e"
+skip diode "q30%diode"; comment
+test diode "q32%b_c"
+test diode "q32%b_e"
+test diode "q33%b_c"
+test diode "q33%b_e"
+skip diode "q34%diode"; comment
+test diode "q36%b_c"
+test diode "q36%b_e"
+test diode "q37%b_c"
+test diode "q37%b_e"
+skip diode "z2"; nulltest
+skip diode "z3"; nulltest
+skip diode "z7"; nulltest
+skip diode "z8"; nulltest
+test diode "z12"
+skip diode "z13"; nulltest
+skip diode "z14"; nulltest
+skip diode "z18"; comment
+skip diode "z18" version "G2A26800MX2"; nulltest
+skip diode "z19"; nulltest !commented: see test z18
+skip diode "z19" version "G2A26800MX1"; nulltest
+skip diode "z20"; nulltest
+skip diode "z37"; nulltest
+skip diode "z54"; nulltest
+test diode "z70"
+skip diode "z72"; nulltest
+test diode "z73"
+skip diode "z75"; nulltest
+test diode "u14%d1_2"
+skip diode "u14%d1_2" version "G2A26800MX2"; nulltest
+test diode "u14%d3_4"
+skip diode "u14%d3_4" version "G2A26800MX2"; nulltest
+test diode "u14%d5_6"
+skip diode "u14%d5_6" version "G2A26800MX2"; nulltest
+test diode "u16%d1_2"
+test diode "u16%d3_4"
+test diode "u16%d5_6"
+test diode "u24%d1_2"
+skip diode "u24%d1_2" version "G2A26800MX1"; nulltest
+test diode "u24%d3_4"
+skip diode "u24%d3_4" version "G2A26800MX1"; nulltest
+test diode "u24%d5_6"
+skip diode "u24%d5_6" version "G2A26800MX1"; nulltest
+test diode "u33%d1_2"
+skip diode "u33%d1_2" version "G2A26800MX1"; nulltest
+test diode "u33%d3_4"
+skip diode "u33%d3_4" version "G2A26800MX1"; nulltest
+test diode "u33%d5_6"
+skip diode "u33%d5_6" version "G2A26800MX1"; nulltest
+test diode "u20%d1"
+test diode "u21%d1"
+test diode "u37%d1"
+test diode "u38%d1"
+test diode "u41%d1"
+skip diode "u41%d1" version "G2A26800MX1"; nulltest
+test diode "u46%d1"
+test diode "u50%d1"
+test diode "u51%d1"
+test diode "u53%d1"
+skip diode "u53%d1" version "G2A26800MX1"; nulltest
+test fet "q26%qf"
+test fet "q30%qf"
+test fet "q34%qf"
+test inductor "l1"
+skip inductor "l1" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip inductor "l1" version "G2A26800MX2"; nulltest
+test inductor "l2"
+test inductor "l3"
+test inductor "l4"
+test jumper "jp1"; preshorts
+test jumper "jp1" version "G2A26800MX1"; preshorts
+test jumper "jp1" version "G2A26800MX2"; preshorts
+test jumper "jp2"; preshorts
+test jumper "jp2" version "G2A26800MX1"; preshorts
+test jumper "jp3"; preshorts
+test jumper "jp3" version "G2A26800MX2"; preshorts
+test jumper "jp4"; preshorts
+test jumper "jp4" version "G2A26800MX1"; preshorts
+test jumper "jp5"; preshorts
+test jumper "jp5" version "G2A26800MX2"; preshorts
+test jumper "jp6"; preshorts
+skip jumper "jp6" version "G2A26800MX1"; preshorts
+test jumper "jp6" version "G2A26800MX2"; preshorts
+test jumper "jp7"; preshorts
+test jumper "jp7" version "G2A26800MX1"; preshorts
+test jumper "jp8"; preshorts
+test jumper "jp8" version "G2A26800MX2"; preshorts
+test jumper "jp9"; preshorts
+skip jumper "jp9" version "G2A26800MX1"; nulltest !tested in parallel with jp4
+test jumper "jp10"; preshorts
+skip jumper "jp10" version "G2A26800MX2"; nulltest !tested in parallel with jp3
+test jumper "jp11"; preshorts
+skip jumper "jp11" version "G2A26800MX1"; nulltest !tested in parallel with jp7
+test jumper "jp12"; preshorts
+skip jumper "jp12" version "G2A26800MX2"; nulltest !tested in parallel with jp8
+test jumper "jp13"; preshorts
+skip jumper "jp13" version "G2A26800MX1"; nulltest !tested in parallel with jp4
+test jumper "jp14"; preshorts
+skip jumper "jp14" version "G2A26800MX2"; nulltest !tested in parallel with jp3
+test jumper "jp15"; preshorts
+skip jumper "jp15" version "G2A26800MX1"; nulltest !tested in parallel with jp7
+test jumper "jp16"; preshorts
+skip jumper "jp16" version "G2A26800MX2"; nulltest !tested in parallel with jp8
+test jumper "jp17"; preshorts
+test jumper "jp17" version "G2A26800MX2"; preshorts
+test jumper "jp18"; preshorts
+test jumper "jp18" version "G2A26800MX1"; preshorts
+test jumper "jp19"; preshorts
+test jumper "jp19" version "G2A26800MX2"; preshorts
+test jumper "jp20"; preshorts
+test jumper "jp20" version "G2A26800MX1"; preshorts
+test jumper "jp21"; preshorts
+test jumper "jp21" version "G2A26800MX1"; preshorts
+test jumper "jp21" version "G2A26800MX2"; preshorts
+test jumper "p1_sw"; preshorts
+test jumper "p1_sw" version "G2A26800MX1"; preshorts
+test jumper "p2_sw"; preshorts
+test jumper "p2_sw" version "G2A26800MX1"; preshorts
+test jumper "p4_sw"; preshorts
+test jumper "p4_sw" version "G2A26800MX2"; preshorts
+test jumper "p6_sw"; preshorts
+test jumper "p6_sw" version "G2A26800MX1"; preshorts !@ECN REMOVE P6
+test jumper "p6_sw" version "G2A26800MX2"; preshorts
+test jumper "q27%jp1"; preshorts
+skip jumper "q27%jp1" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp1" version "G2A26800MX2"; nulltest
+test jumper "q27%jp2"; preshorts
+skip jumper "q27%jp2" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp2" version "G2A26800MX2"; nulltest
+test jumper "q27%jp3"; preshorts
+skip jumper "q27%jp3" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp3" version "G2A26800MX2"; nulltest
+test jumper "q27%jp4"; preshorts
+skip jumper "q27%jp4" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp4" version "G2A26800MX2"; nulltest
+test jumper "q27%jp5"; preshorts
+skip jumper "q27%jp5" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp5" version "G2A26800MX2"; nulltest
+test jumper "q27%jp6"; preshorts
+skip jumper "q27%jp6" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp6" version "G2A26800MX2"; nulltest
+skip jumper "q27%jp7"; nulltest !tested in parallel with q27%jp6
+skip jumper "q27%jp7" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp7" version "G2A26800MX2"; nulltest
+test jumper "q27%jp8"; preshorts
+skip jumper "q27%jp8" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp8" version "G2A26800MX2"; nulltest
+test jumper "q27%jp9"; preshorts
+skip jumper "q27%jp9" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp9" version "G2A26800MX2"; nulltest
+test jumper "q27%jp10"; preshorts
+skip jumper "q27%jp10" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp10" version "G2A26800MX2"; nulltest
+test jumper "q27%jp11"; preshorts
+skip jumper "q27%jp11" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp11" version "G2A26800MX2"; nulltest
+test jumper "q27%jp12"; preshorts
+skip jumper "q27%jp12" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp12" version "G2A26800MX2"; nulltest
+test jumper "q31%jp1"; preshorts
+skip jumper "q31%jp1" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp1" version "G2A26800MX2"; nulltest
+test jumper "q31%jp2"; preshorts
+skip jumper "q31%jp2" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp2" version "G2A26800MX2"; nulltest
+test jumper "q31%jp3"; preshorts
+skip jumper "q31%jp3" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp3" version "G2A26800MX2"; nulltest
+test jumper "q31%jp4"; preshorts
+skip jumper "q31%jp4" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp4" version "G2A26800MX2"; nulltest
+test jumper "q31%jp5"; preshorts
+skip jumper "q31%jp5" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp5" version "G2A26800MX2"; nulltest
+test jumper "q31%jp6"; preshorts
+skip jumper "q31%jp6" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp6" version "G2A26800MX2"; nulltest
+skip jumper "q31%jp7"; nulltest !tested in parallel with q31%jp6
+skip jumper "q31%jp7" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp7" version "G2A26800MX2"; nulltest
+test jumper "q31%jp8"; preshorts
+skip jumper "q31%jp8" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp8" version "G2A26800MX2"; nulltest
+test jumper "q31%jp9"; preshorts
+skip jumper "q31%jp9" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp9" version "G2A26800MX2"; nulltest
+test jumper "q31%jp10"; preshorts
+skip jumper "q31%jp10" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp10" version "G2A26800MX2"; nulltest
+test jumper "q31%jp11"; preshorts
+skip jumper "q31%jp11" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp11" version "G2A26800MX2"; nulltest
+test jumper "q31%jp12"; preshorts
+skip jumper "q31%jp12" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp12" version "G2A26800MX2"; nulltest
+test jumper "q35%jp1"; preshorts
+skip jumper "q35%jp1" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp1" version "G2A26800MX2"; nulltest
+test jumper "q35%jp2"; preshorts
+skip jumper "q35%jp2" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp2" version "G2A26800MX2"; nulltest
+test jumper "q35%jp3"; preshorts
+skip jumper "q35%jp3" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp3" version "G2A26800MX2"; nulltest
+test jumper "q35%jp4"; preshorts
+skip jumper "q35%jp4" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp4" version "G2A26800MX2"; nulltest
+test jumper "q35%jp5"; preshorts
+skip jumper "q35%jp5" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp5" version "G2A26800MX2"; nulltest
+test jumper "q35%jp6"; preshorts
+skip jumper "q35%jp6" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp6" version "G2A26800MX2"; nulltest
+skip jumper "q35%jp7"; nulltest !tested in parallel with q35%jp6
+skip jumper "q35%jp7" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp7" version "G2A26800MX2"; nulltest
+test jumper "q35%jp8"; preshorts
+skip jumper "q35%jp8" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp8" version "G2A26800MX2"; nulltest
+test jumper "q35%jp9"; preshorts
+skip jumper "q35%jp9" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp9" version "G2A26800MX2"; nulltest
+test jumper "q35%jp10"; preshorts
+skip jumper "q35%jp10" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp10" version "G2A26800MX2"; nulltest
+test jumper "q35%jp11"; preshorts
+skip jumper "q35%jp11" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp11" version "G2A26800MX2"; nulltest
+test jumper "q35%jp12"; preshorts
+skip jumper "q35%jp12" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp12" version "G2A26800MX2"; nulltest
+test jumper "r195"; preshorts
+test jumper "r195" version "G2A26800MX2"; preshorts
+test jumper "r216"; preshorts
+test jumper "r216" version "G2A26800MX1"; preshorts
+test jumper "r217"; preshorts
+test jumper "r217" version "G2A26800MX1"; preshorts
+test jumper "r237"; preshorts
+test jumper "r237" version "G2A26800MX2"; preshorts
+test jumper "r295"; preshorts
+test jumper "r441"; preshorts
+test jumper "r441" version "G2A26800MX2"; preshorts
+test jumper "r442"; preshorts
+test jumper "r442" version "G2A26800MX2"; preshorts
+test jumper "r447"; preshorts
+test jumper "r447" version "G2A26800MX1"; preshorts
+test jumper "r453"; preshorts
+test jumper "r453" version "G2A26800MX2"; preshorts
+test jumper "r456"; preshorts
+test jumper "r456" version "G2A26800MX1"; preshorts
+test jumper "r458"; preshorts
+test jumper "r458" version "G2A26800MX2"; preshorts
+test jumper "tr1%jp1"; preshorts
+test jumper "tr1%jp2"; preshorts
+test jumper "tr1%jp3"; preshorts
+test jumper "tr1%jp4"; preshorts
+test jumper "tr2%jp1"; preshorts
+test jumper "tr2%jp2"; preshorts
+test jumper "tr2%jp3"; preshorts
+test jumper "tr2%jp4"; preshorts
+test jumper "tr3%jp1"; preshorts
+test jumper "tr3%jp2"; preshorts
+test jumper "tr3%jp3"; preshorts
+test jumper "tr3%jp4"; preshorts
+test jumper "tr4%jp1"; preshorts
+test jumper "tr4%jp2"; preshorts
+test jumper "tr4%jp3"; preshorts
+test jumper "tr4%jp4"; preshorts
+test jumper "q27%jp13"; preshorts
+skip jumper "q27%jp13" version "G2A26800MX1"; nulltest
+skip jumper "q27%jp13" version "G2A26800MX2"; nulltest
+test jumper "q31%jp13"; preshorts
+skip jumper "q31%jp13" version "G2A26800MX1"; nulltest
+skip jumper "q31%jp13" version "G2A26800MX2"; nulltest
+test jumper "q35%jp13"; preshorts
+skip jumper "q35%jp13" version "G2A26800MX1"; nulltest
+skip jumper "q35%jp13" version "G2A26800MX2"; nulltest
+test resistor "q27%r1"
+skip resistor "q27%r1" version "G2A26800MX1"; nulltest
+skip resistor "q27%r1" version "G2A26800MX2"; nulltest
+test resistor "q31%r1"
+skip resistor "q31%r1" version "G2A26800MX1"; nulltest
+skip resistor "q31%r1" version "G2A26800MX2"; nulltest
+skip resistor "r292"; nulltest !tested in parallel with q31%r1
+test resistor "q35%r1"
+skip resistor "q35%r1" version "G2A26800MX1"; nulltest
+skip resistor "q35%r1" version "G2A26800MX2"; nulltest
+test resistor "r1"
+test resistor "r1" version "G2A26800MX1"; nulltest !@ECN REMOVE R1
+skip resistor "r1" version "G2A26800MX2"; nulltest
+test resistor "r2"
+test resistor "r2" version "G2A26800MX1"; nulltest !@ECN REMOVE R2
+skip resistor "r2" version "G2A26800MX2"; nulltest
+test resistor "r3"
+test resistor "r5"
+test resistor "r19"
+test resistor "r4" !@ not load
+test resistor "r72"
+test resistor "r73"
+test resistor "r79"
+test resistor "r132"
+test resistor "r133"
+test resistor "r177"
+test resistor "r178"
+test resistor "r180"
+test resistor "r182"
+test resistor "r225"
+skip resistor "r225" version "G2A26800MX2"; nulltest
+test resistor "r229"
+test resistor "r243"
+skip resistor "r243" version "G2A26800MX2"; nulltest
+test resistor "r250"
+skip resistor "r250" version "G2A26800MX2"; nulltest
+test resistor "r265"
+test resistor "r274"
+test resistor "r301"
+skip resistor "r301" version "G2A26800MX1"; nulltest
+test resistor "r314"
+skip resistor "r314" version "G2A26800MX1"; nulltest
+test resistor "r328"
+skip resistor "r328" version "G2A26800MX1"; nulltest
+test resistor "r330"
+test resistor "r337"
+skip resistor "r337" version "G2A26800MX1"; nulltest
+test resistor "r346"
+skip resistor "r346" version "G2A26800MX1"; nulltest
+test resistor "r355"
+skip resistor "r355" version "G2A26800MX1"; nulltest
+test resistor "r402"
+test resistor "r418"
+test resistor "r423"
+test resistor "rx2"
+test resistor "r6"
+test resistor "r6" version "G2A26800MX1"; nulltest !@ECN REMOVE R6
+skip resistor "r6" version "G2A26800MX2"; nulltest
+test resistor "r21"
+skip resistor "r21" version "G2A26800MX2"; nulltest
+test resistor "r22"
+skip resistor "r22" version "G2A26800MX1"; nulltest
+test resistor "r24"
+skip resistor "r24" version "G2A26800MX1"; nulltest
+test resistor "r31"
+skip resistor "r31" version "G2A26800MX1"; nulltest
+test resistor "r34"
+skip resistor "r34" version "G2A26800MX1"; nulltest
+test resistor "r35"
+skip resistor "r35" version "G2A26800MX2"; nulltest
+test resistor "r38"
+skip resistor "r38" version "G2A26800MX2"; nulltest
+test resistor "r39"
+skip resistor "r39" version "G2A26800MX1"; nulltest
+test resistor "r90"
+skip resistor "r90" version "G2A26800MX1"; nulltest
+test resistor "r91"
+skip resistor "r91" version "G2A26800MX2"; nulltest
+test resistor "r94"
+skip resistor "r94" version "G2A26800MX1"; nulltest
+test resistor "r95"
+skip resistor "r95" version "G2A26800MX2"; nulltest
+test resistor "r104"
+skip resistor "r104" version "G2A26800MX2"; nulltest
+skip resistor "r105" !@ not load
+skip resistor "r105" version "G2A26800MX1"; nulltest
+test resistor "r145"
+skip resistor "r145" version "G2A26800MX2"; nulltest
+test resistor "r146"
+skip resistor "r146" version "G2A26800MX1"; nulltest
+test resistor "r148"
+skip resistor "r148" version "G2A26800MX1"; nulltest
+test resistor "r149"
+skip resistor "r149" version "G2A26800MX2"; nulltest
+test resistor "r152"
+skip resistor "r152" version "G2A26800MX2"; nulltest
+test resistor "r153"
+skip resistor "r153" version "G2A26800MX1"; nulltest
+test resistor "r187"
+skip resistor "r187" version "G2A26800MX2"; nulltest
+test resistor "r197"
+skip resistor "r197" version "G2A26800MX2"; nulltest
+test resistor "r7"
+skip resistor "r7" version "G2A26800MX1"; nulltest
+test resistor "r8"
+skip resistor "r8" version "G2A26800MX1"; nulltest
+test resistor "r56"
+test resistor "r68"
+test resistor "r114"
+test resistor "r128"
+test resistor "r160"
+test resistor "r169"
+test resistor "r218"
+skip resistor "r219"; nulltest !tested in parallel with r218
+skip resistor "r220"; nulltest !tested in parallel with r218
+test resistor "r304"
+skip resistor "r305"; nulltest !tested in parallel with r304
+skip resistor "r306"; nulltest !tested in parallel with r304
+test resistor "r394"
+skip resistor "r395"; nulltest !tested in parallel with r394
+skip resistor "r396"; nulltest !tested in parallel with r394
+test resistor "r9"
+test resistor "r9" version "G2A26800MX1"; nulltest !@ECN REMOVE R9
+skip resistor "r9" version "G2A26800MX2"; nulltest
+test resistor "r12"
+skip resistor "r12" version "G2A26800MX1"; nulltest
+test resistor "r13"
+test resistor "r13" version "G2A26800MX1"; nulltest !@ECN REMOVE R13
+skip resistor "r13" version "G2A26800MX2"; nulltest
+test resistor "r16"
+test resistor "r16" version "G2A26800MX1"; nulltest !@ECN REMOVE R16
+skip resistor "r16" version "G2A26800MX2"; nulltest
+test resistor "r20"
+test resistor "r23"
+skip resistor "r23" version "G2A26800MX1"; nulltest
+skip resistor "r188"; nulltest !tested in parallel with r23
+skip resistor "r188" version "G2A26800MX2"; nulltest
+test resistor "r25"
+skip resistor "r25" version "G2A26800MX1"; nulltest
+test resistor "r27"
+skip resistor "r27" version "G2A26800MX1"; nulltest
+test resistor "r30"
+skip resistor "r30" version "G2A26800MX1"; nulltest
+test resistor "r33"
+test resistor "r37"
+skip resistor "r37" version "G2A26800MX1"; nulltest
+skip resistor "r37" version "G2A26800MX2"; nulltest
+test resistor "r81"
+test resistor "r84"
+test resistor "r89"
+test resistor "r92"
+skip resistor "r92" version "G2A26800MX1"; nulltest
+test resistor "r93"
+skip resistor "r103" !@ not load
+skip resistor "r103" version "G2A26800MX1"; nulltest
+skip resistor "r103" version "G2A26800MX2"; nulltest
+skip resistor "r109" !@ not load
+skip resistor "r109" version "G2A26800MX1"; nulltest
+test resistor "r137"
+skip resistor "r137" version "G2A26800MX1"; nulltest
+test resistor "r140"
+skip resistor "r140" version "G2A26800MX1"; nulltest
+test resistor "r144"
+test resistor "r147"
+test resistor "r151"
+skip resistor "r151" version "G2A26800MX1"; nulltest
+skip resistor "r151" version "G2A26800MX2"; nulltest
+test resistor "r172"
+test resistor "r189"
+skip resistor "r189" version "G2A26800MX1"; nulltest
+skip resistor "r189" version "G2A26800MX2"; nulltest
+skip resistor "r451"; nulltest !tested in parallel with r189
+skip resistor "r451" version "G2A26800MX1"; nulltest
+test resistor "r196"
+skip resistor "r196" version "G2A26800MX2"; nulltest
+test resistor "r205" !@ECN REMOVE R205
+test resistor "r210" !@ECN REMOVE R210
+test resistor "r211" !@ECN REMOVE R211
+test resistor "r215" !@ECN REMOVE R215
+test resistor "r222"
+skip resistor "r222" version "G2A26800MX2"; nulltest
+test resistor "r224"
+skip resistor "r224" version "G2A26800MX2"; nulltest
+test resistor "r234"
+skip resistor "r234" version "G2A26800MX2"; nulltest
+test resistor "r32"
+skip resistor "r32" version "G2A26800MX1"; nulltest
+skip resistor "r198"; nulltest !tested in parallel with r32
+skip resistor "r198" version "G2A26800MX2"; nulltest
+skip resistor "r238"; nulltest !tested in parallel with r32
+skip resistor "r332"; nulltest !tested in parallel with r32
+skip resistor "r404"; nulltest !tested in parallel with r32
+test resistor "r241"
+skip resistor "r241" version "G2A26800MX2"; nulltest
+test resistor "r293"
+test resistor "r293" version "G2A26800MX1"
+test resistor "r296"
+skip resistor "r296" version "G2A26800MX1"; nulltest
+test resistor "r298"
+skip resistor "r298" version "G2A26800MX1"; nulltest
+test resistor "r299"
+skip resistor "r299" version "G2A26800MX1"; nulltest
+test resistor "r310"
+skip resistor "r310" version "G2A26800MX1"; nulltest
+test resistor "r311"
+skip resistor "r311" version "G2A26800MX1"; nulltest
+test resistor "r317"
+skip resistor "r317" version "G2A26800MX1"; nulltest
+test resistor "r320"
+skip resistor "r320" version "G2A26800MX1"; nulltest
+test resistor "r322"
+skip resistor "r322" version "G2A26800MX1"; nulltest
+test resistor "r323"
+skip resistor "r323" version "G2A26800MX1"; nulltest
+test resistor "r324"
+skip resistor "r324" version "G2A26800MX1"; nulltest
+test resistor "r327"
+skip resistor "r327" version "G2A26800MX1"; nulltest
+test resistor "r333"
+skip resistor "r333" version "G2A26800MX1"; nulltest
+test resistor "r334"
+skip resistor "r334" version "G2A26800MX1"; nulltest
+test resistor "r336"
+skip resistor "r336" version "G2A26800MX1"; nulltest
+test resistor "r339"
+skip resistor "r339" version "G2A26800MX1"; nulltest
+test resistor "r348"
+skip resistor "r348" version "G2A26800MX1"; nulltest
+test resistor "r371"
+skip resistor "r371" version "G2A26800MX1"; nulltest
+test resistor "r372"
+skip resistor "r372" version "G2A26800MX1"; nulltest
+test resistor "r378"
+skip resistor "r378" version "G2A26800MX1"; nulltest
+test resistor "r380"
+skip resistor "r380" version "G2A26800MX1"; nulltest
+test resistor "r383"
+skip resistor "r383" version "G2A26800MX1"; nulltest
+test resistor "r384"
+skip resistor "r384" version "G2A26800MX1"; nulltest
+test resistor "r385"
+skip resistor "r385" version "G2A26800MX1"; nulltest
+test resistor "r386"
+skip resistor "r386" version "G2A26800MX1"; nulltest
+test resistor "r393"
+skip resistor "r393" version "G2A26800MX1"; nulltest
+test resistor "r419"
+skip resistor "r419" version "G2A26800MX1"; nulltest
+skip resistor "r419" version "G2A26800MX2"; nulltest
+test resistor "r420"
+test resistor "r424"
+test resistor "r429"
+test resistor "r428" !tested in parallel with r429
+test resistor "r428" version "G2A26800MX1"; nulltest
+test resistor "r428" version "G2A26800MX2"; nulltest
+skip resistor "r10%res1_8"
+skip resistor "r10%res1_8" version "G2A26800MX1"; nulltest
+skip resistor "r10%res2_7"
+skip resistor "r10%res2_7" version "G2A26800MX1"; nulltest
+skip resistor "r10%res3_6"
+skip resistor "r10%res3_6" version "G2A26800MX1"; nulltest
+skip resistor "r10%res4_5"
+skip resistor "r10%res4_5" version "G2A26800MX1"; nulltest
+skip resistor "r11%res1_8" !@ not load r11
+skip resistor "r11%res1_8" version "G2A26800MX1"; nulltest
+skip resistor "r11%res2_7"
+skip resistor "r11%res2_7" version "G2A26800MX1"; nulltest
+skip resistor "r11%res3_6"
+skip resistor "r11%res3_6" version "G2A26800MX1"; nulltest
+skip resistor "r11%res4_5"
+skip resistor "r11%res4_5" version "G2A26800MX1"; nulltest
+test resistor "r14"
+test resistor "r14" version "G2A26800MX1"; nulltest !@ECN REMOVE
+skip resistor "r14" version "G2A26800MX2"; nulltest
+test resistor "r207" !@ECN REMOVE
+test resistor "r15"
+test resistor "r206" !@ECN REMOVE
+test resistor "r246"
+test resistor "r258"
+test resistor "r342"
+test resistor "r363"
+test resistor "r406"
+test resistor "r416"
+test resistor "r17"
+test resistor "r18"
+test resistor "r59"
+skip resistor "r59" version "G2A26800MX2"; nulltest
+test resistor "r74"
+test resistor "r98"
+skip resistor "r98" version "G2A26800MX1"; nulltest
+skip resistor "r119" !@ not load
+skip resistor "r119" version "G2A26800MX1"; nulltest
+test resistor "r208"
+skip resistor "r208" version "G2A26800MX2"; nulltest
+test resistor "r227"
+test resistor "r228"
+test resistor "r319"
+test resistor "r329"
+test resistor "r400"
+test resistor "r401"
+test resistor "rx7"
+test resistor "rx8"
+test resistor "rx9"
+test resistor "rx10"
+test resistor "rx11"
+test resistor "rx12"
+test resistor "r26"
+skip resistor "r26" version "G2A26800MX1"; nulltest
+test resistor "r221"
+test resistor "r318"
+test resistor "r397"
+test resistor "r28"
+skip resistor "r28" version "G2A26800MX1"; nulltest
+test resistor "r29"
+skip resistor "r29" version "G2A26800MX1"; nulltest
+test resistor "r154"
+skip resistor "r154" version "G2A26800MX1"; nulltest
+test resistor "r450"
+skip resistor "r450" version "G2A26800MX1"; nulltest
+test resistor "r459"
+skip resistor "r459" version "G2A26800MX1" !not in bom
+skip resistor "r459" version "G2A26800MX2" !not in bom
+test resistor "r36"
+test resistor "r102"
+test resistor "r150"
+test resistor "r448"
+skip resistor "r448" version "G2A26800MX2"; nulltest
+test resistor "r449"
+skip resistor "r449" version "G2A26800MX2"; nulltest
+test resistor "r454"
+skip resistor "r454" version "G2A26800MX2"; nulltest
+test resistor "r455"
+skip resistor "r455" version "G2A26800MX2"; nulltest
+test resistor "r40"
+test resistor "r106"
+test resistor "r155"
+test resistor "r41"
+test resistor "r107"
+test resistor "r156"
+test resistor "r42"
+skip resistor "r42" version "G2A26800MX2"; nulltest
+test resistor "r53"
+skip resistor "r53" version "G2A26800MX2"; nulltest
+test resistor "r201"
+skip resistor "r201" version "G2A26800MX1" !not in bom
+skip resistor "r201" version "G2A26800MX2" !not in bom
+test resistor "r204"
+skip resistor "r204" version "G2A26800MX1" !not in bom
+skip resistor "r204" version "G2A26800MX2" !not in bom
+test resistor "r43"
+skip resistor "r43" version "G2A26800MX2"; nulltest
+test resistor "r44"
+skip resistor "r44" version "G2A26800MX2"; nulltest
+test resistor "r50"
+skip resistor "r50" version "G2A26800MX2"; nulltest
+test resistor "r54"
+skip resistor "r54" version "G2A26800MX2"; nulltest
+test resistor "r199"
+skip resistor "r199" version "G2A26800MX1" !not in bom
+skip resistor "r199" version "G2A26800MX2" !not in bom
+test resistor "r200"
+skip resistor "r200" version "G2A26800MX1" !not in bom
+skip resistor "r200" version "G2A26800MX2" !not in bom
+test resistor "r202"
+skip resistor "r202" version "G2A26800MX1" !not in bom
+skip resistor "r202" version "G2A26800MX2" !not in bom
+test resistor "r203"
+skip resistor "r203" version "G2A26800MX1" !not in bom
+skip resistor "r203" version "G2A26800MX2" !not in bom
+test resistor "r45"
+skip resistor "r45" version "G2A26800MX1"; nulltest
+skip resistor "r45" version "G2A26800MX2"; nulltest
+test resistor "r46"
+skip resistor "r46" version "G2A26800MX2"; nulltest
+test resistor "r48"
+skip resistor "r48" version "G2A26800MX2"; nulltest
+test resistor "r80"
+test resistor "r83"
+skip resistor "r110" !@ not load
+skip resistor "r110" version "G2A26800MX1"; nulltest
+test resistor "r236"
+skip resistor "r236" version "G2A26800MX2"; nulltest
+test resistor "r281"
+test resistor "r316"
+skip resistor "r316" version "G2A26800MX1"; nulltest
+test resistor "r325"
+skip resistor "r325" version "G2A26800MX1"; nulltest
+test resistor "r326"
+skip resistor "r326" version "G2A26800MX1"; nulltest
+test resistor "r338"
+skip resistor "r338" version "G2A26800MX1"; nulltest
+test resistor "r357"
+skip resistor "r357" version "G2A26800MX1"; nulltest
+test resistor "r382"
+skip resistor "r382" version "G2A26800MX1"; nulltest
+test resistor "r387"
+skip resistor "r387" version "G2A26800MX1"; nulltest
+test resistor "r47"
+skip resistor "r47" version "G2A26800MX2"; nulltest
+test resistor "r49"
+skip resistor "r49" version "G2A26800MX2"; nulltest
+test resistor "r51"
+test resistor "r111"
+test resistor "r143"
+skip resistor "r143" version "G2A26800MX1"; nulltest
+test resistor "r157"
+test resistor "r251"
+skip resistor "r252"; nulltest !tested in parallel with r251
+skip resistor "r253"; nulltest !tested in parallel with r251
+test resistor "r259"
+skip resistor "r263"; nulltest !tested in parallel with r259
+skip resistor "r264"; nulltest !tested in parallel with r259
+test resistor "r297"
+skip resistor "r297" version "G2A26800MX1"; nulltest
+test resistor "r321"
+skip resistor "r321" version "G2A26800MX1"; nulltest
+test resistor "r352"
+skip resistor "r353"; nulltest !tested in parallel with r352
+skip resistor "r354"; nulltest !tested in parallel with r352
+test resistor "r364"
+skip resistor "r368"; nulltest !tested in parallel with r364
+skip resistor "r369"; nulltest !tested in parallel with r364
+test resistor "r407"
+skip resistor "r408"; nulltest !tested in parallel with r407
+skip resistor "r409"; nulltest !tested in parallel with r407
+test resistor "r417"
+skip resistor "r427"; nulltest !tested in parallel with r417
+skip resistor "r430"; nulltest !tested in parallel with r417
+test resistor "r52"
+test resistor "r112"
+test resistor "r158"
+test resistor "r55"
+test resistor "r113"
+test resistor "r159"
+test resistor "r57"; comment
+skip resistor "r58"; nulltest !commented: see test r57
+test resistor "r115"; comment
+skip resistor "r116"; nulltest !commented: see test r115
+test resistor "r161"; comment
+skip resistor "r162"; nulltest !commented: see test r161
+test resistor "r60"
+skip resistor "r60" version "G2A26800MX2"; nulltest
+skip resistor "r249"; nulltest !tested in parallel with r60
+skip resistor "r249" version "G2A26800MX2"; nulltest
+test resistor "r75"
+skip resistor "r268"; nulltest !tested in parallel with r75
+test resistor "r99"
+skip resistor "r99" version "G2A26800MX1"; nulltest
+skip resistor "r309"; nulltest !tested in parallel with r99
+skip resistor "r309" version "G2A26800MX1"; nulltest
+test resistor "r120"
+skip resistor "r120" version "G2A26800MX1"; nulltest
+skip resistor "r351"; nulltest !tested in parallel with r120
+skip resistor "r351" version "G2A26800MX1"; nulltest
+test resistor "r410"
+test resistor "r411"
+test resistor "r61"
+skip resistor "r61" version "G2A26800MX2"; nulltest
+test resistor "r76"
+skip resistor "r100" !@not load
+skip resistor "r100" version "G2A26800MX1"; nulltest
+test resistor "r121"
+skip resistor "r121" version "G2A26800MX1"; nulltest
+test resistor "r194"
+skip resistor "r194" version "G2A26800MX1" !not in bom
+skip resistor "r194" version "G2A26800MX2" !not in bom
+test resistor "r248"
+skip resistor "r248" version "G2A26800MX2"; nulltest
+test resistor "r267"
+test resistor "r308"
+skip resistor "r308" version "G2A26800MX1"; nulltest
+test resistor "r350"
+skip resistor "r350" version "G2A26800MX1"; nulltest
+test resistor "r452"
+skip resistor "r452" version "G2A26800MX1" !not in bom
+skip resistor "r452" version "G2A26800MX2" !not in bom
+test resistor "r62"
+test resistor "r71"
+test resistor "r88"
+test resistor "r122"
+test resistor "r131"
+test resistor "r163"
+test resistor "r175"
+test resistor "r176"
+test resistor "r63"
+test resistor "r64" !tested in parallel with r63
+test resistor "r65" !tested in parallel with r63
+test resistor "r123"
+test resistor "r124" !tested in parallel with r123
+test resistor "r125" !tested in parallel with r123
+test resistor "r164"
+test resistor "r165" !tested in parallel with r164
+test resistor "r166" !tested in parallel with r164
+test resistor "r269"
+test resistor "r270"
+test resistor "r271"
+test resistor "r373"
+test resistor "r374"
+test resistor "r375"
+test resistor "r431"
+test resistor "r432"
+test resistor "r433"
+test resistor "r66"
+skip resistor "r67"; nulltest !tested in parallel with r66
+test resistor "r70"
+skip resistor "r70" version "G2A26800MX1"; nulltest
+skip resistor "r70" version "G2A26800MX2"; nulltest
+test resistor "r78"
+skip resistor "r78" version "G2A26800MX1"; nulltest
+skip resistor "r78" version "G2A26800MX2"; nulltest
+test resistor "r126"
+skip resistor "r127"; nulltest !tested in parallel with r126
+test resistor "r130"
+skip resistor "r130" version "G2A26800MX1"; nulltest
+skip resistor "r130" version "G2A26800MX2"; nulltest
+test resistor "r135"
+skip resistor "r135" version "G2A26800MX1"; nulltest
+skip resistor "r135" version "G2A26800MX2"; nulltest
+test resistor "r167"
+skip resistor "r168"; nulltest !tested in parallel with r167
+test resistor "r171"
+skip resistor "r171" version "G2A26800MX1"; nulltest
+skip resistor "r171" version "G2A26800MX2"; nulltest
+test resistor "r181"
+skip resistor "r181" version "G2A26800MX1"; nulltest
+skip resistor "r181" version "G2A26800MX2"; nulltest
+test resistor "r272"
+skip resistor "r273"; nulltest !tested in parallel with r272
+test resistor "r376"
+skip resistor "r377"; nulltest !tested in parallel with r376
+test resistor "r434"
+skip resistor "r435"; nulltest !tested in parallel with r434
+test resistor "r69"
+test resistor "r77"
+test resistor "r129"
+test resistor "r134"
+test resistor "r170"
+test resistor "r179"
+test resistor "r82" !@not load
+skip resistor "r101"
+skip resistor "r101" version "G2A26800MX1"; nulltest
+test resistor "r136"
+skip resistor "r136" version "G2A26800MX1"; nulltest
+test resistor "r138"
+skip resistor "r138" version "G2A26800MX1"; nulltest
+test resistor "r223"
+skip resistor "r223" version "G2A26800MX2"; nulltest
+test resistor "r233"
+skip resistor "r233" version "G2A26800MX2"; nulltest
+test resistor "r279"
+test resistor "r312"
+skip resistor "r312" version "G2A26800MX1"; nulltest
+test resistor "r335"
+skip resistor "r335" version "G2A26800MX1"; nulltest
+test resistor "r345"
+skip resistor "r345" version "G2A26800MX1"; nulltest
+test resistor "r85"
+test resistor "r86"
+test resistor "r141"
+test resistor "r142"
+test resistor "r185"
+test resistor "r186"
+test resistor "r87"
+test resistor "r284"
+test resistor "r436"
+test resistor "r96"
+skip resistor "r96" version "G2A26800MX1"; nulltest
+skip resistor "r97"; nulltest !tested in parallel with r96
+skip resistor "r97" version "G2A26800MX1"; nulltest
+skip resistor "r117" !@ not load
+skip resistor "r117" version "G2A26800MX1"; nulltest
+skip resistor "r118"; nulltest !tested in parallel with r117
+skip resistor "r118" version "G2A26800MX1"; nulltest
+skip resistor "r108" !@ not load
+skip resistor "r108" version "G2A26800MX1"; nulltest
+test resistor "r226"
+skip resistor "r226" version "G2A26800MX2"; nulltest
+test resistor "r235"
+skip resistor "r235" version "G2A26800MX2"; nulltest
+test resistor "r239"
+skip resistor "r239" version "G2A26800MX2"; nulltest
+test resistor "r240"
+skip resistor "r240" version "G2A26800MX2"; nulltest
+test resistor "r244"
+skip resistor "r244" version "G2A26800MX2"; nulltest
+test resistor "r275"
+test resistor "r276"
+test resistor "r280"
+test resistor "r282"
+test resistor "r283"
+test resistor "r294"
+test resistor "r300"
+skip resistor "r300" version "G2A26800MX1"; nulltest
+test resistor "r302"
+skip resistor "r302" version "G2A26800MX1"; nulltest
+test resistor "r313"
+skip resistor "r313" version "G2A26800MX1"; nulltest
+test resistor "r315"
+skip resistor "r315" version "G2A26800MX1"; nulltest
+test resistor "r340"
+skip resistor "r340" version "G2A26800MX1"; nulltest
+test resistor "r343"
+skip resistor "r343" version "G2A26800MX1"; nulltest
+test resistor "r344"
+skip resistor "r344" version "G2A26800MX1"; nulltest
+test resistor "r347"
+skip resistor "r347" version "G2A26800MX1"; nulltest
+test resistor "r356"
+skip resistor "r356" version "G2A26800MX1"; nulltest
+test resistor "r139"
+skip resistor "r139" version "G2A26800MX1"; nulltest
+test resistor "r173"
+test resistor "r174"
+test resistor "r183"
+test resistor "r184"
+test resistor "r191"
+skip resistor "r191" version "G2A26800MX1"; nulltest
+test resistor "r192"
+skip resistor "r192" version "G2A26800MX1"; nulltest
+test resistor "r193"
+skip resistor "r193" version "G2A26800MX1"; nulltest
+test resistor "r370"
+skip resistor "r370" version "G2A26800MX1"; nulltest
+test resistor "r209"
+skip resistor "r209" version "G2A26800MX2"; nulltest
+test resistor "r212"
+test resistor "r214"
+test resistor "r213"
+test resistor "r230"
+test resistor "r331"
+test resistor "r403"
+test resistor "r231"
+skip resistor "r231" version "G2A26800MX2"; nulltest
+test resistor "r232"
+skip resistor "r232" version "G2A26800MX2"; nulltest
+test resistor "r242"
+skip resistor "r242" version "G2A26800MX2"; nulltest
+test resistor "r245"
+test resistor "r257"
+test resistor "r341"
+test resistor "r362"
+test resistor "r405"
+test resistor "r415"
+test resistor "r247"
+skip resistor "r247" version "G2A26800MX2"; nulltest
+test resistor "r266"
+test resistor "r307"
+skip resistor "r307" version "G2A26800MX1"; nulltest
+test resistor "r349"
+skip resistor "r349" version "G2A26800MX1"; nulltest
+test resistor "r254"; comment
+test resistor "r255" !commented: see test r254
+test resistor "r256" !commented: see test r254
+test resistor "r260"; comment
+test resistor "r261" !commented: see test r260
+test resistor "r262" !commented: see test r260
+test resistor "r359"; comment
+test resistor "r360" !commented: see test r359
+test resistor "r361" !commented: see test r359
+test resistor "r365"; comment
+test resistor "r366" !commented: see test r365
+test resistor "r367" !commented: see test r365
+test resistor "r412"; comment
+test resistor "r413" !commented: see test r412
+test resistor "r414" !commented: see test r412
+test resistor "r421"; comment
+test resistor "r422" !commented: see test r421
+test resistor "r426" !commented: see test r421
+test resistor "r277"
+skip resistor "r277" version "G2A26800MX1"; nulltest
+skip resistor "r277" version "G2A26800MX2"; nulltest
+test resistor "r278"
+skip resistor "r278" version "G2A26800MX1"; nulltest
+skip resistor "r278" version "G2A26800MX2"; nulltest
+test resistor "r392"
+skip resistor "r392" version "G2A26800MX1"; nulltest
+skip resistor "r392" version "G2A26800MX2"; nulltest
+test resistor "r285"
+test resistor "r286"
+test resistor "r287"
+test resistor "r379"
+skip resistor "r379" version "G2A26800MX1"; nulltest
+test resistor "r381"
+skip resistor "r381" version "G2A26800MX1"; nulltest
+test resistor "r288"
+test resistor "r289"
+test resistor "r290"
+test resistor "r291"
+test resistor "r388"
+test resistor "r389"
+test resistor "r390"
+test resistor "r391"
+test resistor "r443"
+test resistor "r444"
+test resistor "r445"
+test resistor "r446"
+test resistor "r303"
+skip resistor "r303" version "G2A26800MX1"; nulltest
+test resistor "r358"
+skip resistor "r358" version "G2A26800MX1"; nulltest
+test resistor "r398"
+skip resistor "r398" version "G2A26800MX1"; nulltest
+test resistor "r399"
+skip resistor "r399" version "G2A26800MX1"; nulltest
+test resistor "r425"
+test resistor "r437"; comment
+skip resistor "r438"; nulltest !commented: see test r437
+skip resistor "r439"; nulltest !commented: see test r437
+skip resistor "r440"; nulltest !commented: see test r437
+test resistor "r457"
+skip resistor "r457" version "G2A26800MX1" !not in bom
+skip resistor "r457" version "G2A26800MX2" !not in bom
+test resistor "rx1"
+test resistor "rx3"
+test resistor "rx4"
+test resistor "rx5"
+test resistor "rx6"
+test switch "gate_sw%gate_sw"; preshorts
+test transistor "q1"
+skip transistor "q1" version "G2A26800MX1"; nulltest
+test transistor "q2"
+skip transistor "q2" version "G2A26800MX1"; nulltest
+test transistor "q3"
+test transistor "q4"
+skip transistor "q4" version "G2A26800MX2"; nulltest
+test transistor "q6"
+test transistor "q8"
+test transistor "q9"
+test transistor "q10"
+skip transistor "q10" version "G2A26800MX1"; nulltest
+test transistor "q11"
+test transistor "q12"
+skip transistor "q12" version "G2A26800MX1"; nulltest
+test transistor "q14"
+test transistor "q16"
+test transistor "q17"
+skip transistor "q17" version "G2A26800MX1"; nulltest
+test transistor "q18"
+test transistor "q20"
+test transistor "q22"
+test transistor "q23"; comment
+test transistor "q24"
+skip transistor "q24" version "G2A26800MX1"; nulltest
+test transistor "q25"
+skip transistor "q25" version "G2A26800MX2"; nulltest
+test transistor "q27%q1"
+skip transistor "q27%q1" version "G2A26800MX1"; nulltest
+skip transistor "q27%q1" version "G2A26800MX2"; nulltest
+test transistor "q27%q2"
+skip transistor "q27%q2" version "G2A26800MX1"; nulltest
+skip transistor "q27%q2" version "G2A26800MX2"; nulltest
+test transistor "q31%q1"
+skip transistor "q31%q1" version "G2A26800MX1"; nulltest
+skip transistor "q31%q1" version "G2A26800MX2"; nulltest
+test transistor "q31%q2"
+skip transistor "q31%q2" version "G2A26800MX1"; nulltest
+skip transistor "q31%q2" version "G2A26800MX2"; nulltest
+test transistor "q35%q1"
+skip transistor "q35%q1" version "G2A26800MX1"; nulltest
+skip transistor "q35%q1" version "G2A26800MX2"; nulltest
+test transistor "q35%q2"
+skip transistor "q35%q2" version "G2A26800MX1"; nulltest
+skip transistor "q35%q2" version "G2A26800MX2"; nulltest
+test transistor "q5"
+test transistor "q7"
+test transistor "q13"
+test transistor "q15"
+test transistor "q19"
+test transistor "q21"
+test zener "z1"
+test zener "z6"
+test zener "z11"
+test zener "z21"
+test zener "z21" version "G2A26800MX1"
+test zener "z21" version "G2A26800MX2"
+test zener "z22"
+test zener "z23"
+test zener "z24"
+test zener "z25"
+test zener "z26"
+test zener "z27"
+test zener "z28"
+test zener "z29"
+test zener "z30"
+test zener "z31"
+test zener "z32"
+test zener "z33"
+test zener "z34"
+test zener "z35"
+test zener "z36"
+test zener "z38"
+test zener "z39"
+test zener "z40"
+test zener "z41"
+test zener "z42"
+test zener "z43"
+test zener "z44"
+test zener "z45"
+test zener "z46"
+test zener "z47"
+test zener "z48"
+test zener "z49"
+test zener "z50"
+test zener "z51"
+test zener "z52"
+test zener "z53"
+test zener "z55"
+test zener "z56"
+test zener "z57"
+test zener "z58"
+test zener "z59"
+test zener "z60"
+test zener "z61"
+test zener "z62"
+test zener "z63"
+test zener "z64"
+test zener "z65"
+test zener "z66"
+test zener "z67"
+test zener "z68"
+test zener "z69"
+test zener "z71"
+test zener "z74"
+test zener "z4%zener"
+test zener "z5%zener"
+test zener "z9%zener"
+test zener "z10%zener"
+test zener "z15%zener"
+test zener "z16%zener"
+test zener "z17%zener"
+test zener "z77"
+skip zener "z77" version "G2A26800MX1" !not in bom
+skip zener "z77" version "G2A26800MX2" !not in bom
+test testjet "testjet"
+test testjet "testjet" version "G2A26800MX1"
+test testjet "testjet" version "G2A26800MX2"
+test analog powered "program_result"
+test analog powered "bptest"
+test analog powered "cs1"
+test analog powered "cs2"
+test analog powered "cs3"
+skip analog powered "cs3" version "G2A26800MX1"; nulltest
+skip analog powered "cs3" version "G2A26800MX2"; nulltest
+test analog powered "led_sensor"
+skip analog powered "led_sensor" version "G2A26800MX1"; nulltest
+skip analog powered "led_sensor" version "G2A26800MX2"; nulltest
+test analog powered "q26%nfet"
+test analog powered "q28%npn"
+test analog powered "q29%npn"
+test analog powered "q30%nfet"
+test analog powered "q32%npn"
+test analog powered "q33%npn"
+test analog powered "q34%nfet"
+test analog powered "q36%npn"
+test analog powered "q37%npn"
+test analog powered "rel1"
+skip analog powered "rel1" version "G2A26800MX1"; nulltest
+test analog powered "rel2"
+skip analog powered "rel2" version "G2A26800MX1"; nulltest
+test analog powered "u1"
+skip analog powered "u1" version "G2A26800MX1"; nulltest
+skip analog powered "u1" version "G2A26800MX2"; nulltest
+test digital "u2"
+skip digital "u2" version "G2A26800MX1"; nulltest
+skip digital "u2" version "G2A26800MX2"; nulltest
+skip digital "u3"; comment !IPG: Setup test
+skip digital "u3" version "G2A26800MX1"; nulltest
+skip digital "u3" version "G2A26800MX2"; nulltest
+test analog powered "u4"
+skip analog powered "u4" version "G2A26800MX1"; nulltest
+skip analog powered "u4" version "G2A26800MX2"; nulltest
+test analog powered "u5"
+skip analog powered "u5" version "G2A26800MX1"; nulltest
+skip analog powered "u5" version "G2A26800MX2"; nulltest
+test digital "u6"
+skip digital "u6" version "G2A26800MX1"; nulltest
+test digital "u7"; comment !IPG: Bus disable problem
+skip digital "u7" version "G2A26800MX1"; nulltest
+test digital "u8%program"; comment !IPG: Bus disable problem
+skip digital "u8%program" version "G2A26800MX1"; nulltest
+test digital "u8%program_1"; comment !IPG: Bus disable problem
+skip digital "u8%program_1" version "G2A26800MX1"; nulltest
+test digital "u8%program_2"; comment !IPG: Bus disable problem
+skip digital "u8%program_2" version "G2A26800MX1"; nulltest
+test digital "u8%program_3"; comment !IPG: Bus disable problem
+skip digital "u8%program_3" version "G2A26800MX1"; nulltest
+test digital "u8%program_4"; comment !IPG: Bus disable problem
+skip digital "u8%program_4" version "G2A26800MX1"; nulltest
+test digital "u8%program_5"; comment !IPG: Bus disable problem
+skip digital "u8%program_5" version "G2A26800MX1"; nulltest
+test digital "u8%read"; comment !IPG: Bus disable problem
+skip digital "u8%read" version "G2A26800MX1"; nulltest
+test digital "u8%read_1"; comment !IPG: Bus disable problem
+skip digital "u8%read_1" version "G2A26800MX1"; nulltest
+test digital "u8%read_2"; comment !IPG: Bus disable problem
+skip digital "u8%read_2" version "G2A26800MX1"; nulltest
+test digital "u8%read_3"; comment !IPG: Bus disable problem
+skip digital "u8%read_3" version "G2A26800MX1"; nulltest
+test digital "u8%read_4"; comment !IPG: Bus disable problem
+skip digital "u8%read_4" version "G2A26800MX1"; nulltest
+test digital "u8%read_5"; comment !IPG: Bus disable problem
+skip digital "u8%read_5" version "G2A26800MX1"; nulltest
+test digital "u8%fetch"
+skip digital "u8%fetch" version "G2A26800MX1"
+test digital "u8%test"; comment !IPG: Bus disable problem
+skip digital "u8%test" version "G2A26800MX1"; nulltest
+test digital "u8%erase"; comment !IPG: Bus disable problem
+skip digital "u8%erase" version "G2A26800MX1"; nulltest
+test analog powered "u9"
+test digital "u10"; comment !IPG: Bus disable problem
+test digital "u11"
+test analog powered "u12"
+skip analog powered "u12" version "G2A26800MX2"; nulltest
+test analog powered "u13"
+skip analog powered "u13" version "G2A26800MX2"; nulltest
+test analog powered "u14"
+skip analog powered "u14" version "G2A26800MX2"; nulltest
+test digital "u15"; comment !IPG: Bus disable problem
+test analog powered "u16"
+test analog powered "u17"
+test analog powered "u18"
+test analog powered "u19"
+test analog powered "u20"
+test analog powered "u21"
+test analog powered "u22"
+test analog powered "u23"
+test analog powered "u24"
+skip analog powered "u24" version "G2A26800MX1"; nulltest
+test analog powered "u25"
+skip analog powered "u25" version "G2A26800MX1"; nulltest
+test analog powered "u26"
+test digital "u27"; comment !IPG: Bus disable problem
+test digital "u28"
+test analog powered "u29"
+skip analog powered "u29" version "G2A26800MX1"; nulltest
+test analog powered "u30"
+skip analog powered "u30" version "G2A26800MX1"; nulltest
+test analog powered "u31"
+skip analog powered "u31" version "G2A26800MX1"; nulltest
+test digital "u32"; comment !IPG: Bus disable problem
+test analog powered "u33"
+skip analog powered "u33" version "G2A26800MX1"; nulltest
+test analog powered "u34"
+skip analog powered "u34" version "G2A26800MX1"; nulltest
+test analog powered "u35"
+skip analog powered "u35" version "G2A26800MX1"; nulltest
+test analog powered "u36"
+test analog powered "u37"
+test analog powered "u38"
+test analog powered "u39"
+test analog powered "u40"
+skip analog powered "u40" version "G2A26800MX1"; nulltest
+test analog powered "u41"
+skip analog powered "u41" version "G2A26800MX1"; nulltest
+test analog powered "u42"
+test digital "u43"; comment !IPG: Bus disable problem
+test digital "u44"
+test digital "u45"; comment !IPG: Bus disable problem
+test analog powered "u46"
+test analog powered "u47"
+test analog powered "u48"
+test analog powered "u49"
+test analog powered "u50"
+test analog powered "u51"
+test analog powered "u52"
+test analog powered "u53"
+skip analog powered "u53" version "G2A26800MX1"; nulltest
+test digital "u54%program"; comment !IPG: Bus disable problem
+skip digital "u54%program" version "G2A26800MX2"; nulltest
+test digital "u54%program_1"; comment !IPG: Bus disable problem
+skip digital "u54%program_1" version "G2A26800MX2"; nulltest
+test digital "u54%program_2"; comment !IPG: Bus disable problem
+skip digital "u54%program_2" version "G2A26800MX2"; nulltest
+test digital "u54%program_3"; comment !IPG: Bus disable problem
+skip digital "u54%program_3" version "G2A26800MX2"; nulltest
+test digital "u54%program_4"; comment !IPG: Bus disable problem
+skip digital "u54%program_4" version "G2A26800MX2"; nulltest
+test digital "u54%read"; comment !IPG: Bus disable problem
+skip digital "u54%read" version "G2A26800MX2"; nulltest
+test digital "u54%read_1"; comment !IPG: Bus disable problem
+skip digital "u54%read_1" version "G2A26800MX2"; nulltest
+test digital "u54%read_2"; comment !IPG: Bus disable problem
+skip digital "u54%read_2" version "G2A26800MX2"; nulltest
+test digital "u54%read_3"; comment !IPG: Bus disable problem
+skip digital "u54%read_3" version "G2A26800MX2"; nulltest
+test digital "u54%read_4"; comment !IPG: Bus disable problem
+skip digital "u54%read_4" version "G2A26800MX2"; nulltest
+test digital "u54%fetch"
+skip digital "u54%fetch" version "G2A26800MX2"
+test digital "u54%test"; comment !IPG: Bus disable problem
+skip digital "u54%test" version "G2A26800MX2"; nulltest
+test digital "u54%erase"; comment !IPG: Bus disable problem
+skip digital "u54%erase" version "G2A26800MX2"; nulltest
+test analog powered "u55"
+skip analog powered "u55" version "G2A26800MX1"; nulltest
+test digital "u56"; comment !IPG: Bus disable problem
+skip digital "u56" version "G2A26800MX2"; nulltest
+test analog powered "u57"
+skip analog powered "u57" version "G2A26800MX1" !not in bom
+skip analog powered "u57" version "G2A26800MX2" !not in bom
+test analog powered "+15v_sense"
+test analog powered "+15v_sense_1"
+test analog powered "+27v_ru_n"
+test analog powered "+27v_ru_n_1"
+test analog powered "+27v_ru_n_limit"
+test analog powered "+27v_ru_p"
+test analog powered "+27v_ru_p_1"
+test analog powered "+27v_ru_p_limit"
+test analog powered "+27v_sv_n"
+test analog powered "+27v_sv_n_1"
+test analog powered "+27v_sv_n_limit"
+test analog powered "+27v_sv_p"
+test analog powered "+27v_sv_p_1"
+test analog powered "+27v_sv_p_limit"
+test analog powered "+27v_tw_n"
+test analog powered "+27v_tw_n_1"
+test analog powered "+27v_tw_n_limit"
+test analog powered "+27v_tw_p"
+test analog powered "+27v_tw_p_1"
+test analog powered "+27v_tw_p_limit"
+test analog powered "5v_hl2_hl2"
+skip analog powered "5v_hl2_hl2" version "G2A26800MX2"
+test analog powered "5v_ref_gnda"
+skip analog powered "5v_ref_gnda" version "G2A26800MX1"
+test analog powered "24v_hl2_current"
+skip analog powered "24v_hl2_current" version "G2A26800MX2"
+test analog powered "24v_hl2_hl2"
+skip analog powered "24v_hl2_hl2" version "G2A26800MX2"
+test analog powered "24v_se"
+skip analog powered "24v_se" version "G2A26800MX1"
+test analog powered "24v_se_current"
+skip analog powered "24v_se_current" version "G2A26800MX1"
+test analog powered "24v_sense_24v_sense_rtn"
+skip analog powered "24v_sense_24v_sense_rtn" version "G2A26800MX2"
+test analog powered "24v_sense_current"
+skip analog powered "24v_sense_current" version "G2A26800MX2"
+test analog powered "24v_sw"
+skip analog powered "24v_sw" version "G2A26800MX2"
+test analog powered "24v_sw_current"
+skip analog powered "24v_sw_current" version "G2A26800MX2"
+test analog powered "_15v_sense"
+test mixed "cnv_oc_flt_1"
+skip mixed "cnv_oc_flt_1" version "G2A26800MX1"
+test mixed "cnv_oc_flt_2"
+skip mixed "cnv_oc_flt_2" version "G2A26800MX1"
+test mixed "cnv_oc_flt_3"
+skip mixed "cnv_oc_flt_3" version "G2A26800MX1"
+test mixed "cnv_oc_flt_4"
+skip mixed "cnv_oc_flt_4" version "G2A26800MX1"
+test mixed "cnv_oc_flt_5"
+skip mixed "cnv_oc_flt_5" version "G2A26800MX1"
+test mixed "cnv_oc_flt_6"
+skip mixed "cnv_oc_flt_6" version "G2A26800MX1"
+test analog powered "cnv_oc_flt_pw_1"
+skip analog powered "cnv_oc_flt_pw_1" version "G2A26800MX1"
+test analog powered "cnv_oc_flt_pw_2"
+skip analog powered "cnv_oc_flt_pw_2" version "G2A26800MX1"
+test analog powered "cnv_oc_flt_pw_3"
+skip analog powered "cnv_oc_flt_pw_3" version "G2A26800MX1"
+test analog powered "cnv_oc_flt_pw_4"
+skip analog powered "cnv_oc_flt_pw_4" version "G2A26800MX1"
+test analog powered "cnv_oc_flt_pw_5"
+skip analog powered "cnv_oc_flt_pw_5" version "G2A26800MX1"
+test analog powered "cnv_oc_flt_pw_6"
+skip analog powered "cnv_oc_flt_pw_6" version "G2A26800MX1"
+test analog powered "dc_me_gnd_sense"
+skip analog powered "dc_me_gnd_sense" version "G2A26800MX2"
+test analog powered "frequency_1"
+test analog powered "frequency_2"
+test analog powered "frequency_3"
+test analog powered "frequency_4"
+test analog powered "duty_cycle_drain_ru"
+test analog powered "duty_cycle_drain_ru_1"
+test analog powered "duty_cycle_drain_sv"
+test analog powered "duty_cycle_drain_sv_1"
+test analog powered "duty_cycle_drain_tw"
+test analog powered "duty_cycle_drain_tw_1"
+test analog powered "duty_cycle_drain_tw_2"
+test analog powered "duty_cycle_gate_sense_ru"
+test analog powered "duty_cycle_gate_sense_ru_1"
+test analog powered "duty_cycle_gate_sense_sv"
+test analog powered "duty_cycle_gate_sense_sv_1"
+test analog powered "duty_cycle_gate_sense_tw"
+test analog powered "duty_cycle_gate_sense_tw_1"
+test analog powered "duty_cycle_smps_da1"
+skip analog powered "duty_cycle_smps_da1" version "G2A26800MX2"
+test analog powered "duty_cycle_smps_da1_1"
+skip analog powered "duty_cycle_smps_da1_1" version "G2A26800MX2"
+test analog powered "duty_cycle_smps_da2"
+skip analog powered "duty_cycle_smps_da2" version "G2A26800MX1"
+test analog powered "duty_cycle_smps_da2_1"
+skip analog powered "duty_cycle_smps_da2_1" version "G2A26800MX1"
+test analog powered "duty_cycle_smps_dain_gat"
+test analog powered "duty_cycle_smps_ga1"
+skip analog powered "duty_cycle_smps_ga1" version "G2A26800MX2"
+test analog powered "duty_cycle_smps_ga1_1"
+skip analog powered "duty_cycle_smps_ga1_1" version "G2A26800MX2"
+test analog powered "duty_cycle_smps_ga2"
+skip analog powered "duty_cycle_smps_ga2" version "G2A26800MX1"
+test analog powered "duty_cycle_smps_ga2_1"
+skip analog powered "duty_cycle_smps_ga2_1" version "G2A26800MX1"
+test analog powered "frequency_dcp_led"
+skip analog powered "frequency_dcp_led" version "G2A26800MX1"
+skip analog powered "frequency_dcp_led" version "G2A26800MX2"
+test analog powered "frequency_drain_ru"
+test analog powered "frequency_drain_ru_1"
+test analog powered "frequency_drain_sv"
+test analog powered "frequency_drain_sv_1"
+test analog powered "frequency_drain_tw"
+test analog powered "frequency_drain_tw_1"
+test analog powered "frequency_gate_sense_ru"
+test analog powered "frequency_gate_sense_ru_1"
+test analog powered "frequency_gate_sense_sv"
+test analog powered "frequency_gate_sense_sv_1"
+test analog powered "frequency_gate_sense_tw"
+test analog powered "frequency_gate_sense_tw_1"
+test analog powered "frequency_smps_sense_da"
+test analog powered "frequency_smps_sense_da_1"
+test analog powered "frequency_smps_sense_ga"
+test analog powered "frequency_smps_sense_ga_1"
+test analog powered "frequency_sw_temp_sensor"
+skip analog powered "frequency_sw_temp_sensor" version "G2A26800MX2"
+test analog powered "frequency_sw_temp_sensor_1"
+skip analog powered "frequency_sw_temp_sensor_1" version "G2A26800MX2"
+test analog powered "i_sense_pwm_controller"
+test analog powered "i_sense_pwm_controller_1"
+test analog powered "i_sense_ru"
+test analog powered "i_sense_ru_1"
+test analog powered "i_sense_sv"
+test analog powered "i_sense_sv_1"
+test analog powered "i_sense_tw"
+test analog powered "i_sense_tw_1"
+test analog powered "ntc1_gnd_sense"
+test analog powered "ntc1_gnd_sense_1"
+test analog powered "ntc1_ntc2"
+test mixed "oct_inv_1"
+skip mixed "oct_inv_1" version "G2A26800MX2"
+test mixed "oct_inv_2"
+skip mixed "oct_inv_2" version "G2A26800MX2"
+test mixed "oct_inv_3"
+skip mixed "oct_inv_3" version "G2A26800MX2"
+test mixed "oct_inv_4"
+skip mixed "oct_inv_4" version "G2A26800MX2"
+test mixed "oct_inv_5"
+skip mixed "oct_inv_5" version "G2A26800MX2"
+test mixed "oct_inv_6"
+skip mixed "oct_inv_6" version "G2A26800MX2"
+test analog powered "oct_inv_pw_1"
+skip analog powered "oct_inv_pw_1" version "G2A26800MX2"
+test analog powered "oct_inv_pw_2"
+skip analog powered "oct_inv_pw_2" version "G2A26800MX2"
+test analog powered "oct_inv_pw_3"
+skip analog powered "oct_inv_pw_3" version "G2A26800MX2"
+test analog powered "oct_inv_pw_4"
+skip analog powered "oct_inv_pw_4" version "G2A26800MX2"
+test analog powered "oct_inv_pw_5"
+skip analog powered "oct_inv_pw_5" version "G2A26800MX2"
+test analog powered "oct_inv_pw_6"
+skip analog powered "oct_inv_pw_6" version "G2A26800MX2"
+test analog powered "pf_igbt_inv_+27v_ru_n"
+test analog powered "pf_igbt_conv_+27v_ru_n"
+test analog powered "pf_igbt_inv_+27v_ru_p"
+test analog powered "pf_igbt_conv_+27v_ru_p"
+test analog powered "pf_igbt_inv_+27v_sv_n"
+test analog powered "pf_igbt_conv_+27v_sv_n"
+test analog powered "pf_igbt_inv_+27v_sv_p"
+test analog powered "pf_igbt_conv_+27v_sv_p"
+test analog powered "pf_igbt_inv_+27v_tw_n"
+test analog powered "pf_igbt_conv_+27v_tw_n"
+test analog powered "pf_igbt_inv_+27v_tw_p"
+test analog powered "pf_igbt_conv_+27v_tw_p"
+test analog powered "pfail_rs_conv_high"
+skip analog powered "pfail_rs_conv_high" version "G2A26800MX1"
+test analog powered "pfail_rs_conv_high_1"
+skip analog powered "pfail_rs_conv_high_1" version "G2A26800MX1"
+test analog powered "pfail_rs_conv_low"
+skip analog powered "pfail_rs_conv_low" version "G2A26800MX1"
+test analog powered "pfail_rs_conv_low_a"
+skip analog powered "pfail_rs_conv_low_a" version "G2A26800MX1"
+test analog powered "pfail_rs_conv_low_1"
+skip analog powered "pfail_rs_conv_low_1" version "G2A26800MX1"
+test analog powered "ptc_1_ptc_6_current"
+skip analog powered "ptc_1_ptc_6_current" version "G2A26800MX2"
+test analog powered "ptc_adc_load_1k"
+skip analog powered "ptc_adc_load_1k" version "G2A26800MX2"
+test analog powered "ptc_adc_open"
+skip analog powered "ptc_adc_open" version "G2A26800MX2"
+test analog powered "ptc_adc_short"
+skip analog powered "ptc_adc_short" version "G2A26800MX2"
+test analog powered "pwm_vcc_ru"
+test analog powered "pwm_vcc_sv"
+test analog powered "pwm_vcc_tw"
+test analog powered "r_res_ruo_close"
+skip analog powered "r_res_ruo_close" version "G2A26800MX1"
+test analog powered "r_res_ruo_open"
+skip analog powered "r_res_ruo_open" version "G2A26800MX1"
+test analog powered "ref_2v5_ru_n"
+test analog powered "ref_2v5_ru_n_1"
+test analog powered "ref_2v5_ru_p"
+test analog powered "ref_2v5_ru_p_1"
+test analog powered "ref_2v5_sv_n"
+test analog powered "ref_2v5_sv_p"
+test analog powered "ref_2v5_tw_n"
+test analog powered "ref_2v5_tw_p"
+test analog powered "ref_3v9_ru_n"
+test analog powered "ref_3v9_ru_p"
+test analog powered "ref_3v9_sv_n"
+test analog powered "ref_3v9_sv_p"
+test analog powered "ref_3v9_tw_n"
+test analog powered "ref_3v9_tw_p"
+test analog powered "ref_pri_n"
+skip analog powered "ref_pri_n" version "G2A26800MX1"
+test analog powered "ref_sec"
+skip analog powered "ref_sec" version "G2A26800MX1"
+test analog powered "run_g21_run_e21_high"
+test analog powered "run_g21_run_e21_low"
+test analog powered "rup_g11_rup_e11_high"
+test analog powered "rup_g11_rup_e11_low"
+test analog powered "s_res_svo_close"
+skip analog powered "s_res_svo_close" version "G2A26800MX1"
+test analog powered "s_res_svo_open"
+skip analog powered "s_res_svo_open" version "G2A26800MX1"
+test analog powered "sense_ir-2a"
+skip analog powered "sense_ir-2a" version "G2A26800MX1"
+test analog powered "sense_ir_0a"
+skip analog powered "sense_ir_0a" version "G2A26800MX1"
+test analog powered "sense_ir_2a"
+skip analog powered "sense_ir_2a" version "G2A26800MX1"
+test analog powered "sense_is-2a"
+skip analog powered "sense_is-2a" version "G2A26800MX1"
+test analog powered "sense_is_0a"
+skip analog powered "sense_is_0a" version "G2A26800MX1"
+test analog powered "sense_is_2a"
+skip analog powered "sense_is_2a" version "G2A26800MX1"
+test analog powered "sense_iu-2a"
+skip analog powered "sense_iu-2a" version "G2A26800MX2"
+test analog powered "sense_iu_0a"
+skip analog powered "sense_iu_0a" version "G2A26800MX2"
+test analog powered "sense_iu_2a"
+skip analog powered "sense_iu_2a" version "G2A26800MX2"
+test analog powered "sense_iv-2a"
+skip analog powered "sense_iv-2a" version "G2A26800MX2"
+test analog powered "sense_iv_0a"
+skip analog powered "sense_iv_0a" version "G2A26800MX2"
+test analog powered "sense_iv_2a"
+skip analog powered "sense_iv_2a" version "G2A26800MX2"
+test analog powered "svn_g21_svn_e21_high"
+test analog powered "svn_g21_svn_e21_low"
+test analog powered "svp_g11_svp_e11_high"
+test analog powered "svp_g11_svp_e11_low"
+test analog powered "temp_igbt_gnda"
+test analog powered "temp_un_gnda"
+test analog powered "k3_temp"
+test analog powered "twn_g21_twn_e21_high"
+test analog powered "twn_g21_twn_e21_low"
+test analog powered "twp_g11_twp_e11_high"
+test analog powered "twp_g11_twp_e11_low"
+test analog powered "udcl_gnda"
+skip analog powered "udcl_gnda" version "G2A26800MX2"
+test analog powered "k3_udc"
+skip analog powered "k3_udc" version "G2A26800MX2"
+test analog powered "vcc_pwm_controller"
+test analog powered "vrs_dc_n_ac"
+skip analog powered "vrs_dc_n_ac" version "G2A26800MX1"
+test analog powered "vrs_dc_n_dc"
+skip analog powered "vrs_dc_n_dc" version "G2A26800MX1"
+test analog powered "vrs_n_ur"
+skip analog powered "vrs_n_ur" version "G2A26800MX1"
+test analog powered "vrs_n_us"
+skip analog powered "vrs_n_us" version "G2A26800MX1"
+test analog powered "vrs_n_ut"
+skip analog powered "vrs_n_ut" version "G2A26800MX1"
+test analog powered "vrs_n_vrs_out_n_falling"
+skip analog powered "vrs_n_vrs_out_n_falling" version "G2A26800MX1"
+test analog powered "vrs_n_vrs_out_n_rising"
+skip analog powered "vrs_n_vrs_out_n_rising" version "G2A26800MX1"
+test analog powered "vrs_out_dc_n_ac"
+skip analog powered "vrs_out_dc_n_ac" version "G2A26800MX1"
+test analog powered "vrs_out_dc_n_dc"
+skip analog powered "vrs_out_dc_n_dc" version "G2A26800MX1"
+test analog powered "vrs_out_n"
+skip analog powered "vrs_out_n" version "G2A26800MX1"
+test analog powered "k3_vrs"
+skip analog powered "k3_vrs" version "G2A26800MX1"
+test analog powered "vrs_out_n_ac"
+skip analog powered "vrs_out_n_ac" version "G2A26800MX1"
+test analog powered "vrs_out_n_dc"
+skip analog powered "vrs_out_n_dc" version "G2A26800MX1"
+test analog powered "vst_dc_n_ac"
+skip analog powered "vst_dc_n_ac" version "G2A26800MX1"
+test analog powered "vst_dc_n_dc"
+skip analog powered "vst_dc_n_dc" version "G2A26800MX1"
+test analog powered "vst_n_ur"
+skip analog powered "vst_n_ur" version "G2A26800MX1"
+test analog powered "vst_n_us"
+skip analog powered "vst_n_us" version "G2A26800MX1"
+test analog powered "vst_n_ut"
+skip analog powered "vst_n_ut" version "G2A26800MX1"
+test analog powered "vst_n_vrs_out_n_falling"
+skip analog powered "vst_n_vrs_out_n_falling" version "G2A26800MX1"
+test analog powered "vst_n_vrs_out_n_rising"
+skip analog powered "vst_n_vrs_out_n_rising" version "G2A26800MX1"
+test analog powered "vst_out_dc_n_ac"
+skip analog powered "vst_out_dc_n_ac" version "G2A26800MX1"
+test analog powered "vst_out_dc_n_dc"
+skip analog powered "vst_out_dc_n_dc" version "G2A26800MX1"
+test analog powered "vst_out_n"
+skip analog powered "vst_out_n" version "G2A26800MX1"
+test analog powered "k3_vst"
+skip analog powered "k3_vst" version "G2A26800MX1"
+test analog powered "vst_out_n_ac"
+skip analog powered "vst_out_n_ac" version "G2A26800MX1"
+test analog powered "vst_out_n_dc"
+skip analog powered "vst_out_n_dc" version "G2A26800MX1"
+test analog powered "power_check"
+skip resistor "r190%res1_8"; nulltest
+test resistor "r190%res1_8" version "G2A26800MX2"
+skip resistor "r190%res2_7"; nulltest
+test resistor "r190%res2_7" version "G2A26800MX2"
+skip resistor "r190%res3_6"; nulltest
+test resistor "r190%res3_6" version "G2A26800MX2"
+skip resistor "r190%res4_5"; nulltest
+test resistor "r190%res4_5" version "G2A26800MX2"
+test analog powered "invtempuref"
+test analog powered "invtempuref" version "G2A26800MX1"
+skip analog powered "invtempuref" version "G2A26800MX2"
+test analog powered "cnvtempuref"
+skip analog powered "cnvtempuref" version "G2A26800MX1"
+test analog powered "cnvtempuref" version "G2A26800MX2"
+test analog powered "invtempun"
+test analog powered "invtempun" version "G2A26800MX1"
+skip analog powered "invtempun" version "G2A26800MX2"
+test analog powered "cnvtempun"
+skip analog powered "cnvtempun" version "G2A26800MX1"
+test analog powered "cnvtempun" version "G2A26800MX2"
+test analog powered "invtempuout"
+test analog powered "invtempuout" version "G2A26800MX1"
+skip analog powered "invtempuout" version "G2A26800MX2"
+test analog powered "cnvtempuout"
+skip analog powered "cnvtempuout" version "G2A26800MX1"
+test analog powered "cnvtempuout" version "G2A26800MX2"
+test analog powered "invtempuin"
+test analog powered "invtempuin" version "G2A26800MX1"
+skip analog powered "invtempuin" version "G2A26800MX2"
+test analog powered "cnvtempuin"
+skip analog powered "cnvtempuin" version "G2A26800MX1"
+test analog powered "cnvtempuin" version "G2A26800MX2"
+test analog powered "invudcluin"
+test analog powered "invudcluin" version "G2A26800MX1"
+skip analog powered "invudcluin" version "G2A26800MX2"
+test analog powered "invudcluout"
+test analog powered "invudcluout" version "G2A26800MX1"
+skip analog powered "invudcluout" version "G2A26800MX2"
+test analog powered "cnvvrsuindc"
+skip analog powered "cnvvrsuindc" version "G2A26800MX1"
+test analog powered "cnvvrsuindc" version "G2A26800MX2"
+test analog powered "cnvvrsuoutdc"
+skip analog powered "cnvvrsuoutdc" version "G2A26800MX1"
+test analog powered "cnvvrsuoutdc" version "G2A26800MX2"
+test analog powered "cnvvrsuout"
+skip analog powered "cnvvrsuout" version "G2A26800MX1"
+test analog powered "cnvvrsuout" version "G2A26800MX2"
+test analog powered "cnvvstuindc"
+skip analog powered "cnvvstuindc" version "G2A26800MX1"
+test analog powered "cnvvstuindc" version "G2A26800MX2"
+test analog powered "cnvvstuoutdc"
+skip analog powered "cnvvstuoutdc" version "G2A26800MX1"
+test analog powered "cnvvstuoutdc" version "G2A26800MX2"
+test analog powered "cnvvstuout"
+skip analog powered "cnvvstuout" version "G2A26800MX1"
+test analog powered "cnvvstuout" version "G2A26800MX2"
+skip capacitor "c50a" !@ power node
+skip capacitor "c128a" !@ power node
+skip capacitor "c192a" !@ power node
+skip capacitor "c312a" !@ power node
+test diode "d10a"
+test diode "d20a"
+test diode "d34a"
+test resistor "r55a"
+test resistor "r57a"
+test resistor "r113a"
+test resistor "r115a"
+test resistor "r159a"
+test resistor "r161a"
+test resistor "r436a"
+!*********************************MX3*******************************
+test shorts "shorts" version "G2A26800MX3"
+test pins "pins" version "G2A26800MX3"
+test capacitor ".discharge" version "G2A26800MX3"
+skip capacitor "c1" version "G2A26800MX3"; nulltest !@ECN remove
+skip capacitor "c167" version "G2A26800MX3"; nulltest
+skip capacitor "c291" version "G2A26800MX3"; nulltest
+skip capacitor "c3" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c4" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c5" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c2" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c6" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c255" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c7" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c8" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c11" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c12" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c9" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c13" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c254" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c15" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c17" version "G2A26800MX3"; nulltest
+skip capacitor "c20" version "G2A26800MX3"; nulltest
+skip capacitor "c18" version "G2A26800MX3"; nulltest
+skip capacitor "c19" version "G2A26800MX3"; nulltest
+skip capacitor "c24" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c26" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c25" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c27" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c51" version "G2A26800MX3"; nulltest
+skip capacitor "c129" version "G2A26800MX3"; nulltest
+skip capacitor "c170" version "G2A26800MX3"; nulltest
+skip capacitor "c100" version "G2A26800MX3"; nulltest
+skip capacitor "c123" version "G2A26800MX3"; nulltest
+skip capacitor "c149" version "G2A26800MX3"; nulltest
+skip capacitor "c166" version "G2A26800MX3"; nulltest
+skip capacitor "c240" version "G2A26800MX3"; nulltest
+skip capacitor "c282" version "G2A26800MX3"; nulltest
+skip capacitor "c296" version "G2A26800MX3"; nulltest
+skip capacitor "c101" version "G2A26800MX3"; nulltest
+skip capacitor "c124" version "G2A26800MX3"; nulltest
+skip capacitor "c150" version "G2A26800MX3"; nulltest
+skip capacitor "c239" version "G2A26800MX3"; nulltest
+skip capacitor "c78" version "G2A26800MX3"
+skip capacitor "c74" version "G2A26800MX3" !tested in parallel with c78
+skip capacitor "c75" version "G2A26800MX3"; nulltest !tested in parallel with c78
+skip capacitor "c76" version "G2A26800MX3"; nulltest !tested in parallel with c78
+skip capacitor "c77" version "G2A26800MX3"; nulltest !tested in parallel with c78
+skip capacitor "c73" version "G2A26800MX3"; nulltest !tested in parallel with c78
+skip capacitor "c72" version "G2A26800MX3"; nulltest
+skip capacitor "c121" version "G2A26800MX3"; nulltest
+skip capacitor "c122" version "G2A26800MX3"; nulltest
+skip capacitor "c159" version "G2A26800MX3"; nulltest
+skip capacitor "c153" version "G2A26800MX3"; nulltest
+skip capacitor "c225" version "G2A26800MX3"; nulltest
+skip capacitor "c219" version "G2A26800MX3"; nulltest
+skip capacitor "c21" version "G2A26800MX3"; nulltest
+skip capacitor "c22" version "G2A26800MX3"; nulltest
+skip capacitor "c256" version "G2A26800MX3"; nulltest
+skip capacitor "c316" version "G2A26800MX3"; nulltest
+skip capacitor "c258" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c290" version "G2A26800MX3"; nulltest
+skip capacitor "c294" version "G2A26800MX3"; nulltest
+skip capacitor "c295" version "G2A26800MX3"; nulltest
+skip capacitor "c304" version "G2A26800MX3"; nulltest
+skip capacitor "c320" version "G2A26800MX3" !not in bom
+skip capacitor "c14" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c29" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c30" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c28" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip capacitor "c211" version "G2A26800MX3"; nulltest
+skip capacitor "c251" version "G2A26800MX3" !not in bom
+skip capacitor "c253" version "G2A26800MX3" !not in bom
+skip capacitor "c23" version "G2A26800MX3"; nulltest
+skip capacitor "c105" version "G2A26800MX3"; nulltest
+skip capacitor "c117" version "G2A26800MX3"; nulltest
+skip capacitor "c125" version "G2A26800MX3"; nulltest
+skip capacitor "c130" version "G2A26800MX3"; nulltest
+skip capacitor "c131" version "G2A26800MX3"; nulltest
+skip capacitor "c132" version "G2A26800MX3"; nulltest
+skip capacitor "c140" version "G2A26800MX3"; nulltest
+skip capacitor "c151" version "G2A26800MX3"; nulltest
+skip capacitor "c165" version "G2A26800MX3"; nulltest
+skip capacitor "c259" version "G2A26800MX3"; nulltest
+skip capacitor "c103" version "G2A26800MX3"; nulltest
+skip capacitor "c126" version "G2A26800MX3"; nulltest
+skip capacitor "c32" version "G2A26800MX3"; nulltest
+skip capacitor "c33" version "G2A26800MX3"; nulltest
+skip capacitor "c97" version "G2A26800MX3"
+test capacitor "c96" version "G2A26800MX3" !tested in parallel with c97
+skip capacitor "c169" version "G2A26800MX3"; nulltest
+skip capacitor "c236" version "G2A26800MX3"; nulltest
+skip capacitor "c187" version "G2A26800MX3"; nulltest
+skip capacitor "c188" version "G2A26800MX3"; nulltest
+skip capacitor "c250" version "G2A26800MX3" !not in bom
+skip capacitor "c212" version "G2A26800MX3"; nulltest
+skip capacitor "c260" version "G2A26800MX3"; nulltest
+skip capacitor "c266" version "G2A26800MX3"; nulltest
+skip capacitor "c280" version "G2A26800MX3"; nulltest
+skip capacitor "c283" version "G2A26800MX3"; nulltest
+skip capacitor "c317" version "G2A26800MX3"; nulltest
+skip capacitor "c318" version "G2A26800MX3"; nulltest
+skip capacitor "c319" version "G2A26800MX3"; nulltest
+skip diode "d1%pins1_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D1
+skip diode "d2%pins1_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D2
+skip diode "d3%pins1_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D3
+skip diode "d4%pins1_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D4
+skip diode "d25%pins1_2" version "G2A26800MX3"; nulltest
+skip diode "d25%pins1_3" version "G2A26800MX3"; nulltest
+skip diode "d27%pins1_2" version "G2A26800MX3"; nulltest
+skip diode "d27%pins1_3" version "G2A26800MX3"; nulltest
+skip diode "d1%pins1_3" version "G2A26800MX3"; nulltest !@ECN REMOVE D1
+skip diode "d1%pins3_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D1
+skip diode "d2%pins1_3" version "G2A26800MX3"; nulltest !@ECN REMOVE D2
+skip diode "d2%pins3_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D2
+skip diode "d3%pins1_3" version "G2A26800MX3"; nulltest !@ECN REMOVE D3
+skip diode "d3%pins3_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D3
+skip diode "d4%pins1_3" version "G2A26800MX3"; nulltest !@ECN REMOVE D4
+skip diode "d4%pins3_2" version "G2A26800MX3"; nulltest !@ECN REMOVE D4
+skip diode "d25%pins3_2" version "G2A26800MX3"; nulltest
+skip diode "d27%pins3_2" version "G2A26800MX3"; nulltest
+skip diode "d30%diode" version "G2A26800MX3"; nulltest
+skip diode "d31%diode" version "G2A26800MX3"; nulltest
+skip diode "d5%cr1" version "G2A26800MX3"; nulltest !@ECN REMOVE D5
+skip diode "d5%cr2" version "G2A26800MX3"; nulltest !@ECN REMOVE D5
+skip diode "d5%cr3" version "G2A26800MX3"; nulltest !@ECN REMOVE D5
+skip diode "d5%cr4" version "G2A26800MX3"; nulltest !@ECN REMOVE D5
+skip diode "d45%cr1" version "G2A26800MX3"; nulltest
+skip diode "d45%cr2" version "G2A26800MX3"; nulltest
+skip diode "d45%cr3" version "G2A26800MX3"; nulltest
+skip diode "d45%cr4" version "G2A26800MX3"; nulltest
+skip diode "d46%cr1" version "G2A26800MX3"; nulltest
+skip diode "d46%cr2" version "G2A26800MX3"; nulltest
+skip diode "d46%cr3" version "G2A26800MX3"; nulltest
+skip diode "d46%cr4" version "G2A26800MX3"; nulltest
+skip diode "d47%cr1" version "G2A26800MX3"; nulltest
+skip diode "d47%cr2" version "G2A26800MX3"; nulltest
+skip diode "d47%cr3" version "G2A26800MX3"; nulltest
+skip diode "d47%cr4" version "G2A26800MX3"; nulltest
+skip diode "q27%cr1" version "G2A26800MX3"; nulltest
+skip diode "q27%cr2" version "G2A26800MX3"; nulltest
+skip diode "q31%cr1" version "G2A26800MX3"; nulltest
+skip diode "q31%cr2" version "G2A26800MX3"; nulltest
+skip diode "q35%cr1" version "G2A26800MX3"; nulltest
+skip diode "q35%cr2" version "G2A26800MX3"; nulltest
+skip diode "d11" version "G2A26800MX3"; nulltest
+skip diode "d12" version "G2A26800MX3"; nulltest
+skip diode "d21" version "G2A26800MX3"; nulltest
+skip diode "d22" version "G2A26800MX3"; nulltest
+skip diode "d35" version "G2A26800MX3"; nulltest
+skip diode "d36" version "G2A26800MX3"; nulltest
+skip diode "d77" version "G2A26800MX3" !not in bom
+skip diode "d78" version "G2A26800MX3"; nulltest
+skip diode "led1" version "G2A26800MX3" !not in bom
+skip diode "z19" version "G2A26800MX3"; nulltest
+skip diode "u24%d1_2" version "G2A26800MX3"; nulltest
+skip diode "u24%d3_4" version "G2A26800MX3"; nulltest
+skip diode "u24%d5_6" version "G2A26800MX3"; nulltest
+skip diode "u33%d1_2" version "G2A26800MX3"; nulltest
+skip diode "u33%d3_4" version "G2A26800MX3"; nulltest
+skip diode "u33%d5_6" version "G2A26800MX3"; nulltest
+skip diode "u41%d1" version "G2A26800MX3"; nulltest
+skip diode "u53%d1" version "G2A26800MX3"; nulltest
+skip inductor "l1" version "G2A26800MX3"; nulltest !@ECN REMOVE
+test jumper "jp1" version "G2A26800MX3"; preshorts
+test jumper "jp2" version "G2A26800MX3"; preshorts
+test jumper "jp4" version "G2A26800MX3"; preshorts
+skip jumper "jp6" version "G2A26800MX3"; preshorts
+test jumper "jp7" version "G2A26800MX3"; preshorts
+skip jumper "jp9" version "G2A26800MX3"; nulltest !tested in parallel with jp4
+skip jumper "jp11" version "G2A26800MX3"; nulltest !tested in parallel with jp7
+skip jumper "jp13" version "G2A26800MX3"; nulltest !tested in parallel with jp4
+skip jumper "jp15" version "G2A26800MX3"; nulltest !tested in parallel with jp7
+test jumper "jp18" version "G2A26800MX3"; preshorts
+test jumper "jp20" version "G2A26800MX3"; preshorts
+test jumper "jp21" version "G2A26800MX3"; preshorts
+test jumper "p1_sw" version "G2A26800MX3"; preshorts
+test jumper "p2_sw" version "G2A26800MX3"; preshorts
+test jumper "p6_sw" version "G2A26800MX3"; preshorts !@ECN REMOVE P6
+skip jumper "q27%jp1" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp2" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp3" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp4" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp5" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp6" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp7" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp8" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp9" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp10" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp11" version "G2A26800MX3"; nulltest
+skip jumper "q27%jp12" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp1" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp2" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp3" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp4" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp5" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp6" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp7" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp8" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp9" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp10" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp11" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp12" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp1" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp2" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp3" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp4" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp5" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp6" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp7" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp8" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp9" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp10" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp11" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp12" version "G2A26800MX3"; nulltest
+test jumper "r216" version "G2A26800MX3"; preshorts
+test jumper "r217" version "G2A26800MX3"; preshorts
+test jumper "r447" version "G2A26800MX3"; preshorts
+test jumper "r456" version "G2A26800MX3"; preshorts
+skip jumper "q27%jp13" version "G2A26800MX3"; nulltest
+skip jumper "q31%jp13" version "G2A26800MX3"; nulltest
+skip jumper "q35%jp13" version "G2A26800MX3"; nulltest
+skip resistor "q27%r1" version "G2A26800MX3"; nulltest
+skip resistor "q31%r1" version "G2A26800MX3"; nulltest
+skip resistor "q35%r1" version "G2A26800MX3"; nulltest
+test resistor "r1" version "G2A26800MX3"; nulltest !@ECN REMOVE R1
+test resistor "r2" version "G2A26800MX3"; nulltest !@ECN REMOVE R2
+skip resistor "r301" version "G2A26800MX3"; nulltest
+skip resistor "r314" version "G2A26800MX3"; nulltest
+skip resistor "r328" version "G2A26800MX3"; nulltest
+skip resistor "r337" version "G2A26800MX3"; nulltest
+skip resistor "r346" version "G2A26800MX3"; nulltest
+skip resistor "r355" version "G2A26800MX3"; nulltest
+test resistor "r6" version "G2A26800MX3"; nulltest !@ECN REMOVE R6
+skip resistor "r22" version "G2A26800MX3"; nulltest
+skip resistor "r24" version "G2A26800MX3"; nulltest
+skip resistor "r31" version "G2A26800MX3"; nulltest
+skip resistor "r34" version "G2A26800MX3"; nulltest
+skip resistor "r39" version "G2A26800MX3"; nulltest
+skip resistor "r90" version "G2A26800MX3"; nulltest
+skip resistor "r94" version "G2A26800MX3"; nulltest
+skip resistor "r105" version "G2A26800MX3"; nulltest
+skip resistor "r146" version "G2A26800MX3"; nulltest
+skip resistor "r148" version "G2A26800MX3"; nulltest
+skip resistor "r153" version "G2A26800MX3"; nulltest
+skip resistor "r7" version "G2A26800MX3"; nulltest
+skip resistor "r8" version "G2A26800MX3"; nulltest
+test resistor "r9" version "G2A26800MX3"; nulltest !@ECN REMOVE R9
+skip resistor "r12" version "G2A26800MX3"; nulltest
+test resistor "r13" version "G2A26800MX3"; nulltest !@ECN REMOVE R13
+test resistor "r16" version "G2A26800MX3"; nulltest !@ECN REMOVE R16
+skip resistor "r23" version "G2A26800MX3"; nulltest
+skip resistor "r25" version "G2A26800MX3"; nulltest
+skip resistor "r27" version "G2A26800MX3"; nulltest
+skip resistor "r30" version "G2A26800MX3"; nulltest
+skip resistor "r37" version "G2A26800MX3"; nulltest
+skip resistor "r92" version "G2A26800MX3"; nulltest
+skip resistor "r103" version "G2A26800MX3"; nulltest
+skip resistor "r109" version "G2A26800MX3"; nulltest
+skip resistor "r137" version "G2A26800MX3"; nulltest
+skip resistor "r140" version "G2A26800MX3"; nulltest
+skip resistor "r151" version "G2A26800MX3"; nulltest
+skip resistor "r189" version "G2A26800MX3"; nulltest
+skip resistor "r451" version "G2A26800MX3"; nulltest
+skip resistor "r32" version "G2A26800MX3"; nulltest
+test resistor "r293" version "G2A26800MX3"
+skip resistor "r296" version "G2A26800MX3"; nulltest
+skip resistor "r298" version "G2A26800MX3"; nulltest
+skip resistor "r299" version "G2A26800MX3"; nulltest
+skip resistor "r310" version "G2A26800MX3"; nulltest
+skip resistor "r311" version "G2A26800MX3"; nulltest
+skip resistor "r317" version "G2A26800MX3"; nulltest
+skip resistor "r320" version "G2A26800MX3"; nulltest
+skip resistor "r322" version "G2A26800MX3"; nulltest
+skip resistor "r323" version "G2A26800MX3"; nulltest
+skip resistor "r324" version "G2A26800MX3"; nulltest
+skip resistor "r327" version "G2A26800MX3"; nulltest
+skip resistor "r333" version "G2A26800MX3"; nulltest
+skip resistor "r334" version "G2A26800MX3"; nulltest
+skip resistor "r336" version "G2A26800MX3"; nulltest
+skip resistor "r339" version "G2A26800MX3"; nulltest
+skip resistor "r348" version "G2A26800MX3"; nulltest
+skip resistor "r371" version "G2A26800MX3"; nulltest
+skip resistor "r372" version "G2A26800MX3"; nulltest
+skip resistor "r378" version "G2A26800MX3"; nulltest
+skip resistor "r380" version "G2A26800MX3"; nulltest
+skip resistor "r383" version "G2A26800MX3"; nulltest
+skip resistor "r384" version "G2A26800MX3"; nulltest
+skip resistor "r385" version "G2A26800MX3"; nulltest
+skip resistor "r386" version "G2A26800MX3"; nulltest
+skip resistor "r393" version "G2A26800MX3"; nulltest
+skip resistor "r419" version "G2A26800MX3"; nulltest
+test resistor "r428" version "G2A26800MX3"; nulltest
+skip resistor "r10%res1_8" version "G2A26800MX3"; nulltest
+skip resistor "r10%res2_7" version "G2A26800MX3"; nulltest
+skip resistor "r10%res3_6" version "G2A26800MX3"; nulltest
+skip resistor "r10%res4_5" version "G2A26800MX3"; nulltest
+skip resistor "r11%res1_8" version "G2A26800MX3"; nulltest
+skip resistor "r11%res2_7" version "G2A26800MX3"; nulltest
+skip resistor "r11%res3_6" version "G2A26800MX3"; nulltest
+skip resistor "r11%res4_5" version "G2A26800MX3"; nulltest
+test resistor "r14" version "G2A26800MX3"; nulltest !@ECN REMOVE
+skip resistor "r98" version "G2A26800MX3"; nulltest
+skip resistor "r119" version "G2A26800MX3"; nulltest
+skip resistor "r26" version "G2A26800MX3"; nulltest
+skip resistor "r28" version "G2A26800MX3"; nulltest
+skip resistor "r29" version "G2A26800MX3"; nulltest
+skip resistor "r154" version "G2A26800MX3"; nulltest
+skip resistor "r450" version "G2A26800MX3"; nulltest
+skip resistor "r459" version "G2A26800MX3" !not in bom
+skip resistor "r201" version "G2A26800MX3" !not in bom
+skip resistor "r204" version "G2A26800MX3" !not in bom
+skip resistor "r199" version "G2A26800MX3" !not in bom
+skip resistor "r200" version "G2A26800MX3" !not in bom
+skip resistor "r202" version "G2A26800MX3" !not in bom
+skip resistor "r203" version "G2A26800MX3" !not in bom
+skip resistor "r45" version "G2A26800MX3"; nulltest
+skip resistor "r110" version "G2A26800MX3"; nulltest
+skip resistor "r316" version "G2A26800MX3"; nulltest
+skip resistor "r325" version "G2A26800MX3"; nulltest
+skip resistor "r326" version "G2A26800MX3"; nulltest
+skip resistor "r338" version "G2A26800MX3"; nulltest
+skip resistor "r357" version "G2A26800MX3"; nulltest
+skip resistor "r382" version "G2A26800MX3"; nulltest
+skip resistor "r387" version "G2A26800MX3"; nulltest
+skip resistor "r143" version "G2A26800MX3"; nulltest
+skip resistor "r297" version "G2A26800MX3"; nulltest
+skip resistor "r321" version "G2A26800MX3"; nulltest
+skip resistor "r99" version "G2A26800MX3"; nulltest
+skip resistor "r309" version "G2A26800MX3"; nulltest
+skip resistor "r120" version "G2A26800MX3"; nulltest
+skip resistor "r351" version "G2A26800MX3"; nulltest
+skip resistor "r100" version "G2A26800MX3"; nulltest
+skip resistor "r121" version "G2A26800MX3"; nulltest
+skip resistor "r194" version "G2A26800MX3" !not in bom
+skip resistor "r308" version "G2A26800MX3"; nulltest
+skip resistor "r350" version "G2A26800MX3"; nulltest
+skip resistor "r452" version "G2A26800MX3" !not in bom
+skip resistor "r70" version "G2A26800MX3"; nulltest
+skip resistor "r78" version "G2A26800MX3"; nulltest
+skip resistor "r130" version "G2A26800MX3"; nulltest
+skip resistor "r135" version "G2A26800MX3"; nulltest
+skip resistor "r171" version "G2A26800MX3"; nulltest
+skip resistor "r181" version "G2A26800MX3"; nulltest
+skip resistor "r101" version "G2A26800MX3"; nulltest
+skip resistor "r136" version "G2A26800MX3"; nulltest
+skip resistor "r138" version "G2A26800MX3"; nulltest
+skip resistor "r312" version "G2A26800MX3"; nulltest
+skip resistor "r335" version "G2A26800MX3"; nulltest
+skip resistor "r345" version "G2A26800MX3"; nulltest
+skip resistor "r96" version "G2A26800MX3"; nulltest
+skip resistor "r97" version "G2A26800MX3"; nulltest
+skip resistor "r117" version "G2A26800MX3"; nulltest
+skip resistor "r118" version "G2A26800MX3"; nulltest
+skip resistor "r108" version "G2A26800MX3"; nulltest
+skip resistor "r300" version "G2A26800MX3"; nulltest
+skip resistor "r302" version "G2A26800MX3"; nulltest
+skip resistor "r313" version "G2A26800MX3"; nulltest
+skip resistor "r315" version "G2A26800MX3"; nulltest
+skip resistor "r340" version "G2A26800MX3"; nulltest
+skip resistor "r343" version "G2A26800MX3"; nulltest
+skip resistor "r344" version "G2A26800MX3"; nulltest
+skip resistor "r347" version "G2A26800MX3"; nulltest
+skip resistor "r356" version "G2A26800MX3"; nulltest
+skip resistor "r139" version "G2A26800MX3"; nulltest
+skip resistor "r191" version "G2A26800MX3"; nulltest
+skip resistor "r192" version "G2A26800MX3"; nulltest
+skip resistor "r193" version "G2A26800MX3"; nulltest
+skip resistor "r370" version "G2A26800MX3"; nulltest
+skip resistor "r307" version "G2A26800MX3"; nulltest
+skip resistor "r349" version "G2A26800MX3"; nulltest
+skip resistor "r277" version "G2A26800MX3"; nulltest
+skip resistor "r278" version "G2A26800MX3"; nulltest
+skip resistor "r392" version "G2A26800MX3"; nulltest
+skip resistor "r379" version "G2A26800MX3"; nulltest
+skip resistor "r381" version "G2A26800MX3"; nulltest
+skip resistor "r303" version "G2A26800MX3"; nulltest
+skip resistor "r358" version "G2A26800MX3"; nulltest
+skip resistor "r398" version "G2A26800MX3"; nulltest
+skip resistor "r399" version "G2A26800MX3"; nulltest
+skip resistor "r457" version "G2A26800MX3" !not in bom
+skip transistor "q1" version "G2A26800MX3"; nulltest
+skip transistor "q2" version "G2A26800MX3"; nulltest
+skip transistor "q10" version "G2A26800MX3"; nulltest
+skip transistor "q12" version "G2A26800MX3"; nulltest
+skip transistor "q17" version "G2A26800MX3"; nulltest
+skip transistor "q24" version "G2A26800MX3"; nulltest
+skip transistor "q27%q1" version "G2A26800MX3"; nulltest
+skip transistor "q27%q2" version "G2A26800MX3"; nulltest
+skip transistor "q31%q1" version "G2A26800MX3"; nulltest
+skip transistor "q31%q2" version "G2A26800MX3"; nulltest
+skip transistor "q35%q1" version "G2A26800MX3"; nulltest
+skip transistor "q35%q2" version "G2A26800MX3"; nulltest
+test zener "z21" version "G2A26800MX3"
+skip zener "z77" version "G2A26800MX3" !not in bom
+test testjet "testjet" version "G2A26800MX3"
+skip analog powered "cs3" version "G2A26800MX3"; nulltest
+skip analog powered "led_sensor" version "G2A26800MX3"; nulltest
+skip analog powered "rel1" version "G2A26800MX3"; nulltest
+skip analog powered "rel2" version "G2A26800MX3"; nulltest
+skip analog powered "u1" version "G2A26800MX3"; nulltest
+skip digital "u2" version "G2A26800MX3"; nulltest
+skip digital "u3" version "G2A26800MX3"; nulltest
+skip analog powered "u4" version "G2A26800MX3"; nulltest
+skip analog powered "u5" version "G2A26800MX3"; nulltest
+skip digital "u6" version "G2A26800MX3"; nulltest
+skip digital "u7" version "G2A26800MX3"; nulltest
+skip digital "u8%program" version "G2A26800MX3"; nulltest
+skip digital "u8%program_1" version "G2A26800MX3"; nulltest
+skip digital "u8%program_2" version "G2A26800MX3"; nulltest
+skip digital "u8%program_3" version "G2A26800MX3"; nulltest
+skip digital "u8%program_4" version "G2A26800MX3"; nulltest
+skip digital "u8%program_5" version "G2A26800MX3"; nulltest
+skip digital "u8%read" version "G2A26800MX3"; nulltest
+skip digital "u8%read_1" version "G2A26800MX3"; nulltest
+skip digital "u8%read_2" version "G2A26800MX3"; nulltest
+skip digital "u8%read_3" version "G2A26800MX3"; nulltest
+skip digital "u8%read_4" version "G2A26800MX3"; nulltest
+skip digital "u8%read_5" version "G2A26800MX3"; nulltest
+skip digital "u8%fetch" version "G2A26800MX3"
+skip digital "u8%test" version "G2A26800MX3"; nulltest
+skip digital "u8%erase" version "G2A26800MX3"; nulltest
+skip analog powered "u24" version "G2A26800MX3"; nulltest
+skip analog powered "u25" version "G2A26800MX3"; nulltest
+skip analog powered "u29" version "G2A26800MX3"; nulltest
+skip analog powered "u30" version "G2A26800MX3"; nulltest
+skip analog powered "u31" version "G2A26800MX3"; nulltest
+skip analog powered "u33" version "G2A26800MX3"; nulltest
+skip analog powered "u34" version "G2A26800MX3"; nulltest
+skip analog powered "u35" version "G2A26800MX3"; nulltest
+skip analog powered "u40" version "G2A26800MX3"; nulltest
+skip analog powered "u41" version "G2A26800MX3"; nulltest
+skip analog powered "u53" version "G2A26800MX3"; nulltest
+skip analog powered "u55" version "G2A26800MX3"; nulltest
+skip analog powered "u57" version "G2A26800MX3" !not in bom
+skip analog powered "5v_ref_gnda" version "G2A26800MX3"
+skip analog powered "24v_se" version "G2A26800MX3"
+skip analog powered "24v_se_current" version "G2A26800MX3"
+skip mixed "cnv_oc_flt_1" version "G2A26800MX3"
+skip mixed "cnv_oc_flt_2" version "G2A26800MX3"
+skip mixed "cnv_oc_flt_3" version "G2A26800MX3"
+skip mixed "cnv_oc_flt_4" version "G2A26800MX3"
+skip mixed "cnv_oc_flt_5" version "G2A26800MX3"
+skip mixed "cnv_oc_flt_6" version "G2A26800MX3"
+skip analog powered "cnv_oc_flt_pw_1" version "G2A26800MX3"
+skip analog powered "cnv_oc_flt_pw_2" version "G2A26800MX3"
+skip analog powered "cnv_oc_flt_pw_3" version "G2A26800MX3"
+skip analog powered "cnv_oc_flt_pw_4" version "G2A26800MX3"
+skip analog powered "cnv_oc_flt_pw_5" version "G2A26800MX3"
+skip analog powered "cnv_oc_flt_pw_6" version "G2A26800MX3"
+skip analog powered "duty_cycle_smps_da2" version "G2A26800MX3"
+skip analog powered "duty_cycle_smps_da2_1" version "G2A26800MX3"
+skip analog powered "duty_cycle_smps_ga2" version "G2A26800MX3"
+skip analog powered "duty_cycle_smps_ga2_1" version "G2A26800MX3"
+skip analog powered "frequency_dcp_led" version "G2A26800MX3"
+skip analog powered "pfail_rs_conv_high" version "G2A26800MX3"
+skip analog powered "pfail_rs_conv_high_1" version "G2A26800MX3"
+skip analog powered "pfail_rs_conv_low" version "G2A26800MX3"
+skip analog powered "pfail_rs_conv_low_a" version "G2A26800MX3"
+skip analog powered "pfail_rs_conv_low_1" version "G2A26800MX3"
+skip analog powered "r_res_ruo_close" version "G2A26800MX3"
+skip analog powered "r_res_ruo_open" version "G2A26800MX3"
+skip analog powered "ref_pri_n" version "G2A26800MX3"
+skip analog powered "ref_sec" version "G2A26800MX3"
+skip analog powered "s_res_svo_close" version "G2A26800MX3"
+skip analog powered "s_res_svo_open" version "G2A26800MX3"
+skip analog powered "sense_ir-2a" version "G2A26800MX3"
+skip analog powered "sense_ir_0a" version "G2A26800MX3"
+skip analog powered "sense_ir_2a" version "G2A26800MX3"
+skip analog powered "sense_is-2a" version "G2A26800MX3"
+skip analog powered "sense_is_0a" version "G2A26800MX3"
+skip analog powered "sense_is_2a" version "G2A26800MX3"
+skip analog powered "vrs_dc_n_ac" version "G2A26800MX3"
+skip analog powered "vrs_dc_n_dc" version "G2A26800MX3"
+skip analog powered "vrs_n_ur" version "G2A26800MX3"
+skip analog powered "vrs_n_us" version "G2A26800MX3"
+skip analog powered "vrs_n_ut" version "G2A26800MX3"
+skip analog powered "vrs_n_vrs_out_n_falling" version "G2A26800MX3"
+skip analog powered "vrs_n_vrs_out_n_rising" version "G2A26800MX3"
+skip analog powered "vrs_out_dc_n_ac" version "G2A26800MX3"
+skip analog powered "vrs_out_dc_n_dc" version "G2A26800MX3"
+skip analog powered "vrs_out_n" version "G2A26800MX3"
+skip analog powered "k3_vrs" version "G2A26800MX3"
+skip analog powered "vrs_out_n_ac" version "G2A26800MX3"
+skip analog powered "vrs_out_n_dc" version "G2A26800MX3"
+skip analog powered "vst_dc_n_ac" version "G2A26800MX3"
+skip analog powered "vst_dc_n_dc" version "G2A26800MX3"
+skip analog powered "vst_n_ur" version "G2A26800MX3"
+skip analog powered "vst_n_us" version "G2A26800MX3"
+skip analog powered "vst_n_ut" version "G2A26800MX3"
+skip analog powered "vst_n_vrs_out_n_falling" version "G2A26800MX3"
+skip analog powered "vst_n_vrs_out_n_rising" version "G2A26800MX3"
+skip analog powered "vst_out_dc_n_ac" version "G2A26800MX3"
+skip analog powered "vst_out_dc_n_dc" version "G2A26800MX3"
+skip analog powered "vst_out_n" version "G2A26800MX3"
+skip analog powered "k3_vst" version "G2A26800MX3"
+skip analog powered "vst_out_n_ac" version "G2A26800MX3"
+skip analog powered "vst_out_n_dc" version "G2A26800MX3"
+test analog powered "invtempuref" version "G2A26800MX3"
+skip analog powered "cnvtempuref" version "G2A26800MX3"
+test analog powered "invtempun" version "G2A26800MX3"
+skip analog powered "cnvtempun" version "G2A26800MX3"
+test analog powered "invtempuout" version "G2A26800MX3"
+skip analog powered "cnvtempuout" version "G2A26800MX3"
+test analog powered "invtempuin" version "G2A26800MX3"
+skip analog powered "cnvtempuin" version "G2A26800MX3"
+test analog powered "invudcluin" version "G2A26800MX3"
+test analog powered "invudcluout" version "G2A26800MX3"
+skip analog powered "cnvvrsuindc" version "G2A26800MX3"
+skip analog powered "cnvvrsuoutdc" version "G2A26800MX3"
+skip analog powered "cnvvrsuout" version "G2A26800MX3"
+skip analog powered "cnvvstuindc" version "G2A26800MX3"
+skip analog powered "cnvvstuoutdc" version "G2A26800MX3"
+skip analog powered "cnvvstuout" version "G2A26800MX3"
+skip capacitor "c109" version "G2A26800MX3"
+skip capacitor "c110" version "G2A26800MX3"; nulltest !tested in parallel with c109
+test capacitor "c108" version "G2A26800MX3" !; nulltest !tested in parallel with c109
+skip capacitor "c114" version "G2A26800MX3"; comment
+skip capacitor "c115" version "G2A26800MX3"; nulltest !commented: see test c114
+skip capacitor "c116" version "G2A26800MX3"; nulltest !commented: see test c114
+skip capacitor "c134" version "G2A26800MX3"
+skip capacitor "c135" version "G2A26800MX3"; nulltest !tested in parallel with c134
+test capacitor "c136" version "G2A26800MX3" !; nulltest !tested in parallel with c134
+skip capacitor "c142" version "G2A26800MX3"
+skip capacitor "c143" version "G2A26800MX3"; nulltest !tested in parallel with c142
+test capacitor "c144" version "G2A26800MX3" !; nulltest !tested in parallel with c142
+skip capacitor "c155" version "G2A26800MX3"; nulltest !tested in parallel with c159
+skip capacitor "c156" version "G2A26800MX3"; nulltest !tested in parallel with c159
+skip capacitor "c157" version "G2A26800MX3"; nulltest !tested in parallel with c159
+skip capacitor "c158" version "G2A26800MX3"; nulltest !tested in parallel with c159
+skip capacitor "c161" version "G2A26800MX3"; nulltest !tested in parallel with c153
+skip capacitor "c162" version "G2A26800MX3"; nulltest !tested in parallel with c153
+skip capacitor "c163" version "G2A26800MX3"; nulltest !tested in parallel with c153
+skip capacitor "c164" version "G2A26800MX3"; nulltest !tested in parallel with c153
+skip capacitor "c171" version "G2A26800MX3"; nulltest !tested in parallel with c92
+skip capacitor "c176" version "G2A26800MX3"; nulltest !tested in parallel with c85
+skip capacitor "c178" version "G2A26800MX3"
+skip capacitor "c179" version "G2A26800MX3"; nulltest !tested in parallel with c178
+test capacitor "c177" version "G2A26800MX3" !; nulltest !tested in parallel with c178
+skip capacitor "c183" version "G2A26800MX3"; comment
+skip capacitor "c184" version "G2A26800MX3"; nulltest !commented: see test c183
+skip capacitor "c185" version "G2A26800MX3"; nulltest !commented: see test c183
+skip capacitor "c194" version "G2A26800MX3"
+skip capacitor "c195" version "G2A26800MX3"; nulltest !tested in parallel with c194
+test capacitor "c196" version "G2A26800MX3" !; nulltest !tested in parallel with c194
+skip capacitor "c200" version "G2A26800MX3"; nulltest !tested in parallel with c21
+skip capacitor "c202" version "G2A26800MX3"
+test capacitor "c301" version "G2A26800MX3" !; nulltest !tested in parallel with c202
+skip capacitor "c204" version "G2A26800MX3"
+skip capacitor "c205" version "G2A26800MX3"; nulltest !tested in parallel with c204
+test capacitor "c206" version "G2A26800MX3" !; nulltest !tested in parallel with c204
+skip capacitor "c217" version "G2A26800MX3"; nulltest !tested in parallel with c218
+skip capacitor "c221" version "G2A26800MX3"; nulltest !tested in parallel with c225
+skip capacitor "c222" version "G2A26800MX3"; nulltest !tested in parallel with c225
+skip capacitor "c223" version "G2A26800MX3"; nulltest !tested in parallel with c225
+skip capacitor "c224" version "G2A26800MX3"; nulltest !tested in parallel with c225
+skip capacitor "c227" version "G2A26800MX3"; nulltest !tested in parallel with c219
+skip capacitor "c228" version "G2A26800MX3"; nulltest !tested in parallel with c219
+skip capacitor "c229" version "G2A26800MX3"; nulltest !tested in parallel with c219
+skip capacitor "c230" version "G2A26800MX3"; nulltest !tested in parallel with c219
+skip capacitor "c231" version "G2A26800MX3"
+skip capacitor "c232" version "G2A26800MX3"; nulltest !tested in parallel with c231
+skip capacitor "c233" version "G2A26800MX3"; nulltest !tested in parallel with c234
+skip capacitor "c241" version "G2A26800MX3"; nulltest !tested in parallel with c249
+skip capacitor "c242" version "G2A26800MX3"; nulltest !tested in parallel with c249
+skip capacitor "c38" version "G2A26800MX3"
+skip capacitor "c39" version "G2A26800MX3"; nulltest !tested in parallel with c38
+test capacitor "c37" version "G2A26800MX3" !; nulltest !tested in parallel with c38
+skip capacitor "c43" version "G2A26800MX3"; comment
+skip capacitor "c44" version "G2A26800MX3"; nulltest !commented: see test c43
+skip capacitor "c45" version "G2A26800MX3"; nulltest !commented: see test c43
+skip capacitor "c55" version "G2A26800MX3"
+skip capacitor "c56" version "G2A26800MX3"; nulltest !tested in parallel with c55
+test capacitor "c57" version "G2A26800MX3" !; nulltest !tested in parallel with c55
+skip capacitor "c63" version "G2A26800MX3"
+skip capacitor "c64" version "G2A26800MX3"; nulltest !tested in parallel with c63
+test capacitor "c65" version "G2A26800MX3" !; nulltest !tested in parallel with c63
+skip capacitor "c80" version "G2A26800MX3"; nulltest !tested in parallel with c72
+skip capacitor "c81" version "G2A26800MX3"; nulltest !tested in parallel with c72
+skip capacitor "c82" version "G2A26800MX3"; nulltest !tested in parallel with c72
+skip capacitor "c83" version "G2A26800MX3"; nulltest !tested in parallel with c72
+skip capacitor "c85" version "G2A26800MX3"
+skip capacitor "c86" version "G2A26800MX3"; nulltest !tested in parallel with c85
+skip capacitor "c99" version "G2A26800MX3" !; nulltest !tested in parallel with c85
+skip capacitor "c210" version "G2A26800MX3"
+skip capacitor "c243" version "G2A26800MX3"; nulltest !tested in parallel with c249
+skip capacitor "c301" version "G2A26800MX3"; nulltest !tested in parallel with c202
+skip capacitor "c302" version "G2A26800MX3"; nulltest !tested in parallel with c21
+skip capacitor "c311" version "G2A26800MX3"; nulltest !tested in parallel with c218
+skip capacitor "c313" version "G2A26800MX3"; nulltest !tested in parallel with c234
+skip capacitor "c61" version "G2A26800MX3"
+skip capacitor "c98" version "G2A26800MX3"
+test capacitor "c278" version "G2A26800MX3" !; nulltest !tested in parallel with c98
+skip capacitor "c312a" version "G2A26800MX3" !@ power node
+test resistor "r248" version "G2A26800MX3"
+test resistor "r267" version "G2A26800MX3"
+test resistor "r61" version "G2A26800MX3"
+test resistor "r76" version "G2A26800MX3"
+test resistor "r66" version "G2A26800MX3"
+skip resistor "r67" version "G2A26800MX3"; nulltest !tested in parallel with r66
+test resistor "r126" version "G2A26800MX3"
+skip resistor "r127" version "G2A26800MX3"; nulltest !tested in parallel with r126
+test resistor "r167" version "G2A26800MX3"
+skip resistor "r168" version "G2A26800MX3"; nulltest !tested in parallel with r167
+test resistor "r272" version "G2A26800MX3"
+skip resistor "r273" version "G2A26800MX3"; nulltest !tested in parallel with r272
+test resistor "r376" version "G2A26800MX3"
+skip resistor "r377" version "G2A26800MX3"; nulltest !tested in parallel with r376
+test resistor "r434" version "G2A26800MX3"
+skip resistor "r435" version "G2A26800MX3"; nulltest !tested in parallel with r434
+test resistor "r42" version "G2A26800MX3"
+test resistor "r53" version "G2A26800MX3"
+test resistor "r43" version "G2A26800MX3"
+test resistor "r44" version "G2A26800MX3"
+test resistor "r50" version "G2A26800MX3"
+test resistor "r54" version "G2A26800MX3"
+!****************************************MX4******************************
+test shorts "shorts" version "G2A26800MX4"
+test pins "pins" version "G2A26800MX4"
+test capacitor ".discharge" version "G2A26800MX4"
+skip capacitor "c1" version "G2A26800MX4"; nulltest
+skip capacitor "c3" version "G2A26800MX4"; nulltest
+skip capacitor "c4" version "G2A26800MX4"; nulltest
+skip capacitor "c5" version "G2A26800MX4"; nulltest
+skip capacitor "c2" version "G2A26800MX4"; nulltest
+skip capacitor "c6" version "G2A26800MX4"; nulltest
+skip capacitor "c255" version "G2A26800MX4"; nulltest
+skip capacitor "c7" version "G2A26800MX4"; nulltest
+skip capacitor "c8" version "G2A26800MX4"; nulltest
+skip capacitor "c11" version "G2A26800MX4"; nulltest
+skip capacitor "c12" version "G2A26800MX4"; nulltest
+skip capacitor "c9" version "G2A26800MX4"; nulltest
+skip capacitor "c13" version "G2A26800MX4"; nulltest
+skip capacitor "c254" version "G2A26800MX4"; nulltest
+skip capacitor "c15" version "G2A26800MX4"; nulltest
+skip capacitor "c245" version "G2A26800MX4"; nulltest
+skip capacitor "c248" version "G2A26800MX4"; nulltest
+skip capacitor "c246" version "G2A26800MX4"; nulltest
+skip capacitor "c247" version "G2A26800MX4"; nulltest
+skip capacitor "c24" version "G2A26800MX4"; nulltest
+skip capacitor "c26" version "G2A26800MX4"; nulltest
+skip capacitor "c25" version "G2A26800MX4"; nulltest
+skip capacitor "c27" version "G2A26800MX4"; nulltest
+skip capacitor "c51" version "G2A26800MX4"; nulltest
+skip capacitor "c52" version "G2A26800MX4"; nulltest
+skip capacitor "c53" version "G2A26800MX4"; nulltest
+skip capacitor "c61" version "G2A26800MX4"; nulltest
+skip capacitor "c78" version "G2A26800MX4"
+test capacitor "c74" version "G2A26800MX4" !tested in parallel with c78
+skip capacitor "c75" version "G2A26800MX4"; nulltest !tested in parallel with c78
+skip capacitor "c76" version "G2A26800MX4"; nulltest !tested in parallel with c78
+skip capacitor "c77" version "G2A26800MX4"; nulltest !tested in parallel with c78
+skip capacitor "c73" version "G2A26800MX4"; nulltest !tested in parallel with c78
+skip capacitor "c72" version "G2A26800MX4"; nulltest
+skip capacitor "c159" version "G2A26800MX4"; nulltest
+skip capacitor "c153" version "G2A26800MX4"; nulltest
+skip capacitor "c225" version "G2A26800MX4"; nulltest
+skip capacitor "c219" version "G2A26800MX4"; nulltest
+skip capacitor "c249" version "G2A26800MX4"; nulltest
+skip capacitor "c241" version "G2A26800MX4"; nulltest
+skip capacitor "c242" version "G2A26800MX4"; nulltest
+skip capacitor "c243" version "G2A26800MX4"; nulltest
+skip capacitor "c258" version "G2A26800MX4"; nulltest
+skip capacitor "c304" version "G2A26800MX4"; nulltest
+skip capacitor "c320" version "G2A26800MX4" !not in bom
+skip capacitor "c14" version "G2A26800MX4"; nulltest
+skip capacitor "c29" version "G2A26800MX4"; nulltest
+skip capacitor "c30" version "G2A26800MX4"; nulltest
+skip capacitor "c28" version "G2A26800MX4"; nulltest
+skip capacitor "c211" version "G2A26800MX4"; nulltest
+test capacitor "c251" version "G2A26800MX4" !not in bom
+test capacitor "c253" version "G2A26800MX4" !not in bom
+skip capacitor "c259" version "G2A26800MX4"; nulltest
+skip capacitor "c265" version "G2A26800MX4"; nulltest
+skip capacitor "c103" version "G2A26800MX4"; nulltest
+skip capacitor "c264" version "G2A26800MX4"; nulltest
+skip capacitor "c238" version "G2A26800MX4"; nulltest
+skip capacitor "c244" version "G2A26800MX4"; nulltest
+skip capacitor "c97" version "G2A26800MX4"
+test capacitor "c96" version "G2A26800MX4" !tested in parallel with c97
+skip capacitor "c169" version "G2A26800MX4"; nulltest
+skip capacitor "c236" version "G2A26800MX4"; nulltest
+skip capacitor "c187" version "G2A26800MX4"; nulltest
+skip capacitor "c250" version "G2A26800MX4" !not in bom
+skip capacitor "c212" version "G2A26800MX4"; nulltest
+skip capacitor "c260" version "G2A26800MX4"; nulltest
+skip capacitor "c266" version "G2A26800MX4"; nulltest
+skip capacitor "c261" version "G2A26800MX4"; nulltest
+skip capacitor "c263" version "G2A26800MX4"; nulltest
+skip capacitor "c305" version "G2A26800MX4"; nulltest
+skip diode "d1%pins1_2" version "G2A26800MX4"; nulltest
+skip diode "d2%pins1_2" version "G2A26800MX4"; nulltest
+skip diode "d3%pins1_2" version "G2A26800MX4"; nulltest
+skip diode "d4%pins1_2" version "G2A26800MX4"; nulltest
+skip diode "z76" version "G2A26800MX4"; nulltest
+skip diode "d8%pins1_2" version "G2A26800MX4"; nulltest
+skip diode "d1%pins1_3" version "G2A26800MX4"; nulltest
+skip diode "d1%pins3_2" version "G2A26800MX4"; nulltest
+skip diode "d2%pins1_3" version "G2A26800MX4"; nulltest
+skip diode "d2%pins3_2" version "G2A26800MX4"; nulltest
+skip diode "d3%pins1_3" version "G2A26800MX4"; nulltest
+skip diode "d3%pins3_2" version "G2A26800MX4"; nulltest
+skip diode "d4%pins1_3" version "G2A26800MX4"; nulltest
+skip diode "d4%pins3_2" version "G2A26800MX4"; nulltest
+skip diode "d8%pins1_3" version "G2A26800MX4"; nulltest
+skip diode "d8%pins3_2" version "G2A26800MX4"; nulltest
+skip diode "d5%cr1" version "G2A26800MX4"; nulltest
+skip diode "d5%cr2" version "G2A26800MX4"; nulltest
+skip diode "d5%cr3" version "G2A26800MX4"; nulltest
+skip diode "d5%cr4" version "G2A26800MX4"; nulltest
+skip diode "d9%cr1" version "G2A26800MX4"; nulltest
+skip diode "d9%cr2" version "G2A26800MX4"; nulltest
+skip diode "d9%cr3" version "G2A26800MX4"; nulltest
+skip diode "d9%cr4" version "G2A26800MX4"; nulltest
+skip diode "q27%cr1" version "G2A26800MX4"; nulltest
+skip diode "q27%cr2" version "G2A26800MX4"; nulltest
+skip diode "q31%cr1" version "G2A26800MX4"; nulltest
+skip diode "q31%cr2" version "G2A26800MX4"; nulltest
+skip diode "q35%cr1" version "G2A26800MX4"; nulltest
+skip diode "q35%cr2" version "G2A26800MX4"; nulltest
+skip diode "d11" version "G2A26800MX4"; nulltest
+skip diode "d12" version "G2A26800MX4"; nulltest
+skip diode "d21" version "G2A26800MX4"; nulltest
+skip diode "d22" version "G2A26800MX4"; nulltest
+skip diode "d35" version "G2A26800MX4"; nulltest
+skip diode "d36" version "G2A26800MX4"; nulltest
+skip diode "d76" version "G2A26800MX4"; nulltest
+skip diode "d77" version "G2A26800MX4" !not in bom
+skip diode "led1" version "G2A26800MX4" !not in bom
+skip diode "z18" version "G2A26800MX4"; nulltest
+skip diode "u14%d1_2" version "G2A26800MX4"; nulltest
+skip diode "u14%d3_4" version "G2A26800MX4"; nulltest
+skip diode "u14%d5_6" version "G2A26800MX4"; nulltest
+skip inductor "l1" version "G2A26800MX4"; nulltest
+test jumper "jp1" version "G2A26800MX4"; preshorts
+test jumper "jp3" version "G2A26800MX4"; preshorts
+test jumper "jp5" version "G2A26800MX4"; preshorts
+test jumper "jp6" version "G2A26800MX4"; preshorts
+test jumper "jp8" version "G2A26800MX4"; preshorts
+skip jumper "jp10" version "G2A26800MX4"; nulltest !tested in parallel with jp3
+skip jumper "jp12" version "G2A26800MX4"; nulltest !tested in parallel with jp8
+skip jumper "jp14" version "G2A26800MX4"; nulltest !tested in parallel with jp3
+skip jumper "jp16" version "G2A26800MX4"; nulltest !tested in parallel with jp8
+test jumper "jp17" version "G2A26800MX4"; preshorts
+test jumper "jp19" version "G2A26800MX4"; preshorts
+test jumper "jp21" version "G2A26800MX4"; preshorts
+test jumper "p4_sw" version "G2A26800MX4"; preshorts
+test jumper "p6_sw" version "G2A26800MX4"; preshorts
+skip jumper "q27%jp1" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp2" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp3" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp4" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp5" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp6" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp7" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp8" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp9" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp10" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp11" version "G2A26800MX4"; nulltest
+skip jumper "q27%jp12" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp1" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp2" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp3" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp4" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp5" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp6" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp7" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp8" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp9" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp10" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp11" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp12" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp1" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp2" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp3" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp4" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp5" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp6" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp7" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp8" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp9" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp10" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp11" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp12" version "G2A26800MX4"; nulltest
+test jumper "r195" version "G2A26800MX4"; preshorts
+test jumper "r237" version "G2A26800MX4"; preshorts
+test jumper "r441" version "G2A26800MX4"; preshorts
+test jumper "r442" version "G2A26800MX4"; preshorts
+test jumper "r453" version "G2A26800MX4"; preshorts
+test jumper "r458" version "G2A26800MX4"; preshorts
+skip jumper "q27%jp13" version "G2A26800MX4"; nulltest
+skip jumper "q31%jp13" version "G2A26800MX4"; nulltest
+skip jumper "q35%jp13" version "G2A26800MX4"; nulltest
+skip resistor "q27%r1" version "G2A26800MX4"; nulltest
+skip resistor "q31%r1" version "G2A26800MX4"; nulltest
+skip resistor "q35%r1" version "G2A26800MX4"; nulltest
+skip resistor "r1" version "G2A26800MX4"; nulltest
+skip resistor "r2" version "G2A26800MX4"; nulltest
+skip resistor "r225" version "G2A26800MX4"; nulltest
+skip resistor "r243" version "G2A26800MX4"; nulltest
+skip resistor "r250" version "G2A26800MX4"; nulltest
+skip resistor "r6" version "G2A26800MX4"; nulltest
+skip resistor "r21" version "G2A26800MX4"; nulltest
+skip resistor "r35" version "G2A26800MX4"; nulltest
+skip resistor "r38" version "G2A26800MX4"; nulltest
+skip resistor "r91" version "G2A26800MX4"; nulltest
+skip resistor "r95" version "G2A26800MX4"; nulltest
+skip resistor "r104" version "G2A26800MX4"; nulltest
+skip resistor "r145" version "G2A26800MX4"; nulltest
+skip resistor "r149" version "G2A26800MX4"; nulltest
+skip resistor "r152" version "G2A26800MX4"; nulltest
+skip resistor "r187" version "G2A26800MX4"; nulltest
+skip resistor "r197" version "G2A26800MX4"; nulltest
+skip resistor "r9" version "G2A26800MX4"; nulltest
+skip resistor "r13" version "G2A26800MX4"; nulltest
+skip resistor "r16" version "G2A26800MX4"; nulltest
+skip resistor "r188" version "G2A26800MX4"; nulltest
+skip resistor "r37" version "G2A26800MX4"; nulltest
+skip resistor "r103" version "G2A26800MX4"; nulltest
+skip resistor "r151" version "G2A26800MX4"; nulltest
+skip resistor "r189" version "G2A26800MX4"; nulltest
+skip resistor "r196" version "G2A26800MX4"; nulltest
+skip resistor "r222" version "G2A26800MX4"; nulltest
+skip resistor "r224" version "G2A26800MX4"; nulltest
+skip resistor "r234" version "G2A26800MX4"; nulltest
+skip resistor "r198" version "G2A26800MX4"; nulltest
+skip resistor "r241" version "G2A26800MX4"; nulltest
+skip resistor "r419" version "G2A26800MX4"; nulltest
+test resistor "r428" version "G2A26800MX4"; nulltest
+skip resistor "r14" version "G2A26800MX4"; nulltest
+skip resistor "r59" version "G2A26800MX4"; nulltest
+skip resistor "r208" version "G2A26800MX4"; nulltest
+skip resistor "r459" version "G2A26800MX4" !not in bom
+skip resistor "r448" version "G2A26800MX4"; nulltest
+skip resistor "r449" version "G2A26800MX4"; nulltest
+skip resistor "r454" version "G2A26800MX4"; nulltest
+skip resistor "r455" version "G2A26800MX4"; nulltest
+skip resistor "r42" version "G2A26800MX4"; nulltest
+skip resistor "r53" version "G2A26800MX4"; nulltest
+skip resistor "r201" version "G2A26800MX4" !not in bom
+skip resistor "r204" version "G2A26800MX4" !not in bom
+skip resistor "r43" version "G2A26800MX4"; nulltest
+skip resistor "r44" version "G2A26800MX4"; nulltest
+skip resistor "r50" version "G2A26800MX4"; nulltest
+skip resistor "r54" version "G2A26800MX4"; nulltest
+skip resistor "r199" version "G2A26800MX4" !not in bom
+skip resistor "r200" version "G2A26800MX4" !not in bom
+skip resistor "r202" version "G2A26800MX4" !not in bom
+skip resistor "r203" version "G2A26800MX4" !not in bom
+skip resistor "r45" version "G2A26800MX4"; nulltest
+skip resistor "r46" version "G2A26800MX4"; nulltest
+skip resistor "r48" version "G2A26800MX4"; nulltest
+skip resistor "r236" version "G2A26800MX4"; nulltest
+skip resistor "r47" version "G2A26800MX4"; nulltest
+skip resistor "r49" version "G2A26800MX4"; nulltest
+skip resistor "r60" version "G2A26800MX4"; nulltest
+skip resistor "r249" version "G2A26800MX4"; nulltest
+skip resistor "r61" version "G2A26800MX4"; nulltest
+skip resistor "r194" version "G2A26800MX4" !not in bom
+skip resistor "r248" version "G2A26800MX4"; nulltest
+skip resistor "r452" version "G2A26800MX4" !not in bom
+skip resistor "r70" version "G2A26800MX4"; nulltest
+skip resistor "r78" version "G2A26800MX4"; nulltest
+skip resistor "r130" version "G2A26800MX4"; nulltest
+skip resistor "r135" version "G2A26800MX4"; nulltest
+skip resistor "r171" version "G2A26800MX4"; nulltest
+skip resistor "r181" version "G2A26800MX4"; nulltest
+skip resistor "r223" version "G2A26800MX4"; nulltest
+skip resistor "r233" version "G2A26800MX4"; nulltest
+skip resistor "r226" version "G2A26800MX4"; nulltest
+skip resistor "r235" version "G2A26800MX4"; nulltest
+skip resistor "r239" version "G2A26800MX4"; nulltest
+skip resistor "r240" version "G2A26800MX4"; nulltest
+skip resistor "r244" version "G2A26800MX4"; nulltest
+skip resistor "r209" version "G2A26800MX4"; nulltest
+skip resistor "r231" version "G2A26800MX4"; nulltest
+skip resistor "r232" version "G2A26800MX4"; nulltest
+skip resistor "r242" version "G2A26800MX4"; nulltest
+skip resistor "r247" version "G2A26800MX4"; nulltest
+skip resistor "r277" version "G2A26800MX4"; nulltest
+skip resistor "r278" version "G2A26800MX4"; nulltest
+skip resistor "r392" version "G2A26800MX4"; nulltest
+skip resistor "r457" version "G2A26800MX4" !not in bom
+skip transistor "q4" version "G2A26800MX4"; nulltest
+skip transistor "q25" version "G2A26800MX4"; nulltest
+skip transistor "q27%q1" version "G2A26800MX4"; nulltest
+skip transistor "q27%q2" version "G2A26800MX4"; nulltest
+skip transistor "q31%q1" version "G2A26800MX4"; nulltest
+skip transistor "q31%q2" version "G2A26800MX4"; nulltest
+skip transistor "q35%q1" version "G2A26800MX4"; nulltest
+skip transistor "q35%q2" version "G2A26800MX4"; nulltest
+test zener "z21" version "G2A26800MX4"
+skip zener "z77" version "G2A26800MX4" !not in bom
+test testjet "testjet" version "G2A26800MX4"
+skip analog powered "cs3" version "G2A26800MX4"; nulltest
+skip analog powered "led_sensor" version "G2A26800MX4"; nulltest
+skip analog powered "u1" version "G2A26800MX4"; nulltest
+skip digital "u2" version "G2A26800MX4"; nulltest
+skip digital "u3" version "G2A26800MX4"; nulltest
+skip analog powered "u4" version "G2A26800MX4"; nulltest
+skip analog powered "u5" version "G2A26800MX4"; nulltest
+skip analog powered "u12" version "G2A26800MX4"; nulltest
+skip analog powered "u13" version "G2A26800MX4"; nulltest
+skip analog powered "u14" version "G2A26800MX4"; nulltest
+skip digital "u54%program" version "G2A26800MX4"; nulltest
+skip digital "u54%program_1" version "G2A26800MX4"; nulltest
+skip digital "u54%program_2" version "G2A26800MX4"; nulltest
+skip digital "u54%program_3" version "G2A26800MX4"; nulltest
+skip digital "u54%program_4" version "G2A26800MX4"; nulltest
+skip digital "u54%read" version "G2A26800MX4"; nulltest
+skip digital "u54%read_1" version "G2A26800MX4"; nulltest
+skip digital "u54%read_2" version "G2A26800MX4"; nulltest
+skip digital "u54%read_3" version "G2A26800MX4"; nulltest
+skip digital "u54%read_4" version "G2A26800MX4"; nulltest
+skip digital "u54%fetch" version "G2A26800MX4"
+skip digital "u54%test" version "G2A26800MX4"; nulltest
+skip digital "u54%erase" version "G2A26800MX4"; nulltest
+skip digital "u56" version "G2A26800MX4"; nulltest
+skip analog powered "u57" version "G2A26800MX4" !not in bom
+skip analog powered "5v_hl2_hl2" version "G2A26800MX4"
+skip analog powered "24v_hl2_current" version "G2A26800MX4"
+skip analog powered "24v_hl2_hl2" version "G2A26800MX4"
+skip analog powered "24v_sense_24v_sense_rtn" version "G2A26800MX4"
+skip analog powered "24v_sense_current" version "G2A26800MX4"
+skip analog powered "24v_sw" version "G2A26800MX4"
+skip analog powered "24v_sw_current" version "G2A26800MX4"
+skip analog powered "dc_me_gnd_sense" version "G2A26800MX4"
+skip analog powered "duty_cycle_smps_da1" version "G2A26800MX4"
+skip analog powered "duty_cycle_smps_da1_1" version "G2A26800MX4"
+skip analog powered "duty_cycle_smps_ga1" version "G2A26800MX4"
+skip analog powered "duty_cycle_smps_ga1_1" version "G2A26800MX4"
+skip analog powered "frequency_dcp_led" version "G2A26800MX4"
+skip analog powered "frequency_sw_temp_sensor" version "G2A26800MX4"
+skip analog powered "frequency_sw_temp_sensor_1" version "G2A26800MX4"
+skip mixed "oct_inv_1" version "G2A26800MX4"
+skip mixed "oct_inv_2" version "G2A26800MX4"
+skip mixed "oct_inv_3" version "G2A26800MX4"
+skip mixed "oct_inv_4" version "G2A26800MX4"
+skip mixed "oct_inv_5" version "G2A26800MX4"
+skip mixed "oct_inv_6" version "G2A26800MX4"
+skip analog powered "oct_inv_pw_1" version "G2A26800MX4"
+skip analog powered "oct_inv_pw_2" version "G2A26800MX4"
+skip analog powered "oct_inv_pw_3" version "G2A26800MX4"
+skip analog powered "oct_inv_pw_4" version "G2A26800MX4"
+skip analog powered "oct_inv_pw_5" version "G2A26800MX4"
+skip analog powered "oct_inv_pw_6" version "G2A26800MX4"
+skip analog powered "ptc_1_ptc_6_current" version "G2A26800MX4"
+skip analog powered "ptc_adc_load_1k" version "G2A26800MX4"
+skip analog powered "ptc_adc_open" version "G2A26800MX4"
+skip analog powered "ptc_adc_short" version "G2A26800MX4"
+skip analog powered "sense_iu-2a" version "G2A26800MX4"
+skip analog powered "sense_iu_0a" version "G2A26800MX4"
+skip analog powered "sense_iu_2a" version "G2A26800MX4"
+skip analog powered "sense_iv-2a" version "G2A26800MX4"
+skip analog powered "sense_iv_0a" version "G2A26800MX4"
+skip analog powered "sense_iv_2a" version "G2A26800MX4"
+skip analog powered "udcl_gnda" version "G2A26800MX4"
+skip analog powered "k3_udc" version "G2A26800MX4"
+test resistor "r190%res1_8" version "G2A26800MX4"
+test resistor "r190%res2_7" version "G2A26800MX4"
+test resistor "r190%res3_6" version "G2A26800MX4"
+test resistor "r190%res4_5" version "G2A26800MX4"
+skip analog powered "invtempuref" version "G2A26800MX4"
+test analog powered "cnvtempuref" version "G2A26800MX4"
+skip analog powered "invtempun" version "G2A26800MX4"
+test analog powered "cnvtempun" version "G2A26800MX4"
+skip analog powered "invtempuout" version "G2A26800MX4"
+test analog powered "cnvtempuout" version "G2A26800MX4"
+skip analog powered "invtempuin" version "G2A26800MX4"
+test analog powered "cnvtempuin" version "G2A26800MX4"
+skip analog powered "invudcluin" version "G2A26800MX4"
+skip analog powered "invudcluout" version "G2A26800MX4"
+test analog powered "cnvvrsuindc" version "G2A26800MX4"
+test analog powered "cnvvrsuoutdc" version "G2A26800MX4"
+test analog powered "cnvvrsuout" version "G2A26800MX4"
+test analog powered "cnvvstuindc" version "G2A26800MX4"
+test analog powered "cnvvstuoutdc" version "G2A26800MX4"
+test analog powered "cnvvstuout" version "G2A26800MX4"
+skip capacitor "c210" version "G2A26800MX4"
+skip capacitor "c239" version "G2A26800MX4"; nulltest
+skip capacitor "c240" version "G2A26800MX4"; nulltest !tested in parallel with c218
+skip capacitor "c256" version "G2A26800MX4"; nulltest !tested in parallel with c21
+skip capacitor "c301" version "G2A26800MX4"; nulltest !tested in parallel with c202
+skip capacitor "c302" version "G2A26800MX4"; nulltest !tested in parallel with c21
+skip capacitor "c311" version "G2A26800MX4"; nulltest !tested in parallel with c218
+skip capacitor "c313" version "G2A26800MX4"; nulltest !tested in parallel with c234
+skip capacitor "c316" version "G2A26800MX4"; nulltest !tested in parallel with c21
+skip capacitor "c98" version "G2A26800MX4"
+skip capacitor "c312a" version "G2A26800MX4" !@ power node
+skip diode "d78" version "G2A26800MX4"; nulltest
+test resistor "r76" version "G2A26800MX4"
+test resistor "r100" version "G2A26800MX4" !@not load
+test resistor "r121" version "G2A26800MX4"
+test resistor "r267" version "G2A26800MX4"
+test resistor "r308" version "G2A26800MX4"
+test resistor "r350" version "G2A26800MX4"
+test resistor "r66" version "G2A26800MX4"
+skip resistor "r67" version "G2A26800MX4"; nulltest !tested in parallel with r66
+test resistor "r126" version "G2A26800MX4"
+skip resistor "r127" version "G2A26800MX4"; nulltest !tested in parallel with r126
+test resistor "r167" version "G2A26800MX4"
+skip resistor "r168" version "G2A26800MX4"; nulltest !tested in parallel with r167
+test resistor "r272" version "G2A26800MX4"
+skip resistor "r273" version "G2A26800MX4"; nulltest !tested in parallel with r272
+test resistor "r376" version "G2A26800MX4"
+skip resistor "r377" version "G2A26800MX4"; nulltest !tested in parallel with r376
+test resistor "r434" version "G2A26800MX4"
+skip resistor "r435" version "G2A26800MX4"; nulltest !tested in parallel with r434
+test resistor "r154" version "G2A26800MX4"
+skip analog powered "u40" version "G2A26800MX4"; nulltest

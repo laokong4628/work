@@ -1,0 +1,20 @@
+!!!!    2    0    1 1426841727   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c252 10.0u"
+end on failure
+disconnect all
+connect s to "DCN_LED_6"
+connect i to "UNNAMED_9_555_I229_RESET"
+connect g to "UNNAMED_9_555_I229_DISCH"
+capacitor 20u, 10.0, 20, fr128, re2, ar20.0m, ed, nocomp, sm
+! "c251" test.
+! DUT: nominal 20u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 22u, low 18u
+! TEST: high limit 22.003u, low limit 17.760u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

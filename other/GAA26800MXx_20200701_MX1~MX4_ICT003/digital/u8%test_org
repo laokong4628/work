@@ -1,0 +1,464 @@
+!!!!    6    0    1 1274194557   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:23 2010
+
+!-----------------------------------------------------------------------
+! Device:        24c32/64
+! Manufacturer:  Atmel
+! Description:   4k/8k * 8 bit EEPROM I^2 C Compatible
+! Package:       8 pin SOIC
+! Test Platform: 3065,3070
+! Safeguard:     standard_cmos
+! Written By    : mikef
+! Date Written  : 4/10/02
+! Verified      : Yes
+!
+!-----------------------------------------------------------------------
+!
+! Additional Comments:
+!
+!-----------------------------------------------------------------------
+vector cycle 10u
+receive delay 9u
+!
+
+default device "u8%test"
+set terminators to on
+assign VCC     to pins *
+assign GND     to pins *
+
+assign SCL     to pins 6
+assign WP      to pins 7 default "0"
+assign A0      to pins *
+assign A1      to pins *
+assign A2      to pins 3
+assign SDA     to pins 5
+
+family TTL
+
+inputs A0, A1, A2, SCL, WP
+bidirectional SDA
+power  VCC, GND
+
+disable SDA with SCL to "1"
+set terminators to on
+
+!IPG: User must manually insert disable information for u8%program.5 if loaded.
+!IPG: User must manually insert disable information for u8%read.5 if loaded.
+
+! ******************************************************************************
+!  VECTORS
+! ******************************************************************************
+
+vector  Init
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+   set   A0                   to "0"
+   set   A1                   to "0"
+   set   A2                   to "1"
+end vector
+
+vector  KEEP
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "k"
+   set   A0                   to "k"
+   set   A1                   to "k"
+   set   A2                   to "k"
+end vector
+
+vector  Address_000
+   initialize                 to Keep
+   set   A0                   to "0"
+   set   A1                   to "0"
+   set   A2                   to "1"
+end vector
+
+vector  Address_111
+   initialize                 to Keep
+   set   A0                   to "1"
+   set   A1                   to "1"
+   set   A2                   to "1"
+end vector
+
+vector  Begin
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+end vector
+
+vector  Start
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  Stop
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "0"
+   set   SDA                  to "k"
+end vector
+
+vector  SCL_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "k"
+end vector
+
+vector  Dd_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dd_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_0_D_X
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "0"
+   set   SDA                  to "x"
+end vector
+
+vector  SCL_1_D_X
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "x"
+end vector
+
+vector  ACK_S0
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+vector  SCL_R_0
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "0"
+   set   SDA                  to "x"
+end vector
+
+vector  SCL_R_1
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "1"
+   set   SDA                  to "x"
+end vector
+
+vector  Dr_0
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  Dr_1
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  ACK_M0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  ACK_M1
+   initialize                 to Keep
+   receive  SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  RW_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "0"
+end vector
+
+vector  RW_1
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "k"
+   set   SDA                  to "1"
+end vector
+
+vector  SCL_1_D_0
+   initialize                 to Keep
+   drive SDA
+   set   SCL                  to "1"
+   set   SDA                  to "0"
+end vector
+
+! ******************************************************************************
+!  SUBS
+! ******************************************************************************
+
+sub  IC_Address_000 (RW)
+   execute  SCL_0
+   execute  Dd_1     !1
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_1     !1
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_1     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  Dd_0     !0
+   execute  SCL_1
+   execute  SCL_0
+   execute  RW       !Read = 1  Write = 0
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  Ack_S0         !ACK von Slave
+   execute  SCL_0_D_X
+end sub
+
+
+sub  Word_Address_1 (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0            !Ack von Slave
+   execute  SCL_0_D_X
+end sub
+
+sub  Word_Address_2 (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0            !Ack von Slave
+   execute  SCL_0_D_X
+end sub
+
+
+sub  Write_Data (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  SCL_0_D_X     !1/3/00(mikef)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0
+   execute  SCL_0_D_X
+   execute  Dd_0
+   execute  SCL_0
+   execute  SCL_1
+end sub
+
+sub  Read_Data (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  SCL_R_1
+   execute  D0        !D0
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D1        !D1
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D2        !D2
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D3        !D3
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D4        !D4
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D5        !D5
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D6        !D6
+   execute  SCL_R_0
+   execute  SCL_R_1
+   execute  D7        !D7
+   execute  SCL_0_D_X
+   execute  ACK_M0            !Ack von Master
+   execute  SCL_1_D_0
+   execute  SCL_0_D_X
+end sub
+
+
+sub  Write_Data_No_Stop (D0,D1,D2,D3,D4,D5,D6,D7)
+   execute  SCL_0_D_X     !1/3/00(mikef)
+   execute  D0
+   execute  SCL_1
+   execute  SCL_0
+   execute  D1
+   execute  SCL_1
+   execute  SCL_0
+   execute  D2
+   execute  SCL_1
+   execute  SCL_0
+   execute  D3
+   execute  SCL_1
+   execute  SCL_0
+   execute  D4
+   execute  SCL_1
+   execute  SCL_0
+   execute  D5
+   execute  SCL_1
+   execute  SCL_0
+   execute  D6
+   execute  SCL_1
+   execute  SCL_0
+   execute  D7
+   execute  SCL_1
+   execute  SCL_0_D_X
+   execute  SCL_1_D_X
+   execute  ACK_S0
+   execute  SCL_0_D_X
+!  execute  Dd_0
+!  execute  SCL_0
+!  execute  SCL_1
+end sub
+
+sub Reset
+   repeat 10 times
+     execute SCL_0
+     execute SCL_1
+     execute SCL_0
+   end repeat
+end sub
+
+! ******************************************************************************
+!  UNITS
+! ******************************************************************************
+
+
+unit  "Address 000"
+   execute  Init
+   execute  Address_000
+   execute  Begin   ! c=1 d=1
+   call Reset
+   execute  Start   ! c=1 d=0
+   execute  Stop    ! c=1 d=1
+   execute  Start   ! c=1 d=0
+   call  IC_Address_000 (RW_0)
+   call  Word_Address_1  (Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0)
+   call  Word_Address_2  (Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0)
+   call  Write_Data_No_Stop (Dd_0,Dd_1,Dd_0,Dd_1,Dd_0,Dd_1,Dd_0,Dd_1)
+   call  Write_Data_No_Stop (Dd_1,Dd_0,Dd_1,Dd_0,Dd_1,Dd_0,Dd_1,Dd_0)
+   call  Write_Data_No_Stop (Dd_0,Dd_0,Dd_0,Dd_0,Dd_1,Dd_1,Dd_1,Dd_1)
+   call  Write_Data (Dd_1,Dd_1,Dd_1,Dd_1,Dd_0,Dd_0,Dd_0,Dd_0)
+   execute  Stop
+
+   wait 10m
+   execute  Start
+   call  IC_Address_000 (RW_0)
+   call  Word_Address_1 (Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0)
+   call  Word_Address_2 (Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0,Dd_0)
+   execute  Begin
+   execute  Start
+   call  IC_Address_000 (RW_1)
+   call  Read_Data(Dr_0,Dr_1,Dr_0,Dr_1,Dr_0,Dr_1,Dr_0,Dr_1)
+   call  Read_Data(Dr_1,Dr_0,Dr_1,Dr_0,Dr_1,Dr_0,Dr_1,Dr_0)
+   call  Read_Data(Dr_0,Dr_0,Dr_0,Dr_0,Dr_1,Dr_1,Dr_1,Dr_1)
+   call  Read_Data(Dr_1,Dr_1,Dr_1,Dr_1,Dr_0,Dr_0,Dr_0,Dr_0)
+   execute  Stop
+end unit
+!
+!  End of test
+!
+
+
+
+
+

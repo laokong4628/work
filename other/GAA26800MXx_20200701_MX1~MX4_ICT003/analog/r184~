@@ -1,0 +1,14 @@
+!!!!    2    0    1 1531578592   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect i to "SMPS_SENSE_GATE"
+connect s to "UNNAMED_39_10MQ040N_I229_C"
+resistor 249, 3, 2, re3, wb, ar100m, ed
+! "r184" test.
+! DUT: nominal 249, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 251.49, low 246.51
+! TEST: high limit 257.82, low limit 249.07
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

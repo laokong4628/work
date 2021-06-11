@@ -1,0 +1,28 @@
+!!!!    2    0    1 1264583287   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:08 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "z76"
+   report "c7 10.0u"
+   report "c8 10.0u"
+   report "c9 100n"
+   report "c11 10.0u"
+   report "c12 10.0u"
+   report "c13 100n"
+   report "c254 100n"
+end on failure
+disconnect all
+connect s to "24V_HL2"
+connect i to "HL2"
+diode 1.61, 405m, idc2.1m, co3.8, ar1.61
+warning "A 'wait' option may be required to correctly fail a reversed diode"
+! "d4%pins1_2" test.
+! DUT: nominal 975m, plus tol 64.1 %, minus tol 59.0 %
+! DUT: high 1.6, low 400m
+! TEST: high limit 1.611, low limit 404.688m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 2m
+off failure

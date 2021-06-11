@@ -1,0 +1,16 @@
+!!!!    2    0    1 1425541456   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:49 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "5V_REF"; a to "5V_REF"
+connect i to "UNNAMED_49_R_I121_A"; b to "UNNAMED_49_R_I121_A"
+connect g to "GNDA"
+resistor 24.3, 8, 7, re2, ar100m, sa, sb, en  !@!ecn new bom 24.3 ohm
+!@!resistor 10, 12.8, 3.75, re1, ar100m, sa, sb, en
+! "r88" is a limited test.
+! DUT: nominal 10, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 10.1, low 9.9
+! TEST: high limit 11.277, low limit 9.625
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

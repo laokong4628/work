@@ -1,0 +1,14 @@
+!!!!    2    0    1 1274705883   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:46 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "VST_N"
+connect i to "UNNAMED_37_C_I69_A"
+resistor 20k, 5.30, 5.23, re5, wb, ar100m, ed
+! "r297" test.
+! DUT: nominal 20k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 20.2k, low 19.8k
+! TEST: high limit 20.261k, low limit 19.754k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

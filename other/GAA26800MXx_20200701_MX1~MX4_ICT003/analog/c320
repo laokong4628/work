@@ -1,0 +1,14 @@
+!!!!    2    0    1 1301319368   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "DCN_LED_6"
+connect i to "UNNAMED_9_555_I229_CONT"
+capacitor 100n, 15, 13, fr128, re5, wb, ar100m,ed, nocomp
+! "c320" test.
+! DUT: nominal 100n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110n, low 90n
+! TEST: high limit 110.674n, low limit 89.403n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

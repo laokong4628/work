@@ -1,0 +1,20 @@
+!!!!    2    0    1 1264583322   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:43 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c120 100n"
+end on failure
+disconnect all
+connect s to "24V_DRIVER_RTN"
+connect i to "UNNAMED_47_C_I260_B"
+connect g to "UNNAMED_47_BAS19_I21_C"
+resistor 887, 2.37, 0.809, re3, wb, ar100m
+! "r107" test.
+! DUT: nominal 887, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 895.87, low 878.13
+! TEST: high limit 907.98, low limit 879.82
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

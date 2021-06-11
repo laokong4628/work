@@ -1,0 +1,27 @@
+!!!!    2    0    1 1264390908  Vc772                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V
+   disconnect all
+   connect s to nodes "RELAY_2"
+   connect a to nodes "RELAY_12"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   auxiliary dcv, amplitude 5, icompliance 1, on
+   connect g to nodes "PWM_SN"
+   connect g to nodes "PWM_VN"
+   connect g to nodes "RELAY_2"
+   wait 10m
+   test "SVN_G21_SVN_E21"
+end test
+
+subtest "SVN_G21_SVN_E21"
+   connect i to nodes "SVN_G21"
+   connect l to nodes "SVN_E21"
+   !@connect g to nodes "SVN_C1"
+   !@connect g to nodes "SVN_E11"
+   !@connect g to nodes "SVN_E21"
+   detector dcv, expect -9.50
+   measure -5.00, -16.00
+end subtest

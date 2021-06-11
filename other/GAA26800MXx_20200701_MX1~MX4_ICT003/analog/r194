@@ -1,0 +1,14 @@
+!!!!    2    0    1 1426841816   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:48 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "DCP_LED"; a to "DCP_LED"
+connect i to "UNNAMED_9_R_I212_B"; b to "UNNAMED_9_R_I212_B"
+resistor 75, 5.56, 5.35, re2, ar100m, sa, sb, en
+! "r194" test.
+! DUT: nominal 75, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 75.75, low 74.25
+! TEST: high limit 76.923, low limit 73.985
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

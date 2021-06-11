@@ -1,0 +1,21 @@
+!!!!    2    0    1 1273807794   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:03 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+test analog;RX5
+  test "RX5" 
+end test
+
+subtest "RX5"
+  global RX5
+  disconnect all
+  connect s to "SENSE_IS"; a to "SENSE_IS"
+  connect i to "RX5"; b to "RX5"
+  resistor 60, 2.95, 1.44, re2, ar200m, sa, sb, en, RX5
+end subtest 
+! "rx5" test.
+! DUT: nominal 60, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 60.6, low 59.4
+! TEST: high limit 61.773, low limit 59.136
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

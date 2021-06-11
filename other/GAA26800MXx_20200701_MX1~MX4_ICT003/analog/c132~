@@ -1,0 +1,20 @@
+!!!!    2    0    1 1322633888   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:59 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r333 10.0k"
+end on failure
+disconnect all
+connect s to "VRS_DC_N"
+connect i to "UNNAMED_36_C_I46_A"
+capacitor 1n+0.3n, 20.5, 20.2, fr8192, re3, wb, ar20.0m, nocomp, ed
+! "c132" test.
+! DUT: nominal 1n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 1.1n, low 900p
+! TEST: high limit 1.185n, low limit 778.205p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

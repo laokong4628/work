@@ -1,0 +1,21 @@
+!!!!    2    0    1 1293418008  Va413                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:33 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r188 10.0k not load"
+end on failure
+disconnect all
+connect s to "PF_IGBT_CONV_OC"; a to "PF_IGBT_CONV_OC"
+connect i to "VCC"
+connect g to "UNNAMED_44_74HC14_I263_A"
+connect g to "UNNAMED_45_74HC14_I93_A"
+resistor 10k, 3.3, 3.3, re4, wb, ar200m, sa, en
+! "r23" is a limited test.
+! DUT: nominal 5k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 5.05k, low 4.95k
+! TEST: high limit 5.615k, low limit 4.852k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

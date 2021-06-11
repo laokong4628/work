@@ -1,0 +1,16 @@
+!!!!    2    0    1 1273550650  Vba4d                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:41 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;I
+   disconnect all
+   test "I_SENSE_TW_24V_DRIVER_RTN"
+end test
+
+subtest "I_SENSE_TW_24V_DRIVER_RTN"
+   global I
+   report analog 0.80, 0.30, I
+!@   measure 0.80, 0.30              ! Adjust at debug
+end subtest

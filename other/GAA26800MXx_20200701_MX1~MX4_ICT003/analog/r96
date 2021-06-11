@@ -1,0 +1,20 @@
+!!!!    2    0    1 1435806619   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:54 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r97 681"
+end on failure
+disconnect all
+connect s to "VST_OUT_N"
+connect i to "UNNAMED_37_R_I11_B"
+connect g to "GNDA"
+resistor 340.5, 5.93, 3.91, re3, wb, ar200m,ed
+! "r96" test.
+! DUT: nominal 340.5, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 343.91, low 337.09
+! TEST: high limit 350.49, low limit 339.51
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

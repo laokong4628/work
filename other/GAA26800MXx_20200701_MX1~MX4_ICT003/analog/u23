@@ -1,0 +1,34 @@
+!!!!    2    0    1 1271689023   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:25 2010
+!IPG : Node NC__661 is not accessible.
+!IPG : Node NC__662 is not accessible.
+!IPG : Node NC__663 is not accessible.
+! 31.3.99    Initial Issue 130-3830-01    djt.
+! 10.11.2000 Code 69903-48-026 changed to 69903-48-018.  djt
+
+!----------------------------------------------------------------------
+
+test powered analog
+   disconnect all
+   nonanalog pins 1,3,5,7,8
+   test "VIN"
+   test "VOUT"
+end test
+
+!----------------------------------------------------------------------
+
+subtest "VIN"
+   connect i to pins 2
+   connect l to pins 4
+   detector dcv, expect 15
+   measure 15.5, 14.5
+end subtest
+
+subtest "VOUT"
+   connect i to pins 6
+   connect l to pins 4
+   detector dcv, expect 5
+   measure 5.5, 4.5
+
+end subtest
+

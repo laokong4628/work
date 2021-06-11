@@ -1,0 +1,26 @@
+!!!!    2    0    1 1274800878   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:48 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   gpconnect 21858 to 21859
+   connect s to nodes "S_RES"
+   connect a to nodes "CHRG_N"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   auxiliary dcv, amplitude 0, icompliance 1, on
+   wait 30m
+   test "S_RES_SVO"
+   gpdisconnect 21858 from 21859
+end test
+
+subtest "S_RES_SVO"
+   connect i to nodes "S_RES"
+   connect l to nodes "SVO"
+   !connect g to nodes "SVO"
+   !connect g to nodes "GND"
+   detector dcv, expect 0
+   measure 0.10, -0.10              ! Adjust at debug
+end subtest

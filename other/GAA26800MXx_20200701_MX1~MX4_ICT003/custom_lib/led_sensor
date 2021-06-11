@@ -1,0 +1,48 @@
+!!!!    2    0    1 1194623727  V3891                                         
+!
+! Device        : Detect LED Color Sensor 
+! Manufacturer  :
+! Description   : Positive Voltage Regulator  3.3 Volt
+! Package       : 4 pin, LED 2pins + Sensor 2pins
+! Test Platform : 3070
+! Safeguard     : standard_lsttl
+! Developed by  : Kicky Chen
+! revision      : A.01.00
+!
+
+!warning "Module not tested"
+
+
+test powered analog
+   disconnect all
+   test "LED_ON"
+   test "LED_OFF"
+end test
+
+subtest "LED_ON"
+   connect s to pins 4           ! Sensor Anode
+   connect a to pins 1           ! LED Anode
+   connect i to pins 5           ! Sensor
+   connect l to pins 3           ! Sensor Cathode   
+   connect g to pins 2           ! LED Cathode
+
+   source dcv, amplitude 5.0, terminated 5000, icompliance 1, on
+   auxiliary dcv, amplitude 5, icompliance 1, on
+   detector dcv, expect 0
+   measure 0.8, -0.5
+end subtest
+
+subtest "LED_OFF"
+   connect s to pins 4           ! Sensor Anode  
+   connect a to pins 1           ! LED Anode     
+   connect i to pins 5           ! Sensor  
+   connect l to pins 3           ! Sensor Cathode   
+   connect g to pins 2           ! LED Cathode
+
+   source dcv, amplitude 5.0, terminated 5000, icompliance 1, on
+   auxiliary dcv, amplitude 0, icompliance 1, on
+   detector dcv, expect 5.0
+   measure 5.2, 4.0
+end subtest
+
+! End of test

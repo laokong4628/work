@@ -1,0 +1,15 @@
+!!!!    2    0    1 1274193295   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:01 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_38_BAT54S_I35_A1"
+connect i to "UNNAMED_38_R_I19_B"
+resistor 3.3k, 3.44, 3.22, re4, wb, ar200m, ed
+!@resistor 5.62k, 1.44, 1.22, re4, wb, ar200m
+! "r381" test.
+! DUT: nominal 5.62k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 5.676k, low 5.564k
+! TEST: high limit 5.701k, low limit 5.552k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

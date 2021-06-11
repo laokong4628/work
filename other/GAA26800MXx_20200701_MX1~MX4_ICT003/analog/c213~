@@ -1,0 +1,17 @@
+!!!!    2    0    1 1586316916   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:05 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_48_BAS19_I178_A"; a to "UNNAMED_48_BAS19_I178_A"
+connect i to "UNNAMED_48_C_I179_B"
+!@connect g to "+27V_TW_N"; l to "+27V_TW_N"
+capacitor 220p, 115, 55, fr8192,wb , re4, sa , ar100m, en, nocomp, ed
+! warning "excessive plus tolerance or high limit."
+! "c213" is a commented test.
+! DUT: nominal 220p, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 231p, low 209p
+! TEST: high limit 34.688n, low limit -13.039n
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

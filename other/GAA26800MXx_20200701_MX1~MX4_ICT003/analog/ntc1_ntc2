@@ -1,0 +1,24 @@
+!!!!    2    0    1 1274365805   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:41 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   gpconnect 21852 to 21853
+   connect s to nodes "RELAY_9"  !@connected resistor 5kohm between NTC1/NTC2
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   wait 30m
+   test "NTC1_GND_SENSE"
+   gpdisconnect 21852 from 21853
+end test
+
+subtest "NTC1_GND_SENSE"
+   connect i to nodes "NTC1"
+   connect l to nodes "NTC2"
+   detector dcv, expect 1.86, average 100
+   initiate detector
+   fetch V
+   report analog  2050.00, 1670.00, V*1000
+end subtest

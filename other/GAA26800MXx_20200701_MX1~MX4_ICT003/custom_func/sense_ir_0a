@@ -1,0 +1,22 @@
+!!!!    2    0    1 1264398727  V218c                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V,RX3
+   disconnect all
+   !@ gpconnect "RX3" to "GNDA"  !@connected resistor 60ohm
+   wait 10m
+   test "SENSE_IR_GNDA"
+   !@ gpdisconnect "RX3" from "GNDA"  !@remove resistor 60ohm
+end test
+
+subtest "SENSE_IR_GNDA"
+   global V,RX3
+   connect i to nodes "SENSE_IR"
+   connect l to nodes "GNDA"
+   detector dcv, expect 0.00
+   initiate detector
+   fetch V
+   report analog  0.100, -0.10, V/RX3
+end subtest

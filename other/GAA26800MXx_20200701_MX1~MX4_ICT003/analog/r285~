@@ -1,0 +1,16 @@
+!!!!    2    0    1 1528908084   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:00 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "NTC1"
+connect i to "+15V_SENSE"
+connect g to "UNNAMED_49_C_I21_A"
+connect g to "NTC2"
+resistor 12.7k, 2.60, 2.95, re3, wb, ar100m, ed, en
+! "r285" test.
+! DUT: nominal 12.7k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 12.827k, low 12.573k
+! TEST: high limit 12.979k, low limit 12.452k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

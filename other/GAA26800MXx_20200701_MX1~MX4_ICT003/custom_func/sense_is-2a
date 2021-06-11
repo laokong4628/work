@@ -1,0 +1,24 @@
+!!!!    2    0    1 1264400605  V4b57                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;V,RX5
+   disconnect all
+   connect s to nodes "RELAY_16"  !@ supply -2A power supply to DUMMY_10
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   !@ gpconnect "RX5" to "GNDA" !@connected resistor 60ohm
+   wait 10m
+   test "SENSE_IS_GNDA"
+   !@ gpdisconnect "RX5" from "GNDA" !@remove resistor 60ohm
+end test
+
+subtest "SENSE_IS_GNDA"
+   global V,RX5
+   connect i to nodes "SENSE_IS"
+   connect l to nodes "GNDA"
+   detector dcv, expect 0.00
+   initiate detector
+   fetch V
+   report analog  0.100, -0.10, V/RX5
+end subtest

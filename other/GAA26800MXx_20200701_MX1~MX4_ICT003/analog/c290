@@ -1,0 +1,14 @@
+!!!!    2    0    1 1315083400   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "PFAIL_N_FILTERED"
+connect i to "VRS_N_RECTIFIED"
+capacitor 100n, 10.7, 13.6, fr1024, re3, wb, ar100m, nocomp
+! "c290" test.
+! DUT: nominal 100n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110n, low 90n
+! TEST: high limit 110.674n, low limit 89.403n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

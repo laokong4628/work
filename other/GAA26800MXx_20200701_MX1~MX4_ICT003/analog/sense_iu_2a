@@ -1,0 +1,35 @@
+!!!!    2    0    1 1300437725   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:50 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;RX4
+   disconnect all
+   connect a to nodes "RELAY_15"  !@ supply 2A power supply
+   auxiliary dcv, amplitude 5, icompliance 1, on
+   connect s to nodes "RELAY_12"  !@ connected resistor 60ohm
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   wait 100m
+   !@test "VCC2A+_VCC2A-"
+   test "SENSE_IU_GNDA"
+end test
+
+subtest "VCC2A+_VCC2A-"
+   connect i to nodes "VCC2A+"
+   connect l to nodes "VCC2A-"
+   detector dcv, expect 0.06
+   measure 0.15, 0.0
+end subtest
+
+subtest "SENSE_IU_GNDA"
+   global RX4
+   connect i to nodes "SENSE_IU"
+   connect l to nodes "GNDA"
+   !@connect g to nodes "GNDA"
+   !@connect g to nodes "GND"
+   detector dcv, expect 0.06, average 10
+   initiate detector
+   fetch V
+   report analog  1.20, 0.80, (V/(RX4+10))*1000  
+end subtest

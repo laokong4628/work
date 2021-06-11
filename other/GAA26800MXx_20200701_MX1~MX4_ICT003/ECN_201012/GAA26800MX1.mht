@@ -1,0 +1,2129 @@
+MIME-Version: 1.0
+X-Document-Type: Workbook
+Content-Type: multipart/related; boundary="----=_NextPart_01CBA378.01E74D90"
+
+This document is a Single File Web Page, also known as a Web Archive file.  If you are seeing this message, your browser or editor doesn't support Web Archive files.  Please download a browser that supports Web Archive, such as Windows® Internet Explorer®.
+
+------=_NextPart_01CBA378.01E74D90
+Content-Location: file:///C:/F3193F31/GAA26800MX1.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name=3D"Excel Workbook Frameset">
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 12">
+<link rel=3DFile-List href=3D"GAA26800MX1_files/filelist.xml">
+<![if !supportTabStrip]>
+<link id=3D"shLink" href=3D"GAA26800MX1_files/sheet001.htm">
+
+<link id=3D"shLink">
+
+<script language=3D"JavaScript">
+<!--
+ var c_lTabs=3D1;
+
+ var c_rgszSh=3Dnew Array(c_lTabs);
+ c_rgszSh[0] =3D "bom_1";
+
+
+
+ var c_rgszClr=3Dnew Array(8);
+ c_rgszClr[0]=3D"window";
+ c_rgszClr[1]=3D"buttonface";
+ c_rgszClr[2]=3D"windowframe";
+ c_rgszClr[3]=3D"windowtext";
+ c_rgszClr[4]=3D"threedlightshadow";
+ c_rgszClr[5]=3D"threedhighlight";
+ c_rgszClr[6]=3D"threeddarkshadow";
+ c_rgszClr[7]=3D"threedshadow";
+
+ var g_iShCur;
+ var g_rglTabX=3Dnew Array(c_lTabs);
+
+function fnGetIEVer()
+{
+ var ua=3Dwindow.navigator.userAgent
+ var msie=3Dua.indexOf("MSIE")
+ if (msie>0 && window.navigator.platform=3D=3D"Win32")
+  return parseInt(ua.substring(msie+5,ua.indexOf(".", msie)));
+ else
+  return 0;
+}
+
+function fnBuildFrameset()
+{
+ var szHTML=3D"<frameset rows=3D\"*,18\" border=3D0 width=3D0 frameborder=
+=3Dno framespacing=3D0>"+
+  "<frame src=3D\""+document.all.item("shLink")[0].href+"\" name=3D\"frShee=
+t\" noresize>"+
+  "<frameset cols=3D\"54,*\" border=3D0 width=3D0 frameborder=3Dno framespa=
+cing=3D0>"+
+  "<frame src=3D\"\" name=3D\"frScroll\" marginwidth=3D0 marginheight=3D0 s=
+crolling=3Dno>"+
+  "<frame src=3D\"\" name=3D\"frTabs\" marginwidth=3D0 marginheight=3D0 scr=
+olling=3Dno>"+
+  "</frameset></frameset><plaintext>";
+
+ with (document) {
+  open("text/html","replace");
+  write(szHTML);
+  close();
+ }
+
+ fnBuildTabStrip();
+}
+
+function fnBuildTabStrip()
+{
+ var szHTML=3D
+  "<html><head><style>.clScroll {font:8pt Courier New;color:"+c_rgszClr[6]+=
+";cursor:default;line-height:10pt;}"+
+  ".clScroll2 {font:10pt Arial;color:"+c_rgszClr[6]+";cursor:default;line-h=
+eight:11pt;}</style></head>"+
+  "<body onclick=3D\"event.returnValue=3Dfalse;\" ondragstart=3D\"event.ret=
+urnValue=3Dfalse;\" onselectstart=3D\"event.returnValue=3Dfalse;\" bgcolor=
+=3D"+c_rgszClr[4]+" topmargin=3D0 leftmargin=3D0><table cellpadding=3D0 cel=
+lspacing=3D0 width=3D100%>"+
+  "<tr><td colspan=3D6 height=3D1 bgcolor=3D"+c_rgszClr[2]+"></td></tr>"+
+  "<tr><td style=3D\"font:1pt\">&nbsp;<td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll\" onclick=3D\"parent.f=
+nFastScrollTabs(0);\" onmouseover=3D\"parent.fnMouseOverScroll(0);\" onmous=
+eout=3D\"parent.fnMouseOutScroll(0);\"><a>&#171;</a></td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll2\" onclick=3D\"parent.=
+fnScrollTabs(0);\" ondblclick=3D\"parent.fnScrollTabs(0);\" onmouseover=3D\=
+"parent.fnMouseOverScroll(1);\" onmouseout=3D\"parent.fnMouseOutScroll(1);\=
+"><a>&lt</a></td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll2\" onclick=3D\"parent.=
+fnScrollTabs(1);\" ondblclick=3D\"parent.fnScrollTabs(1);\" onmouseover=3D\=
+"parent.fnMouseOverScroll(2);\" onmouseout=3D\"parent.fnMouseOutScroll(2);\=
+"><a>&gt</a></td>"+
+  "<td valign=3Dtop id=3DtdScroll class=3D\"clScroll\" onclick=3D\"parent.f=
+nFastScrollTabs(1);\" onmouseover=3D\"parent.fnMouseOverScroll(3);\" onmous=
+eout=3D\"parent.fnMouseOutScroll(3);\"><a>&#187;</a></td>"+
+  "<td style=3D\"font:1pt\">&nbsp;<td></tr></table></body></html>";
+
+ with (frames['frScroll'].document) {
+  open("text/html","replace");
+  write(szHTML);
+  close();
+ }
+
+ szHTML =3D
+  "<html><head>"+
+  "<style>A:link,A:visited,A:active {text-decoration:none;"+"color:"+c_rgsz=
+Clr[3]+";}"+
+  ".clTab {cursor:hand;background:"+c_rgszClr[1]+";font:9pt Arial;padding-l=
+eft:3px;padding-right:3px;text-align:center;}"+
+  ".clBorder {background:"+c_rgszClr[2]+";font:1pt;}"+
+  "</style></head><body onload=3D\"parent.fnInit();\" onselectstart=3D\"eve=
+nt.returnValue=3Dfalse;\" ondragstart=3D\"event.returnValue=3Dfalse;\" bgco=
+lor=3D"+c_rgszClr[4]+
+  " topmargin=3D0 leftmargin=3D0><table id=3DtbTabs cellpadding=3D0 cellspa=
+cing=3D0>";
+
+ var iCellCount=3D(c_lTabs+1)*2;
+
+ var i;
+ for (i=3D0;i<iCellCount;i+=3D2)
+  szHTML+=3D"<col width=3D1><col>";
+
+ var iRow;
+ for (iRow=3D0;iRow<6;iRow++) {
+
+  szHTML+=3D"<tr>";
+
+  if (iRow=3D=3D5)
+   szHTML+=3D"<td colspan=3D"+iCellCount+"></td>";
+  else {
+   if (iRow=3D=3D0) {
+    for(i=3D0;i<iCellCount;i++)
+     szHTML+=3D"<td height=3D1 class=3D\"clBorder\"></td>";
+   } else if (iRow=3D=3D1) {
+    for(i=3D0;i<c_lTabs;i++) {
+     szHTML+=3D"<td height=3D1 nowrap class=3D\"clBorder\">&nbsp;</td>";
+     szHTML+=3D
+      "<td id=3DtdTab height=3D1 nowrap class=3D\"clTab\" onmouseover=3D\"p=
+arent.fnMouseOverTab("+i+");\" onmouseout=3D\"parent.fnMouseOutTab("+i+");\=
+">"+
+      "<a href=3D\""+document.all.item("shLink")[i].href+"\" target=3D\"frS=
+heet\" id=3DaTab>&nbsp;"+c_rgszSh[i]+"&nbsp;</a></td>";
+    }
+    szHTML+=3D"<td id=3DtdTab height=3D1 nowrap class=3D\"clBorder\"><a id=
+=3DaTab>&nbsp;</a></td><td width=3D100%></td>";
+   } else if (iRow=3D=3D2) {
+    for (i=3D0;i<c_lTabs;i++)
+     szHTML+=3D"<td height=3D1></td><td height=3D1 class=3D\"clBorder\"></t=
+d>";
+    szHTML+=3D"<td height=3D1></td><td height=3D1></td>";
+   } else if (iRow=3D=3D3) {
+    for (i=3D0;i<iCellCount;i++)
+     szHTML+=3D"<td height=3D1></td>";
+   } else if (iRow=3D=3D4) {
+    for (i=3D0;i<c_lTabs;i++)
+     szHTML+=3D"<td height=3D1 width=3D1></td><td height=3D1></td>";
+    szHTML+=3D"<td height=3D1 width=3D1></td><td></td>";
+   }
+  }
+  szHTML+=3D"</tr>";
+ }
+
+ szHTML+=3D"</table></body></html>";
+ with (frames['frTabs'].document) {
+  open("text/html","replace");
+  charset=3Ddocument.charset;
+  write(szHTML);
+  close();
+ }
+}
+
+function fnInit()
+{
+ g_rglTabX[0]=3D0;
+ var i;
+ for (i=3D1;i<=3Dc_lTabs;i++)
+  with (frames['frTabs'].document.all.tbTabs.rows[1].cells[fnTabToCol(i-1)])
+   g_rglTabX[i]=3DoffsetLeft+offsetWidth-6;
+}
+
+function fnTabToCol(iTab)
+{
+ return 2*iTab+1;
+}
+
+function fnNextTab(fDir)
+{
+ var iNextTab=3D-1;
+ var i;
+
+ with (frames['frTabs'].document.body) {
+  if (fDir=3D=3D0) {
+   if (scrollLeft>0) {
+    for (i=3D0;i<c_lTabs&&g_rglTabX[i]<scrollLeft;i++);
+    if (i<c_lTabs)
+     iNextTab=3Di-1;
+   }
+  } else {
+   if (g_rglTabX[c_lTabs]+6>offsetWidth+scrollLeft) {
+    for (i=3D0;i<c_lTabs&&g_rglTabX[i]<=3DscrollLeft;i++);
+    if (i<c_lTabs)
+     iNextTab=3Di;
+   }
+  }
+ }
+ return iNextTab;
+}
+
+function fnScrollTabs(fDir)
+{
+ var iNextTab=3DfnNextTab(fDir);
+
+ if (iNextTab>=3D0) {
+  frames['frTabs'].scroll(g_rglTabX[iNextTab],0);
+  return true;
+ } else
+  return false;
+}
+
+function fnFastScrollTabs(fDir)
+{
+ if (c_lTabs>16)
+  frames['frTabs'].scroll(g_rglTabX[fDir?c_lTabs-1:0],0);
+ else
+  if (fnScrollTabs(fDir)>0) window.setTimeout("fnFastScrollTabs("+fDir+");"=
+,5);
+}
+
+function fnSetTabProps(iTab,fActive)
+{
+ var iCol=3DfnTabToCol(iTab);
+ var i;
+
+ if (iTab>=3D0) {
+  with (frames['frTabs'].document.all) {
+   with (tbTabs) {
+    for (i=3D0;i<=3D4;i++) {
+     with (rows[i]) {
+      if (i=3D=3D0)
+       cells[iCol].style.background=3Dc_rgszClr[fActive?0:2];
+      else if (i>0 && i<4) {
+       if (fActive) {
+        cells[iCol-1].style.background=3Dc_rgszClr[2];
+        cells[iCol].style.background=3Dc_rgszClr[0];
+        cells[iCol+1].style.background=3Dc_rgszClr[2];
+       } else {
+        if (i=3D=3D1) {
+         cells[iCol-1].style.background=3Dc_rgszClr[2];
+         cells[iCol].style.background=3Dc_rgszClr[1];
+         cells[iCol+1].style.background=3Dc_rgszClr[2];
+        } else {
+         cells[iCol-1].style.background=3Dc_rgszClr[4];
+         cells[iCol].style.background=3Dc_rgszClr[(i=3D=3D2)?2:4];
+         cells[iCol+1].style.background=3Dc_rgszClr[4];
+        }
+       }
+      } else
+       cells[iCol].style.background=3Dc_rgszClr[fActive?2:4];
+     }
+    }
+   }
+   with (aTab[iTab].style) {
+    cursor=3D(fActive?"default":"hand");
+    color=3Dc_rgszClr[3];
+   }
+  }
+ }
+}
+
+function fnMouseOverScroll(iCtl)
+{
+ frames['frScroll'].document.all.tdScroll[iCtl].style.color=3Dc_rgszClr[7];
+}
+
+function fnMouseOutScroll(iCtl)
+{
+ frames['frScroll'].document.all.tdScroll[iCtl].style.color=3Dc_rgszClr[6];
+}
+
+function fnMouseOverTab(iTab)
+{
+ if (iTab!=3Dg_iShCur) {
+  var iCol=3DfnTabToCol(iTab);
+  with (frames['frTabs'].document.all) {
+   tdTab[iTab].style.background=3Dc_rgszClr[5];
+  }
+ }
+}
+
+function fnMouseOutTab(iTab)
+{
+ if (iTab>=3D0) {
+  var elFrom=3Dframes['frTabs'].event.srcElement;
+  var elTo=3Dframes['frTabs'].event.toElement;
+
+  if ((!elTo) ||
+   (elFrom.tagName=3D=3DelTo.tagName) ||
+   (elTo.tagName=3D=3D"A" && elTo.parentElement!=3DelFrom) ||
+   (elFrom.tagName=3D=3D"A" && elFrom.parentElement!=3DelTo)) {
+
+   if (iTab!=3Dg_iShCur) {
+    with (frames['frTabs'].document.all) {
+     tdTab[iTab].style.background=3Dc_rgszClr[1];
+    }
+   }
+  }
+ }
+}
+
+function fnSetActiveSheet(iSh)
+{
+ if (iSh!=3Dg_iShCur) {
+  fnSetTabProps(g_iShCur,false);
+  fnSetTabProps(iSh,true);
+  g_iShCur=3DiSh;
+ }
+}
+
+ window.g_iIEVer=3DfnGetIEVer();
+ if (window.g_iIEVer>=3D4)
+  fnBuildFrameset();
+//-->
+</script>
+<![endif]><!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>bom_1</x:Name>
+    <x:WorksheetSource HRef=3D"GAA26800MX1_files/sheet001.htm"/>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:Stylesheet HRef=3D"GAA26800MX1_files/stylesheet.css"/>
+  <x:WindowHeight>9465</x:WindowHeight>
+  <x:WindowWidth>16155</x:WindowWidth>
+  <x:WindowTopX>600</x:WindowTopX>
+  <x:WindowTopY>360</x:WindowTopY>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+
+<frameset rows=3D"*,39" border=3D0 width=3D0 frameborder=3Dno framespacing=
+=3D0>
+ <frame src=3D"GAA26800MX1_files/sheet001.htm" name=3D"frSheet">
+ <frame src=3D"GAA26800MX1_files/tabstrip.htm" name=3D"frTabs" marginwidth=
+=3D0 marginheight=3D0>
+ <noframes>
+  <body>
+   <p>This page uses frames, but your browser doesn't support them.</p>
+  </body>
+ </noframes>
+</frameset>
+</html>
+
+------=_NextPart_01CBA378.01E74D90
+Content-Location: file:///C:/F3193F31/GAA26800MX1_files/stylesheet.css
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/css; charset="us-ascii"
+
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl65
+	{mso-style-parent:style0;
+	mso-number-format:"\@";}
+
+------=_NextPart_01CBA378.01E74D90
+Content-Location: file:///C:/F3193F31/GAA26800MX1_files/tabstrip.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html>
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 12">
+<link id=3DMain-File rel=3DMain-File href=3D"../GAA26800MX1.htm">
+<![if IE]>
+<base href=3D"file:///C:\F3193F31\GAA26800MX1_files\tabstrip.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]>
+<script language=3D"JavaScript">
+<!--
+if (window.name!=3D"frTabs")
+ window.location.replace(document.all.item("Main-File").href);
+//-->
+</script>
+<style>
+<!--
+A {
+    text-decoration:none;
+    color:#000000;
+    font-size:9pt;
+}
+-->
+</style>
+</head>
+<body topmargin=3D0 leftmargin=3D0 bgcolor=3D"#808080">
+<table border=3D0 cellspacing=3D1>
+ <tr>
+ <td bgcolor=3D"#FFFFFF" nowrap><b><small><small>&nbsp;<a href=3D"sheet001.=
+htm" target=3D"frSheet"><font face=3D"Arial" color=3D"#000000">bom_1</font>=
+</a>&nbsp;</small></small></b></td>
+
+ </tr>
+</table>
+</body>
+</html>
+
+------=_NextPart_01CBA378.01E74D90
+Content-Location: file:///C:/F3193F31/GAA26800MX1_files/sheet001.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:x=3D"urn:schemas-microsoft-com:office:excel"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dus-ascii">
+<meta name=3DProgId content=3DExcel.Sheet>
+<meta name=3DGenerator content=3D"Microsoft Excel 12">
+<link id=3DMain-File rel=3DMain-File href=3D"../GAA26800MX1.htm">
+<link rel=3DFile-List href=3Dfilelist.xml>
+<![if IE]>
+<base href=3D"file:///C:\F3193F31\GAA26800MX1_files\sheet001.htm"
+id=3D"webarch_temp_base_tag">
+<![endif]>
+<link rel=3DStylesheet href=3Dstylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.49in;
+	mso-footer-margin:.49in;}
+-->
+</style>
+<![if !supportTabStrip]><script language=3D"JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=3D4) {
+   if (parent.document.readyState=3D=3D"complete"
+    && parent.frames['frTabs'].document.readyState=3D=3D"complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!=3D"frSheet")
+ window.location.replace("../GAA26800MX1.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link=3Dblue vlink=3Dpurple>
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 width=3D850 style=3D'bord=
+er-collapse:
+ collapse;table-layout:fixed;width:638pt'>
+ <col width=3D28 style=3D'mso-width-source:userset;mso-width-alt:1024;width=
+:21pt'>
+ <col width=3D21 style=3D'mso-width-source:userset;mso-width-alt:768;width:=
+16pt'>
+ <col width=3D97 style=3D'mso-width-source:userset;mso-width-alt:3547;width=
+:73pt'>
+ <col width=3D197 style=3D'mso-width-source:userset;mso-width-alt:7204;widt=
+h:148pt'>
+ <col width=3D248 style=3D'mso-width-source:userset;mso-width-alt:9069;widt=
+h:186pt'>
+ <col width=3D259 style=3D'mso-width-source:userset;mso-width-alt:9472;widt=
+h:194pt'>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 width=3D28 style=3D'height:12.75pt;width:21p=
+t'>1</td>
+  <td align=3Dright width=3D21 style=3D'width:16pt'>1</td>
+  <td width=3D97 style=3D'width:73pt'>GAA610ADB1</td>
+  <td width=3D197 style=3D'width:148pt'></td>
+  <td width=3D248 style=3D'width:186pt'>BAREBOARD</td>
+  <td width=3D259 style=3D'width:194pt'>BOARD,PRINTED_CIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>2</td>
+  <td align=3Dright>12</td>
+  <td>GAA226DG2</td>
+  <td>C31, C34, C46, C95, C102,</td>
+  <td>C_0603-100P,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>3</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C104, C118, C172, C173, C186,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>4</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C264, C312</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>5</td>
+  <td align=3Dright>55</td>
+  <td>GAA226DG5</td>
+  <td>C35, C37, C48, C50, C52, C53,</td>
+  <td>C_0603-100N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>6</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C54, C57, C58, C62, C65, C70,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>7</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C73, C79, C84, C87, C88, C89,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>8</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C90, C91, C94, C106, C108,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>9</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C120, C128, C133, C136, C137,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>10</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C141, C144, C154, C160, C174,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>11</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C177, C190, C192, C193, C196,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>12</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C197, C203, C206, C220, C226,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>13</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C246, C247, C273, C274, C276,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>14</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C277, C278, C279, C292, C293,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>15</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C314, C315</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>16</td>
+  <td align=3Dright>8</td>
+  <td>GAA226FK1</td>
+  <td>C36, C59, C107, C138, C175,</td>
+  <td>C_1210-22U,16V,20%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>17</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C198, C245, C248</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>18</td>
+  <td align=3Dright>68</td>
+  <td>GAA226FX1</td>
+  <td>C38, C39, C43, C44, C45, C55,</td>
+  <td>C_1210-10U,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>19</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C56, C63, C64, C74, C75, C76,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>20</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C77, C80, C81, C82, C83, C85,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>21</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C86, C92, C93, C99, C109,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>22</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C110, C114, C115, C116, C134,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>23</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C135, C142, C143, C155, C156,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>24</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C157, C158, C161, C162, C163,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>25</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C164, C171, C176, C178, C183,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>26</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C184, C185, C194, C195, C200,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>27</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C202, C204, C205, C217, C221,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>28</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C222, C223, C224, C227, C228,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>29</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C229, C230, C231, C232, C233,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>30</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C241, C242, C251, C252, C253</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>31</td>
+  <td align=3Dright>9</td>
+  <td>AAA226ET32</td>
+  <td>C40, C66, C71, C111, C145,</td>
+  <td>C_0603-10N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>32</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C152, C180, C207, C216</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>33</td>
+  <td align=3Dright>24</td>
+  <td>AAA226ET31</td>
+  <td>C41, C42, C112, C113, C181,</td>
+  <td>C_0603-1N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>34</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C182, C267, C268, C269, C270,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>35</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C271, C272, C284, C285, C286,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>36</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C287, C288, C289, C298, C299,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>37</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C300, C303, C308, C310</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>38</td>
+  <td align=3Dright>3</td>
+  <td>GAA226DG3</td>
+  <td>C47, C119, C189</td>
+  <td>C_0603-2.2N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>39</td>
+  <td align=3Dright>3</td>
+  <td>GAA226FP1</td>
+  <td>C49, C127, C191</td>
+  <td>C_1210-3.3U,50V,20%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>40</td>
+  <td align=3Dright>6</td>
+  <td>GAA226DG1</td>
+  <td>C60, C67, C139, C146, C199,</td>
+  <td>C_0603-470P,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>41</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C208</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>42</td>
+  <td align=3Dright>8</td>
+  <td>GAA226CL4</td>
+  <td>C61, C210, C243, C301, C302,</td>
+  <td>C_0805-100N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>43</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C311, C313, C320</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>44</td>
+  <td align=3Dright>10</td>
+  <td>GAA226CN7</td>
+  <td>C68, C69, C147, C148, C213,</td>
+  <td>C_0805-220P,200V,5%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>45</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>C214, C215, C235, C306, C307</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>46</td>
+  <td align=3Dright>3</td>
+  <td>GAA226GJ2</td>
+  <td>C96, C168, C237</td>
+  <td>C_THT-0.47U,1250V,5%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>47</td>
+  <td align=3Dright>2</td>
+  <td>GAA226GA1</td>
+  <td>C98, C250</td>
+  <td>C_1210-2.2U,100V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>48</td>
+  <td align=3Dright>1</td>
+  <td>GAA226FL1</td>
+  <td>C179</td>
+  <td>C_1210-10U,25V,20%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>49</td>
+  <td align=3Dright>1</td>
+  <td>GAA226CJ2</td>
+  <td>C201</td>
+  <td>CAP_THT-100U,35.0V,20%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>50</td>
+  <td align=3Dright>4</td>
+  <td>GAA226CL5</td>
+  <td>C209, C238, C244, C309</td>
+  <td>C_0805-10N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>51</td>
+  <td align=3Dright>2</td>
+  <td>GAA226CJ1</td>
+  <td>C218, C234</td>
+  <td>CAP_THT-470U,25V,20%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>52</td>
+  <td align=3Dright>1</td>
+  <td>GAA226DM1</td>
+  <td>C249</td>
+  <td>CAP_THT-470U,50V,20%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>53</td>
+  <td align=3Dright>1</td>
+  <td>GAA226CL3</td>
+  <td>C261</td>
+  <td>C_0805-4.7N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>54</td>
+  <td align=3Dright>3</td>
+  <td>GAA226DG7</td>
+  <td>C262, C281, C297</td>
+  <td>C_0603-220P,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>55</td>
+  <td align=3Dright>1</td>
+  <td>GAA226CL9</td>
+  <td>C263</td>
+  <td>C_0805-22N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>56</td>
+  <td align=3Dright>2</td>
+  <td>GAA226CL6</td>
+  <td>C265, C275</td>
+  <td>C_0805-1N,50V,10%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>57</td>
+  <td align=3Dright>1</td>
+  <td>GAA226CN6</td>
+  <td>C305</td>
+  <td>C_0805-56P,50V,5%</td>
+  <td>CAPACITOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>58</td>
+  <td align=3Dright>2</td>
+  <td>GAA622S3</td>
+  <td>CS1, CS2</td>
+  <td>LA200-P</td>
+  <td>TRANSDUCER,METERING</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>59</td>
+  <td align=3Dright>5</td>
+  <td>GAA612AY1</td>
+  <td>D6, D18, D32, D42, D76</td>
+  <td>10MQ040N-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>60</td>
+  <td align=3Dright>9</td>
+  <td>GAA612BJ3</td>
+  <td>D7, D13, D14, D19, D23, D24,</td>
+  <td>BAS19-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>61</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>D33, D37, D38</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>62</td>
+  <td align=3Dright>1</td>
+  <td>GAA612DP1</td>
+  <td>D8</td>
+  <td>BAT54S-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>63</td>
+  <td align=3Dright>1</td>
+  <td>GAA605V1</td>
+  <td>D9</td>
+  <td>LCDA12-SOIC</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>64</td>
+  <td align=3Dright>6</td>
+  <td>GAA612CD1</td>
+  <td>D10, D15, D20, D26, D34, D39</td>
+  <td>RGP02-20E-THT</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>65</td>
+  <td align=3Dright>6</td>
+  <td>GAA612AH1</td>
+  <td>D16, D17, D28, D29, D43, D44</td>
+  <td>BAV99-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>66</td>
+  <td align=3Dright>6</td>
+  <td>GAA612BH1</td>
+  <td>D40, D41, D69, D73, D74, D75</td>
+  <td>BYG22D-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>67</td>
+  <td align=3Dright>6</td>
+  <td>GAA612CA1</td>
+  <td>D48, D52, D56, D60, D64, D68</td>
+  <td>TMMBAT42-MELF</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>68</td>
+  <td align=3Dright>18</td>
+  <td>GAA612CE1</td>
+  <td>D49, D50, D51, D53, D54, D55,</td>
+  <td>US1G-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>69</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>D57, D58, D59, D61, D62, D63,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>70</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>D65, D66, D67, D70, D71, D72</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>71</td>
+  <td align=3Dright>1</td>
+  <td>GAA612AN1</td>
+  <td>D77</td>
+  <td>D1F60-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>72</td>
+  <td align=3Dright>9</td>
+  <td>AAA232HF8</td>
+  <td>JP3, JP5, JP8, JP10, JP12,</td>
+  <td>R_O_SMD_0603</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>73</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>JP14, JP16, JP17, JP19</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>74</td>
+  <td align=3Dright>3</td>
+  <td>GAA234BD1</td>
+  <td>L2, L3, L4</td>
+  <td>L_SMD-4.7U</td>
+  <td>COIL</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>75</td>
+  <td align=3Dright>1</td>
+  <td>GAA629AX1</td>
+  <td>LED1</td>
+  <td>LED-RED-LSM676-Q</td>
+  <td>OPTO_DEVICE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>76</td>
+  <td align=3Dright>1</td>
+  <td>GAA447FE8</td>
+  <td>P4</td>
+  <td>WAGO-721-262</td>
+  <td>CONNECTOR,PRINTED_WIRING_BOARD</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>77</td>
+  <td align=3Dright>1</td>
+  <td>GAA614DE1</td>
+  <td>P5</td>
+  <td>PCB-HEADER_50S-LONG</td>
+  <td>SOCKET</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>78</td>
+  <td align=3Dright>3</td>
+  <td>GAA601DQ1</td>
+  <td>Q3, Q11, Q18</td>
+  <td>BC847C-SMD</td>
+  <td>TRANSISTOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>79</td>
+  <td align=3Dright>3</td>
+  <td>GO601AAB1</td>
+  <td>Q4, Q9, Q25</td>
+  <td>BC817-SMD</td>
+  <td>TRANSISTOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>80</td>
+  <td align=3Dright>6</td>
+  <td>GAA601DT2</td>
+  <td>Q5, Q7, Q13, Q15, Q19, Q21</td>
+  <td>MJD45H11RLG-DPAK</td>
+  <td>TRANSISTOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>81</td>
+  <td align=3Dright>6</td>
+  <td>GAA601DT1</td>
+  <td>Q6, Q8, Q14, Q16, Q20, Q22</td>
+  <td>MJD44H11RLG-DPAK</td>
+  <td>TRANSISTOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>82</td>
+  <td align=3Dright>1</td>
+  <td>GAA601BJ5</td>
+  <td>Q23</td>
+  <td>IRFS23N15D-D2PAK</td>
+  <td>TRANSISTOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>83</td>
+  <td align=3Dright>3</td>
+  <td>GAA601DW1</td>
+  <td>Q26, Q30, Q34</td>
+  <td>ZXMN10A11G-SMD</td>
+  <td>TRANSISTOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>84</td>
+  <td align=3Dright>6</td>
+  <td>GAA601BD1</td>
+  <td>Q28, Q29, Q32, Q33, Q36, Q37</td>
+  <td>BDP949-SMD</td>
+  <td>TRANSISTOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>85</td>
+  <td align=3Dright>3</td>
+  <td>GAA232DW17</td>
+  <td>R3, R5, R19</td>
+  <td>R_THT-180K,5%,2W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>86</td>
+  <td align=3Dright>15</td>
+  <td>GAA232GC7</td>
+  <td>R20, R33, R81, R84, R89, R93,</td>
+  <td>R_0603-10K,1%,0.1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>87</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R144, R147, R222, R224, R234,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>88</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R238, R241, R332, R404</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>89</td>
+  <td align=3Dright>11</td>
+  <td>GAA232GC2</td>
+  <td>R21, R35, R38, R91, R95, R104</td>
+  <td>,<span style=3D'mso-spacerun:yes'>&nbsp;&nbsp; </span>R_0603-15,1%,0.=
+1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>90</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R145, R149, R152, R187, R197</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>91</td>
+  <td align=3Dright>7</td>
+  <td>GAA232AAS22</td>
+  <td>R36, R102, R150, R448, R449,</td>
+  <td>R_MELF-20,1%,1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>92</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R454, R455</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>93</td>
+  <td align=3Dright>3</td>
+  <td>GAA232FJ8</td>
+  <td>R40, R106, R155</td>
+  <td>R_0805-680K,5%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>94</td>
+  <td align=3Dright>3</td>
+  <td>GAA232FY70</td>
+  <td>R41, R107, R156</td>
+  <td>R_0805-887,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>95</td>
+  <td align=3Dright>4</td>
+  <td>GAA232ACH3</td>
+  <td>R42, R53, R201, R204</td>
+  <td>R_THT-100K,1%,0.9W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>96</td>
+  <td align=3Dright>8</td>
+  <td>GAA232ACH4</td>
+  <td>R43, R44, R50, R54, R199,</td>
+  <td>R_THT-150K,1%,0.9W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>97</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R200, R202, R203</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>98</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FY36</td>
+  <td>R46, R48, R80, R83, R236,</td>
+  <td>R_0805-15K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>99</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R281</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>100</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY66</td>
+  <td>R47</td>
+  <td>R_0805-7.68,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>101</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY65</td>
+  <td>R49</td>
+  <td>R_0805-909,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>102</td>
+  <td align=3Dright>21</td>
+  <td>GAA232GC4</td>
+  <td>R51, R111, R157, R251, R252,</td>
+  <td>R_0603-20K,1%,0.1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>103</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R253, R259, R263, R264, R352,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>104</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R353, R354, R364, R368, R369,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>105</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R407, R408, R409, R417, R427,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>106</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R430</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>107</td>
+  <td align=3Dright>3</td>
+  <td>GAA232FY60</td>
+  <td>R52, R112, R158</td>
+  <td>R_0805-113K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>108</td>
+  <td align=3Dright>3</td>
+  <td>GAA232FY25</td>
+  <td>R55, R113, R159</td>
+  <td>R_0805-33K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>109</td>
+  <td align=3Dright>15</td>
+  <td>GAA232AAS10</td>
+  <td>R56, R68, R114, R128, R160,</td>
+  <td>R_MELF-2.2K,1%,1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>110</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R169, R218, R219, R220, R304,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>111</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R305, R306, R394, R395, R396</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>112</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FV12</td>
+  <td>R57, R58, R115, R116, R161,</td>
+  <td>R_MINI-MELF-1,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>113</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R162</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>114</td>
+  <td align=3Dright>2</td>
+  <td>GAA232FV28</td>
+  <td>R59, R74</td>
+  <td>R_MINI-MELF-100,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>115</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FV27</td>
+  <td>R60, R75, R249, R268, R410,</td>
+  <td>R_MINI-MELF-442,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>116</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R411</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>117</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FV24</td>
+  <td>R61, R76, R194, R248, R267,</td>
+  <td>R_MINI-MELF-75,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>118</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R452</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>119</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FV3</td>
+  <td>R62, R71, R122, R131, R163,</td>
+  <td>R_MINI-MELF-10,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>120</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R176</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>121</td>
+  <td align=3Dright>18</td>
+  <td>GAA232AAS37</td>
+  <td>R63, R64, R65, R123, R124,</td>
+  <td>R_MELF-2.21,1%,1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>122</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R125, R164, R165, R166, R269,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>123</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R270, R271, R373, R374, R375,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>124</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R431, R432, R433</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>125</td>
+  <td align=3Dright>12</td>
+  <td>GAA232AAS36</td>
+  <td>R66, R67, R126, R127, R167,</td>
+  <td>R_MELF-2.00,1%,1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>126</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R168, R272, R273, R376, R377,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>127</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R434, R435</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>128</td>
+  <td align=3Dright>6</td>
+  <td>GAA232GC20</td>
+  <td>R69, R77, R129, R134, R170,</td>
+  <td>R_0603-47.5K,1%,0.1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>129</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R179</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>130</td>
+  <td align=3Dright>8</td>
+  <td>GAA232FV1</td>
+  <td>R72, R73, R132, R133, R177,</td>
+  <td>R_MINI-MELF-1K,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>131</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R178, R180, R182</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>132</td>
+  <td align=3Dright>11</td>
+  <td>GAA232FY13</td>
+  <td>R79, R225, R229, R243, R250,</td>
+  <td>R_0805-1K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>133</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R265, R274, R330, R402, R418,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>134</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R423</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>135</td>
+  <td align=3Dright>4</td>
+  <td>GAA232FY23</td>
+  <td>R82, R223, R233, R279</td>
+  <td>R_0805-27K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>136</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FV47</td>
+  <td>R85, R86, R141, R142, R185,</td>
+  <td>R_MINI-MELF-3.32K,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>137</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R186</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>138</td>
+  <td align=3Dright>3</td>
+  <td>GAA232FY4</td>
+  <td>R87, R284, R436</td>
+  <td>R_0805-1.33K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>139</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY86</td>
+  <td>R88</td>
+  <td>R_0805-24.3,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>140</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FJ11</td>
+  <td>R172</td>
+  <td>R_0805-10K,5%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>141</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY58</td>
+  <td>R173</td>
+  <td>R_0805-6.81K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>142</td>
+  <td align=3Dright>2</td>
+  <td>GAA232FY83</td>
+  <td>R174, R425</td>
+  <td>R_0805-374,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>143</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY49</td>
+  <td>R175</td>
+  <td>R_0805-10,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>144</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FV4</td>
+  <td>R183</td>
+  <td>R_MINI-MELF-22.1,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>145</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FV14</td>
+  <td>R184</td>
+  <td>R_MINI-MELF-249,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>146</td>
+  <td align=3Dright>5</td>
+  <td>GAA232FY12</td>
+  <td>R188, R196, R420, R424, R429</td>
+  <td>R_0805-10K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>147</td>
+  <td align=3Dright>1</td>
+  <td>GAA232ABB1</td>
+  <td>R190</td>
+  <td>RP4_CAY0603-10K,5%,0.062W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>148</td>
+  <td align=3Dright>2</td>
+  <td>GAA232FJ9</td>
+  <td>R195, R237</td>
+  <td>R_0805-0,5%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>149</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY22</td>
+  <td>R198</td>
+  <td>R_0805-1.5K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>150</td>
+  <td align=3Dright>3</td>
+  <td>GAA232FY28</td>
+  <td>R221, R318, R397</td>
+  <td>R_0805-5.11K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>151</td>
+  <td align=3Dright>11</td>
+  <td>GAA232FY35</td>
+  <td>R226, R235, R239, R240, R244,</td>
+  <td>R_0805-8.06K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>152</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R275, R276, R280, R282, R283,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>153</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R294</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>154</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FY1</td>
+  <td>R227, R228, R319, R329, R400,</td>
+  <td>R_0805-100,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>155</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R401</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>156</td>
+  <td align=3Dright>3</td>
+  <td>GAA232FV29</td>
+  <td>R230, R331, R403</td>
+  <td>R_MINI-MELF-27.4,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>157</td>
+  <td align=3Dright>2</td>
+  <td>GAA232FY64</td>
+  <td>R231, R232</td>
+  <td>R_0805-806,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>158</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY67</td>
+  <td>R242</td>
+  <td>R_0805-40.2K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>159</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FV6</td>
+  <td>R245, R257, R341, R362, R405,</td>
+  <td>R_MINI-MELF-332,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>160</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R415</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>161</td>
+  <td align=3Dright>6</td>
+  <td>GAA232FY27</td>
+  <td>R246, R258, R342, R363, R406,</td>
+  <td>R_0805-18K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>162</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R416</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>163</td>
+  <td align=3Dright>2</td>
+  <td>GAA232FY31</td>
+  <td>R247, R266</td>
+  <td>R_0805-4.7K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>164</td>
+  <td align=3Dright>18</td>
+  <td>GAA232AAS38</td>
+  <td>R254, R255, R256, R260, R261,</td>
+  <td>R_MELF-0.499,1%,1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>165</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R262, R359, R360, R361, R365,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>166</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R366, R367, R412, R413, R414,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>167</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R421, R422, R426</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>168</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY85</td>
+  <td>R285</td>
+  <td>R_0805-12.7K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>169</td>
+  <td align=3Dright>2</td>
+  <td>GAA232FY24</td>
+  <td>R286, R292</td>
+  <td>R_0805-3.3K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>170</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY9</td>
+  <td>R287</td>
+  <td>R_0805-5.62K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>171</td>
+  <td align=3Dright>12</td>
+  <td>GAA232FY82</td>
+  <td>R288, R289, R290, R291, R388,</td>
+  <td>R_0805-499,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>172</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R389, R390, R391, R443, R444,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>173</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>R445, R446</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>174</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY51</td>
+  <td>R293</td>
+  <td>R_0805-24.3K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>175</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FY87</td>
+  <td>R295</td>
+  <td>R_0805-2.55K,1%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>176</td>
+  <td align=3Dright>4</td>
+  <td>GAA232AAS27</td>
+  <td>R437, R438, R439, R440</td>
+  <td>R_MELF-1.21,1%,1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>177</td>
+  <td align=3Dright>4</td>
+  <td>GAA232AAS24</td>
+  <td>R441, R442, R453, R458</td>
+  <td>R_MELF-0,1%,1W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>178</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FJ6</td>
+  <td>R457</td>
+  <td>R_0805-100K,5%,0.125W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>179</td>
+  <td align=3Dright>1</td>
+  <td>GAA232FV22</td>
+  <td>R459</td>
+  <td>R_MINI-MELF-1.5K,1%,0.25W</td>
+  <td>RESISTOR,FIXED</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>180</td>
+  <td align=3Dright>3</td>
+  <td>GAA225RW1</td>
+  <td>TR1, TR2, TR3</td>
+  <td>VOGT-5033001300</td>
+  <td>TRANSFORMER</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>181</td>
+  <td align=3Dright>1</td>
+  <td>GAA225NM1</td>
+  <td>TR4</td>
+  <td>VOGT-EF20/5.9-5450122900</td>
+  <td>TRANSFORMER</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>182</td>
+  <td align=3Dright>4</td>
+  <td>GAA621DA1</td>
+  <td>U9, U26, U42, U48</td>
+  <td>UC3845B-SOIC</td>
+  <td>POWER_SUPPLY</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>183</td>
+  <td align=3Dright>6</td>
+  <td>GAA629BF1</td>
+  <td>U10, U15, U27, U32, U43, U45</td>
+  <td>HCPL316J-SOIC</td>
+  <td>OPTO_DEVICE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>184</td>
+  <td align=3Dright>4</td>
+  <td>GO616AAC8</td>
+  <td>U11, U28, U44, U56</td>
+  <td>74HC14-SOIC</td>
+  <td>MICROCIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>185</td>
+  <td align=3Dright>2</td>
+  <td>GAA616DE1</td>
+  <td>U12, U17</td>
+  <td>TL084B-SOIC-NVCC=3DV-15V,PVCC=3DV+A</td>
+  <td>MICROCIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>186</td>
+  <td align=3Dright>2</td>
+  <td>GAA616DE1</td>
+  <td>U13, U18</td>
+  <td>TL084B-SOIC-NVCC=3D-15V_SENSE,PVA</td>
+  <td>MICROCIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>187</td>
+  <td align=3Dright>2</td>
+  <td>GAA629CL1</td>
+  <td>U14, U16</td>
+  <td>IL300-COMBI</td>
+  <td>OPTO_DEVICE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>188</td>
+  <td align=3Dright>7</td>
+  <td>GAA616GP1</td>
+  <td>U19, U22, U36, U39, U47, U49,</td>
+  <td>TL431ACD-SOIC</td>
+  <td>MICROCIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>189</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>U52</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>190</td>
+  <td align=3Dright>7</td>
+  <td>GAA629BG1</td>
+  <td>U20, U21, U37, U38, U46, U50,</td>
+  <td>PS2561L-SOIC</td>
+  <td>OPTO_DEVICE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>191</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>U51</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>192</td>
+  <td align=3Dright>1</td>
+  <td>GAA616DM1</td>
+  <td>U23</td>
+  <td>REF02-SOIC</td>
+  <td>MICROCIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>193</td>
+  <td align=3Dright>1</td>
+  <td>GAA616JC1</td>
+  <td>U54</td>
+  <td>24C64-SOIC</td>
+  <td>MICROCIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>194</td>
+  <td align=3Dright>1</td>
+  <td>GAA616EF2</td>
+  <td>U57</td>
+  <td>555CMOS-SOIC</td>
+  <td>MICROCIRCUIT</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>195</td>
+  <td align=3Dright>3</td>
+  <td>GAA612CY11</td>
+  <td>Z1, Z6, Z11</td>
+  <td>BZV55B11-MINIMELF</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>196</td>
+  <td align=3Dright>6</td>
+  <td>GAA605E12</td>
+  <td>Z2, Z3, Z7, Z8, Z13, Z14</td>
+  <td>SMBJ60CA-SMD</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>197</td>
+  <td align=3Dright>6</td>
+  <td>GAA612AG9</td>
+  <td>Z4, Z5, Z9, Z10, Z16, Z17</td>
+  <td>BZX84C3V9-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>198</td>
+  <td align=3Dright>1</td>
+  <td>GAA605E5</td>
+  <td>Z12</td>
+  <td>SM6T22CA-SMD</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>199</td>
+  <td align=3Dright>1</td>
+  <td>GAA612AG12</td>
+  <td>Z15</td>
+  <td>BZX84C18-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>200</td>
+  <td align=3Dright>1</td>
+  <td>GAA605E8</td>
+  <td>Z18</td>
+  <td>SMBJ36CA-SMD</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>201</td>
+  <td align=3Dright>3</td>
+  <td>GAA605E17</td>
+  <td>Z20, Z37, Z54</td>
+  <td>SM6T33CA-SMD</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>202</td>
+  <td align=3Dright>6</td>
+  <td>GAA612CY9</td>
+  <td>Z21, Z29, Z38, Z46, Z55, Z63</td>
+  <td>BZV55B9V1-MINIMELF</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>203</td>
+  <td align=3Dright>42</td>
+  <td>GAA612CY1</td>
+  <td>Z22, Z23, Z24, Z25, Z26, Z27,</td>
+  <td>BZV55B18-MINIMELF</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>204</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>Z28, Z30, Z31, Z32, Z33, Z34,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>205</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>Z35, Z36, Z39, Z40, Z41, Z42,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>206</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>Z43, Z44, Z45, Z47, Z48, Z49,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>207</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>Z50, Z51, Z52, Z53, Z56, Z57,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>208</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>Z58, Z59, Z60, Z61, Z62, Z64,</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>209</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+  <td>Z65, Z66, Z67, Z68, Z69, Z71</td>
+  <td colspan=3D2 style=3D'mso-ignore:colspan'></td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>210</td>
+  <td align=3Dright>1</td>
+  <td>GAA605E10</td>
+  <td>Z70</td>
+  <td>SMBJ30CA-SMD</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>211</td>
+  <td align=3Dright>2</td>
+  <td>GAA605E11</td>
+  <td>Z72, Z75</td>
+  <td>SMBJ90CA-SMD</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>212</td>
+  <td align=3Dright>1</td>
+  <td>GAA612BX1</td>
+  <td>Z73</td>
+  <td>BZG05C4V7-SMD</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>213</td>
+  <td align=3Dright>1</td>
+  <td>GAA612CY3</td>
+  <td>Z74</td>
+  <td>BZV55C3V3-MINIMELF</td>
+  <td>DIODE</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>214</td>
+  <td align=3Dright>1</td>
+  <td>GAA605AB3</td>
+  <td>Z76</td>
+  <td>SM15T27CA-SMD</td>
+  <td>SUPPRESSOR</td>
+ </tr>
+ <tr height=3D17 style=3D'height:12.75pt'>
+  <td height=3D17 class=3Dxl65 style=3D'height:12.75pt'>215</td>
+  <td align=3Dright>1</td>
+  <td>GAA612CY5</td>
+  <td>Z77</td>
+  <td>BZV55B12-MINIMELF</td>
+  <td>DIODE</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=3D0 style=3D'display:none'>
+  <td width=3D28 style=3D'width:21pt'></td>
+  <td width=3D21 style=3D'width:16pt'></td>
+  <td width=3D97 style=3D'width:73pt'></td>
+  <td width=3D197 style=3D'width:148pt'></td>
+  <td width=3D248 style=3D'width:186pt'></td>
+  <td width=3D259 style=3D'width:194pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
+
+------=_NextPart_01CBA378.01E74D90
+Content-Location: file:///C:/F3193F31/GAA26800MX1_files/filelist.xml
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/xml; charset="utf-8"
+
+<xml xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+ <o:MainFile HRef=3D"../GAA26800MX1.htm"/>
+ <o:File HRef=3D"stylesheet.css"/>
+ <o:File HRef=3D"tabstrip.htm"/>
+ <o:File HRef=3D"sheet001.htm"/>
+ <o:File HRef=3D"filelist.xml"/>
+</xml>
+------=_NextPart_01CBA378.01E74D90--

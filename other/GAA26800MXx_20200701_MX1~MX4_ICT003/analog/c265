@@ -1,0 +1,16 @@
+!!!!    2    0    1 1528909982   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:00 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UDCL"
+connect i to "UNNAMED_10_R_I42_B"
+!@connect g to "UNNAMED_10_R_I45_B"
+capacitor 1n, 20, 20, fr1024, re4, wb, ar100m, nocomp, ed
+! "c265" test.
+! DUT: nominal 1n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 1.1n, low 900p
+! TEST: high limit 1.098n, low limit 894.368p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

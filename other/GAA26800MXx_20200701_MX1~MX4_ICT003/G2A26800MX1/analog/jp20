@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583396   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "I_RU"
+connect i to "SENSE_IR"
+jumper 10.0k, re4, wb, ar100m, op
+! "jp20" test.
+! DUT: nominal 2000M, plus tol 0.00 %, minus tol 100 %
+! DUT: high 2000M, low 10k
+! TEST: high limit 2000M, low limit 10k
+! Tolerance Multiplier 1.50
+! Remote Sensing is not Allowed

@@ -1,0 +1,22 @@
+!!!!    2    0    1 1427079557  V0985                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:19 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c202 10.0u"
+   report "c301 100n"
+end on failure
+disconnect all
+connect s to "SENSE_PWM_CONTROLLER_SUPPLY"
+connect i to "24V_SMPS_SENSE_RTN"
+diode 1.1, 370m, idc5m, co3.1, ar900m
+warning "A 'wait' option may be required to correctly fail a reversed diode"
+! "z12" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 900.172m, low limit 393.739m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

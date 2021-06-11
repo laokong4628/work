@@ -1,0 +1,14 @@
+!!!!    2    0    1 1273551068  Vdc75                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:46 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+
+test powered analog;T
+   disconnect all
+   test "Program_Result"
+end test
+
+subtest "Program_Result"
+   global T
+   report analog 0.5, -0.5, T
+end subtest

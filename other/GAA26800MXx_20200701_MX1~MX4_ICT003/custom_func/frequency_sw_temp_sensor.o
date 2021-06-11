@@ -1,0 +1,19 @@
+  201    0    4 1264002241   0000                                         
+#MTDFiler i3 
+0 #ALLibrary @2 @3 @4 @0 @0 @0 i2 
+10 #ALOrdCltn @5 i10 i0 
+10 #ALOrdCltn @6 i10 i0 
+10 #ALOrdCltn @7 i10 i2 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @0 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @8 @9 @0 @0 @0 @0 @0 @0 @0 @0 
+15 #ALNode i14 i14 *14"SW_TEMP_SENSOR @10 @0 @0 i7 @0 @11 @0 
+4 #ALNode i3 i3 *3"HL2 @12 @0 @0 i7 @0 @13 @0 
+15 #String i14 i14 *14"sw_temp_sensor 
+10 #ALOrdCltn @14 i10 i1 
+4 #String i3 i3 *3"hl2 
+10 #ALOrdCltn @15 i10 i1 
+10 #IdArray i10 $0 @16 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+10 #IdArray i10 $0 @17 @0 @0 @0 @0 @0 @0 @0 @0 @0 
+0 #ALSrcLoc i11 i26 i11 i41 
+0 #ALSrcLoc i12 i23 i12 i27 

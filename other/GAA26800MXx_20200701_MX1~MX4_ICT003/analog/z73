@@ -1,0 +1,15 @@
+!!!!    2    0    1 1270634423   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:20 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "SENSE_PWM_CONTROLLER_SUPPLY"
+connect i to "VCC_PWM_CONTROLLER"
+diode 906m, 403m, idc10m, co3.1, ar906m
+! "z73" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 905.634m, low limit 402.826m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

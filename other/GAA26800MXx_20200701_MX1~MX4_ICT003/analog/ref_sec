@@ -1,0 +1,23 @@
+!!!!    2    0    1 1382020945   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:47 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "REF_SEC_GNDA"
+end test
+
+subtest "REF_SEC_GNDA"
+   connect s to nodes "US"
+   connect i to nodes "REF_SEC"
+   connect l to nodes "GNDA"
+   connect g to nodes "GNDA"
+   connect g to nodes "GND"
+   source sine, amplitude 7.05, frequency 50, icompliance 1, offset 0, terminated 5, on
+   detector dcv, expect -1.834, average 1000
+   initiate detector
+   fetch V
+   report analog -1650.60,-2017.40,V*1000
+end subtest

@@ -1,0 +1,31 @@
+
+<Test name = "u54%fetch">
+<FileList>
+<File name = "u54%fetch">
+<FilePath>D:/Agilent_ICT/Boards/otis/GAA26800MXx_20190715_UTC04/digital/u54%fetch</FilePath>
+<LastModified>Fri Jun 26, 2020   2:36 pm</LastModified>
+</File>
+</FileList>
+<DeviceList>
+<Device name="u54">
+<TestablePinList>
+<Pin name="5">
+<Type>Bidir</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+<ReceiveLow value="true"/>
+</Pin>
+<Pin name="6">
+<Type>Input</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+</Pin>
+<Pin name="7">
+<Type>Input</Type>
+<DriveLow value="true"/>
+<DriveHigh value="true"/>
+</Pin>
+</TestablePinList>
+</Device>
+</DeviceList>
+</Test>

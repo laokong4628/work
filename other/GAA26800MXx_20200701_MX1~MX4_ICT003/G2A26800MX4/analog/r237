@@ -1,0 +1,19 @@
+!!!!    2    0    1 1264583399   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:10:00 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c51 100n"
+end on failure
+disconnect all
+connect s to "UNNAMED_10_C_I31_A"
+connect i to "GNDA"
+jumper 10.0k, re4, wb, ar100m, op
+! "r237" test.
+! DUT: nominal 2000M, plus tol 0.00 %, minus tol 100 %
+! DUT: high 2000M, low 10k
+! TEST: high limit 2000M, low limit 10k
+! Tolerance Multiplier 1.50
+! Remote Sensing is not Allowed
+off failure

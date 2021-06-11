@@ -1,0 +1,15 @@
+!!!!    2    0    1 1268727903   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:15 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_39_10MQ040N_I229_C"
+connect i to "UNNAMED_39_10MQ040N_I229_A"
+diode 405m, 201m, idc4.4m, co3.1, ar905m
+! "d42" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 904.826m, low limit 391.484m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

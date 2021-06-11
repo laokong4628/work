@@ -1,0 +1,29 @@
+!!!!    2    0    1 1273768656   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:50 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   gpconnect 21852 to 21853      !@ Power on Relay board
+   gpconnect 21858 to 21859      !@ OUT_EN_CONV to High
+   gpconnect 20654 to 20655      !@ SVN_E21 short to SVP_E11
+   connect s to nodes "RELAY_2"  !@ connect 100nf capacitor
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   connect g to nodes "PWM_SN"
+   connect g to nodes "PWM_VN"
+   connect g to nodes "RELAY_2"
+   wait 30m
+   test "SVN_G21_SVN_E21"
+   gpdisconnect 21852 from 21853  !@ Power off Relay board
+   gpdisconnect 21858 from 21859  !@ OUT_EN_CONV to High
+   gpdisconnect 20654 from 20655  !@ SVN_E21 short to SVP_E11
+end test
+
+subtest "SVN_G21_SVN_E21"
+   connect i to nodes "SVN_G21"
+   connect l to nodes "SVN_E21"
+   detector dcv, expect -9.50
+   measure -5.00, -16.00
+end subtest

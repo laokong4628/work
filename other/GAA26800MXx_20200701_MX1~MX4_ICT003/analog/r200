@@ -1,0 +1,15 @@
+!!!!    2    0    1 1268731920   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:43 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "DCN_LED_4"
+connect i to "DCN_LED_3"
+connect g to "DCN_LED_2"
+resistor 150k, 1.64, 1.60, re6, wb, ar100m, ed
+! "r200" test.
+! DUT: nominal 150k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 151.5k, low 148.5k
+! TEST: high limit 152.457k, low limit 147.598k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

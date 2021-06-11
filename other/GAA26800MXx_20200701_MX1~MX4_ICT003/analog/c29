@@ -1,0 +1,22 @@
+!!!!    2    0    1 1274946592   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c30 22.0u"
+   report "c28 1.00n"
+end on failure
+disconnect all
+connect s to "HL2"
+connect i to "UNNAMED_45_R_I186_B"
+connect g to "UNNAMED_45_C_I189_A"
+connect g to "24V_HL2"
+capacitor 44.001u, 18.7, 28.1, fr128, re1, ar50.0m, ed, nocomp, sm, en
+! "c29" test.
+! DUT: nominal 44.001u, plus tol 20.0 %, minus tol 20.0 %
+! DUT: high 52.801u, low 35.201u
+! TEST: high limit 52.229u, low limit 31.643u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

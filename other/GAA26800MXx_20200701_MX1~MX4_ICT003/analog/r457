@@ -1,0 +1,15 @@
+!!!!    2    0    1 1268791456   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:02 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect i to "UNNAMED_9_555_I229_DISCH"
+connect s to "UNNAMED_9_555_I229_RESET"
+connect g to "UNNAMED_9_555_I229_THRES"
+resistor 100k, 8, 8, re5, wb, ar100m, ed
+! "r457" test.
+! DUT: nominal 100k, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 105k, low 95k
+! TEST: high limit 110.479k, low limit 89.935k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

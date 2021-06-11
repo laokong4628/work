@@ -1,0 +1,52 @@
+sub analog_initialize
+subend
+
+sub Analog.Part.1
+global indebug
+
+add_to_tl Execute.1
+subend
+
+sub Analog.Part.2
+global indebug
+
+add_to_tl Cleanup
+subend
+
+sub analog
+global section
+
+if section = 1 then
+   call Analog.Part.1
+else
+   if section = 2 then
+      call Analog.Part.2
+   else
+      sync
+      stop
+   end if
+end if
+section = section + 1
+subend
+
+task Execute.1
+atl_wait_for_disconnect
+atl_connect_g (21718)
+atl_interconnect_g_all
+atl_wait_for_connect
+atl_connect_g (21624)
+atl_interconnect_g_all
+atl_wait_for_connect
+atl_disconnect_g (21624)
+atl_wait_for_disconnect
+atl_connect_g (21624)
+atl_interconnect_g_all
+atl_wait_for_connect
+taskend
+
+task Cleanup
+atl_disconnect_g (21718)
+atl_disconnect_g (21624)
+hsl_sync
+taskend
+

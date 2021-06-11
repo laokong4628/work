@@ -1,0 +1,16 @@
+!!!!    2    0    1 1435128016  Vd63f                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:34 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;I
+   disconnect all
+   test "24V_SE_24V_SE_RTN_CURRENT"
+end test
+
+subtest "24V_SE_24V_SE_RTN_CURRENT"
+   global I
+  wait80m
+   report analog 0.360, 0.020, I   !@ I read from sps 4
+end subtest

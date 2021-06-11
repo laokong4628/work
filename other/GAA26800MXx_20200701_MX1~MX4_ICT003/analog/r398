@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583341   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:02 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "OUTPUT_555"
+connect i to "UNNAMED_38_R_I105_B"
+resistor 750, 2.07, 0.823, re3, wb, ar100m
+! "r398" test.
+! DUT: nominal 750, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 757.5, low 742.5
+! TEST: high limit 765.53, low limit 743.83
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

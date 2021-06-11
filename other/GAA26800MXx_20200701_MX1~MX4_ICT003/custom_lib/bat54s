@@ -1,0 +1,20 @@
+!!!!   21    2    1 1034895169  Vfb22                                         
+!Diode 3pin
+
+diode "pins1_3" , 0.80, 0.50, nr
+diode "pins3_2" , 0.80, 0.50, nr
+diode "pins1_2" , 1.60, 1.00, nr
+
+external pins 1
+   device "pins1_3" pins "A"
+   device "pins1_2" pins "A"
+
+external pins 2
+   device "pins3_2" pins "C"
+   device "pins1_2" pins "C"
+
+external pins 3
+   device "pins1_3" pins "C"
+   device "pins3_2" pins "A"
+
+

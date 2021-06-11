@@ -1,0 +1,15 @@
+Net exist only in C:\Documents and Settings\HL\桌面\LIYAN\小软件\苏州-COMPARE\A2ADB1\nets.asc   ( old version )
+
+UNNAMED_38_R_I18_A
+
+
+
+Net exist only in C:\Documents and Settings\HL\桌面\LIYAN\小软件\苏州-COMPARE\BXADB1\nets.asc   ( new version )
+
+UNNAMED_39_C_I348_A
+UNNAMED_46_C_I425_A
+UNNAMED_47_C_I426_A
+UNNAMED_48_C_I423_A
+UNNAMED_46_10MQ040N_I423_A
+UNNAMED_47_10MQ040N_I424_A
+UNNAMED_48_10MQ040N_I422_A

@@ -1,0 +1,17 @@
+!!!!    2    0    1 1264583373  V4de6                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:34 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "24V_SENSE_24V_SENSE_RTN"
+end test
+
+subtest "24V_SENSE_24V_SENSE_RTN"
+   connect i to nodes "24V_SENSE"
+   connect l to nodes "24V_SENSE_RTN"
+   detector dcv, expect 24
+   measure 25.0, 23.0              ! Adjust at debug
+end subtest

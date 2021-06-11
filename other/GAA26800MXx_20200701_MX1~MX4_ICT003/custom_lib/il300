@@ -1,0 +1,35 @@
+!!!!   21    1    1 1263664082  V028a                                         
+
+diode "d1_2", 900m, 500m, nr
+diode "d3_4", 900m, 500m, nr
+diode "d5_6", 900m, 500m, nr
+
+
+pin library *, pn"il300_func"
+
+external pins 1
+   device "d1_2" pins "C"
+   device "*" pins 1
+external pins 2
+   device "d1_2" pins "A"
+   device "*" pins 2
+external pins 3
+   device "d3_4" pins "C"
+   device "*" pins 3
+external pins 4
+   device "d3_4" pins "A"
+   device "*" pins 4
+external pins 5
+   device "d5_6" pins "A"
+   device "*" pins 5
+external pins 6
+   device "d5_6" pins "C"
+   device "*" pins 6
+
+external pins 7
+   device "*" pins 7
+
+external pins 8
+   device "*" pins 8
+
+

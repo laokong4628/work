@@ -1,0 +1,759 @@
+!!!!    2    0    1 1268896478  V3e47                                         
+gpconnect "24V_DRIVER_RTN" to "RX9"
+gpconnect "GND_SENSE" to "RX10"
+gpconnect "GND_SENSE" to "RX11"
+gpconnect "24V_DRIVER_RTN" to "RX12"
+wait 500m
+gpdisconnect "24V_DRIVER_RTN" from "RX9"
+gpdisconnect "GND_SENSE" from "RX10"
+gpdisconnect "GND_SENSE" from "RX11"
+gpdisconnect "24V_DRIVER_RTN" from "RX12"
+!
+!                        !!! WARNING !!!
+!
+!   DO NOT DELETE ANY IPG-GENERATED STATEMENTS IN THIS FILE.  DELETIONS
+!   OF THESE STATEMENTS COULD RESULT IN DAMAGE TO THE SCANNER RELAYS.
+!
+! IPG: rev 05.21p  Thu Jan 28 10:54:55 2010
+! G2A26800MXx
+
+! Capacitor "c2 100n" is in parallel with:
+!
+!   "c6 100n"
+!   "c255 100n"
+!   "c3 22.0u"
+!   "c4 22.0u"
+!   "c5 22.0u"
+!
+! Maximum capacitance = 79.5u; damage voltage = 2.243v
+clear connect l to "HL2"
+connect g to "5V_HL2"
+discharge "CD1", entry 2.24, exit 0.05
+
+! Capacitor "c9 100n" is in parallel with:
+!
+!   "c13 100n"
+!   "c254 100n"
+!   "c7 10.0u"
+!   "c8 10.0u"
+!   "c11 10.0u"
+!   "c12 10.0u"
+!
+! Maximum capacitance = 44.3u; damage voltage = 3.004v
+clear connect l to "HL2"
+connect g to "24V_HL2"
+discharge "CD2", entry 3.00, exit 0.05
+
+! Capacitor "c10 1.00u"
+!
+! Maximum capacitance = 1.10u; damage voltage = 19.07v
+clear connect l to "HL2"
+connect g to "UNNAMED_45_C_I148_A"
+discharge "CD3", entry 19.0, exit 0.05
+
+! Capacitor "c14 22.0u"
+!
+! Maximum capacitance = 26.4u; damage voltage = 3.892v
+clear connect l to "HL2"
+connect g to "24V_ADC"
+discharge "CD4", entry 3.89, exit 0.05
+
+! Capacitor "c15 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "PTC_ADC"
+connect g to "UNNAMED_45_BAT54S_I231_A1"
+discharge "CD5", entry 60.3, exit 0.05
+
+! Capacitor "c16 470n"
+!
+! Maximum capacitance = 517n; damage voltage = 27.82v
+clear connect l to "HL2"
+connect g to "UNNAMED_45_C_I146_A"
+discharge "CD6", entry 27.8, exit 0.05
+
+! Capacitor "c18 100n" is in parallel with:
+!
+!   "c19 100n"
+!   "c35 100n"
+!   "c58 100n"
+!   "c106 100n"
+!   "c137 100n"
+!   "c174 100n"
+!   "c197 100n"
+!   "c246 100n"
+!   "c247 100n"
+!   "c17 22.0u"
+!   "c20 22.0u"
+!   "c36 22.0u"
+!   "c59 22.0u"
+!   "c107 22.0u"
+!   "c138 22.0u"
+!   "c175 22.0u"
+!   "c198 22.0u"
+!   "c245 22.0u"
+!   "c248 22.0u"
+!
+! Maximum capacitance = 265u; damage voltage = 1.228v
+clear connect l to "GND"
+connect g to "VCC"
+discharge "CD7", entry 1.22, exit 0.05
+
+! Capacitor "c256 100n" is in parallel with:
+!
+!   "c316 100n"
+!   "c22 10.0u"
+!   "c21 470u"
+!
+! Maximum capacitance = 575u; damage voltage = 833.9mv
+clear connect l to "24V_SENSE_RTN"
+connect g to "24V_DRIVER"
+discharge "CD8", entry 833m, exit 0.05
+
+! Capacitor "c24 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "HL2"
+connect g to "UNNAMED_45_AD7417_I130_AIN3"
+discharge "CD9", entry 60.3, exit 0.05
+
+! Capacitor "c25 100n" is in parallel with:
+!
+!   "c26 22.0u"
+!
+! Maximum capacitance = 26.5u; damage voltage = 3.884v
+clear connect l to "UNNAMED_45_R_I241_B"
+connect g to "UNNAMED_45_C_I189_A"
+discharge "CD10", entry 3.88, exit 0.05
+
+! Capacitor "c27 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_45_R_I186_B"
+connect g to "24V_HL2"
+discharge "CD11", entry 60.3, exit 0.05
+
+! Capacitor "c28 1.00n" is in parallel with:
+!
+!   "c29 22.0u"
+!   "c30 22.0u"
+!
+! Maximum capacitance = 52.8u; damage voltage = 2.752v
+clear connect l to "HL2"
+connect g to "UNNAMED_45_R_I186_B"
+discharge "CD12", entry 2.75, exit 0.05
+
+! Capacitor "c37 100n" is in parallel with:
+!
+!   "c38 10.0u"
+!   "c39 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "24V_SENSE_RTN"
+connect g to "PWM_VCC_RU"
+discharge "CD13", entry 4.25, exit 0.05
+
+! Capacitor "c43 10.0u" is in parallel with:
+!
+!   "c44 10.0u"
+!   "c45 10.0u"
+!
+! Maximum capacitance = 33.0u; damage voltage = 3.482v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_46_10MQ040N_I407_A"
+discharge "CD14", entry 3.48, exit 0.05
+
+! Capacitor "c48 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_46_C_I260_B"
+discharge "CD15", entry 60.3, exit 0.05
+
+! Capacitor "c49 3.30u"
+!
+! Maximum capacitance = 3.63u; damage voltage = 10.50v
+clear connect l to "GND"
+connect g to "UNNAMED_46_74HC14_I235_A"
+discharge "CD16", entry 10.5, exit 0.05
+
+! Capacitor "c50 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_46_BAS19_I21_C"
+discharge "CD17", entry 60.3, exit 0.05
+
+! Capacitor "c51 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "GNDA"
+connect g to "UNNAMED_10_C_I31_A"
+discharge "CD18", entry 60.3, exit 0.05
+
+! Capacitor "c52 100n" is in parallel with:
+!
+!   "c89 100n"
+!   "c100 100n"
+!   "c123 100n"
+!   "c149 100n"
+!   "c166 100n"
+!   "c240 100n"
+!   "c282 100n"
+!   "c296 100n"
+!   "c311 100n"
+!   "c129 10.0u"
+!   "c170 10.0u"
+!   "c217 10.0u"
+!   "c218 470u"
+!
+! Maximum capacitance = 598u; damage voltage = 817.8mv
+clear connect l to "GND_SENSE"
+connect g to "+15V_SENSE"
+discharge "CD19", entry 817m, exit 0.05
+
+! Capacitor "c53 100n" is in parallel with:
+!
+!   "c90 100n"
+!   "c101 100n"
+!   "c124 100n"
+!   "c150 100n"
+!   "c239 100n"
+!   "c313 100n"
+!   "c233 10.0u"
+!   "c234 470u"
+!
+! Maximum capacitance = 576u; damage voltage = 833.5mv
+clear connect l to "-15V_SENSE"
+connect g to "GND_SENSE"
+discharge "CD20", entry 833m, exit 0.05
+
+! Capacitor "c54 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_46_BZV55B18_I266_A"
+connect g to "+27V_RU_P"
+discharge "CD21", entry 60.3, exit 0.05
+
+! Capacitor "c57 100n" is in parallel with:
+!
+!   "c55 10.0u"
+!   "c56 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "+27V_RU_P_RTN"
+connect g to "UNNAMED_46_BZV55B18_I266_A"
+discharge "CD22", entry 4.25, exit 0.05
+
+! Capacitor "c61 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "GNDA"
+connect g to "UNNAMED_10_C_I38_A"
+discharge "CD23", entry 60.3, exit 0.05
+
+! Capacitor "c62 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_46_BZV55B18_I389_A"
+connect g to "+27V_RU_N"
+discharge "CD24", entry 60.3, exit 0.05
+
+! Capacitor "c65 100n" is in parallel with:
+!
+!   "c63 10.0u"
+!   "c64 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "+27V_RU_N_RTN"
+connect g to "UNNAMED_46_BZV55B18_I389_A"
+discharge "CD25", entry 4.25, exit 0.05
+
+! Capacitor "c70 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "GNDA"
+connect g to "UNNAMED_49_C_I41_A"
+discharge "CD26", entry 60.3, exit 0.05
+
+! Capacitor "c79 100n" is in parallel with:
+!
+!   "c80 10.0u"
+!   "c81 10.0u"
+!   "c82 10.0u"
+!   "c83 10.0u"
+!   "c72 100u"
+!
+! Maximum capacitance = 154u; damage voltage = 1.611v
+clear connect l to "+27V_RU_P_RTN"
+connect g to "+27V_RU_P"
+discharge "CD27", entry 1.61, exit 0.05
+
+! Capacitor "c73 100n" is in parallel with:
+!
+!   "c74 10.0u"
+!   "c75 10.0u"
+!   "c76 10.0u"
+!   "c77 10.0u"
+!   "c78 100u"
+!
+! Maximum capacitance = 154u; damage voltage = 1.611v
+clear connect l to "+27V_RU_N_RTN"
+connect g to "+27V_RU_N"
+discharge "CD28", entry 1.61, exit 0.05
+
+! Capacitor "c84 100n" is in parallel with:
+!
+!   "c87 100n"
+!   "c121 100n"
+!   "c279 100n"
+!   "c85 10.0u"
+!   "c86 10.0u"
+!   "c99 10.0u"
+!   "c176 10.0u"
+!
+! Maximum capacitance = 44.4u; damage voltage = 3.000v
+clear connect l to "GNDA"
+connect g to "V+15V"
+discharge "CD29", entry 3.00, exit 0.05
+
+! Capacitor "c88 100n" is in parallel with:
+!
+!   "c91 100n"
+!   "c122 100n"
+!   "c92 10.0u"
+!   "c93 10.0u"
+!   "c171 10.0u"
+!
+! Maximum capacitance = 33.3u; damage voltage = 3.464v
+clear connect l to "GNDA"
+connect g to "V-15V"
+discharge "CD30", entry 3.46, exit 0.05
+
+! Capacitor "c96 470n" is in parallel with:
+!
+!   "c97 680n"
+!
+! Maximum capacitance = 1.24u; damage voltage = 17.95v
+clear connect l to "RUN_E21"
+connect g to "RUP_C1"
+discharge "CD31", entry 17.9, exit 0.05
+
+! Capacitor "c278 100n" is in parallel with:
+!
+!   "c98 2.20u"
+!
+! Maximum capacitance = 2.53u; damage voltage = 12.57v
+clear connect l to "GND_SENSE"
+connect g to "UNNAMED_49_C_I21_A"
+discharge "CD32", entry 12.5, exit 0.05
+
+! Capacitor "c108 100n" is in parallel with:
+!
+!   "c109 10.0u"
+!   "c110 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "24V_SENSE_RTN"
+connect g to "PWM_VCC_SV"
+discharge "CD33", entry 4.25, exit 0.05
+
+! Capacitor "c114 10.0u" is in parallel with:
+!
+!   "c115 10.0u"
+!   "c116 10.0u"
+!
+! Maximum capacitance = 33.0u; damage voltage = 3.482v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_47_10MQ040N_I406_A"
+discharge "CD34", entry 3.48, exit 0.05
+
+! Capacitor "c120 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_47_C_I260_B"
+discharge "CD35", entry 60.3, exit 0.05
+
+! Capacitor "c127 3.30u"
+!
+! Maximum capacitance = 3.63u; damage voltage = 10.50v
+clear connect l to "GND"
+connect g to "UNNAMED_47_74HC14_I235_A"
+discharge "CD36", entry 10.5, exit 0.05
+
+! Capacitor "c128 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_47_BAS19_I21_C"
+discharge "CD37", entry 60.3, exit 0.05
+
+! Capacitor "c133 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_47_BZV55B18_I266_A"
+connect g to "+27V_SV_P"
+discharge "CD38", entry 60.3, exit 0.05
+
+! Capacitor "c136 100n" is in parallel with:
+!
+!   "c134 10.0u"
+!   "c135 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "+27V_SV_P_RTN"
+connect g to "UNNAMED_47_BZV55B18_I266_A"
+discharge "CD39", entry 4.25, exit 0.05
+
+! Capacitor "c141 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_47_BZV55B18_I389_A"
+connect g to "+27V_SV_N"
+discharge "CD40", entry 60.3, exit 0.05
+
+! Capacitor "c144 100n" is in parallel with:
+!
+!   "c142 10.0u"
+!   "c143 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "+27V_SV_N_RTN"
+connect g to "UNNAMED_47_BZV55B18_I389_A"
+discharge "CD41", entry 4.25, exit 0.05
+
+! Capacitor "c160 100n" is in parallel with:
+!
+!   "c161 10.0u"
+!   "c162 10.0u"
+!   "c163 10.0u"
+!   "c164 10.0u"
+!   "c153 100u"
+!
+! Maximum capacitance = 154u; damage voltage = 1.611v
+clear connect l to "+27V_SV_P_RTN"
+connect g to "+27V_SV_P"
+discharge "CD42", entry 1.61, exit 0.05
+
+! Capacitor "c154 100n" is in parallel with:
+!
+!   "c155 10.0u"
+!   "c156 10.0u"
+!   "c157 10.0u"
+!   "c158 10.0u"
+!   "c159 100u"
+!
+! Maximum capacitance = 154u; damage voltage = 1.611v
+clear connect l to "+27V_SV_N_RTN"
+connect g to "+27V_SV_N"
+discharge "CD43", entry 1.61, exit 0.05
+
+! Capacitor "c168 470n" is in parallel with:
+!
+!   "c169 680n"
+!
+! Maximum capacitance = 1.24u; damage voltage = 17.95v
+clear connect l to "SVN_E21"
+connect g to "SVP_C1"
+discharge "CD44", entry 17.9, exit 0.05
+
+! Capacitor "c177 100n" is in parallel with:
+!
+!   "c178 10.0u"
+!   "c179 10.0u"
+!
+! Maximum capacitance = 23.1u; damage voltage = 4.160v
+clear connect l to "24V_SENSE_RTN"
+connect g to "PWM_VCC_TW"
+discharge "CD45", entry 4.16, exit 0.05
+
+! Capacitor "c183 10.0u" is in parallel with:
+!
+!   "c184 10.0u"
+!   "c185 10.0u"
+!
+! Maximum capacitance = 33.0u; damage voltage = 3.482v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_48_10MQ040N_I405_A"
+discharge "CD46", entry 3.48, exit 0.05
+
+! Capacitor "c188 1.50u" is in parallel with:
+!
+!   "c187 2.20u"
+!
+! Maximum capacitance = 4.07u; damage voltage = 9.914v
+clear connect l to "OUTPUT_TP_555"
+connect g to "GATE_TO_TRIGGER"
+discharge "CD47", entry 9.91, exit 0.05
+
+! Capacitor "c190 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_48_C_I260_B"
+discharge "CD48", entry 60.3, exit 0.05
+
+! Capacitor "c191 3.30u"
+!
+! Maximum capacitance = 3.63u; damage voltage = 10.50v
+clear connect l to "GND"
+connect g to "UNNAMED_48_74HC14_I235_A"
+discharge "CD49", entry 10.5, exit 0.05
+
+! Capacitor "c192 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "24V_SENSE_RTN"
+connect g to "UNNAMED_48_BAS19_I21_C"
+discharge "CD50", entry 60.3, exit 0.05
+
+! Capacitor "c193 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_48_BZV55B18_I266_A"
+connect g to "+27V_TW_P"
+discharge "CD51", entry 60.3, exit 0.05
+
+! Capacitor "c196 100n" is in parallel with:
+!
+!   "c194 10.0u"
+!   "c195 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "+27V_TW_P_RTN"
+connect g to "UNNAMED_48_BZV55B18_I266_A"
+discharge "CD52", entry 4.25, exit 0.05
+
+! Capacitor "c302 100n" is in parallel with:
+!
+!   "c200 10.0u"
+!   "c201 100u"
+!
+! Maximum capacitance = 131u; damage voltage = 1.747v
+clear connect l to "24V_SENSE_RTN"
+connect g to "24V_SMPS_SENSE"
+discharge "CD53", entry 1.74, exit 0.05
+
+! Capacitor "c301 100n" is in parallel with:
+!
+!   "c202 10.0u"
+!
+! Maximum capacitance = 11.1u; damage voltage = 6.000v
+clear connect l to "24V_SENSE_RTN"
+connect g to "SENSE_PWM_CONTROLLER_SUPPLY"
+discharge "CD54", entry 6.00, exit 0.05
+
+! Capacitor "c203 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_48_BZV55B18_I389_A"
+connect g to "+27V_TW_N"
+discharge "CD55", entry 60.3, exit 0.05
+
+! Capacitor "c206 100n" is in parallel with:
+!
+!   "c204 10.0u"
+!   "c205 10.0u"
+!
+! Maximum capacitance = 22.1u; damage voltage = 4.253v
+clear connect l to "+27V_TW_N_RTN"
+connect g to "UNNAMED_48_BZV55B18_I389_A"
+discharge "CD56", entry 4.25, exit 0.05
+
+! Capacitor "c210 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_39_C_I178_B"
+connect g to "UNNAMED_39_C_I178_A"
+discharge "CD57", entry 60.3, exit 0.05
+
+! Capacitor "c211 10.0u"
+!
+! Maximum capacitance = 11.0u; damage voltage = 6.030v
+clear connect l to "GND_SENSE"
+connect g to "UNNAMED_39_BYG22D_I127_C"
+discharge "CD58", entry 6.03, exit 0.05
+
+! Capacitor "c212 330n"
+!
+! Maximum capacitance = 363n; damage voltage = 33.20v
+clear connect l to "GND_SENSE"
+connect g to "UNNAMED_39_BYG22D_I127_A"
+discharge "CD59", entry 33.2, exit 0.05
+
+! Capacitor "c226 100n" is in parallel with:
+!
+!   "c227 10.0u"
+!   "c228 10.0u"
+!   "c229 10.0u"
+!   "c230 10.0u"
+!   "c219 100u"
+!
+! Maximum capacitance = 154u; damage voltage = 1.611v
+clear connect l to "+27V_TW_P_RTN"
+connect g to "+27V_TW_P"
+discharge "CD60", entry 1.61, exit 0.05
+
+! Capacitor "c220 100n" is in parallel with:
+!
+!   "c221 10.0u"
+!   "c222 10.0u"
+!   "c223 10.0u"
+!   "c224 10.0u"
+!   "c225 100u"
+!
+! Maximum capacitance = 154u; damage voltage = 1.611v
+clear connect l to "+27V_TW_N_RTN"
+connect g to "+27V_TW_N"
+discharge "CD61", entry 1.61, exit 0.05
+
+! Capacitor "c231 10.0u" is in parallel with:
+!
+!   "c232 10.0u"
+!
+! Maximum capacitance = 22.0u; damage voltage = 4.264v
+clear connect l to "24V_SENSE_RTN"
+connect g to "VCC_PWM_CONTROLLER"
+discharge "CD62", entry 4.26, exit 0.05
+
+! Capacitor "c237 470n" is in parallel with:
+!
+!   "c236 680n"
+!
+! Maximum capacitance = 1.24u; damage voltage = 17.95v
+clear connect l to "TWN_E21"
+connect g to "TWP_C1"
+discharge "CD63", entry 17.9, exit 0.05
+
+! Capacitor "c243 100n" is in parallel with:
+!
+!   "c241 10.0u"
+!   "c242 10.0u"
+!   "c249 470u"
+!
+! Maximum capacitance = 586u; damage voltage = 826.1mv
+clear connect l to "24V_SW_RTN"
+connect g to "UNNAMED_39_10MQ040N_I309_A"
+discharge "CD64", entry 826m, exit 0.05
+
+! Capacitor "c250 2.20u"
+!
+! Maximum capacitance = 2.42u; damage voltage = 12.86v
+clear connect l to "DCN_LED_6"
+connect g to "UNNAMED_9_555_I229_THRES"
+discharge "CD65", entry 12.8, exit 0.05
+
+! Capacitor "c251 10.0u" is in parallel with:
+!
+!   "c252 10.0u"
+!
+! Maximum capacitance = 22.0u; damage voltage = 4.264v
+clear connect l to "DCN_LED_6"
+connect g to "UNNAMED_9_555_I229_RESET"
+discharge "CD66", entry 4.26, exit 0.05
+
+! Capacitor "c253 10.0u"
+!
+! Maximum capacitance = 11.0u; damage voltage = 6.030v
+clear connect l to "DCN_LED_6"
+connect g to "DCP_LED"
+discharge "CD67", entry 6.03, exit 0.05
+
+! Capacitor "c258 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_45_R_I186_B"
+connect g to "UNNAMED_45_R_I210_A"
+discharge "CD68", entry 60.3, exit 0.05
+
+! Capacitor "c273 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "TEMP_IGBT_CONV"
+connect g to "UNNAMED_49_C_I56_A"
+discharge "CD69", entry 60.3, exit 0.05
+
+! Capacitor "c274 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "GNDA"
+connect g to "UNNAMED_49_C_I55_A"
+discharge "CD70", entry 60.3, exit 0.05
+
+! Capacitor "c276 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "+27V_RU_N_RTN"
+connect g to "UNNAMED_46_BDP949_I310_B"
+discharge "CD71", entry 60.3, exit 0.05
+
+! Capacitor "c277 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "+27V_RU_P_RTN"
+connect g to "UNNAMED_46_BDP949_I327_B"
+discharge "CD72", entry 60.3, exit 0.05
+
+! Capacitor "c290 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "PFAIL_N_FILTERED"
+connect g to "VRS_N_RECTIFIED"
+discharge "CD73", entry 60.3, exit 0.05
+
+! Capacitor "c292 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "+27V_SV_N_RTN"
+connect g to "UNNAMED_47_BDP949_I310_B"
+discharge "CD74", entry 60.3, exit 0.05
+
+! Capacitor "c293 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "+27V_SV_P_RTN"
+connect g to "UNNAMED_47_BDP949_I327_B"
+discharge "CD75", entry 60.3, exit 0.05
+
+! Capacitor "c294 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "GND_SENSE"
+connect g to "DISCH_THRES_555"
+discharge "CD76", entry 60.3, exit 0.05
+
+! Capacitor "c295 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "GND_SENSE"
+connect g to "CONTROL_555"
+discharge "CD77", entry 60.3, exit 0.05
+
+! Capacitor "c304 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "UNNAMED_39_C_I156_B"
+connect g to "UNNAMED_39_BYG22D_I127_A"
+discharge "CD78", entry 60.3, exit 0.05
+
+! Capacitor "c314 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "+27V_TW_N_RTN"
+connect g to "UNNAMED_48_BDP949_I310_B"
+discharge "CD79", entry 60.3, exit 0.05
+
+! Capacitor "c315 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "+27V_TW_P_RTN"
+connect g to "UNNAMED_48_BDP949_I327_B"
+discharge "CD80", entry 60.3, exit 0.05
+
+! Capacitor "c320 100n"
+!
+! Maximum capacitance = 110n; damage voltage = 60.30v
+clear connect l to "DCN_LED_6"
+connect g to "UNNAMED_9_555_I229_CONT"
+discharge "CD81", entry 60.3, exit 0.05

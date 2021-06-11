@@ -1,0 +1,19 @@
+!!!!    2    0    1 1294630294  Vdc9e                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:46 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   connect a to nodes "RELAY_17"    !@!ECN add 2K Load at +27V_RU_P / N
+   auxiliary dcv,amplitude 5,icompliance 1,on
+   test "REF_3V9_RU_P_+27V_RU_P_RTN"
+end test
+
+subtest "REF_3V9_RU_P_+27V_RU_P_RTN"
+   connect i to nodes "REF_3V9_RU_P"
+   connect l to nodes "+27V_RU_P_RTN"
+   detector dcv, expect 7
+   measure 7.50, 6.50              ! Adjust at debug
+end subtest

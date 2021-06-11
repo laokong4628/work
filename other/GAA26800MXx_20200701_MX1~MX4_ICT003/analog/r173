@@ -1,0 +1,19 @@
+!!!!    2    0    1 1594614614   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c305 56.0p"
+end on failure
+disconnect all
+connect i to "24V_SMPS_SENSE_RTN"
+connect s to "UNNAMED_39_C_I248_A"
+resistor 6.81k, 3, 3, re5, wb, ar100m  ,en  ,ed
+! "r173" test.
+! DUT: nominal 6.81k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 6.878k, low 6.742k
+! TEST: high limit 6.908k, low limit 6.726k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

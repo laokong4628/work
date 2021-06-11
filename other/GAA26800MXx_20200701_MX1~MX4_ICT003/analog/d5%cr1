@@ -1,0 +1,22 @@
+!!!!    2    0    1 1264583291   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:11 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "d5 d5%cr2"
+   report "d5 d5%cr3"
+   report "d5 d5%cr4"
+end on failure
+disconnect all
+connect s to "PTC_6"
+connect i to "PTC_1"
+diode 823m, 211m, idc4.1m, co3.0, ar823m
+! "d5%cr1" test.
+! DUT: nominal 500m, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 800m, low 200m
+! TEST: high limit 822.904m, low limit 210.512m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 4m
+off failure

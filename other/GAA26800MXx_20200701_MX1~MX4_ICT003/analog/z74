@@ -1,0 +1,21 @@
+!!!!    2    0    1 1433916267   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:16 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c312 100p"
+end on failure
+disconnect all
+connect i to "24V_SMPS_SENSE_RTN"
+connect s to "I_SENSE_PWM_CONTROLLER"
+diode 850m, 550m, idc10m, co10, ar10.5, ed
+!@zener 10, 5.05, 5.25, idc1.0m, co10, ar10.5
+! "z74" test.
+! DUT: nominal 10, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 10.5, low 9.5
+! TEST: high limit 10.505, low limit 9.475
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

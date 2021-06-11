@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583319   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:40 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_48_74HC14_I235_A"; a to "UNNAMED_48_74HC14_I235_A"
+connect i to "UNNAMED_48_BC847C_I250_C"; b to "UNNAMED_48_BC847C_I250_C"
+resistor 100, 2.16, 1.25, re2, ar100m, sa, sb, en
+! "r400" test.
+! DUT: nominal 100, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 101, low 99
+! TEST: high limit 102.16, low limit 98.746
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,170 @@
+*Part exist only in C:\Documents and Settings\HL\桌面\LIYAN\小软件\苏州-COMPARE\A2ADB1\parts.asc   ( old version )
+
+part		X	Y	Grid	T/B	
+
+
+
+*Part exist only in C:\Documents and Settings\HL\桌面\LIYAN\小软件\苏州-COMPARE\BXADB1\parts.asc   ( new version )
+
+part		X	Y	Grid	T/B	
+D10A		7.225	10.890	F9	(T)
+D20A		7.225	7.540	F7	(T)
+D34A		7.225	4.190	F4	(T)
+C50A		7.570	10.535	G9	(T)
+C128A		7.570	7.185	G6	(T)
+C192A		7.570	3.835	G4	(T)
+R55A		7.205	10.620	F9	(T)
+R113A		7.205	7.270	F6	(T)
+R159A		7.205	3.920	F4	(T)
+C312A		1.705	1.921	B2	(B)
+R57A		7.445	10.500	F9	(T)
+R115A		7.445	7.150	F6	(T)
+R161A		7.445	3.800	F4	(T)
+R436A		1.705	2.220	B2	(B)
+
+
+
+*Part exist both in ( new version ) and ( old version )
+
+            	part		X	Y	Grid	T/B	
+(old version)	Z1		6.950	11.150	F9	(T)
+(new version)	Z1		6.950	11.175	F9	(T)
+
+(old version)	Z6		6.950	7.800	F7	(T)
+(new version)	Z6		6.950	7.825	F7	(T)
+
+(old version)	Z11		6.950	4.450	F4	(T)
+(new version)	Z11		6.950	4.475	F4	(T)
+
+(old version)	C21		7.400	11.725	F10	(T)
+(new version)	C21		7.375	11.750	F10	(T)
+
+(old version)	C22		7.750	11.725	G10	(T)
+(new version)	C22		7.750	11.750	G10	(T)
+
+(old version)	C102		4.900	8.050	D7	(T)
+(new version)	C102		4.895	8.050	D7	(T)
+
+(old version)	C104		4.900	7.875	D7	(T)
+(new version)	C104		4.895	7.875	D7	(T)
+
+(old version)	C249		7.920	0.925	G1	(T)
+(new version)	C249		7.895	0.925	G1	(T)
+
+(old version)	R20		4.975	11.375	D10	(T)
+(new version)	R20		4.985	11.380	D10	(T)
+
+(old version)	R21		5.050	11.375	E10	(T)
+(new version)	R21		5.070	11.375	E10	(T)
+
+(old version)	R22		5.125	11.375	E10	(T)
+(new version)	R22		5.140	11.375	E10	(T)
+
+(old version)	R23		5.215	11.375	E10	(T)
+(new version)	R23		5.225	11.375	E10	(T)
+
+(old version)	R24		5.305	11.375	E10	(T)
+(new version)	R24		5.310	11.375	E10	(T)
+
+(old version)	R33		4.975	11.200	D9	(T)
+(new version)	R33		4.985	11.200	D9	(T)
+
+(old version)	R34		5.050	11.200	E9	(T)
+(new version)	R34		5.070	11.200	E9	(T)
+
+(old version)	R35		5.125	11.200	E9	(T)
+(new version)	R35		5.140	11.200	E9	(T)
+
+(old version)	R57		7.525	10.375	G9	(T)
+(new version)	R57		7.545	10.375	G9	(T)
+
+(old version)	R58		7.625	10.375	G9	(T)
+(new version)	R58		7.645	10.375	G9	(T)
+
+(old version)	R90		5.050	8.050	E7	(T)
+(new version)	R90		5.055	8.050	E7	(T)
+
+(old version)	R94		5.050	7.875	E7	(T)
+(new version)	R94		5.060	7.875	E7	(T)
+
+(old version)	R95		5.125	7.875	E7	(T)
+(new version)	R95		5.130	7.875	E7	(T)
+
+(old version)	R115		7.525	7.025	G6	(T)
+(new version)	R115		7.545	7.025	G6	(T)
+
+(old version)	R116		7.625	7.025	G6	(T)
+(new version)	R116		7.645	7.025	G6	(T)
+
+(old version)	R144		4.975	4.675	D4	(T)
+(new version)	R144		4.985	4.675	D4	(T)
+
+(old version)	R145		5.050	4.675	E4	(T)
+(new version)	R145		5.070	4.675	E4	(T)
+
+(old version)	R146		5.125	4.675	E4	(T)
+(new version)	R146		5.145	4.675	E4	(T)
+
+(old version)	R147		4.975	4.500	D4	(T)
+(new version)	R147		4.985	4.500	D4	(T)
+
+(old version)	R148		5.050	4.500	E4	(T)
+(new version)	R148		5.070	4.500	E4	(T)
+
+(old version)	R149		5.125	4.500	E4	(T)
+(new version)	R149		5.145	4.500	E4	(T)
+
+(old version)	R161		7.525	3.675	G3	(T)
+(new version)	R161		7.545	3.675	G3	(T)
+
+(old version)	R162		7.625	3.675	G3	(T)
+(new version)	R162		7.645	3.675	G3	(T)
+
+(old version)	R218		7.350	11.175	F9	(B)
+(new version)	R218		7.350	11.215	F9	(B)
+
+(old version)	R219		7.175	11.175	F9	(B)
+(new version)	R219		7.175	11.215	F9	(B)
+
+(old version)	R220		7.000	11.175	F9	(B)
+(new version)	R220		7.000	11.215	F9	(B)
+
+(old version)	R230		7.350	10.725	F9	(B)
+(new version)	R230		7.390	10.825	F9	(B)
+
+(old version)	R304		7.350	7.825	F7	(B)
+(new version)	R304		7.350	7.865	F7	(B)
+
+(old version)	R305		7.175	7.825	F7	(B)
+(new version)	R305		7.175	7.865	F7	(B)
+
+(old version)	R306		7.000	7.825	F7	(B)
+(new version)	R306		7.000	7.865	F7	(B)
+
+(old version)	R331		7.350	7.375	F6	(B)
+(new version)	R331		7.390	7.475	F6	(B)
+
+(old version)	R394		7.350	4.475	F4	(B)
+(new version)	R394		7.350	4.520	F4	(B)
+
+(old version)	R395		7.175	4.475	F4	(B)
+(new version)	R395		7.175	4.520	F4	(B)
+
+(old version)	R396		7.000	4.475	F4	(B)
+(new version)	R396		7.000	4.520	F4	(B)
+
+(old version)	R403		7.350	4.025	F4	(B)
+(new version)	R403		7.390	4.125	F4	(B)
+
+(old version)	R441		7.425	1.725	F2	(B)
+(new version)	R441		7.375	1.750	F2	(B)
+
+(old version)	R442		7.250	1.725	F2	(B)
+(new version)	R442		7.225	1.750	F2	(B)
+
+(old version)	R457		8.250	0.700	G1	(B)
+(new version)	R457		8.260	0.700	G1	(B)
+
+(old version)	LED1		8.275	1.075	G1	(T)
+(new version)	LED1		8.285	1.075	G1	(T)
+

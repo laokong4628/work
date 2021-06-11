@@ -1,0 +1,42 @@
+!!!!    2    0    1 1355472112  V05d3                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:07 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "SMPS_SENSE_GATE"
+connect i to "SMPS_SENSE_DRAIN"
+diode "B-E", 856m, 603m, idc1.0m, co3.0, ar806m
+! "q23 B-E" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.63m, low limit 602.829m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+disconnect all
+connect i to "ISENSE"
+connect s to "SMPS_SENSE_GATE"
+diode "B-C", 856m, 603m, idc1.0m, co3.0, ar806m
+!diode "B-C"
+!warning "idc value out of range."
+! "q23 B-C" is a commented test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+disconnect all
+connect s to "SMPS_SENSE_GATE"
+connect i to "SMPS_SENSE_DRAIN"
+connect g to "ISENSE"
+! npn "BETA", 0.00, 0.00, idc1.0m, idelta10, co10
+npn "BETA"
+warning "MOA voltage limit exceeded."
+! "q23 BETA" is a commented test.
+! DUT: nominal 125, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 200, low 50
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

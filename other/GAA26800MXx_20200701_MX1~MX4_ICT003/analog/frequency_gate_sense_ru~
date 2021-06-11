@@ -1,0 +1,36 @@
+!!!!    2    0    1 1434423349  V31ef                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:39 2010
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog;Freq
+   disconnect all
+   connect s to nodes "RELAY_4"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   connect a to nodes "RELAY_VCC1"
+   connect g to nodes "RELAY_VCC1"
+   connect g to nodes "RELAY_17"
+   auxiliary dcv,amplitude 5,icompliance 1,on
+   wait 3
+   !@test "Test_condition"
+   test "Frequency"
+end test
+
+subtest "Test_condition"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 24
+   measure 25, 23                  ! Adjust at debug
+end subtest
+
+subtest  "Frequency"
+   global Freq
+   connect rcva to nodes "GATE_SENSE_RU" !@nodes "PWM_OUT1"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector frequency, expect 160k, threshold 4.0, gate 0!, timeout 150m
+   arm detector
+   fetch Freq
+!@   report analog  260k,  80k, Freq  !@ customer change to limit 20150615
+!@!   measure 180k, 140k
+end subtest
+
+
+

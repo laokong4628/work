@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583290   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:11 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "PFAIL_COMP"
+connect i to "DISCH_THRES_555"
+diode 805m, 502m, idc1.0m, co3.0, ar805m
+! "d30%diode" test.
+! DUT: nominal 650m, plus tol 23.1 %, minus tol 23.1 %
+! DUT: high 800m, low 500m
+! TEST: high limit 805.491m, low limit 501.834m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

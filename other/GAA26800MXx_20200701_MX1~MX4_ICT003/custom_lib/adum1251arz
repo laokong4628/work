@@ -1,0 +1,60 @@
+!!!!    6    0    1 1213542626  V0d01                                         
+!    Function:
+!    Revision:
+!    Author:
+
+warning "This is a SETUP-ONLY Test."
+
+sequential
+
+assign  VDD1 to pins 1
+assign  GND1 to pins 4
+assign  GND2 to pins 5
+assign  VDD2 to pins 8
+
+assign  ALL_INPUTS to pins 2, 3
+assign  ALL_OUTPUTS to pins 6, 7
+assign  VIA to pins 7
+assign  VIB to pins 3
+assign  VOB to pins 6
+assign  VOA to pins 2
+
+family TTL
+
+
+power VDD1, GND1, GND2, VDD2
+
+inputs ALL_INPUTS, VIA, VIB
+
+outputs ALL_OUTPUTS, VOB, VOA
+
+vector  ALL_INPUTS_11
+   set   ALL_INPUTS   to "11"
+   set   ALL_OUTPUTS  to "11"
+end vector
+
+vector  ALL_INPUTS_00
+   set   ALL_INPUTS   to "00"
+   set   ALL_OUTPUTS  to "00"
+end vector
+
+vector  ALL_INPUTS_01
+   set   ALL_INPUTS   to "01"
+   set   ALL_OUTPUTS  to "01"
+end vector
+
+vector  ALL_INPUTS_10
+   set   ALL_INPUTS   to "10"
+   set   ALL_OUTPUTS  to "10"
+end vector
+
+unit  "Test Output"
+   execute  ALL_INPUTS_11
+   execute  ALL_INPUTS_00
+   execute  ALL_INPUTS_01
+   execute  ALL_INPUTS_10
+end unit
+
+!
+!    End of Test
+!

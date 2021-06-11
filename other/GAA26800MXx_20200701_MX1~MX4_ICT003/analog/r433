@@ -1,0 +1,16 @@
+!!!!    2    0    1 1274675067   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:50 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "TWN_G23"; a to "TWN_G23"
+connect i to "UNNAMED_48_R_I371_A"; b to "UNNAMED_48_R_I371_A"
+connect g to "TWN_G22"; l to "TWN_G22"
+connect g to "TWN_G21"
+resistor 2.21, 50, 50, re1, ar100m, sa, sb, sl, en
+! "r433" is a limited test.
+! DUT: nominal 736.667m, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 744.033m, low 729.3m
+! TEST: high limit 2.115, low limit 644.788m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,59 @@
+!!!!    2    0    1 1124207272  V6e32                                         
+!
+!
+! po_option 1 2 8
+!
+! Revision control data:
+! use for testing "tl431" safeguard "not_required"
+!
+! Adjustable shunt regulator
+! D package:
+!                   ___ ___
+!                  |   U   |                   _______
+!         Cathode  |1     8| Ref         5v --|_______|----
+!                  |       |                   50 ohms     |
+!           Anode  |2     7| Anode                         | 1
+!                  |       |                            -------
+!           Anode  |3     6| Anode                        / \
+!                  |       |               2.6/2.4v -----/   \
+!              NC  |4     5| NC                       8 /     \
+!                  |_______|                            -------
+!                                                          | 2
+!                                                          0v
+! 17.2.98 Initial issue  rfm
+! 13 SEP 99  Non-analog pins added  rfm
+! 12.05.00   po_options added jjb
+
+test powered analog
+   nonanalog pins 3,4,5,6,7
+   test "On"
+   test "Off"
+   disconnect all
+end test
+
+subtest "On"
+   connect s to pins 1
+   connect a to pins 8
+   connect g to pins 2
+   connect i to pins 1
+   connect l to pins 2
+   detector dcv, expect 5.0
+   source dcv, amplitude 5.0, terminated 50, icompliance 1, on
+   auxiliary dcv, amplitude 2.6, icompliance 1, on
+   measure 2.8, 2.2
+end subtest
+
+subtest "Off"
+   connect s to pins 1
+   connect a to pins 8
+   connect g to pins 2
+   connect i to pins 1
+   connect l to pins 2
+   detector dcv, expect 5.0
+   source dcv, amplitude 5.0, terminated 50, icompliance 1, on
+   auxiliary dcv, amplitude 2.4, icompliance 1, on
+   measure 5.5, 3.0
+end subtest
+
+
+! End of test

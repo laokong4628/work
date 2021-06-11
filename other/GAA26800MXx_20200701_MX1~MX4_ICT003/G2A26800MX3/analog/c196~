@@ -1,0 +1,23 @@
+!!!!    2    0    1 1268722258   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:55 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c195 10.0u"
+   report "c196 100n"
+   report "r160 2.20k"
+end on failure
+disconnect all
+connect s to "+27V_TW_P_RTN"; a to "+27V_TW_P_RTN"
+connect i to "UNNAMED_48_BZV55B18_I266_A"
+!connect g to "+27V_TW_P"
+!connect g to "UNNAMED_48_C_I272_A"
+capacitor 20.1u, 10.8, 20.3, fr128, re1, ar20.0m, ed, sa, nocomp, sm
+! "c194" test.
+! DUT: nominal 20.1u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 22.11u, low 18.09u
+! TEST: high limit 22.271u, low limit 17.432u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

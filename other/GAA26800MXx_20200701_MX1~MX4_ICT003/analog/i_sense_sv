@@ -1,0 +1,29 @@
+!!!!    2    0    1 1273548712   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:40 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;Volt2(*)
+   disconnect all
+   !@test "Test_condition"
+   test "I_SENSE_SV_24V_DRIVER_RTN"
+end test
+
+subtest "Test_condition"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 24
+   measure 25, 23                  ! Adjust at debug
+end subtest
+
+subtest "I_SENSE_SV_24V_DRIVER_RTN"
+   global Volt2(*)
+   connect i to nodes "I_SENSE_SV"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector digitizer, expect 3, interval 1m, samples 512
+   initiate detector
+   fetch Volt2(*)
+!@ report analog 0.80, 0.30, V
+!@   measure 0.80, 0.30              ! Adjust at debug
+end subtest

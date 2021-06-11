@@ -1,0 +1,16 @@
+!!!!    2    0    1 1426841763   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:31 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "PF_IGBT_INV"; a to "PF_IGBT_INV"
+connect i to "UNNAMED_48_74HC14_I184_A"; b to "UNNAMED_48_74HC14_I184_A"
+connect g to "UNNAMED_46_74HC14_I184_A"; l to "UNNAMED_46_74HC14_I184_A"
+connect g to "UNNAMED_47_74HC14_I184_A"
+resistor 15, 18.8, 7.04, re2, ar50.0m, sa, sb, sl, en
+! "r152" is a limited test.
+! DUT: nominal 15, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 15.15, low 14.85
+! TEST: high limit 17.818, low limit 13.944
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

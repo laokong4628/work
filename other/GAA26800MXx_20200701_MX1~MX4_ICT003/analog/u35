@@ -1,0 +1,304 @@
+!!!!    2    0    1 1322649019   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:27 2010
+
+!  lm139/lm239/lm339
+!  Low Power Low Offset Voltage Quad Comparator
+!  14-pin package
+
+warning "This test takes measurements with respect to the ground"
+warning "node entered in board forms.  If this is not correct,"
+warning "edit this test according to the comments."
+
+! For measurements with respect to a different ground node, do the following:
+!  1) Copy this library test to a Custom Library directory changing its name.
+!  2) Change the `ground` to `pins "AG"` in the statements:
+!     "connect _ to ground".
+!  3) Add the pin "AG" to board forms for this part with the node
+!     name being the new ground. Change the part number to #1 above.
+!  4) Re-run IPG.
+
+test powered analog
+   power pins  3, 12
+
+   !  The following "on failure" block is provided to protect the
+   !  asru sources from possible high voltages on the board
+   !  under test.  If the voltages on the inputs to the device
+   !  are not within the range from -10 volts to +10 volts peak
+   !  relative to system/board ground, the test will abort.
+   !
+   !  Possible damage to the testhead may occur if this failure
+   !  block is removed and high voltages are present on the
+   !  device under test.
+   !
+   !  This failure block may be commented only if the input voltages
+   !  to the device will not exceed the acceptable limits of -10 volts
+   !  to +10 volts peak relative to system/board ground.
+
+   on failure exit test
+      test "Input_1+"
+      test "Input_1-"
+
+      test "Input_2+"
+      test "Input_2-"
+
+      test "Input_3+"
+      test "Input_3-"
+
+      test "Input_4+"
+      test "Input_4-"
+   off failure
+
+   !  Test the device.
+
+   test "Output_1_high"
+   test "Output_1_low"
+
+   test "Output_2_high"
+   test "Output_2_low"
+
+   test "Output_3_high"
+   test "Output_3_low"
+
+   test "Output_4_high"
+   test "Output_4_low"
+end test
+
+!
+!-----------------------------------------------------------------------
+!
+
+subtest "Input_1+"
+   connect i to pins  5                 ! Positive Input 1
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_1-"
+   connect i to pins  4                 ! Negative Input 1
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_2+"
+   connect i to pins  7                 ! Positive Input 2
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_2-"
+   connect i to pins  6                 ! Negative Input 2
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_3+"
+   connect i to pins  9                 ! Positive Input 3
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_3-"
+   connect i to pins  8                 ! Negative Input 3
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -13.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -13.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_4+"
+   connect i to pins 11                 ! Positive Input 4
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 12.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 12.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_4-"
+   connect i to pins 10                 ! Negative Input 4
+   connect l to ground                  ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -13.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -13.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Output_1_high"
+   connect s to pins  5                 ! Positive Input 1
+   connect a to pins  4                 ! Negative Input 1
+   connect i to pins  2                 ! Output 1
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 16.0, -0.5
+end subtest
+
+subtest "Output_1_low"
+   connect s to pins  5                 ! Positive Input 1
+   connect a to pins  4                 ! Negative Input 1
+   connect i to pins  2                 ! Output 1
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude -0.1, icompliance 1, on
+   auxiliary dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 16.0, -0.50
+end subtest
+
+subtest "Output_2_high"
+   connect s to pins  7                 ! Positive Input 2
+   connect a to pins  6                 ! Negative Input 2
+   connect i to pins  1                 ! Output 2
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 16.0, -0.5
+end subtest
+
+subtest "Output_2_low"
+   connect s to pins  7                 ! Positive Input 2
+   connect a to pins  6                 ! Negative Input 2
+   connect i to pins  1                 ! Output 2
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude -0.1, icompliance 1, on
+   auxiliary dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 16.0, -0.50
+end subtest
+
+subtest "Output_3_high"
+   connect s to pins  9                 ! Positive Input 3
+   connect a to pins  8                 ! Negative Input 3
+   connect i to pins 14                 ! Output 3
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 36.0, 2.0
+end subtest
+
+subtest "Output_3_low"
+   connect s to pins  9                 ! Positive Input 3
+   connect a to pins  8                 ! Negative Input 3
+   connect i to pins 14                 ! Output 3
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude -0.1, icompliance 1, on
+   auxiliary dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 1.5, -0.50
+end subtest
+
+subtest "Output_4_high"
+   connect s to pins 11                 ! Positive Input 4
+   connect a to pins 10                 ! Negative Input 4
+   connect i to pins 13                 ! Output 4
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 36.0, 2.0
+end subtest
+
+subtest "Output_4_low"
+   connect s to pins 11                 ! Positive Input 4
+   connect a to pins 10                 ! Negative Input 4
+   connect i to pins 13                 ! Output 4
+   connect l to pins 12                 ! GND
+
+   source dcv, amplitude -0.1, icompliance 1, on
+   auxiliary dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 36
+   measure 1.5, -0.50
+end subtest
+
+!
+!  End test
+!

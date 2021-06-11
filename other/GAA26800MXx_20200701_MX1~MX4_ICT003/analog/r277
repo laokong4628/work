@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583339   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:00 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GNDA"; a to "GNDA"
+connect i to "I_SV"; b to "I_SV"
+resistor 51.1, 3.29, 1.52, re2, ar200m, sa, sb, en
+! "r277" test.
+! DUT: nominal 51.1, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 51.611, low 50.589
+! TEST: high limit 52.782, low limit 50.323
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

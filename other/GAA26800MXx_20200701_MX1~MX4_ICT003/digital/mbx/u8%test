@@ -1,0 +1,314 @@
+!!!!    6    0    1 1274866860   0000                                         
+! IPG: rev 05.20p  Fri Oct 31 12:14:57 2008
+
+!-----------------------------------------------------------------------
+! Device:        24c32/64
+! Manufacturer:  Atmel
+! Description:   4k/8k * 8 bit EEPROM I^2 C Compatible
+! Package:       8 pin SOIC
+! Test Platform: 3065,3070
+! Safeguard:     standard_cmos
+! Written By    : mikef
+! Date Written  : 4/10/02
+! Verified      : Yes
+!
+!-----------------------------------------------------------------------
+!
+! Additional Comments:
+!
+!-----------------------------------------------------------------------
+test digital
+sequential
+vector cycle 5u
+receive delay 4.5u
+!
+
+default device "u8%test"
+
+set terminators to on
+assign GND    to pins *
+assign VCC    to pins *
+
+assign Address to pins *,*,* ! A2 A1 A0
+
+assign SDA    to pins 5
+assign SCL    to pins 6
+
+assign WP     to pins 7
+assign WP_1     to nodes"OUT_EN_CONV" default "1"
+
+
+inputs  Address, WP, SCL, WP_1
+bidirectional SDA
+power GND, VCC
+
+family CMOS
+
+set ref on groups SDA, SCL, Address to dh 4.5, dl 0    ! Nominal supply voltages.
+set ref on groups SDA to rh2.4, rl1.0
+set load on groups SDA to no load ! pull up on board
+
+pcf order is WP, Address, SCL, SDA
+
+!
+!--------- vectors ---------------------------------------
+!
+
+vector  Initialize_Inputs
+   drive SDA
+   set   WP          to "0"  ! Normal (not protected) operation. !tied low
+   set   WP_1           to "1"
+   set   SDA         to "1"
+   set   SCL         to "1"
+   set   Address     to "001" !"001"
+end vector
+
+vector  Keep
+   receive SDA
+   set   WP          to "0"
+   set   SDA         to "x"
+   set   SCL         to "k"
+   set   Address     to "kkk"
+end vector
+
+vector  Keep_DR
+   drive SDA
+   set   WP          to "0"
+   set   SDA         to "k"
+   set   SCL         to "k"
+   set   Address     to "kkk"
+end vector
+
+vector  Address_in
+   initialize        to Keep_DR
+   set   Address     to "kkk"
+end vector
+
+vector Din_X
+   initialize to Keep_DR
+   set SDA               to "x"
+end vector
+
+vector Din_0
+   initialize to Keep_DR
+   set SDA               to "0"
+end vector
+
+vector Din_1
+   initialize to Keep_DR
+   set SDA               to "1"
+end vector
+
+
+vector  Data_In
+   initialize        to Keep_DR
+   set   SDA         to "k"
+end vector
+
+vector  Data_In_Read
+   initialize        to Keep
+   set   SDA         to "k"
+end vector
+
+vector  Ack_lo
+   initialize        to Keep
+   receive      SDA
+   set   SDA         to "0"
+end vector
+
+vector  Ack_hi
+   initialize        to Keep
+   receive    SDA     !@!jin
+   set   SDA         to "1"
+end vector
+
+vector  Clock
+   initialize        to Keep_DR
+   set   SCL         to "t"
+end vector
+
+vector  Clock_read
+   initialize        to Keep
+   set   SCL         to "t"
+end vector
+
+vector  Clock_hi
+   initialize        to Keep_DR
+   set   SCL         to "1"
+end vector
+
+vector  Clock_lo
+   initialize        to Keep_DR
+   set   SCL         to "0"
+end vector
+
+vector  WP_hi
+   initialize        to Keep_DR
+   set   WP          to "1"
+end vector
+
+vector  WP_lo
+   initialize        to Keep_DR
+   set   WP          to "0"
+end vector
+
+vector  SDA_hi
+   initialize        to Keep_DR
+   set   SDA         to "1"
+end vector
+
+vector  SDA_lo
+   initialize        to Keep_DR
+   set   SDA         to "0"
+end vector
+
+!*******************************************************************
+!*******************    DATA       SECTION     *********************
+!*******************************************************************
+!-----------------------------------------------------------------------
+
+
+
+!*******************************************************************
+!*******************    SUBROUTINE SECTION     *********************
+!*******************************************************************
+
+sub  Device_Address  ! Sends the address that was set up in  Initialize_inputs
+
+   execute  SDA_hi      ! "1"     !
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo      ! "0"     !
+   execute  Clock                 ! Device type identifier is always "1010"
+   execute  Clock                 !
+   execute  SDA_hi      ! "1"     !
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo      ! "0"     !
+   execute  Clock
+   execute  Clock
+   execute  SDA_hi!@!lo      ! A2      ! << customise device address if necessary
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo      ! A1      ! << customise device address if necessary
+   execute  Clock                 !
+   execute  Clock                 !
+   execute  SDA_lo!@!hi      ! A0      ! << customise device address if necessary
+   execute  Clock                 !
+   execute  Clock                 !
+
+end sub
+
+!------------------------------------------------------------------------------
+
+sub  Start
+   execute SDA_hi
+   execute Clock_hi
+   execute SDA_lo
+   execute Clock_lo
+end sub
+
+sub  Stop
+   execute SDA_lo
+   execute Clock_hi
+   execute SDA_hi
+end sub
+
+sub  Ack
+   execute Clock_read
+   execute Ack_lo
+   execute Clock_read
+end sub
+
+sub  No_Ack
+   execute Clock_read
+   execute Ack_hi
+   execute Clock_read
+end sub
+
+sub  Write
+   execute  SDA_lo
+   execute  Clock
+   execute  Clock
+end sub
+
+sub  Read
+   execute  SDA_hi
+   execute  Clock
+   execute  Clock
+end sub
+
+!------------------------------------------------------------------------------
+
+unit "Test: Write DATA to ADDRESS"
+
+   execute Initialize_inputs
+
+
+   call Start
+
+   call Device_Address ! This address must match the address that
+                       ! was set up during Initialize_inputs
+   call Write
+   call Ack
+   repeat 7 times             ! ADDRESS
+      execute Din_0
+      execute Clock
+      execute Clock
+
+   end repeat
+
+      execute Din_0             !@! bit 8
+      execute Clock
+      execute Clock
+
+
+   call Ack
+
+
+   repeat 8 times             ! ADDRESS
+      execute Din_0
+      execute Clock
+      execute Clock
+   end repeat
+
+   call Ack
+
+repeat 15 times               !@!total 16byte
+   repeat 8 times             ! DATA
+      execute Din_0!X drive data Data
+      execute Clock
+      execute Clock
+!      next Data
+   end repeat
+
+   call Ack
+end repeat
+
+   repeat 8 times             ! DATA
+      execute Din_0!!X drive data Data
+      execute Clock
+      execute Clock
+!      next Data
+   end repeat
+
+
+   call Ack
+
+   call Stop
+   wait 10m            ! wait for write cycle to complete
+
+
+end unit
+
+!
+!  End of test
+!
+
+
+!============================================
+
+
+
+
+

@@ -1,0 +1,13 @@
+!!!!    2    0    1 1409628442   0000                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+
+test powered analog;V
+   disconnect all
+   test "CnvTempUref"
+end test
+
+subtest "CnvTempUref"
+   global V
+   report analog  15750, 14250, V 
+end subtest

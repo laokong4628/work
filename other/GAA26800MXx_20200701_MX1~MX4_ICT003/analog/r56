@@ -1,0 +1,23 @@
+!!!!    2    0    1 1274881017   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:32 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c55 10.0u"
+   report "c56 10.0u"
+   report "c57 100n"
+end on failure
+disconnect all
+connect i to "+27V_RU_P_RTN"
+connect s to "UNNAMED_46_BZV55B18_I266_A"
+connect g to "UNNAMED_46_HCPL316J_I183_VOUT"
+connect g to "+27V_RU_P"
+resistor 2.2k, 5.64, 5.19, re3, wb, ar100m, ed
+! "r56" test.
+! DUT: nominal 2.2k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 2.222k, low 2.178k
+! TEST: high limit 2.258k, low limit 2.152k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

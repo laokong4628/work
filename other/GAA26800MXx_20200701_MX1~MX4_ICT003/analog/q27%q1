@@ -1,0 +1,60 @@
+!!!!    2    0    1 1264583347   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:08 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c267 1.00n"
+   report "r251 20.0k"
+   report "c268 1.00n"
+   report "r252 20.0k"
+   report "c269 1.00n"
+   report "r253 20.0k"
+end on failure
+disconnect all
+connect s to "RUP_E11"
+connect i to "RUP_G11"
+diode "B-E", 804m, 600m, idc1.1m, co3.0, ar804m
+! "q27%q1 B-E" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 804.018m, low limit 600.093m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure
+disconnect all
+connect s to "RUP_C1"
+connect i to "RUP_G11"
+diode "B-C", 806m, 603m, idc1.0m, co3.0, ar806m
+! "q27%q1 B-C" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.63m, low limit 602.829m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+on failure
+   report parallel devices
+   report "c267 1.00n"
+   report "r251 20.0k"
+   report "c268 1.00n"
+   report "r252 20.0k"
+   report "c269 1.00n"
+   report "r253 20.0k"
+end on failure
+disconnect all
+connect s to "RUP_E11"
+connect i to "RUP_G11"
+connect g to "RUP_C1"
+! npn "BETA", 0.00, 0.00, idc1.1m, idelta10, co10
+npn "BETA"
+warning "MOA voltage limit exceeded."
+! "q27%q1 BETA" is a commented test.
+! DUT: nominal 125, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 200, low 50
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

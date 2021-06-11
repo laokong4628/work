@@ -1,0 +1,1555 @@
+----------------------------------------
+Shorts Report for "shorts".
+Fri Dec 24 15:13:20 2010
+G2A26800MXx
+Board Version:  G2A26800MX2
+----------------------------------------
+Open #1 Thresh 16, Delay 0s         Ohms
+From: VCC2A+                  20410 Open
+              dummy_con.37
+To:   VCC2A-                  20310
+              dummy_con.38
+Common Devices:
+               dummy_con
+Message is:  None.
+----------------------------------------
+Short #1, Thresh 8, Delay 50us      Ohms
+From: 24V_SW                  22121    2
+               24v_sw.f1
+                 d76.C
+                  p4.1
+                 r441.1
+                 r454.1
+                 r455.1
+                 z18.C
+To:   UNNAMED_48_BAS19_I21_A 210128    5
+                 d33.1
+              d33%diode.A
+                  l4.1
+        v                    210117    4 
+UNNAMED_48_5033001300_I403_D            
+                  l4.2
+                 tr3.4
+               tr3%jp2.2
+      UNNAMED_47_BAS19_I21_A  21027    3
+                 d19.1
+              d19%diode.A
+                  l3.1
+        v                    211114    4 
+UNNAMED_47_5033001300_I404_D            
+                  l3.2
+                 tr2.4
+               tr2%jp2.2
+      UNNAMED_46_BAS19_I21_A  20821    4
+                  d7.1
+               d7%diode.A
+                  l2.1
+        v                     20716    4 
+UNNAMED_46_5033001300_I404_D            
+                  l2.2
+                 tr1.4
+               tr1%jp2.2
+        v                     21964    4 
+UNNAMED_39_BYG22D_I285_A                
+                 d74.A
+                 tr4.3
+               tr4%jp2.1
+      24V_SMPS_SENSE_RTN     219164    3
+                 c200.2
+                 c201.2
+                 c202.2
+                 c231.2
+                 c232.2
+                 c301.2
+                 c302.2
+                 c305.2
+                 c306.2
+                 c307.2
+Too many to print.
+      24V_SE                  22064    6
+               24v_se.f1
+                 c21.1
+                 c22.1
+                 c256.1
+                 c316.1
+                 d78.C
+         duty_cycle_drain_ru.f2
+         duty_cycle_drain_sv.f2
+         duty_cycle_drain_tw.f2
+      duty_cycle_gate_sense_ru.f2
+Too many to print.
+      24V_SE_RTN             220163    3
+               24v_se.f2
+                 c21.2
+                 c22.2
+                 c256.2
+                 c316.2
+         duty_cycle_drain_ru.f3
+         duty_cycle_drain_sv.f3
+         duty_cycle_drain_tw.f3
+      duty_cycle_gate_sense_ru.f3
+      duty_cycle_gate_sense_sv.f3
+Too many to print.
+      DRAIN_TW                21617    7
+                 q34.2
+                 q34.4
+              q34%diode.C
+               q34%nfet.D
+              q34%nfet.NC
+                q34%qf.D
+                 tr3.2
+               tr3%jp1.2
+                 z54.A
+      UNNAMED_48_R_I29_B      21024    4
+                 q34.3
+              q34%diode.A
+               q34%nfet.S
+                q34%qf.S
+                 r161.1
+                 r162.1
+                 r401.2
+      UNNAMED_47_R_I29_B      21018    4
+                 q30.3
+              q30%diode.A
+               q30%nfet.S
+                q30%qf.S
+                 r115.1
+                 r116.1
+                 r329.2
+      24V_DRIVER_RTN          21121    4
+                 c37.2
+                 c38.2
+                 c39.2
+                 c40.2
+                 c41.2
+                 c42.2
+                 c43.2
+                 c44.2
+                 c45.2
+                 c48.2
+Too many to print.
+      UNNAMED_46_R_I29_B      20724    4
+                 q26.3
+              q26%diode.A
+               q26%nfet.S
+                q26%qf.S
+                 r57.1
+                 r58.1
+                 r228.2
+No common devices.
+Total of 16 nodes, Message is:  None.
+------End, 2 Problems Reported----------
+
+
+----------------------------------------
+G2A26800MXx
+Board Version:  G2A26800MX2
+Fri Dec 24 15:13:46 2010
+----------------------------------------
+c193 HAS FAILED
+C_0603-100N,50V,10%
+Measured:   0.089712u
+Nominal:    0.13000u
+High Limit: 0.16900u
+Low Limit:  0.091000u
+Capacitance in FARADS
+----------------------------------------
+c21 HAS FAILED
+CAP_THT-470U,50V,20%
+Measured:   649.65u
+Nominal:    590.30u
+High Limit: 649.33u
+Low Limit:  531.27u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c201 100u
+c22 10.0u
+c200 10.0u
+c256 100n
+c302 100n
+c316 100n
+----------------------------------------
+c251 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   1422.9p
+Nominal:    20.000u
+High Limit: 22.000u
+Low Limit:  16.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c252 10.0u
+----------------------------------------
+c43 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   20.835u
+Nominal:    30.000u
+High Limit: 36.000u
+Low Limit:  21.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c44 10.0u
+c45 10.0u
+----------------------------------------
+c114 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   20.654u
+Nominal:    30.000u
+High Limit: 36.000u
+Low Limit:  21.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c115 10.0u
+c116 10.0u
+----------------------------------------
+c183 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   20.407u
+Nominal:    30.000u
+High Limit: 36.000u
+Low Limit:  21.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c184 10.0u
+c185 10.0u
+----------------------------------------
+c165 HAS FAILED
+C_0805-1N,50V,10%
+Measured:   484.31p
+Nominal:    1000.0p
+High Limit: 1185.0p
+Low Limit:  778.00p
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+r380 10.0k
+----------------------------------------
+c312 HAS FAILED
+C_0603-100P,50V,10%
+Measured:   309.80p
+Nominal:    474.00p
+High Limit: 616.20p
+Low Limit:  331.80p
+Capacitance in FARADS
+----------------------------------------
+d77 HAS FAILED
+D1F60-SMD
+Measured:   1.4238
+High Limit: 906.00m
+Low Limit:  503.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+r378 HAS FAILED
+R_0805-10K,1%,0.125W
+Measured:   20.917M
+Nominal:    10.000k
+High Limit: 10.146k
+Low Limit:  9.8710k
+Resistance in OHMS
+----------------------------------------
+r380 HAS FAILED
+R_0805-10K,1%,0.125W
+Measured:   8.1260k
+Nominal:    10.000k
+High Limit: 10.146k
+Low Limit:  9.8710k
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+c165 1.00n
+----------------------------------------
+r459 HAS FAILED
+R_MINI-MELF-1.5K,1%,0.25W
+Measured:   1.4772k
+Nominal:    1.5000k
+High Limit: 1.5288k
+Low Limit:  1.4805k
+Resistance in OHMS
+----------------------------------------
+r88 HAS FAILED
+R_0805-10,1%,0.125W
+Measured:   24.119
+Nominal:    10.000
+High Limit: 11.280
+Low Limit:  9.6250
+Resistance in OHMS
+----------------------------------------
+r436 HAS FAILED
+R_0805-1.33K,1%,0.125W
+Measured:   -23.010M
+Nominal:    1.3300k
+High Limit: 1.8926k
+Low Limit:  1.0800k
+Resistance in OHMS
+----------------------------------------
+r379 HAS FAILED
+R_0805-5.62K,1%,0.125W
+Measured:   35.070M
+Nominal:    3.3000k
+High Limit: 3.4135k
+Low Limit:  3.1937k
+Resistance in OHMS
+----------------------------------------
+r437 HAS FAILED
+R_MELF-1.21,1%,1W
+Measured:   -124.94k
+Nominal:    0.30250
+High Limit: 0.39325
+Low Limit:  0.21175
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+r438 1.21
+r439 1.21
+r440 1.21
+----------------------------------------
+r457 HAS FAILED
+R_0805-100K,5%,0.125W
+Measured:   2.0072M
+Nominal:    100.00k
+High Limit: 108.00k
+Low Limit:  92.000k
+Resistance in OHMS
+----------------------------------------
+q23 HAS FAILED
+Subtest: B-C
+IRFS23N15D-D2PAK
+Measured:   1.4238
+High Limit: 806.00m
+Low Limit:  603.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+z77 HAS FAILED
+BZV55B12-MINIMELF
+Measured:   13.774
+High Limit: 950.00m
+Low Limit:  550.00m
+Forward VOLTAGE drop
+Status:  4H
+Moa Voltage/Current Compliance
+----------------------------------------
+DEVICES IN PARALLEL
+c251 10.0u
+c252 10.0u
+----------------------------------------
+
+
+
+MXX1:
+----------------------------------------
+CHEK-POINT Report for "pins".
+Fri Dec 24 15:14:55 2010
+G2A26800MXx
+Board Version:  G2A26800MX1
+----------------------------------------
+Failed Open #1
+(20464) 5V_HL2
+                5v_hl2.1
+             5v_hl2_hl2.f1
+                  c1.1
+                  c2.1
+                  c3.1
+                  c4.1
+                  c5.1
+                  c6.1
+                 c255.1
+                  d1.2
+Too many to print.
+----------------------------------------
+Failed Open #2
+(204165) UNNAMED_45_C_I143_B
+                  c1.2
+                  r2.2
+                  r4.1
+                 u1.11
+----------------------------------------
+Failed Open #3
+(21125) HL2
+             5v_hl2_hl2.f2
+             24v_hl2_hl2.f2
+                  c2.2
+                  c3.2
+                  c4.2
+                  c5.2
+                  c6.2
+                  c7.2
+                  c8.2
+                  c9.2
+Too many to print.
+----------------------------------------
+Failed Open #4
+(21133) 24V_HL2
+               24v_hl2.1
+             24v_hl2_hl2.f1
+                  c7.1
+                  c8.1
+                  c9.1
+                 c11.1
+                 c12.1
+                 c13.1
+                 c27.1
+                 c254.1
+Too many to print.
+----------------------------------------
+Failed Open #5
+(205151) UNNAMED_45_R_I186_B
+                 c27.2
+                 c28.1
+                 c29.1
+                 c30.1
+                 c258.2
+                 r17.2
+                 r209.2
+                 r212.1
+                  u5.4
+----------------------------------------
+Failed Open #6
+(20550) UNNAMED_45_R_I210_A
+                 c258.1
+                 r209.1
+                  u5.6
+----------------------------------------
+Failed Open #7
+(20554) UNNAMED_45_C_I189_A
+                 c25.1
+                 c26.1
+                 r16.1
+                 r212.2
+                 r213.1
+----------------------------------------
+Failed Open #8
+(205152) UNNAMED_45_R_I241_B
+                 c25.2
+                 c26.2
+                  r9.1
+                 r213.2
+                 r214.1
+----------------------------------------
+Failed Open #9
+(20553) UNNAMED_45_BAT54S_I231_A1
+                 c15.1
+                  d1.3
+              d1%pins1_3.C
+              d1%pins3_2.A
+                  r9.2
+                 r205.1
+                  u4.4
+----------------------------------------
+Failed Open #10
+(20452) PTC_ADC
+                 c15.2
+                 c259.1
+               ptc_adc.1
+           ptc_adc_load_1k.f1
+            ptc_adc_open.f1
+            ptc_adc_short.f1
+                 r205.2
+                  u3.7
+                  u4.1
+----------------------------------------
+Failed Open #11
+(205155) UNNAMED_45_BAT54S_I245_A1
+                  d3.3
+              d3%pins1_3.C
+              d3%pins3_2.A
+                 r16.2
+                 r215.1
+                  u4.3
+----------------------------------------
+Failed Open #12
+(20467) UNNAMED_45_LM3103_I145_RON
+                  r1.2
+                 u1.13
+----------------------------------------
+Failed Open #13
+(20455) 24V_ADC
+                 c14.1
+                  d2.3
+              d2%pins1_3.C
+              d2%pins3_2.A
+                 r206.2
+                 r207.1
+                 r208.1
+----------------------------------------
+Failed Open #14
+(205157) UNNAMED_45_AD7417_I130_AIN2
+                 r208.2
+                  u3.8
+----------------------------------------
+Failed Open #15
+(20468) UNNAMED_45_C_I148_A
+                 c10.1
+                 u1.14
+----------------------------------------
+Failed Open #16
+(20566) UNNAMED_45_C_I146_A
+                 c16.1
+                  u1.7
+----------------------------------------
+Failed Open #17
+(20555) UNNAMED_45_AD7417_I130_AIN3
+                 c24.1
+                 r14.1
+                 r15.2
+                  u3.9
+----------------------------------------
+Failed Open #18
+(20561) UNNAMED_45_AD7417_I130_AIN4
+                 r13.1
+                 u3.10
+----------------------------------------
+Failed Open #19
+(20445) PTC_6
+                  d5.5
+                  d5.6
+                  d5.7
+                  d5.8
+                d5%cr1.C
+                d5%cr2.C
+                d5%cr3.C
+                d5%cr4.C
+                  p6.6
+         ptc_1_ptc_6_current.f3
+Too many to print.
+----------------------------------------
+Failed Open #20
+(20567) SW_TEMP_SENSOR
+      frequency_sw_temp_sensor.f1
+                  l1.1
+                  r6.1
+                  u1.3
+                  u1.4
+----------------------------------------
+Failed Open #21
+(20568) UNNAMED_45_C_I139_B
+                 c257.2
+                  r6.2
+----------------------------------------
+Failed Open #22
+(205166) UNNAMED_45_C_I139_A
+                 c257.1
+                  u1.5
+----------------------------------------
+Failed Open #23
+(205158) UNNAMED_45_AD7417_I130_SCL
+                 r210.2
+                  u2.6
+                  u3.3
+----------------------------------------
+Failed Open #24
+(20558) UNNAMED_45_AD7417_I130_SDA
+                 r211.2
+                  u2.7
+                  u3.2
+----------------------------------------
+Failed Open #25
+(22065) ISENSE
+                 q23.C
+                 r436.2
+                 r437.1
+                 r438.1
+                 r439.1
+                 r440.1
+----------------------------------------
+Failed Open #26
+(22115) UNNAMED_9_555_I229_RESET
+                 c251.1
+                 c252.1
+                 d77.C
+                 r457.1
+                 u57.4
+                 u57.8
+                 z77.C
+----------------------------------------
+Failed Open #27
+(20557) DUMMY_OTI
+                  u3.4
+----------------------------------------
+Failed Open #28
+(205150) DUMMY_TEMP_TEMP
+                  u5.3
+----------------------------------------
+Failed Open #29
+(20549) DUMMY_TEMP_TRIM
+                  u5.5
+----------------------------------------
+Failed Open #30
+(20248) P6_SW_1
+                p6_sw.1
+----------------------------------------
+Failed Open #31
+(20247) P6_SW_2
+                p6_sw.2
+------End, 31 Problems Reported---------
+Pins Failed
+
+----------------------------------------
+G2A26800MXx
+Board Version:  G2A26800MX1
+Fri Dec 24 15:15:26 2010
+----------------------------------------
+p6_sw HAS FAILED
+WAGO-733-336
+Measured:   -13.341k
+Threshold: 6.9600
+Jumper Resistance in OHMS
+----------------------------------------
+tr2%jp4 HAS FAILED
+
+REPLACE DEVICE: tr2
+G1A225RW1 VOGT-5033001300
+Measured:   -13.341k
+Threshold: 6.9600
+Jumper Resistance in OHMS
+----------------------------------------
+tr2%jp3 HAS FAILED
+
+REPLACE DEVICE: tr2
+G1A225RW1 VOGT-5033001300
+Measured:   93.706k
+Threshold: 10.960
+Jumper Resistance in OHMS
+----------------------------------------
+
+
+
+----------------------------------------
+Shorts Report for "shorts".
+Fri Dec 24 15:15:38 2010
+G2A26800MXx
+Board Version:  G2A26800MX1
+----------------------------------------
+Open #1 Thresh 20, Delay 0s         Ohms
+From: VCC2A+                  20410 Open
+              dummy_con.37
+To:   VCC2A-                  20310
+              dummy_con.38
+Common Devices:
+               dummy_con
+Message is:  None.
+----------------------------------------
+Open #2 Thresh 20, Delay 0s         Ohms
+From: P6_SW_1                 20248 Open
+                p6_sw.1
+To:   P6_SW_2                 20247
+                p6_sw.2
+Common Devices:
+                 p6_sw
+Message is:  None.
+----------------------------------------
+Open #3 Thresh 20, Delay 0s         Ohms
+From: 24V_DRIVER             211121 Open
+                  d6.C
+                 d18.C
+                 d32.C
+                 r36.1
+                 r102.1
+                 r150.1
+                 r217.2
+                 r218.1
+                 r219.1
+                 r220.1
+Too many to print.
+To:   24V_SW                 210126
+               24v_sw.f1
+                 d76.C
+                  p4.1
+                 r441.1
+                 r454.1
+                 r455.1
+                 z18.C
+Common Devices:
+                  r441
+Message is:  None.
+----------------------------------------
+Open #4 Thresh 20, Delay 0s         Ohms
+From: 24V_SMPS_SENSE_RTN     219164 Open
+                 c200.2
+                 c201.2
+                 c202.2
+                 c231.2
+                 c232.2
+                 c301.2
+                 c302.2
+                 c305.2
+                 c306.2
+                 c307.2
+Too many to print.
+To:   ISENSE                  22058
+                 q23.C
+                 r436.2
+                 r437.1
+                 r438.1
+                 r439.1
+                 r440.1
+Common Devices:
+                  r437
+                  r438
+                  r439
+                  r440
+Message is:  None.
+----------------------------------------
+Open #5 Thresh 20, Delay 0s         Ohms
+From: 5V_HL2                  20464 Open
+                5v_hl2.1
+             5v_hl2_hl2.f1
+                  c1.1
+                  c2.1
+                  c3.1
+                  c4.1
+                  c5.1
+                  c6.1
+                 c255.1
+                  d1.2
+Too many to print.
+To:   SW_TEMP_SENSOR          20567
+      frequency_sw_temp_sensor.f1
+                  l1.1
+                  r6.1
+                  u1.3
+                  u1.4
+Common Devices:
+                   l1
+Message is:  None.
+----------------------------------------
+Open #6 Thresh 20, Delay 0s         Ohms
+From: +27V_SV_P_RTN          210113 Open
+              +27v_sv_p.f2
+                 c134.2
+                 c135.2
+                 c136.2
+                 c145.2
+                 c153.2
+                 c160.2
+                 c161.2
+                 c162.2
+                 c163.2
+Too many to print.
+To:   UNNAMED_47_BAS19_I43_A 211111
+                 c148.1
+                 d24.1
+              d24%diode.A
+                 tr2.8
+               tr2%jp4.2
+                  z8.C
+Common Devices:
+                  tr2
+                tr2%jp4
+                   z8
+Message is:  None.
+----------------------------------------
+Open #7 Thresh 20, Delay 0s         Ohms
+From: +27V_SV_N_RTN           21521 Open
+              +27v_sv_n.f2
+                 c142.2
+                 c143.2
+                 c144.2
+                 c152.2
+                 c154.2
+                 c155.2
+                 c156.2
+                 c157.2
+                 c158.2
+Too many to print.
+To:     v                    214111
+UNNAMED_47_BAS19_I178_A                 
+                 c147.1
+                 d23.1
+              d23%diode.A
+                 tr2.6
+               tr2%jp3.2
+                  z7.C
+Common Devices:
+                  tr2
+                tr2%jp3
+                   z7
+Message is:  None.
+----------------------------------------
+Short #1, Thresh 8, Delay 10ms      Ohms
+From: UNNAMED_47_BAS19_I43_A 211111    3
+                 c148.1
+                 d24.1
+              d24%diode.A
+                 tr2.8
+               tr2%jp4.2
+                  z8.C
+  &   +27V_SV_P_RTN          210113
+              +27v_sv_p.f2
+                 c134.2
+                 c135.2
+                 c136.2
+                 c145.2
+                 c153.2
+                 c160.2
+                 c161.2
+                 c162.2
+                 c163.2
+Too many to print.
+To:     v                    214111    4 
+UNNAMED_47_BAS19_I178_A                 
+                 c147.1
+                 d23.1
+              d23%diode.A
+                 tr2.6
+               tr2%jp3.2
+                  z7.C
+      +27V_SV_N_RTN           21521    4
+              +27v_sv_n.f2
+                 c142.2
+                 c143.2
+                 c144.2
+                 c152.2
+                 c154.2
+                 c155.2
+                 c156.2
+                 c157.2
+                 c158.2
+Too many to print.
+Common Devices:
+                  tr2
+Total of 4 nodes, Message is:  None.
+------End, 8 Problems Reported----------
+
+
+----------------------------------------
+G2A26800MXx
+Board Version:  G2A26800MX1
+Fri Dec 24 15:16:11 2010
+----------------------------------------
+c3 HAS FAILED
+C_1210-22U,16V,20%
+Measured:   2863.0p
+Nominal:    66.300u
+High Limit: 78.234u
+Low Limit:  47.073u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c4 22.0u
+c5 22.0u
+c2 100n
+c6 100n
+c255 100n
+----------------------------------------
+c7 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   2862.3p
+Nominal:    40.300u
+High Limit: 48.441u
+Low Limit:  32.159u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c8 10.0u
+c11 10.0u
+c12 10.0u
+c9 100n
+c13 100n
+c254 100n
+----------------------------------------
+c15 HAS FAILED
+C_0603-100N,50V,10%
+Measured:   28.967p
+Nominal:    0.10000u
+High Limit: 0.11060u
+Low Limit:  0.089300u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+r205 10.0k
+----------------------------------------
+c24 HAS FAILED
+C_0603-100N,50V,10%
+Measured:   53.143p
+Nominal:    0.10000u
+High Limit: 0.12800u
+Low Limit:  0.059800u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+r14 2.00k
+----------------------------------------
+c26 HAS FAILED
+C_1210-22U,16V,20%
+Measured:   -1.2434e-103
+Nominal:    22.100u
+High Limit: 26.653u
+Low Limit:  16.420u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c25 100n
+r213 2.74k
+----------------------------------------
+c258 HAS FAILED
+C_0603-100N,50V,10%
+Measured:   36.082p
+Nominal:    0.10000u
+High Limit: 0.10876u
+Low Limit:  0.086500u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+r209 1.20k
+----------------------------------------
+c14 HAS FAILED
+C_1210-22U,16V,20%
+Measured:   2861.1p
+Nominal:    22.000u
+High Limit: 26.444u
+Low Limit:  16.346u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+r207 2.00k
+----------------------------------------
+c29 HAS FAILED
+C_1210-22U,16V,20%
+Measured:   1.6518e-23
+Nominal:    44.001u
+High Limit: 52.229u
+Low Limit:  31.637u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c30 22.0u
+c28 1.00n
+----------------------------------------
+c43 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   10.550u
+Nominal:    30.000u
+High Limit: 36.000u
+Low Limit:  21.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c44 10.0u
+c45 10.0u
+----------------------------------------
+c114 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   10.482u
+Nominal:    30.000u
+High Limit: 36.000u
+Low Limit:  21.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c115 10.0u
+c116 10.0u
+----------------------------------------
+c183 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   10.662u
+Nominal:    30.000u
+High Limit: 36.000u
+Low Limit:  21.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c184 10.0u
+c185 10.0u
+----------------------------------------
+c10 HAS FAILED
+C_0603-1.0U,10V,10%
+Measured:   0.0000
+Nominal:    1.0000u
+High Limit: 1.2060u
+Low Limit:  0.79500u
+Capacitance in FARADS
+----------------------------------------
+c251 HAS FAILED
+C_1210-10U,50V,10%
+Measured:   1.0000e+100
+Nominal:    20.000u
+High Limit: 22.000u
+Low Limit:  16.000u
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+c252 10.0u
+----------------------------------------
+c312 HAS FAILED
+C_0603-100P,50V,10%
+Measured:   317.34p
+Nominal:    474.00p
+High Limit: 616.20p
+Low Limit:  331.80p
+Capacitance in FARADS
+----------------------------------------
+c147 HAS FAILED
+C_0805-220P,200V,5%
+Measured:   828.89p
+Nominal:    220.00p
+High Limit: 286.00p
+Low Limit:  154.00p
+Capacitance in FARADS
+----------------------------------------
+c305 HAS FAILED
+C_0805-56P,50V,5%
+Measured:   78.185p
+Nominal:    56.000p
+High Limit: 72.800p
+Low Limit:  53.200p
+Capacitance in FARADS
+----------------------------------------
+DEVICES IN PARALLEL
+r173 6.81k
+----------------------------------------
+c16 HAS FAILED
+C_0805-470N,25V,10%
+Measured:   16.151p
+Nominal:    0.47000u
+High Limit: 0.51982u
+Low Limit:  0.37365u
+Capacitance in FARADS
+----------------------------------------
+c148 HAS FAILED
+C_0805-220P,200V,5%
+Measured:   821.93p
+Nominal:    220.00p
+High Limit: 286.00p
+Low Limit:  154.00p
+Capacitance in FARADS
+----------------------------------------
+c257 HAS FAILED
+C_0805-33N,50V,10%
+Measured:   12.049p
+Nominal:    0.033000u
+High Limit: 0.036531u
+Low Limit:  0.029535u
+Capacitance in FARADS
+----------------------------------------
+d1%pins1_3 HAS FAILED
+
+REPLACE DEVICE: d1
+GAA612DP1
+Measured:   1.4331
+High Limit: 405.00m
+Low Limit:  281.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+d1%pins3_2 HAS FAILED
+
+REPLACE DEVICE: d1
+GAA612DP1
+Measured:   1.4331
+High Limit: 405.00m
+Low Limit:  282.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+d2%pins1_3 HAS FAILED
+
+REPLACE DEVICE: d2
+GAA612DP1
+Measured:   1.4331
+High Limit: 501.00m
+Low Limit:  357.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+DEVICES IN PARALLEL
+c14 22.0u
+r207 2.00k
+----------------------------------------
+d2%pins3_2 HAS FAILED
+
+REPLACE DEVICE: d2
+GAA612DP1
+Measured:   1.4331
+High Limit: 504.00m
+Low Limit:  351.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+d3%pins1_3 HAS FAILED
+
+REPLACE DEVICE: d3
+GAA612DP1
+Measured:   1.4331
+High Limit: 404.00m
+Low Limit:  200.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+DEVICES IN PARALLEL
+r215 10.0k
+----------------------------------------
+d3%pins3_2 HAS FAILED
+
+REPLACE DEVICE: d3
+GAA612DP1
+Measured:   1.4331
+High Limit: 405.00m
+Low Limit:  201.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+d4%pins1_3 HAS FAILED
+
+REPLACE DEVICE: d4
+GAA612DP1
+Measured:   1.4331
+High Limit: 445.00m
+Low Limit:  301.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+d4%pins3_2 HAS FAILED
+
+REPLACE DEVICE: d4
+GAA612DP1
+Measured:   1.4331
+High Limit: 456.00m
+Low Limit:  302.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+d5%cr1 HAS FAILED
+
+REPLACE DEVICE: d5
+GAA605V1
+Measured:   1.4331
+High Limit: 823.00m
+Low Limit:  211.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+DEVICES IN PARALLEL
+d5 d5%cr2
+d5 d5%cr3
+d5 d5%cr4
+----------------------------------------
+d76 HAS FAILED
+10MQ040N-SMD
+Measured:   1.4331
+High Limit: 656.00m
+Low Limit:  359.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+q26%qf HAS FAILED
+N-Channel enh mos failed
+REPLACE DEVICE: q26
+G1A601DW1
+Measured:   4.4845
+High Limit: 50.320
+Low Limit:  5.0300
+NFET Ron in OHMS
+----------------------------------------
+q30%qf HAS FAILED
+N-Channel enh mos failed
+REPLACE DEVICE: q30
+G1A601DW1
+Measured:   4.6815
+High Limit: 100.32
+Low Limit:  5.0300
+NFET Ron in OHMS
+----------------------------------------
+q34%qf HAS FAILED
+N-Channel enh mos failed
+REPLACE DEVICE: q34
+G1A601DW1
+Measured:   4.5983
+High Limit: 120.32
+Low Limit:  5.0300
+NFET Ron in OHMS
+----------------------------------------
+l1 HAS FAILED
+L_WE_TPC-68U
+Measured:   -5.1801
+Nominal:    95.272u
+High Limit: 119.95u
+Low Limit:  70.597u
+Inductance in HENRYS
+----------------------------------------
+r1 HAS FAILED
+R_0805-330K,1%,0.125W
+Measured:   -145.10M
+Nominal:    330.00k
+High Limit: 335.48k
+Low Limit:  324.69k
+Resistance in OHMS
+----------------------------------------
+r2 HAS FAILED
+R_0805-7.32K,1%,0.125W
+Measured:   -16.521M
+Nominal:    7.3200k
+High Limit: 7.6860k
+Low Limit:  6.9540k
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+c1 2.20n
+----------------------------------------
+r4 HAS FAILED
+R_0805-1K,1%,0.125W
+Measured:   -1.4797M
+Nominal:    1.0000k
+High Limit: 1.0500k
+Low Limit:  950.00
+Resistance in OHMS
+----------------------------------------
+d77 HAS FAILED
+D1F60-SMD
+Measured:   1.4238
+High Limit: 906.00m
+Low Limit:  503.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+r6 HAS FAILED
+R_0603-15,1%,0.1W
+Measured:   1.0000e+100
+Nominal:    15.000
+High Limit: 16.328
+Low Limit:  14.574
+Resistance in OHMS
+----------------------------------------
+r9 HAS FAILED
+R_0603-10K,1%,0.1W
+Measured:   -16.521M
+Nominal:    10.000k
+High Limit: 10.240k
+Low Limit:  9.5980k
+Resistance in OHMS
+----------------------------------------
+r13 HAS FAILED
+R_0603-10K,1%,0.1W
+Measured:   -15.198M
+Nominal:    10.000k
+High Limit: 10.146k
+Low Limit:  9.8710k
+Resistance in OHMS
+----------------------------------------
+r16 HAS FAILED
+R_0603-10K,1%,0.1W
+Measured:   -15.198M
+Nominal:    10.000k
+High Limit: 10.195k
+Low Limit:  9.8300k
+Resistance in OHMS
+----------------------------------------
+r205 HAS FAILED
+R_0603-10K,1%,0.1W
+Measured:   -16.575M
+Nominal:    10.000k
+High Limit: 10.208k
+Low Limit:  9.8150k
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+c15 100n
+----------------------------------------
+r210 HAS FAILED
+R_0603-10K,1%,0.1W
+Measured:   -16.575M
+Nominal:    10.000k
+High Limit: 10.146k
+Low Limit:  9.8710k
+Resistance in OHMS
+----------------------------------------
+r211 HAS FAILED
+R_0603-10K,1%,0.1W
+Measured:   -16.575M
+Nominal:    10.000k
+High Limit: 10.146k
+Low Limit:  9.8710k
+Resistance in OHMS
+----------------------------------------
+r215 HAS FAILED
+R_0603-10K,1%,0.1W
+Measured:   1.0000e+100
+Nominal:    10.000k
+High Limit: 10.295k
+Low Limit:  9.7300k
+Resistance in OHMS
+----------------------------------------
+r14 HAS FAILED
+R_0805-2K,1%,0.125W
+Measured:   -14.029M
+Nominal:    2.0000k
+High Limit: 2.0396k
+Low Limit:  1.9714k
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+c24 100n
+----------------------------------------
+r207 HAS FAILED
+R_0805-2K,1%,0.125W
+Measured:   -1.3464M
+Nominal:    2.0000k
+High Limit: 2.0534k
+Low Limit:  1.7968k
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+c14 22.0u
+----------------------------------------
+r15 HAS FAILED
+R_0805-18K,1%,0.125W
+Measured:   373.88M
+Nominal:    18.000k
+High Limit: 19.075k
+Low Limit:  16.922k
+Resistance in OHMS
+----------------------------------------
+r206 HAS FAILED
+R_0805-18K,1%,0.125W
+Measured:   186.98M
+Nominal:    18.000k
+High Limit: 18.900k
+Low Limit:  17.100k
+Resistance in OHMS
+----------------------------------------
+r17 HAS FAILED
+R_0603-100,1%,0.1W
+Measured:   -1.8329M
+Nominal:    100.00
+High Limit: 102.16
+Low Limit:  98.750
+Resistance in OHMS
+----------------------------------------
+r18 HAS FAILED
+R_0603-100,1%,0.1W
+Measured:   -1.8339M
+Nominal:    100.00
+High Limit: 102.16
+Low Limit:  98.750
+Resistance in OHMS
+----------------------------------------
+r293 HAS FAILED
+R_0805-10K,1%,0.125W
+Measured:   24.332k
+Nominal:    10.000k
+High Limit: 10.253k
+Low Limit:  9.7710k
+Resistance in OHMS
+----------------------------------------
+r459 HAS FAILED
+R_MINI-MELF-1.5K,1%,0.25W
+Measured:   1.4791k
+Nominal:    1.5000k
+High Limit: 1.5288k
+Low Limit:  1.4805k
+Resistance in OHMS
+----------------------------------------
+r208 HAS FAILED
+R_0603-100,1%,0.1W
+Measured:   1.8326M
+Nominal:    100.00
+High Limit: 102.16
+Low Limit:  98.750
+Resistance in OHMS
+----------------------------------------
+r88 HAS FAILED
+R_0805-10,1%,0.125W
+Measured:   24.043
+Nominal:    10.000
+High Limit: 11.280
+Low Limit:  9.6250
+Resistance in OHMS
+----------------------------------------
+r209 HAS FAILED
+R_0603-1.2K,1%,0.1W
+Measured:   -14.876M
+Nominal:    1.2000k
+High Limit: 1.2253k
+Low Limit:  1.1400k
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+c258 100n
+----------------------------------------
+r212 HAS FAILED
+R_0805-3.83K,1%,0.125W
+Measured:   -16.518M
+Nominal:    3.8300k
+High Limit: 4.0215k
+Low Limit:  3.6385k
+Resistance in OHMS
+----------------------------------------
+r214 HAS FAILED
+R_0805-3.83K,1%,0.125W
+Measured:   1.0000e+100
+Nominal:    3.8300k
+High Limit: 4.0230k
+Low Limit:  3.6171k
+Resistance in OHMS
+----------------------------------------
+r213 HAS FAILED
+R_0805-2.74K,1%,0.125W
+Measured:   -16.521M
+Nominal:    2.7400k
+High Limit: 2.7964k
+Low Limit:  2.6693k
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+c25 100n
+c26 22.0u
+----------------------------------------
+r436 HAS FAILED
+R_0805-1.33K,1%,0.125W
+Measured:   -23.012M
+Nominal:    1.3300k
+High Limit: 1.8926k
+Low Limit:  1.0800k
+Resistance in OHMS
+----------------------------------------
+r437 HAS FAILED
+R_MELF-1.21,1%,1W
+Measured:   -374.84k
+Nominal:    0.30250
+High Limit: 0.39325
+Low Limit:  0.21175
+Resistance in OHMS
+----------------------------------------
+DEVICES IN PARALLEL
+r438 1.21
+r439 1.21
+r440 1.21
+----------------------------------------
+r457 HAS FAILED
+R_0805-100K,5%,0.125W
+Measured:   2.3341M
+Nominal:    100.00k
+High Limit: 108.00k
+Low Limit:  92.000k
+Resistance in OHMS
+----------------------------------------
+q23 HAS FAILED
+Subtest: B-C
+IRFS23N15D-D2PAK
+Measured:   1.4238
+High Limit: 806.00m
+Low Limit:  603.00m
+Forward VOLTAGE drop
+Status:  2cH
+Moa Voltage/Current Compliance
+Detector Over Range
+Integrator Over Voltage
+----------------------------------------
+z77 HAS FAILED
+BZV55B12-MINIMELF
+Measured:   13.773
+High Limit: 950.00m
+Low Limit:  550.00m
+Forward VOLTAGE drop
+Status:  4H
+Moa Voltage/Current Compliance
+----------------------------------------
+DEVICES IN PARALLEL
+c251 10.0u
+c252 10.0u
+----------------------------------------
+q26%nfet HAS FAILED
+Subtest: SD_diode
+N-Channel enh mos failed
+Measured:   -35.518m
+High Limit: -300.00m
+Low Limit:  -700.00m
+Direct Current VOLTS
+----------------------------------------
+q26%nfet HAS FAILED
+Subtest: off
+N-Channel enh mos failed
+Measured:   121.60m
+High Limit: 6.0000
+Low Limit:  3.0000
+Direct Current VOLTS
+----------------------------------------
+q30%nfet HAS FAILED
+Subtest: SD_diode
+N-Channel enh mos failed
+Measured:   -34.425m
+High Limit: -300.00m
+Low Limit:  -700.00m
+Direct Current VOLTS
+----------------------------------------
+q30%nfet HAS FAILED
+Subtest: off
+N-Channel enh mos failed
+Measured:   130.70m
+High Limit: 6.0000
+Low Limit:  3.0000
+Direct Current VOLTS
+----------------------------------------
+q34%nfet HAS FAILED
+Subtest: SD_diode
+N-Channel enh mos failed
+Measured:   -34.490m
+High Limit: -300.00m
+Low Limit:  -700.00m
+Direct Current VOLTS
+----------------------------------------
+q34%nfet HAS FAILED
+Subtest: off
+N-Channel enh mos failed
+Measured:   133.85m
+High Limit: 6.0000
+Low Limit:  3.0000
+Direct Current VOLTS
+----------------------------------------
+
+
+----------------------------------------
+TestJet Report for "testjet".
+Fri Dec 24 15:16:41 2010
+G2A26800MXx
+Board Version:  G2A26800MX1
+----------------------------------------
+Open #1  Device u3
+  Pin 9  Node UNNAMED_45_AD7417_I130_AIN3
+  Measured 51.1             (BRC 20555)
+G1A616KW1
+----------------------------------------

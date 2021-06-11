@@ -1,0 +1,596 @@
+!!!!    2    0    1 1355475606   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:24 2010
+
+!
+!  Quad Operational Amplifier
+!
+
+test powered analog
+   power pins  4, 11
+
+   !  The following "on failure" block is provided to protect the
+   !  asru sources from possible high voltages on the board
+   !  under test.  If the voltages on the inputs to the device
+   !  are not within the range from -10 volts to +10 volts peak
+   !  relative to system/board ground, the test will abort.
+   !
+   !  Possible damage to the testhead may occur if this failure
+   !  block is removed and high voltages are present on the
+   !  device under test.
+   !
+   !  This failure block may be commented only if the input voltages
+   !  to the device will not exceed the acceptable limits of -10 volts
+   !  to +10 volts peak relative to system/board ground.
+
+   on failure exit test
+      test "Input_1+"
+      test "Input_1-"
+
+      test "Input_2+"
+      test "Input_2-"
+
+      test "Input_3+"
+      test "Input_3-"
+
+      !@test "Input_4+"
+      !@test "Input_4-"
+   off failure
+
+   !  In order to make this test more topologically insensitive and ensure that
+   !  proper resources are included in the fixture, this test is written for
+   !  four common topological cases:
+   !
+   !     Grounded_minus: - input is tied to board ground, the + input is driven
+   !
+   !     Grounded_plus:  + input is tied to board ground, the - input is driven
+   !
+   !     Follower:       - input is tied to output, the + input is driven
+   !
+   !     Differential:   both inputs are overdriven in complementary directions
+   !
+   !  In most cases, at least one of the tests will fail, depending on board
+   !  topology.  Three of the tests per functional device should then be
+   !  commented out.  To minimize testhead object size, the corresponding
+   !  subtest body should be commented out as well, after final debug.
+
+   !  Test device 1
+
+      !@test "Grounded_minus_1"
+      !@test "Grounded_plus_1"
+      !@test "Follower_1"
+      test "Differential_1_hi"
+      test "Differential_1_lo"
+
+   !  Test device 2
+
+      !@test "Grounded_minus_2"
+      !@test "Grounded_plus_2"
+      test "Follower_2"
+      test "Differential_2_hi"
+      test "Differential_2_lo"
+
+   !  Test device 3
+
+      !@test "Grounded_minus_3"
+      !@test "Grounded_plus_3"
+      !@test "Follower_3"
+      test "Differential_3_hi"
+      test "Differential_3_lo"
+
+   !  Test device 4
+
+      !@test "Grounded_minus_4"
+      !@test "Grounded_plus_4"
+      !@test "Follower_4"
+      !@test "Differential_4_hi"
+      !@test "Differential_4_lo"
+end test
+
+!
+!-----------------------------------------------------------------------
+!
+
+subtest "Input_1+"
+   connect i to pins  3                   ! Positive Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_1-"
+   connect i to pins  2                   ! Negative Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Grounded_minus_1"
+   connect s to pins  3                   ! Positive Input
+
+   connect i to pins  1                   ! Output
+   connect l to pins  2                   ! Negative Input/Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Grounded_plus_1"
+   connect s to pins  3                   ! Negative Input
+
+   connect i to pins  1                   ! Output
+   connect l to pins  2                   ! Positive Input/Board Ground
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Follower_1"
+   connect s to pins  3                   ! Positive Input
+
+   connect i to pins  1                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_low
+
+   report analog 0.325, 0.175, (Output_high - Output_low)
+end subtest
+
+subtest "Differential_1_hi"
+   connect s to pins  3                   ! Positive Input
+   connect a to pins  2                   ! Negative Input
+
+   connect i to pins  1                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 15.5
+   measure 25.5, 5.0
+
+end subtest
+
+subtest "Differential_1_lo"
+   connect s to pins  3                   ! Positive Input
+   connect a to pins  2                   ! Negative Input
+
+   connect i to pins  1                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+   auxiliary dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect -10.5
+   measure -5.5, -20.1
+
+end subtest
+
+
+subtest "Input_2+"
+   connect i to pins   5                  ! Positive Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_2-"
+   connect i to pins  6                   ! Negative Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Grounded_minus_2"
+   connect s to pins  5                   ! Positive Input
+
+   connect i to pins  7                   ! Output
+   connect l to pins  6                   ! Negative Input/Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Grounded_plus_2"
+   connect s to pins  5                   ! Negative Input
+
+   connect i to pins  7                   ! Output
+   connect l to pins  6                   ! Positive Input/Board Ground
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Follower_2"
+   connect s to pins  5                   ! Positive Input
+
+   connect i to pins  7                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_low
+
+   report analog 0.355, 0.050, (Output_high - Output_low)
+end subtest
+
+subtest "Differential_2_hi"
+   connect s to pins  5                   ! Positive Input
+   connect a to pins  6                   ! Negative Input
+
+   connect i to pins  7                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 15.5
+   measure 25.5, 5.0
+end subtest
+
+subtest "Differential_2_lo"
+   connect s to pins  5                   ! Positive Input
+   connect a to pins  6                   ! Negative Input
+
+   connect i to pins  7                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+   auxiliary dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect -10.5
+   measure -5.5, -20.1
+end subtest
+
+subtest "Input_3+"
+   connect i to pins  10                  ! Positive Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_3-"
+   connect i to pins  9                   ! Negative Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Grounded_minus_3"
+   connect s to pins  10                  ! Positive Input
+
+   connect i to pins  8                   ! Output
+   connect l to pins  9                   ! Negative Input/Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Grounded_plus_3"
+   connect s to pins  9                   ! Negative Input
+
+   connect i to pins  8                   ! Output
+   connect l to pins  10                  ! Positive Input/Board Ground
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Follower_3"
+   connect s to pins  10                  ! Positive Input
+
+   connect i to pins  8                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_low
+
+   report analog 0.225, 0.175, (Output_high - Output_low)
+end subtest
+
+subtest "Differential_3_hi"
+   connect s to pins  10                  ! Positive Input
+   connect a to pins  9                   ! Negative Input
+
+   connect i to pins  8                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 15.5
+   measure 25.5, 5.0
+
+
+end subtest
+
+subtest "Differential_3_lo"
+   connect s to pins  10                  ! Positive Input
+   connect a to pins  9                   ! Negative Input
+
+   connect i to pins  8                   ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+   auxiliary dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect -10.5
+   measure -5.5, -20.1
+
+end subtest
+
+subtest "Input_4+"
+   connect i to pins  12                  ! Positive Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Input_4-"
+   connect i to pins  13                  ! Negative Input
+   connect l to ground                    ! Board ground
+
+   detector dcv, expect 60
+   initiate detector
+   fetch Dc_Offset
+
+   detector acv, fast, expect 60
+   initiate detector
+   fetch Ac_Rms
+
+   report analog 10.0, -10.0, Dc_Offset + Ac_Rms * 1.41421
+   report analog 10.0, -10.0, Dc_Offset - Ac_Rms * 1.41421
+end subtest
+
+subtest "Grounded_minus_4"
+   connect s to pins  12                  ! Positive Input
+
+   connect i to pins  14                  ! Output
+   connect l to pins  13                  ! Negative Input/Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Grounded_plus_4"
+   connect s to pins  13                  ! Negative Input
+
+   connect i to pins  14                  ! Output
+   connect l to pins  12                  ! Positive Input/Board Ground
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 60
+   initiate detector
+   fetch  Output_low
+
+   report analog 60.0, 2.0, (Output_high - Output_low)
+end subtest
+
+subtest "Follower_4"
+   connect s to pins  12                  ! Positive Input
+
+   connect i to pins  14                  ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_high
+
+   source dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 20
+   initiate detector
+   fetch  Output_low
+
+   report analog 0.225, 0.175, (Output_high - Output_low)
+end subtest
+
+subtest "Differential_4_hi"
+   connect s to pins  12                  ! Positive Input
+   connect a to pins  11                  ! Negative Input
+
+   connect i to pins  14                  ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 5.5
+   measure 5.5, 3.0
+
+end subtest
+
+subtest "Differential_4_lo"
+   connect s to pins  12                  ! Positive Input
+   connect a to pins  11                  ! Negative Input
+
+   connect i to pins  14                  ! Output
+   connect l to ground                    ! Board Ground
+
+   source dcv, amplitude  0.1, icompliance 1, on
+   auxiliary dcv, amplitude  -0.1, icompliance 1, on
+
+   detector dcv, expect 0.5
+    measure 0.5, -0.1
+
+end subtest
+
+
+!
+!  End test
+!

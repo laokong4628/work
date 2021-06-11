@@ -1,0 +1,20 @@
+!!!!    2    0    1 1268732870   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c260 56.0n"
+end on failure
+disconnect all
+connect i to "GND_SENSE"
+connect s to "DCP_U_ME_1"
+connect g to "DCN_U_ME_1"
+resistor 806, 2.36, 0.678, re3, wb, ar100m, ed
+! "r232" test.
+! DUT: nominal 806, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 814.06, low 797.94
+! TEST: high limit 825.03, low limit 800.53
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

@@ -1,0 +1,53 @@
+!!!!    2    0    1 1355474471  V6b43                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:10 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c145 10.0n"
+end on failure
+disconnect all
+connect s to "UNNAMED_47_MJD44H11_I55_E"
+connect i to "UNNAMED_47_C_I272_A"
+diode "B-E", 906m, 502m, idc1.0m, co3.0, ar806m
+! "q13 B-E" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.634m, low limit 602.009m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure
+disconnect all
+connect s to "+27V_SV_P_RTN"
+connect i to "UNNAMED_47_C_I272_A"
+diode "B-C", 904m, 501m, idc1.1m, co3.0, ar804m
+! "q13 B-C" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 804.447m, low limit 600.618m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+! The preceding simplified transistor test was generated to minimize
+! debug while maintaining good manufacturing fault coverage.
+! The following beta test may be used for transistors requiring such
+! tests, though it may require tuning.
+on failure
+   report parallel devices
+   report "c145 10.0n"
+end on failure
+disconnect all
+connect s to "UNNAMED_47_C_I272_A"
+connect i to "+27V_SV_P_RTN"
+connect g to "UNNAMED_47_MJD44H11_I55_E"
+! pnp "BETA", 1.00k, 39.7, idc1.0m, idelta10, co10
+pnp "BETA"
+! "q13 BETA" is a commented test.
+! DUT: nominal 125, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 200, low 50
+! TEST: high limit 1k, low limit 39.654
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

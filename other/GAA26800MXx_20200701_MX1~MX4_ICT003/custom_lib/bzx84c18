@@ -1,0 +1,12 @@
+!!!!   21    2    1 1263661113   0000                                         
+! This 3pins zener test library
+
+zener "zener",   3.9,   5,   5, nr, pn"bzx84c3v9"
+
+external pins 1
+   device "zener" pins "A"
+
+external pins 2; noconnect
+
+external pins 3
+   device "zener" pins "C"

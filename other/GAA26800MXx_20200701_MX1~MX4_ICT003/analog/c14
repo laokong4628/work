@@ -1,0 +1,20 @@
+!!!!    2    0    1 1271225266   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r207 2.00k"
+end on failure
+disconnect all
+connect s to "HL2"
+connect i to "24V_ADC"
+!@connect g to "24V_HL2"
+capacitor 22u, 20.2, 25.7, fr128, re1, ar20.0m, ed, nocomp, sm
+! "c14" test.
+! DUT: nominal 22u, plus tol 20.0 %, minus tol 20.0 %
+! DUT: high 26.4u, low 17.6u
+! TEST: high limit 26.218u, low limit 16.563u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

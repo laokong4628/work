@@ -1,0 +1,16 @@
+!!!!    2    0    1 1293503427  V6900                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:23 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_48_R_I29_B"
+connect i to "DRAIN_TW"; b to "DRAIN_TW"
+connect g to "24V_DRIVER_RTN"
+connect g to "UNNAMED_48_R_I30_A"
+nfetr 520.32, 5.03, re1, ar100m, sb, en
+! "q34%qf" test.
+! DUT: nominal 1.05, plus tol 90.5 %, minus tol 90.5 %
+! DUT: high 2, low 100m
+! TEST: high limit 5.320, low limit 1.035
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,399 @@
+!!!!   25    0    1 1264583356   0000                                         
+
+default threshold low 20 high 10000
+
+default throughput adjustment 1
+
+device "p3"
+!  test pins 1    !! fixed pins commented by IPG
+!  test pins 2, 13, 14, 22, 23, 4, 11, 12, 21    !! ground pins commented by IPG
+!  test pins 3    !! fixed pins commented by IPG
+!  test pins 5    !! fixed pins commented by IPG
+!  test pins 6    !! fixed pins commented by IPG
+!  test pins 7    !! fixed pins commented by IPG
+!  test pins 8    !! fixed pins commented by IPG
+!  test pins 9    !! fixed pins commented by IPG
+!  test pins 10    !! fixed pins commented by IPG
+   test pins 15
+   test pins 16
+   test pins 17
+   test pins 18
+   test pins 19
+   test pins 20
+   test pins 24
+   test pins 25
+!  test pins 26    !! fixed pins commented by IPG
+   test pins 27
+   test pins 28
+   test pins 29
+!  test pins 30, 40, 39, 32, 34, 36, 38    !! fixed pins commented by IPG
+   test pins 31
+   test pins 33
+   test pins 35
+   test pins 37
+
+   inaccessible pins 42, 41
+end device
+
+device "p5"
+   test pins 1
+   test pins 2
+!  test pins 3, 5, 10    !! fixed pins commented by IPG
+!  test pins 4    !! fixed pins commented by IPG
+   test pins 6
+   test pins 7
+   test pins 8
+   test pins 9
+   test pins 11
+   test pins 12
+   test pins 13
+   test pins 14
+!  test pins 15, 19, 20, 21, 22    !! fixed pins commented by IPG
+   test pins 16
+   test pins 17
+   test pins 18
+   test pins 23
+   test pins 24
+!  test pins 25, 26, 27, 28    !! fixed pins commented by IPG
+   test pins 29
+   test pins 30
+   test pins 31
+   test pins 32
+   test pins 33
+   test pins 34
+   test pins 35
+   test pins 36
+   test pins 37
+   test pins 38
+   test pins 39
+   test pins 40
+   test pins 41
+   test pins 42
+!  test pins 43, 45, 46, 44    !! fixed pins commented by IPG
+!  test pins 47, 48    !! fixed pins commented by IPG
+!  test pins 49, 50    !! fixed pins commented by IPG
+
+   inaccessible pins 52, 51
+end device
+
+device "u1"
+!  test pins 1, 6, 9, 10, 15, 16, 2    !! fixed pins commented by IPG
+   test pins 3, 4
+   test pins 5
+!  test pins 7    !! fixed pins commented by IPG
+   test pins 11
+   test pins 13
+!  test pins 14    !! fixed pins commented by IPG
+
+   inaccessible pins 12, 8
+end device
+
+device "u3"
+   test pins 2
+   test pins 3
+   test pins 4
+!  test pins 5, 11, 12, 13, 14, 15, 6    !! fixed pins commented by IPG
+   test pins 7
+   test pins 8
+   test pins 9
+   test pins 10
+
+   inaccessible pins 16, 1
+end device
+
+device "u6"
+   test pins 1
+   test pins 2, 13
+   test pins 3
+   test pins 4, 11
+   test pins 5
+!  test pins 6    !! fixed pins commented by IPG
+!  test pins 7, 14    !! ground pins commented by IPG
+   test pins 8
+   test pins 9
+   test pins 10
+!  test pins 12    !! fixed pins commented by IPG
+
+end device
+
+device "u7"
+!  test pins 1, 14, 3, 5, 7, 11, 13    !! ground pins commented by IPG
+   test pins 2
+   test pins 4
+   test pins 6
+   test pins 8
+!  test pins 9    !! fixed pins commented by IPG
+   test pins 10
+   test pins 12
+
+end device
+
+device "u8"
+!  test pins 1, 3, 8, 2, 4    !! ground pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+
+end device
+
+device "u10"
+   test pins 1
+   test pins 2
+!  test pins 3, 4, 8    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+!  test pins 9, 16, 12, 13, 10    !! fixed pins commented by IPG
+   test pins 11
+   test pins 14
+   test pins 15
+
+end device
+
+device "u11"
+   test pins 1
+   test pins 2
+   test pins 3
+   test pins 4, 13
+   test pins 5
+   test pins 6, 11
+!  test pins 7, 14, 9    !! ground pins commented by IPG
+   test pins 8
+   test pins 10
+   test pins 12
+
+end device
+
+device "u15"
+   test pins 1
+   test pins 2
+!  test pins 3, 4, 8    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+!  test pins 9, 16, 12, 13, 10    !! fixed pins commented by IPG
+   test pins 11
+   test pins 14
+   test pins 15
+
+end device
+
+device "u17"
+   test pins 1, 2
+!  test pins 3, 5, 10    !! fixed pins commented by IPG
+!  test pins 4    !! fixed pins commented by IPG
+   test pins 6, 7
+   test pins 8
+   test pins 9
+!  test pins 11    !! fixed pins commented by IPG
+   test pins 12
+   test pins 13
+   test pins 14
+
+end device
+
+device "u18"
+   test pins 1
+   test pins 2
+   test pins 3, 13, 14
+!  test pins 4, 5    !! fixed pins commented by IPG
+   test pins 6, 7
+   test pins 8
+   test pins 9
+!  test pins 10, 12    !! fixed pins commented by IPG
+!  test pins 11    !! fixed pins commented by IPG
+
+end device
+
+device "u25"
+   test pins 1
+   test pins 2
+   test pins 3, 8
+!  test pins 4, 10    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6, 7
+   test pins 9
+!  test pins 11    !! fixed pins commented by IPG
+   test pins 12
+   test pins 13
+   test pins 14
+
+end device
+
+device "u27"
+   test pins 1
+   test pins 2
+!  test pins 3, 4, 8    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+!  test pins 9, 16, 12, 13, 10    !! fixed pins commented by IPG
+   test pins 11
+   test pins 14
+   test pins 15
+
+end device
+
+device "u28"
+   test pins 1
+   test pins 2
+   test pins 3
+   test pins 4, 13
+   test pins 5
+   test pins 6, 11
+!  test pins 7, 14, 9    !! ground pins commented by IPG
+   test pins 8
+   test pins 10
+   test pins 12
+
+end device
+
+device "u29"
+   test pins 1
+   test pins 2
+   test pins 3
+!  test pins 4, 5, 12    !! fixed pins commented by IPG
+   test pins 6
+   test pins 7
+   test pins 8
+   test pins 9
+   test pins 10
+!  test pins 11    !! fixed pins commented by IPG
+   test pins 13
+   test pins 14
+
+end device
+
+device "u31"
+   test pins 1
+   test pins 2
+   test pins 3, 8
+!  test pins 4, 5, 10    !! fixed pins commented by IPG
+   test pins 6
+   test pins 7
+   test pins 9
+!  test pins 11    !! fixed pins commented by IPG
+   test pins 12
+   test pins 13
+   test pins 14
+
+end device
+
+device "u32"
+   test pins 1
+   test pins 2
+!  test pins 3, 4, 8    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+!  test pins 9, 16, 12, 13, 10    !! fixed pins commented by IPG
+   test pins 11
+   test pins 14
+   test pins 15
+
+end device
+
+device "u34"
+   test pins 1
+   test pins 2
+   test pins 3
+!  test pins 4, 10, 12    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+   test pins 8, 9
+!  test pins 11    !! fixed pins commented by IPG
+   test pins 13, 14
+
+end device
+
+device "u35"
+   test pins 1, 2
+!  test pins 3, 12    !! fixed pins commented by IPG
+   test pins 4
+   test pins 5, 6
+   test pins 7
+   test pins 8
+   test pins 9
+   test pins 10
+   test pins 11
+   test pins 13
+   test pins 14
+
+end device
+
+device "u43"
+   test pins 1
+   test pins 2
+!  test pins 3, 4, 8    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+!  test pins 9, 16, 12, 13, 10    !! fixed pins commented by IPG
+   test pins 11
+   test pins 14
+   test pins 15
+
+end device
+
+device "u44"
+   test pins 1
+   test pins 2
+   test pins 3
+   test pins 4, 13
+   test pins 5
+   test pins 6, 11
+!  test pins 7, 14, 9    !! ground pins commented by IPG
+   test pins 8
+   test pins 10
+   test pins 12
+
+end device
+
+device "u45"
+   test pins 1
+   test pins 2
+!  test pins 3, 4, 8    !! fixed pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+!  test pins 9, 16, 12, 13, 10    !! fixed pins commented by IPG
+   test pins 11
+   test pins 14
+   test pins 15
+
+end device
+
+device "u54"
+!  test pins 1, 2, 8, 3, 4    !! ground pins commented by IPG
+   test pins 5
+   test pins 6
+   test pins 7
+
+end device
+
+device "u55"
+   test pins 1, 2
+   test pins 3
+!  test pins 4, 5    !! fixed pins commented by IPG
+   test pins 6, 7
+   test pins 8, 9
+   test pins 10
+!  test pins 11    !! fixed pins commented by IPG
+   test pins 12
+   test pins 13, 14
+
+end device
+
+device "u56"
+!  test pins 1, 14, 3, 5, 7    !! ground pins commented by IPG
+   test pins 2
+   test pins 4
+   test pins 6
+   test pins 8, 11
+   test pins 9
+   test pins 10
+   test pins 12
+   test pins 13
+
+end device

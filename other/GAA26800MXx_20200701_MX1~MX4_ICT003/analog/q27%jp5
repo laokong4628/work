@@ -1,0 +1,14 @@
+!!!!    2    0    1 1264583304   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:25 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "RUP_E11"
+connect i to "RUP_E13"
+jumper 6.42, re1, ar200m
+! "q27%jp5" test.
+! DUT: nominal 1, plus tol 0.00 %, minus tol 99.9 %
+! DUT: high 1, low 1m
+! TEST: high limit 6.422, low limit 3.286
+! Tolerance Multiplier 1.50
+! Remote Sensing is not Allowed

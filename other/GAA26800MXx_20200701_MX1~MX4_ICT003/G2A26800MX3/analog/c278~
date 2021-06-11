@@ -1,0 +1,20 @@
+!!!!    2    0    1 1593150946   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:56 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c98 100n"
+end on failure
+disconnect all
+connect s to "UNNAMED_49_C_I21_A"
+connect i to "GND_SENSE"
+connect g to "NTC1"
+capacitor 2.3u, 10.3, 10.7, fr128, re2, ar20.0m, ed, nocomp
+! "c278" test.
+! DUT: nominal 2.3u, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 2.53u, low 2.07u
+! TEST: high limit 2.538u, low limit 2.053u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

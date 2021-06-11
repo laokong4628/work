@@ -1,0 +1,40 @@
+!!!!    2    0    1 1372486375   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:19 2010
+test powered analog
+   power pins 1, 2
+   ! ADD IN GP RELAY DISCONNECT STATEMENT FOR ALL RELAYS
+
+   test "RELAY_OPEN"
+
+   ! ADD IN GP RELAY STATEMENTS FOR INDIVIDUAL TESTS
+   gpconnect 21858 to 21859
+   wait 30m
+   test "RELAY_CLOSED"
+   gpdisconnect 21858 from 21859
+end test
+
+!------------------------------------------------------------------------------
+
+subtest "RELAY_OPEN"
+   connect s to pins 13
+   connect i to pins 14
+   connect l to pins 10
+   connect g to pins 11
+   connect g to ground
+   source dcv, amplitude 1, terminated 50, on
+   detector dcv, expect 1.5
+   measure 1.25, 0.75
+end subtest
+
+subtest "RELAY_CLOSED"
+   connect s to pins 13
+   connect i to pins 14
+   connect l to pins 10
+   connect g to pins 11
+   connect g to nodes "GND"
+   connect g to nodes "CHRG_N"
+   source dcv, amplitude 1, terminated 50, on
+   detector dcv, expect 10m
+   wait 100m
+   measure 170m, -100m
+end subtest

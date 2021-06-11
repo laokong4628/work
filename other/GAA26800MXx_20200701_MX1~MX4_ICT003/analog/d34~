@@ -1,0 +1,15 @@
+!!!!    2    0    1 1558178130   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:14 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "TWP_C1"
+connect i to "UNNAMED_48_R_I276_B"
+diode 1.7, 0.8, idc0.5m, co3.1, ar906m, ed, wa10m
+! "d34" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 905.634m, low limit 402.826m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

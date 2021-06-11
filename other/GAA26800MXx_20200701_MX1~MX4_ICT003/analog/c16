@@ -1,0 +1,14 @@
+!!!!    2    0    1 1274413427   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "HL2"
+connect i to "UNNAMED_45_C_I146_A"
+capacitor 470n, 10.6, 20.5, fr1024, re4, wb, ar50.0m, ed, nocomp
+! "c16" test.
+! DUT: nominal 470n, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 517n, low 423n
+! TEST: high limit 519.627n, low limit 420.549n
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

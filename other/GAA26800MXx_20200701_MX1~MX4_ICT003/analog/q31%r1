@@ -1,0 +1,20 @@
+!!!!    2    0    1 1264583306   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:27 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r292 5.62k"
+end on failure
+disconnect all
+connect s to "NTC2"
+connect i to "NTC1"
+connect g to "GND_SENSE"
+resistor 2.646k, 4.36, 3.77, re4, wb, ar500m, wa0.945m
+! "q31%r1" test.
+! DUT: nominal 2.646k, plus tol 3.08 %, minus tol 3.16 %
+! DUT: high 2.727k, low 2.562k
+! TEST: high limit 2.761k, low limit 2.546k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

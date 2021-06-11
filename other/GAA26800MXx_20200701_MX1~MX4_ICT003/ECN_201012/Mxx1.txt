@@ -1,0 +1,24 @@
++27V_RU_P(20918)	to	relay1 pinA1
++27V_RU_P_RTN(20924)	to	relay1 pinB1
++27V_RU_N(20931)	to	relay2 PinA1
++27V_RU_N_RTN(20930)	to 	relay2 pinB1
+RELAY_17(214108 & 202101 & 20202)	to relay board J2.1 & J2.2
+
+
+
++27V_SV_P(21132)	to 	relay3 PinA1
++27V_SV_P_RTN(21033)	to 	relay3 pinB1
++27V_SV_N(21518)	to 	relay4 pinA1
++27V_SV_N_RTN(21521)	to 	relay4 pinB1
+RELAY_18(21402 & 21401)			to relay board J2.3 & J2.4
+
+
++27V_TW_P(21732)	to      relay5 pinA1
++27V_TW_P_RTN(217127)	to 	relay5 pinB1
++27V_TW_N(219118)	to 	relay6 pinA1
++27V_TW_N_RTN(21929)	to 	relay6 pinB1
+RELAY_19(21501 & 20201)			to relay board J2.5 & J2.6
+
+
+relay_4(203121)	relay board VCC and GND to Relay board VCC and GND
+relay_6(20322)	relay board VCC and GND to Relay board VCC and GND

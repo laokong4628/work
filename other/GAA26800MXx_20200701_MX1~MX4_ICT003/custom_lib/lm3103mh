@@ -1,0 +1,64 @@
+!!!!    2    0    1 1263661299  Ve3d2                                         
+test powered analog
+   disconnect all
+   nonanalog pins 4,12
+   power pins 1,2,6,8,9,10,15,16
+   test "PIN1"
+   test "PIN3"
+   test "PIN5"
+   test "PIN7"
+   test "PIN11"
+   test "PIN13"
+   test "PIN14"
+end test
+
+!------------------------------------------------------------------------------
+
+subtest "PIN1"
+   connect i to pins 1
+   connect l to pins 6
+   detector dcv, expect 24
+   measure 24.25, 23.75
+end subtest
+
+subtest "PIN3"
+   connect rcva to pins 3
+   connect l to pins 6
+   detector frequency, expect 200k
+   measure 220k, 180k
+end subtest
+
+subtest "PIN5"
+   connect i to pins 5
+   connect l to pins 6
+   detector dcv, expect 10
+   measure 12.0, 8.0
+end subtest
+
+subtest "PIN7"
+   connect i to pins 7
+   connect l to pins 6
+   detector dcv, expect 10
+   measure 12.0, 8.0
+end subtest
+
+subtest "PIN11"
+   connect i to pins 11
+   connect l to pins 6
+   detector dcv, expect 5
+   measure 5.5, 4.5
+end subtest
+
+subtest "PIN13"
+   connect i to pins 13
+   connect l to pins 6
+   detector dcv, expect 24
+   measure 24.25, 23.75
+end subtest
+
+subtest "PIN14"
+   connect i to pins 14
+   connect l to pins 6
+   detector dcv, expect 24
+   measure 24.25, 23.75
+end subtest

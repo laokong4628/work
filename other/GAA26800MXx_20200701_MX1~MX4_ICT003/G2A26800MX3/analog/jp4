@@ -1,0 +1,20 @@
+!!!!    2    0    1 1264583396   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "jp9"
+   report "jp13"
+end on failure
+disconnect all
+connect s to "UNNAMED_46_C_I247_A"
+connect i to "OCT_CONV_N"
+jumper 1.44k, re4, wb, ar1.00, op
+! "jp4" test.
+! DUT: nominal 666.667M, plus tol 0.00 %, minus tol 100 %
+! DUT: high 666.667M, low 3.333k
+! TEST: high limit 1.451k, low limit 1.441k
+! Tolerance Multiplier 1.50
+! Remote Sensing is not Allowed
+off failure

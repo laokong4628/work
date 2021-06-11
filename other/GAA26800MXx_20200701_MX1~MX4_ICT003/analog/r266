@@ -1,0 +1,16 @@
+!!!!    2    0    1 1505045189   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:59 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "+15V_SENSE"
+connect i to "UNNAMED_49_BC817_I64_B"
+connect g to "-15V_SENSE"
+connect g to "UNNAMED_49_C_I6_A"
+resistor 4.7k, 3.80, 3.44, re4, wb, ar200m, wa15.1m
+! "r266" test.
+! DUT: nominal 4.7k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 4.747k, low 4.653k
+! TEST: high limit 4.785k, low limit 4.633k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

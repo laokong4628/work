@@ -1,0 +1,16 @@
+!!!!    2    0    1 1592507305   0000                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "+27V_TW_P_+27V_TW_P_RTN"
+end test
+
+subtest "+27V_TW_P_+27V_TW_P_RTN"
+   connect i to nodes "+27V_TW_P"
+   connect l to nodes "+27V_TW_P_RTN"
+   detector dcv, expect 27
+   measure 31.0, 26.0              ! Adjust at debug
+end subtest

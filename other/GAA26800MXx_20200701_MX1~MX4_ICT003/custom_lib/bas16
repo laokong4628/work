@@ -1,0 +1,17 @@
+!!!!   21    2    1 1263653695  Vbca9                                         
+!Diode
+!1 - CR1.C
+!2 - CR2.C
+!3 - CR1.A
+
+diode "diode" , 0.80, 0.50, nr
+
+external pins 1
+   device "diode" pins "A"
+
+external pins 2;noconnect
+
+external pins 3
+   device "diode" pins "C"
+
+

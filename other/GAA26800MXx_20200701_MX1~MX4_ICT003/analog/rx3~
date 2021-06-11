@@ -1,0 +1,21 @@
+!!!!    2    0    1 1435807350   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:03 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+test analog;RX3
+  test "RX3"
+end test
+subtest "RX3"
+  global RX3
+  disconnect all
+  connect s to "SENSE_IR"; a to "SENSE_IR"
+  connect i to "RX3"; b to "RX3"
+  resistor 60, 15, 10, re1, ar200m, sa, sb, RX3
+!@  resistor 60, 2.95, 1.44, re2, ar200m, sa, sb, en,RX3
+end subtest
+! "rx3" test.
+! DUT: nominal 60, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 60.6, low 59.4
+! TEST: high limit 61.773, low limit 59.136
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

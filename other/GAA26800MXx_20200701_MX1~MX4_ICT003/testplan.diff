@@ -1,0 +1,33 @@
+1,2c1,2
+< !!!!    4    0    1 1264583408   0000                                         
+< ! Testplan for G2A26800MXx  Wed Jan 27 17:10:09 2010
+---
+> !!!!    4    0    1 1264647300   0000                                         
+> ! Testplan for G2A26800MXx  Thu Jan 28 10:55:01 2010
+2296c2296
+<    sps 4,15.00,0.80;optimize
+---
+>    sps 4,5.00,0.80;optimize
+2334c2334
+<    sps 4,15.00,0.80;optimize
+---
+>    sps 4,5.00,0.80;optimize
+2379,2381d2378
+<    test "u8%program"
+<    test "u8%read"
+<    test "u8%test"
+2390a2388,2395
+>    test "u56"
+>  ! Safeguard Inhibited - An Upstream Device Is Non-Digital
+>    test "u8%program"
+>  ! Safeguard Inhibited - An Upstream Device Is Non-Digital
+>    test "u8%read"
+>  ! Safeguard Inhibited - An Upstream Device Is Non-Digital
+>    test "u8%test"
+>  ! Safeguard Inhibited - An Upstream Device Is Non-Digital
+2391a2397
+>  ! Safeguard Inhibited - An Upstream Device Is Non-Digital
+2392a2399
+>  ! Safeguard Inhibited - An Upstream Device Is Non-Digital
+2394d2400
+<    test "u56"

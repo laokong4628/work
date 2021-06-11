@@ -1,0 +1,26 @@
+!!!!    2    0    1 1264387364  V6921                                         
+! IPG: rev 05.21p  Thu Mar 06 16:27:20 2008
+test powered analog
+   disconnect all
+   connect s to nodes "RELAY_4"
+   source dcv, amplitude 5, icompliance 1, terminated 50, on
+   test "Test_condition"
+   test "Frequency"
+end test
+
+subtest "Test_condition"
+   connect i to nodes "24V_SE"
+   connect l to nodes "24V_SE_RTN"
+   detector dcv, expect 26
+   measure 27, 25                  ! Adjust at debug
+end subtest
+
+subtest  "Frequency"
+   connect rcva to nodes "PWM_OUT1"   !@nodes "GATE_SENSE_RU"
+   connect l to nodes "24V_DRIVER_RTN"
+   detector frequency, expect 160k, threshold 3.0, gate 0
+   measure 180k, 140k
+end subtest
+
+
+

@@ -1,0 +1,21 @@
+!!!!    2    0    1 1264583288   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:09 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "d29 d29%cr3"
+   report "u38 u38%d1"
+end on failure
+disconnect all
+connect s to "+27V_SV_N"
+connect i to "UNNAMED_47_BAV99_I309_A1"
+diode 1.61, 505m, idc2.0m, co3.8, ar1.61
+! "d29%cr2" test.
+! DUT: nominal 975m, plus tol 64.1 %, minus tol 48.7 %
+! DUT: high 1.6, low 500m
+! TEST: high limit 1.612, low limit 505.085m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 2m
+off failure

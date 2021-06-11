@@ -1,0 +1,21 @@
+!!!!    2    0    1 1268728400   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:15 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c139 470p"
+   report "z38"
+end on failure
+disconnect all
+connect s to "UNNAMED_47_BZV55B9V1_I192_C"
+connect i to "UNNAMED_47_BZV55B18_I266_A"
+diode 406m, 203m, idc1.0m, co3.1, ar906m
+! "d56" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 905.634m, low limit 402.826m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

@@ -1,0 +1,94 @@
+!!!!    2    0    1 1435062086   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:18 2010
+!
+! Revision control data:
+! use for testing "npn_bcec_func", safeguard "not_required"
+! 07.12.2001  Grouped pins 2,4 for SOT223 use. GG
+!
+!   Name  _bcec_func
+!          : Functional switching test for npn transistor.
+!
+!   Notes  : This will normally be associated with the part library "npn_bcec".
+!          : Conventional npn topology is assumed, but this must be
+!          : checked during the prep phase.
+!
+warning "Check board topology and adapt this model if necessary."
+warning "If it is necessary to apply a g connection between emitter and GND,"
+warning "The test must be placed in the Analog_Tests section of the testplan"
+warning "to avoid system damage."
+
+! Topology is assumed to be:
+! ==========================
+!
+!                    ------------------------- +V
+!                                |
+!                               ---
+!                               | |
+!                               | |
+!                               ---
+!                                | <----- terminated source / measure
+!                             |  / pin 2
+!                       pin 1 | /
+!  auxiliary ----->  ---------|/
+!                             |\
+!                             | \  pin 3
+!                                V
+!                                |
+!                    ------------------------- GND
+!
+
+test powered analog
+  test "ON"
+  test "OFF"
+end test
+
+
+subtest "ON"
+
+  connect s to  pins "C"        ! Collector
+  connect i to  pins "C"        ! Collector
+  connect a to  pins "B"        ! Base
+  connect l to  pins "E"        ! Emitter
+
+  connect g to  ground          ! Connect emitter - GND if topology requires it.
+  connect g to  pins "E"        ! See warning, above.
+
+  source dcv, amplitude 3, terminated 500, icompliance 1, on
+
+!-----------------------------------------------------------------------------!
+  auxiliary dcv, amplitude 0.8, icompliance 0, on                             !
+! Keep the auxiliary icompliance to "0". This limits the base current to 30mA.!
+!-----------------------------------------------------------------------------!
+
+  detector dcv, expect 3
+  measure 500m, -100m
+
+end subtest
+
+subtest "OFF"
+
+  connect s to  pins "C"        ! Collector
+  connect i to  pins "C"        ! Collector
+  connect a to  pins "B"        ! Base
+  connect l to  pins "E"        ! Emitter
+
+  connect g to  ground          ! Connect emitter - GND if topology requires it.
+  connect g to  pins "E"        ! See warning, above.
+
+  source dcv, amplitude 4.8, terminated 500, icompliance 1, on
+
+!-----------------------------------------------------------------------------!
+  auxiliary dcv, amplitude 0, icompliance 0, on                               !
+! Keep the auxiliary icompliance to "0". This limits the base current to 30mA.!
+!-----------------------------------------------------------------------------!
+
+  detector dcv, expect 3
+  wait 10m 
+  measure 4.05, 2.0
+
+end subtest
+
+!----------
+! end test
+!----------
+

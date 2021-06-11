@@ -1,0 +1,19 @@
+!!!!    2    0    1 1264583327   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:48 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r268 442"
+end on failure
+disconnect all
+connect s to "+15V_SENSE"
+connect i to "UNNAMED_49_IL300_I4_A"
+resistor 221 + 4.434, 1.79, 1.79, re3, wb, ar500m
+! "r75" test.
+! DUT: nominal 221, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 223.21, low 218.79
+! TEST: high limit 229.48, low limit 221.39
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

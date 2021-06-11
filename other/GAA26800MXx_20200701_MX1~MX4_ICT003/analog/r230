@@ -1,0 +1,14 @@
+!!!!    2    0    1 1433915649   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:58 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_46_R_I30_A"; a to "UNNAMED_46_R_I30_A"
+connect i to "GATE_SENSE_RU"; b to "GATE_SENSE_RU"
+resistor 100, 10, 5, re2, ar500m, sa, sb, en
+! "r230" is a limited test.
+! DUT: nominal 27.4, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 27.674, low 27.126
+! TEST: high limit 28.851, low limit 26.851
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

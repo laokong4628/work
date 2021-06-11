@@ -1,0 +1,54 @@
+!!!!    6    0    1 1264583359  V29eb                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:20 2010
+!    Function:
+!    Revision:
+!    Author:
+
+warning "This is a SETUP-ONLY Test."
+
+combinatorial
+
+default device "u3"
+set terminators to on
+assign  GND to pins *
+assign  VDD to pins *
+
+assign  ALL_INPUTS to pins 3, *, 7, 8, 9, 10, 11, 12, 13, 15
+assign  ALL_OUTPUTS to pins 4
+assign  ALL_BIDIRS to pins 2
+assign  SDA to pins 2
+assign  SCL to pins 3
+assign  OTI to pins 4
+assign  REFIN to pins *
+assign  AIN1 to pins 7
+assign  AIN2 to pins 8
+assign  AIN3 to pins 9
+assign  AIN4 to pins 10
+assign  A2 to pins 11
+assign  A1 to pins 12
+assign  A0 to pins 13
+assign  CONVST_BAR to pins 15
+
+assign  NC to pins *, *
+
+family TTL
+
+
+power GND, VDD
+
+inputs ALL_INPUTS, SCL, REFIN, AIN1, AIN2, AIN3, AIN4, A2, A1, A0, CONVST_BAR
+
+outputs ALL_OUTPUTS, OTI
+
+bidirectional ALL_BIDIRS, SDA
+
+nondigital NC
+
+disable ALL_OUTPUTS  with CONVST_BAR to "1"
+!IPG: Slew rate for pin or node "UNNAMED_45_AD7417_I130_SDA" is faster than other slew rates
+!IPG: for pins on this node. Slew rate reduced.
+set slew rate on pins 2 to 50
+
+!
+!    End of Test
+!

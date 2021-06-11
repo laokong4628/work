@@ -1,0 +1,15 @@
+!!!!    2    0    1 1550432250   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:43 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "DCP_U_ME"
+connect i to "UNNAMED_10_R_I97_B"
+connect g to "UNNAMED_10_R_I100_A"
+resistor 150k, 2.64, 1.60, re6, wb, ar100m, ed
+! "r43" test.
+! DUT: nominal 150k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 151.5k, low 148.5k
+! TEST: high limit 152.457k, low limit 147.598k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

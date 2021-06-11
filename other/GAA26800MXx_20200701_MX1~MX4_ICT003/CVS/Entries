@@ -1,0 +1,64 @@
+/.BoardNum/1.1.1.1/Mon Nov 10 09:39:09 2014//
+/.BoardVer/1.1.1.1/Mon Nov 10 09:39:09 2014//
+/Readme.txt/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/TISExe.exe/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/TISRes.exe/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/board/1.1.1.1/Mon Nov 10 09:39:09 2014//
+/board.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/board_xy/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/board_xy.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/c298~/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/config/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/config.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/fix_preview/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/fixture_0128.zip/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/pins/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/pins.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/read/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/safeguard/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/safeguard.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/shorts/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/shorts.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/summary/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testability.raw/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testcoverage_fail.dat/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testjet/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testjet.bd/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testjet.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testorder/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan.cov/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan.diff/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan_backup/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan_best/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan_old/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan_org/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/testplan~/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/wirelist/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/wirelist.o/1.1.1.1/Mon Nov 10 09:39:10 2014//
+/write/1.1.1.1/Mon Nov 10 09:39:10 2014//
+D/BOM////
+D/CAD_ORG////
+D/ECN////
+D/ECN_201012////
+D/G2A26800MX1////
+D/G2A26800MX2////
+D/Schematic////
+D/Test_spec////
+D/WorstProbeReport////
+D/analog////
+D/bdg_data////
+D/bdg_shorts////
+D/ca_data////
+D/custom_func////
+D/custom_lib////
+D/data////
+D/datasheets////
+D/debug////
+D/digital////
+D/fixture////
+D/fixture_design////
+D/fixture_order_form////
+D/ipg////
+D/mixed////
+D/test_point////

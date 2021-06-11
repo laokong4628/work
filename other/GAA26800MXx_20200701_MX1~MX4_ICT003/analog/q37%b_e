@@ -1,0 +1,15 @@
+!!!!    2    0    1 1264583298   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:19 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "REF_2V5_TW_P"
+connect i to "UNNAMED_48_BDP949_I327_B"
+diode 906m, 403m, idc1.0m, co3.1, ar906m
+! "q37%b_e" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 905.634m, low limit 402.826m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

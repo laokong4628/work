@@ -1,0 +1,24 @@
+!!!!    2    0    1 1268898842   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:12 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "d47 d47%cr2"
+   report "d47 d47%cr3"
+   report "d47 d47%cr4"
+   report "c317 22.0n"
+   report "r193 4.99k"
+end on failure
+disconnect all
+connect i to "GND_SENSE"
+connect s to "UT"
+diode 953m, 710m, idc4.2m, co3.0, ar823m
+! "d47%cr1" test.
+! DUT: nominal 500m, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 800m, low 200m
+! TEST: high limit 823.028m, low limit 210.423m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 4m
+off failure

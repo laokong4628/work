@@ -1,0 +1,31 @@
+!!!!    2    0    1 1433923070   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:32 2010
+! IPG: rev 05.21p  Fri Aug 26 14:37:37 2005
+
+! Revision control data:
+! use for testing "555", safeguard "standard_acmos"
+
+!  29-02-00  Added to gpt_custom jjb
+
+!
+!  Frequency Test for operation of timer NE555
+!  Test frequency of 555 timer on output pin 3
+!  Insert information at XXXXXXXXXXX
+!  E.A.Davies.  10.3.98
+
+test powered analog
+   power pins 1, 8
+   nonanalog pins 2,4,5,6,7
+   connect s to nodes "UNNAMED_9_555_I229_RESET"!"DCP_LED"
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   connect rcva to pins 3
+   connect l to pins 1
+   connect g to pins 1
+   connect g to nodes "GND"
+   detector frequency, threshold 3, expect 7, timeout 1, gate 0
+   measure 15, 5
+end test
+
+!
+!  End test
+!

@@ -1,0 +1,19 @@
+!!!!    2    0    1 1593150515   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:57 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c97 680n not load"
+end on failure
+disconnect all
+connect s to "RUP"
+connect i to "RUN"
+capacitor 470n, 5, 5, fr1024, re4, wb, ar100m, ed, nocomp
+! "c96" test.
+! DUT: nominal 1.15u, plus tol 7.96 %, minus tol 7.96 %
+! DUT: high 1.242u, low 1.059u
+! TEST: high limit 1.248u, low limit 1.052u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

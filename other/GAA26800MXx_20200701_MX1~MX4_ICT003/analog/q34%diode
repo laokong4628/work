@@ -1,0 +1,21 @@
+!!!!    2    0    1 1264583297   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:18 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "q34 q34%qf 2.00, 100m"
+end on failure
+disconnect all
+connect s to "DRAIN_TW"
+connect i to "UNNAMED_48_R_I29_B"
+! diode 0.00, 0.00, idc10, co3.1, ar0.00
+warning "idc value out of range."
+! "q34%diode" is a commented test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

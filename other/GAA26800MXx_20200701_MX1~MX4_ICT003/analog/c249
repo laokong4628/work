@@ -1,0 +1,22 @@
+!!!!    2    0    1 1264583275   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:07:56 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c241 10.0u"
+   report "c242 10.0u"
+   report "c243 100n"
+end on failure
+disconnect all
+connect s to "24V_SW_RTN"; a to "24V_SW_RTN"
+connect i to "UNNAMED_39_10MQ040N_I309_A"; b to "UNNAMED_39_10MQ040N_I309_A"
+connect g to "24V_DRIVER"
+capacitor 490.1u, 27.3, 38.9, fr128, re1, ar400m, ed, sm, sa, sb, en, nocomp
+! "c249" test.
+! DUT: nominal 490.1u, plus tol 19.6 %, minus tol 19.6 %
+! DUT: high 586.11u, low 394.09u
+! TEST: high limit 624.042u, low limit 299.407u
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+off failure

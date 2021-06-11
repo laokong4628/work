@@ -1,0 +1,18 @@
+!!!!    2    0    1 1434445216  V2605                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:40 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;I
+   disconnect all
+   test "I_SENSE_PWM_CONTROLLER_24V_SMPS_SENSE_RTN"
+end test
+
+subtest "I_SENSE_PWM_CONTROLLER_24V_SMPS_SENSE_RTN"
+   global I
+   report analog 0.90, 0.10, I       !@!ECN change 20150616
+!@   measure 0.80, 0.30              ! Adjust at debug
+end subtest
+
+

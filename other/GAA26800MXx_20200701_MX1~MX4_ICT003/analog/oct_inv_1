@@ -1,0 +1,36 @@
+!!!!    2    0    1 1274355276   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:41 2010
+! IPG: rev 05.21p  Mon Nov 02 10:04:33 2009
+! IPG: rev 05.21p  Mon Dec 22 11:16:12 2008
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog;Time(*)
+   disconnect all
+   gpdisconnect 20648 from 20649      !@ RUP_E11 short to RUP_C1
+   gpconnect 20650 to 20651      !@ RUP_E11 short to RUN_E21
+   gpconnect 20652 to 20653      !@ SVP_E11 short to SVP_C1
+   gpconnect 20654 to 20655      !@ SVP_E11 short to SVNP_E21
+   gpconnect 20656 to 20657      !@ TWP_E11 short to TWP_C1
+   gpconnect 20658 to 20659      !@ TWP_E11 short to TWN_E21
+   connect s to nodes "RELAY_1"  !@ connect 100nf capacitor
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   test "OCT_INV_GND"
+   gpconnect 20648 to 20649
+end test
+
+subtest "OCT_INV_GND"
+   global Time(*)
+   connect g to nodes "RUP_E11"
+   connect g to nodes "RUP_C1"
+   disconnect g from nodes "RUP_C1"
+   connect g to nodes "RUP_C1"
+   connect i to nodes "OCT_INV"
+   connect l to nodes "GND"
+   detector digitizer, expect 4.5, interval 0.5m, samples 1024
+   initiate detector
+   fetch Time(*)
+!@   report analog 0.300,0.010,Time/1000
+end subtest
+

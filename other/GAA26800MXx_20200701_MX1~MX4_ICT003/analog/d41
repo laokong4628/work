@@ -1,0 +1,29 @@
+!!!!    2    0    1 1293503450  V8af1                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:15 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "c53 100n"
+   report "c90 100n"
+   report "c101 100n"
+   report "c124 100n"
+   report "c150 100n"
+   report "c233 10.0u"
+   report "c234 470u"
+   report "c239 100n"
+   report "c313 100n"
+end on failure
+disconnect all
+connect s to "UNNAMED_39_BYG22D_I162_C"
+connect i to "-15V_SENSE"
+diode 325m, 21m, idc15m, co4, ar905m
+warning "A 'wait' option may be required to correctly fail a reversed diode"
+! "d41" test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 904.609m, low limit 400.714m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

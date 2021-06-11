@@ -1,0 +1,17 @@
+!!!!    2    0    1 1274684813   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:04 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_48_BZV55B18_I266_A"!; a to "UNNAMED_48_BZV55B18_I266_A"
+connect i to "UNNAMED_48_BZV55B9V1_I192_C"
+!connect g to "+27V_TW_P"; l to "+27V_TW_P"
+capacitor 470p, 30, 30, fr8192, re5, ar50.0m, en, nocomp, ed
+! warning "excessive minus tolerance or low limit."
+! "c199" is a commented test.
+! DUT: nominal 470p, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 517p, low 423p
+! TEST: high limit 1.336n, low limit 129.927p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

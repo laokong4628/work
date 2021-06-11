@@ -1,0 +1,16 @@
+!!!!    2    0    1 1264583292   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:13 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_46_MJD44H11_I55_E"
+connect i to "UNNAMED_46_R_I279_A"
+! diode 0.00, 0.00, idc300m, co3.1, ar0.00
+warning "idc value out of range."
+! "d11" is a commented test.
+! DUT: nominal 650m, plus tol 38.5 %, minus tol 38.5 %
+! DUT: high 900m, low 400m
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

@@ -1,0 +1,23 @@
+!!!!    2    0    1 1274255794   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:53 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   test "VRS_OUT_DC_N_GNDA"
+end test
+
+subtest "VRS_OUT_DC_N_GNDA"
+   connect s to nodes "US"
+   connect i to nodes "VRS_OUT_DC_N"
+   connect l to nodes "GNDA"
+   connect g to nodes "GNDA"
+   connect g to nodes "GND"
+   source sine, amplitude 7, frequency 50, icompliance 1, offset 0, terminated 5, on
+   detector acv, expect 1.575
+   initiate detector
+   fetch V
+   report analog 1950.00,1220.00,V*1000
+end subtest

@@ -1,0 +1,15 @@
+!!!!    2    0    1 1270633792   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:16 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_46_BDP949_I327_B"
+connect i to "REF_3V9_RU_P"
+zener 3.9, 10.19, 10.97, idc10m, co6.3, ar4.10
+! "z4%zener" test.
+! DUT: nominal 3.9, plus tol 5.00 %, minus tol 5.00 %
+! DUT: high 4.095, low 3.705
+! TEST: high limit 4.102, low limit 3.706
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m

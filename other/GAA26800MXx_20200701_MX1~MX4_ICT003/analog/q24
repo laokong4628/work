@@ -1,0 +1,50 @@
+!!!!    2    0    1 1268902645   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:08 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+on failure
+   report parallel devices
+   report "r450 1.50k"
+end on failure
+disconnect all
+connect i to "UNNAMED_44_BC817_I121_B"
+connect s to "24V_SE_RTN"
+diode "B-E", 800m, 594m, idc1.5m, co3.0, ar800m
+! "q24 B-E" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 799.642m, low limit 594.457m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure
+disconnect all
+connect s to "UNNAMED_44_BC817_I121_C"
+connect i to "UNNAMED_44_BC817_I121_B"
+diode "B-C", 806m, 603m, idc1.0m, co3.0, ar806m
+! "q24 B-C" test.
+! DUT: nominal 700m, plus tol 14.3 %, minus tol 14.3 %
+! DUT: high 800m, low 600m
+! TEST: high limit 805.63m, low limit 602.829m
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+on failure
+   report parallel devices
+   report "r450 1.50k"
+end on failure
+disconnect all
+connect s to "UNNAMED_44_BC817_I121_B"
+connect i to "24V_SE_RTN"
+connect g to "UNNAMED_44_BC817_I121_C"
+! npn "BETA", 0.00, 0.00, idc1.5m, idelta10, co10
+npn "BETA"
+warning "MOA voltage limit exceeded."
+! "q24 BETA" is a commented test.
+! DUT: nominal 125, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 200, low 50
+! TEST: high limit 0, low limit 0
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
+! Bias Current is 1m
+off failure

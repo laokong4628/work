@@ -1,0 +1,15 @@
+!!!!    2    0    1 1433916125   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:54 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "ISENSE"; a to "ISENSE"
+connect i to "I_SENSE_PWM_CONTROLLER"
+!connect g to "24V_SMPS_SENSE_RTN"
+resistor 332, 25, 10, re4, wb, ar1.00, sa, en
+! "r436" is a limited test.
+! DUT: nominal 1.33k, plus tol 1.00 %, minus tol 1.00 %
+! DUT: high 1.343k, low 1.317k
+! TEST: high limit 1.893k, low limit 1.080k
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

@@ -1,0 +1,29 @@
+!!!!    2    0    1 1273769021   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:09:51 2010
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+! A. Edmondson
+
+test powered analog
+   disconnect all
+   gpconnect 21852 to 21853      !@ Power on Relay board
+   gpconnect 21858 to 21859      !@ OUT_EN_CONV to High
+   gpconnect 20658 to 20659      !@ TWN_E21 short to TWP_E11
+   connect s to nodes "RELAY_3"  !@ connect 100nf capacitor
+   source dcv, amplitude 5, icompliance 1, terminated 5, on
+   wait 30m
+   test "TWN_G21_TWN_E21"
+   gpdisconnect 21852 from 21853  !@ Power off Relay board
+   gpdisconnect 21858 from 21859  !@ OUT_EN_CONV to High
+   gpdisconnect 20658 from 20659  !@ TWN_E21 short to TWP_E11
+end test
+
+subtest "TWN_G21_TWN_E21"
+   connect i to nodes "TWN_G21"
+   connect l to nodes "TWN_E21"
+   connect g to nodes "PWM_TN"
+   connect g to nodes "PWM_WN"
+   connect g to nodes "GND"
+   detector dcv, expect 15.70
+   measure 17.00, 14.00
+end subtest

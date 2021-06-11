@@ -1,0 +1,13 @@
+!!!!    2    0    1 1274758751  V6bd0                                         
+! IPG: rev 05.21p  Tue May 02 11:35:02 2006
+! Powered analog test
+
+test powered analog;V
+   disconnect all
+   test "CnvTempUout"
+end test
+
+subtest "CnvTempUout"
+   global V
+   report analog  3784, 1100, V  !@3784 ~ 1100
+end subtest

@@ -1,0 +1,16 @@
+!!!!    2    0    1 1588947900   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:02 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "UNNAMED_36_C_I20_B"
+connect i to "UNNAMED_36_C_I20_A"
+connect g to "GND_SENSE"
+capacitor 100p+20p, 13.0, 12.29, fr8192, re5, wb, ar100m, nocomp, ed
+! "c126" test.
+! DUT: nominal 100p, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110p, low 90p
+! TEST: high limit 112.96p, low limit 90.706p
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed

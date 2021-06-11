@@ -1,0 +1,17 @@
+!!!!    2    0    1 1344996231   0000                                         
+! IPG: rev 05.21p  Wed Jan 27 17:08:02 2010
+! Common Lead Resistance 500m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "GND"!; a to "GND"
+connect i to "UNNAMED_48_74HC14_I210_A"
+!connect g to "VCC"; l to "VCC"
+capacitor 2200p, 20, 20, fr8192, re3, wb, ar100m, en, nocomp, ed
+! warning "excessive plus tolerance or high limit."
+! "c173" is a commented test.
+! DUT: nominal 100p, plus tol 10.0 %, minus tol 10.0 %
+! DUT: high 110p, low 90p
+! TEST: high limit 8.060n, low limit -17.241n
+! Capacitor compensation is used for this test.
+! Tolerance Multiplier 1.50
+! Remote Sensing is Allowed
